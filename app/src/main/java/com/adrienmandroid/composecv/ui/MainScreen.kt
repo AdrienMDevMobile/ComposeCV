@@ -1,5 +1,6 @@
 package com.adrienmandroid.composerandom
 
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.rememberNavController
@@ -8,6 +9,7 @@ import com.adrienmandroid.composecv.data.BottomNavGraphHost
 
 
 //The screen + the bar at the bottom, under it.
+@ExperimentalMaterialApi
 @Composable
 fun MainScreen() {
     val navController = rememberNavController()
