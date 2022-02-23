@@ -10,6 +10,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.zIndex
 import com.adrienmandroid.composecv.R
 
 @ExperimentalMaterialApi
@@ -29,19 +30,20 @@ fun WelcomeFragment() {
                     .fillMaxWidth()
                     .fillMaxHeight().background(Color.Transparent)
             ) {
-                Column(Modifier.background(Color.Transparent)) {
+                Column(Modifier.background(Color.Transparent), verticalArrangement = Arrangement.spacedBy((-32).dp)) {
                     Image(
                         painter = painterResource(R.drawable.profile_picture),
                         contentDescription = "Picture",
-                        /*contentScale = ContentScale.Crop, */
-                        modifier = Modifier.width(150.dp).height(150.dp)
+                        contentScale = ContentScale.Crop,
+                        modifier = Modifier.width(150.dp).height(150.dp).zIndex(1f)
                     )
-                    Box(
+                    Column(
                         Modifier
                             .fillMaxWidth()
                             .fillMaxHeight()
                             .background(Color.Blue)
                     ){
+                        Spacer(modifier = Modifier.height(32.dp))
                         Text(text = "Hello from sheet")
                     }
                 }
