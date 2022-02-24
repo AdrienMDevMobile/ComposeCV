@@ -14,7 +14,7 @@ import com.adrienmandroid.composecv.ui.fragments.WelcomeFragment
 //Navigation graph informations.
 object BottomNavGraph {
 
-    val Welcome = BottomNavElement("welcome", "", Icons.Default.Home)
+    val Welcome = BottomNavElement("welcome", null, Icons.Default.Home)
     val Exp = BottomNavElement("experience", "EXP.", Icons.Default.Home)
     val Skill = BottomNavElement("skill", "Skill", Icons.Default.Home)
 

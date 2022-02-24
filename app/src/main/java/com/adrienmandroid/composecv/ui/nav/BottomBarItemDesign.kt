@@ -24,7 +24,7 @@ fun RowScope.BottomBarItemDesign(
     currentDestination: NavDestination?,
     navController: NavHostController
 ) {
-    BottomNavigationItem(label = { Text(text = element.name) },
+    BottomNavigationItem(label = if(element.name != null){ { Text(text = element.name) }} else null,
         icon = {
             Icon(
                 imageVector = element.image,
