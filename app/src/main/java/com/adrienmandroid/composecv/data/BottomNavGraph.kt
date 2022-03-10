@@ -14,11 +14,11 @@ import com.adrienmandroid.composecv.ui.fragments.WelcomeFragment
 //Navigation graph informations.
 object BottomNavGraph {
 
-    val Welcome = BottomNavElement("welcome", null, Icons.Default.Home)
-    val Exp = BottomNavElement("experience", "EXP.", Icons.Default.Home)
-    val Skill = BottomNavElement("skill", "Skill", Icons.Default.Home)
+    val WelcomeBottomNav = BottomNavElement("welcome", null, Icons.Default.Home)
+    val ExpBottomNav = BottomNavElement("experience", "EXP.", Icons.Default.Home)
+    val SkillBottomNav = BottomNavElement("skill", "Skill", Icons.Default.Home)
 
-    val array = arrayOf(Welcome, Exp, Skill)
+    val array = arrayOf(WelcomeBottomNav, ExpBottomNav, SkillBottomNav)
 
 }
 
@@ -29,14 +29,14 @@ fun BottomNavGraphHost(navController: NavHostController) {
     NavHost(navController = navController,
         startDestination = BottomNavGraph.array[0].route)
     {
-        composable(route=BottomNavGraph.Welcome.route){
+        composable(route=BottomNavGraph.WelcomeBottomNav.route){
             WelcomeFragment()
         }
-        composable(route = BottomNavGraph.Exp.route) {
+        composable(route = BottomNavGraph.ExpBottomNav.route) {
             ExperienceFragment()
         }
-        composable(route = BottomNavGraph.Skill.route) {
-            SkillFragment()
+        composable(route = BottomNavGraph.SkillBottomNav.route) {
+            SkillFragment(SkillData.skills)
         }
     }
 }
