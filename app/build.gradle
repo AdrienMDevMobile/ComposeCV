@@ -29,9 +29,11 @@ android {
     productFlavors {
         AdrienOwner {
             dimension 'application_owner'
+            applicationId 'com.adrienmandroid.adrrienowner'
         }
         JeromeOwner {
             dimension 'application_owner'
+            applicationId 'com.adrienmandroid.jeromeowner'
         }
     }
     sourceSets {
