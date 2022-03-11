@@ -25,6 +25,24 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    flavorDimensions 'application_owner'
+    productFlavors {
+        AdrienOwner {
+            dimension 'application_owner'
+        }
+        JeromeOwner {
+            dimension 'application_owner'
+        }
+    }
+    sourceSets {
+        AdrienOwner {
+            res.srcDirs = ['src/adrien/res']
+        }
+        JeromeOwner {
+            res.srcDirs = ['src/jerome/res']
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
