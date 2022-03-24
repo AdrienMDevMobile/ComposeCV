@@ -4,6 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
@@ -47,17 +48,9 @@ fun WelcomeFragment() {
                         }
 
                     }
-                    val listDistance = listOf(100.dp, 80.dp, 60.dp, 90.dp, 130.dp, 150.dp)
-                    items(items=listDistance){
-                        Box(modifier = Modifier.background(Color.Blue).fillMaxWidth(1f)){
-                            Spacer(modifier = Modifier.height(it))
-                            Text(text="test")
-                        }
-                    }
+                    listOfItemInBottomSheet(Color.Blue)
                 }
-
             }
-
         }, sheetPeekHeight = 600.dp
     ) {
         //Under the bottom sheet
@@ -68,5 +61,17 @@ fun WelcomeFragment() {
             modifier = Modifier.fillMaxWidth()
         )
 
+    }
+}
+
+fun LazyListScope.listOfItemInBottomSheet(backgroundColor : Color){
+    val nums=arrayOf(90.dp, 120.dp, 100.dp, 60.dp, 70.dp, 80.dp)
+    for(x in nums){
+        item{
+            Column(modifier = Modifier.background(backgroundColor).fillMaxWidth()){
+                Spacer(modifier = Modifier.height(x))
+                Text(text = "Hello from sheet $x")
+            }
+        }
     }
 }

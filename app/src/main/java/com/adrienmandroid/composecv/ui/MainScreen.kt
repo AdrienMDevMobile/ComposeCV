@@ -1,8 +1,11 @@
 package com.adrienmandroid.composerandom
 
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
 import com.adrienmandroid.composecv.data.BottomNavGraph
 import com.adrienmandroid.composecv.data.BottomNavGraphHost
@@ -17,8 +20,12 @@ fun MainScreen() {
 
     Scaffold(
         bottomBar = { BottomBar(elementArray = navGraphArray, navController = navController) }
-    ) {
-        BottomNavGraphHost(navController = navController)
+    ) { innerPadding ->
+        // Padding Value is the only parameter of the parameter component
+        Box(modifier = Modifier.padding(innerPadding)) {
+            BottomNavGraphHost(navController = navController)
+        }
+
     }
 
 }
