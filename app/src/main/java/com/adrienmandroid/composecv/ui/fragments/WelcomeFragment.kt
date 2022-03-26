@@ -1,5 +1,6 @@
 package com.adrienmandroid.composecv.ui.fragments
 
+import android.content.Context
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -16,6 +17,10 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import com.adrienmandroid.composecv.R
+import androidx.compose.ui.res.stringResource
+import com.adrienmandroid.composecv.ui.welcome.ImageDraw
+import com.adrienmandroid.composecv.ui.welcome.SimpleDrawable
+import com.adrienmandroid.composecv.ui.welcome.TextDraw
 
 @ExperimentalMaterialApi
 @Composable
@@ -32,23 +37,40 @@ fun WelcomeFragment() {
             Box(
                 Modifier
                     .fillMaxWidth()
-                    .fillMaxHeight().background(Color.Transparent)
+                    .fillMaxHeight()
+                    .background(Color.Transparent)
             ) {
                 //, verticalArrangement = Arrangement.spacedBy((-32).dp)
                 LazyColumn(Modifier.fillMaxWidth(1f)) {
-                    item{
-                        Column(modifier = Modifier.fillMaxWidth(1f), verticalArrangement = Arrangement.spacedBy((-16).dp)){
+                    item {
+                        Column(
+                            modifier = Modifier.fillMaxWidth(1f),
+                            verticalArrangement = Arrangement.spacedBy((-16).dp)
+                        ) {
                             Image(
                                 painter = painterResource(R.drawable.profile_picture),
                                 contentDescription = "Picture",
                                 contentScale = ContentScale.Crop,
-                                modifier = Modifier.width(150.dp).height(150.dp).zIndex(1f)
+                                modifier = Modifier
+                                    .width(150.dp)
+                                    .height(150.dp)
+                                    .zIndex(1f)
                             )
-                            Spacer(modifier = Modifier.height(16.dp).fillMaxWidth(1f).background(Color.Blue))
+                            Spacer(
+                                modifier = Modifier
+                                    .height(16.dp)
+                                    .fillMaxWidth(1f)
+                                    .background(Color.Blue)
+                            )
                         }
 
                     }
-                    listOfItemInBottomSheet(Color.Blue)
+                    items(items = listOfItemInBottomSheet()){
+                        Box(modifier = Modifier.background(Color.Green).fillMaxWidth()){
+                            Spacer(modifier = Modifier.height(10.dp))
+                            it.draw()
+                        }
+                    }
                 }
             }
         }, sheetPeekHeight = 600.dp
@@ -64,14 +86,14 @@ fun WelcomeFragment() {
     }
 }
 
-fun LazyListScope.listOfItemInBottomSheet(backgroundColor : Color){
-    val nums=arrayOf(90.dp, 120.dp, 100.dp, 60.dp, 70.dp, 80.dp)
-    for(x in nums){
-        item{
-            Column(modifier = Modifier.background(backgroundColor).fillMaxWidth()){
-                Spacer(modifier = Modifier.height(x))
-                Text(text = "Hello from sheet $x")
-            }
-        }
-    }
+fun listOfItemInBottomSheet() : List<SimpleDrawable> {
+    return listOf(
+        TextDraw(id = R.string.names),
+        TextDraw(id = R.string.title),
+        TextDraw(id = R.string.age, arrayOf(26)),
+        TextDraw(id = R.string.emailAdress),
+        TextDraw(id = R.string.selfPresentation),
+        ImageDraw(R.drawable.auboulotavelo, "Au boult à velo")
+
+    )
 }
