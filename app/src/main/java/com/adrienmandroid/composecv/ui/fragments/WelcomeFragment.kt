@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import com.adrienmandroid.composecv.R
 import androidx.compose.ui.res.stringResource
+import com.adrienmandroid.composecv.data.listOfItemInBottomSheet
 import com.adrienmandroid.composecv.ui.welcome.ImageDraw
 import com.adrienmandroid.composecv.ui.welcome.SimpleDrawable
 import com.adrienmandroid.composecv.ui.welcome.TextDraw
@@ -65,12 +66,22 @@ fun WelcomeFragment() {
                         }
 
                     }
-                    items(items = listOfItemInBottomSheet()){
-                        Box(modifier = Modifier.background(Color.Green).fillMaxWidth()){
-                            Spacer(modifier = Modifier.height(10.dp))
-                            it.draw()
+                    items(items = listOfItemInBottomSheet()) {
+                        Box(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .background(color = Color.Green)
+                        ) {
+                            Column(modifier = Modifier.fillMaxWidth()) {
+                                Spacer(modifier = Modifier.height(10.dp))
+                                Row() {
+                                    Spacer(modifier = Modifier.width(10.dp))
+                                    it.draw()
+                                }
+                            }
                         }
                     }
+
                 }
             }
         }, sheetPeekHeight = 600.dp
@@ -84,16 +95,4 @@ fun WelcomeFragment() {
         )
 
     }
-}
-
-fun listOfItemInBottomSheet() : List<SimpleDrawable> {
-    return listOf(
-        TextDraw(id = R.string.names),
-        TextDraw(id = R.string.title),
-        TextDraw(id = R.string.age, arrayOf(26)),
-        TextDraw(id = R.string.emailAdress),
-        TextDraw(id = R.string.selfPresentation),
-        ImageDraw(R.drawable.auboulotavelo, "Au boult à velo")
-
-    )
 }
