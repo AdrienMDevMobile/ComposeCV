@@ -21,7 +21,7 @@ fun LazyListScope.BottomsheetBody() {
                 .background(color = Color.Magenta)
                 .padding(start = 10.dp, end = 10.dp, top = 5.dp)
         ) {
-            it.draw()
+            it.Draw()
         }
     }
 }

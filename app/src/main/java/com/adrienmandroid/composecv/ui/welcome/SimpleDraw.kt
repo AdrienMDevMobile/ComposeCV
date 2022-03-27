@@ -2,7 +2,7 @@ package com.adrienmandroid.composecv.ui.welcome
 
 import androidx.compose.runtime.Composable
 
-interface SimpleDrawable {
+interface SimpleDraw {
     @Composable
-    abstract fun draw()
+    fun Draw()
 }

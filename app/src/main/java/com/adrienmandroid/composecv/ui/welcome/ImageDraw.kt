@@ -7,9 +7,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 
-class ImageDraw(private val source: Int, private val description: String) : SimpleDrawable {
+class ImageDraw(private val source: Int, private val description: String) : SimpleDraw {
     @Composable
-    override fun draw() {
+    override fun Draw() {
         Image(
             painter = painterResource(source),
             contentDescription = description,
