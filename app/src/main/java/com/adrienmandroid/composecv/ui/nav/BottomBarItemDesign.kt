@@ -7,12 +7,14 @@ import androidx.compose.foundation.layout.RowScope
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.adrienmandroid.composecv.R
 import com.adrienmandroid.composecv.data.BottomNavElement
 import com.adrienmandroid.composecv.data.BottomNavGraph
 import com.adrienmandroid.composecv.ui.theme.ComposeCVTheme
@@ -27,7 +29,7 @@ fun RowScope.BottomBarItemDesign(
     BottomNavigationItem(label = if(element.name != null){ { Text(text = element.name) }} else null,
         icon = {
             Icon(
-                imageVector = element.image,
+                painter = painterResource(id = R.drawable.experience),
                 contentDescription = element.name
             )
         },
