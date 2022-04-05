@@ -3,10 +3,7 @@ package com.adrienmandroid.composecv.data
 import androidx.compose.ui.text.TextStyle
 import com.adrienmandroid.composecv.R
 import com.adrienmandroid.composecv.ui.theme.Typography
-import com.adrienmandroid.composecv.ui.welcome.ImageDraw
-import com.adrienmandroid.composecv.ui.welcome.QuoteTextDraw
-import com.adrienmandroid.composecv.ui.welcome.SimpleDraw
-import com.adrienmandroid.composecv.ui.welcome.TextDraw
+import com.adrienmandroid.composecv.ui.welcome.*
 
 fun listOfItemInBottomSheet(): List<SimpleDraw> {
     return listOf(
@@ -19,6 +16,6 @@ fun listOfItemInBottomSheet(): List<SimpleDraw> {
         TextDraw(iconId = R.drawable.linkedin, id = R.string.linkedIn),
         QuoteTextDraw(id = R.string.selfPresentation),
         ImageDraw(R.drawable.auboulotavelo, "Au boult à velo"),
-        TextDraw(id = R.string.hashtag)
+        KeywordsDraw(arrayOf("Android", "Kotlin", "Jetpack compose", "Growth mindset", "Creativité"))
     )
 }

@@ -82,5 +82,5 @@ dependencies {
     implementation("androidx.navigation:navigation-compose:$nav_version")
     implementation "androidx.compose.runtime:runtime-livedata:$compose_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel-compose:1.0.0-alpha02"
-
+    implementation 'ca.gosyer:accompanist-flowlayout:0.24.4'
 }
