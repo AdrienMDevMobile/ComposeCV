@@ -7,22 +7,20 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.ExperimentalMaterialApi
+import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
-import com.adrienmandroid.composecv.R
-import com.adrienmandroid.composecv.data.ExpDates
 import com.adrienmandroid.composecv.data.Experience
+import com.adrienmandroid.composecv.data.dataSource.impl.ExperienceDataImpl
 import com.adrienmandroid.composecv.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composerandom.experience.ExpAdditionalInfo
 import com.adrienmandroid.composerandom.experience.ExperienceHeader
 import com.adrienmandroid.composerandom.experience.ExperienceInfoListItem
-import java.util.*
 
 @ExperimentalMaterialApi
 @Composable
-fun ExperienceFragment() {
+fun ExperienceFragment(experiences: List<Experience>) {
 
     ContactsList(experiences = experiences)
 
@@ -30,23 +28,35 @@ fun ExperienceFragment() {
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun ContactsList(experiences : List<Experience>) {
+fun ContactsList(experiences: List<Experience>) {
     LazyColumn {
         experiences.forEach { experience ->
             stickyHeader {
-                Box(modifier = Modifier.fillMaxWidth().background(Color.Blue)){
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .background(MaterialTheme.colors.primary)
+                ) {
                     ExperienceHeader(experience.logo, experience.name)
                 }
 
             }
 
             item {
-                Box(modifier = Modifier.fillMaxWidth().background(Color.Green)) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .background(MaterialTheme.colors.background)
+                ) {
                     ExpAdditionalInfo(experience.ExpDates, experience.link)
                 }
             }
             items(experience.informations) { information ->
-                Box(modifier = Modifier.fillMaxWidth().background(Color.Green)) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .background(MaterialTheme.colors.background)
+                ) {
                     ExperienceInfoListItem(information)
                 }
             }
@@ -54,25 +64,12 @@ fun ContactsList(experiences : List<Experience>) {
     }
 }
 
-val experiences = listOf(
-    Experience(name = "Natixis", logo = R.drawable.home, ExpDates = ExpDates(
-    Date(), Date()
-) , informations =  listOf("Info1", "Info2"))
-    , Experience(name = "S&H", logo = R.drawable.home, ExpDates = ExpDates(Date(), Date()) , informations =  listOf("Info3", "Info4", "Info5"))
-    , Experience(name = "S&H", logo = R.drawable.home, ExpDates = ExpDates(Date(), Date()) , informations =  listOf("Info3", "Info4", "Info5"))
-    , Experience(name = "S&H", logo = R.drawable.home, ExpDates = ExpDates(Date(), Date()) , informations =  listOf("Info3", "Info4", "Info6"))
-    , Experience(name = "S&H", logo = R.drawable.home, ExpDates = ExpDates(Date(), Date()) , informations =  listOf("Info3", "Info4", "Info7"))
-    , Experience(name = "S&H", logo = R.drawable.home, ExpDates = ExpDates(Date(), Date()) , informations =  listOf("Info3", "Info4", "Info8"))
-    , Experience(name = "S&H", logo = R.drawable.home, ExpDates = ExpDates(Date(), Date()) , informations =  listOf("Info3", "Info4", "Info9"))
-    , Experience(name = "S&H", logo = R.drawable.home, ExpDates = ExpDates(Date(), Date()) , informations =  listOf("Info3", "Info4", "Info10"))
-)
-
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 @Preview
-fun previewExp(){
+fun previewExp() {
     ComposeCVTheme {
-        ExperienceFragment()
+        ExperienceFragment(ExperienceDataImpl().getExperiences())
     }
 }

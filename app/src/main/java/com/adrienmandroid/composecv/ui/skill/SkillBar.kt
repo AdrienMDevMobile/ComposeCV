@@ -7,6 +7,9 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import com.adrienmandroid.composecv.ui.theme.colorSkillHigh
+import com.adrienmandroid.composecv.ui.theme.colorSkillLow
+import com.adrienmandroid.composecv.ui.theme.colorSkillMedium
 import kotlinx.coroutines.delay
 
 @Composable
@@ -31,9 +34,9 @@ fun SkillLinearProgressIndicator(targetValue : Float) {
 }
 
 fun getSkillColor(targetValue: Float) = when{
-    targetValue >= 0.9f -> Color.Green
-    targetValue >= 0.7f -> Color.Yellow
-    else -> Color.Red
+    targetValue >= 0.9f -> colorSkillHigh
+    targetValue >= 0.7f -> colorSkillMedium
+    else -> colorSkillLow
     }
 
 

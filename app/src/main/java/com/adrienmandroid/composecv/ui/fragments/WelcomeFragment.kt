@@ -16,7 +16,7 @@ import com.adrienmandroid.composecv.ui.welcome.*
 
 @ExperimentalMaterialApi
 @Composable
-fun WelcomeFragment() {
+fun WelcomeFragment(welcomeElements : List<SimpleDraw>) {
 
     val bottomSheetScaffoldState = rememberBottomSheetScaffoldState(
         bottomSheetState = rememberBottomSheetState(BottomSheetValue.Collapsed)
@@ -35,7 +35,7 @@ fun WelcomeFragment() {
                 //, verticalArrangement = Arrangement.spacedBy((-32).dp)
                 LazyColumn(Modifier.fillMaxWidth(1f)) {
                     BottomsheetHeader()
-                    BottomsheetBody()
+                    BottomsheetBody(welcomeElements)
                 }
 
             }

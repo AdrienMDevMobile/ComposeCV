@@ -5,20 +5,20 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.data.dataSource.impl.WelcomeBottomSheetElementsImpl
 import com.adrienmandroid.composecv.ui.theme.ComposeCVTheme
 
-fun LazyListScope.BottomsheetBody() {
-    items(items = WelcomeBottomSheetElementsImpl().listOfItemInBottomSheet()) {
+fun LazyListScope.BottomsheetBody(welcomeElements : List<SimpleDraw>) {
+    items(items = welcomeElements) {
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .background(color = Color.Magenta)
+                .background(color = MaterialTheme.colors.background)
                 .padding(start = 10.dp, end = 10.dp, top = 5.dp)
         ) {
             it.Draw()
@@ -31,7 +31,7 @@ fun LazyListScope.BottomsheetBody() {
 fun PreviewBottomsheetBody() {
     ComposeCVTheme {
         LazyColumn() {
-            BottomsheetBody()
+            BottomsheetBody(WelcomeBottomSheetElementsImpl().listOfItemInBottomSheet())
         }
     }
 }

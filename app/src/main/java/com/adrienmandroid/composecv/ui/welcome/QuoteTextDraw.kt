@@ -17,6 +17,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.R
 import com.adrienmandroid.composecv.ui.theme.ComposeCVTheme
+import com.adrienmandroid.composecv.ui.theme.border
 
 class QuoteTextDraw(private val id: Int, private val args: Array<Any> = emptyArray()) : SimpleDraw {
     @Composable
@@ -25,13 +26,13 @@ class QuoteTextDraw(private val id: Int, private val args: Array<Any> = emptyArr
         Text(
             text = stringResource(id, *args),
             style = TextStyle(
-                color = Color.White,
+                color = MaterialTheme.colors.onSurface,
                 fontWeight = FontWeight.Bold,
                 textAlign = TextAlign.Center),
             modifier = Modifier
                 .fillMaxWidth()
-                .border(2.dp, MaterialTheme.colors.secondary, shape)
-                .background(Color.Black.copy(alpha = 0.1f), shape)
+                .border(2.dp, MaterialTheme.colors.border, shape)
+                .background(MaterialTheme.colors.surface, shape)
                 .padding(16.dp)
         )
     }
