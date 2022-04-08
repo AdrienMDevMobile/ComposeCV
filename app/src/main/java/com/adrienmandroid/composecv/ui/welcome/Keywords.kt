@@ -35,10 +35,10 @@ fun Keyword(keyword : String){
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center),
         modifier = Modifier
-            .padding(16.dp)
+            .padding(5.dp)
             .border(2.dp, Color.Cyan, shape)
             .background(Color.Magenta, shape)
-            .padding(16.dp)
+            .padding(12.dp, 5.dp)
     )
 }
 

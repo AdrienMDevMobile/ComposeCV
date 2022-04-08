@@ -29,7 +29,7 @@ fun RowScope.BottomBarItemDesign(
     BottomNavigationItem(label = if(element.name != null){ { Text(text = element.name) }} else null,
         icon = {
             Icon(
-                painter = painterResource(id = R.drawable.experience),
+                painter = painterResource(id = element.image),
                 contentDescription = element.name
             )
         },

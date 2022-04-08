@@ -13,7 +13,7 @@ class ImageDraw(private val source: Int, private val description: String) : Simp
         Image(
             painter = painterResource(source),
             contentDescription = description,
-            modifier = Modifier.size(50.dp, 50.dp)
+            modifier = Modifier.size(80.dp, 80.dp)
         )
     }
 }
