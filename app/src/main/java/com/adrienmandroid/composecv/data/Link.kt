@@ -1,3 +1,3 @@
-package com.adrienmandroid.composecv.ui.experience
+package com.adrienmandroid.composecv.data
 
 data class Link(val url : String, val text:String)

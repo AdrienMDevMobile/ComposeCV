@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.ui.experience
+package com.adrienmandroid.composecv.data
 
 class Experience(
     val name : String,

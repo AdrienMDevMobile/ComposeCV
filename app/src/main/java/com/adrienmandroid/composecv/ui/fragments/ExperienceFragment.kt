@@ -3,20 +3,17 @@ package com.adrienmandroid.composecv.ui.fragments
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import com.adrienmandroid.composecv.R
-import com.adrienmandroid.composecv.ui.experience.ExpDates
-import com.adrienmandroid.composecv.ui.experience.Experience
+import com.adrienmandroid.composecv.data.ExpDates
+import com.adrienmandroid.composecv.data.Experience
 import com.adrienmandroid.composecv.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composerandom.experience.ExpAdditionalInfo
 import com.adrienmandroid.composerandom.experience.ExperienceHeader
@@ -57,7 +54,8 @@ fun ContactsList(experiences : List<Experience>) {
     }
 }
 
-val experiences = listOf(Experience(name = "Natixis", logo = R.drawable.home, ExpDates = ExpDates(
+val experiences = listOf(
+    Experience(name = "Natixis", logo = R.drawable.home, ExpDates = ExpDates(
     Date(), Date()
 ) , informations =  listOf("Info1", "Info2"))
     , Experience(name = "S&H", logo = R.drawable.home, ExpDates = ExpDates(Date(), Date()) , informations =  listOf("Info3", "Info4", "Info5"))

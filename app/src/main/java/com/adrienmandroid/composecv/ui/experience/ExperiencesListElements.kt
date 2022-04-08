@@ -7,8 +7,8 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
-import com.adrienmandroid.composecv.ui.experience.ExpDates
-import com.adrienmandroid.composecv.ui.experience.Link
+import com.adrienmandroid.composecv.data.ExpDates
+import com.adrienmandroid.composecv.data.Link
 
 @Composable
 fun ExperienceHeader(logo: Int, name: String) {

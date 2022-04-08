@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.data
+package com.adrienmandroid.composecv.data.dataSource
 
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
@@ -6,6 +6,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.adrienmandroid.composecv.R
+import com.adrienmandroid.composecv.data.BottomNavElement
+import com.adrienmandroid.composecv.data.dataSource.impl.SkillDataImpl
 import com.adrienmandroid.composecv.ui.fragments.ExperienceFragment
 import com.adrienmandroid.composecv.ui.fragments.SkillFragment
 import com.adrienmandroid.composecv.ui.fragments.WelcomeFragment
@@ -35,7 +37,7 @@ fun BottomNavGraphHost(navController: NavHostController) {
             ExperienceFragment()
         }
         composable(route = BottomNavGraph.SkillBottomNav.route) {
-            SkillFragment(SkillData.skills)
+            SkillFragment(SkillDataImpl().getSkills())
         }
     }
 }

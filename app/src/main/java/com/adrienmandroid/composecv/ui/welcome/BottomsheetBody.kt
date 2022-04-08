@@ -10,11 +10,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.adrienmandroid.composecv.data.listOfItemInBottomSheet
+import com.adrienmandroid.composecv.data.dataSource.impl.WelcomeBottomSheetElementsImpl
 import com.adrienmandroid.composecv.ui.theme.ComposeCVTheme
 
 fun LazyListScope.BottomsheetBody() {
-    items(items = listOfItemInBottomSheet()) {
+    items(items = WelcomeBottomSheetElementsImpl().listOfItemInBottomSheet()) {
         Box(
             modifier = Modifier
                 .fillMaxWidth()

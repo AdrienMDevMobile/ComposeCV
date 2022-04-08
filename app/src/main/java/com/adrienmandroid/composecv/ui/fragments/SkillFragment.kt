@@ -11,7 +11,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import com.adrienmandroid.composecv.data.Skill
 import com.adrienmandroid.composecv.ui.skill.SkillBox
-import com.adrienmandroid.composecv.data.SkillData
+import com.adrienmandroid.composecv.data.dataSource.SkillData
+import com.adrienmandroid.composecv.data.dataSource.impl.SkillDataImpl
 import com.adrienmandroid.composecv.ui.theme.ComposeCVTheme
 
 @Composable
@@ -33,6 +34,6 @@ fun SkillFragment(skills : List<Skill>) {
 @Preview
 fun PreviewSkill(){
     ComposeCVTheme() {
-        SkillFragment(SkillData.skills)
+        SkillFragment(SkillDataImpl().getSkills())
     }
 }
