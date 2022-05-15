@@ -4,10 +4,12 @@ import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.data.Experience
@@ -35,26 +37,22 @@ fun ExperiencesList(experiences: List<Experience>) {
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(10.dp)
+                            .clip(RoundedCornerShape(10.dp))
                     ) {
-                        Box(
-                            modifier = Modifier
-                                .fillParentMaxWidth()
-                                .background(MaterialTheme.colors.background)
-                        ) {
-                            Column(modifier = Modifier.fillMaxWidth()) {
-                                ExperienceHeader(experience.logo, experience.name)
-                                ExpAdditionalInfo(experience.ExpDates, experience.link)
-                                experience.informations.forEach { information ->
-                                    Box(
-                                        modifier = Modifier
-                                            .fillMaxWidth(0.9f)
-                                            .background(MaterialTheme.colors.background)
-                                    ) {
-                                        ExperienceInfoListItem(information)
-                                    }
+                        Column(modifier = Modifier.fillMaxWidth()) {
+                            ExperienceHeader(experience.logo, experience.name)
+                            ExpAdditionalInfo(experience.ExpDates, experience.link)
+                            experience.informations.forEach { information ->
+                                Box(
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .background(MaterialTheme.colors.background)
+                                ) {
+                                    ExperienceInfoListItem(information)
                                 }
                             }
                         }
+
 
                     }
                 }

@@ -54,7 +54,9 @@ fun ExperienceHeader(logo: Int, name: String) {
 
 @Composable
 fun ExpAdditionalInfo(dates: ExpDates, link: Link?) {
-    Row(modifier = Modifier.fillMaxWidth()) {
+    Row(modifier = Modifier
+        .fillMaxWidth()
+        .background(MaterialTheme.colors.background)) {
         Text(dates.begin.toString())
         Text(dates.end.toString())
         if (link != null) {
