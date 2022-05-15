@@ -3,20 +3,23 @@ package com.adrienmandroid.composecv.ui.experience
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
-import androidx.compose.material.Typography
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.R
 import com.adrienmandroid.composecv.data.ExpDates
 import com.adrienmandroid.composecv.data.Link
 import com.adrienmandroid.composecv.ui.theme.ComposeCVTheme
+import com.adrienmandroid.composecv.ui.theme.onSurfaceTitle
 
 @Composable
 fun ExperienceHeader(logo: Int, name: String) {
@@ -24,19 +27,25 @@ fun ExperienceHeader(logo: Int, name: String) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .background(MaterialTheme.colors.primary),
+            .background(MaterialTheme.colors.surface)
+            .clip(RoundedCornerShape(4.dp)),
         contentAlignment = Alignment.CenterStart,
     ) {
-
-        Image(
-            painter = painterResource(logo),
-            contentDescription = name,
-            modifier = Modifier.height(30.dp)
-
-        )
-        Row(){
+        Row() {
+            Image(
+                painter = painterResource(logo),
+                contentDescription = name,
+                modifier = Modifier.height(40.dp)
+            )
             Spacer(modifier = Modifier.width(10.dp))
-            Text(text = name, style = MaterialTheme.typography.h5, fontWeight = FontWeight.Bold)
+            Text(
+                modifier = Modifier.fillMaxWidth(),
+                text = name,
+                style = MaterialTheme.typography.h6,
+                fontWeight = FontWeight.Bold,
+                color = MaterialTheme.colors.onSurfaceTitle,
+                textAlign = TextAlign.Center
+            )
         }
 
     }
@@ -61,7 +70,7 @@ fun ExperienceInfoListItem(information: String) {
 
 @Preview
 @Composable
-fun previewExperienceHeader(){
+fun previewExperienceHeader() {
     ComposeCVTheme() {
         ExperienceHeader(logo = R.drawable.home, name = "Test")
     }
