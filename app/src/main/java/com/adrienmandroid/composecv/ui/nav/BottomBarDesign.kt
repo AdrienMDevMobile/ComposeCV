@@ -6,13 +6,14 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import com.adrienmandroid.composerandom.Nav.BottomBarItemDesign
 import com.adrienmandroid.composecv.data.BottomNavElement
 import com.adrienmandroid.composecv.data.dataSource.BottomNavGraph
 import com.adrienmandroid.composecv.ui.theme.ComposeCVTheme
+import com.adrienmandroid.composerandom.Nav.BottomBarItemDesign
 
 //The design of the bottomBar
 @Composable

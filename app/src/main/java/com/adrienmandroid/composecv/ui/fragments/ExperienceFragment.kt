@@ -14,32 +14,23 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.adrienmandroid.composecv.data.Experience
 import com.adrienmandroid.composecv.data.dataSource.impl.ExperienceDataImpl
 import com.adrienmandroid.composecv.ui.theme.ComposeCVTheme
-import com.adrienmandroid.composerandom.experience.ExpAdditionalInfo
-import com.adrienmandroid.composerandom.experience.ExperienceHeader
-import com.adrienmandroid.composerandom.experience.ExperienceInfoListItem
+import com.adrienmandroid.composecv.ui.experience.ExpAdditionalInfo
+import com.adrienmandroid.composecv.ui.experience.ExperienceHeader
+import com.adrienmandroid.composecv.ui.experience.ExperienceInfoListItem
 
 @ExperimentalMaterialApi
 @Composable
 fun ExperienceFragment(experiences: List<Experience>) {
-
-    ContactsList(experiences = experiences)
-
+    ExperiencesList(experiences = experiences)
 }
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun ContactsList(experiences: List<Experience>) {
+fun ExperiencesList(experiences: List<Experience>) {
     LazyColumn {
         experiences.forEach { experience ->
             stickyHeader {
-                Box(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .background(MaterialTheme.colors.primary)
-                ) {
-                    ExperienceHeader(experience.logo, experience.name)
-                }
-
+                ExperienceHeader(experience.logo, experience.name)
             }
 
             item {

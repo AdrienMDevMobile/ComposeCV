@@ -2,12 +2,11 @@ package com.adrienmandroid.composecv.ui.welcome
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.shape.CornerSize
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -25,7 +24,7 @@ fun LazyListScope.BottomsheetHeader() {
     item {
         Column(
             modifier = Modifier.fillMaxWidth(1f),
-            verticalArrangement = Arrangement.spacedBy((-16).dp)
+            verticalArrangement = Arrangement.spacedBy((-32).dp)
         ) {
             Image(
                 painter = painterResource(R.drawable.profile_picture),
@@ -36,11 +35,12 @@ fun LazyListScope.BottomsheetHeader() {
                     .height(150.dp)
                     .padding(5.dp)
                     .zIndex(1f)
-                    .clip(RoundedCornerShape(10.dp))
+                    .clip(CircleShape)
+                    .border(4.dp, MaterialTheme.colors.background, CircleShape)
             )
             Spacer(
                 modifier = Modifier
-                    .height(16.dp)
+                    .height(32.dp)
                     .fillMaxWidth(1f)
                     .background(MaterialTheme.colors.background, roundedTopEndSquare)
 
@@ -51,7 +51,7 @@ fun LazyListScope.BottomsheetHeader() {
 
 @Preview
 @Composable
-fun previewBottomSheetHeader(){
+fun previewBottomSheetHeader() {
     ComposeCVTheme {
         LazyColumn() {
             BottomsheetHeader()
