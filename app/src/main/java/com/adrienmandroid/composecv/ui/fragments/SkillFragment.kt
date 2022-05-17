@@ -2,6 +2,8 @@ package com.adrienmandroid.composecv.ui.fragments
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -22,10 +24,13 @@ fun SkillFragment(skills: List<Skill>) {
             .background(MaterialTheme.colors.composableBackground),
         contentAlignment = Alignment.Center,
     ) {
-        Column(modifier = Modifier.fillMaxWidth().padding(15.dp)) {
-            for (skill in skills) {
-                SkillBox(skill.name, skill.targetValue, skill.explanation)
-                Spacer(modifier = Modifier.height(10.dp))
+        LazyColumn(modifier = Modifier.fillMaxWidth().padding(horizontal = 10.dp)) {
+            item{
+                Spacer(modifier = Modifier.height(15.dp))
+            }
+            items(items = skills) {
+                SkillBox(it.name, it.targetValue, it.explanation)
+                Spacer(modifier = Modifier.height(15.dp))
             }
         }
     }
