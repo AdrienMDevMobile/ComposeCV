@@ -57,8 +57,8 @@ fun ExpAdditionalInfo(dates: ExpDates, link: Link?) {
     Row(modifier = Modifier
         .fillMaxWidth()
         .background(MaterialTheme.colors.background)) {
-        Text(dates.begin.toString())
-        Text(dates.end.toString())
+        Text(text = dates.begin.toMonthString(), fontWeight = FontWeight.Bold)
+        Text(text = dates.end.toMonthString(), fontWeight = FontWeight.Bold)
         if (link != null) {
             Text(link.text)
         }
@@ -72,7 +72,7 @@ fun ExperienceInfoListItem(information: String) {
 
 @Preview
 @Composable
-fun previewExperienceHeader() {
+fun PreviewExperienceHeader() {
     ComposeCVTheme() {
         ExperienceHeader(logo = R.drawable.home, name = "Test")
     }

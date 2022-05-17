@@ -11,19 +11,19 @@ class ExperienceDataImpl : ExperienceData {
         Experience(
             name = "Ingénieur développement Android",
             logo = R.drawable.home,
-            ExpDates = ExpDates(Date(2021, 9,6), Date()),
+            ExpDates = ExpDates(Date(1631052000000), Date()),
             informations = listOf("Info3", "Info4", "Info5")
         ),
         Experience(
             name = "Projet personnel Jetpack compose",
             logo = R.drawable.home,
-            ExpDates = ExpDates(Date(2022, 1,6), Date()),
+            ExpDates = ExpDates(Date(1645052400000), Date()),
             informations = listOf("Jetpack compose")
         ),
         Experience(
             name = "Projet personnel Animateurs FDC",
             logo = R.drawable.home,
-            ExpDates = ExpDates(Date(2021, 2, 10), Date(2022, 1, 20)),
+            ExpDates = ExpDates(Date(1593554400000), Date(1641596400000)),
             informations = listOf(
                 "Projet Android avec Kotlin.",
                 "Réflexion avec d'autres Animateurs sur les fonctionnalités à développer.",
@@ -37,7 +37,7 @@ class ExperienceDataImpl : ExperienceData {
         Experience(
             name = "Ingénieur Développeur Peoplesoft",
             logo = R.drawable.home,
-            ExpDates = ExpDates(Date(), Date()),
+            ExpDates = ExpDates(Date(1572562800000), Date(1590962400000)),
             informations = listOf(
                 "Développement et mises à jour de pages du site de mobilité interne du client.",
                 "Spécifications et chiffrages des futurs développements.",
@@ -47,9 +47,9 @@ class ExperienceDataImpl : ExperienceData {
             )
         ),
         Experience(
-            name = "S&H",
+            name = "Développeur Peoplesoft en alternance",
             logo = R.drawable.home,
-            ExpDates = ExpDates(Date(), Date()),
+            ExpDates = ExpDates(Date(1472680800000), Date(1559340000000)),
             informations = listOf(
                 "Développement en autonomie et en équipe.",
                 "Analyse des besoins utilisateurs en prenant en compte obligations et contraintes.",
