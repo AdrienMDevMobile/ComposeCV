@@ -27,8 +27,7 @@ fun ExperienceHeader(logo: Int, name: String) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .background(MaterialTheme.colors.surface)
-            .clip(RoundedCornerShape(4.dp)),
+            .background(MaterialTheme.colors.surface),
         contentAlignment = Alignment.CenterStart,
     ) {
         Row() {
