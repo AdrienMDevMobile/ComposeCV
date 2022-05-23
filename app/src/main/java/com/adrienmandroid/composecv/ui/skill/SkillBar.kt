@@ -41,8 +41,8 @@ fun SkillLinearProgressIndicator(targetValue: Float) {
 }
 
 fun getSkillColor(targetValue: Float) = when {
-    targetValue >= 0.9f -> colorSkillHigh
-    targetValue >= 0.7f -> colorSkillMedium
+    targetValue >= 0.8f -> colorSkillHigh
+    targetValue >= 0.6f -> colorSkillMedium
     else -> colorSkillLow
 }
 

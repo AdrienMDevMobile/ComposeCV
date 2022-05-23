@@ -1,5 +1,6 @@
 package com.adrienmandroid.composecv.ui.skill
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -13,9 +14,11 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.adrienmandroid.composecv.R
 
 @Composable
 fun SkillBox(name: String, targetValue: Float, text: String) {
@@ -28,17 +31,21 @@ fun SkillBox(name: String, targetValue: Float, text: String) {
                 RoundedCornerShape(25.dp)
             )
             .background(color = MaterialTheme.colors.background)
-    ){
+    ) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(10.dp)
         ) {
-            Row(horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
-                Text(name)
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(text = name, style = MaterialTheme.typography.h6)
                 Spacer(modifier = Modifier.width(10.dp))
                 Button(
-                    modifier = Modifier.size(40.dp, 20.dp),
+                    modifier = Modifier.size(40.dp, 20.dp), contentPadding = PaddingValues(0.dp),
                     colors = buttonColors(backgroundColor = MaterialTheme.colors.primary),
                     onClick = {
                         isTextVisible.value = when (isTextVisible.value) {
@@ -46,7 +53,7 @@ fun SkillBox(name: String, targetValue: Float, text: String) {
                             else -> true
                         }
                     }) {
-                    ShowMoreText(isVisible = isTextVisible)
+                    ShowMore(isVisible = isTextVisible)
                 }
             }
             Spacer(modifier = Modifier.height(10.dp))
@@ -58,14 +65,23 @@ fun SkillBox(name: String, targetValue: Float, text: String) {
 }
 
 @Composable
-fun ShowMoreText(isVisible: LiveData<Boolean>){
+fun ShowMore(isVisible: LiveData<Boolean>) {
     val visible by isVisible.observeAsState(false)
-    Text(text = if(!visible){
-        ">"
+
+    if (!visible) {
+        Image(
+            painter = painterResource(id = R.drawable.ic_skill_arrow_right),
+            contentDescription = "Show more",
+            modifier = Modifier.size(20.dp)
+        )
+    } else {
+        Image(
+            painter = painterResource(id = R.drawable.ic_skill_arrow_down),
+            contentDescription = "Show more",
+            modifier = Modifier.size(20.dp)
+        )
     }
-    else{
-        "v"
-    })
+
 }
 
 @Composable
@@ -75,6 +91,5 @@ fun SkillText(isVisible: LiveData<Boolean>, text: String) {
     if (visible) {
         Spacer(modifier = Modifier.height(10.dp))
         Text(text = text)
-        //TODO font size
     }
 }
