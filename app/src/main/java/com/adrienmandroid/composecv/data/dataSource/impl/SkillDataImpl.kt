@@ -40,7 +40,15 @@ class SkillDataImpl : SkillData {
             Intrigué et curieux, j'ai évidemment travaillé sur ce projet personnel pour apprendre à l'utiliser.
             J'ai été un peu déçu.
             Compose est bien mieux que l'xml. Mais ne m'a pas décoiffé comme l'injection de dépendance et hilt l'ont fait.
-        """)
+        """),
+        Skill("English", 0.9f, """
+            With my multiple travels in American speaking countries (and the time spent browsing internet), I am fluent in English.
+            I have a noticeable french accent, but that gives it a charm doesn't it ?
+        """),
+        Skill("German", 0.5f, """
+            Ich habe Deutch in Schule gelernt. Im 2022, Ich möchte noch ein mal Deutch lernen.
+            Ich sprechen ein bissien deutch.
+        """.trimIndent())
         //Skill("Super skill3", 0.7f, "Texte skill 3"),
 
     )
