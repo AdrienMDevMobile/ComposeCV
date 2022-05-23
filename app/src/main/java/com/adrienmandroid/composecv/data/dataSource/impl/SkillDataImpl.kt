@@ -47,7 +47,7 @@ class SkillDataImpl : SkillData {
         """),
         Skill("German", 0.5f, """
             Ich habe Deutch in Schule gelernt. Im 2022, Ich möchte noch ein mal Deutch lernen.
-            Ich sprechen ein bissien deutch.
+            Ich spreche ein bissien deutch.
         """)
         //Skill("Super skill3", 0.7f, "Texte skill 3"),
 
