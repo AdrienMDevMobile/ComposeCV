@@ -11,6 +11,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -47,10 +48,7 @@ fun SkillBox(name: String, targetValue: Float, text: String) {
             Spacer(modifier = Modifier.height(10.dp))
 
             Button(
-                modifier = Modifier
-                    .size(40.dp, 20.dp)
-                    .align(CenterHorizontally),
-                contentPadding = PaddingValues(0.dp),
+                modifier = Modifier.size(40.dp, 20.dp).align(CenterHorizontally), contentPadding = PaddingValues(0.dp),
                 colors = buttonColors(backgroundColor = MaterialTheme.colors.primary),
                 onClick = {
                     isTextVisible.value = when (isTextVisible.value) {
@@ -71,13 +69,13 @@ fun ShowMore(isVisible: LiveData<Boolean>) {
 
     if (!visible) {
         Image(
-            painter = painterResource(id = R.drawable.ic_skill_arrow_down),
+            painter = painterResource(id = R.drawable.ic_skill_arrow_right),
             contentDescription = "Show more",
             modifier = Modifier.size(20.dp)
         )
     } else {
         Image(
-            painter = painterResource(id = R.drawable.ic_skill_arrow_up),
+            painter = painterResource(id = R.drawable.ic_skill_arrow_down),
             contentDescription = "Show more",
             modifier = Modifier.size(20.dp)
         )
