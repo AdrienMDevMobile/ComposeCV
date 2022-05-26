@@ -4,6 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -17,9 +18,40 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.R
 import com.adrienmandroid.composecv.data.ExpDates
+import com.adrienmandroid.composecv.data.Experience
 import com.adrienmandroid.composecv.data.Link
 import com.adrienmandroid.composecv.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.ui.theme.onSurfaceTitle
+
+
+@Composable
+fun ExperienceCard(experience: Experience) {
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .clip(RoundedCornerShape(25.dp))
+            .padding(10.dp),
+        elevation = 5.dp,
+        backgroundColor = MaterialTheme.colors.background
+    )
+    {
+        Column(modifier = Modifier.fillMaxWidth()) {
+            ExperienceHeader(experience.logo, experience.name)
+            ExpAdditionalInfo(experience.ExpDates, experience.link)
+            experience.informations.forEach { information ->
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .background(MaterialTheme.colors.background)
+                ) {
+                    ExperienceInfoListItem(information)
+                }
+            }
+        }
+
+
+    }
+}
 
 @Composable
 fun ExperienceHeader(logo: Int, name: String) {
@@ -53,9 +85,11 @@ fun ExperienceHeader(logo: Int, name: String) {
 
 @Composable
 fun ExpAdditionalInfo(dates: ExpDates, link: Link?) {
-    Row(modifier = Modifier
-        .fillMaxWidth()
-        .background(MaterialTheme.colors.background)) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(MaterialTheme.colors.background)
+    ) {
         Text(text = dates.begin.toMonthString(), fontWeight = FontWeight.Bold)
         Text(text = dates.end.toMonthString(), fontWeight = FontWeight.Bold)
         if (link != null) {

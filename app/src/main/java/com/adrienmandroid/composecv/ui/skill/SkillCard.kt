@@ -1,17 +1,16 @@
 package com.adrienmandroid.composecv.ui.skill
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults.buttonColors
+import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -22,16 +21,17 @@ import androidx.lifecycle.MutableLiveData
 import com.adrienmandroid.composecv.R
 
 @Composable
-fun SkillBox(name: String, targetValue: Float, text: String) {
+fun SkillCard(name: String, targetValue: Float, text: String) {
 
     val isTextVisible = MutableLiveData(false)
-    Box(
+    Card(
         modifier = Modifier
             .fillMaxWidth()
             .clip(
                 RoundedCornerShape(25.dp)
             )
-            .background(color = MaterialTheme.colors.background)
+            .padding(10.dp, 10.dp), backgroundColor = MaterialTheme.colors.background,
+        elevation = 5.dp
     ) {
         Column(
             modifier = Modifier
@@ -48,7 +48,10 @@ fun SkillBox(name: String, targetValue: Float, text: String) {
             Spacer(modifier = Modifier.height(10.dp))
 
             Button(
-                modifier = Modifier.size(40.dp, 20.dp).align(CenterHorizontally), contentPadding = PaddingValues(0.dp),
+                modifier = Modifier
+                    .size(40.dp, 20.dp)
+                    .align(CenterHorizontally),
+                contentPadding = PaddingValues(0.dp),
                 colors = buttonColors(backgroundColor = MaterialTheme.colors.primary),
                 onClick = {
                     isTextVisible.value = when (isTextVisible.value) {

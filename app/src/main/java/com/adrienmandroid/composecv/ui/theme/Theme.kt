@@ -41,8 +41,5 @@ fun ComposeCVTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composa
 val Colors.border: Color
     get() = if (isLight) shadowBrown else shadowBrown
 
-val Colors.composableBackground: Color
-    get() = if (isLight) lightGray else lightGray
-
 val Colors.onSurfaceTitle: Color
     get() = if (isLight) white else white
