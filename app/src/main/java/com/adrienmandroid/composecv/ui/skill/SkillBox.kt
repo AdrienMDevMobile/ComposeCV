@@ -11,7 +11,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
-import androidx.compose.ui.Alignment
+import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
@@ -37,29 +37,30 @@ fun SkillBox(name: String, targetValue: Float, text: String) {
                 .fillMaxWidth()
                 .padding(10.dp)
         ) {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(text = name, style = MaterialTheme.typography.h6)
-                Spacer(modifier = Modifier.width(10.dp))
-                Button(
-                    modifier = Modifier.size(40.dp, 20.dp), contentPadding = PaddingValues(0.dp),
-                    colors = buttonColors(backgroundColor = MaterialTheme.colors.primary),
-                    onClick = {
-                        isTextVisible.value = when (isTextVisible.value) {
-                            true -> false
-                            else -> true
-                        }
-                    }) {
-                    ShowMore(isVisible = isTextVisible)
-                }
-            }
+
+            Text(text = name, style = MaterialTheme.typography.h6)
+            Spacer(modifier = Modifier.width(10.dp))
+
             Spacer(modifier = Modifier.height(10.dp))
             SkillLinearProgressIndicator(targetValue = targetValue)
             SkillText(isTextVisible, text)
             Spacer(modifier = Modifier.height(10.dp))
+
+            Button(
+                modifier = Modifier
+                    .size(40.dp, 20.dp)
+                    .align(CenterHorizontally),
+                contentPadding = PaddingValues(0.dp),
+                colors = buttonColors(backgroundColor = MaterialTheme.colors.primary),
+                onClick = {
+                    isTextVisible.value = when (isTextVisible.value) {
+                        true -> false
+                        else -> true
+                    }
+                }) {
+                ShowMore(isVisible = isTextVisible)
+            }
+
         }
     }
 }
@@ -70,13 +71,13 @@ fun ShowMore(isVisible: LiveData<Boolean>) {
 
     if (!visible) {
         Image(
-            painter = painterResource(id = R.drawable.ic_skill_arrow_right),
+            painter = painterResource(id = R.drawable.ic_skill_arrow_down),
             contentDescription = "Show more",
             modifier = Modifier.size(20.dp)
         )
     } else {
         Image(
-            painter = painterResource(id = R.drawable.ic_skill_arrow_down),
+            painter = painterResource(id = R.drawable.ic_skill_arrow_up),
             contentDescription = "Show more",
             modifier = Modifier.size(20.dp)
         )
