@@ -72,13 +72,13 @@ fun ShowMore(isVisible: LiveData<Boolean>) {
 
     if (!visible) {
         Image(
-            painter = painterResource(id = R.drawable.ic_skill_arrow_right),
+            painter = painterResource(id = R.drawable.ic_skill_arrow_down),
             contentDescription = "Show more",
             modifier = Modifier.size(20.dp)
         )
     } else {
         Image(
-            painter = painterResource(id = R.drawable.ic_skill_arrow_down),
+            painter = painterResource(id = R.drawable.ic_skill_arrow_up),
             contentDescription = "Show more",
             modifier = Modifier.size(20.dp)
         )
