@@ -19,7 +19,7 @@ object BottomNavGraph {
 
     val WelcomeBottomNav = BottomNavElement("welcome", null, R.drawable.home)
     val ExpBottomNav = BottomNavElement("experience", "EXP.",R.drawable.experience)
-    val SkillBottomNav = BottomNavElement("skill", "Skill", R.drawable.skill)
+    val SkillBottomNav = BottomNavElement("skill", "Skill", R.drawable.ic_skill2)
 
     val array = arrayOf(WelcomeBottomNav, ExpBottomNav, SkillBottomNav)
 
