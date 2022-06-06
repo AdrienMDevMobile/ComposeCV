@@ -10,19 +10,27 @@ class ExperienceDataImpl : ExperienceData {
     override fun getExperiences(): List<Experience> = listOf(
         Experience(
             name = "Ingénieur développement Android",
-            logo = R.drawable.home,
+            logo = R.drawable.ic_exp_astek,
             ExpDates = ExpDates(begin = Date(1631052000000), end = Date()),
-            informations = listOf("Info3", "Info4", "Info5")
+            informations = listOf(
+                "Développement Android",
+                "Utilisation de Git en équipe",
+                "Travail en équipe avec iOS et le back end",
+                "Support, monitoring et analyses"
+            )
         ),
         Experience(
             name = "Projet personnel Jetpack compose",
-            logo = R.drawable.home,
+            logo = R.drawable.ic_launcher,
             ExpDates = ExpDates(begin = Date(1645052400000), end = Date()),
-            informations = listOf("Jetpack compose")
+            informations = listOf(
+                "Jetpack compose",
+                "Plurals"
+            )
         ),
         Experience(
             name = "Projet personnel Animateurs FDC",
-            logo = R.drawable.home,
+            logo = R.drawable.ic_exp_fresque,
             ExpDates = ExpDates(begin = Date(1593554400000), end = Date(1641596400000)),
             informations = listOf(
                 "Projet Android avec Kotlin.",
@@ -36,7 +44,7 @@ class ExperienceDataImpl : ExperienceData {
         ),
         Experience(
             name = "Ingénieur Développeur Peoplesoft",
-            logo = R.drawable.home,
+            logo = R.drawable.ic_exp_sh,
             ExpDates = ExpDates(begin = Date(1572562800000), end = Date(1590962400000)),
             informations = listOf(
                 "Développement et mises à jour de pages du site de mobilité interne du client.",
@@ -48,31 +56,13 @@ class ExperienceDataImpl : ExperienceData {
         ),
         Experience(
             name = "Développeur Peoplesoft en alternance",
-            logo = R.drawable.home,
+            logo = R.drawable.ic_exp_natixis,
             ExpDates = ExpDates(begin = Date(1472680800000), end = Date(1559340000000)),
             informations = listOf(
                 "Développement en autonomie et en équipe.",
                 "Analyse des besoins utilisateurs en prenant en compte obligations et contraintes.",
                 "Écriture des Tests d'essai."
             )
-        ),
-        Experience(
-            name = "S&H",
-            logo = R.drawable.home,
-            ExpDates = ExpDates(begin = Date(), end = Date()),
-            informations = listOf("Info3", "Info4", "Info8")
-        ),
-        Experience(
-            name = "S&H",
-            logo = R.drawable.home,
-            ExpDates = ExpDates(begin = Date(), end = Date()),
-            informations = listOf("Info3", "Info4", "Info9")
-        ),
-        Experience(
-            name = "S&H",
-            logo = R.drawable.home,
-            ExpDates = ExpDates(begin = Date(), end = Date()),
-            informations = listOf("Info3", "Info4", "Info10")
         )
     )
 }

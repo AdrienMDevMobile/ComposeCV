@@ -59,7 +59,7 @@ fun ExperienceHeader(logo: Int, name: String) {
             Image(
                 painter = painterResource(logo),
                 contentDescription = name,
-                modifier = Modifier.height(40.dp)
+                modifier = Modifier.size(50.dp).padding(expHorizontalSpacing, 0.dp)
             )
             Spacer(modifier = Modifier.width(expHorizontalSpacing))
             Text(
