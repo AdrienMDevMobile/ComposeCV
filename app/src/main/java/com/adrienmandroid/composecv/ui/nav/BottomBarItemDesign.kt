@@ -1,10 +1,14 @@
 package com.adrienmandroid.composerandom.Nav
 
 import android.content.res.Configuration
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.RowScope
-import androidx.compose.material.*
+import androidx.compose.foundation.layout.defaultMinSize
+import androidx.compose.foundation.layout.size
+import androidx.compose.material.BottomNavigationItem
+import androidx.compose.material.Icon
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
@@ -14,7 +18,6 @@ import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import com.adrienmandroid.composecv.R
 import com.adrienmandroid.composecv.data.BottomNavElement
 import com.adrienmandroid.composecv.data.dataSource.BottomNavGraph
 import com.adrienmandroid.composecv.ui.theme.ComposeCVTheme
@@ -26,16 +29,19 @@ fun RowScope.BottomBarItemDesign(
     currentDestination: NavDestination?,
     navController: NavHostController
 ) {
-    BottomNavigationItem(label = if(element.name != null){ { Text(text = element.name) }} else null,
+    BottomNavigationItem(
+        //label = if(element.name != null){ { Text(text = element.name) }} else null,
         icon = {
             Icon(
                 painter = painterResource(id = element.image),
-                contentDescription = element.name
+                contentDescription = element.name,
+                modifier = Modifier
+                    .size(30.dp)
+                    .defaultMinSize(30.dp)
             )
         },
         selected = currentDestination?.hierarchy?.any { it.route == element.route } == true,
-        onClick = { navController.navigate(element.route) },
-        modifier = Modifier.border(1.dp, MaterialTheme.colors.onBackground)
+        onClick = { navController.navigate(element.route) }
     )
 }
 

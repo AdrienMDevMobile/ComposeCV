@@ -24,13 +24,16 @@ import com.adrienmandroid.composecv.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.ui.theme.onSurfaceTitle
 
 
+val expHorizontalSpacing = 10.dp
+val expVerticalSpacing = 10.dp
+
 @Composable
 fun ExperienceCard(experience: Experience) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
             .clip(RoundedCornerShape(25.dp))
-            .padding(10.dp),
+            .padding(expHorizontalSpacing, expVerticalSpacing),
         elevation = 5.dp,
         backgroundColor = MaterialTheme.colors.background
     )
@@ -38,24 +41,14 @@ fun ExperienceCard(experience: Experience) {
         Column(modifier = Modifier.fillMaxWidth()) {
             ExperienceHeader(experience.logo, experience.name)
             ExpAdditionalInfo(experience.ExpDates, experience.link)
-            experience.informations.forEach { information ->
-                Box(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .background(MaterialTheme.colors.background)
-                ) {
-                    ExperienceInfoListItem(information)
-                }
-            }
+            ExperienceInfoListItem(experience.informations)
+            Spacer(modifier = Modifier.height(expVerticalSpacing))
         }
-
-
     }
 }
 
 @Composable
 fun ExperienceHeader(logo: Int, name: String) {
-
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -68,7 +61,7 @@ fun ExperienceHeader(logo: Int, name: String) {
                 contentDescription = name,
                 modifier = Modifier.height(40.dp)
             )
-            Spacer(modifier = Modifier.width(10.dp))
+            Spacer(modifier = Modifier.width(expHorizontalSpacing))
             Text(
                 modifier = Modifier.fillMaxWidth(),
                 text = name,
@@ -85,13 +78,17 @@ fun ExperienceHeader(logo: Int, name: String) {
 
 @Composable
 fun ExpAdditionalInfo(dates: ExpDates, link: Link?) {
-    Row(
+    Column(
         modifier = Modifier
             .fillMaxWidth()
             .background(MaterialTheme.colors.background)
+            .padding(expHorizontalSpacing, expVerticalSpacing)
     ) {
-        Text(text = dates.begin.toMonthString(), fontWeight = FontWeight.Bold)
-        Text(text = dates.end.toMonthString(), fontWeight = FontWeight.Bold)
+        Text(
+            text = dates.begin.toMonthString().plus(" - ").plus(dates.end.toMonthString()),
+            fontWeight = FontWeight.Bold
+        )
+        Text(text = dates.getDifferenceToString(), fontWeight = FontWeight.Bold)
         if (link != null) {
             Text(link.text)
         }
@@ -99,8 +96,17 @@ fun ExpAdditionalInfo(dates: ExpDates, link: Link?) {
 }
 
 @Composable
-fun ExperienceInfoListItem(information: String) {
-    Text(information)
+fun ExperienceInfoListItem(informations: List<String>) {
+    informations.forEach { information ->
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(MaterialTheme.colors.background)
+                .padding(expHorizontalSpacing, 0.dp)
+        ) {
+            Text(information)
+        }
+    }
 }
 
 @Preview

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ComposeCV</string>
+    <string name = "years_and_months">%1$d années, %1$d mois</string>
+    <string name="years">%1$d années</string>
+    <string name="month">%1$d mois</string>
+    <string name="exp_less_than_month">Moins d\'un mois</string>
 </resources>
