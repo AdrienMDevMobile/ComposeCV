@@ -1,6 +1,7 @@
 package com.adrienmandroid.composecv.ui.experience
 
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import com.adrienmandroid.composecv.R
 import com.adrienmandroid.composecv.data.ExpDates
@@ -21,11 +22,21 @@ fun ExpDates.getDifferenceToString(): String {
     val numberMonths = (diffDays % 365) / 31
 
     return if (numberYears > 0 && numberMonths > 0) {
-        stringResource(R.string.years_and_months, numberYears, numberMonths)
+        stringResource(R.string.years_and_months,
+            LocalContext.current.resources.getQuantityString(
+                R.plurals.years,
+                numberYears,
+                numberYears
+            ),
+            LocalContext.current.resources.getQuantityString(
+                R.plurals.months,
+                numberMonths,
+                numberMonths
+            ))
     } else if (numberYears > 0) {
-        stringResource(R.string.years, numberYears)
+        LocalContext.current.resources.getQuantityString(R.plurals.years, numberYears, numberYears)
     } else if (numberMonths > 0) {
-        stringResource(R.string.month, numberMonths)
+        LocalContext.current.resources.getQuantityString(R.plurals.months, numberMonths, numberMonths)
     } else {
         stringResource(R.string.exp_less_than_month)
     }
