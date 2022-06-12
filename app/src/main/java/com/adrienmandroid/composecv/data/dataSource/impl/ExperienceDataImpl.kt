@@ -10,8 +10,9 @@ class ExperienceDataImpl : ExperienceData {
     override fun getExperiences(): List<Experience> = listOf(
         Experience(
             name = "Ingénieur développement Android",
+            employer = "Astek",
             logo = R.drawable.ic_exp_astek,
-            ExpDates = ExpDates(begin = Date(1631052000000), end = Date()),
+            ExpDates = ExpDates(begin = Date(1631052000000), end = null),
             informations = listOf(
                 "Développement Android",
                 "Utilisation de Git en équipe",
@@ -22,7 +23,7 @@ class ExperienceDataImpl : ExperienceData {
         Experience(
             name = "Projet personnel Jetpack compose",
             logo = R.drawable.ic_launcher,
-            ExpDates = ExpDates(begin = Date(1645052400000), end = Date()),
+            ExpDates = ExpDates(begin = Date(1645052400000), end = null),
             informations = listOf(
                 "Jetpack compose",
                 "Plurals"
@@ -44,6 +45,7 @@ class ExperienceDataImpl : ExperienceData {
         ),
         Experience(
             name = "Ingénieur Développeur Peoplesoft",
+            employer = "S&H group",
             logo = R.drawable.ic_exp_sh,
             ExpDates = ExpDates(begin = Date(1572562800000), end = Date(1590962400000)),
             informations = listOf(
@@ -56,6 +58,7 @@ class ExperienceDataImpl : ExperienceData {
         ),
         Experience(
             name = "Développeur Peoplesoft en alternance",
+            employer = "Natixis",
             logo = R.drawable.ic_exp_natixis,
             ExpDates = ExpDates(begin = Date(1472680800000), end = Date(1559340000000)),
             informations = listOf(

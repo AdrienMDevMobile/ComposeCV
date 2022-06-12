@@ -40,7 +40,7 @@ fun ExperienceCard(experience: Experience) {
     {
         Column(modifier = Modifier.fillMaxWidth()) {
             ExperienceHeader(experience.logo, experience.name)
-            ExpAdditionalInfo(experience.ExpDates, experience.link)
+            ExpAdditionalInfo(experience.ExpDates, experience.employer, experience.link)
             ExperienceInfoListItem(experience.informations)
             Spacer(modifier = Modifier.height(expVerticalSpacing))
         }
@@ -77,7 +77,7 @@ fun ExperienceHeader(logo: Int, name: String) {
 }
 
 @Composable
-fun ExpAdditionalInfo(dates: ExpDates, link: Link?) {
+fun ExpAdditionalInfo(dates: ExpDates, employer : String?, link: Link?) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -89,6 +89,12 @@ fun ExpAdditionalInfo(dates: ExpDates, link: Link?) {
             fontWeight = FontWeight.Bold
         )
         Text(text = dates.getDifferenceToString(), fontWeight = FontWeight.Bold)
+        if(employer != null){
+            Text(
+                text = employer,
+                fontWeight = FontWeight.Bold
+            )
+        }
         if (link != null) {
             Text(link.text)
         }

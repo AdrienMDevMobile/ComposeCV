@@ -5,9 +5,10 @@
     <string name="age">%1$d ans</string>
     <string name="emailAdress">monMail@gmail.com</string>
     <string name="selfPresentation">Ingénieur en informatique,
-        j\'ai développé une passion et acquis une véritable expérience dans le développement Android au travers de nombreux projets professionnels et personnels.\n
-        Très curieux, je ne cesse d\'enrichir mes compétences en développement Android.
-         C\'est cette curiosité et envie d\'apprendre qui m\'ont motivé à développer cette application avec nouvel outil de Google : Jetpack compose.
+        j\'ai développé une <b>passion</b> et acquis une véritable <b>expérience</b> dans le développement <b>Android</b> au travers de <b>nombreux projets</b>
+        professionnels et personnels.\n
+        Très <b>curieux</b>, je ne cesse d\'enrichir mes compétences en développement Android.
+        C\'est cette curiosité et envie d\'apprendre qui m\'ont motivé à développer cette application avec nouvel outil de Google : <b>Jetpack compose</b>.
     </string>
     <string name="hashtag">Ajouter ici mes Hashtags. Android. Kotlin. Growth mindset. Créativité.</string>
     <string name="adress">Strasbourg</string>

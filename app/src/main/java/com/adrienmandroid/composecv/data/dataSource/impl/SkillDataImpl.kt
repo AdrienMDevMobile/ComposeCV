@@ -18,8 +18,8 @@ class SkillDataImpl : SkillData {
             Avec ce langage, y a toujours quelque chose à apprendre pour optimiser son code. En efficacité et en lisibilité.    
         """.trimIndent()),
         Skill("Structure MVVM", 0.7f, """
-            Une des difficulté les plus redoutées dans l'entré du monde du travail est de travailler sur des projets déjà existants et incommensurément complexes.
-            Les structures de développements aident à soulager cette diffulté.
+            Une des difficultés les plus redoutées dans l'entrée du monde du travail est de travailler sur des projets déjà existants et incommensurément complexes.
+            Les structures de développements aident à soulager cette difficulté.
             C'est pour cela que je me tiens au courant des dernières évolutions et me questionne toujours pour optimiser et adapter l'exisstant.
         """.trimIndent()),
         Skill("Test Driven Development", 0.5f, """
@@ -29,25 +29,25 @@ class SkillDataImpl : SkillData {
         """.trimIndent()),
         Skill("Hilt", 0.7f, """
             Une révolution du développement que j'adore.
-            L'injection de dépendance rend le code beaucoups plus maintenable, mais il y a bien un endroit où cela pique : quand ces dépendances doivent être injectées.
+            L'injection de dépendances rend le code beaucoup plus maintenable, mais il y a bien un endroit où cela pique : quand ces dépendances doivent être injectées.
             Avec Hilt pas de soucis, ces injections sont gérées de façon très lisible.
             """.trimIndent()),
         Skill("Jetpack UI", 0.8f, """
             Constraint layout, Navigation drawers, Tabs, Recycler views.
-            Tout cela permet d'optimser le design, et rendre une application qui respecte les demandes de la Direction Artistique au pixel prêt.
+            Tout cela permet d'optimser le design, et rendre une application qui respecte les demandes de la Direction Artistique au pixel près.
         """.trimIndent()),
         Skill("Jetpack compose", 0.7f, """
             Le dernier bébé de Google.
-            Intrigué et curieux, j'ai évidemment choisit de faire ce projet personnel avec Compose pour apprendre à l'utiliser.
+            Intrigué et curieux, j'ai évidemment choisi de faire ce projet personnel avec Compose pour apprendre à l'utiliser.
             J'ai été un peu déçu.
             Compose est bien mieux que l'xml. Mais ne m'a pas décoiffé comme l'injection de dépendance et Hilt l'ont fait.
         """.trimIndent()),
-        Skill("English", 0.9f, """
+        Skill("Anglais", 0.9f, """
             With my multiple travels in American speaking countries (and the time spent browsing internet), I am fluent in English.
-            I have a noticeable french accent, but that gives it a charm doesn't it ?
+            I have a slight French accent, but that gives it a charm doesn't it ?
         """.trimIndent()),
-        Skill("German", 0.5f, """
-            Ich habe Deutch in Schule gelernt. Im 2022, Ich möchte noch ein mal Deutch lernen.
+        Skill("Allemand", 0.5f, """
+            Ich habe Deutch in der Schule gelernt. 2022 möchte ich wieder Deutsch lernen.
             Ich spreche ein bissien deutch.
         """.trimIndent())
         //Skill("Super skill3", 0.7f, "Texte skill 3"),

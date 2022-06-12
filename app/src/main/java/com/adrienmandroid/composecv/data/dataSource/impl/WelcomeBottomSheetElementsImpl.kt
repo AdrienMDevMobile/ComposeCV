@@ -18,7 +18,7 @@ class WelcomeBottomSheetElementsImpl : WelcomeBottomSheetElements {
             TextDraw(iconId = R.drawable.linkedin, id = R.string.linkedIn),
             QuoteTextDraw(id = R.string.selfPresentation),
             ImageDraw(R.drawable.auboulotavelo, "Au boult à velo"),
-            KeywordsDraw(arrayOf("Android", "Kotlin", "Jetpack compose", "Growth mindset", "Creativité"))
+            KeywordsDraw(arrayOf("Android", "Kotlin", "Jetpack compose", "Growth mindset", "Créativité"))
         )
     }
 }
