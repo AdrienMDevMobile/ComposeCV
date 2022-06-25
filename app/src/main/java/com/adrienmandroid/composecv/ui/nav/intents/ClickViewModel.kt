@@ -5,9 +5,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class ClickViewModel : ViewModel() {
-    val _webUrl = MutableLiveData<String>()
+    private val _webUrl = MutableLiveData<String>()
     val webUrl: LiveData<String>
         get() = _webUrl
+
+    private val _mailAdress = MutableLiveData<String>()
+    val mailAdress: LiveData<String>
+        get() = _mailAdress
 
     fun onWebClick(address: String) {
         _webUrl.postValue(address)
@@ -15,5 +19,13 @@ class ClickViewModel : ViewModel() {
 
     fun clearWebIntent() {
         _webUrl.postValue(null)
+    }
+
+    fun onMailClick(address: String) {
+        _mailAdress.postValue(address)
+    }
+
+    fun clearMailIntent() {
+        _mailAdress.postValue(null)
     }
 }

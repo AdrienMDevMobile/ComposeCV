@@ -26,6 +26,7 @@ import com.adrienmandroid.composecv.ui.welcome.BottomsheetBody
 import com.adrienmandroid.composecv.ui.welcome.BottomsheetHeader
 import com.adrienmandroid.composecv.ui.welcome.SimpleDraw
 
+
 @ExperimentalMaterialApi
 @Composable
 fun WelcomeFragment(
@@ -41,6 +42,17 @@ fun WelcomeFragment(
             null
         )
         clickViewModel.clearWebIntent()
+    }
+
+    val mailEvent by clickViewModel.mailAdress.observeAsState()
+    if (mailEvent != null) {
+        ContextCompat.startActivity(
+            LocalContext.current,
+            Intent(Intent.ACTION_VIEW, Uri.parse("mailto:$mailEvent")),
+            null
+        )
+
+        clickViewModel.clearMailIntent()
     }
 
     val bottomSheetScaffoldState = rememberBottomSheetScaffoldState(
