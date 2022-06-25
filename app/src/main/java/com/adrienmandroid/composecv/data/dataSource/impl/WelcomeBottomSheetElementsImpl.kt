@@ -1,5 +1,8 @@
 package com.adrienmandroid.composecv.data.dataSource.impl
 
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.sp
 import com.adrienmandroid.composecv.R
 import com.adrienmandroid.composecv.data.dataSource.WelcomeBottomSheetElements
 import com.adrienmandroid.composecv.ui.nav.intents.MailClickable
@@ -32,6 +35,10 @@ class WelcomeBottomSheetElementsImpl : WelcomeBottomSheetElements {
             ),
             QuoteTextDraw(id = R.string.selfPresentation),
             ImageDraw(R.drawable.auboulotavelo, "Au boult à velo"),
+            TextDraw(
+                id = R.string.Welcome_Keywords,
+                style = TextStyle(fontWeight = FontWeight.Bold, fontSize = 20.sp)
+            ),
             KeywordsDraw(
                 arrayOf(
                     "Android",

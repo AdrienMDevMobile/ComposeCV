@@ -31,7 +31,7 @@ class KeywordsDraw(private val keywords: Array<String>) : SimpleDraw {
 fun Keyword(keyword: String) {
     val shape = CircleShape
     Text(
-        text = keyword,
+        text = "#$keyword",
         style = TextStyle(
             color = MaterialTheme.colors.onSurface,
             fontWeight = FontWeight.Bold,

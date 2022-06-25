@@ -11,4 +11,6 @@
     </plurals>
     <string name="exp_less_than_month">Moins d\'un mois</string>
     <string name="exp_up_to_today">A ce jour</string>
+
+    <string name="Welcome_Keywords">Mots clés</string>
 </resources>
