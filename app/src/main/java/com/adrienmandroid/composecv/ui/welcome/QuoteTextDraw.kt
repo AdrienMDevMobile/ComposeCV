@@ -17,12 +17,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.R
+import com.adrienmandroid.composecv.ui.nav.intents.ClickViewModel
 import com.adrienmandroid.composecv.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.ui.theme.border
 
 class QuoteTextDraw(private val id: Int, private val args: Array<Any> = emptyArray()) : SimpleDraw {
     @Composable
-    override fun Draw() {
+    override fun Draw(clickViewModel: ClickViewModel) {
         val shape = RectangleShape
         Text(
             text = stringResource(id, *args),
@@ -47,7 +48,7 @@ fun PreviewQuoteTextDraw(){
         Box(modifier = Modifier.background(Color.Blue)) {
             Row(){
                 Spacer(modifier = Modifier.width(20.dp))
-                quoteTextDraw.Draw()
+                quoteTextDraw.Draw(ClickViewModel())
             }
         }
     }
