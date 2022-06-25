@@ -10,6 +10,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.ui.nav.intents.ClickViewModel
 import com.adrienmandroid.composecv.ui.nav.intents.IClickable
@@ -43,11 +44,12 @@ class TextDraw(
 
     @Composable
     private fun DrawClickable(clickable: IClickable, clickViewModel: ClickViewModel) {
+
         ClickableText(
             text = with(AnnotatedString.Builder(stringResource(id, *args))) {
                 toAnnotatedString()
             },
-            style = style,
+            style = style.copy(textDecoration = TextDecoration.Underline),
             onClick = { clickable.onClick(clickViewModel) }
         )
     }
