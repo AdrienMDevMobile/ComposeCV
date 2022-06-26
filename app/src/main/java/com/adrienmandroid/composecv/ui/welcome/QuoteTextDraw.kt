@@ -12,11 +12,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.R
+import com.adrienmandroid.composecv.ui.elements.toAnnotatedString
 import com.adrienmandroid.composecv.ui.nav.intents.ClickViewModel
 import com.adrienmandroid.composecv.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.ui.theme.border
@@ -25,12 +25,20 @@ class QuoteTextDraw(private val id: Int, private val args: Array<Any> = emptyArr
     @Composable
     override fun Draw(clickViewModel: ClickViewModel) {
         val shape = RectangleShape
+
+        val text = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            Html.fromHtml(stringResource(id), Html.FROM_HTML_MODE_LEGACY)
+        } else {
+            @Suppress("DEPRECATION")
+            Html.fromHtml(stringResource(id))
+        }
+
         Text(
-            text = stringResource(id, *args),
+            text = text.toAnnotatedString(),
             style = TextStyle(
                 color = MaterialTheme.colors.onSurface,
-                fontWeight = FontWeight.Bold,
-                textAlign = TextAlign.Center),
+                textAlign = TextAlign.Center
+            ),
             modifier = Modifier
                 .fillMaxWidth()
                 .border(2.dp, MaterialTheme.colors.border, shape)
@@ -42,11 +50,11 @@ class QuoteTextDraw(private val id: Int, private val args: Array<Any> = emptyArr
 
 @Composable
 @Preview
-fun PreviewQuoteTextDraw(){
+fun PreviewQuoteTextDraw() {
     val quoteTextDraw = QuoteTextDraw(R.string.selfPresentation)
     ComposeCVTheme {
         Box(modifier = Modifier.background(Color.Blue)) {
-            Row(){
+            Row() {
                 Spacer(modifier = Modifier.width(20.dp))
                 quoteTextDraw.Draw(ClickViewModel())
             }
