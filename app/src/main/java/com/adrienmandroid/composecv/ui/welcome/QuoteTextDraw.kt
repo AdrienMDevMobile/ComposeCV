@@ -31,10 +31,10 @@ class QuoteTextDraw(private val id: Int, private val args: Array<Any> = emptyArr
         } else {
             @Suppress("DEPRECATION")
             Html.fromHtml(stringResource(id))
-        }
+        }.toAnnotatedString()
 
         Text(
-            text = text.toAnnotatedString(),
+            text = text,
             style = TextStyle(
                 color = MaterialTheme.colors.onSurface,
                 textAlign = TextAlign.Center

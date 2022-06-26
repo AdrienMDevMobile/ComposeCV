@@ -1,5 +1,6 @@
 package com.adrienmandroid.composecv.ui.skill
 
+import android.text.Html
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -15,10 +16,12 @@ import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.adrienmandroid.composecv.R
+import com.adrienmandroid.composecv.ui.elements.toAnnotatedString
 
 @Composable
 fun SkillCard(name: String, targetValue: Float, text: String) {
@@ -88,10 +91,17 @@ fun ShowMore(isVisible: LiveData<Boolean>) {
 
 @Composable
 fun SkillText(isVisible: LiveData<Boolean>, text: String) {
+    val textAnnotated = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+        Html.fromHtml(text, Html.FROM_HTML_MODE_LEGACY)
+    } else {
+        @Suppress("DEPRECATION")
+        Html.fromHtml(text)
+    }.toAnnotatedString()
+
     val visible by isVisible.observeAsState(false)
     //https://stackoverflow.com/questions/66560404/jetpack-compose-unresolved-reference-observeasstate
     if (visible) {
         Spacer(modifier = Modifier.height(10.dp))
-        Text(text = text)
+        Text(text = textAnnotated)
     }
 }
