@@ -20,6 +20,7 @@ import com.adrienmandroid.composecv.R
 import com.adrienmandroid.composecv.data.ExpDates
 import com.adrienmandroid.composecv.data.Experience
 import com.adrienmandroid.composecv.data.Link
+import com.adrienmandroid.composecv.ui.elements.toAnnotatedString
 import com.adrienmandroid.composecv.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.ui.theme.onSurfaceTitle
 
@@ -59,7 +60,9 @@ fun ExperienceHeader(logo: Int, name: String) {
             Image(
                 painter = painterResource(logo),
                 contentDescription = name,
-                modifier = Modifier.size(50.dp).padding(expHorizontalSpacing, 0.dp)
+                modifier = Modifier
+                    .size(50.dp)
+                    .padding(expHorizontalSpacing, 0.dp)
             )
             Spacer(modifier = Modifier.width(expHorizontalSpacing))
             Text(
@@ -77,7 +80,7 @@ fun ExperienceHeader(logo: Int, name: String) {
 }
 
 @Composable
-fun ExpAdditionalInfo(dates: ExpDates, employer : String?, link: Link?) {
+fun ExpAdditionalInfo(dates: ExpDates, employer: String?, link: Link?) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -89,7 +92,7 @@ fun ExpAdditionalInfo(dates: ExpDates, employer : String?, link: Link?) {
             fontWeight = FontWeight.Bold
         )
         Text(text = dates.getDifferenceToString(), fontWeight = FontWeight.Bold)
-        if(employer != null){
+        if (employer != null) {
             Text(
                 text = employer,
                 fontWeight = FontWeight.Bold
@@ -110,7 +113,7 @@ fun ExperienceInfoListItem(informations: List<String>) {
                 .background(MaterialTheme.colors.background)
                 .padding(expHorizontalSpacing, 0.dp)
         ) {
-            Text(information)
+            Text(information.toAnnotatedString())
         }
     }
 }

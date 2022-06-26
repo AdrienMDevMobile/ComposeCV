@@ -26,12 +26,7 @@ class QuoteTextDraw(private val id: Int, private val args: Array<Any> = emptyArr
     override fun Draw(clickViewModel: ClickViewModel) {
         val shape = RectangleShape
 
-        val text = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-            Html.fromHtml(stringResource(id), Html.FROM_HTML_MODE_LEGACY)
-        } else {
-            @Suppress("DEPRECATION")
-            Html.fromHtml(stringResource(id))
-        }.toAnnotatedString()
+        val text = stringResource(id).toAnnotatedString()
 
         Text(
             text = text,

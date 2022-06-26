@@ -16,7 +16,10 @@ class ExperienceDataImpl : ExperienceData {
             informations = listOf(
                 "Développement Android",
                 "Utilisation de Git en équipe",
-                "Travail en équipe avec iOS et le back end",
+                "<b>Travail en équipe</b> avec iOS et le back end",
+                "<b>Spécifications et chiffrages</b> des futurs développements.",
+                "Respect du design donné par l'équipe DA, <b>au pixel prêt</b>",
+                "Application des règles et normes d'écritures. Personnalisée par les développeurs Séniors ou recommandés par Google.",
                 "Support, monitoring et analyses"
             )
         ),
@@ -25,8 +28,10 @@ class ExperienceDataImpl : ExperienceData {
             logo = R.drawable.ic_launcher,
             ExpDates = ExpDates(begin = Date(1645052400000), end = null),
             informations = listOf(
-                "Jetpack compose",
-                "Plurals"
+                "<b>Jetpack compose</b>",
+                "Plurals",
+                "Recherche sur la structure MVVM et recommandations Google",
+                "Construction du design en collaboration avec des designers"
             )
         ),
         Experience(
@@ -36,10 +41,10 @@ class ExperienceDataImpl : ExperienceData {
             informations = listOf(
                 "Projet Android avec Kotlin.",
                 "Réflexion avec d'autres Animateurs sur les fonctionnalités à développer.",
-                "Écriture des tests unitaires et fonctionnels. Junit4, Mockito, Espresso et UI automator.",
-                "Injection de dépendances (DI) : Hilt",
-                "Utilisation de l'architecture MVVM.",
-                "Recherche des meilleures bibliothèques pour les différentes fonctionnalités.",
+                "Écriture des <b>tests</b> unitaires et fonctionnels. <b>Junit4, Mockito, Espresso et UI automator</b>.",
+                "Injection de dépendances (DI) : <b>Hilt</b>",
+                "Utilisation de l'architecture <b>MVVM</b>.",
+                "<b>Recherche des meilleures bibliothèques</b> pour les différentes fonctionnalités.",
                 "Utilisation de Jetpack (test: Junit, Espresso. Threading. Fragment)"
             )
         ),
@@ -50,9 +55,9 @@ class ExperienceDataImpl : ExperienceData {
             ExpDates = ExpDates(begin = Date(1572562800000), end = Date(1590962400000)),
             informations = listOf(
                 "Développement et mises à jour de pages du site de mobilité interne du client.",
-                "Spécifications et chiffrages des futurs développements.",
-                "Commentaires pour la compréhension et maintenabilité du code.",
-                "Environnement technique : Peoplesoft, SQL.",
+                "<b>Spécifications et chiffrages</b> des futurs développements.",
+                "Commentaires pour la compréhension et <b>maintenabilité du code</b>.",
+                "Environnement technique : Peoplesoft, SQL.",
                 "Mise en place de nouveaux outils et gain de temps sur de nombreux process."
             )
         ),
@@ -63,7 +68,7 @@ class ExperienceDataImpl : ExperienceData {
             ExpDates = ExpDates(begin = Date(1472680800000), end = Date(1559340000000)),
             informations = listOf(
                 "Développement en autonomie et en équipe.",
-                "Analyse des besoins utilisateurs en prenant en compte obligations et contraintes.",
+                "<b>Analyse des besoins utilisateurs</b> en prenant en compte <b>obligations</b> et <b>contraintes</b>.",
                 "Écriture des Tests d'essai."
             )
         )

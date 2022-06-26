@@ -1,5 +1,7 @@
 package com.adrienmandroid.composecv.ui.welcome
 
+import androidx.annotation.DrawableRes
+import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.material.Icon
@@ -16,8 +18,8 @@ import com.adrienmandroid.composecv.ui.nav.intents.ClickViewModel
 import com.adrienmandroid.composecv.ui.nav.intents.IClickable
 
 class TextDraw(
-    private val iconId: Int? = null,
-    private val id: Int,
+    @DrawableRes private val iconId: Int? = null,
+    @StringRes private val id: Int,
     private val style: TextStyle = TextStyle(),
     private val args: Array<Any> = emptyArray(),
     private val clickable: IClickable? = null

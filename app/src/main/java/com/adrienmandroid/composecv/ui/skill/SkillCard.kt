@@ -91,12 +91,7 @@ fun ShowMore(isVisible: LiveData<Boolean>) {
 
 @Composable
 fun SkillText(isVisible: LiveData<Boolean>, text: String) {
-    val textAnnotated = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-        Html.fromHtml(text, Html.FROM_HTML_MODE_LEGACY)
-    } else {
-        @Suppress("DEPRECATION")
-        Html.fromHtml(text)
-    }.toAnnotatedString()
+    val textAnnotated = text.toAnnotatedString()
 
     val visible by isVisible.observeAsState(false)
     //https://stackoverflow.com/questions/66560404/jetpack-compose-unresolved-reference-observeasstate
