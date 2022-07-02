@@ -8,6 +8,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.adrienmandroid.composecv.R
+import com.adrienmandroid.composecv.data.Quote
+import com.adrienmandroid.composecv.ui.other.CardDraw
 import com.adrienmandroid.composecv.ui.theme.ComposeCVTheme
 
 @Composable
@@ -19,7 +22,10 @@ fun OtherFragment() {
         contentAlignment = Alignment.Center,
     )
     {
-
+        CardDraw(
+            quote = Quote(R.string.quoteMeditation, "Mark Twain", R.drawable.quote_mark_twain),
+            position = 1
+        )
     }
 
 }

@@ -43,3 +43,9 @@ val Colors.border: Color
 
 val Colors.onSurfaceTitle: Color
     get() = if (isLight) white else white
+
+val Colors.quoteBackground: Color
+    get() = if (isLight) black else black
+
+val Colors.onQuoteBackground: Color
+    get() = if (isLight) white else white
