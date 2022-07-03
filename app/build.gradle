@@ -87,4 +87,5 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout-compose:1.0.0-beta02"
     def accompanist_pager = "0.24.13-rc"
     implementation "com.google.accompanist:accompanist-pager:$accompanist_pager"
+    implementation "com.google.accompanist:accompanist-pager-indicators:0.24.11-rc"
 }
