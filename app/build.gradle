@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdk 32
 
     defaultConfig {
         applicationId "com.adrienmandroid.composecv"
         minSdk 21
-        targetSdk 31
+        targetSdk 32
         versionCode 1
         versionName "1.0"
 
@@ -85,4 +85,6 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-compose:1.0.0-alpha02"
     implementation 'ca.gosyer:accompanist-flowlayout:0.24.4'
     implementation "androidx.constraintlayout:constraintlayout-compose:1.0.0-beta02"
+    def accompanist_pager = "0.24.13-rc"
+    implementation "com.google.accompanist:accompanist-pager:$accompanist_pager"
 }
