@@ -4,14 +4,18 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
+import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.rotate
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
@@ -33,6 +37,7 @@ fun CardDraw(quote: Quote, position: Int) {
     val marginStart = 12.dp
     val marginEnd = 12.dp
     val marginBetween = 16.dp
+    val quotationMarkSize = 48.dp
 
     val textLeft = (position % 2 == 0)
 
@@ -51,8 +56,31 @@ fun CardDraw(quote: Quote, position: Int) {
         elevation = 5.dp
     ) {
         ConstraintLayout {
-            val (text, image, author) = createRefs()
+            val (text, image, author, quoteTop, quoteBottom) = createRefs()
 
+            Icon(
+                painter = painterResource(id = R.drawable.ic_quote),
+                contentDescription = "quote",
+                modifier = Modifier
+                    .rotate(180F)
+                    .size(quotationMarkSize)
+                    .constrainAs(quoteTop) {
+                        start.linkTo(text.start, margin = (-12).dp)
+                        bottom.linkTo(text.top, margin = (-28).dp)
+                    },
+                tint = Color.Gray
+            )
+            Icon(
+                painter = painterResource(id = R.drawable.ic_quote),
+                contentDescription = "quote",
+                modifier = Modifier
+                    .size(quotationMarkSize)
+                    .constrainAs(quoteBottom) {
+                        end.linkTo(text.end, margin = (-12).dp)
+                        top.linkTo(text.bottom, margin = (-28).dp)
+                    },
+                tint = Color.Gray
+            )
             Text(
                 text = stringResource(quote.text),
                 style = textStyle.copy(fontSize = 14.sp),
@@ -75,7 +103,7 @@ fun CardDraw(quote: Quote, position: Int) {
                 modifier = Modifier.constrainAs(author) {
                     top.linkTo(text.bottom)
                     bottom.linkTo(parent.bottom, margin = 16.dp)
-                    start.linkTo(text.start)
+                    end.linkTo(text.end)
                 }
             )
             Image(
@@ -95,7 +123,6 @@ fun CardDraw(quote: Quote, position: Int) {
                         height = Dimension.fillToConstraints
                     }
             )
-
         }
     }
 }
