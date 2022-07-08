@@ -20,10 +20,10 @@ import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.R
 import com.adrienmandroid.composecv.data.Dates
 import com.adrienmandroid.composecv.data.Study
-import com.adrienmandroid.composecv.ui.experience.expHorizontalSpacing
-import com.adrienmandroid.composecv.ui.experience.expVerticalSpacing
 import com.adrienmandroid.composecv.ui.experience.toMonthString
 import java.util.*
+
+val studyVerticalSpacing = 10.dp
 
 fun LazyListScope.studyList(studies: List<Study>) {
     item {
@@ -32,7 +32,7 @@ fun LazyListScope.studyList(studies: List<Study>) {
             contentPadding = PaddingValues(horizontal = 12.dp)
         ) {
             items(items = studies) {
-                StudyCard(it, modifier= Modifier.fillParentMaxWidth())
+                StudyCard(it, modifier = Modifier.fillParentMaxWidth())
             }
         }
     }
@@ -40,7 +40,7 @@ fun LazyListScope.studyList(studies: List<Study>) {
 
 @Composable
 fun StudyCard(study: Study, modifier: Modifier) {
-        Card(
+    Card(
         modifier = modifier
             .wrapContentSize()
             .height(150.dp)
@@ -59,20 +59,21 @@ fun StudyCard(study: Study, modifier: Modifier) {
             alignment = Alignment.CenterStart,
             alpha = 0.7f
         )
-        Column(modifier = Modifier
-            .fillMaxWidth()
-            .padding(20.dp, 40.dp)
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(20.dp, 40.dp)
         ) {
             Text(
                 modifier = Modifier.fillMaxWidth(),
                 text = stringResource(id = study.name)
             )
-            Spacer(modifier = Modifier.height(expVerticalSpacing))
+            Spacer(modifier = Modifier.height(studyVerticalSpacing))
             Text(
                 modifier = Modifier.fillMaxWidth(),
                 text = stringResource(id = study.diploma)
             )
-            Spacer(modifier = Modifier.height(expVerticalSpacing))
+            Spacer(modifier = Modifier.height(studyVerticalSpacing))
             Text(
                 modifier = Modifier.fillMaxWidth(),
                 text = study.studyDates.begin.toMonthString().plus(" - ")
