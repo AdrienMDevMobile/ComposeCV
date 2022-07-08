@@ -19,7 +19,7 @@ import com.adrienmandroid.composecv.ui.fragments.WelcomeFragment
 object BottomNavGraph {
 
     val WelcomeBottomNav = BottomNavElement("welcome", null, R.drawable.home)
-    val ExpBottomNav = BottomNavElement("experience", "EXP.",R.drawable.experience)
+    val ExpBottomNav = BottomNavElement("experience", "EXP.", R.drawable.experience)
     val SkillBottomNav = BottomNavElement("skill", "Skill", R.drawable.ic_skill2)
     val OtherBottomNav = BottomNavElement("other", "other", R.drawable.ic_other_fragment)
 
@@ -31,10 +31,12 @@ object BottomNavGraph {
 @ExperimentalMaterialApi
 @Composable
 fun BottomNavGraphHost(navController: NavHostController) {
-    NavHost(navController = navController,
-        startDestination = BottomNavGraph.array[0].route)
+    NavHost(
+        navController = navController,
+        startDestination = BottomNavGraph.array[0].route
+    )
     {
-        composable(route=BottomNavGraph.WelcomeBottomNav.route){
+        composable(route = BottomNavGraph.WelcomeBottomNav.route) {
             WelcomeFragment(WelcomeBottomSheetElementsImpl().listOfItemInBottomSheet())
         }
         composable(route = BottomNavGraph.ExpBottomNav.route) {

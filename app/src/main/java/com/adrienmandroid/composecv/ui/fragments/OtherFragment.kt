@@ -26,7 +26,6 @@ fun OtherFragment() {
         quoteCarousel(QuoteDataImpl())
         gratitudes()
     }
-
 }
 
 @Composable

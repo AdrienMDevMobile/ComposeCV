@@ -25,7 +25,5 @@ fun MainScreen() {
         Box(modifier = Modifier.padding(innerPadding)) {
             BottomNavGraphHost(navController = navController)
         }
-
     }
-
 }

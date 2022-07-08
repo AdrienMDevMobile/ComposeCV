@@ -45,7 +45,6 @@ fun RowScope.BottomBarItemDesign(
     )
 }
 
-
 @Preview(
     uiMode = Configuration.UI_MODE_NIGHT_YES,
     showBackground = true,

@@ -78,7 +78,7 @@ fun StudyCard(study: Study, modifier: Modifier) {
             Text(
                 modifier = Modifier.fillMaxWidth(),
                 text = study.studyDates.begin.toMonthString().plus(" - ")
-                        .plus(study.studyDates.end.toMonthString())
+                    .plus(study.studyDates.end.toMonthString())
             )
         }
     }

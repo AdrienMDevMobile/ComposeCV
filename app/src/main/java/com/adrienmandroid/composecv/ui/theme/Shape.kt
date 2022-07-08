@@ -11,4 +11,5 @@ val Shapes = Shapes(
     large = RoundedCornerShape(0.dp)
 )
 
-val roundedTopEndSquare = RoundedCornerShape(CornerSize(0), CornerSize(100), CornerSize(0), CornerSize(0))
+val roundedTopEndSquare =
+    RoundedCornerShape(CornerSize(0), CornerSize(100), CornerSize(0), CornerSize(0))

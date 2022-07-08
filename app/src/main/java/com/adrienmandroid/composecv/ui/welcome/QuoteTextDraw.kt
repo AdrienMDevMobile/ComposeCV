@@ -1,6 +1,5 @@
 package com.adrienmandroid.composecv.ui.welcome
 
-import android.text.Html
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*

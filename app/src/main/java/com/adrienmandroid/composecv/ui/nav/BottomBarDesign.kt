@@ -6,7 +6,6 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.navigation.NavDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
@@ -30,10 +29,7 @@ fun BottomBarDesign(
                 BottomBarItemDesign(element, currentDestination, navController)
             }
         }
-
-
     }
-
 }
 
 @Preview(
@@ -61,5 +57,4 @@ fun BottomBarPreview() {
         //MainElement("Formation", R.drawable.ic_android_black_24dp),
         //MainElement("Intérêts", R.drawable.ic_android_black_24dp))
     }
-
 }

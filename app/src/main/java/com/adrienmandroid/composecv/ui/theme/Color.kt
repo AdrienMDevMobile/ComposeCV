@@ -8,8 +8,6 @@ val shadowBrown = Color(0xFF8e031d)
 val lightBrown = Color(0xFFb65834)
 val veryLightBrown = Color(0xFFd67955)
 
-val lightGray = Color(0xFF999999)
-
 val white = Color.White
 val black = Color.Black
 

@@ -24,7 +24,9 @@ fun SkillLinearProgressIndicator(targetValue: Float) {
     SegmentedProgressIndicator(
         progress = animatedProgress,
         color = getSkillColor(targetValue),
-        modifier = Modifier.fillMaxWidth().clip(RoundedCornerShape(10.dp)),
+        modifier = Modifier
+            .fillMaxWidth()
+            .clip(RoundedCornerShape(10.dp)),
         progressHeight = 20.dp
     )
 
@@ -45,7 +47,6 @@ fun getSkillColor(targetValue: Float) = when {
     targetValue >= 0.6f -> colorSkillMedium
     else -> colorSkillLow
 }
-
 
 @Composable
 @Preview

@@ -1,12 +1,12 @@
 package com.adrienmandroid.composerandom
 
-import androidx.compose.material.*
+import androidx.compose.material.BottomNavigation
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.adrienmandroid.composecv.ui.nav.BottomBarDesign
 import com.adrienmandroid.composecv.data.BottomNavElement
+import com.adrienmandroid.composecv.ui.nav.BottomBarDesign
 
 
 //Calls the design of the bottom bar and handles the navigation.

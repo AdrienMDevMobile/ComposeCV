@@ -4,5 +4,5 @@ import com.adrienmandroid.composecv.data.Skill
 
 
 interface SkillData {
-    fun getSkills() : List<Skill>
+    fun getSkills(): List<Skill>
 }
