@@ -27,22 +27,25 @@ import java.util.*
 
 fun LazyListScope.studyList(studies: List<Study>) {
     item {
-        LazyRow(modifier = Modifier.fillMaxWidth()) {
+        LazyRow(
+            modifier = Modifier.fillMaxWidth(),
+            contentPadding = PaddingValues(horizontal = 12.dp)
+        ) {
             items(items = studies) {
-                StudyCard(it)
+                StudyCard(it, modifier= Modifier.fillParentMaxWidth())
             }
         }
     }
 }
 
 @Composable
-fun StudyCard(study: Study) {
-    Card(
-        modifier = Modifier
-            .fillMaxWidth()
+fun StudyCard(study: Study, modifier: Modifier) {
+        Card(
+        modifier = modifier
+            .wrapContentSize()
             .height(150.dp)
             .clip(RoundedCornerShape(25.dp))
-            .padding(expHorizontalSpacing, expVerticalSpacing),
+            .padding(10.dp, 10.dp),
         elevation = 5.dp,
         backgroundColor = MaterialTheme.colors.background,
     )
@@ -52,13 +55,13 @@ fun StudyCard(study: Study) {
             contentDescription = stringResource(id = study.name),
             modifier = Modifier
                 .fillMaxHeight()
-                .padding(expHorizontalSpacing, 0.dp),
+                .padding(10.dp, 15.dp),
             alignment = Alignment.CenterStart,
             alpha = 0.7f
         )
         Column(modifier = Modifier
             .fillMaxWidth()
-            .padding(20.dp)
+            .padding(20.dp, 40.dp)
         ) {
             Text(
                 modifier = Modifier.fillMaxWidth(),
@@ -84,12 +87,12 @@ fun StudyCard(study: Study) {
 fun PreviewStudyCard() {
     StudyCard(
         study = Study(
-            logo = R.drawable.image_brighton,
+            logo = R.drawable.image_ece,
             name = R.string.study_brighton,
             diploma = R.string.diploma_brighton,
             studyDates = Dates(
                 begin = Date(1593554400000), end = Date(1641596400000)
             )
-        )
+        ), modifier = Modifier
     )
 }
