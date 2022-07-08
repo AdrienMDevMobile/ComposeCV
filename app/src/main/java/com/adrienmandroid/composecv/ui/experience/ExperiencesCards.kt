@@ -17,7 +17,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.R
-import com.adrienmandroid.composecv.data.ExpDates
+import com.adrienmandroid.composecv.data.Dates
 import com.adrienmandroid.composecv.data.Experience
 import com.adrienmandroid.composecv.data.Link
 import com.adrienmandroid.composecv.ui.elements.toAnnotatedString
@@ -80,7 +80,7 @@ fun ExperienceHeader(logo: Int, name: String) {
 }
 
 @Composable
-fun ExpAdditionalInfo(dates: ExpDates, employer: String?, link: Link?) {
+fun ExpAdditionalInfo(dates: Dates, employer: String?, link: Link?) {
     Column(
         modifier = Modifier
             .fillMaxWidth()

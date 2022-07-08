@@ -5,6 +5,6 @@ class Experience(
     val employer : String? = null,
     val logo : Int,
     val link : Link? = null,
-    val ExpDates : ExpDates,
+    val ExpDates : Dates,
     val informations : List<String>
 )

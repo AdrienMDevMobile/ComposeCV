@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import com.adrienmandroid.composecv.R
-import com.adrienmandroid.composecv.data.ExpDates
+import com.adrienmandroid.composecv.data.Dates
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -21,7 +21,7 @@ fun Date?.toDayString(): String =
 fun String.toMyLong(): Long? = SimpleDateFormat("dd MMMM yyyy").parse(this)?.time
 
 @Composable
-fun ExpDates.getDifferenceToString(): String {
+fun Dates.getDifferenceToString(): String {
     val endDate = end ?: Date()
     val diff = kotlin.math.abs(endDate.time - begin.time)
     val diffDays = (diff / (24 * 60 * 60 * 1000)).toInt()

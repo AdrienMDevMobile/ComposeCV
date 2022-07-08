@@ -1,7 +1,7 @@
 package com.adrienmandroid.composecv.data.dataSource.impl
 
 import com.adrienmandroid.composecv.R
-import com.adrienmandroid.composecv.data.ExpDates
+import com.adrienmandroid.composecv.data.Dates
 import com.adrienmandroid.composecv.data.Experience
 import com.adrienmandroid.composecv.data.dataSource.ExperienceData
 import java.util.*
@@ -12,7 +12,7 @@ class ExperienceDataImpl : ExperienceData {
             name = "Ingénieur développement Android",
             employer = "Astek",
             logo = R.drawable.ic_exp_astek,
-            ExpDates = ExpDates(begin = Date(1631052000000), end = null),
+            ExpDates = Dates(begin = Date(1631052000000), end = null),
             informations = listOf(
                 "Développement Android",
                 "Utilisation de Git en équipe",
@@ -26,7 +26,7 @@ class ExperienceDataImpl : ExperienceData {
         Experience(
             name = "Projet personnel Jetpack compose",
             logo = R.drawable.ic_launcher,
-            ExpDates = ExpDates(begin = Date(1645052400000), end = null),
+            ExpDates = Dates(begin = Date(1645052400000), end = null),
             informations = listOf(
                 "<b>Jetpack compose</b>",
                 "Plurals",
@@ -37,7 +37,7 @@ class ExperienceDataImpl : ExperienceData {
         Experience(
             name = "Projet personnel Animateurs FDC",
             logo = R.drawable.ic_exp_fresque,
-            ExpDates = ExpDates(begin = Date(1593554400000), end = Date(1641596400000)),
+            ExpDates = Dates(begin = Date(1593554400000), end = Date(1641596400000)),
             informations = listOf(
                 "Projet Android avec Kotlin.",
                 "Réflexion avec d'autres Animateurs sur les fonctionnalités à développer.",
@@ -52,7 +52,7 @@ class ExperienceDataImpl : ExperienceData {
             name = "Ingénieur Développeur Peoplesoft",
             employer = "S&H group",
             logo = R.drawable.ic_exp_sh,
-            ExpDates = ExpDates(begin = Date(1572562800000), end = Date(1590962400000)),
+            ExpDates = Dates(begin = Date(1572562800000), end = Date(1590962400000)),
             informations = listOf(
                 "Développement et mises à jour de pages du site de mobilité interne du client.",
                 "<b>Spécifications et chiffrages</b> des futurs développements.",
@@ -65,7 +65,7 @@ class ExperienceDataImpl : ExperienceData {
             name = "Développeur Peoplesoft en alternance",
             employer = "Natixis",
             logo = R.drawable.ic_exp_natixis,
-            ExpDates = ExpDates(begin = Date(1472680800000), end = Date(1559340000000)),
+            ExpDates = Dates(begin = Date(1472680800000), end = Date(1559340000000)),
             informations = listOf(
                 "Développement en autonomie et en équipe.",
                 "<b>Analyse des besoins utilisateurs</b> en prenant en compte <b>obligations</b> et <b>contraintes</b>.",

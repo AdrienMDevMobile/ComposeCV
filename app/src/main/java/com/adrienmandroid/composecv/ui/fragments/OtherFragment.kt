@@ -8,7 +8,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.adrienmandroid.composecv.data.dataSource.impl.QuoteDataImpl
+import com.adrienmandroid.composecv.data.dataSource.impl.StudyDataImpl
 import com.adrienmandroid.composecv.ui.other.quoteCarousel
+import com.adrienmandroid.composecv.ui.other.studyList
 import com.adrienmandroid.composecv.ui.theme.ComposeCVTheme
 
 @Composable
@@ -19,6 +21,7 @@ fun OtherFragment() {
             .background(MaterialTheme.colors.background),
     )
     {
+        studyList(studies = StudyDataImpl().getData())
         quoteCarousel(QuoteDataImpl())
     }
 
