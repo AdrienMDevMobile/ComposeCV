@@ -26,9 +26,9 @@ fun LazyListScope.signature() {
                 modifier = Modifier.size(102.dp, 127.dp)
                 //modifier = Modifier.fillMaxWidth().wrapContentSize(align = Alignment.Center)
             ) {
-                drawOval(topLeft = Offset(0f, 0f), size = Size(280f, 350f), color = Color.Black)
-                drawOval(topLeft = Offset(27f, 14f), size = Size(224f, 238f), color = Color.White)
-                drawOval(topLeft = Offset(67f, 5f), size = Size(140f, 70f), color = Color.Black)
+                drawOval(topLeft = Offset(((size.width/2)-140), 0f), size = Size(280f, 350f), color = Color.Black)
+                drawOval(topLeft = Offset(((size.width/2)-112), 14f), size = Size(224f, 238f), color = Color.White)
+                drawOval(topLeft = Offset(((size.width/2)-70), 5f), size = Size(140f, 70f), color = Color.Black)
             }
         }
 
