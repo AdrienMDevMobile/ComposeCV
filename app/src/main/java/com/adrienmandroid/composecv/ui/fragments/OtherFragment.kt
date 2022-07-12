@@ -2,6 +2,8 @@ package com.adrienmandroid.composecv.ui.fragments
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
@@ -20,7 +22,7 @@ import com.adrienmandroid.composecv.ui.theme.ComposeCVTheme
 fun OtherFragment() {
     LazyColumn(
         modifier = Modifier
-            .fillMaxSize()
+            .fillMaxWidth().wrapContentHeight()
             .background(MaterialTheme.colors.background)
     )
     {
