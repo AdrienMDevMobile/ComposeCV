@@ -19,13 +19,19 @@ import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.R
 import com.adrienmandroid.composecv.data.Dates
 import com.adrienmandroid.composecv.data.Study
+import com.adrienmandroid.composecv.data.dataSource.impl.StudyDataImpl
 import com.adrienmandroid.composecv.ui.experience.toMonthString
+import com.adrienmandroid.composecv.ui.theme.ComposeCVTheme
+import com.google.accompanist.pager.ExperimentalPagerApi
+import com.google.accompanist.pager.HorizontalPager
 import java.util.*
 
 val studyVerticalSpacing = 10.dp
 
+@OptIn(ExperimentalPagerApi::class)
 @Composable
 fun StudyList(studies: List<Study>) {
+    /*
     LazyRow(
         modifier = Modifier.fillMaxWidth(),
         contentPadding = PaddingValues(horizontal = 12.dp)
@@ -33,66 +39,20 @@ fun StudyList(studies: List<Study>) {
         items(items = studies) {
             StudyCard(it, modifier = Modifier.fillParentMaxWidth())
         }
+    } */
+
+    HorizontalPager(
+        count = studies.size,
+        contentPadding = PaddingValues(horizontal = 12.dp),
+    ) { page ->
+        StudyCard(studies[page])
     }
 }
 
 @Composable
-fun StudyCard(study: Study, modifier: Modifier) {
-    Card(
-        modifier = modifier
-            .wrapContentSize()
-            .height(150.dp)
-            .clip(RoundedCornerShape(25.dp))
-            .padding(10.dp, 10.dp),
-        elevation = 5.dp,
-        backgroundColor = MaterialTheme.colors.background,
-    )
-    {
-        Image(
-            painter = painterResource(study.logo),
-            contentDescription = stringResource(id = study.name),
-            modifier = Modifier
-                .fillMaxHeight()
-                .padding(10.dp, 15.dp),
-            alignment = Alignment.CenterStart,
-            alpha = 0.7f
-        )
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 20.dp),
-            verticalArrangement = Arrangement.Center
-        ) {
-            Text(
-                modifier = Modifier.fillMaxWidth(),
-                text = stringResource(id = study.name)
-            )
-            Spacer(modifier = Modifier.height(studyVerticalSpacing))
-            Text(
-                modifier = Modifier.fillMaxWidth(),
-                text = stringResource(id = study.diploma)
-            )
-            Spacer(modifier = Modifier.height(studyVerticalSpacing))
-            Text(
-                modifier = Modifier.fillMaxWidth(),
-                text = study.studyDates.begin.toMonthString().plus(" - ")
-                    .plus(study.studyDates.end.toMonthString())
-            )
-        }
-    }
-}
-
 @Preview
-@Composable
-fun PreviewStudyCard() {
-    StudyCard(
-        study = Study(
-            logo = R.drawable.image_ece,
-            name = R.string.study_brighton,
-            diploma = R.string.diploma_brighton,
-            studyDates = Dates(
-                begin = Date(1593554400000), end = Date(1641596400000)
-            )
-        ), modifier = Modifier
-    )
+fun previewStudyList(){
+    ComposeCVTheme() {
+        StudyList(studies = StudyDataImpl().getData())
+    }
 }
