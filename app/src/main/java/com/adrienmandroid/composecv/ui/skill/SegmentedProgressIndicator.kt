@@ -24,16 +24,15 @@ private val SegmentGap = 8.dp
 
 @Composable
 fun SegmentedProgressIndicator(
-    /*@FloatRange(from = 0.0, to = 1.0)*/
-    progress: Float,
-    modifier: Modifier = Modifier,
+    progress: Float, //paramètre obligatoire
+    modifier: Modifier = Modifier, //premier paramètre optionel : convention
     color: Color = MaterialTheme.colors.primary,
     backgroundColor: Color = color.copy(alpha = BackgroundOpacity),
     progressHeight: Dp = ProgressHeight,
     numberOfSegments: Int = NumberOfSegments,
     segmentGap: Dp = SegmentGap
 ) {
-    check(progress in 0f..1f) { "Invalid progress $progress" }
+    check(progress in 0f..1f) { "Invalid progress $progress" } //Permet de plus propremenet rejeter en cas d'erreur
     check(numberOfSegments > 0) { "Number of segments must be greater than 0" }
 
     val gap: Float
@@ -42,12 +41,14 @@ fun SegmentedProgressIndicator(
         gap = segmentGap.toPx()
         barHeight = progressHeight.toPx()
     }
-    Canvas(
+    Canvas( //Canvas = zone de dessin
         modifier
-            .progressSemantics(progress)
+            .progressSemantics(progress) //Gère l'animation appliquée au canvas
             .height(progressHeight)
     ) {
+        //Dessiner l'arrière plan
         drawSegments(1f, backgroundColor, barHeight, numberOfSegments, gap)
+        //Dessiner la zone à point
         drawSegments(progress, color, barHeight, numberOfSegments, gap)
     }
 }
@@ -75,6 +76,7 @@ private fun DrawScope.drawSegments(
         end = (width - (barsWidth * progress + (progress * (segments - 1)).toInt() * segmentGap))
     }
 
+    //repeat = while(*x<value)
     repeat(segments) { index ->
         val offset = index * (segmentWidth + segmentGap)
         val segmentStart: Float

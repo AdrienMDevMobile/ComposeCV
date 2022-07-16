@@ -13,4 +13,7 @@
     <string name="exp_up_to_today">A ce jour</string>
 
     <string name="Welcome_Keywords">Mots clés</string>
+    <string name="title_diplomas">Diplomes</string>
+    <string name="title_quotes">Mes citations favorites</string>
+    <string name="title_gratitude">Remerciements</string>
 </resources>

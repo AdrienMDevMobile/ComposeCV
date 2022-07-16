@@ -2,7 +2,6 @@ package com.adrienmandroid.composecv.ui.other
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -25,15 +24,14 @@ import java.util.*
 
 val studyVerticalSpacing = 10.dp
 
-fun LazyListScope.studyList(studies: List<Study>) {
-    item {
-        LazyRow(
-            modifier = Modifier.fillMaxWidth(),
-            contentPadding = PaddingValues(horizontal = 12.dp)
-        ) {
-            items(items = studies) {
-                StudyCard(it, modifier = Modifier.fillParentMaxWidth())
-            }
+@Composable
+fun StudyList(studies: List<Study>) {
+    LazyRow(
+        modifier = Modifier.fillMaxWidth(),
+        contentPadding = PaddingValues(horizontal = 12.dp)
+    ) {
+        items(items = studies) {
+            StudyCard(it, modifier = Modifier.fillParentMaxWidth())
         }
     }
 }
