@@ -24,4 +24,6 @@
     <string name="study_ece">ECE Paris</string>
     <string name="diploma_ece">Diplome d\'ingénieur</string>
     <string name="txt_gratitude">Merci à Manon et Jérome pour leurs conseils dans le design de l\'application. \n Merci à Frédéric U. et Julien E. pour leurs enseignements sur Android.\nMerci aux développeurs Android de StackOverflow et Slack Android FR.</string>
+    <string name="hobby_category_competition">Hobby, compétition</string>
+    <string name="hobby_LoL">League of legend</string>
 </resources>
