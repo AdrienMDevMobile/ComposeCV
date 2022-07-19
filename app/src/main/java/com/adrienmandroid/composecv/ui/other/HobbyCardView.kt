@@ -1,7 +1,10 @@
 package com.adrienmandroid.composecv.ui.other
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -21,7 +24,12 @@ val hobby_width = 200.dp
 
 @Composable
 fun HobbyCardView(hobby: Hobby) {
-    Column(modifier = Modifier.wrapContentSize().padding(horizontal = 6.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+    Column(
+        modifier = Modifier
+            .wrapContentSize()
+            .padding(horizontal = 6.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
         Image(
             painter = painterResource(hobby.picture),
             contentDescription = stringResource(id = hobby.name),
@@ -48,7 +56,7 @@ fun HobbyCardView(hobby: Hobby) {
 
 @Composable
 @Preview
-fun previewHobbyCardView() {
+fun PreviewHobbyCardView() {
     ComposeCVTheme() {
         HobbyCardView(
             hobby = Hobby(

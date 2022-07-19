@@ -8,7 +8,6 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import com.adrienmandroid.composecv.data.BottomNavElement
 import com.adrienmandroid.composecv.ui.nav.BottomBarDesign
 
-
 //Calls the design of the bottom bar and handles the navigation.
 @Composable
 fun BottomBar(elementArray: Array<BottomNavElement>, navController: NavHostController) {

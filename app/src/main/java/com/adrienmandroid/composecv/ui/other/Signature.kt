@@ -23,7 +23,6 @@ fun Signature() {
     ) {
         Canvas(
             modifier = Modifier.size(72.dp, 90.dp)
-            //modifier = Modifier.fillMaxWidth().wrapContentSize(align = Alignment.Center)
         ) {
             drawOval(
                 topLeft = Offset(((size.width / 2) - 98), 0f),

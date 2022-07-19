@@ -14,7 +14,9 @@ import com.adrienmandroid.composecv.R
 fun Gratitudes() {
     Text(
         text = stringResource(id = R.string.txt_gratitude),
-        modifier = Modifier.fillMaxWidth().padding(horizontal = 5.dp),
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 5.dp),
         textAlign = TextAlign.Center
     )
 }

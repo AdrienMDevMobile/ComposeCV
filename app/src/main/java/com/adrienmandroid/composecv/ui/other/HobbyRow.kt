@@ -10,7 +10,7 @@ import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.data.Hobby
 
 @Composable
-fun HobbyRow(hobbies: List<Hobby>){
+fun HobbyRow(hobbies: List<Hobby>) {
     LazyRow(
         modifier = Modifier.fillMaxWidth(),
         contentPadding = PaddingValues(horizontal = 12.dp)

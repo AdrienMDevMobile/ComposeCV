@@ -31,7 +31,9 @@ class ExperienceDataImpl : ExperienceData {
                 "<b>Jetpack compose</b>",
                 "Plurals",
                 "Recherche sur la structure MVVM et recommandations Google",
-                "Construction du design en collaboration avec des designers"
+                "Construction du design en collaboration avec des designers",
+                "Canvas",
+                "Flavors"
             )
         ),
         Experience(
