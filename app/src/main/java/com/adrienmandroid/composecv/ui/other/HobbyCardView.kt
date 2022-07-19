@@ -21,7 +21,7 @@ val hobby_width = 200.dp
 
 @Composable
 fun HobbyCardView(hobby: Hobby) {
-    Column(modifier = Modifier.wrapContentSize(), horizontalAlignment = Alignment.CenterHorizontally) {
+    Column(modifier = Modifier.wrapContentSize().padding(horizontal = 6.dp), horizontalAlignment = Alignment.CenterHorizontally) {
         Image(
             painter = painterResource(hobby.picture),
             contentDescription = stringResource(id = hobby.name),

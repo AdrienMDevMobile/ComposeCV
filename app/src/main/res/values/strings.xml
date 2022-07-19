@@ -16,4 +16,7 @@
     <string name="title_diplomas">Diplomes</string>
     <string name="title_quotes">Mes citations favorites</string>
     <string name="title_gratitude">Remerciements</string>
+    <string name="hobby_meditation">Méditation</string>
+    <string name="hobby_sensibilitation">Sensibilisation</string>
+    <string name="hobbies">Temps libre, passions et santés</string>
 </resources>
