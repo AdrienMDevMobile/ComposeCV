@@ -14,7 +14,7 @@ class HobbyDataSourceImpl: HobbyDataSource {
         Hobby(
             R.string.hobby_wcs,
             R.drawable.hobby_westcoastswing,
-            R.string.hobby_sport_fun_competition
+            R.string.danse
         ),
         Hobby(
             R.string.hobby_bike,
