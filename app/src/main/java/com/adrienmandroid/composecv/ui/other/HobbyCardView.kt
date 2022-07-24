@@ -26,7 +26,7 @@ val hobby_width = 200.dp
 fun HobbyCardView(hobby: Hobby) {
     Column(
         modifier = Modifier
-            .wrapContentSize()
+            .size(width = hobby_width, height= 250.dp)
             .padding(horizontal = 6.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
