@@ -10,7 +10,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -20,7 +19,7 @@ import com.adrienmandroid.composecv.ui.nav.intents.ClickViewModel
 import com.adrienmandroid.composecv.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.ui.theme.border
 
-class QuoteTextDraw(private val id: Int, private val args: Array<Any> = emptyArray()) : SimpleDraw {
+class QuoteTextDraw(private val id: Int) : SimpleDraw {
     @Composable
     override fun Draw(clickViewModel: ClickViewModel) {
         val shape = RectangleShape
@@ -29,7 +28,7 @@ class QuoteTextDraw(private val id: Int, private val args: Array<Any> = emptyArr
 
         Text(
             text = text,
-            style = TextStyle(
+            style = MaterialTheme.typography.body1.copy(
                 color = MaterialTheme.colors.onSurface,
                 textAlign = TextAlign.Center
             ),

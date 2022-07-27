@@ -22,6 +22,7 @@ import com.adrienmandroid.composecv.data.Experience
 import com.adrienmandroid.composecv.data.Link
 import com.adrienmandroid.composecv.ui.elements.toAnnotatedString
 import com.adrienmandroid.composecv.ui.theme.ComposeCVTheme
+import com.adrienmandroid.composecv.ui.theme.Typography
 import com.adrienmandroid.composecv.ui.theme.onSurfaceTitle
 
 
@@ -68,7 +69,7 @@ fun ExperienceHeader(logo: Int, name: String) {
             Text(
                 modifier = Modifier.fillMaxWidth(),
                 text = name,
-                style = MaterialTheme.typography.h6,
+                style = MaterialTheme.typography.h5,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colors.onSurfaceTitle,
                 textAlign = TextAlign.Center
@@ -89,13 +90,19 @@ fun ExpAdditionalInfo(dates: Dates, employer: String?, link: Link?) {
     ) {
         Text(
             text = dates.begin.toMonthString().plus(" - ").plus(dates.end.toMonthString()),
-            fontWeight = FontWeight.Bold
+            style = Typography.body1,
+            fontWeight = FontWeight.Bold,
         )
-        Text(text = dates.getDifferenceToString(), fontWeight = FontWeight.Bold)
+        Text(
+            text = dates.getDifferenceToString(),
+            style = Typography.body1,
+            fontWeight = FontWeight.Bold,
+        )
         if (employer != null) {
             Text(
                 text = employer,
-                fontWeight = FontWeight.Bold
+                style = Typography.body1,
+                fontWeight = FontWeight.Bold,
             )
         }
         if (link != null) {
@@ -113,7 +120,7 @@ fun ExperienceInfoListItem(informations: List<String>) {
                 .background(MaterialTheme.colors.background)
                 .padding(expHorizontalSpacing, 0.dp)
         ) {
-            Text(information.toAnnotatedString())
+            Text(information.toAnnotatedString(), style = Typography.body1)
         }
     }
 }

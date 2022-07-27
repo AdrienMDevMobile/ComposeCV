@@ -41,10 +41,14 @@ fun CardDraw(quote: Quote, position: Int) {
 
     val textLeft = (position % 2 == 0)
 
-    val textStyle = TextStyle(
-        color = MaterialTheme.colors.onQuoteBackground
+    val textStyleQuote = TextStyle(
+        color = MaterialTheme.colors.onQuoteBackground,
+        fontSize = 16.sp
     )
-
+    val textStyleAuthor = TextStyle(
+        color = MaterialTheme.colors.onQuoteBackground,
+        fontSize = 12.sp
+    )
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -83,7 +87,7 @@ fun CardDraw(quote: Quote, position: Int) {
             )
             Text(
                 text = stringResource(quote.text),
-                style = textStyle.copy(fontSize = 14.sp),
+                style = textStyleQuote,
                 modifier = Modifier.constrainAs(text) {
                     if (textLeft) {
                         start.linkTo(parent.start, margin = marginStart)
@@ -99,7 +103,7 @@ fun CardDraw(quote: Quote, position: Int) {
             )
             Text(
                 text = quote.author,
-                style = textStyle.copy(fontSize = 10.sp),
+                style = textStyleAuthor,
                 modifier = Modifier.constrainAs(author) {
                     top.linkTo(text.bottom)
                     bottom.linkTo(parent.bottom, margin = 16.dp)
@@ -129,7 +133,7 @@ fun CardDraw(quote: Quote, position: Int) {
 
 @Preview
 @Composable
-fun previewQuoteCard() {
+fun PreviewQuoteCard() {
     CardDraw(
         quote = Quote(R.string.quoteMeditation, "Mark Twain", R.drawable.quote_mark_twain),
         position = 1

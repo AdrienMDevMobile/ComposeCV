@@ -9,6 +9,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.R
+import com.adrienmandroid.composecv.ui.theme.Typography
 
 @Composable
 fun Gratitudes() {
@@ -17,6 +18,7 @@ fun Gratitudes() {
         modifier = Modifier
             .fillMaxWidth()
             .padding(horizontal = 5.dp),
-        textAlign = TextAlign.Center
+        textAlign = TextAlign.Center,
+        style = Typography.body1
     )
 }
