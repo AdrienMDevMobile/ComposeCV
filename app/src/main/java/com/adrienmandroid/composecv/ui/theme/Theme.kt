@@ -7,6 +7,10 @@ import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Color.Companion.Black
+import androidx.compose.ui.graphics.Color.Companion.DarkGray
+import androidx.compose.ui.graphics.Color.Companion.Gray
+import androidx.compose.ui.graphics.Color.Companion.White
 
 val DarkColorPalette = darkColors(
     primary = shadowBrown,
@@ -42,10 +46,13 @@ val Colors.border: Color
     get() = if (isLight) shadowBrown else shadowBrown
 
 val Colors.onSurfaceTitle: Color
-    get() = if (isLight) white else white
+    get() = if (isLight) White else White
 
 val Colors.quoteBackground: Color
-    get() = if (isLight) black else black
+    get() = if (isLight) Black else DarkGray
 
 val Colors.onQuoteBackground: Color
-    get() = if (isLight) white else white
+    get() = White
+
+val Colors.signature: Color
+    get() = if (isLight) Black else Gray

@@ -8,15 +8,19 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.geometry.Rect
 import androidx.compose.ui.geometry.Size
+import androidx.compose.ui.graphics.ClipOp
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Path
+import androidx.compose.ui.graphics.drawscope.clipPath
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.ui.theme.ComposeCVTheme
 
 //Non optimal. il faudrait donner à la fonction une taille et ad
 @Composable
-fun Signature() {
+fun Signature(color: Color) {
     Column(
         modifier = Modifier.fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally
@@ -24,30 +28,40 @@ fun Signature() {
         Canvas(
             modifier = Modifier.size(72.dp, 90.dp)
         ) {
-            drawOval(
+
+            //save()
+            clipPath(
+                Path().apply {
+                    addOval(
+                        Rect(
+                            Offset(((size.width / 2) - 78), 14f),
+                            Size(156f, 165f)
+                        )
+                    )
+                },
+                ClipOp.Difference,
+            ) {drawOval(
                 topLeft = Offset(((size.width / 2) - 98), 0f),
                 size = Size(196f, 245f),
-                color = Color.Black
+                color = color
             )
-            drawOval(
-                topLeft = Offset(((size.width / 2) - 78), 14f),
-                size = Size(156f, 165f),
-                color = Color.White
-            )
+
+
+            }
             drawOval(
                 topLeft = Offset(((size.width / 2) - 49), 5f),
                 size = Size(98f, 49f),
-                color = Color.Black
+                color = color
             )
         }
     }
-
 }
+
 
 @Preview
 @Composable
 fun PreviewSignature() {
     ComposeCVTheme {
-        Signature()
+        Signature(Color.Black)
     }
 }

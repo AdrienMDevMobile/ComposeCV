@@ -1,6 +1,5 @@
 package com.adrienmandroid.composecv.ui.other
 
-import androidx.appcompat.content.res.AppCompatResources
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
@@ -10,7 +9,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -18,7 +17,6 @@ import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.R
 import com.adrienmandroid.composecv.data.Hobby
 import com.adrienmandroid.composecv.ui.theme.ComposeCVTheme
-import com.google.accompanist.drawablepainter.rememberDrawablePainter
 
 val hobby_width = 200.dp
 
