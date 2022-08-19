@@ -22,7 +22,8 @@ class StudyDataImpl : StudyData {
             diploma = R.string.diploma_brighton,
             studyDates = Dates(
                 begin = Date(1593554400000), end = Date(1641596400000)
-            )
+            ),
+            longString = true
         ),
         Study(
             logo = R.drawable.image_descartes,

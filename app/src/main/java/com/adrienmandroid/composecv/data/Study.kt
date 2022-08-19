@@ -7,5 +7,6 @@ data class Study(
     @DrawableRes val logo: Int,
     @StringRes val name: Int,
     @StringRes val diploma: Int,
-    val studyDates: Dates
+    val studyDates: Dates,
+    val longString: Boolean = false
 )
