@@ -19,10 +19,12 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.adrienmandroid.composecv.R
+import com.adrienmandroid.composecv.data.Skill
 import com.adrienmandroid.composecv.ui.elements.toAnnotatedString
+import com.adrienmandroid.composecv.ui.theme.Typography
 
 @Composable
-fun SkillCard(name: String, targetValue: Float, text: String) {
+fun SkillCard(skill: Skill) {
 
     val isTextVisible = MutableLiveData(false)
     Card(
@@ -40,12 +42,25 @@ fun SkillCard(name: String, targetValue: Float, text: String) {
                 .padding(10.dp)
         ) {
 
-            Text(text = name, style = MaterialTheme.typography.h6)
+            Text(text = skill.name, style = MaterialTheme.typography.h6)
             Spacer(modifier = Modifier.width(10.dp))
 
             Spacer(modifier = Modifier.height(10.dp))
-            SkillLinearProgressIndicator(targetValue = targetValue)
-            SkillText(isTextVisible, text)
+            if(skill.targetValue != null) SkillLinearProgressIndicator(targetValue = skill.targetValue)
+            if (skill.subSkills.isNotEmpty()) {
+                GridItems(
+                    data = skill.subSkills,
+                    columnCount = 2,
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    modifier = Modifier.padding(horizontal = 16.dp)
+                ) { subSkill ->
+                    Text(
+                        text = subSkill,
+                        style = Typography.body1
+                    )
+                }
+            }
+            SkillText(isTextVisible, skill.explanation)
             Spacer(modifier = Modifier.height(10.dp))
 
             Button(

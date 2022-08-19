@@ -26,7 +26,7 @@ fun SkillFragment(skills: List<Skill>) {
     ) {
         LazyColumn(modifier = Modifier.fillMaxWidth()) {
             items(items = skills) {
-                SkillCard(it.name, it.targetValue, it.explanation)
+                SkillCard(it)
             }
         }
     }
