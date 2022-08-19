@@ -9,21 +9,20 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Color.Companion.Black
 import androidx.compose.ui.graphics.Color.Companion.DarkGray
-import androidx.compose.ui.graphics.Color.Companion.Gray
 import androidx.compose.ui.graphics.Color.Companion.White
 
 val DarkColorPalette = darkColors(
-    primary = shadowBrown,
-    primaryVariant = lightBrown,
-    secondary = Teal200,
-    surface = veryLightBrown,
+    primary = colorMainGreen,
+    primaryVariant = colorSecondaryGreen,
+    secondary = colorSecondaryGreen,
+    surface = colorDarkestGreen,
 )
 
 private val LightColorPalette = lightColors(
-    primary = shadowBrown,
-    primaryVariant = lightBrown,
-    secondary = Teal200,
-    surface = veryLightBrown,
+    primary = colorMainGreen,
+    primaryVariant = colorSecondaryGreen,
+    secondary = colorLighterGreen,
+    surface = colorLighterGreen,
 )
 
 @Composable
@@ -43,10 +42,10 @@ fun ComposeCVTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composa
 }
 
 val Colors.border: Color
-    get() = if (isLight) shadowBrown else shadowBrown
+    get() = if (isLight) colorDarkestGreen else colorLighterGreen
 
 val Colors.onSurfaceTitle: Color
-    get() = if (isLight) White else White
+    get() = if (isLight) Black else White
 
 val Colors.quoteBackground: Color
     get() = if (isLight) Black else DarkGray
@@ -55,4 +54,7 @@ val Colors.onQuoteBackground: Color
     get() = White
 
 val Colors.signature: Color
-    get() = if (isLight) Black else Gray
+    get() = colorMainGreen
+
+val Colors.carouselButton: Color
+    get() = if (isLight) colorFlashiestGreen else colorSecondaryGreen
