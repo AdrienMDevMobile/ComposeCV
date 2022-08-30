@@ -26,7 +26,7 @@ fun Signature(color: Color) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Canvas(
-            modifier = Modifier.size(72.dp, 90.dp)
+            modifier = Modifier.size(72.dp, 65.dp)
         ) {
 
             //save()
@@ -40,11 +40,12 @@ fun Signature(color: Color) {
                     )
                 },
                 ClipOp.Difference,
-            ) {drawOval(
-                topLeft = Offset(((size.width / 2) - 98), 0f),
-                size = Size(196f, 245f),
-                color = color
-            )
+            ) {
+                drawOval(
+                    topLeft = Offset(((size.width / 2) - 98), 0f),
+                    size = Size(196f, 245f),
+                    color = color
+                )
 
 
             }

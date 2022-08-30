@@ -34,6 +34,7 @@ fun OtherFragment() {
         otherSection({ HobbyRow(HobbyDataSourceImpl().getHobbies()) }, title = R.string.hobbies)
         otherSection({ Gratitudes() }, title = R.string.title_gratitude)
         otherSection({ Signature(MaterialTheme.colors.signature) })
+        otherSection({ Version() })
     }
 }
 

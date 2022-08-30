@@ -19,4 +19,5 @@
     <string name="hobby_meditation">Méditation</string>
     <string name="hobby_sensibilitation">Sensibilisation</string>
     <string name="hobbies">Temps libre, passions et santés</string>
+    <string name="version">Version %1$s</string>
 </resources>
