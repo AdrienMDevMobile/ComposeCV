@@ -32,14 +32,8 @@ class SkillDataImpl : SkillData {
         ),
         Skill(
             name = "Jetpack UI", targetValue = 0.8f, explanation = """
-            Constraint layout, Navigation drawers, Tabs, Recycler views.
-            Tout cela permet <b>d'optimser le design</b>, et rendre une application qui respecte les demandes de la Direction Artistique <b>au pixel près</b>.
-        """.trimIndent()
-        ),
-        Skill(
-            name = "Jetpack UI", targetValue = 0.8f, explanation = """
-            Constraint layout, Navigation drawers, Tabs, Recycler views.
-            Tout cela permet <b>d'optimser le design</b>, et rendre une application qui respecte les demandes de la Direction Artistique <b>au pixel près</b>.
+            Constraint layout, Navigation drawers, Tabs, Recycler views, Layout et Data bindings, Nav graph.
+            Tout cela permet <b>d'optimser le design</b>, simplifier le maintient du code et rendre une application qui respecte les demandes de la Direction Artistique <b>au pixel près</b>.
         """.trimIndent()
         ),
         Skill(

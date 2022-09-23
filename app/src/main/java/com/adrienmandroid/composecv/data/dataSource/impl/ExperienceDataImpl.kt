@@ -20,7 +20,9 @@ class ExperienceDataImpl : ExperienceData {
                 "<b>Spécifications et chiffrages</b> des futurs développements.",
                 "Respect du design donné par l'équipe DA, <b>au pixel prêt</b>",
                 "Application des règles et normes d'écritures. Personnalisée par les développeurs Séniors ou recommandés par Google.",
-                "Support, monitoring et analyses"
+                "Support, monitoring et analyses",
+                "Layout binding et data binding",
+                "Navigation graph"
             )
         ),
         Experience(
