@@ -1,5 +1,6 @@
 package com.adrienmandroid.composecv.ui.welcome
 
+import androidx.annotation.StringRes
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -9,20 +10,24 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.adrienmandroid.composecv.R
 import com.adrienmandroid.composecv.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.ui.theme.Typography
 import com.adrienmandroid.composecv.ui.theme.border
 import com.google.accompanist.flowlayout.FlowRow
+import com.adrienmandroid.composecv.data.Keyword as KeywordData
 
 @Composable
-private fun Keyword(keyword: String) {
+private fun Keyword(@StringRes keyword: Int) {
     val shape = CircleShape
+    val word = stringResource(id = keyword)
     Text(
-        text = "#$keyword",
+        text = "#$word",
         style = Typography.body1.copy(
             color = MaterialTheme.colors.onSurface,
             fontWeight = FontWeight.Bold,
@@ -38,10 +43,10 @@ private fun Keyword(keyword: String) {
 
 @ExperimentalFoundationApi
 @Composable
-fun Keywords(vararg keywords: String) {
+fun Keywords(vararg keywords: KeywordData) {
     FlowRow {
         for (keyword in keywords) {
-            Keyword(keyword = keyword)
+            Keyword(keyword = keyword.id)
         }
     }
 }
@@ -51,6 +56,6 @@ fun Keywords(vararg keywords: String) {
 @Preview
 fun PreviewKeywords() {
     ComposeCVTheme() {
-        Keywords("motCle0---------0", "motCle1---------0", "motCle2---------0", "motCle3----0")
+        Keywords(KeywordData(R.string.emailAdress), KeywordData(R.string.emailAdress), KeywordData(R.string.emailAdress), KeywordData(R.string.emailAdress), KeywordData(R.string.emailAdress))
     }
 }

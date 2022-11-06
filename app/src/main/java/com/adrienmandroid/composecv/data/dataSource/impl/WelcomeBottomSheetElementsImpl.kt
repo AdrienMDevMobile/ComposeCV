@@ -3,6 +3,7 @@ package com.adrienmandroid.composecv.data.dataSource.impl
 import androidx.compose.ui.text.font.FontWeight
 import com.adrienmandroid.composecv.R
 import com.adrienmandroid.composecv.data.Clickable
+import com.adrienmandroid.composecv.data.Keyword
 import com.adrienmandroid.composecv.data.dataSource.WelcomeBottomSheetElements
 import com.adrienmandroid.composecv.data.dataSource.WelcomeElement
 import com.adrienmandroid.composecv.ui.theme.Typography
@@ -49,11 +50,11 @@ class WelcomeBottomSheetElementsImpl : WelcomeBottomSheetElements {
             ),
             WelcomeElement.WelcomeKeyword(
                 arrayOf(
-                    "Android",
-                    "Kotlin",
-                    "Jetpack compose",
-                    "Growth mindset",
-                    "Créativité"
+                    Keyword(R.string.kw_android),
+                    Keyword(R.string.kw_kotlin),
+                    Keyword(R.string.kw_compose),
+                    Keyword(R.string.kw_growth),
+                    Keyword(R.string.kw_creativity)
                 )
             )
         )
