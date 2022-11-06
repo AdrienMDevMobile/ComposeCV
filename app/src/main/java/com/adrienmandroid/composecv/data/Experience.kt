@@ -1,10 +1,14 @@
 package com.adrienmandroid.composecv.data
 
-class Experience(
-    val name: String,
-    val employer: String? = null,
+import androidx.annotation.StringRes
+
+data class Experience(
+    @StringRes val name: Int,
+    @StringRes val employer: Int? = null,
     val logo: Int,
     val link: Link? = null,
     val ExpDates: Dates,
-    val informations: List<String>
+    val informations: List<ExperienceInformation>
 )
+
+data class ExperienceInformation(@StringRes val name: Int)

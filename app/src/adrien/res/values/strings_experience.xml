@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="exp_astek_name">Ingénieur développement Android</string>
+    <string name="exp_astek_employer">Astek</string>
+    <string name="exp_info_android">Développement Android</string>
+    <string name="exp_info_git_team">Utilisation de Git en équipe</string>
+    <string name="exp_info_ios_back"><![CDATA[<b>Travail en équipe</b> avec iOS et le back end]]></string>
+    <string name="exp_info_spec"><![CDATA[<b>Spécifications et chiffrages</b> des futurs développements.]]></string>
+    <string name="exp_info_design"><![CDATA[Respect du design donné par l\'équipe DA, <b>au pixel prêt</b>]]></string>
+    <string name="exp_info_apply_rule">Application des règles et normes d\'écritures. Personnalisée par les développeurs Séniors ou recommandés par Google.</string>
+    <string name="exp_info_supp_monitoring_analysis">Support, monitoring et analyses</string>
+    <string name="exp_info_layout_data_binding">Layout binding et data binding</string>
+    <string name="exp_info_navigation_graph">Navigation graph</string>
+    <string name="exp_spending_name"><![CDATA[Suivie des dépenses, room & datastore]]></string>
+    <string name="exp_info_compose"><![CDATA[<b>Jetpack compose</b>]]></string>
+    <string name="exp_info_room"><![CDATA[<b>Room</b>]]></string>
+    <string name="exp_info_data_store"><![CDATA[<b>Data store</b>]]></string>
+    <string name="exp_info_pagination">Pagination</string>
+    <string name="exp_info_modification_standart">Modification des composables par défaut</string>
+    <string name="exp_cv_name">Projet personnel CV compose</string>
+    <string name="exp_info_plural">Plurals</string>
+    <string name="exp_info_mvvm_recommandation">Recherche sur la structure MVVM et recommandations Google</string>
+    <string name="exp_info_collab">Construction du design en collaboration avec des designers</string>
+    <string name="exp_info_canvas">Canvas</string>
+    <string name="exp_info_ddui">Data driven ui (inspiré par Server driven ui)</string>
+    <string name="exp_info_flavor">Flavors</string>
+    <string name="exp_fdc_name">Projet personnel Animateurs FDC</string>
+    <string name="exp_info_android_kotlin">Projet Android avec Kotlin.</string>
+    <string name="exp_info_fdc_feature">Réflexion avec d\'autres Animateurs sur les fonctionnalités à développer.</string>
+    <string name="exp_info_unit_test"><![CDATA[Écriture des <b>tests</b> unitaires et fonctionnels. <b>Junit4, Mockito, Espresso et UI automator</b>.]]></string>
+    <string name="exp_info_dependency_injection"><![CDATA[Injection de dépendances (DI) : <b>Hilt</b>]]></string>
+    <string name="exp_info_mvvm"><![CDATA[Utilisation de l\'architecture <b>MVVM</b>.]]></string>
+    <string name="exp_info_library_search"><![CDATA[<b>Recherche des meilleures bibliothèques</b> pour les différentes fonctionnalités.]]></string>
+    <string name="exp_info_jetpack">Utilisation de Jetpack (test: Junit, Espresso. Threading. Fragment)</string>
+    <string name="exp_sh_name">Ingénieur Développeur Peoplesoft</string>
+    <string name="exp_sh_employer"><![CDATA[S&H group]]></string>
+    <string name="exp_info_sh_update">Développement et mises à jour de pages du site de mobilité interne du client.</string>
+    <string name="exp_info_commentary"><![CDATA[Commentaires pour la compréhension et <b>maintenabilité du code</b>.]]></string>
+    <string name="exp_info_sh_environement">Environnement technique : Peoplesoft, SQL.</string>
+    <string name="exp_info_sh_new">Mise en place de nouveaux outils et gain de temps sur de nombreux process.</string>
+    <string name="exp_natixis_name">Développeur Peoplesoft en alternance</string>
+    <string name="exp_natixis_employer">Natixis</string>
+    <string name="exp_info_nat_autonomy">Développement en autonomie et en équipe.</string>
+    <string name="exp_info_nat_analysis"><![CDATA[<b>Analyse des besoins utilisateurs</b> en prenant en compte <b>obligations</b> et <b>contraintes</b>.]]></string>
+    <string name="exp_info_nat_test">Écriture des Tests d\'essai.</string>
+</resources>

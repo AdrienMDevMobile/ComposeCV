@@ -1,5 +1,6 @@
 package com.adrienmandroid.composecv.ui.experience
 
+import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -13,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -20,6 +22,7 @@ import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.R
 import com.adrienmandroid.composecv.data.Dates
 import com.adrienmandroid.composecv.data.Experience
+import com.adrienmandroid.composecv.data.ExperienceInformation
 import com.adrienmandroid.composecv.data.Link
 import com.adrienmandroid.composecv.ui.elements.toAnnotatedString
 import com.adrienmandroid.composecv.ui.theme.ComposeCVTheme
@@ -51,7 +54,7 @@ fun ExperienceCard(experience: Experience) {
 }
 
 @Composable
-fun ExperienceHeader(logo: Int, name: String) {
+fun ExperienceHeader(logo: Int, @StringRes name: Int) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -61,7 +64,7 @@ fun ExperienceHeader(logo: Int, name: String) {
         Row() {
             Image(
                 painter = painterResource(logo),
-                contentDescription = name,
+                contentDescription = stringResource(id = name),
                 modifier = Modifier
                     .size(50.dp)
                     .padding(expHorizontalSpacing, 0.dp),
@@ -70,7 +73,7 @@ fun ExperienceHeader(logo: Int, name: String) {
             Spacer(modifier = Modifier.width(expHorizontalSpacing))
             Text(
                 modifier = Modifier.fillMaxWidth(),
-                text = name,
+                text = stringResource(id = name),
                 style = MaterialTheme.typography.h5,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colors.onSurfaceTitle,
@@ -83,7 +86,7 @@ fun ExperienceHeader(logo: Int, name: String) {
 }
 
 @Composable
-fun ExpAdditionalInfo(dates: Dates, employer: String?, link: Link?) {
+fun ExpAdditionalInfo(dates: Dates, @StringRes employer: Int?, link: Link?) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -102,7 +105,7 @@ fun ExpAdditionalInfo(dates: Dates, employer: String?, link: Link?) {
         )
         if (employer != null) {
             Text(
-                text = employer,
+                text = stringResource(id = employer),
                 style = Typography.body1,
                 fontWeight = FontWeight.Bold,
             )
@@ -114,7 +117,7 @@ fun ExpAdditionalInfo(dates: Dates, employer: String?, link: Link?) {
 }
 
 @Composable
-fun ExperienceInfoListItem(informations: List<String>) {
+fun ExperienceInfoListItem(informations: List<ExperienceInformation>) {
     informations.forEach { information ->
         Box(
             modifier = Modifier
@@ -122,7 +125,7 @@ fun ExperienceInfoListItem(informations: List<String>) {
                 .background(MaterialTheme.colors.background)
                 .padding(expHorizontalSpacing, 0.dp)
         ) {
-            Text(information.toAnnotatedString(), style = Typography.body1)
+            Text(stringResource(id = information.name).toAnnotatedString(), style = Typography.body1)
         }
     }
 }
@@ -131,6 +134,6 @@ fun ExperienceInfoListItem(informations: List<String>) {
 @Composable
 fun PreviewExperienceHeader() {
     ComposeCVTheme() {
-        ExperienceHeader(logo = R.drawable.home, name = "Test")
+        ExperienceHeader(logo = R.drawable.home, name = R.string.app_name)
     }
 }
