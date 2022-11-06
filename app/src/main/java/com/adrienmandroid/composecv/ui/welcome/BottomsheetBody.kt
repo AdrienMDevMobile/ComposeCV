@@ -12,12 +12,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.adrienmandroid.composecv.data.dataSource.WelcomeElement
 import com.adrienmandroid.composecv.data.dataSource.impl.WelcomeBottomSheetElementsImpl
 import com.adrienmandroid.composecv.ui.nav.intents.ClickViewModel
 import com.adrienmandroid.composecv.ui.theme.ComposeCVTheme
 
 fun LazyListScope.BottomsheetBody(
-    welcomeElements: List<SimpleDraw>,
+    welcomeElements: List<WelcomeElement>,
     clickViewModel: ClickViewModel
 ) {
     items(items = welcomeElements) {
@@ -27,7 +28,7 @@ fun LazyListScope.BottomsheetBody(
                 .background(color = MaterialTheme.colors.background)
                 .padding(start = 10.dp, end = 10.dp, top = 5.dp)
         ) {
-            it.Draw(clickViewModel)
+            CheckUiType(it, clickViewModel)
         }
     }
 }

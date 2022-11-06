@@ -9,7 +9,7 @@ class MyDateConverter {
 
     @Test
     fun testingDateInLong() {
-        assertEquals("", "1 juillet 2020".toMyLong())
+        assertEquals("", "2 January 2023".toMyLong())
 
     }
 

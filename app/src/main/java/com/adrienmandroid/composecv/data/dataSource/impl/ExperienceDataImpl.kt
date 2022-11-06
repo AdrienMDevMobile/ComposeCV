@@ -26,7 +26,19 @@ class ExperienceDataImpl : ExperienceData {
             )
         ),
         Experience(
-            name = "Projet personnel Jetpack compose",
+            name="Suivie des dépenses, room & datastore",
+            logo = R.drawable.ic_spending,
+            ExpDates = Dates(begin = Date(1664575200000), end=Date(1672614000000)),
+            informations = listOf(
+                "<b>Jetpack compose</b>",
+                "<b>Room</b>",
+                "<b>Data store</b>",
+                "Pagination",
+                "Modification"
+            )
+        ),
+        Experience(
+            name = "Projet personnel CV compose",
             logo = R.drawable.ic_launcher,
             ExpDates = Dates(begin = Date(1645052400000), end = null),
             informations = listOf(
@@ -35,6 +47,7 @@ class ExperienceDataImpl : ExperienceData {
                 "Recherche sur la structure MVVM et recommandations Google",
                 "Construction du design en collaboration avec des designers",
                 "Canvas",
+                "Data driven ui (inspiré par Server driven ui)",
                 "Flavors"
             )
         ),

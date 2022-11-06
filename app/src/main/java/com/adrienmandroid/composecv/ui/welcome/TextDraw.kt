@@ -17,43 +17,53 @@ import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.ui.nav.intents.ClickViewModel
 import com.adrienmandroid.composecv.ui.nav.intents.IClickable
 
-class TextDraw(
-    @DrawableRes private val iconId: Int? = null,
-    @StringRes private val id: Int,
-    private val style: TextStyle = TextStyle(),
-    private val args: Array<Any> = emptyArray(),
-    private val clickable: IClickable? = null
-) : SimpleDraw {
-    @Composable
-    override fun Draw(clickViewModel: ClickViewModel) {
-        Row(modifier = Modifier.fillMaxWidth()) {
-            if (iconId != null) {
-                Icon(
-                    painter = painterResource(id = iconId),
-                    contentDescription = iconId.toString(),
-                    modifier = Modifier.size(24.dp, 24.dp)
-                )
-                Spacer(modifier = Modifier.width(10.dp))
-            }
-            if (clickable != null) {
-                DrawClickable(clickable, clickViewModel)
-            } else {
-                Text(text = stringResource(id, *args), style = style)
-            }
+@Composable
+fun TextDraw(
+    @DrawableRes iconId: Int?,
+    @StringRes id: Int,
+    style: TextStyle,
+    args: Array<Any>,
+    clickable: IClickable?,
+    clickViewModel: ClickViewModel
+) {
+    Row(modifier = Modifier.fillMaxWidth()) {
+        if (iconId != null) {
+            Icon(
+                painter = painterResource(id = iconId),
+                contentDescription = iconId.toString(),
+                modifier = Modifier.size(24.dp, 24.dp)
+            )
+            Spacer(modifier = Modifier.width(10.dp))
         }
-
+        if (clickable != null) {
+            DrawClickable(
+                id = id,
+                args = args,
+                clickable = clickable,
+                style = style,
+                clickViewModel = clickViewModel
+            )
+        } else {
+            Text(text = stringResource(id, *args), style = style)
+        }
     }
 
-    @Composable
-    private fun DrawClickable(clickable: IClickable, clickViewModel: ClickViewModel) {
+}
 
-        ClickableText(
-            text = with(AnnotatedString.Builder(stringResource(id, *args))) {
-                toAnnotatedString()
-            },
-            style = style.copy(textDecoration = TextDecoration.Underline),
-            onClick = { clickable.onClick(clickViewModel) }
-        )
-    }
+@Composable
+private fun DrawClickable(
+    @StringRes id: Int,
+    args: Array<Any>,
+    clickable: IClickable,
+    style: TextStyle,
+    clickViewModel: ClickViewModel
+) {
 
+    ClickableText(
+        text = with(AnnotatedString.Builder(stringResource(id, *args))) {
+            toAnnotatedString()
+        },
+        style = style.copy(textDecoration = TextDecoration.Underline),
+        onClick = { clickable.onClick(clickViewModel) }
+    )
 }

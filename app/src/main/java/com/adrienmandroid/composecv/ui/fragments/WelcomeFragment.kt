@@ -21,16 +21,16 @@ import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.adrienmandroid.composecv.R
+import com.adrienmandroid.composecv.data.dataSource.WelcomeElement
 import com.adrienmandroid.composecv.ui.nav.intents.ClickViewModel
 import com.adrienmandroid.composecv.ui.welcome.BottomsheetBody
 import com.adrienmandroid.composecv.ui.welcome.BottomsheetHeader
-import com.adrienmandroid.composecv.ui.welcome.SimpleDraw
 
 
 @ExperimentalMaterialApi
 @Composable
 fun WelcomeFragment(
-    welcomeElements: List<SimpleDraw>,
+    welcomeElements: List<WelcomeElement>,
     clickViewModel: ClickViewModel = viewModel()
 ) {
 

@@ -13,22 +13,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.adrienmandroid.composecv.ui.nav.intents.ClickViewModel
 import com.adrienmandroid.composecv.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.ui.theme.Typography
 import com.adrienmandroid.composecv.ui.theme.border
 import com.google.accompanist.flowlayout.FlowRow
 
-class KeywordsDraw(private val keywords: Array<String>) : SimpleDraw {
-    @OptIn(ExperimentalFoundationApi::class)
-    @Composable
-    override fun Draw(clickViewModel: ClickViewModel) {
-        Keywords(*keywords)
-    }
-}
-
 @Composable
-fun Keyword(keyword: String) {
+private fun Keyword(keyword: String) {
     val shape = CircleShape
     Text(
         text = "#$keyword",

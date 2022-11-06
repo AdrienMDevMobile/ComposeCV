@@ -3,44 +3,52 @@ package com.adrienmandroid.composecv.data.dataSource.impl
 import androidx.compose.ui.text.font.FontWeight
 import com.adrienmandroid.composecv.R
 import com.adrienmandroid.composecv.data.dataSource.WelcomeBottomSheetElements
+import com.adrienmandroid.composecv.data.dataSource.WelcomeElement
 import com.adrienmandroid.composecv.ui.nav.intents.MailClickable
 import com.adrienmandroid.composecv.ui.nav.intents.WebClickable
 import com.adrienmandroid.composecv.ui.theme.Typography
-import com.adrienmandroid.composecv.ui.welcome.*
 
 class WelcomeBottomSheetElementsImpl : WelcomeBottomSheetElements {
 
-    override fun listOfItemInBottomSheet(): List<SimpleDraw> {
+    override fun listOfItemInBottomSheet(): List<WelcomeElement> {
         return listOf(
-            TextDraw(id = R.string.names, style = Typography.h4),
-            TextDraw(id = R.string.title, style = Typography.h5),
-            TextDraw(id = R.string.age, args = arrayOf(27), style = Typography.body1),
-            TextDraw(
+            WelcomeElement.WelcomeText(id = R.string.names, style = Typography.h4),
+            WelcomeElement.WelcomeText(id = R.string.title, style = Typography.h5),
+            WelcomeElement.WelcomeText(
+                id = R.string.age,
+                args = arrayOf(27),
+                style = Typography.body1
+            ),
+            WelcomeElement.WelcomeText(
                 iconId = R.drawable.email,
                 id = R.string.emailAdress,
                 clickable = MailClickable("adrienpmichel@gmail.com"),
                 style = Typography.body1
             ),
-            TextDraw(iconId = R.drawable.location, id = R.string.adress, style = Typography.body1),
-            TextDraw(
+            WelcomeElement.WelcomeText(
+                iconId = R.drawable.location,
+                id = R.string.adress,
+                style = Typography.body1
+            ),
+            WelcomeElement.WelcomeText(
                 iconId = R.drawable.github,
                 id = R.string.gitHub,
                 clickable = WebClickable("github.com/AdrienMDevMobile"),
                 style = Typography.body1
             ),
-            TextDraw(
+            WelcomeElement.WelcomeText(
                 iconId = R.drawable.linkedin,
                 id = R.string.linkedIn,
                 clickable = WebClickable("www.linkedin.com/in/adrien-michel-android/"),
                 style = Typography.body1
             ),
-            QuoteTextDraw(id = R.string.selfPresentation),
-            ImageDraw(R.drawable.auboulotavelo, "Au boult à velo"),
-            TextDraw(
+            WelcomeElement.WelcomeQuote(id = R.string.selfPresentation),
+            WelcomeElement.WelcomeImage(R.drawable.auboulotavelo, "Au boult à velo"),
+            WelcomeElement.WelcomeText(
                 id = R.string.Welcome_Keywords,
                 style = Typography.body1.copy(fontWeight = FontWeight.Bold)
             ),
-            KeywordsDraw(
+            WelcomeElement.WelcomeKeyword(
                 arrayOf(
                     "Android",
                     "Kotlin",

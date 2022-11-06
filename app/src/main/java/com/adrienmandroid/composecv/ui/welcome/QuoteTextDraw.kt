@@ -15,41 +15,37 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.R
 import com.adrienmandroid.composecv.ui.elements.toAnnotatedString
-import com.adrienmandroid.composecv.ui.nav.intents.ClickViewModel
 import com.adrienmandroid.composecv.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.ui.theme.border
 
-class QuoteTextDraw(private val id: Int) : SimpleDraw {
-    @Composable
-    override fun Draw(clickViewModel: ClickViewModel) {
-        val shape = RectangleShape
+@Composable
+fun QuoteTextDraw(id: Int) {
+    val shape = RectangleShape
 
-        val text = stringResource(id).toAnnotatedString()
+    val text = stringResource(id).toAnnotatedString()
 
-        Text(
-            text = text,
-            style = MaterialTheme.typography.body1.copy(
-                color = MaterialTheme.colors.onSurface,
-                textAlign = TextAlign.Center
-            ),
-            modifier = Modifier
-                .fillMaxWidth()
-                .border(2.dp, MaterialTheme.colors.border, shape)
-                .background(MaterialTheme.colors.surface, shape)
-                .padding(16.dp)
-        )
-    }
+    Text(
+        text = text,
+        style = MaterialTheme.typography.body1.copy(
+            color = MaterialTheme.colors.onSurface,
+            textAlign = TextAlign.Center
+        ),
+        modifier = Modifier
+            .fillMaxWidth()
+            .border(2.dp, MaterialTheme.colors.border, shape)
+            .background(MaterialTheme.colors.surface, shape)
+            .padding(16.dp)
+    )
 }
 
 @Composable
 @Preview
 fun PreviewQuoteTextDraw() {
-    val quoteTextDraw = QuoteTextDraw(R.string.selfPresentation)
     ComposeCVTheme {
         Box(modifier = Modifier.background(Color.Blue)) {
             Row() {
                 Spacer(modifier = Modifier.width(20.dp))
-                quoteTextDraw.Draw(ClickViewModel())
+                QuoteTextDraw(R.string.selfPresentation)
             }
         }
     }
