@@ -21,7 +21,7 @@ class WelcomeBottomSheetElementsImpl : WelcomeBottomSheetElements {
             WelcomeElement.WelcomeText(
                 iconId = R.drawable.email,
                 id = R.string.emailAdress,
-                clickable = Clickable.MailClick("adrienpmichel@gmail.com"),
+                clickable = Clickable.MailClick(R.string.emailAdress),
                 style = Typography.body1
             ),
             WelcomeElement.WelcomeText(
@@ -32,13 +32,13 @@ class WelcomeBottomSheetElementsImpl : WelcomeBottomSheetElements {
             WelcomeElement.WelcomeText(
                 iconId = R.drawable.github,
                 id = R.string.gitHub,
-                clickable = Clickable.WebClick("github.com/AdrienMDevMobile"),
+                clickable = Clickable.WebClick(R.string.gitHubLink),
                 style = Typography.body1
             ),
             WelcomeElement.WelcomeText(
                 iconId = R.drawable.linkedin,
                 id = R.string.linkedIn,
-                clickable = Clickable.WebClick("www.linkedin.com/in/adrien-michel-android/"),
+                clickable = Clickable.WebClick(R.string.linkedInLink),
                 style = Typography.body1
             ),
             WelcomeElement.WelcomeQuote(id = R.string.selfPresentation),

@@ -44,7 +44,7 @@ fun WelcomeFragment(
         clickViewModel.clearWebIntent()
     }
 
-    val mailEvent by clickViewModel.mailAdress.observeAsState()
+    val mailEvent by clickViewModel.mailAddress.observeAsState()
     if (mailEvent != null) {
         ContextCompat.startActivity(
             LocalContext.current,

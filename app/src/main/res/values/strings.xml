@@ -20,4 +20,6 @@
     <string name="hobby_sensibilitation">Sensibilisation</string>
     <string name="hobbies">Temps libre, passions et santés</string>
     <string name="version">Version %1$s</string>
+    <string name="gitHubLink">github.com/AdrienMDevMobile</string>
+    <string name="linkedInLink">www.linkedin.com/in/adrien-michel-android/</string>
 </resources>
