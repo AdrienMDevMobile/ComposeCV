@@ -2,10 +2,9 @@ package com.adrienmandroid.composecv.data.dataSource.impl
 
 import androidx.compose.ui.text.font.FontWeight
 import com.adrienmandroid.composecv.R
+import com.adrienmandroid.composecv.data.Clickable
 import com.adrienmandroid.composecv.data.dataSource.WelcomeBottomSheetElements
 import com.adrienmandroid.composecv.data.dataSource.WelcomeElement
-import com.adrienmandroid.composecv.ui.nav.intents.MailClickable
-import com.adrienmandroid.composecv.ui.nav.intents.WebClickable
 import com.adrienmandroid.composecv.ui.theme.Typography
 
 class WelcomeBottomSheetElementsImpl : WelcomeBottomSheetElements {
@@ -22,7 +21,7 @@ class WelcomeBottomSheetElementsImpl : WelcomeBottomSheetElements {
             WelcomeElement.WelcomeText(
                 iconId = R.drawable.email,
                 id = R.string.emailAdress,
-                clickable = MailClickable("adrienpmichel@gmail.com"),
+                clickable = Clickable.MailClick("adrienpmichel@gmail.com"),
                 style = Typography.body1
             ),
             WelcomeElement.WelcomeText(
@@ -33,13 +32,13 @@ class WelcomeBottomSheetElementsImpl : WelcomeBottomSheetElements {
             WelcomeElement.WelcomeText(
                 iconId = R.drawable.github,
                 id = R.string.gitHub,
-                clickable = WebClickable("github.com/AdrienMDevMobile"),
+                clickable = Clickable.WebClick("github.com/AdrienMDevMobile"),
                 style = Typography.body1
             ),
             WelcomeElement.WelcomeText(
                 iconId = R.drawable.linkedin,
                 id = R.string.linkedIn,
-                clickable = WebClickable("www.linkedin.com/in/adrien-michel-android/"),
+                clickable = Clickable.WebClick("www.linkedin.com/in/adrien-michel-android/"),
                 style = Typography.body1
             ),
             WelcomeElement.WelcomeQuote(id = R.string.selfPresentation),

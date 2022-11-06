@@ -3,7 +3,7 @@ package com.adrienmandroid.composecv.data.dataSource
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.ui.text.TextStyle
-import com.adrienmandroid.composecv.ui.nav.intents.IClickable
+import com.adrienmandroid.composecv.data.Clickable
 
 sealed class WelcomeElement {
     class WelcomeImage(val source: Int, val description: String) : WelcomeElement()
@@ -16,6 +16,6 @@ sealed class WelcomeElement {
         val id: Int,
         val style: TextStyle = TextStyle(),
         val args: Array<Any> = emptyArray(),
-        val clickable: IClickable? = null
+        val clickable: Clickable? = null
     ) : WelcomeElement()
 }

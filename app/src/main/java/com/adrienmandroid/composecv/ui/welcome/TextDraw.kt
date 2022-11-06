@@ -15,7 +15,6 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.ui.nav.intents.ClickViewModel
-import com.adrienmandroid.composecv.ui.nav.intents.IClickable
 
 @Composable
 fun TextDraw(
@@ -23,7 +22,7 @@ fun TextDraw(
     @StringRes id: Int,
     style: TextStyle,
     args: Array<Any>,
-    clickable: IClickable?,
+    clickable: ClickViewModel.ClickAction?,
     clickViewModel: ClickViewModel
 ) {
     Row(modifier = Modifier.fillMaxWidth()) {
@@ -54,7 +53,7 @@ fun TextDraw(
 private fun DrawClickable(
     @StringRes id: Int,
     args: Array<Any>,
-    clickable: IClickable,
+    clickable: ClickViewModel.ClickAction,
     style: TextStyle,
     clickViewModel: ClickViewModel
 ) {
@@ -64,6 +63,6 @@ private fun DrawClickable(
             toAnnotatedString()
         },
         style = style.copy(textDecoration = TextDecoration.Underline),
-        onClick = { clickable.onClick(clickViewModel) }
+        onClick = { clickViewModel.onClick(clickable) }
     )
 }

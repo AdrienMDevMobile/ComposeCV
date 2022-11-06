@@ -13,6 +13,13 @@ class ClickViewModel : ViewModel() {
     val mailAdress: LiveData<String>
         get() = _mailAdress
 
+    fun onClick(action:ClickAction){
+        when(action){
+            is ClickAction.MailClick -> onMailClick(action.address)
+            is ClickAction.WebClick -> onWebClick(action.address)
+        }
+    }
+
     fun onWebClick(address: String) {
         _webUrl.postValue(address)
     }
@@ -27,5 +34,10 @@ class ClickViewModel : ViewModel() {
 
     fun clearMailIntent() {
         _mailAdress.postValue(null)
+    }
+
+    sealed class ClickAction {
+        class MailClick(val address:String): ClickAction()
+        class WebClick(val address:String): ClickAction()
     }
 }

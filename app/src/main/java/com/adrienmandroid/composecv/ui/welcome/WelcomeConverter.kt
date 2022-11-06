@@ -4,6 +4,7 @@ import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.runtime.Composable
 import com.adrienmandroid.composecv.data.dataSource.WelcomeElement
 import com.adrienmandroid.composecv.ui.nav.intents.ClickViewModel
+import com.adrienmandroid.composecv.ui.nav.intents.toViewClick
 
 /*
 @OptIn(ExperimentalFoundationApi::class)
@@ -29,7 +30,7 @@ fun CheckUiType(value: WelcomeElement, clickViewModel: ClickViewModel) {
             id = value.id,
             style = value.style,
             args = value.args,
-            clickable = value.clickable,
+            clickable = value.clickable.toViewClick(),
             clickViewModel = clickViewModel
         )
     }
