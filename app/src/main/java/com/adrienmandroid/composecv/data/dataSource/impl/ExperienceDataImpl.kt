@@ -23,13 +23,14 @@ class ExperienceDataImpl : ExperienceData {
                 ExperienceInformation(R.string.exp_info_apply_rule),
                 ExperienceInformation(R.string.exp_info_supp_monitoring_analysis),
                 ExperienceInformation(R.string.exp_info_layout_data_binding),
-                ExperienceInformation(R.string.exp_info_navigation_graph)
+                ExperienceInformation(R.string.exp_info_navigation_graph),
+                ExperienceInformation(R.string.exp_info_ei_compose_hilt)
             )
         ),
         Experience(
-            name=R.string.exp_spending_name,
+            name = R.string.exp_spending_name,
             logo = R.drawable.ic_spending,
-            ExpDates = Dates(begin = Date(1664575200000), end=Date(1672614000000)),
+            ExpDates = Dates(begin = Date(1664575200000), end = Date(1672614000000)),
             informations = listOf(
                 ExperienceInformation(R.string.exp_info_compose),
                 ExperienceInformation(R.string.exp_info_room),

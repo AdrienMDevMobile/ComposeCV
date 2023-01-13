@@ -7,7 +7,7 @@
     <string name="selfPresentation">Ingénieur en informatique,
         j\'ai développé une <![CDATA[<b>passion</b>]]> et acquis une véritable <![CDATA[<b>expérience</b>]]> dans le développement <![CDATA[<b>Android:</b>]]> au travers de <![CDATA[<b>nombreux projets</b>]]>
         professionnels et personnels.\n
-        Très <![CDATA[<b>curieux:</b>]]>, je ne cesse d\'enrichir mes compétences en développement Android.
+        Très <![CDATA[<b>curieux</b>]]>, je ne cesse d\'enrichir mes compétences en développement Android.
         C\'est cette curiosité et envie d\'apprendre qui m\'ont motivé à développer cette application avec nouvel outil de Google : <![CDATA[<b>Jetpack compose</b>]]>.
     </string>
     <string name="hashtag">Ajouter ici mes Hashtags. Android. Kotlin. Growth mindset. Créativité.</string>
