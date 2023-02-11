@@ -23,11 +23,11 @@ class SkillDataImpl : SkillData {
         ),
         Skill(
             name = "Mad skills",  subSkills = listOf("Growth mindset", "Capacité d'apprentissage"), explanation = """
-                Growth mindset (état d’esprit de développement) : Dire tout le monde peut évoluer, changer et progresser avec deux choses : du travail et des efforts. .
-                En contraste avec le "Fixed mindset" (état d'esprit fixe, qui voit les capacités comme innées, déterminées uniquement par le talent naturel.
+                Growth mindset (état d’esprit de croissance) : Dire tout le monde peut évoluer, changer et progresser avec du travail et des efforts. .
+                En contraste avec le "Fixed mindset" (état d'esprit fixe), qui voit les capacités comme innées et déterminées uniquement par le talent naturel.
                 Connaitre ces deux concepts là est une chose, mais <b>avoir une mentalité de croissance est de réelement croire</b>, au fond de soi, en sa capacité d'évoluer.
                  <b>Cela ne s'apprend pas, cela s'experimente.</b> En réussissant un défi que l'on c'est fixé.
-                 Personnellement, je l'ai experimenté grace à League of Legends, en atteignant le rang Or, au bout de nombreuses années. Me classant ainsi parmis les 30% des joueurs.
+                 Personnellement, je l'ai experimenté grace à League of Legends, en atteignant le rang Or, au bout de nombreuses années. Me classant ainsi parmis les 30% des meilleurs joueurs.
         """.trimIndent()
         ),
         Skill(
