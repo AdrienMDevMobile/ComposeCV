@@ -14,33 +14,28 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import com.adrienmandroid.composecv.R
 import com.adrienmandroid.composecv.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.ui.theme.roundedTopEndSquare
 
-fun LazyListScope.BottomsheetHeader() {
+fun LazyListScope.BottomsheetHeader(
+    verticalArrangement: Dp = 32.dp,
+    content: (@Composable () -> Unit)? = null,
+) {
     item {
         Column(
             modifier = Modifier.fillMaxWidth(1f),
-            verticalArrangement = Arrangement.spacedBy((-32).dp)
+            verticalArrangement = Arrangement.spacedBy(verticalArrangement.unaryMinus())
         ) {
-            Image(
-                painter = painterResource(R.drawable.profile_picture),
-                contentDescription = "Picture",
-                contentScale = ContentScale.Crop,
-                modifier = Modifier
-                    .width(150.dp)
-                    .height(150.dp)
-                    .padding(5.dp)
-                    .zIndex(1f)
-                    .clip(CircleShape)
-                    .border(4.dp, MaterialTheme.colors.background, CircleShape)
-            )
+            content?.let {
+                content()
+            }
             Spacer(
                 modifier = Modifier
-                    .height(32.dp)
+                    .height(verticalArrangement)
                     .fillMaxWidth(1f)
                     .background(MaterialTheme.colors.background, roundedTopEndSquare)
 
@@ -51,7 +46,30 @@ fun LazyListScope.BottomsheetHeader() {
 
 @Preview
 @Composable
-fun previewBottomSheetHeader() {
+fun PreviewBottomSheetHeader() {
+    ComposeCVTheme {
+        LazyColumn() {
+            BottomsheetHeader {
+                Image(
+                    painter = painterResource(R.drawable.profile_picture),
+                    contentDescription = "Picture",
+                    contentScale = ContentScale.Crop,
+                    modifier = Modifier
+                        .width(150.dp)
+                        .height(150.dp)
+                        .padding(5.dp)
+                        .zIndex(1f)
+                        .clip(CircleShape)
+                        .border(4.dp, MaterialTheme.colors.background, CircleShape)
+                )
+            }
+        }
+    }
+}
+
+@Preview
+@Composable
+fun PreviewBottomSheetHeaderNull() {
     ComposeCVTheme {
         LazyColumn() {
             BottomsheetHeader()
