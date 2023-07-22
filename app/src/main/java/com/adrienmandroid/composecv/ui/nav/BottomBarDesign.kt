@@ -1,18 +1,22 @@
 package com.adrienmandroid.composecv.ui.nav
 
 import android.content.res.Configuration
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.adrienmandroid.composecv.data.BottomNavElement
 import com.adrienmandroid.composecv.data.dataSource.BottomNavGraph
 import com.adrienmandroid.composecv.ui.theme.ComposeCVTheme
-import com.adrienmandroid.composerandom.Nav.BottomBarItemDesign
 
 //The design of the bottomBar
 @Composable
@@ -22,11 +26,19 @@ fun BottomBarDesign(
     navController: NavHostController
 ) {
     Surface(
-        color = MaterialTheme.colors.background
+        color = MaterialTheme.colors.background,
     ) {
-        Row() {
-            for (element in elements) {
-                BottomBarItemDesign(element, currentDestination, navController)
+        Column {
+            Surface(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(1.dp)
+
+            ) {}
+            Row {
+                for (element in elements) {
+                    BottomBarItemDesign(element, currentDestination, navController)
+                }
             }
         }
     }

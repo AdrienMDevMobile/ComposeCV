@@ -134,6 +134,6 @@ fun ExperienceInfoListItem(informations: List<ExperienceInformation>) {
 @Composable
 fun PreviewExperienceHeader() {
     ComposeCVTheme() {
-        ExperienceHeader(logo = R.drawable.home, name = R.string.app_name)
+        ExperienceHeader(logo = R.drawable.ic_tab_home, name = R.string.app_name)
     }
 }

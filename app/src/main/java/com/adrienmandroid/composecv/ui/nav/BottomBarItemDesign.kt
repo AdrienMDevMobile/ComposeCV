@@ -1,4 +1,4 @@
-package com.adrienmandroid.composerandom.Nav
+package com.adrienmandroid.composecv.ui.nav
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Row
@@ -29,18 +29,27 @@ fun RowScope.BottomBarItemDesign(
     currentDestination: NavDestination?,
     navController: NavHostController
 ) {
+    val isSelected =
+        currentDestination?.hierarchy?.any { it.route == element.route } == true
+
     BottomNavigationItem(
         //label = if(element.name != null){ { Text(text = element.name) }} else null,
         icon = {
             Icon(
-                painter = painterResource(id = element.image),
+                painter = painterResource(
+                    id = if (isSelected) {
+                        element.imageSelected
+                    } else {
+                        element.imageUnSelected
+                    },
+                ),
                 contentDescription = element.name,
                 modifier = Modifier
                     .size(30.dp)
                     .defaultMinSize(30.dp)
             )
         },
-        selected = currentDestination?.hierarchy?.any { it.route == element.route } == true,
+        selected = isSelected,
         onClick = { navController.navigate(element.route) }
     )
 }

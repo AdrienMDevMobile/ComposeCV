@@ -18,10 +18,10 @@ import com.adrienmandroid.composecv.ui.fragments.WelcomeFragment
 //Navigation graph informations.
 object BottomNavGraph {
 
-    val WelcomeBottomNav = BottomNavElement("welcome", null, R.drawable.home)
-    val ExpBottomNav = BottomNavElement("experience", "EXP.", R.drawable.experience)
-    val SkillBottomNav = BottomNavElement("skill", "Skill", R.drawable.ic_skill2)
-    val OtherBottomNav = BottomNavElement("other", "other", R.drawable.ic_other_fragment)
+    val WelcomeBottomNav = BottomNavElement("welcome", null, R.drawable.ic_tab_home, R.drawable.ic_tab_home_unselected)
+    val ExpBottomNav = BottomNavElement("experience", "EXP.", R.drawable.ic_tab_experience, R.drawable.ic_tab_experience_unselected)
+    val SkillBottomNav = BottomNavElement("skill", "Skill", R.drawable.ic_tab_skill, R.drawable.ic_tab_skill_unselected)
+    val OtherBottomNav =    BottomNavElement("other", "other", R.drawable.ic_tab_other, R.drawable.ic_tab_other_unselected)
 
     val array = arrayOf(WelcomeBottomNav, ExpBottomNav, SkillBottomNav, OtherBottomNav)
 
