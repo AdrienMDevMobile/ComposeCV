@@ -30,7 +30,7 @@ class ExperienceDataImpl : ExperienceData {
         Experience(
             name = R.string.exp_spending_name,
             logo = R.drawable.ic_spending,
-            ExpDates = Dates(begin = Date(1664575200000), end = Date(1672614000000)),
+            ExpDates = Dates(begin = Date(1664575200000), end = null),
             informations = listOf(
                 ExperienceInformation(R.string.exp_info_compose),
                 ExperienceInformation(R.string.exp_info_room),

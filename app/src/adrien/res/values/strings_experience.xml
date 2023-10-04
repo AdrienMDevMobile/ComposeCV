@@ -4,11 +4,11 @@
     <string name="exp_astek_employer">Astek</string>
     <string name="exp_info_android">Développement Android</string>
     <string name="exp_info_git_team">Utilisation de Git en équipe</string>
-    <string name="exp_info_ios_back"><![CDATA[<b>Travail en équipe</b> avec iOS et le back end]]></string>
+    <string name="exp_info_ios_back"><![CDATA[<b>Travail en équipe</b> avec les développeurs iOS et back-ends]]></string>
     <string name="exp_info_spec"><![CDATA[<b>Spécifications et chiffrages</b> des futurs développements.]]></string>
     <string name="exp_info_design"><![CDATA[Respect du design donné par l\'équipe DA, <b>au pixel prêt</b>]]></string>
     <string name="exp_info_apply_rule">Application des règles et normes d\'écritures. Personnalisée par les développeurs Séniors ou recommandés par Google.</string>
-    <string name="exp_info_supp_monitoring_analysis">Support, monitoring et analyses</string>
+    <string name="exp_info_supp_monitoring_analysis">Support, monitoring et analyses des logs</string>
     <string name="exp_info_layout_data_binding">Layout binding et data binding</string>
     <string name="exp_info_navigation_graph">Navigation graph</string>
     <string name="exp_spending_name"><![CDATA[Suivie des dépenses, room & datastore]]></string>
