@@ -23,7 +23,7 @@
     <string name="study_descartes">IUT Paris Descartes</string>
     <string name="study_ece">ECE Paris</string>
     <string name="diploma_ece">Diplome d\'ingénieur</string>
-    <string name="txt_gratitude">Merci à Manon F et Jérome L pour leurs conseils dans le design de l\'application. \n Merci à Frédéric U. et Julien E. pour leurs enseignements sur Android.\nMerci aux développeurs Android de StackOverflow et Slack Android FR.</string>
+    <string name="txt_gratitude">Merci à Manon F et Jérome L pour leurs conseils dans le design de l\'application. \n Merci à Frédéric U. et tous les développeurs Andoid lors de ma mission chez EI pour leurs enseignements sur Android.\nMerci aux développeurs Android de StackOverflow et Slack Android FR.</string>
     <string name="hobby_category_competition">Hobby, compétition</string>
     <string name="hobby_LoL">League of legend</string>
     <string name="hobby_wcs">West coast swing</string>

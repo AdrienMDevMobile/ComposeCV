@@ -26,8 +26,8 @@ class SkillDataImpl : SkillData {
                 Growth mindset (état d’esprit de croissance) : Dire tout le monde peut évoluer, changer et progresser avec du travail et des efforts. .
                 En contraste avec le "Fixed mindset" (état d'esprit fixe), qui voit les capacités comme innées et déterminées uniquement par le talent naturel.
                 Connaitre ces deux concepts là est une chose, mais <b>avoir une mentalité de croissance est de réelement croire</b>, au fond de soi, en sa capacité d'évoluer.
-                 <b>Cela ne s'apprend pas, cela s'experimente.</b> En réussissant un défi que l'on c'est fixé.
-                 Personnellement, je l'ai experimenté grace à League of Legends, en atteignant le rang Or, au bout de nombreuses années. Me classant ainsi parmis les 30% des meilleurs joueurs.
+                 <b>Cela ne s'apprend pas, cela s'experimente.</b> Par exemple, en réussissant un défi que l'on c'est fixé.
+                 Personnellement, je l'ai experimenté grace à League of Legends, en atteignant le rang Or, au bout de nombreuses années. Me classant ainsi parmis les 30% meilleurs joueurs du jeu.
         """.trimIndent()
         ),
         Skill(
@@ -58,7 +58,7 @@ class SkillDataImpl : SkillData {
         Skill(
             name = "Hilt", targetValue = 0.7f, explanation = """
             Une révolution du développement que <b>j'adore</b>.
-            L'injection de dépendances rend le code beaucoup <b>plus maintenable</b>, mais il y a bien un endroit où cela pique : quand ces dépendances doivent être injectées.
+            L'injection de dépendances rend le code beaucoup <b>plus maintenable</b>, mais il y a toutefois un endroit où cela pique : quand ces dépendances doivent être injectées.
             Avec Hilt pas de soucis, <b>ces injections sont gérées de façon très lisible</b>.
             """.trimIndent()
         ),
@@ -72,8 +72,7 @@ class SkillDataImpl : SkillData {
             name = "Jetpack compose", targetValue = 0.7f, explanation = """
             Le dernier bébé de Google.
             Intrigué et curieux, j'ai évidemment <b>choisi de faire ce projet personnel avec Compose pour apprendre à l'utiliser</b>.
-            J'ai été un peu déçu.
-            Compose est bien mieux que l'xml. Mais ne m'a pas décoiffé comme l'injection de dépendance et Hilt l'ont fait.
+            Une révolution, un pas de plus vers des codes plus maintenables et compréhensibles. Après Compose, le XML n'a plus le même gout
         """.trimIndent()
         ),
         Skill(
