@@ -64,7 +64,7 @@ fun WelcomeFragment(
                 painter = painterResource(R.drawable.background_picture),
                 contentDescription = "Background",
                 contentScale = ContentScale.Crop,
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth().height(250.dp)
             )
         },
         anchoredContent = {
