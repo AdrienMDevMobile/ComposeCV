@@ -102,7 +102,7 @@ fun CardDraw(quote: Quote, position: Int) {
                 }
             )
             Text(
-                text = quote.author,
+                text = stringResource(quote.author),
                 style = textStyleAuthor,
                 modifier = Modifier.constrainAs(author) {
                     top.linkTo(text.bottom)
@@ -112,7 +112,7 @@ fun CardDraw(quote: Quote, position: Int) {
             )
             Image(
                 painter = painterResource(id = quote.image),
-                contentDescription = quote.author,
+                contentDescription = stringResource(quote.author),
                 modifier = Modifier
                     .constrainAs(image) {
                         if (!textLeft) {
@@ -135,7 +135,7 @@ fun CardDraw(quote: Quote, position: Int) {
 @Composable
 fun PreviewQuoteCard() {
     CardDraw(
-        quote = Quote(R.string.quoteMeditation, "Mark Twain", R.drawable.quote_mark_twain),
+        quote = Quote(R.string.quoteMeditation, R.string.quoteAuthorMarkTwain, R.drawable.quote_mark_twain),
         position = 1
     )
 }
