@@ -15,6 +15,12 @@ class SkillDataImpl : SkillData {
         """.trimIndent()
         ),
         Skill(
+            name= "Flutter", targetValue = 0.6f, explanation = """
+                Poussé par ma curiosité, j'ai démmaré l'apprentissage de Flutter avec les tutoriels de Google.
+                Cette compétence m'a été utile pour le mécénat chez Open Food Fact !
+            """.trimIndent()
+        ),
+        Skill(
             name = "Kotlin", targetValue = 0.8f, explanation = """
             Une des raisons pour laquel Android est si plaisant à travailler est Kotlin.
             Cette technologie est <b>moderne</b>, et <b>incroyablement riche</b>. 

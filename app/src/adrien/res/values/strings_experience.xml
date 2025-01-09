@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="exp_astek_name">Ingénieur développement Android</string>
+    <string name="exp_off_name">Mécénat pour Open Food Fact</string>
+    <string name="exp_info_off"><![CDATA[Travail sur<b> Flutter</b>]]></string>
+    <string name="exp_info_off_autonomous"><![CDATA[Travail en <b>autonomie</b>]]></string>
+    <string name="exp_astek_name">Ingénieur développement Mobile</string>
     <string name="exp_astek_employer">Astek</string>
     <string name="exp_info_android">Développement Android</string>
     <string name="exp_info_git_team">Utilisation de Git en équipe</string>
@@ -11,6 +14,8 @@
     <string name="exp_info_supp_monitoring_analysis">Support, monitoring et analyses des logs</string>
     <string name="exp_info_layout_data_binding">Layout binding et data binding</string>
     <string name="exp_info_navigation_graph">Navigation graph</string>
+    <string name="exp_spending_flutter_name">Enregistrement des dépenses Flutter</string>
+    <string name="exp_info_spending_flutter">Application sauvegarde des dépenses pour prendre en main Flutter</string>
     <string name="exp_spending_name"><![CDATA[Suivie des dépenses, room & datastore]]></string>
     <string name="exp_info_compose"><![CDATA[<b>Jetpack compose</b>]]></string>
     <string name="exp_info_room"><![CDATA[<b>Room</b>]]></string>

@@ -10,10 +10,20 @@ import java.util.*
 class ExperienceDataImpl : ExperienceData {
     override fun getExperiences(): List<Experience> = listOf(
         Experience(
+            name = R.string.exp_off_name,
+            employer = R.string.exp_astek_employer,
+            logo = R.drawable.ic_exp_astek,
+            ExpDates = Dates(begin = Date(1730075200000), end = null),
+            informations = listOf(
+                ExperienceInformation(R.string.exp_info_off),
+                ExperienceInformation(R.string.exp_info_off_autonomous),
+            )
+        ),
+        Experience(
             name = R.string.exp_astek_name,
             employer = R.string.exp_astek_employer,
             logo = R.drawable.ic_exp_astek,
-            ExpDates = Dates(begin = Date(1631052000000), end = null),
+            ExpDates = Dates(begin = Date(1631052000000), end = Date(1728075200000)),
             informations = listOf(
                 ExperienceInformation(R.string.exp_info_android),
                 ExperienceInformation(R.string.exp_info_git_team),
@@ -28,9 +38,17 @@ class ExperienceDataImpl : ExperienceData {
             )
         ),
         Experience(
+            name = R.string.exp_spending_flutter_name,
+            logo = R.drawable.ic_spending,
+            ExpDates = Dates(begin = Date(1728075200000), end = null),
+            informations = listOf(
+                ExperienceInformation(R.string.exp_info_spending_flutter),
+            )
+        ),
+        Experience(
             name = R.string.exp_spending_name,
             logo = R.drawable.ic_spending,
-            ExpDates = Dates(begin = Date(1664575200000), end = null),
+            ExpDates = Dates(begin = Date(1664575200000), end = Date(1699575200000)),
             informations = listOf(
                 ExperienceInformation(R.string.exp_info_compose),
                 ExperienceInformation(R.string.exp_info_room),
@@ -42,7 +60,7 @@ class ExperienceDataImpl : ExperienceData {
         Experience(
             name = R.string.exp_cv_name,
             logo = R.drawable.ic_launcher,
-            ExpDates = Dates(begin = Date(1645052400000), end = null),
+            ExpDates = Dates(begin = Date(1645052400000), end = Date(1684575200000)),
             informations = listOf(
                 ExperienceInformation(R.string.exp_info_compose),
                 ExperienceInformation(R.string.exp_info_plural),
@@ -51,6 +69,18 @@ class ExperienceDataImpl : ExperienceData {
                 ExperienceInformation(R.string.exp_info_canvas),
                 ExperienceInformation(R.string.exp_info_ddui),
                 ExperienceInformation(R.string.exp_info_flavor)
+            )
+        ),
+        Experience(
+            name = R.string.exp_spending_name,
+            logo = R.drawable.ic_spending,
+            ExpDates = Dates(begin = Date(1664575200000), end = Date(1661596400000)),
+            informations = listOf(
+                ExperienceInformation(R.string.exp_info_compose),
+                ExperienceInformation(R.string.exp_info_room),
+                ExperienceInformation(R.string.exp_info_data_store),
+                ExperienceInformation(R.string.exp_info_pagination),
+                ExperienceInformation(R.string.exp_info_modification_standart)
             )
         ),
         Experience(
