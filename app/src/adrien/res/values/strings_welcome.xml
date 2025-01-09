@@ -2,7 +2,6 @@
 <resources>
     <string name="names">Adrien MICHEL</string>
     <string name="title">Ingénieur développeur Android</string>
-    <string name="age">%1$d ans</string>
     <string name="emailAdress">adrienpmichel@gmail.com</string>
     <string name="selfPresentation">Ingénieur en informatique,
         j\'ai développé une <![CDATA[<b>passion</b>]]> et acquis une véritable <![CDATA[<b>expérience</b>]]> dans le développement <![CDATA[<b>Android:</b>]]> au travers de <![CDATA[<b>nombreux projets</b>]]>
@@ -12,6 +11,10 @@
     </string>
     <string name="hashtag">Ajouter ici mes Hashtags. Android. Kotlin. Growth mindset. Créativité.</string>
     <string name="adress">Paris</string>
-    <string name="linkedIn">LinkedIn</string>
-    <string name="gitHub">GitHub</string>
+    <string name="kw_android">Android</string>
+    <string name="kw_kotlin">Kotlin</string>
+    <string name="kw_compose">Jetpack compose</string>
+    <string name="kw_growth">Growth mindset</string>
+    <string name="kw_creativity">Créativité</string>
+    <string name="exp_info_ei_compose_hilt"><![CDATA[Développement d\'une nouvelle application utilisant <b>Compose</b> (dont <b>Compose navigation</b>) et <b>Hilt</b>]]></string>
 </resources>

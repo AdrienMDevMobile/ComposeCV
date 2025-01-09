@@ -12,6 +12,10 @@
     <string name="exp_less_than_month">Moins d\'un mois</string>
     <string name="exp_up_to_today">A ce jour</string>
 
+    <string name="age">%1$d ans</string>
+    <string name="linkedIn">LinkedIn</string>
+    <string name="gitHub">GitHub</string>
+
     <string name="Welcome_Keywords">Mots clés</string>
     <string name="title_diplomas">Diplomes</string>
     <string name="title_quotes">Mes citations favorites</string>
@@ -22,10 +26,4 @@
     <string name="version">Version %1$s</string>
     <string name="gitHubLink">github.com/AdrienMDevMobile</string>
     <string name="linkedInLink">www.linkedin.com/in/adrien-michel-android/</string>
-    <string name="kw_android">Android</string>
-    <string name="kw_kotlin">Kotlin</string>
-    <string name="kw_compose">Jetpack compose</string>
-    <string name="kw_growth">Growth mindset</string>
-    <string name="kw_creativity">Créativité</string>
-    <string name="exp_info_ei_compose_hilt"><![CDATA[Développement d\'une nouvelle application utilisant <b>Compose</b> (dont <b>Compose navigation</b>) et <b>Hilt</b>]]></string>
 </resources>
