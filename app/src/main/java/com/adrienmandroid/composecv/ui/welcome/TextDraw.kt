@@ -5,9 +5,12 @@ import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.material.Icon
+import androidx.compose.material.LocalContentAlpha
+import androidx.compose.material.LocalContentColor
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.takeOrElse
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
@@ -35,6 +38,7 @@ fun TextDraw(
             Spacer(modifier = Modifier.width(10.dp))
         }
         if (clickable != null) {
+            //Ca c'est le reste
             DrawClickable(
                 id = id,
                 args = args,
@@ -43,6 +47,7 @@ fun TextDraw(
                 clickViewModel = clickViewModel
             )
         } else {
+            //Ici c'est paris
             Text(text = stringResource(id, *args), style = style)
         }
     }
@@ -62,7 +67,11 @@ private fun DrawClickable(
         text = with(AnnotatedString.Builder(stringResource(id, *args))) {
             toAnnotatedString()
         },
-        style = style.copy(textDecoration = TextDecoration.Underline),
+        style = style.copy(textDecoration = TextDecoration.Underline,
+            color = style.color.takeOrElse {
+                LocalContentColor.current.copy(alpha = LocalContentAlpha.current)
+            }
+        ),
         onClick = { clickViewModel.onClick(clickable) }
     )
 }
