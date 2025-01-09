@@ -43,7 +43,7 @@ class WelcomeBottomSheetElementsImpl : WelcomeBottomSheetElements {
                 style = Typography.body1
             ),
             WelcomeElement.WelcomeQuote(id = R.string.selfPresentation),
-            WelcomeElement.WelcomeImage(R.drawable.auboulotavelo, "Au boult à velo"),
+            WelcomeElement.WelcomeImage(R.drawable.auboulotavelo, "Au boulot à velo", tint = true),
             WelcomeElement.WelcomeText(
                 id = R.string.Welcome_Keywords,
                 style = Typography.body1.copy(fontWeight = FontWeight.Bold)

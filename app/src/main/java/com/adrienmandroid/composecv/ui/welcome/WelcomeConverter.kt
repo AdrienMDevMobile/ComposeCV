@@ -21,7 +21,8 @@ fun CheckUiType(value: WelcomeElement, clickViewModel: ClickViewModel) {
     when (value) {
         is WelcomeElement.WelcomeImage -> ImageDraw(
             source = value.source,
-            description = value.description
+            description = value.description,
+            tint = value.tint,
         )
         is WelcomeElement.WelcomeKeyword -> Keywords(keywords = value.keywords)
         is WelcomeElement.WelcomeQuote -> QuoteTextDraw(id = value.id)
