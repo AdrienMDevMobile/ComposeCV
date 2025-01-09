@@ -1,4 +1,4 @@
-package com.adrienmandroid.composerandom
+package com.adrienmandroid.composecv.ui.nav
 
 import androidx.compose.material.BottomNavigation
 import androidx.compose.runtime.Composable

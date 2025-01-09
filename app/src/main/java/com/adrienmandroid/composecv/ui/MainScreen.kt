@@ -1,4 +1,4 @@
-package com.adrienmandroid.composerandom
+package com.adrienmandroid.composecv.ui
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
@@ -9,6 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
 import com.adrienmandroid.composecv.data.dataSource.BottomNavGraph
 import com.adrienmandroid.composecv.data.dataSource.BottomNavGraphHost
+import com.adrienmandroid.composecv.ui.nav.BottomBar
 
 
 //The screen + the bar at the bottom, under it.
