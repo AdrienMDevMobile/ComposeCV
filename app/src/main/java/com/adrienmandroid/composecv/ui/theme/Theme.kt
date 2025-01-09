@@ -12,16 +12,18 @@ import androidx.compose.ui.graphics.Color.Companion.DarkGray
 import androidx.compose.ui.graphics.Color.Companion.White
 
 val DarkColorPalette = darkColors(
-    primary = colorMainGreen,
-    primaryVariant = colorSecondaryGreen,
-    secondary = colorSecondaryGreen,
+    primary = colorDarkerGreen,
+    primaryVariant = colorDarkestGreen,
+    secondary = colorFlashiestGreen,
+    secondaryVariant = colorDarkestGreen,
     surface = colorDarkestGreen,
 )
 
 private val LightColorPalette = lightColors(
-    primary = colorMainGreen,
-    primaryVariant = colorSecondaryGreen,
-    secondary = colorLighterGreen,
+    primary = colorLighterGreen,
+    primaryVariant = colorEvenGreen,
+    secondary = colorFlashiestGreen,
+    secondaryVariant = colorDarkestGreen,
     surface = colorLighterGreen,
 )
 
@@ -53,8 +55,5 @@ val Colors.quoteBackground: Color
 val Colors.onQuoteBackground: Color
     get() = White
 
-val Colors.signature: Color
-    get() = colorMainGreen
-
 val Colors.carouselButton: Color
-    get() = if (isLight) colorFlashiestGreen else colorSecondaryGreen
+    get() = if (isLight) colorFlashiestGreen else colorDarkestGreen

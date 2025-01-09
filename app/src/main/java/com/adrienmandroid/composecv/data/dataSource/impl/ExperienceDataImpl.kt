@@ -13,7 +13,8 @@ class ExperienceDataImpl : ExperienceData {
             name = R.string.exp_off_name,
             employer = R.string.exp_astek_employer,
             logo = R.drawable.ic_exp_astek,
-            ExpDates = Dates(begin = Date(1730075200000), end = null),
+            expDates = Dates(begin = Date(1730075200000), end = null),
+            professional = true,
             informations = listOf(
                 ExperienceInformation(R.string.exp_info_off),
                 ExperienceInformation(R.string.exp_info_off_autonomous),
@@ -23,7 +24,8 @@ class ExperienceDataImpl : ExperienceData {
             name = R.string.exp_astek_name,
             employer = R.string.exp_astek_employer,
             logo = R.drawable.ic_exp_astek,
-            ExpDates = Dates(begin = Date(1631052000000), end = Date(1728075200000)),
+            expDates = Dates(begin = Date(1631052000000), end = Date(1728075200000)),
+            professional = true,
             informations = listOf(
                 ExperienceInformation(R.string.exp_info_android),
                 ExperienceInformation(R.string.exp_info_git_team),
@@ -38,29 +40,10 @@ class ExperienceDataImpl : ExperienceData {
             )
         ),
         Experience(
-            name = R.string.exp_spending_flutter_name,
-            logo = R.drawable.ic_spending,
-            ExpDates = Dates(begin = Date(1728075200000), end = null),
-            informations = listOf(
-                ExperienceInformation(R.string.exp_info_spending_flutter),
-            )
-        ),
-        Experience(
-            name = R.string.exp_spending_name,
-            logo = R.drawable.ic_spending,
-            ExpDates = Dates(begin = Date(1664575200000), end = Date(1699575200000)),
-            informations = listOf(
-                ExperienceInformation(R.string.exp_info_compose),
-                ExperienceInformation(R.string.exp_info_room),
-                ExperienceInformation(R.string.exp_info_data_store),
-                ExperienceInformation(R.string.exp_info_pagination),
-                ExperienceInformation(R.string.exp_info_modification_standart)
-            )
-        ),
-        Experience(
             name = R.string.exp_cv_name,
             logo = R.drawable.ic_launcher,
-            ExpDates = Dates(begin = Date(1645052400000), end = Date(1684575200000)),
+            expDates = Dates(begin = Date(1645052400000), end = null),
+            professional = false,
             informations = listOf(
                 ExperienceInformation(R.string.exp_info_compose),
                 ExperienceInformation(R.string.exp_info_plural),
@@ -72,9 +55,19 @@ class ExperienceDataImpl : ExperienceData {
             )
         ),
         Experience(
+            name = R.string.exp_spending_flutter_name,
+            logo = R.drawable.ic_spending,
+            expDates = Dates(begin = Date(1728075200000), end = null),
+            professional = false,
+            informations = listOf(
+                ExperienceInformation(R.string.exp_info_spending_flutter),
+            )
+        ),
+        Experience(
             name = R.string.exp_spending_name,
             logo = R.drawable.ic_spending,
-            ExpDates = Dates(begin = Date(1664575200000), end = Date(1661596400000)),
+            expDates = Dates(begin = Date(1664575200000), end = Date(1699575200000)),
+            professional = false,
             informations = listOf(
                 ExperienceInformation(R.string.exp_info_compose),
                 ExperienceInformation(R.string.exp_info_room),
@@ -86,7 +79,8 @@ class ExperienceDataImpl : ExperienceData {
         Experience(
             name = R.string.exp_fdc_name,
             logo = R.drawable.ic_exp_fresque,
-            ExpDates = Dates(begin = Date(1593554400000), end = Date(1641596400000)),
+            expDates = Dates(begin = Date(1593554400000), end = Date(1641596400000)),
+            professional = false,
             informations = listOf(
                 ExperienceInformation(R.string.exp_info_android_kotlin),
                 ExperienceInformation(R.string.exp_info_fdc_feature),
@@ -101,7 +95,8 @@ class ExperienceDataImpl : ExperienceData {
             name = R.string.exp_sh_name,
             employer = R.string.exp_sh_employer,
             logo = R.drawable.ic_exp_sh,
-            ExpDates = Dates(begin = Date(1572562800000), end = Date(1590962400000)),
+            expDates = Dates(begin = Date(1572562800000), end = Date(1590962400000)),
+            professional = true,
             informations = listOf(
                 ExperienceInformation(R.string.exp_info_sh_update),
                 ExperienceInformation(R.string.exp_info_spec),
@@ -114,7 +109,8 @@ class ExperienceDataImpl : ExperienceData {
             name = R.string.exp_natixis_name,
             employer = R.string.exp_natixis_employer,
             logo = R.drawable.ic_exp_natixis,
-            ExpDates = Dates(begin = Date(1472680800000), end = Date(1559340000000)),
+            expDates = Dates(begin = Date(1472680800000), end = Date(1559340000000)),
+            professional = true,
             informations = listOf(
                 ExperienceInformation(R.string.exp_info_nat_autonomy),
                 ExperienceInformation(R.string.exp_info_nat_analysis),

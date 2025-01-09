@@ -68,7 +68,7 @@ fun SkillCard(skill: Skill) {
                     .size(40.dp, 20.dp)
                     .align(CenterHorizontally),
                 contentPadding = PaddingValues(0.dp),
-                colors = buttonColors(backgroundColor = MaterialTheme.colors.primary),
+                colors = buttonColors(backgroundColor = MaterialTheme.colors.primaryVariant),
                 onClick = {
                     isTextVisible.value = when (isTextVisible.value) {
                         true -> false

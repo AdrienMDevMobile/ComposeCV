@@ -6,8 +6,9 @@ data class Experience(
     @StringRes val name: Int,
     @StringRes val employer: Int? = null,
     val logo: Int,
+    val expDates: Dates,
+    val professional: Boolean,
     val link: Link? = null,
-    val ExpDates: Dates,
     val informations: List<ExperienceInformation>
 )
 

@@ -3,7 +3,15 @@ package com.adrienmandroid.composecv.ui.experience
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
@@ -29,7 +37,6 @@ import com.adrienmandroid.composecv.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.ui.theme.Typography
 import com.adrienmandroid.composecv.ui.theme.onSurfaceTitle
 
-
 val expHorizontalSpacing = 10.dp
 val expVerticalSpacing = 10.dp
 
@@ -40,13 +47,17 @@ fun ExperienceCard(experience: Experience) {
             .fillMaxWidth()
             .clip(RoundedCornerShape(25.dp))
             .padding(expHorizontalSpacing, expVerticalSpacing),
-        elevation = 5.dp,
+        elevation = if (experience.professional) {
+            6.dp
+        } else {
+            2.dp
+        },
         backgroundColor = MaterialTheme.colors.background
     )
     {
         Column(modifier = Modifier.fillMaxWidth()) {
-            ExperienceHeader(experience.logo, experience.name)
-            ExpAdditionalInfo(experience.ExpDates, experience.employer, experience.link)
+            ExperienceHeader(experience.logo, experience.name, experience.professional)
+            ExpAdditionalInfo(experience.expDates, experience.employer, experience.link)
             ExperienceInfoListItem(experience.informations)
             Spacer(modifier = Modifier.height(expVerticalSpacing))
         }
@@ -54,11 +65,17 @@ fun ExperienceCard(experience: Experience) {
 }
 
 @Composable
-fun ExperienceHeader(logo: Int, @StringRes name: Int) {
+fun ExperienceHeader(logo: Int, @StringRes name: Int, professional: Boolean) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .background(MaterialTheme.colors.surface),
+            .background(
+                if (professional) {
+                    MaterialTheme.colors.primary
+                } else {
+                    MaterialTheme.colors.primaryVariant
+                }
+            ),
         contentAlignment = Alignment.CenterStart,
     ) {
         Row() {
@@ -125,7 +142,10 @@ fun ExperienceInfoListItem(informations: List<ExperienceInformation>) {
                 .background(MaterialTheme.colors.background)
                 .padding(expHorizontalSpacing, 0.dp)
         ) {
-            Text(stringResource(id = information.name).toAnnotatedString(), style = Typography.body1)
+            Text(
+                stringResource(id = information.name).toAnnotatedString(),
+                style = Typography.body1
+            )
         }
     }
 }
@@ -134,6 +154,10 @@ fun ExperienceInfoListItem(informations: List<ExperienceInformation>) {
 @Composable
 fun PreviewExperienceHeader() {
     ComposeCVTheme() {
-        ExperienceHeader(logo = R.drawable.ic_tab_home, name = R.string.app_name)
+        Column {
+            ExperienceHeader(logo = R.drawable.ic_tab_home, name = R.string.app_name, true)
+            ExperienceHeader(logo = R.drawable.ic_tab_home, name = R.string.app_name, false)
+        }
+
     }
 }

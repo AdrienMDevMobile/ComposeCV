@@ -14,7 +14,6 @@ import com.adrienmandroid.composecv.data.dataSource.impl.QuoteDataImpl
 import com.adrienmandroid.composecv.data.dataSource.impl.StudyDataImpl
 import com.adrienmandroid.composecv.ui.other.*
 import com.adrienmandroid.composecv.ui.theme.ComposeCVTheme
-import com.adrienmandroid.composecv.ui.theme.signature
 
 @Composable
 fun OtherFragment() {
@@ -33,7 +32,7 @@ fun OtherFragment() {
         otherSection({ QuoteCarousel(QuoteDataImpl()) }, title = R.string.title_quotes)
         otherSection({ HobbyRow(HobbyDataSourceImpl().getHobbies()) }, title = R.string.hobbies)
         otherSection({ Gratitudes() }, title = R.string.title_gratitude)
-        otherSection({ Signature(MaterialTheme.colors.signature) })
+        otherSection({ Signature(MaterialTheme.colors.secondaryVariant) })
         otherSection({ Version() })
     }
 }
