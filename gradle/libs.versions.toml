@@ -1,0 +1,45 @@
+[versions]
+accompanist-pager = "0.24.13-rc"
+accompanist-pager-indicators = "0.24.11-rc"
+agp = "8.8.2"
+android-junit = "1.2.1"
+compose = "1.8.0"
+compose-activity = "1.10.1"
+composeBom = "2025.04.01"
+constraintLayout = "2.2.1"
+constraintlayout-compose = "1.1.1"
+coreKtx = "1.16.0"
+espresso = "3.6.1"
+flowlayout = "0.24.4"
+junit = "4.13.2"
+kotlin = "2.0.0"
+lifecycle-viewmodel-compose = "2.8.7"
+lifecycleRuntime = "2.8.7"
+navigation = "2.8.9"
+
+[libraries]
+accompanist-flowlayout = { group = "ca.gosyer", name = "accompanist-flowlayout", version.ref = "flowlayout" }
+android-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "compose-activity" }
+android-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+android-compose-junit = { group = "androidx.compose.ui", name = "ui-test-junit4", version.ref = "compose" }
+android-compose-material = { group = "androidx.compose.material", name = "material", version.ref = "compose" }
+android-compose-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview", version.ref = "compose" }
+android-compose-runtime = { group = "androidx.compose.runtime", name = "runtime-livedata", version.ref = "compose" }
+android-compose-ui = { group = "androidx.compose.ui", name = "ui", version.ref = "compose" }
+android-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling", version.ref = "compose" }
+android-compose-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycle-viewmodel-compose" }
+android-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintLayout" }
+android-constraintlayout-compose = { group = "androidx.constraintlayout", name = "constraintlayout-compose", version.ref = "constraintlayout-compose" }
+android-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+android-lifecycle-runtime = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntime" }
+android-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigation" }
+android-test-espresso = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso" }
+android-test-junit = { group = "androidx.test.ext", name = "junit", version.ref = "android-junit" }
+google-accompanist-pager = { group = "com.google.accompanist", name = "accompanist-pager", version.ref = "accompanist-pager" }
+google-accompanist-pager-indicators = { group = "com.google.accompanist", name = "accompanist-pager-indicators", version.ref = "accompanist-pager-indicators" }
+test-junit = { group = "junit", name = "junit", version.ref = "junit" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
