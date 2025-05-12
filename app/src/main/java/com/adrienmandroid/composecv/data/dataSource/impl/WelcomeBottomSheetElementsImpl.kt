@@ -6,7 +6,7 @@ import com.adrienmandroid.composecv.data.Clickable
 import com.adrienmandroid.composecv.data.Keyword
 import com.adrienmandroid.composecv.data.dataSource.WelcomeBottomSheetElements
 import com.adrienmandroid.composecv.data.dataSource.WelcomeElement
-import com.adrienmandroid.composecv.ui.theme.Typography
+import com.adrienmandroid.composecv.shared.ui.theme.Typography
 
 class WelcomeBottomSheetElementsImpl : WelcomeBottomSheetElements {
 

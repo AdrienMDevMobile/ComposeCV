@@ -9,7 +9,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.R
-import com.adrienmandroid.composecv.ui.theme.Typography
+import com.adrienmandroid.composecv.shared.ui.theme.Typography
 
 @Composable
 fun Gratitudes() {

@@ -33,9 +33,9 @@ import com.adrienmandroid.composecv.data.Experience
 import com.adrienmandroid.composecv.data.ExperienceInformation
 import com.adrienmandroid.composecv.data.Link
 import com.adrienmandroid.composecv.ui.elements.toAnnotatedString
-import com.adrienmandroid.composecv.ui.theme.ComposeCVTheme
-import com.adrienmandroid.composecv.ui.theme.Typography
-import com.adrienmandroid.composecv.ui.theme.onSurfaceTitle
+import com.adrienmandroid.composecv.shared.ui.theme.ComposeCVTheme
+import com.adrienmandroid.composecv.shared.ui.theme.Typography
+import com.adrienmandroid.composecv.shared.ui.theme.onSurfaceTitle
 
 val expHorizontalSpacing = 10.dp
 val expVerticalSpacing = 10.dp

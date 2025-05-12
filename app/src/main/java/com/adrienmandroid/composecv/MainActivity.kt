@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.material.ExperimentalMaterialApi
-import com.adrienmandroid.composecv.ui.theme.ComposeCVTheme
+import com.adrienmandroid.composecv.shared.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.ui.MainScreen
 
 @ExperimentalMaterialApi

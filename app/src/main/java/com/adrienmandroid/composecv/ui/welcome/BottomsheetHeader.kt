@@ -18,8 +18,8 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import com.adrienmandroid.composecv.R
-import com.adrienmandroid.composecv.ui.theme.ComposeCVTheme
-import com.adrienmandroid.composecv.ui.theme.roundedTopEndSquare
+import com.adrienmandroid.composecv.shared.ui.theme.ComposeCVTheme
+import com.adrienmandroid.composecv.shared.ui.theme.roundedTopEndSquare
 
 fun LazyListScope.BottomsheetHeader(
     verticalArrangement: Dp = 32.dp,
@@ -37,7 +37,9 @@ fun LazyListScope.BottomsheetHeader(
                 modifier = Modifier
                     .height(verticalArrangement)
                     .fillMaxWidth(1f)
-                    .background(MaterialTheme.colors.background, roundedTopEndSquare)
+                    .background(MaterialTheme.colors.background,
+                        roundedTopEndSquare
+                    )
 
             )
         }

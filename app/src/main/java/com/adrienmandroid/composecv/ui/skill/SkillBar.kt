@@ -9,9 +9,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.adrienmandroid.composecv.ui.theme.colorSkillHigh
-import com.adrienmandroid.composecv.ui.theme.colorSkillLow
-import com.adrienmandroid.composecv.ui.theme.colorSkillMedium
+import com.adrienmandroid.composecv.shared.ui.theme.colorSkillHigh
+import com.adrienmandroid.composecv.shared.ui.theme.colorSkillLow
+import com.adrienmandroid.composecv.shared.ui.theme.colorSkillMedium
 
 @Composable
 fun SkillLinearProgressIndicator(targetValue: Float) {

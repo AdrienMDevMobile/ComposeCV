@@ -20,7 +20,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.adrienmandroid.composecv.data.BottomNavElement
 import com.adrienmandroid.composecv.data.dataSource.BottomNavGraph
-import com.adrienmandroid.composecv.ui.theme.ComposeCVTheme
+import com.adrienmandroid.composecv.shared.ui.theme.ComposeCVTheme
 
 //The design of one item in the nav bar
 @Composable

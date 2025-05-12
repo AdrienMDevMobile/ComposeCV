@@ -10,7 +10,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.adrienmandroid.composecv.data.Experience
 import com.adrienmandroid.composecv.data.dataSource.impl.ExperienceDataImpl
 import com.adrienmandroid.composecv.ui.experience.ExperienceCard
-import com.adrienmandroid.composecv.ui.theme.ComposeCVTheme
+import com.adrienmandroid.composecv.shared.ui.theme.ComposeCVTheme
 
 @Composable
 fun ExperienceFragment(experiences: List<Experience>) {

@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.data.dataSource.WelcomeElement
 import com.adrienmandroid.composecv.data.dataSource.impl.WelcomeBottomSheetElementsImpl
 import com.adrienmandroid.composecv.ui.nav.intents.ClickViewModel
-import com.adrienmandroid.composecv.ui.theme.ComposeCVTheme
+import com.adrienmandroid.composecv.shared.ui.theme.ComposeCVTheme
 
 fun LazyListScope.BottomsheetBody(
     welcomeElements: List<WelcomeElement>,

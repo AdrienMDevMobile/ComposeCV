@@ -26,8 +26,8 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import com.adrienmandroid.composecv.R
 import com.adrienmandroid.composecv.data.Quote
-import com.adrienmandroid.composecv.ui.theme.onQuoteBackground
-import com.adrienmandroid.composecv.ui.theme.quoteBackground
+import com.adrienmandroid.composecv.shared.ui.theme.onQuoteBackground
+import com.adrienmandroid.composecv.shared.ui.theme.quoteBackground
 
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable

@@ -16,7 +16,7 @@ import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.drawscope.clipPath
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.adrienmandroid.composecv.ui.theme.ComposeCVTheme
+import com.adrienmandroid.composecv.shared.ui.theme.ComposeCVTheme
 
 //Non optimal. il faudrait donner à la fonction une taille et ad
 @Composable

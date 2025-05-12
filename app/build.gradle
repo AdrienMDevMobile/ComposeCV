@@ -89,4 +89,6 @@ dependencies {
     androidTestImplementation(libs.android.compose.junit)
     androidTestImplementation(platform(libs.android.compose.bom))
     debugImplementation(libs.android.compose.ui.tooling)
+
+    implementation(project(":shared:ui"))
 }
