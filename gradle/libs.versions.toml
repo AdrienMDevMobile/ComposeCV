@@ -43,8 +43,15 @@ test-junit = { group = "junit", name = "junit", version.ref = "junit" }
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
+kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+gradle-plugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
+
+convention-application = { id = "com.adrienmandroid.composecv.application", version = "unspecified"}
+convention-library = { id = "com.adrienmandroid.composecv.library", version = "unspecified"}
+convention-library-compose = { id = "com.adrienmandroid.composecv.library.compose", version = "unspecified"}

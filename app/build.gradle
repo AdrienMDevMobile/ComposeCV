@@ -1,5 +1,5 @@
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.convention.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.compose.compiler)
 }
@@ -54,7 +54,7 @@ android {
         jvmTarget = '1.8'
     }
     buildFeatures {
-        compose true
+        //Necessaire pour afficher le numéro de version dans l'app
         buildConfig true
     }
     packagingOptions {
@@ -66,29 +66,5 @@ android {
 }
 
 dependencies {
-
-    implementation(libs.accompanist.flowlayout)
-    implementation(libs.android.activity.compose)
-    implementation(libs.android.compose.material)
-    implementation(libs.android.compose.preview)
-    implementation(libs.android.compose.runtime)
-    implementation(libs.android.compose.ui)
-    implementation(libs.android.compose.viewmodel)
-    implementation(libs.android.constraintlayout)
-    implementation(libs.android.constraintlayout.compose)
-    implementation(libs.android.core.ktx)
-    implementation(libs.android.lifecycle.runtime)
-    implementation(libs.android.navigation.compose)
-    implementation(platform(libs.android.compose.bom))
-    implementation(libs.google.accompanist.pager)
-    implementation(libs.google.accompanist.pager.indicators)
-
-    testImplementation(libs.test.junit)
-    androidTestImplementation(libs.android.test.junit)
-    androidTestImplementation(libs.android.test.espresso)
-    androidTestImplementation(libs.android.compose.junit)
-    androidTestImplementation(platform(libs.android.compose.bom))
-    debugImplementation(libs.android.compose.ui.tooling)
-
     implementation(project(":shared:ui"))
 }
