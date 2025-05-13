@@ -1,22 +1,19 @@
-package com.adrienmandroid.composecv.data.dataSource
+package com.adrienmandroid.composecv.model.welcome
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
-import androidx.compose.ui.text.TextStyle
-import com.adrienmandroid.composecv.data.Clickable
-import com.adrienmandroid.composecv.data.Keyword
+import com.adrienmandroid.composecv.model.Clickable
 
 sealed class WelcomeElement {
     class WelcomeImage(val source: Int, val description: String, val tint: Boolean = false) :
         WelcomeElement()
-    class WelcomeKeyword(val keywords: Array<Keyword>) : WelcomeElement()
+    class WelcomeKeyword(val keywords: Array<com.adrienmandroid.composecv.model.Keyword>) : WelcomeElement()
     class WelcomeQuote(val id: Int) : WelcomeElement()
     class WelcomeText(
         @DrawableRes
         val iconId: Int? = null,
         @StringRes
         val id: Int,
-        val style: TextStyle = TextStyle(),
         val args: Array<Any> = emptyArray(),
         val clickable: Clickable? = null
     ) : WelcomeElement()

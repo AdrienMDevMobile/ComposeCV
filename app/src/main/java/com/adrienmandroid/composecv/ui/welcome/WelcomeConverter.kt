@@ -2,7 +2,8 @@ package com.adrienmandroid.composecv.ui.welcome
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.runtime.Composable
-import com.adrienmandroid.composecv.data.dataSource.WelcomeElement
+import androidx.compose.ui.text.TextStyle
+import com.adrienmandroid.composecv.model.welcome.WelcomeElement
 import com.adrienmandroid.composecv.ui.nav.intents.ClickViewModel
 import com.adrienmandroid.composecv.ui.nav.intents.toViewClick
 
@@ -29,7 +30,8 @@ fun CheckUiType(value: WelcomeElement, clickViewModel: ClickViewModel) {
         is WelcomeElement.WelcomeText -> TextDraw(
             iconId = value.iconId,
             id = value.id,
-            style = value.style,
+            //TODO
+            style = TextStyle(),
             args = value.args,
             clickable = value.clickable.toViewClick(),
             clickViewModel = clickViewModel

@@ -20,7 +20,7 @@ import com.adrienmandroid.composecv.shared.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.shared.ui.theme.Typography
 import com.adrienmandroid.composecv.shared.ui.theme.border
 import com.google.accompanist.flowlayout.FlowRow
-import com.adrienmandroid.composecv.data.Keyword as KeywordData
+import com.adrienmandroid.composecv.model.Keyword as KeywordData
 
 @Composable
 private fun Keyword(@StringRes keyword: Int) {

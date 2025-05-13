@@ -2,7 +2,7 @@ package com.adrienmandroid.composecv.ui.nav.intents
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
-import com.adrienmandroid.composecv.data.Clickable
+import com.adrienmandroid.composecv.model.Clickable
 
 @Composable
 fun Clickable?.toViewClick() = when (this) {

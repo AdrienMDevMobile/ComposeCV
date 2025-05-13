@@ -17,3 +17,4 @@ dependencyResolutionManagement {
 rootProject.name = "ComposeCV"
 include ':app'
 include ':shared:ui'
+include ':core:model'
