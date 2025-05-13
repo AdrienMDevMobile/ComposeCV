@@ -1,4 +1,5 @@
 import com.android.build.gradle.LibraryExtension
+import convention.configureJvmCompile
 import convention.configureSdk
 import convention.libs
 import org.gradle.api.JavaVersion
@@ -19,10 +20,7 @@ class LibraryConventionPlugin : Plugin<Project> {
                 configureSdk(this)
                 defaultConfig.targetSdk = 35
 
-                compileOptions {
-                    sourceCompatibility = JavaVersion.VERSION_21
-                    targetCompatibility = JavaVersion.VERSION_21
-                }
+                configureJvmCompile(this)
                 defaultConfig.testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
                 dependencies {

@@ -1,15 +1,13 @@
 import com.android.build.api.dsl.ApplicationExtension
 import convention.configureCompose
+import convention.configureJavaExtension
+import convention.configureJvmCompile
 import convention.configureSdk
 import convention.libs
-import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.api.plugins.JavaPluginExtension
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
-import org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension
 
 class ApplicationConventionPlugin : Plugin<Project> {
 
@@ -25,23 +23,12 @@ class ApplicationConventionPlugin : Plugin<Project> {
                 configureSdk(this)
                 defaultConfig.targetSdk = 35
 
-                compileOptions {
-                    sourceCompatibility = JavaVersion.VERSION_21
-                    targetCompatibility = JavaVersion.VERSION_21
-                }
+                configureJvmCompile(this)
 
-                extensions.configure<JavaPluginExtension> {
-                    sourceCompatibility = JavaVersion.VERSION_21
-                    targetCompatibility = JavaVersion.VERSION_21
-                }
-
-                configure<KotlinAndroidProjectExtension> {
-                    with(compilerOptions) {
-                        jvmTarget.set(JvmTarget.JVM_21)
-                    }
-                }
+                configureJavaExtension(this)
 
                 configureCompose(this)
+
                 dependencies {
                     add("implementation", libs.findLibrary("android.core.ktx").get())
                     add("implementation", libs.findLibrary("android.lifecycle.runtime").get())
