@@ -1,5 +1,6 @@
 import com.android.build.api.dsl.ApplicationExtension
 import convention.configureCompose
+import convention.configureSdk
 import convention.libs
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
@@ -21,12 +22,8 @@ class ApplicationConventionPlugin : Plugin<Project> {
             }
 
             extensions.configure<ApplicationExtension> {
-                compileSdk = 35
-
-                defaultConfig {
-                    targetSdk = 35
-                    minSdk = 24
-                }
+                configureSdk(this)
+                defaultConfig.targetSdk = 35
 
                 compileOptions {
                     sourceCompatibility = JavaVersion.VERSION_21

@@ -1,4 +1,5 @@
 import com.android.build.gradle.LibraryExtension
+import convention.configureSdk
 import convention.libs
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
@@ -15,11 +16,7 @@ class LibraryConventionPlugin : Plugin<Project> {
             }
 
             extensions.configure<LibraryExtension> {
-                compileSdk = 35
-
-                defaultConfig {
-                    minSdk = 21
-                }
+                configureSdk(this)
                 defaultConfig.targetSdk = 35
 
                 compileOptions {
