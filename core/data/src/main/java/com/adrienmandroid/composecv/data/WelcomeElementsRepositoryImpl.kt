@@ -1,15 +1,12 @@
-package com.adrienmandroid.composecv.data.dataSource.impl
+package com.adrienmandroid.composecv.data
 
-import androidx.compose.ui.text.font.FontWeight
-import com.adrienmandroid.composecv.R
 import com.adrienmandroid.composecv.model.Clickable
-import com.adrienmandroid.composecv.data.dataSource.WelcomeBottomSheetElements
 import com.adrienmandroid.composecv.model.welcome.WelcomeElement
-import com.adrienmandroid.composecv.shared.ui.theme.Typography
+import com.adrienmandroid.composecv.data.R.drawable
 
-class WelcomeBottomSheetElementsImpl : WelcomeBottomSheetElements {
+class WelcomeElementsRepositoryImpl : WelcomeElementsRepository {
 
-    override fun listOfItemInBottomSheet(): List<WelcomeElement> {
+    override fun listOfWelcomeItems(): List<WelcomeElement> {
         return listOf(
             WelcomeElement.WelcomeText(id = R.string.names/*, style = Typography.h4*/),
             WelcomeElement.WelcomeText(id = R.string.title/*, style = Typography.h5*/),

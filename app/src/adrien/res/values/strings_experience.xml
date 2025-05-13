@@ -48,4 +48,7 @@
     <string name="exp_info_nat_autonomy">Développement en autonomie et en équipe.</string>
     <string name="exp_info_nat_analysis"><![CDATA[<b>Analyse des besoins utilisateurs</b> en prenant en compte <b>obligations</b> et <b>contraintes</b>.]]></string>
     <string name="exp_info_nat_test">Écriture des Tests d\'essai.</string>
+    <string name="exp_less_than_month">Moins d\'un mois</string>
+    <string name="exp_up_to_today">A ce jour</string>
+    <string name="exp_info_ei_compose_hilt"><![CDATA[Développement d\'une nouvelle application utilisant <b>Compose</b> (dont <b>Compose navigation</b>) et <b>Hilt</b>]]></string>
 </resources>

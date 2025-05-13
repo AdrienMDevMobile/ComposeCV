@@ -13,7 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.model.welcome.WelcomeElement
-import com.adrienmandroid.composecv.data.dataSource.impl.WelcomeBottomSheetElementsImpl
+import com.adrienmandroid.composecv.data.WelcomeElementsRepositoryImpl
 import com.adrienmandroid.composecv.ui.nav.intents.ClickViewModel
 import com.adrienmandroid.composecv.shared.ui.theme.ComposeCVTheme
 
@@ -39,7 +39,7 @@ fun PreviewBottomsheetBody() {
     ComposeCVTheme {
         LazyColumn() {
             BottomsheetBody(
-                WelcomeBottomSheetElementsImpl().listOfItemInBottomSheet(),
+                WelcomeElementsRepositoryImpl().listOfWelcomeItems(),
                 ClickViewModel()
             )
         }

@@ -1,0 +1,13 @@
+<resources>
+
+
+    <string name="age">%1$d ans</string>
+    <string name="linkedIn">LinkedIn</string>
+    <string name="gitHub">GitHub</string>
+
+    <string name="Welcome_Keywords">Mots clés</string>
+
+
+    <string name="gitHubLink">github.com/AdrienMDevMobile</string>
+    <string name="linkedInLink">www.linkedin.com/in/adrien-michel-android/</string>
+</resources>

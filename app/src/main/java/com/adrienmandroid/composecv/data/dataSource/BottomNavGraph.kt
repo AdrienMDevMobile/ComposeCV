@@ -9,7 +9,6 @@ import com.adrienmandroid.composecv.R
 import com.adrienmandroid.composecv.data.BottomNavElement
 import com.adrienmandroid.composecv.data.dataSource.impl.ExperienceDataImpl
 import com.adrienmandroid.composecv.data.dataSource.impl.SkillDataImpl
-import com.adrienmandroid.composecv.data.dataSource.impl.WelcomeBottomSheetElementsImpl
 import com.adrienmandroid.composecv.ui.fragments.ExperienceFragment
 import com.adrienmandroid.composecv.ui.fragments.OtherFragment
 import com.adrienmandroid.composecv.ui.fragments.SkillFragment
@@ -37,7 +36,7 @@ fun BottomNavGraphHost(navController: NavHostController) {
     )
     {
         composable(route = BottomNavGraph.WelcomeBottomNav.route) {
-            WelcomeFragment(WelcomeBottomSheetElementsImpl().listOfItemInBottomSheet())
+            WelcomeFragment(com.adrienmandroid.composecv.data.WelcomeElementsRepositoryImpl().listOfWelcomeItems())
         }
         composable(route = BottomNavGraph.ExpBottomNav.route) {
             ExperienceFragment(ExperienceDataImpl().getExperiences())

@@ -57,11 +57,11 @@ fun Keywords(vararg keywords: KeywordData) {
 fun PreviewKeywords() {
     ComposeCVTheme() {
         Keywords(
-            KeywordData(R.string.emailAdress),
-            KeywordData(R.string.emailAdress),
-            KeywordData(R.string.emailAdress),
-            KeywordData(R.string.emailAdress),
-            KeywordData(R.string.emailAdress)
+            KeywordData(R.string.test_court),
+            KeywordData(R.string.test_court),
+            KeywordData(R.string.test_court),
+            KeywordData(R.string.test_court),
+            KeywordData(R.string.test_court)
         )
     }
 }

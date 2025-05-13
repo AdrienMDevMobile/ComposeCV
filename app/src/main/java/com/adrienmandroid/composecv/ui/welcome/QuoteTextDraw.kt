@@ -45,7 +45,8 @@ fun PreviewQuoteTextDraw() {
         Box(modifier = Modifier.background(Color.Blue)) {
             Row() {
                 Spacer(modifier = Modifier.width(20.dp))
-                QuoteTextDraw(R.string.selfPresentation)
+                //TODO valeur string
+                QuoteTextDraw(R.string.test_long)
             }
         }
     }
