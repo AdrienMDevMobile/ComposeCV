@@ -5,6 +5,7 @@ Cette application suit les bonnes pratiques du monde d'Android
 -Utilisation de Jetpack compose
 -Clean archi
 -Gradle : utilisation de libs.toml
+Utilisation des multi modules : cela réduit les coûts de build (surtout utile dans un projet de plus grand envergure)
 
 Acceuil
 
