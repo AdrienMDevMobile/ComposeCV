@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.ui.welcome
+package com.adrienmandroid.composecv.feature.welcome
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -13,10 +13,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.adrienmandroid.composecv.R
-import com.adrienmandroid.composecv.ui.elements.toAnnotatedString
 import com.adrienmandroid.composecv.shared.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.shared.ui.theme.border
+import com.adrienmandroid.composecv.shared.ui.theme.toAnnotatedString
 
 @Composable
 fun QuoteTextDraw(id: Int) {

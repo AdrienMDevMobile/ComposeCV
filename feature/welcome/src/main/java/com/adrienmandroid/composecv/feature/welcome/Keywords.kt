@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.ui.welcome
+package com.adrienmandroid.composecv.feature.welcome
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -15,12 +15,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.adrienmandroid.composecv.R
 import com.adrienmandroid.composecv.shared.ui.theme.ComposeCVTheme
-import com.adrienmandroid.composecv.shared.ui.theme.Typography
 import com.adrienmandroid.composecv.shared.ui.theme.border
 import com.google.accompanist.flowlayout.FlowRow
 import com.adrienmandroid.composecv.model.Keyword as KeywordData
+import com.adrienmandroid.composecv.shared.ui.theme.Typography
+import com.adrienmandroid.composecv.feature.welcome.R
 
 @Composable
 private fun Keyword(@StringRes keyword: Int) {

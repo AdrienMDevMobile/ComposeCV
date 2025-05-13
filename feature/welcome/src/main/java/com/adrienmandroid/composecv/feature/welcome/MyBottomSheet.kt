@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.ui.welcome
+package com.adrienmandroid.composecv.domain.welcome
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Spacer

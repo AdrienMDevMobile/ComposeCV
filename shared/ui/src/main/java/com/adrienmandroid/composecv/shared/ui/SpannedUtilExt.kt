@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.ui.elements
+package com.adrienmandroid.composecv.shared.ui.theme
 
 import android.graphics.Typeface
 import android.text.Html

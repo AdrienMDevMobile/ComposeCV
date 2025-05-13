@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.ui.nav.intents
+package com.adrienmandroid.composecv.domain.welcome
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

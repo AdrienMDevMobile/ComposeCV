@@ -20,7 +20,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.adrienmandroid.composecv.R
 import com.adrienmandroid.composecv.data.Skill
-import com.adrienmandroid.composecv.ui.elements.toAnnotatedString
+import com.adrienmandroid.composecv.shared.ui.theme.toAnnotatedString
 import com.adrienmandroid.composecv.shared.ui.theme.Typography
 
 @Composable

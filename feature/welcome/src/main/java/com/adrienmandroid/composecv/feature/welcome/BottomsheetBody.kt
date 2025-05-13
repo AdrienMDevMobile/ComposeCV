@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.ui.welcome
+package com.adrienmandroid.composecv.domain.welcome
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -14,7 +14,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.model.welcome.WelcomeElement
 import com.adrienmandroid.composecv.data.WelcomeElementsRepositoryImpl
-import com.adrienmandroid.composecv.ui.nav.intents.ClickViewModel
 import com.adrienmandroid.composecv.shared.ui.theme.ComposeCVTheme
 
 fun LazyListScope.BottomsheetBody(

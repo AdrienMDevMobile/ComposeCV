@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.ui.welcome
+package com.adrienmandroid.composecv.domain.welcome
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -17,7 +17,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
-import com.adrienmandroid.composecv.R
+import com.adrienmandroid.composecv.feature.welcome.R
 import com.adrienmandroid.composecv.shared.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.shared.ui.theme.roundedTopEndSquare
 
@@ -37,7 +37,8 @@ fun LazyListScope.BottomsheetHeader(
                 modifier = Modifier
                     .height(verticalArrangement)
                     .fillMaxWidth(1f)
-                    .background(MaterialTheme.colors.background,
+                    .background(
+                        MaterialTheme.colors.background,
                         roundedTopEndSquare
                     )
 
@@ -53,7 +54,7 @@ fun PreviewBottomSheetHeader() {
         LazyColumn() {
             BottomsheetHeader {
                 Image(
-                    painter = painterResource(R.drawable.profile_picture),
+                    painter = painterResource(R.drawable.picture_test),
                     contentDescription = "Picture",
                     contentScale = ContentScale.Crop,
                     modifier = Modifier

@@ -23,11 +23,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.adrienmandroid.composecv.R
+import com.adrienmandroid.composecv.feature.welcome.R
 import com.adrienmandroid.composecv.model.welcome.WelcomeElement
-import com.adrienmandroid.composecv.ui.nav.intents.ClickViewModel
-import com.adrienmandroid.composecv.ui.welcome.BottomsheetBody
-import com.adrienmandroid.composecv.ui.welcome.MyBottomSheet
+import com.adrienmandroid.composecv.domain.welcome.ClickViewModel
+import com.adrienmandroid.composecv.domain.welcome.BottomsheetBody
 
 
 @ExperimentalMaterialApi
@@ -58,10 +57,11 @@ fun WelcomeFragment(
         clickViewModel.clearMailIntent()
     }
 
-    MyBottomSheet(
+    com.adrienmandroid.composecv.domain.welcome.MyBottomSheet(
         contentCovered = {
             Image(
-                painter = painterResource(R.drawable.background_picture),
+                //TODO background picture (donner cela depuis data)
+                painter = painterResource(R.drawable.picture_test),
                 contentDescription = "Background",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.fillMaxWidth().height(250.dp)
@@ -69,7 +69,8 @@ fun WelcomeFragment(
         },
         anchoredContent = {
             Image(
-                painter = painterResource(R.drawable.profile_picture),
+                //TODO profile picture
+                painter = painterResource(R.drawable.picture_test),
                 contentDescription = "Picture",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
