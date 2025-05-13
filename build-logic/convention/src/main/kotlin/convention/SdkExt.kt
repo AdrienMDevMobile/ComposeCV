@@ -1,9 +1,8 @@
 package convention
 
 import com.android.build.api.dsl.CommonExtension
-import org.gradle.api.Project
 
-internal fun Project.configureSdk(
+internal fun configureSdk(
     commonExtension: CommonExtension<*, *, *, *, *, *>,
 ){
     commonExtension.apply {
