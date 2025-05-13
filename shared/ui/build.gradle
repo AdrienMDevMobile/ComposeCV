@@ -7,21 +7,15 @@ plugins {
 android {
     namespace 'com.adrienmandroid.composecv.shared.ui'
 
-    defaultConfig {
+    /*defaultConfig {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
-    }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
+    }*/
 }
 
+/*
 dependencies {
     testImplementation libs.test.junit
     androidTestImplementation libs.android.test.junit
     androidTestImplementation libs.android.test.espresso
-}
+}*/
