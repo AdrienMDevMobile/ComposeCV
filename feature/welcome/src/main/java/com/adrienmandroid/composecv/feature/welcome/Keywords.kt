@@ -20,7 +20,6 @@ import com.adrienmandroid.composecv.shared.ui.theme.border
 import com.google.accompanist.flowlayout.FlowRow
 import com.adrienmandroid.composecv.model.Keyword as KeywordData
 import com.adrienmandroid.composecv.shared.ui.theme.Typography
-import com.adrienmandroid.composecv.feature.welcome.R
 
 @Composable
 private fun Keyword(@StringRes keyword: Int) {
@@ -55,7 +54,7 @@ fun Keywords(vararg keywords: KeywordData) {
 @Composable
 @Preview
 fun PreviewKeywords() {
-    ComposeCVTheme() {
+    ComposeCVTheme {
         Keywords(
             KeywordData(R.string.test_court),
             KeywordData(R.string.test_court),

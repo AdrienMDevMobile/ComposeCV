@@ -71,7 +71,7 @@ fun RowScope.BottomBarItemDesign(
 @Composable
 fun BottomBarItemPreview() {
     val navController = rememberNavController()
-    ComposeCVTheme() {
+    ComposeCVTheme {
         Surface(
             color = MaterialTheme.colors.background
         ) {

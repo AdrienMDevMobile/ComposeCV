@@ -23,7 +23,7 @@ val studyVerticalSpacing = 10.dp
 @OptIn(ExperimentalPagerApi::class)
 @Composable
 fun StudyList(studies: List<Study>) {
-    Column() {
+    Column {
         val pagerState = rememberPagerState()
 
         HorizontalPager(
@@ -47,7 +47,7 @@ fun StudyList(studies: List<Study>) {
 @Composable
 @Preview
 fun PreviewStudyList() {
-    ComposeCVTheme() {
+    ComposeCVTheme {
         StudyList(studies = StudyDataImpl().getData())
     }
 }

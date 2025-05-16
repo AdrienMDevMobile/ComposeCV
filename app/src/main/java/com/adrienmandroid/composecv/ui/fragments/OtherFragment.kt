@@ -40,7 +40,7 @@ fun OtherFragment() {
 @Composable
 @Preview
 fun PreviewOther() {
-    ComposeCVTheme() {
+    ComposeCVTheme {
         OtherFragment()
     }
 }

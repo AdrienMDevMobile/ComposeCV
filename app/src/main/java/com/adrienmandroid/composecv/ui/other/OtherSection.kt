@@ -43,7 +43,7 @@ fun LazyListScope.otherSection(
 @Composable
 @Preview
 fun PreviewOtherSection() {
-    LazyColumn() {
+    LazyColumn {
         otherSection({ Gratitudes() }, title = R.string.title_gratitude)
     }
 }

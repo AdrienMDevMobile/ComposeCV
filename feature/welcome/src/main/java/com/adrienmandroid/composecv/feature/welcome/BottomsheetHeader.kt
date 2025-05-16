@@ -73,7 +73,7 @@ fun PreviewBottomSheetHeader() {
 @Composable
 fun PreviewBottomSheetHeaderNull() {
     ComposeCVTheme {
-        LazyColumn() {
+        LazyColumn {
             bottomsheetHeader()
         }
     }

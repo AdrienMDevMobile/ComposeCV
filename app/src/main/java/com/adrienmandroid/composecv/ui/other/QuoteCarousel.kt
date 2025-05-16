@@ -18,7 +18,7 @@ import com.google.accompanist.pager.rememberPagerState
 @OptIn(ExperimentalPagerApi::class)
 @Composable
 fun QuoteCarousel(data: QuoteData) {
-    Column() {
+    Column {
         val pagerState = rememberPagerState()
 
         val quotes = data.getQuotes()

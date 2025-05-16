@@ -2,7 +2,6 @@ package com.adrienmandroid.composecv.data
 
 import com.adrienmandroid.composecv.model.Clickable
 import com.adrienmandroid.composecv.model.welcome.WelcomeElement
-import com.adrienmandroid.composecv.data.R.drawable
 
 class WelcomeElementsRepositoryImpl : WelcomeElementsRepository {
 

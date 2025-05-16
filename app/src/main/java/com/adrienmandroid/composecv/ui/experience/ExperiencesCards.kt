@@ -78,7 +78,7 @@ fun ExperienceHeader(logo: Int, @StringRes name: Int, professional: Boolean) {
             ),
         contentAlignment = Alignment.CenterStart,
     ) {
-        Row() {
+        Row {
             Image(
                 painter = painterResource(logo),
                 contentDescription = stringResource(id = name),
@@ -153,7 +153,7 @@ fun ExperienceInfoListItem(informations: List<ExperienceInformation>) {
 @Preview
 @Composable
 fun PreviewExperienceHeader() {
-    ComposeCVTheme() {
+    ComposeCVTheme {
         Column {
             ExperienceHeader(logo = R.drawable.ic_tab_home, name = R.string.app_name, true)
             ExperienceHeader(logo = R.drawable.ic_tab_home, name = R.string.app_name, false)

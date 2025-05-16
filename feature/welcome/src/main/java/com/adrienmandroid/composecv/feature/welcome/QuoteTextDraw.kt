@@ -42,7 +42,7 @@ fun QuoteTextDraw(id: Int) {
 fun PreviewQuoteTextDraw() {
     ComposeCVTheme {
         Box(modifier = Modifier.background(Color.Blue)) {
-            Row() {
+            Row {
                 Spacer(modifier = Modifier.width(20.dp))
                 //TODO valeur string
                 QuoteTextDraw(R.string.test_long)

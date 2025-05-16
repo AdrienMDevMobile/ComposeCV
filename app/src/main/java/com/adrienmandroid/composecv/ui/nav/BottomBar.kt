@@ -13,7 +13,7 @@ fun BottomBar(elementArray: Array<BottomNavElement>, navController: NavHostContr
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination
 
-    BottomNavigation() {
+    BottomNavigation {
         BottomBarDesign(
             *elementArray,
             currentDestination = currentDestination,

@@ -36,7 +36,7 @@ fun LazyListScope.bottomsheetBody(
 @Preview
 fun PreviewBottomsheetBody() {
     ComposeCVTheme {
-        LazyColumn() {
+        LazyColumn {
             bottomsheetBody(
                 WelcomeElementsRepositoryImpl().listOfWelcomeItems(),
                 ClickViewModel()

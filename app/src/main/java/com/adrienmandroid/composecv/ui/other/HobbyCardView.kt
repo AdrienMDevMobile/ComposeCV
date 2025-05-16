@@ -52,7 +52,7 @@ fun HobbyCardView(hobby: Hobby) {
 @Composable
 @Preview
 fun PreviewHobbyCardView() {
-    ComposeCVTheme() {
+    ComposeCVTheme {
         HobbyCardView(
             hobby = Hobby(
                 name = R.string.hobby_LoL,

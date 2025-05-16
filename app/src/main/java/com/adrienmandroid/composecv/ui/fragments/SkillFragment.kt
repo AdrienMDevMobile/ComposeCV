@@ -35,7 +35,7 @@ fun SkillFragment(skills: List<Skill>) {
 @Composable
 @Preview
 fun PreviewSkill() {
-    ComposeCVTheme() {
+    ComposeCVTheme {
         SkillFragment(SkillDataImpl().getSkills())
     }
 }

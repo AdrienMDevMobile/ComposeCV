@@ -29,7 +29,6 @@ import com.adrienmandroid.composecv.data.Quote
 import com.adrienmandroid.composecv.shared.ui.theme.onQuoteBackground
 import com.adrienmandroid.composecv.shared.ui.theme.quoteBackground
 
-@OptIn(ExperimentalComposeUiApi::class)
 @Composable
 fun CardDraw(quote: Quote, position: Int) {
     val marginTop = 12.dp
