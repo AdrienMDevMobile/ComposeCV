@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class ClickViewModel() : ViewModel() {
+class ClickViewModel : ViewModel() {
     private val _webUrl = MutableLiveData<String>()
     val webUrl: LiveData<String>
         get() = _webUrl

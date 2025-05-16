@@ -9,13 +9,13 @@ Utilisation des multi modules : cela réduit les coûts de build (surtout utile 
 
 Acceuil
 
-<img src="https://i.imgur.com/jfDd96l.png">
+<img src="https://i.imgur.com/jfDd96l.png" alt="Image page d'acceuil">
 
 Page expériences
-<img src="https://i.imgur.com/YTlWjXz.png">
+<img src="https://i.imgur.com/YTlWjXz.png" alt="Image page expériences">
 
-Page compétence
-<img src="https://i.imgur.com/4kqOuSA.png">
+Page compétences
+<img src="https://i.imgur.com/4kqOuSA.png" alt="Image page compétences">
 
 Page autre
-<img src="https://i.imgur.com/LZK5mRP.png">
+<img src="https://i.imgur.com/LZK5mRP.png" alt="Image page autre">
