@@ -9,7 +9,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.data.dataSource.QuoteData
-import com.adrienmandroid.composecv.shared.ui.theme.carouselButton
+import com.adrienmandroid.composecv.core.ui.theme.carouselButton
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.HorizontalPagerIndicator

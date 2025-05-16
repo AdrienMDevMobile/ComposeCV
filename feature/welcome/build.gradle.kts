@@ -10,6 +10,6 @@ android {
 }
 
 dependencies {
-    implementation(project(":shared:ui"))
     implementation(project(":core:data"))
+    implementation(project(":core:ui"))
 }

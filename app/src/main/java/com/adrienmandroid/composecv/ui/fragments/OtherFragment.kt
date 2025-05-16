@@ -13,7 +13,7 @@ import com.adrienmandroid.composecv.data.dataSource.impl.HobbyDataSourceImpl
 import com.adrienmandroid.composecv.data.dataSource.impl.QuoteDataImpl
 import com.adrienmandroid.composecv.data.dataSource.impl.StudyDataImpl
 import com.adrienmandroid.composecv.ui.other.*
-import com.adrienmandroid.composecv.shared.ui.theme.ComposeCVTheme
+import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 
 @Composable
 fun OtherFragment() {

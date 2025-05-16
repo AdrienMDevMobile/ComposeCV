@@ -11,7 +11,6 @@ import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.rotate
@@ -26,8 +25,8 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import com.adrienmandroid.composecv.R
 import com.adrienmandroid.composecv.data.Quote
-import com.adrienmandroid.composecv.shared.ui.theme.onQuoteBackground
-import com.adrienmandroid.composecv.shared.ui.theme.quoteBackground
+import com.adrienmandroid.composecv.core.ui.theme.onQuoteBackground
+import com.adrienmandroid.composecv.core.ui.theme.quoteBackground
 
 @Composable
 fun CardDraw(quote: Quote, position: Int) {

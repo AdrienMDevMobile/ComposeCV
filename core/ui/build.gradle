@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace 'com.adrienmandroid.composecv.shared.ui'
+    namespace 'com.adrienmandroid.composecv.core.ui'
 
     /*defaultConfig {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"

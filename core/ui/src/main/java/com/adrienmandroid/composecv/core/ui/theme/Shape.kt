@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.shared.ui.theme
+package com.adrienmandroid.composecv.core.ui.theme
 
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape

@@ -14,7 +14,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.adrienmandroid.composecv.data.Skill
 import com.adrienmandroid.composecv.data.dataSource.impl.SkillDataImpl
 import com.adrienmandroid.composecv.ui.skill.SkillCard
-import com.adrienmandroid.composecv.shared.ui.theme.ComposeCVTheme
+import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 
 @Composable
 fun SkillFragment(skills: List<Skill>) {

@@ -20,8 +20,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.adrienmandroid.composecv.R
 import com.adrienmandroid.composecv.data.Skill
-import com.adrienmandroid.composecv.shared.ui.toAnnotatedString
-import com.adrienmandroid.composecv.shared.ui.theme.Typography
+import com.adrienmandroid.composecv.core.ui.toAnnotatedString
+import com.adrienmandroid.composecv.core.ui.theme.Typography
 
 @Composable
 fun SkillCard(skill: Skill) {

@@ -28,10 +28,9 @@
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/core/data" />
             <option value="$PROJECT_DIR$/core/model" />
+            <option value="$PROJECT_DIR$/core/ui" />
             <option value="$PROJECT_DIR$/feature" />
             <option value="$PROJECT_DIR$/feature/welcome" />
-            <option value="$PROJECT_DIR$/shared" />
-            <option value="$PROJECT_DIR$/shared/ui" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />
