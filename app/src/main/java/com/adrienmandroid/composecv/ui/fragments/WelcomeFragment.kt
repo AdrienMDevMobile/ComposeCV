@@ -25,8 +25,9 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.adrienmandroid.composecv.feature.welcome.R
 import com.adrienmandroid.composecv.model.welcome.WelcomeElement
-import com.adrienmandroid.composecv.domain.welcome.ClickViewModel
-import com.adrienmandroid.composecv.domain.welcome.BottomsheetBody
+import com.adrienmandroid.composecv.feature.welcome.ClickViewModel
+import com.adrienmandroid.composecv.feature.welcome.bottomsheetBody
+import com.adrienmandroid.composecv.feature.welcome.MyBottomSheet
 
 
 @ExperimentalMaterialApi
@@ -57,7 +58,7 @@ fun WelcomeFragment(
         clickViewModel.clearMailIntent()
     }
 
-    com.adrienmandroid.composecv.domain.welcome.MyBottomSheet(
+    MyBottomSheet(
         contentCovered = {
             Image(
                 //TODO background picture (donner cela depuis data)
@@ -82,6 +83,6 @@ fun WelcomeFragment(
                     .border(4.dp, MaterialTheme.colors.background, CircleShape)
             )
         }) {
-        BottomsheetBody(welcomeElements, clickViewModel)
+        bottomsheetBody(welcomeElements, clickViewModel)
     }
 }

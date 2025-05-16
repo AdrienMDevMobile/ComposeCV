@@ -1,11 +1,8 @@
-package com.adrienmandroid.composecv.domain.welcome
+package com.adrienmandroid.composecv.feature.welcome
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.text.TextStyle
-import com.adrienmandroid.composecv.feature.welcome.Keywords
-import com.adrienmandroid.composecv.feature.welcome.QuoteTextDraw
-import com.adrienmandroid.composecv.feature.welcome.toViewClick
 import com.adrienmandroid.composecv.model.welcome.WelcomeElement
 
 /*

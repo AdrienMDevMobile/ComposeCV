@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.domain.welcome
+package com.adrienmandroid.composecv.feature.welcome
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.size

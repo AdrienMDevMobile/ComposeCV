@@ -2,7 +2,6 @@ package com.adrienmandroid.composecv.feature.welcome
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
-import com.adrienmandroid.composecv.domain.welcome.ClickViewModel
 import com.adrienmandroid.composecv.model.Clickable
 
 @Composable

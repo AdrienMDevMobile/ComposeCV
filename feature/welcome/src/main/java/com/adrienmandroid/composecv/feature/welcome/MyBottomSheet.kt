@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.domain.welcome
+package com.adrienmandroid.composecv.feature.welcome
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Spacer
@@ -22,7 +22,7 @@ fun MyBottomSheet(
             item {
                 Spacer(modifier = Modifier.height(20.dp))
             }
-            BottomsheetHeader(
+            bottomsheetHeader(
                 content = anchoredContent
             )
             content()
