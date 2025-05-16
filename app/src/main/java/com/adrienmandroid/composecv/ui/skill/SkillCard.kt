@@ -19,9 +19,9 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.adrienmandroid.composecv.R
-import com.adrienmandroid.composecv.data.Skill
 import com.adrienmandroid.composecv.core.ui.toAnnotatedString
 import com.adrienmandroid.composecv.core.ui.theme.Typography
+import com.adrienmandroid.composecv.data.model.Skill
 
 @Composable
 fun SkillCard(skill: Skill) {
@@ -46,7 +46,8 @@ fun SkillCard(skill: Skill) {
             Spacer(modifier = Modifier.width(10.dp))
 
             Spacer(modifier = Modifier.height(10.dp))
-            if(skill.targetValue != null) SkillLinearProgressIndicator(targetValue = skill.targetValue)
+            //TODO
+            if(skill.targetValue != null) SkillLinearProgressIndicator(targetValue = skill.targetValue!!)
             if (skill.subSkills.isNotEmpty()) {
                 GridItems(
                     data = skill.subSkills,

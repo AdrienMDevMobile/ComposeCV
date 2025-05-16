@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import com.adrienmandroid.composecv.R
-import com.adrienmandroid.composecv.data.Dates
+import com.adrienmandroid.composecv.data.model.Dates
 import java.text.SimpleDateFormat
 import java.util.*
 

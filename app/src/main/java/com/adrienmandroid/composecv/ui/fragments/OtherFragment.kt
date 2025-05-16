@@ -9,9 +9,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.adrienmandroid.composecv.R
-import com.adrienmandroid.composecv.data.dataSource.impl.HobbyDataSourceImpl
-import com.adrienmandroid.composecv.data.dataSource.impl.QuoteDataImpl
-import com.adrienmandroid.composecv.data.dataSource.impl.StudyDataImpl
+import com.adrienmandroid.composecv.data.impl.HobbyDataSourceImpl
+import com.adrienmandroid.composecv.data.impl.QuoteDataImpl
+import com.adrienmandroid.composecv.data.impl.StudyDataImpl
 import com.adrienmandroid.composecv.ui.other.*
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 

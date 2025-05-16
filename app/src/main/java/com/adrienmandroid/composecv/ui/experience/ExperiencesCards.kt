@@ -28,10 +28,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.R
-import com.adrienmandroid.composecv.data.Dates
-import com.adrienmandroid.composecv.data.Experience
-import com.adrienmandroid.composecv.data.ExperienceInformation
-import com.adrienmandroid.composecv.data.Link
+import com.adrienmandroid.composecv.data.model.Dates
+import com.adrienmandroid.composecv.data.model.Experience
+import com.adrienmandroid.composecv.data.model.ExperienceInformation
+import com.adrienmandroid.composecv.data.model.Link
 import com.adrienmandroid.composecv.core.ui.toAnnotatedString
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.core.ui.theme.Typography

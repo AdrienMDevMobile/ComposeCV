@@ -7,8 +7,8 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.adrienmandroid.composecv.data.Experience
-import com.adrienmandroid.composecv.data.dataSource.impl.ExperienceDataImpl
+import com.adrienmandroid.composecv.data.model.Experience
+import com.adrienmandroid.composecv.data.impl.ExperienceDataImpl
 import com.adrienmandroid.composecv.ui.experience.ExperienceCard
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 

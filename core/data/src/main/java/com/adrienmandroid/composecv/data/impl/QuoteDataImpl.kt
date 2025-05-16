@@ -1,8 +1,8 @@
-package com.adrienmandroid.composecv.data.dataSource.impl
+package com.adrienmandroid.composecv.data.impl
 
-import com.adrienmandroid.composecv.R
-import com.adrienmandroid.composecv.data.Quote
-import com.adrienmandroid.composecv.data.dataSource.QuoteData
+import com.adrienmandroid.composecv.data.R
+import com.adrienmandroid.composecv.data.model.Quote
+import com.adrienmandroid.composecv.data.QuoteData
 
 class QuoteDataImpl : QuoteData {
     override fun getQuotes() = listOf(

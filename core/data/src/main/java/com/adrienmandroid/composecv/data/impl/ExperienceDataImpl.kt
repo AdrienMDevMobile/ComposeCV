@@ -1,10 +1,10 @@
-package com.adrienmandroid.composecv.data.dataSource.impl
+package com.adrienmandroid.composecv.data.impl
 
-import com.adrienmandroid.composecv.R
-import com.adrienmandroid.composecv.data.Dates
-import com.adrienmandroid.composecv.data.Experience
-import com.adrienmandroid.composecv.data.ExperienceInformation
-import com.adrienmandroid.composecv.data.dataSource.ExperienceData
+import com.adrienmandroid.composecv.data.R
+import com.adrienmandroid.composecv.data.model.Dates
+import com.adrienmandroid.composecv.data.model.Experience
+import com.adrienmandroid.composecv.data.model.ExperienceInformation
+import com.adrienmandroid.composecv.data.ExperienceData
 import java.util.*
 
 class ExperienceDataImpl : ExperienceData {
@@ -41,7 +41,7 @@ class ExperienceDataImpl : ExperienceData {
         ),
         Experience(
             name = R.string.exp_cv_name,
-            logo = R.drawable.ic_launcher,
+            logo = R.drawable.ic_my_logo,
             expDates = Dates(begin = Date(1645052400000), end = null),
             professional = false,
             informations = listOf(

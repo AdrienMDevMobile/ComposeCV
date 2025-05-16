@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.data
+package com.adrienmandroid.composecv.data.repository
 
 import com.adrienmandroid.composecv.model.welcome.WelcomeElement
 

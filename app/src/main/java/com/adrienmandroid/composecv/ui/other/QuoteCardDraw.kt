@@ -24,7 +24,7 @@ import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import com.adrienmandroid.composecv.R
-import com.adrienmandroid.composecv.data.Quote
+import com.adrienmandroid.composecv.data.model.Quote
 import com.adrienmandroid.composecv.core.ui.theme.onQuoteBackground
 import com.adrienmandroid.composecv.core.ui.theme.quoteBackground
 
@@ -129,6 +129,7 @@ fun CardDraw(quote: Quote, position: Int) {
     }
 }
 
+/*TODO
 @Preview
 @Composable
 fun PreviewQuoteCard() {
@@ -136,4 +137,4 @@ fun PreviewQuoteCard() {
         quote = Quote(R.string.quoteMeditation, R.string.quoteAuthorMarkTwain, R.drawable.quote_mark_twain),
         position = 1
     )
-}
+}*/

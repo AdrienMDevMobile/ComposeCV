@@ -16,8 +16,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.R
-import com.adrienmandroid.composecv.data.Dates
-import com.adrienmandroid.composecv.data.Study
+import com.adrienmandroid.composecv.data.model.Dates
+import com.adrienmandroid.composecv.data.model.Study
 import com.adrienmandroid.composecv.ui.experience.toMonthString
 import java.util.*
 
@@ -87,6 +87,7 @@ fun StudyCard(study: Study) {
     }
 }
 
+/*TODO
 @Preview(
     widthDp = 300,
     heightDp = 200
@@ -104,4 +105,4 @@ fun PreviewStudyCard() {
             longString = true
         )
     )
-}
+}*/

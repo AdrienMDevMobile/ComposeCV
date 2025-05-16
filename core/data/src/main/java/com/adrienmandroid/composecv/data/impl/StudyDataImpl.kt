@@ -1,9 +1,9 @@
-package com.adrienmandroid.composecv.data.dataSource.impl
+package com.adrienmandroid.composecv.data.impl
 
-import com.adrienmandroid.composecv.R
-import com.adrienmandroid.composecv.data.Dates
-import com.adrienmandroid.composecv.data.Study
-import com.adrienmandroid.composecv.data.dataSource.StudyData
+import com.adrienmandroid.composecv.data.R
+import com.adrienmandroid.composecv.data.model.Dates
+import com.adrienmandroid.composecv.data.model.Study
+import com.adrienmandroid.composecv.data.StudyData
 import java.util.*
 
 class StudyDataImpl : StudyData {
