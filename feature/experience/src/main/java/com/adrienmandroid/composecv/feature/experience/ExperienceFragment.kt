@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.ui.fragments
+package com.adrienmandroid.composecv.feature.experience
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.lazy.LazyColumn
@@ -9,8 +9,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.adrienmandroid.composecv.data.model.Experience
 import com.adrienmandroid.composecv.data.impl.ExperienceDataImpl
-import com.adrienmandroid.composecv.ui.experience.ExperienceCard
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
+import com.adrienmandroid.composecv.feature.experience.ui.elements.ExperienceCard
 
 @Composable
 fun ExperienceFragment(experiences: List<Experience>) {
@@ -23,7 +23,6 @@ fun ExperiencesList(experiences: List<Experience>) {
         items(items = experiences) {
             ExperienceCard(experience = it)
         }
-
     }
 }
 

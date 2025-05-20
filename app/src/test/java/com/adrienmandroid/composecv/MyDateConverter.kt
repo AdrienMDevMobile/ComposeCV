@@ -1,6 +1,6 @@
 package com.adrienmandroid.composecv
 
-import com.adrienmandroid.composecv.ui.experience.toMyLong
+import com.adrienmandroid.composecv.feature.experience.ui.elements.toMyLong
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import java.util.*

@@ -13,12 +13,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.adrienmandroid.composecv.R
-import com.adrienmandroid.composecv.data.model.Dates
 import com.adrienmandroid.composecv.data.model.Study
-import com.adrienmandroid.composecv.ui.experience.toMonthString
+import com.adrienmandroid.composecv.feature.experience.ui.elements.toMonthString
 import java.util.*
 
 

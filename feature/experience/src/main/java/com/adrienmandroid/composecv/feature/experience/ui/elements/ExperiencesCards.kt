@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.ui.experience
+package com.adrienmandroid.composecv.feature.experience.ui.elements
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
@@ -25,16 +25,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.adrienmandroid.composecv.R
 import com.adrienmandroid.composecv.data.model.Dates
 import com.adrienmandroid.composecv.data.model.Experience
 import com.adrienmandroid.composecv.data.model.ExperienceInformation
 import com.adrienmandroid.composecv.data.model.Link
 import com.adrienmandroid.composecv.core.ui.toAnnotatedString
-import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
-import com.adrienmandroid.composecv.core.ui.theme.Typography
 import com.adrienmandroid.composecv.core.ui.theme.onSurfaceTitle
 
 val expHorizontalSpacing = 10.dp
@@ -112,18 +108,18 @@ fun ExpAdditionalInfo(dates: Dates, @StringRes employer: Int?, link: Link?) {
     ) {
         Text(
             text = dates.begin.toMonthString().plus(" - ").plus(dates.end.toMonthString()),
-            style = Typography.body1,
+            //TODO style = Typography.body1,
             fontWeight = FontWeight.Bold,
         )
         Text(
             text = dates.getDifferenceToString(),
-            style = Typography.body1,
+            //TODO style = Typography.body1,
             fontWeight = FontWeight.Bold,
         )
         if (employer != null) {
             Text(
                 text = stringResource(id = employer),
-                style = Typography.body1,
+                //TODO style = Typography.body1,
                 fontWeight = FontWeight.Bold,
             )
         }
@@ -144,12 +140,12 @@ fun ExperienceInfoListItem(informations: List<ExperienceInformation>) {
         ) {
             Text(
                 stringResource(id = information.name).toAnnotatedString(),
-                style = Typography.body1
+                //TODO style = Typography.body1
             )
         }
     }
 }
-
+/*TODO
 @Preview
 @Composable
 fun PreviewExperienceHeader() {
@@ -160,4 +156,4 @@ fun PreviewExperienceHeader() {
         }
 
     }
-}
+}*/

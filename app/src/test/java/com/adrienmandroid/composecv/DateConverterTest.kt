@@ -1,11 +1,5 @@
 package com.adrienmandroid.composecv
 
-import com.adrienmandroid.composecv.ui.experience.toDayString
-import com.adrienmandroid.composecv.ui.experience.toMonthString
-import org.junit.Assert.assertEquals
-import org.junit.Test
-import java.util.*
-
 class DateConverterTest {
     /*
     @Test

@@ -1,16 +1,6 @@
 <resources>
     <string name="app_name">ComposeCV</string>
 
-    <string name = "years_and_months">%1$s, %2$s</string>
-    <plurals name="years">
-        <item quantity="one">%1$d année</item>
-        <item quantity="other">%1$d années</item>
-    </plurals>
-    <plurals name="months">
-        <item quantity="one">%1$d mois</item>
-        <item quantity="other">%1$d mois</item>
-    </plurals>
-
     <string name="title_diplomas">Diplomes</string>
     <string name="title_quotes">Mes citations favorites</string>
     <string name="title_gratitude">Remerciements</string>
@@ -18,9 +8,6 @@
     <string name="hobbies">Temps libre, passions et santés</string>
 
     <string name="version">Version %1$s</string>
-
-    <string name="exp_less_than_month">Moins d\'un mois</string>
-    <string name="exp_up_to_today">A ce jour</string>
 
     <string name="txt_gratitude">Merci à Manon F et Jérome L pour leurs conseils dans le design de l\'application. \n Merci à Frédéric U. et tous les développeurs Andoid lors de ma mission chez EI pour leurs enseignements sur Android.\nMerci aux développeurs Android de StackOverflow et Slack Android FR.</string>
 </resources>
