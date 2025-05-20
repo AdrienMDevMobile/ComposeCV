@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.data.dataSource
+package com.adrienmandroid.composecv.navigation
 
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
@@ -18,10 +18,22 @@ import com.adrienmandroid.composecv.ui.fragments.WelcomeFragment
 //Navigation graph informations.
 object BottomNavGraph {
 
-    val WelcomeBottomNav = BottomNavElement("welcome", null, R.drawable.ic_tab_home, R.drawable.ic_tab_home_unselected)
-    val ExpBottomNav = BottomNavElement("experience", "EXP.", R.drawable.ic_tab_experience, R.drawable.ic_tab_experience_unselected)
-    val SkillBottomNav = BottomNavElement("skill", "Skill", R.drawable.ic_tab_skill, R.drawable.ic_tab_skill_unselected)
-    val OtherBottomNav =    BottomNavElement("other", "other", R.drawable.ic_tab_other, R.drawable.ic_tab_other_unselected)
+    val WelcomeBottomNav = BottomNavElement("welcome", null,
+        R.drawable.ic_tab_home,
+        R.drawable.ic_tab_home_unselected
+    )
+    val ExpBottomNav = BottomNavElement("experience", "EXP.",
+        R.drawable.ic_tab_experience,
+        R.drawable.ic_tab_experience_unselected
+    )
+    val SkillBottomNav = BottomNavElement("skill", "Skill",
+        R.drawable.ic_tab_skill,
+        R.drawable.ic_tab_skill_unselected
+    )
+    val OtherBottomNav =    BottomNavElement("other", "other",
+        R.drawable.ic_tab_other,
+        R.drawable.ic_tab_other_unselected
+    )
 
     val array = arrayOf(WelcomeBottomNav, ExpBottomNav, SkillBottomNav, OtherBottomNav)
 

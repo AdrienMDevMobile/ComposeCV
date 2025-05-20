@@ -15,7 +15,7 @@ import androidx.navigation.NavDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.adrienmandroid.composecv.data.model.BottomNavElement
-import com.adrienmandroid.composecv.data.dataSource.BottomNavGraph
+import com.adrienmandroid.composecv.navigation.BottomNavGraph
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 
 //The design of the bottomBar

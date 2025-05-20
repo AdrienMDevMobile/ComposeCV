@@ -7,8 +7,8 @@ import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
-import com.adrienmandroid.composecv.data.dataSource.BottomNavGraph
-import com.adrienmandroid.composecv.data.dataSource.BottomNavGraphHost
+import com.adrienmandroid.composecv.navigation.BottomNavGraph
+import com.adrienmandroid.composecv.navigation.BottomNavGraphHost
 import com.adrienmandroid.composecv.ui.nav.BottomBar
 
 
