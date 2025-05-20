@@ -13,7 +13,7 @@ import com.adrienmandroid.composecv.data.repository.WelcomeElementsRepositoryImp
 import com.adrienmandroid.composecv.feature.skills.SkillFragment
 import com.adrienmandroid.composecv.ui.fragments.ExperienceFragment
 import com.adrienmandroid.composecv.ui.fragments.OtherFragment
-import com.adrienmandroid.composecv.ui.fragments.WelcomeFragment
+import com.adrienmandroid.composecv.feature.welcome.WelcomeFragment
 
 //Navigation graph informations.
 object BottomNavGraph {

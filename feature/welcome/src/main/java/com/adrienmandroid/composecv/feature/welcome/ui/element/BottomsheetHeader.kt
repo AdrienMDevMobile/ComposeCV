@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.feature.welcome
+package com.adrienmandroid.composecv.feature.welcome.ui.element
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -19,6 +19,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.core.ui.theme.roundedTopEndSquare
+import com.adrienmandroid.composecv.feature.welcome.R
 
 fun LazyListScope.bottomsheetHeader(
     verticalArrangement: Dp = 32.dp,

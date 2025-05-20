@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.ui.fragments
+package com.adrienmandroid.composecv.feature.welcome
 
 import android.content.Intent
 import android.net.Uri
@@ -23,11 +23,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.adrienmandroid.composecv.feature.welcome.R
+import com.adrienmandroid.composecv.feature.welcome.ui.element.ClickViewModel
+import com.adrienmandroid.composecv.feature.welcome.ui.element.MyBottomSheet
+import com.adrienmandroid.composecv.feature.welcome.ui.element.bottomsheetBody
 import com.adrienmandroid.composecv.model.welcome.WelcomeElement
-import com.adrienmandroid.composecv.feature.welcome.ClickViewModel
-import com.adrienmandroid.composecv.feature.welcome.bottomsheetBody
-import com.adrienmandroid.composecv.feature.welcome.MyBottomSheet
 
 
 @ExperimentalMaterialApi

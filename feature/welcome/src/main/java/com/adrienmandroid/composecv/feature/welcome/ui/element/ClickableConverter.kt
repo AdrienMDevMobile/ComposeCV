@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.feature.welcome
+package com.adrienmandroid.composecv.feature.welcome.ui.element
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource

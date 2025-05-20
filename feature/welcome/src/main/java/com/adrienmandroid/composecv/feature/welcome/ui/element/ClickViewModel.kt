@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.feature.welcome
+package com.adrienmandroid.composecv.feature.welcome.ui.element
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
