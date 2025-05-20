@@ -10,9 +10,9 @@ import com.adrienmandroid.composecv.data.model.BottomNavElement
 import com.adrienmandroid.composecv.data.impl.ExperienceDataImpl
 import com.adrienmandroid.composecv.data.impl.SkillDataImpl
 import com.adrienmandroid.composecv.data.repository.WelcomeElementsRepositoryImpl
+import com.adrienmandroid.composecv.feature.skills.SkillFragment
 import com.adrienmandroid.composecv.ui.fragments.ExperienceFragment
 import com.adrienmandroid.composecv.ui.fragments.OtherFragment
-import com.adrienmandroid.composecv.ui.fragments.SkillFragment
 import com.adrienmandroid.composecv.ui.fragments.WelcomeFragment
 
 //Navigation graph informations.

@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.ui.skill
+package com.adrienmandroid.composecv.feature.skills.ui.element
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
@@ -18,10 +18,10 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.adrienmandroid.composecv.R
 import com.adrienmandroid.composecv.core.ui.toAnnotatedString
 import com.adrienmandroid.composecv.core.ui.theme.Typography
 import com.adrienmandroid.composecv.data.model.Skill
+import com.adrienmandroid.composecv.feature.skills.R
 
 @Composable
 fun SkillCard(skill: Skill) {

@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.ui.skill
+package com.adrienmandroid.composecv.feature.skills.ui.element
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.layout.fillMaxWidth

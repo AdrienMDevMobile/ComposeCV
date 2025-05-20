@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.ui.fragments
+package com.adrienmandroid.composecv.feature.skills
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -13,8 +13,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.adrienmandroid.composecv.data.model.Skill
 import com.adrienmandroid.composecv.data.impl.SkillDataImpl
-import com.adrienmandroid.composecv.ui.skill.SkillCard
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
+import com.adrienmandroid.composecv.feature.skills.ui.element.SkillCard
 
 @Composable
 fun SkillFragment(skills: List<Skill>) {

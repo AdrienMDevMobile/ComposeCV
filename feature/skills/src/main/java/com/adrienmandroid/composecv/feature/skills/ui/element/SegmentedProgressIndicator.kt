@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.ui.skill
+package com.adrienmandroid.composecv.feature.skills.ui.element
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.height
