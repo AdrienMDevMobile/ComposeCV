@@ -26,12 +26,14 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.adrienmandroid.composecv.core.ui.getDifferenceToString
 import com.adrienmandroid.composecv.data.model.Dates
 import com.adrienmandroid.composecv.data.model.Experience
 import com.adrienmandroid.composecv.data.model.ExperienceInformation
 import com.adrienmandroid.composecv.data.model.Link
 import com.adrienmandroid.composecv.core.ui.toAnnotatedString
 import com.adrienmandroid.composecv.core.ui.theme.onSurfaceTitle
+import com.adrienmandroid.composecv.core.ui.toMonthString
 
 val expHorizontalSpacing = 10.dp
 val expVerticalSpacing = 10.dp

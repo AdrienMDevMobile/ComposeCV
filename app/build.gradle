@@ -39,10 +39,6 @@ android {
         }
     }
 
-    buildFeatures {
-        //Necessaire pour afficher le numéro de version dans l'app
-        buildConfig true
-    }
     namespace 'com.adrienmandroid.composecv'
 }
 
@@ -52,4 +48,5 @@ dependencies {
     implementation(project(":feature:welcome"))
     implementation(project(":feature:skills"))
     implementation(project(":feature:experience"))
+    implementation(project(":feature:other"))
 }

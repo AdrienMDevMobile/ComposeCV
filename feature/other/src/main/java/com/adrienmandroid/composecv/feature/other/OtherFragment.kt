@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.ui.fragments
+package com.adrienmandroid.composecv.feature.other
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -8,12 +8,17 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.adrienmandroid.composecv.R
 import com.adrienmandroid.composecv.data.impl.HobbyDataSourceImpl
 import com.adrienmandroid.composecv.data.impl.QuoteDataImpl
 import com.adrienmandroid.composecv.data.impl.StudyDataImpl
-import com.adrienmandroid.composecv.ui.other.*
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
+import com.adrienmandroid.composecv.feature.other.ui.elements.Gratitudes
+import com.adrienmandroid.composecv.feature.other.ui.elements.HobbyRow
+import com.adrienmandroid.composecv.feature.other.ui.elements.QuoteCarousel
+import com.adrienmandroid.composecv.feature.other.ui.elements.Signature
+import com.adrienmandroid.composecv.feature.other.ui.elements.StudyList
+import com.adrienmandroid.composecv.feature.other.ui.elements.Version
+import com.adrienmandroid.composecv.feature.other.ui.elements.otherSection
 
 @Composable
 fun OtherFragment() {
@@ -30,7 +35,7 @@ fun OtherFragment() {
             firstElement = true
         )
         otherSection({ QuoteCarousel(QuoteDataImpl()) }, title = R.string.title_quotes)
-        otherSection({ HobbyRow(HobbyDataSourceImpl().getHobbies()) }, title = R.string.hobbies)
+        otherSection({ HobbyRow(HobbyDataSourceImpl().getHobbies()) }, title = R.string.title_hobbies)
         otherSection({ Gratitudes() }, title = R.string.title_gratitude)
         otherSection({ Signature(MaterialTheme.colors.secondaryVariant) })
         otherSection({ Version() })

@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.ui.other
+package com.adrienmandroid.composecv.feature.other.ui.elements
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth

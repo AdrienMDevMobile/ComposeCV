@@ -6,16 +6,9 @@ plugins {
 
 android {
     namespace 'com.adrienmandroid.composecv.core.ui'
-
-    /*defaultConfig {
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles "consumer-rules.pro"
-    }*/
 }
 
-/*
+
 dependencies {
-    testImplementation libs.test.junit
-    androidTestImplementation libs.android.test.junit
-    androidTestImplementation libs.android.test.espresso
-}*/
+    implementation project(':core:data')
+}
