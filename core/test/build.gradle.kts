@@ -3,12 +3,7 @@ plugins {
     alias(libs.plugins.convention.library.compose)
     alias(libs.plugins.kotlin.android)
 }
-//TODO passer en kts
+
 android {
-    namespace 'com.adrienmandroid.composecv.core.ui'
-}
-
-
-dependencies {
-    implementation project(':core:data')
+    namespace = "com.adrienmandroid.composecv.core.test"
 }

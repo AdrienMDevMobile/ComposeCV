@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="test_1_word">Loremipsum.</string>
+    <string name="test_short_text_1_line">Lorem ipsum dolor sit amet.</string>
+    <string name="test_long_text_3_lines">Lorem ipsum dolor sit amet, consectetur adipiscing elit. \nUt nec quam nec est facilisis lobortis ac vel augue.\n Praesent tempor.</string>
+    <string name="test_long_text_5_lines">Lorem ipsum dolor sit amet, consectetur adipiscing elit, Phasellus quam turpis. \n Nulla hendrerit nulla nec orci dictum pellentesque.\n Etiam lacinia mollis odio quis cursus Aliquam ac nisi mauris.\n Mauris ut velit quis ex fermentum dictum eget non lorem.\n Maecenas lobortis augue dolor, sit.</string>
+</resources>
