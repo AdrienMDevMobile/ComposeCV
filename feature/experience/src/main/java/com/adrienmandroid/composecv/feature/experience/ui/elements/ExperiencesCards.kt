@@ -110,18 +110,18 @@ fun ExpAdditionalInfo(dates: Dates, @StringRes employer: Int?, link: Link?) {
     ) {
         Text(
             text = dates.begin.toMonthString().plus(" - ").plus(dates.end.toMonthString()),
-            //TODO style = Typography.body1,
+            style = MaterialTheme.typography.body1,
             fontWeight = FontWeight.Bold,
         )
         Text(
             text = dates.getDifferenceToString(),
-            //TODO style = Typography.body1,
+            style = MaterialTheme.typography.body1,
             fontWeight = FontWeight.Bold,
         )
         if (employer != null) {
             Text(
                 text = stringResource(id = employer),
-                //TODO style = Typography.body1,
+                style = MaterialTheme.typography.body1,
                 fontWeight = FontWeight.Bold,
             )
         }
@@ -142,7 +142,7 @@ fun ExperienceInfoListItem(informations: List<ExperienceInformation>) {
         ) {
             Text(
                 stringResource(id = information.name).toAnnotatedString(),
-                //TODO style = Typography.body1
+                style = MaterialTheme.typography.body1
             )
         }
     }
