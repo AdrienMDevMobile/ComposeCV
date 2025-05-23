@@ -1,5 +1,6 @@
 package com.adrienmandroid.composecv.feature.other.ui.elements
 
+import android.content.res.Configuration
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -13,11 +14,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.core.ui.toMonthString
+import com.adrienmandroid.composecv.data.model.Dates
 import com.adrienmandroid.composecv.data.model.Study
 import java.util.*
-
+import com.adrienmandroid.composecv.core.test.R as TestingR
 
 @Composable
 fun StudyCard(study: Study) {
@@ -84,22 +88,24 @@ fun StudyCard(study: Study) {
     }
 }
 
-/*TODO
 @Preview(
+    uiMode = Configuration.UI_MODE_NIGHT_YES,
     widthDp = 300,
     heightDp = 200
 )
 @Composable
 fun PreviewStudyCard() {
-    StudyCard(
-        study = Study(
-            logo = R.drawable.image_ece,
-            name = R.string.study_brighton,
-            diploma = R.string.diploma_brighton,
-            studyDates = Dates(
-                begin = Date(1593554400000), end = Date(1641596400000)
-            ),
-            longString = true
+    ComposeCVTheme {
+        StudyCard(
+            study = Study(
+                logo = TestingR.drawable.ic_test,
+                name = TestingR.string.test_1_word,
+                diploma = TestingR.string.test_1_word,
+                studyDates = Dates(
+                    begin = Date(1593554400000), end = Date(1641596400000)
+                ),
+                longString = true
+            )
         )
-    )
-}*/
+    }
+}
