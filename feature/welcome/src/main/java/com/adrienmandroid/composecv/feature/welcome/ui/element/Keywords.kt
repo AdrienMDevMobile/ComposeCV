@@ -19,7 +19,6 @@ import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.core.ui.theme.border
 import com.google.accompanist.flowlayout.FlowRow
 import com.adrienmandroid.composecv.model.Keyword as KeywordData
-import com.adrienmandroid.composecv.core.ui.theme.Typography
 import com.adrienmandroid.composecv.feature.welcome.R
 
 @Composable
@@ -28,7 +27,7 @@ private fun Keyword(@StringRes keyword: Int) {
     val word = stringResource(id = keyword)
     Text(
         text = "#$word",
-        style = Typography.body1.copy(
+        style = MaterialTheme.typography.body1.copy(
             color = MaterialTheme.colors.onSurface,
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center

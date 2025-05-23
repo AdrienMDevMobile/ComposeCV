@@ -19,7 +19,6 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.adrienmandroid.composecv.core.ui.toAnnotatedString
-import com.adrienmandroid.composecv.core.ui.theme.Typography
 import com.adrienmandroid.composecv.data.model.Skill
 import com.adrienmandroid.composecv.feature.skills.R
 
@@ -57,7 +56,7 @@ fun SkillCard(skill: Skill) {
                 ) { subSkill ->
                     Text(
                         text = subSkill,
-                        style = Typography.body1
+                        style = MaterialTheme.typography.body1
                     )
                 }
             }

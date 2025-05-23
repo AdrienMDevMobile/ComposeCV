@@ -2,6 +2,7 @@ package com.adrienmandroid.composecv.feature.other.ui.elements
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -18,6 +19,6 @@ fun Gratitudes() {
             .fillMaxWidth()
             .padding(horizontal = 5.dp),
         textAlign = TextAlign.Center,
-        //TODO style = Typography.body1
+        style = MaterialTheme.typography.body1
     )
 }

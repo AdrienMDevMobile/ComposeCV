@@ -2,6 +2,7 @@ package com.adrienmandroid.composecv.data.repository
 
 import com.adrienmandroid.composecv.data.R
 import com.adrienmandroid.composecv.model.Clickable
+import com.adrienmandroid.composecv.model.TypographyEnum
 import com.adrienmandroid.composecv.model.welcome.WelcomeElement
 
 class WelcomeElementsRepositoryImpl : WelcomeElementsRepository {
@@ -13,7 +14,7 @@ class WelcomeElementsRepositoryImpl : WelcomeElementsRepository {
             WelcomeElement.WelcomeText(
                 id = R.string.age,
                 args = arrayOf(27),
-                //style = Typography.body1
+                style = TypographyEnum.BODY1
             ),
             WelcomeElement.WelcomeText(
                 iconId = R.drawable.email,
