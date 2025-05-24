@@ -6,15 +6,6 @@ import androidx.compose.ui.text.TextStyle
 import com.adrienmandroid.composecv.core.ui.toMaterialTypography
 import com.adrienmandroid.composecv.model.welcome.WelcomeElement
 
-/*
-@OptIn(ExperimentalFoundationApi::class)
-@Composable
-private fun setWelcomeView(data: ArrayList<WelcomeElement>, clickViewModel: ClickViewModel) {
-    data.forEach { value ->
-        checkUiType(value, clickViewModel)
-    }
-} */
-
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun CheckUiType(value: WelcomeElement, clickViewModel: ClickViewModel) {
