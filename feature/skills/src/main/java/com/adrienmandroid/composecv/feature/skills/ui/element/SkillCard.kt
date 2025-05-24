@@ -45,8 +45,10 @@ fun SkillCard(skill: Skill) {
             Spacer(modifier = Modifier.width(10.dp))
 
             Spacer(modifier = Modifier.height(10.dp))
-            //TODO
-            if(skill.targetValue != null) SkillLinearProgressIndicator(targetValue = skill.targetValue!!)
+
+            skill.targetValue?.let {
+                SkillLinearProgressIndicator(targetValue = it)
+            }
             if (skill.subSkills.isNotEmpty()) {
                 GridItems(
                     data = skill.subSkills,
