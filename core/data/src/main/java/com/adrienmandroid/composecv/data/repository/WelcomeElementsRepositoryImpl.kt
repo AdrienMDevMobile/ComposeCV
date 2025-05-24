@@ -9,8 +9,8 @@ class WelcomeElementsRepositoryImpl : WelcomeElementsRepository {
 
     override fun listOfWelcomeItems(): List<WelcomeElement> {
         return listOf(
-            WelcomeElement.WelcomeText(id = R.string.names/*, style = Typography.h4*/),
-            WelcomeElement.WelcomeText(id = R.string.title/*, style = Typography.h5*/),
+            WelcomeElement.WelcomeText(id = R.string.names, style = TypographyEnum.H4),
+            WelcomeElement.WelcomeText(id = R.string.title, style = TypographyEnum.H5),
             WelcomeElement.WelcomeText(
                 id = R.string.age,
                 args = arrayOf(27),
@@ -20,30 +20,30 @@ class WelcomeElementsRepositoryImpl : WelcomeElementsRepository {
                 iconId = R.drawable.email,
                 id = R.string.emailAdress,
                 clickable = Clickable.MailClick(R.string.emailAdress),
-                //style = Typography.body1
+                style = TypographyEnum.BODY1
             ),
             WelcomeElement.WelcomeText(
                 iconId = R.drawable.location,
                 id = R.string.adress,
-                //style = Typography.body1
+                style = TypographyEnum.BODY1
             ),
             WelcomeElement.WelcomeText(
                 iconId = R.drawable.github,
                 id = R.string.gitHub,
                 clickable = Clickable.WebClick(R.string.gitHubLink),
-                //style = Typography.body1
+                style = TypographyEnum.BODY1
             ),
             WelcomeElement.WelcomeText(
                 iconId = R.drawable.linkedin,
                 id = R.string.linkedIn,
                 clickable = Clickable.WebClick(R.string.linkedInLink),
-                //style = Typography.body1
+                style = TypographyEnum.BODY1
             ),
             WelcomeElement.WelcomeQuote(id = R.string.selfPresentation),
             WelcomeElement.WelcomeImage(R.drawable.auboulotavelo, "Au boulot à velo", tint = true),
             WelcomeElement.WelcomeText(
                 id = R.string.Welcome_Keywords,
-                //style = Typography.body1.copy(fontWeight = FontWeight.Bold)
+                style = TypographyEnum.BODY1BOLD
             ),
             WelcomeElement.WelcomeKeyword(
                 arrayOf(

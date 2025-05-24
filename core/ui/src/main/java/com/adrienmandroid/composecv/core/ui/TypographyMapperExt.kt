@@ -3,6 +3,7 @@ package com.adrienmandroid.composecv.core.ui
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import com.adrienmandroid.composecv.model.TypographyEnum
 
 @Composable
@@ -18,6 +19,7 @@ fun TypographyEnum.toMaterialTypography(): TextStyle {
         TypographyEnum.SUBTITLE2 -> MaterialTheme.typography.subtitle2
         TypographyEnum.BODY1     -> MaterialTheme.typography.body1
         TypographyEnum.BODY2     -> MaterialTheme.typography.body2
+        TypographyEnum.BODY1BOLD -> MaterialTheme.typography.body1.copy(fontWeight = FontWeight.Bold)
         TypographyEnum.BUTTON    -> MaterialTheme.typography.button
         TypographyEnum.CAPTION   -> MaterialTheme.typography.caption
         TypographyEnum.OVERLINE  -> MaterialTheme.typography.overline
