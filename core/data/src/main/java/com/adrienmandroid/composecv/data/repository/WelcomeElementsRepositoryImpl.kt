@@ -3,7 +3,7 @@ package com.adrienmandroid.composecv.data.repository
 import com.adrienmandroid.composecv.data.R
 import com.adrienmandroid.composecv.model.Clickable
 import com.adrienmandroid.composecv.model.TypographyEnum
-import com.adrienmandroid.composecv.model.welcome.WelcomeElement
+import com.adrienmandroid.composecv.model.WelcomeElement
 
 class WelcomeElementsRepositoryImpl : WelcomeElementsRepository {
 

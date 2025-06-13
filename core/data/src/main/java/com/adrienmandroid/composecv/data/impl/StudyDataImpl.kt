@@ -1,8 +1,8 @@
 package com.adrienmandroid.composecv.data.impl
 
 import com.adrienmandroid.composecv.data.R
-import com.adrienmandroid.composecv.data.model.Dates
-import com.adrienmandroid.composecv.data.model.Study
+import com.adrienmandroid.composecv.model.Dates
+import com.adrienmandroid.composecv.model.Study
 import com.adrienmandroid.composecv.data.StudyData
 import java.util.*
 

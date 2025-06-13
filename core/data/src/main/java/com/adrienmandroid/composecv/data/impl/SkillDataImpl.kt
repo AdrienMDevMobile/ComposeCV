@@ -1,6 +1,6 @@
 package com.adrienmandroid.composecv.data.impl
 
-import com.adrienmandroid.composecv.data.model.Skill
+import com.adrienmandroid.composecv.model.Skill
 import com.adrienmandroid.composecv.data.SkillData
 
 class SkillDataImpl : SkillData {

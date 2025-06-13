@@ -26,7 +26,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.adrienmandroid.composecv.feature.welcome.ui.element.ClickViewModel
 import com.adrienmandroid.composecv.feature.welcome.ui.element.MyBottomSheet
 import com.adrienmandroid.composecv.feature.welcome.ui.element.bottomsheetBody
-import com.adrienmandroid.composecv.model.welcome.WelcomeElement
+import com.adrienmandroid.composecv.model.WelcomeElement
 
 
 @ExperimentalMaterialApi

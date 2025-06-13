@@ -18,8 +18,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.core.ui.toMonthString
-import com.adrienmandroid.composecv.data.model.Dates
-import com.adrienmandroid.composecv.data.model.Study
+import com.adrienmandroid.composecv.model.Dates
+import com.adrienmandroid.composecv.model.Study
 import java.util.*
 import com.adrienmandroid.composecv.core.test.R as TestingR
 

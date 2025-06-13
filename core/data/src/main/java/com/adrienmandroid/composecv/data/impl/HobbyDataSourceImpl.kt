@@ -1,7 +1,7 @@
 package com.adrienmandroid.composecv.data.impl
 
 import com.adrienmandroid.composecv.data.R
-import com.adrienmandroid.composecv.data.model.Hobby
+import com.adrienmandroid.composecv.model.Hobby
 import com.adrienmandroid.composecv.data.HobbyDataSource
 
 class HobbyDataSourceImpl: HobbyDataSource {

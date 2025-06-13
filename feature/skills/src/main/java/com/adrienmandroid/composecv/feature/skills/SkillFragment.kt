@@ -11,7 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.adrienmandroid.composecv.data.model.Skill
+import com.adrienmandroid.composecv.model.Skill
 import com.adrienmandroid.composecv.data.impl.SkillDataImpl
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.feature.skills.ui.element.SkillCard

@@ -7,7 +7,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.adrienmandroid.composecv.data.model.Hobby
+import com.adrienmandroid.composecv.model.Hobby
 
 @Composable
 fun HobbyRow(hobbies: List<Hobby>) {

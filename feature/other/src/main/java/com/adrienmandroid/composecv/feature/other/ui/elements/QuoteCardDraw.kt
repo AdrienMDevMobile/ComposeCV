@@ -25,7 +25,7 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.feature.other.R
-import com.adrienmandroid.composecv.data.model.Quote
+import com.adrienmandroid.composecv.model.Quote
 import com.adrienmandroid.composecv.core.ui.theme.onQuoteBackground
 import com.adrienmandroid.composecv.core.ui.theme.quoteBackground
 import com.adrienmandroid.composecv.core.test.R as TestingR

@@ -1,6 +1,6 @@
 package com.adrienmandroid.composecv.data
 
-import com.adrienmandroid.composecv.data.model.Skill
+import com.adrienmandroid.composecv.model.Skill
 
 
 interface SkillData {

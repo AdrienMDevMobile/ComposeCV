@@ -2,9 +2,8 @@ package com.adrienmandroid.composecv.feature.welcome.ui.element
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.text.TextStyle
 import com.adrienmandroid.composecv.core.ui.toMaterialTypography
-import com.adrienmandroid.composecv.model.welcome.WelcomeElement
+import com.adrienmandroid.composecv.model.WelcomeElement
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable

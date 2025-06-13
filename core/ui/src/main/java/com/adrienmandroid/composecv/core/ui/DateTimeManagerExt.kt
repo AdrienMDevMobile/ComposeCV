@@ -3,8 +3,7 @@ package com.adrienmandroid.composecv.core.ui
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
-import com.adrienmandroid.composecv.core.ui.R
-import com.adrienmandroid.composecv.data.model.Dates
+import com.adrienmandroid.composecv.model.Dates
 import java.text.SimpleDateFormat
 import java.util.*
 

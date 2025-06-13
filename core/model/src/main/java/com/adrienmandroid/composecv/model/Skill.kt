@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.data.model
+package com.adrienmandroid.composecv.model
 
 data class Skill(
     val name: String,

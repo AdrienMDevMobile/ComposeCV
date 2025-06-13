@@ -9,7 +9,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.adrienmandroid.composecv.data.model.Study
+import com.adrienmandroid.composecv.model.Study
 import com.adrienmandroid.composecv.data.impl.StudyDataImpl
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.core.ui.theme.carouselButton

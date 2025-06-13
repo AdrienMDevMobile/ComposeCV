@@ -29,10 +29,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.core.ui.getDifferenceToString
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
-import com.adrienmandroid.composecv.data.model.Dates
-import com.adrienmandroid.composecv.data.model.Experience
-import com.adrienmandroid.composecv.data.model.ExperienceInformation
-import com.adrienmandroid.composecv.data.model.Link
+import com.adrienmandroid.composecv.model.Dates
+import com.adrienmandroid.composecv.model.Experience
+import com.adrienmandroid.composecv.model.ExperienceInformation
+import com.adrienmandroid.composecv.model.Link
 import com.adrienmandroid.composecv.core.ui.toAnnotatedString
 import com.adrienmandroid.composecv.core.ui.theme.onSurfaceTitle
 import com.adrienmandroid.composecv.core.ui.toMonthString

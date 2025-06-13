@@ -18,7 +18,7 @@ import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import com.adrienmandroid.composecv.data.model.BottomNavElement
+import com.adrienmandroid.composecv.model.BottomNavElement
 import com.adrienmandroid.composecv.navigation.BottomNavGraph
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 

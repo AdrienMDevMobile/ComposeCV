@@ -1,7 +1,7 @@
 package com.adrienmandroid.composecv.data.impl
 
 import com.adrienmandroid.composecv.data.R
-import com.adrienmandroid.composecv.data.model.Quote
+import com.adrienmandroid.composecv.model.Quote
 import com.adrienmandroid.composecv.data.QuoteData
 
 class QuoteDataImpl : QuoteData {

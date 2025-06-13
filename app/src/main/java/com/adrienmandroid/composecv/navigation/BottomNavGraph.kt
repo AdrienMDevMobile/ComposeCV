@@ -6,12 +6,11 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.adrienmandroid.composecv.R
-import com.adrienmandroid.composecv.data.model.BottomNavElement
+import com.adrienmandroid.composecv.model.BottomNavElement
 import com.adrienmandroid.composecv.data.impl.ExperienceDataImpl
 import com.adrienmandroid.composecv.data.impl.SkillDataImpl
 import com.adrienmandroid.composecv.data.repository.WelcomeElementsRepositoryImpl
 import com.adrienmandroid.composecv.feature.skills.SkillFragment
-import com.adrienmandroid.composecv.feature.other.OtherFragment
 import com.adrienmandroid.composecv.feature.welcome.WelcomeFragment
 
 //Navigation graph informations.
