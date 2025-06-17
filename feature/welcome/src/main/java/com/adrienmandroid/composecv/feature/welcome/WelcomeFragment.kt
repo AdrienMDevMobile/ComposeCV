@@ -26,13 +26,13 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.adrienmandroid.composecv.feature.welcome.ui.element.ClickViewModel
 import com.adrienmandroid.composecv.feature.welcome.ui.element.MyBottomSheet
 import com.adrienmandroid.composecv.feature.welcome.ui.element.bottomsheetBody
-import com.adrienmandroid.composecv.model.WelcomeElement
+import com.adrienmandroid.composecv.model.WelcomePage
 
 
 @ExperimentalMaterialApi
 @Composable
 fun WelcomeFragment(
-    welcomeElements: List<WelcomeElement>,
+    welcomePage: WelcomePage,
     clickViewModel: ClickViewModel = viewModel()
 ) {
 
@@ -60,17 +60,17 @@ fun WelcomeFragment(
     MyBottomSheet(
         contentCovered = {
             Image(
-                //TODO background picture (donner cela depuis data)
-                painter = painterResource(R.drawable.picture_test),
+                painter = painterResource(welcomePage.header.backgroundPicture),
                 contentDescription = "Background",
                 contentScale = ContentScale.Crop,
-                modifier = Modifier.fillMaxWidth().height(250.dp)
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(250.dp)
             )
         },
         anchoredContent = {
             Image(
-                //TODO profile picture
-                painter = painterResource(R.drawable.picture_test),
+                painter = painterResource(welcomePage.header.profilePicture),
                 contentDescription = "Picture",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
@@ -82,6 +82,6 @@ fun WelcomeFragment(
                     .border(4.dp, MaterialTheme.colors.background, CircleShape)
             )
         }) {
-        bottomsheetBody(welcomeElements, clickViewModel)
+        bottomsheetBody(welcomePage.body, clickViewModel)
     }
 }

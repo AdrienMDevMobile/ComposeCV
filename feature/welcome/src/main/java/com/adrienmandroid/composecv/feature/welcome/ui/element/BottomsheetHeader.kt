@@ -19,7 +19,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.core.ui.theme.roundedTopEndSquare
-import com.adrienmandroid.composecv.feature.welcome.R
+import com.adrienmandroid.composecv.core.test.R as TestingR
 
 fun LazyListScope.bottomsheetHeader(
     verticalArrangement: Dp = 32.dp,
@@ -54,7 +54,7 @@ fun PreviewBottomSheetHeader() {
         LazyColumn() {
             bottomsheetHeader {
                 Image(
-                    painter = painterResource(R.drawable.picture_test),
+                    painter = painterResource(TestingR.drawable.img_test),
                     contentDescription = "Picture",
                     contentScale = ContentScale.Crop,
                     modifier = Modifier

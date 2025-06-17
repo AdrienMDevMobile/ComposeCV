@@ -3,20 +3,20 @@ package com.adrienmandroid.composecv.feature.welcome.ui.element
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.runtime.Composable
 import com.adrienmandroid.composecv.core.ui.toMaterialTypography
-import com.adrienmandroid.composecv.model.WelcomeElement
+import com.adrienmandroid.composecv.model.WelcomeBodyElement
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun CheckUiType(value: WelcomeElement, clickViewModel: ClickViewModel) {
+fun CheckUiType(value: WelcomeBodyElement, clickViewModel: ClickViewModel) {
     when (value) {
-        is WelcomeElement.WelcomeImage -> ImageDraw(
+        is WelcomeBodyElement.WelcomeImage -> ImageDraw(
             source = value.source,
             description = value.description,
             tint = value.tint,
         )
-        is WelcomeElement.WelcomeKeyword -> Keywords(keywords = value.keywords)
-        is WelcomeElement.WelcomeQuote -> QuoteTextDraw(id = value.id)
-        is WelcomeElement.WelcomeText -> TextDraw(
+        is WelcomeBodyElement.WelcomeKeyword -> Keywords(keywords = value.keywords)
+        is WelcomeBodyElement.WelcomeQuote -> QuoteTextDraw(id = value.id)
+        is WelcomeBodyElement.WelcomeText -> TextDraw(
             iconId = value.iconId,
             id = value.id,
             style = value.style.toMaterialTypography(),

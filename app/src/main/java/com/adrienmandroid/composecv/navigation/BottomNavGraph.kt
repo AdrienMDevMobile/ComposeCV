@@ -47,7 +47,7 @@ fun BottomNavGraphHost(navController: NavHostController) {
     )
     {
         composable(route = BottomNavGraph.WelcomeBottomNav.route) {
-            WelcomeFragment(WelcomeElementsRepositoryImpl().listOfWelcomeItems())
+            WelcomeFragment(WelcomeElementsRepositoryImpl().getWelcomePageElements())
         }
         composable(route = BottomNavGraph.ExpBottomNav.route) {
             com.adrienmandroid.composecv.feature.experience.ExperienceFragment(ExperienceDataImpl().getExperiences())

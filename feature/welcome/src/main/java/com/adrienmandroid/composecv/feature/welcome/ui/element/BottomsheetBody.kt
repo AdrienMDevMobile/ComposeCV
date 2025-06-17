@@ -12,15 +12,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.adrienmandroid.composecv.model.WelcomeElement
+import com.adrienmandroid.composecv.model.WelcomeBodyElement
 import com.adrienmandroid.composecv.data.repository.WelcomeElementsRepositoryImpl
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 
 fun LazyListScope.bottomsheetBody(
-    welcomeElements: List<WelcomeElement>,
+    welcomeBodyElements: List<WelcomeBodyElement>,
     clickViewModel: ClickViewModel
 ) {
-    items(items = welcomeElements) {
+    items(items = welcomeBodyElements) {
         Box(
             modifier = Modifier
                 .fillMaxWidth()
@@ -38,7 +38,8 @@ fun PreviewBottomsheetBody() {
     ComposeCVTheme {
         LazyColumn {
             bottomsheetBody(
-                WelcomeElementsRepositoryImpl().listOfWelcomeItems(),
+                //TODO utiliser des elements de tests
+                WelcomeElementsRepositoryImpl().getWelcomePageElements().body,
                 ClickViewModel()
             )
         }

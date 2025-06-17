@@ -1,7 +1,7 @@
 package com.adrienmandroid.composecv.data.repository
 
-import com.adrienmandroid.composecv.model.WelcomeElement
+import com.adrienmandroid.composecv.model.WelcomePage
 
 interface WelcomeElementsRepository {
-    fun listOfWelcomeItems(): List<WelcomeElement>
+    fun getWelcomePageElements(): WelcomePage
 }
