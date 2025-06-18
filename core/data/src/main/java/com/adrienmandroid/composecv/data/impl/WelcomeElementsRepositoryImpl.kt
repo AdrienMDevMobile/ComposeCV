@@ -1,6 +1,7 @@
-package com.adrienmandroid.composecv.data.repository
+package com.adrienmandroid.composecv.data.impl
 
 import com.adrienmandroid.composecv.data.R
+import com.adrienmandroid.composecv.data.WelcomeElementsRepository
 import com.adrienmandroid.composecv.model.Clickable
 import com.adrienmandroid.composecv.model.TypographyEnum
 import com.adrienmandroid.composecv.model.WelcomeBodyElement

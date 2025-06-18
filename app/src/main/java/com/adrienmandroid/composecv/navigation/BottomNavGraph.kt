@@ -7,9 +7,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.adrienmandroid.composecv.R
 import com.adrienmandroid.composecv.model.BottomNavElement
-import com.adrienmandroid.composecv.data.impl.ExperienceDataImpl
-import com.adrienmandroid.composecv.data.impl.SkillDataImpl
-import com.adrienmandroid.composecv.data.repository.WelcomeElementsRepositoryImpl
+import com.adrienmandroid.composecv.data.impl.ExperienceRepositoryImpl
+import com.adrienmandroid.composecv.data.impl.SkillRepositoryImpl
+import com.adrienmandroid.composecv.data.impl.WelcomeElementsRepositoryImpl
 import com.adrienmandroid.composecv.feature.skills.SkillFragment
 import com.adrienmandroid.composecv.feature.welcome.WelcomeFragment
 
@@ -50,10 +50,10 @@ fun BottomNavGraphHost(navController: NavHostController) {
             WelcomeFragment(WelcomeElementsRepositoryImpl().getWelcomePageElements())
         }
         composable(route = BottomNavGraph.ExpBottomNav.route) {
-            com.adrienmandroid.composecv.feature.experience.ExperienceFragment(ExperienceDataImpl().getExperiences())
+            com.adrienmandroid.composecv.feature.experience.ExperienceFragment(ExperienceRepositoryImpl().getExperiences())
         }
         composable(route = BottomNavGraph.SkillBottomNav.route) {
-            SkillFragment(SkillDataImpl().getSkills())
+            SkillFragment(SkillRepositoryImpl().getSkills())
         }
         composable(route = BottomNavGraph.OtherBottomNav.route) {
             com.adrienmandroid.composecv.feature.other.OtherFragment()

@@ -13,7 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.model.WelcomeBodyElement
-import com.adrienmandroid.composecv.data.repository.WelcomeElementsRepositoryImpl
+import com.adrienmandroid.composecv.data.impl.WelcomeElementsRepositoryImpl
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 
 fun LazyListScope.bottomsheetBody(

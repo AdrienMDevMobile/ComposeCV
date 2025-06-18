@@ -4,10 +4,10 @@ import com.adrienmandroid.composecv.data.R
 import com.adrienmandroid.composecv.model.Dates
 import com.adrienmandroid.composecv.model.Experience
 import com.adrienmandroid.composecv.model.ExperienceInformation
-import com.adrienmandroid.composecv.data.ExperienceData
+import com.adrienmandroid.composecv.data.ExperienceRepository
 import java.util.*
 
-class ExperienceDataImpl : ExperienceData {
+class ExperienceRepositoryImpl : ExperienceRepository {
     override fun getExperiences(): List<Experience> = listOf(
         Experience(
             name = R.string.exp_off_name,

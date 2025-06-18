@@ -8,9 +8,9 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.adrienmandroid.composecv.data.impl.HobbyDataSourceImpl
-import com.adrienmandroid.composecv.data.impl.QuoteDataImpl
-import com.adrienmandroid.composecv.data.impl.StudyDataImpl
+import com.adrienmandroid.composecv.data.impl.HobbyRepositoryImpl
+import com.adrienmandroid.composecv.data.impl.QuoteRepositoryImpl
+import com.adrienmandroid.composecv.data.impl.StudyRepositoryImpl
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.feature.other.ui.elements.Gratitudes
 import com.adrienmandroid.composecv.feature.other.ui.elements.HobbyRow
@@ -30,12 +30,12 @@ fun OtherFragment() {
     )
     {
         otherSection(
-            { StudyList(studies = StudyDataImpl().getData()) },
+            { StudyList(studies = StudyRepositoryImpl().getData()) },
             title = R.string.title_diplomas,
             firstElement = true
         )
-        otherSection({ QuoteCarousel(QuoteDataImpl()) }, title = R.string.title_quotes)
-        otherSection({ HobbyRow(HobbyDataSourceImpl().getHobbies()) }, title = R.string.title_hobbies)
+        otherSection({ QuoteCarousel(QuoteRepositoryImpl()) }, title = R.string.title_quotes)
+        otherSection({ HobbyRow(HobbyRepositoryImpl().getHobbies()) }, title = R.string.title_hobbies)
         otherSection({ Gratitudes() }, title = R.string.title_gratitude)
         otherSection({ Signature(MaterialTheme.colors.secondaryVariant) })
         otherSection({ Version() })

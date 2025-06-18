@@ -2,6 +2,6 @@ package com.adrienmandroid.composecv.data
 
 import com.adrienmandroid.composecv.model.Study
 
-interface StudyData {
+interface StudyRepository {
     fun getData(): List<Study>
 }

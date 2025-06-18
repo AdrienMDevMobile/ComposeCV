@@ -8,7 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.adrienmandroid.composecv.model.Experience
-import com.adrienmandroid.composecv.data.impl.ExperienceDataImpl
+import com.adrienmandroid.composecv.data.impl.ExperienceRepositoryImpl
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.feature.experience.ui.elements.ExperienceCard
 
@@ -30,6 +30,6 @@ fun ExperiencesList(experiences: List<Experience>) {
 @Preview
 fun PrevExpFragment() {
     ComposeCVTheme {
-        ExperienceFragment(ExperienceDataImpl().getExperiences())
+        ExperienceFragment(ExperienceRepositoryImpl().getExperiences())
     }
 }

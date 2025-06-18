@@ -3,10 +3,10 @@ package com.adrienmandroid.composecv.data.impl
 import com.adrienmandroid.composecv.data.R
 import com.adrienmandroid.composecv.model.Dates
 import com.adrienmandroid.composecv.model.Study
-import com.adrienmandroid.composecv.data.StudyData
+import com.adrienmandroid.composecv.data.StudyRepository
 import java.util.*
 
-class StudyDataImpl : StudyData {
+class StudyRepositoryImpl : StudyRepository {
     override fun getData(): List<Study> = listOf(
         Study(
             logo = R.drawable.image_ece,

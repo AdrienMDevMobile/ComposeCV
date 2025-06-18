@@ -12,7 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.adrienmandroid.composecv.model.Skill
-import com.adrienmandroid.composecv.data.impl.SkillDataImpl
+import com.adrienmandroid.composecv.data.impl.SkillRepositoryImpl
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.feature.skills.ui.element.SkillCard
 
@@ -36,6 +36,6 @@ fun SkillFragment(skills: List<Skill>) {
 @Preview
 fun PreviewSkill() {
     ComposeCVTheme {
-        SkillFragment(SkillDataImpl().getSkills())
+        SkillFragment(SkillRepositoryImpl().getSkills())
     }
 }

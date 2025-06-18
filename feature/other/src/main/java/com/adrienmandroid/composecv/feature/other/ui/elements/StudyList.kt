@@ -10,7 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.model.Study
-import com.adrienmandroid.composecv.data.impl.StudyDataImpl
+import com.adrienmandroid.composecv.data.impl.StudyRepositoryImpl
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.core.ui.theme.carouselButton
 import com.google.accompanist.pager.ExperimentalPagerApi
@@ -48,6 +48,6 @@ fun StudyList(studies: List<Study>) {
 @Preview
 fun PreviewStudyList() {
     ComposeCVTheme {
-        StudyList(studies = StudyDataImpl().getData())
+        StudyList(studies = StudyRepositoryImpl().getData())
     }
 }

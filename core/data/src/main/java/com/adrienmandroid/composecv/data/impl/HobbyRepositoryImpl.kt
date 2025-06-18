@@ -2,9 +2,9 @@ package com.adrienmandroid.composecv.data.impl
 
 import com.adrienmandroid.composecv.data.R
 import com.adrienmandroid.composecv.model.Hobby
-import com.adrienmandroid.composecv.data.HobbyDataSource
+import com.adrienmandroid.composecv.data.HobbyRepository
 
-class HobbyDataSourceImpl: HobbyDataSource {
+class HobbyRepositoryImpl: HobbyRepository {
     override fun getHobbies() = listOf(
         Hobby(
             R.string.hobby_LoL,

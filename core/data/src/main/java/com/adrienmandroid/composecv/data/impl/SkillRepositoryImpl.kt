@@ -1,9 +1,9 @@
 package com.adrienmandroid.composecv.data.impl
 
 import com.adrienmandroid.composecv.model.Skill
-import com.adrienmandroid.composecv.data.SkillData
+import com.adrienmandroid.composecv.data.SkillRepository
 
-class SkillDataImpl : SkillData {
+class SkillRepositoryImpl : SkillRepository {
 
     override fun getSkills(): List<Skill> = listOf(
         Skill(
