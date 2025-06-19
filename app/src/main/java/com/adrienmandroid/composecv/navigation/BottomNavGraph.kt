@@ -6,29 +6,37 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.adrienmandroid.composecv.R
-import com.adrienmandroid.composecv.model.BottomNavElement
 import com.adrienmandroid.composecv.data.impl.ExperienceRepositoryImpl
+import com.adrienmandroid.composecv.data.impl.HobbyRepositoryImpl
 import com.adrienmandroid.composecv.data.impl.SkillRepositoryImpl
 import com.adrienmandroid.composecv.data.impl.WelcomeElementsRepositoryImpl
+import com.adrienmandroid.composecv.feature.experience.ExperienceFragment
+import com.adrienmandroid.composecv.feature.other.OtherFragment
+import com.adrienmandroid.composecv.feature.other.viewmodel.OtherViewModelImpl
 import com.adrienmandroid.composecv.feature.skills.SkillFragment
 import com.adrienmandroid.composecv.feature.welcome.WelcomeFragment
+import com.adrienmandroid.composecv.model.BottomNavElement
 
 //Navigation graph informations.
 object BottomNavGraph {
 
-    val WelcomeBottomNav = BottomNavElement("welcome", null,
+    val WelcomeBottomNav = BottomNavElement(
+        "welcome", null,
         R.drawable.ic_tab_home,
         R.drawable.ic_tab_home_unselected
     )
-    val ExpBottomNav = BottomNavElement("experience", "EXP.",
+    val ExpBottomNav = BottomNavElement(
+        "experience", "EXP.",
         R.drawable.ic_tab_experience,
         R.drawable.ic_tab_experience_unselected
     )
-    val SkillBottomNav = BottomNavElement("skill", "Skill",
+    val SkillBottomNav = BottomNavElement(
+        "skill", "Skill",
         R.drawable.ic_tab_skill,
         R.drawable.ic_tab_skill_unselected
     )
-    val OtherBottomNav =    BottomNavElement("other", "other",
+    val OtherBottomNav = BottomNavElement(
+        "other", "other",
         R.drawable.ic_tab_other,
         R.drawable.ic_tab_other_unselected
     )
@@ -46,17 +54,24 @@ fun BottomNavGraphHost(navController: NavHostController) {
         startDestination = BottomNavGraph.array[0].route
     )
     {
+        //TODO utiliser hiltviewmodel pour qu'il soit correctement défini
+        val otherViewModel = OtherViewModelImpl(
+            HobbyRepositoryImpl()
+        )
+
         composable(route = BottomNavGraph.WelcomeBottomNav.route) {
             WelcomeFragment(WelcomeElementsRepositoryImpl().getWelcomePageElements())
         }
         composable(route = BottomNavGraph.ExpBottomNav.route) {
-            com.adrienmandroid.composecv.feature.experience.ExperienceFragment(ExperienceRepositoryImpl().getExperiences())
+            ExperienceFragment(ExperienceRepositoryImpl().getExperiences())
         }
         composable(route = BottomNavGraph.SkillBottomNav.route) {
             SkillFragment(SkillRepositoryImpl().getSkills())
         }
         composable(route = BottomNavGraph.OtherBottomNav.route) {
-            com.adrienmandroid.composecv.feature.other.OtherFragment()
+            OtherFragment(
+                otherViewModel
+            )
         }
     }
 }
