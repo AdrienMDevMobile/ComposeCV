@@ -19,7 +19,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    flavorDimensions 'application_owner'
+    /*flavorDimensions 'application_owner'
     productFlavors {
         AdrienOwner {
             dimension 'application_owner'
@@ -37,7 +37,7 @@ android {
         JeromeOwner {
             res.srcDirs = ['src/jerome/res']
         }
-    }
+    }*/
 
     namespace 'com.adrienmandroid.composecv'
 }
