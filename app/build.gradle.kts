@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.convention.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.convention.library.hilt)
 }
 
 android {
@@ -54,4 +55,5 @@ dependencies {
     implementation(project(":feature:skills"))
     implementation(project(":feature:experience"))
     implementation(project(":feature:other"))
+    ksp(libs.hilt.compiler)
 }

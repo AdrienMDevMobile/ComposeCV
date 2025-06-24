@@ -11,8 +11,10 @@ constraintlayout-compose = "1.1.1"
 coreKtx = "1.16.0"
 espresso = "3.6.1"
 flowlayout = "0.24.4"
+hilt = "2.54"
 junit = "4.13.2"
 kotlin = "2.1.10"
+ksp = "2.1.0-1.0.29"
 lifecycle-viewmodel-compose = "2.9.0"
 lifecycleRuntime = "2.9.0"
 navigation = "2.9.0"
@@ -43,15 +45,18 @@ test-junit = { group = "junit", name = "junit", version.ref = "junit" }
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
+hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
 kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 gradle-plugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 
 convention-application = { id = "com.adrienmandroid.composecv.application", version = "unspecified"}
 convention-library = { id = "com.adrienmandroid.composecv.library", version = "unspecified"}
 convention-library-compose = { id = "com.adrienmandroid.composecv.library.compose", version = "unspecified"}
+convention-library-hilt = { id = "com.adrienmandroid.composecv.library.hilt" }
