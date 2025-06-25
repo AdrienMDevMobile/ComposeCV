@@ -43,9 +43,9 @@ gradlePlugin {
             id = "com.adrienmandroid.composecv.library.compose"
             implementationClass = "LibraryComposeConventionPlugin"
         }
-        register("hilt") {
+        /*register("hilt") {
             id = libs.plugins.convention.library.hilt.get().pluginId
             implementationClass = "HiltConventionPlugin"
-        }
+        }*/
     }
 }

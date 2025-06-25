@@ -3,6 +3,7 @@ accompanist-pager = "0.24.13-rc"
 accompanist-pager-indicators = "0.24.11-rc"
 agp = "8.8.2"
 android-junit = "1.2.1"
+appcompat = "1.7.0"
 compose = "1.8.1"
 compose-activity = "1.10.1"
 composeBom = "2025.05.00"
@@ -14,12 +15,11 @@ flowlayout = "0.24.4"
 hilt = "2.54"
 junit = "4.13.2"
 kotlin = "2.1.10"
-ksp = "2.1.0-1.0.29"
+ksp = "2.1.10-1.0.31"
 lifecycle-viewmodel-compose = "2.9.0"
 lifecycleRuntime = "2.9.0"
-navigation = "2.9.0"
-appcompat = "1.7.0"
 material = "1.12.0"
+navigation = "2.9.0"
 
 [libraries]
 accompanist-flowlayout = { group = "ca.gosyer", name = "accompanist-flowlayout", version.ref = "flowlayout" }
@@ -45,6 +45,7 @@ test-junit = { group = "junit", name = "junit", version.ref = "junit" }
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
+hilt-android = { group = "com.google.dagger", name = "hilt-android" , version.ref = "hilt"}
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
 kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 gradle-plugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
@@ -55,6 +56,8 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
+
+hiltAndroid = { id = "com.google.dagger.hilt.android", version.ref ="hilt" }
 
 convention-application = { id = "com.adrienmandroid.composecv.application", version = "unspecified"}
 convention-library = { id = "com.adrienmandroid.composecv.library", version = "unspecified"}
