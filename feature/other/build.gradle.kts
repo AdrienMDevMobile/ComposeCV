@@ -1,10 +1,8 @@
 plugins {
-    alias(libs.plugins.convention.library)
-    alias(libs.plugins.convention.library.compose)
     alias(libs.plugins.kotlin.android)
-
-    alias(libs.plugins.ksp)
-    alias(libs.plugins.hiltAndroid)
+    alias(libs.plugins.convention.library)
+    alias(libs.plugins.convention.compose)
+    alias(libs.plugins.convention.hilt)
 }
 
 android {
@@ -21,8 +19,4 @@ dependencies {
     implementation(project(":core:data"))
     implementation(project(":core:ui"))
     debugImplementation(project(":core:test"))
-
-    implementation(libs.hilt.android)
-    implementation(libs.hilt.navigation.compose)
-    ksp(libs.hilt.compiler)
 }

@@ -40,12 +40,12 @@ gradlePlugin {
             implementationClass = "LibraryConventionPlugin"
         }
         register("libraryCompose") {
-            id = "com.adrienmandroid.composecv.library.compose"
-            implementationClass = "LibraryComposeConventionPlugin"
+            id = libs.plugins.convention.compose.get().pluginId
+            implementationClass = "ComposeConventionPlugin"
         }
-        /*register("hilt") {
-            id = libs.plugins.convention.library.hilt.get().pluginId
+        register("hilt") {
+            id = libs.plugins.convention.hilt.get().pluginId
             implementationClass = "HiltConventionPlugin"
-        }*/
+        }
     }
 }

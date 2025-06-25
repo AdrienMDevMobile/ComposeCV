@@ -61,7 +61,7 @@ android-library = { id = "com.android.library", version.ref = "agp" }
 
 hiltAndroid = { id = "com.google.dagger.hilt.android", version.ref ="hilt" }
 
-convention-application = { id = "com.adrienmandroid.composecv.application", version = "unspecified"}
-convention-library = { id = "com.adrienmandroid.composecv.library", version = "unspecified"}
-convention-library-compose = { id = "com.adrienmandroid.composecv.library.compose", version = "unspecified"}
-convention-library-hilt = { id = "com.adrienmandroid.composecv.library.hilt" }
+convention-application = { id = "com.adrienmandroid.composecv.application" }
+convention-library = { id = "com.adrienmandroid.composecv.library" }
+convention-compose = { id = "com.adrienmandroid.composecv.compose" }
+convention-hilt = { id = "com.adrienmandroid.composecv.hilt" }
