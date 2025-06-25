@@ -54,11 +54,6 @@ fun BottomNavGraphHost(navController: NavHostController) {
         startDestination = BottomNavGraph.array[0].route
     )
     {
-        //TODO utiliser hiltviewmodel pour qu'il soit correctement défini
-        val otherViewModel = OtherViewModelImpl(
-            HobbyRepositoryImpl()
-        )
-
         composable(route = BottomNavGraph.WelcomeBottomNav.route) {
             WelcomeFragment(WelcomeElementsRepositoryImpl().getWelcomePageElements())
         }
@@ -69,9 +64,7 @@ fun BottomNavGraphHost(navController: NavHostController) {
             SkillFragment(SkillRepositoryImpl().getSkills())
         }
         composable(route = BottomNavGraph.OtherBottomNav.route) {
-            OtherFragment(
-                otherViewModel
-            )
+            OtherFragment()
         }
     }
 }

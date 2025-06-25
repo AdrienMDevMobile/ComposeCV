@@ -19,12 +19,14 @@ import com.adrienmandroid.composecv.feature.other.ui.elements.StudyList
 import com.adrienmandroid.composecv.feature.other.ui.elements.Version
 import com.adrienmandroid.composecv.feature.other.ui.elements.otherSection
 import com.adrienmandroid.composecv.feature.other.viewmodel.OtherViewModel
+import com.adrienmandroid.composecv.feature.other.viewmodel.OtherViewModelImpl
 import com.adrienmandroid.composecv.model.Hobby
+import androidx.hilt.navigation.compose.hiltViewModel
 
 @Composable
 fun OtherFragment(
-    //TODO utiliser les viewmodel ici et partout ailleur
-    otherViewModel: OtherViewModel
+    //TODO Utiliser la super classe et definir un module Hilt
+    otherViewModel: OtherViewModelImpl = hiltViewModel()
 ) {
     val hobbies: List<Hobby> by otherViewModel.hobbies.observeAsState(emptyList())
 

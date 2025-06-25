@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.adrienmandroid.composecv.model.Hobby
 
+//TODO Utiliser la classe abstraite
 abstract class OtherViewModel: ViewModel() {
     abstract val hobbies: LiveData<List<Hobby>>
 }

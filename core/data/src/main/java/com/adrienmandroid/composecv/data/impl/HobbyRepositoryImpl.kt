@@ -3,8 +3,9 @@ package com.adrienmandroid.composecv.data.impl
 import com.adrienmandroid.composecv.data.R
 import com.adrienmandroid.composecv.model.Hobby
 import com.adrienmandroid.composecv.data.HobbyRepository
+import javax.inject.Inject
 
-class HobbyRepositoryImpl: HobbyRepository {
+class HobbyRepositoryImpl @Inject constructor(): HobbyRepository {
     override fun getHobbies() = listOf(
         Hobby(
             R.string.hobby_LoL,
