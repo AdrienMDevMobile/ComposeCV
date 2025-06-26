@@ -1,8 +1,8 @@
 plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.convention.library)
-    alias(libs.plugins.convention.compose)
-    alias(libs.plugins.convention.hilt)
+    alias(libs.plugins.convention.compose.library)
+    alias(libs.plugins.convention.hilt.library)
 }
 
 android {

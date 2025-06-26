@@ -32,20 +32,20 @@ dependencies {
 gradlePlugin {
     plugins {
         register("application") {
-            id = "com.adrienmandroid.composecv.application"
+            id = libs.plugins.convention.application.get().pluginId
             implementationClass = "ApplicationConventionPlugin"
         }
         register("library") {
-            id = "com.adrienmandroid.composecv.library"
+            id = libs.plugins.convention.library.get().pluginId
             implementationClass = "LibraryConventionPlugin"
         }
         register("libraryCompose") {
-            id = libs.plugins.convention.compose.get().pluginId
-            implementationClass = "ComposeConventionPlugin"
+            id = libs.plugins.convention.compose.library.get().pluginId
+            implementationClass = "LibraryComposeConventionPlugin"
         }
         register("hilt") {
-            id = libs.plugins.convention.hilt.get().pluginId
-            implementationClass = "HiltConventionPlugin"
+            id = libs.plugins.convention.hilt.library.get().pluginId
+            implementationClass = "LibraryHiltConventionPlugin"
         }
     }
 }

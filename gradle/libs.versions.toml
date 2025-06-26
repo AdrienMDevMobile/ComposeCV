@@ -63,5 +63,5 @@ hiltAndroid = { id = "com.google.dagger.hilt.android", version.ref ="hilt" }
 
 convention-application = { id = "com.adrienmandroid.composecv.application" }
 convention-library = { id = "com.adrienmandroid.composecv.library" }
-convention-compose = { id = "com.adrienmandroid.composecv.compose" }
-convention-hilt = { id = "com.adrienmandroid.composecv.hilt" }
+convention-compose-library = { id = "com.adrienmandroid.composecv.compose" }
+convention-hilt-library = { id = "com.adrienmandroid.composecv.hilt" }
