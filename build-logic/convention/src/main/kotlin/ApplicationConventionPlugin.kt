@@ -1,5 +1,8 @@
 import com.android.build.api.dsl.ApplicationExtension
-import convention.configureCompose
+import convention.configureComposeExtension
+import convention.configureComposePlugin
+import convention.configureHiltExtensionsForApplication
+import convention.configureHiltPlugins
 import convention.configureJavaExtension
 import convention.configureJvmCompile
 import convention.configureSdk
@@ -16,8 +19,9 @@ class ApplicationConventionPlugin : Plugin<Project> {
             with(pluginManager) {
                 apply("com.android.application")
                 apply("org.jetbrains.kotlin.android")
-                apply("org.jetbrains.kotlin.plugin.compose")
             }
+            configureComposePlugin(pluginManager)
+            configureHiltPlugins(pluginManager)
 
             extensions.configure<ApplicationExtension> {
                 configureSdk(this)
@@ -27,7 +31,9 @@ class ApplicationConventionPlugin : Plugin<Project> {
 
                 configureJavaExtension(this)
 
-                configureCompose(this)
+                configureComposeExtension(this)
+
+                configureHiltExtensionsForApplication(this)
 
                 dependencies {
                     add("implementation", libs.findLibrary("android.core.ktx").get())

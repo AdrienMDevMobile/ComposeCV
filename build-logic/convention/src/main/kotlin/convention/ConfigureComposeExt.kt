@@ -2,9 +2,18 @@ package convention
 
 import com.android.build.api.dsl.CommonExtension
 import org.gradle.api.Project
+import org.gradle.api.plugins.PluginManager
 import org.gradle.kotlin.dsl.dependencies
 
-internal fun Project.configureCompose(
+internal fun configureComposePlugin(
+    pluginManager: PluginManager
+){
+    with(pluginManager) {
+        apply("org.jetbrains.kotlin.plugin.compose")
+    }
+}
+
+internal fun Project.configureComposeExtension(
     commonExtension: CommonExtension<*, *, *, *, *, *>,
 ) {
     commonExtension.apply {
