@@ -22,8 +22,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.viewmodel.compose.viewModel
-import com.adrienmandroid.composecv.feature.welcome.ui.element.ClickViewModel
+import androidx.hilt.navigation.compose.hiltViewModel
+import com.adrienmandroid.composecv.feature.welcome.viewmodel.ClickViewModel
 import com.adrienmandroid.composecv.feature.welcome.ui.element.MyBottomSheet
 import com.adrienmandroid.composecv.feature.welcome.ui.element.bottomsheetBody
 import com.adrienmandroid.composecv.model.WelcomePage
@@ -33,7 +33,7 @@ import com.adrienmandroid.composecv.model.WelcomePage
 @Composable
 fun WelcomeFragment(
     welcomePage: WelcomePage,
-    clickViewModel: ClickViewModel = viewModel()
+    clickViewModel: ClickViewModel = hiltViewModel(),
 ) {
 
     val webEvent by clickViewModel.webUrl.observeAsState()

@@ -3,6 +3,7 @@ package com.adrienmandroid.composecv.feature.welcome.ui.element
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.runtime.Composable
 import com.adrienmandroid.composecv.core.ui.toMaterialTypography
+import com.adrienmandroid.composecv.feature.welcome.viewmodel.ClickViewModel
 import com.adrienmandroid.composecv.model.WelcomeBodyElement
 
 @OptIn(ExperimentalFoundationApi::class)

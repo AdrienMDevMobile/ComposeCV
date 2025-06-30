@@ -1,10 +1,11 @@
-package com.adrienmandroid.composecv.feature.welcome.ui.element
+package com.adrienmandroid.composecv.feature.welcome.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import javax.inject.Inject
 
-class ClickViewModel : ViewModel() {
+class ClickViewModel @Inject constructor() : ViewModel() {
     private val _webUrl = MutableLiveData<String>()
     val webUrl: LiveData<String>
         get() = _webUrl
