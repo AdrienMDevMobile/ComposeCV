@@ -13,7 +13,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.data.impl.QuoteRepositoryImpl
-import com.adrienmandroid.composecv.data.impl.StudyRepositoryImpl
 import com.adrienmandroid.composecv.feature.other.ui.elements.Gratitudes
 import com.adrienmandroid.composecv.feature.other.ui.elements.HobbyRow
 import com.adrienmandroid.composecv.feature.other.ui.elements.QuoteCarousel
@@ -22,7 +21,10 @@ import com.adrienmandroid.composecv.feature.other.ui.elements.StudyList
 import com.adrienmandroid.composecv.feature.other.ui.elements.Version
 import com.adrienmandroid.composecv.feature.other.ui.elements.otherSection
 import com.adrienmandroid.composecv.feature.other.viewmodel.OtherViewModel
+import com.adrienmandroid.composecv.model.Dates
 import com.adrienmandroid.composecv.model.Hobby
+import com.adrienmandroid.composecv.model.Study
+import java.util.Date
 import com.adrienmandroid.composecv.core.test.R as TestingR
 
 @Composable
@@ -30,13 +32,15 @@ fun OtherFragment(
     modifier: Modifier = Modifier,
     otherViewModel: OtherViewModel = hiltViewModel(),
 ) {
+    val studies: List<Study> by otherViewModel.studies.observeAsState(emptyList())
     val hobbies: List<Hobby> by otherViewModel.hobbies.observeAsState(emptyList())
 
-    OtherScreen(hobbies, modifier)
+    OtherScreen(studies, hobbies, modifier)
 }
 
 @Composable
 fun OtherScreen(
+    studies: List<Study>,
     hobbies: List<Hobby>,
     modifier: Modifier = Modifier,
 ) {
@@ -47,7 +51,7 @@ fun OtherScreen(
             .background(MaterialTheme.colors.background),
     ) {
         otherSection(
-            { StudyList(studies = StudyRepositoryImpl().getData()) },
+            { StudyList(studies = studies) },
             title = R.string.title_diplomas,
             firstElement = true
         )
@@ -62,6 +66,12 @@ fun OtherScreen(
 @Composable
 @Preview
 fun PreviewOther() {
+    val study = Study(
+        TestingR.drawable.ic_test,
+        TestingR.string.test_1_word,
+        TestingR.string.test_short_text_1_line,
+        Dates(Date(), null)
+    )
     val hobby = Hobby(
         TestingR.string.test_short_text_1_line,
         TestingR.drawable.img_test,
@@ -69,6 +79,7 @@ fun PreviewOther() {
     )
     ComposeCVTheme {
         OtherScreen(
+            studies = listOf(study, study),
             hobbies = listOf(
                 hobby, hobby, hobby
             )

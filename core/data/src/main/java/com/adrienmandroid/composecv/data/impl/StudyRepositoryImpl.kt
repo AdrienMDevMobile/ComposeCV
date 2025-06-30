@@ -5,8 +5,9 @@ import com.adrienmandroid.composecv.model.Dates
 import com.adrienmandroid.composecv.model.Study
 import com.adrienmandroid.composecv.data.StudyRepository
 import java.util.*
+import javax.inject.Inject
 
-class StudyRepositoryImpl : StudyRepository {
+class StudyRepositoryImpl @Inject constructor() : StudyRepository {
     override fun getData(): List<Study> = listOf(
         Study(
             logo = R.drawable.image_ece,
