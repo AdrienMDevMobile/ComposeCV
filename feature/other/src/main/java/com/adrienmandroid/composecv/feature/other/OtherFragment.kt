@@ -9,6 +9,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltViewModel
+import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.data.impl.QuoteRepositoryImpl
 import com.adrienmandroid.composecv.data.impl.StudyRepositoryImpl
 import com.adrienmandroid.composecv.feature.other.ui.elements.Gratitudes
@@ -19,19 +22,26 @@ import com.adrienmandroid.composecv.feature.other.ui.elements.StudyList
 import com.adrienmandroid.composecv.feature.other.ui.elements.Version
 import com.adrienmandroid.composecv.feature.other.ui.elements.otherSection
 import com.adrienmandroid.composecv.feature.other.viewmodel.OtherViewModel
-import com.adrienmandroid.composecv.feature.other.viewmodel.OtherViewModelImpl
 import com.adrienmandroid.composecv.model.Hobby
-import androidx.hilt.navigation.compose.hiltViewModel
+import com.adrienmandroid.composecv.core.test.R as TestingR
 
 @Composable
 fun OtherFragment(
-    //TODO Utiliser la super classe et definir un module Hilt
-    otherViewModel: OtherViewModelImpl = hiltViewModel()
+    modifier: Modifier = Modifier,
+    otherViewModel: OtherViewModel = hiltViewModel(),
 ) {
     val hobbies: List<Hobby> by otherViewModel.hobbies.observeAsState(emptyList())
 
+    OtherScreen(hobbies, modifier)
+}
+
+@Composable
+fun OtherScreen(
+    hobbies: List<Hobby>,
+    modifier: Modifier = Modifier,
+) {
     LazyColumn(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .wrapContentHeight()
             .background(MaterialTheme.colors.background),
@@ -49,11 +59,19 @@ fun OtherFragment(
     }
 }
 
-/*TODO
 @Composable
 @Preview
 fun PreviewOther() {
+    val hobby = Hobby(
+        TestingR.string.test_short_text_1_line,
+        TestingR.drawable.img_test,
+        TestingR.string.test_1_word,
+    )
     ComposeCVTheme {
-        OtherFragment()
+        OtherScreen(
+            hobbies = listOf(
+                hobby, hobby, hobby
+            )
+        )
     }
-}*/
+}

@@ -12,7 +12,6 @@ import com.adrienmandroid.composecv.data.impl.SkillRepositoryImpl
 import com.adrienmandroid.composecv.data.impl.WelcomeElementsRepositoryImpl
 import com.adrienmandroid.composecv.feature.experience.ExperienceFragment
 import com.adrienmandroid.composecv.feature.other.OtherFragment
-import com.adrienmandroid.composecv.feature.other.viewmodel.OtherViewModelImpl
 import com.adrienmandroid.composecv.feature.skills.SkillFragment
 import com.adrienmandroid.composecv.feature.welcome.WelcomeFragment
 import com.adrienmandroid.composecv.model.BottomNavElement
