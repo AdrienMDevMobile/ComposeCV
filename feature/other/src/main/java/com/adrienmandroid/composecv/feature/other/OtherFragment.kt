@@ -10,8 +10,11 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
+import com.adrienmandroid.composecv.feature.other.preview.data.OtherParams
+import com.adrienmandroid.composecv.feature.other.preview.data.OtherPreviewParameterProvider
 import com.adrienmandroid.composecv.feature.other.ui.elements.Gratitudes
 import com.adrienmandroid.composecv.feature.other.ui.elements.HobbyRow
 import com.adrienmandroid.composecv.feature.other.ui.elements.QuoteCarousel
@@ -20,12 +23,9 @@ import com.adrienmandroid.composecv.feature.other.ui.elements.StudyList
 import com.adrienmandroid.composecv.feature.other.ui.elements.Version
 import com.adrienmandroid.composecv.feature.other.ui.elements.otherSection
 import com.adrienmandroid.composecv.feature.other.viewmodel.OtherViewModel
-import com.adrienmandroid.composecv.model.Dates
 import com.adrienmandroid.composecv.model.Hobby
 import com.adrienmandroid.composecv.model.Quote
 import com.adrienmandroid.composecv.model.Study
-import java.util.Date
-import com.adrienmandroid.composecv.core.test.R as TestingR
 
 @Composable
 fun OtherFragment(
@@ -67,30 +67,15 @@ fun OtherScreen(
 
 @Composable
 @Preview
-fun PreviewOther() {
-    val study = Study(
-        TestingR.drawable.ic_test,
-        TestingR.string.test_1_word,
-        TestingR.string.test_short_text_1_line,
-        Dates(Date(), null)
-    )
-    val quote = Quote(
-        TestingR.string.test_short_text_1_line,
-        TestingR.string.test_1_word,
-        TestingR.drawable.img_test,
-    )
-    val hobby = Hobby(
-        TestingR.string.test_short_text_1_line,
-        TestingR.drawable.img_test,
-        TestingR.string.test_1_word,
-    )
+fun PreviewOther(
+    @PreviewParameter(OtherPreviewParameterProvider::class)
+    otherParams: OtherParams,
+) {
     ComposeCVTheme {
         OtherScreen(
-            studies = listOf(study, study),
-            quotes = listOf(quote, quote),
-            hobbies = listOf(
-                hobby, hobby, hobby
-            )
+            studies = otherParams.studies,
+            quotes = otherParams.quotes,
+            hobbies = otherParams.hobbies
         )
     }
 }
