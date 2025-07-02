@@ -11,7 +11,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.core.ui.theme.carouselButton
-import com.adrienmandroid.composecv.feature.other.preview.data.QuotePreviewParameterProvider
+import com.adrienmandroid.composecv.feature.other.preview.data.QuotesPreviewParameterProvider
 import com.adrienmandroid.composecv.model.Quote
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
@@ -45,7 +45,7 @@ fun QuoteCarousel(quotes: List<Quote>) {
 @Composable
 @Preview
 fun PreviewQuoteCarousel(
-    @PreviewParameter(QuotePreviewParameterProvider::class)
+    @PreviewParameter(QuotesPreviewParameterProvider::class)
     quotes: List<Quote>,
 ) {
     QuoteCarousel(quotes)

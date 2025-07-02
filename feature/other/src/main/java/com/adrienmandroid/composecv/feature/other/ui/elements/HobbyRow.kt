@@ -9,7 +9,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
-import com.adrienmandroid.composecv.feature.other.preview.data.HobbyPreviewParameterData
 import com.adrienmandroid.composecv.feature.other.preview.data.HobbyPreviewParameterProvider
 import com.adrienmandroid.composecv.model.Hobby
 

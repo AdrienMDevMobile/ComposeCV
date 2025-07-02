@@ -19,16 +19,17 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
-import com.adrienmandroid.composecv.feature.other.R
-import com.adrienmandroid.composecv.model.Quote
 import com.adrienmandroid.composecv.core.ui.theme.onQuoteBackground
 import com.adrienmandroid.composecv.core.ui.theme.quoteBackground
-import com.adrienmandroid.composecv.core.test.R as TestingR
+import com.adrienmandroid.composecv.feature.other.R
+import com.adrienmandroid.composecv.feature.other.preview.data.QuoteIndexedPreviewParameterProvider
+import com.adrienmandroid.composecv.model.Quote
 
 @Composable
 fun CardDraw(quote: Quote, position: Int) {
@@ -133,15 +134,15 @@ fun CardDraw(quote: Quote, position: Int) {
 
 @Preview
 @Composable
-fun PreviewQuoteCard() {
+fun PreviewQuoteCard(
+    @PreviewParameter(QuoteIndexedPreviewParameterProvider::class,
+        limit = 2)
+    quoteIndexed: Pair<Int, Quote>
+) {
     ComposeCVTheme {
         CardDraw(
-            quote = Quote(
-                TestingR.string.test_1_word,
-                TestingR.string.test_short_text_1_line,
-                TestingR.drawable.img_test
-            ),
-            position = 1
+            quote = quoteIndexed.second,
+            position = quoteIndexed.first
         )
     }
 }
