@@ -18,19 +18,14 @@ class QuotesPreviewParameterProvider : PreviewParameterProvider<List<Quote>> {
 object QuotePreviewParameterData {
     internal val quotes = listOf(
         Quote(
-            R.string.test_short_text_1_line,
-            R.string.test_1_word,
+            "Lorem ipsum dolor sit amet.",
+            "Lorem ipsum",
             R.drawable.img_test,
         ),
         Quote(
-            R.string.test_short_text_1_line,
-            R.string.test_1_word,
+            "Lorem ipsum dolor sit amet.",
+            "Lorem ipsum",
             R.drawable.img_test,
         ),
-        Quote(
-            R.string.test_short_text_1_line,
-            R.string.test_1_word,
-            R.drawable.img_test,
-        )
     )
 }

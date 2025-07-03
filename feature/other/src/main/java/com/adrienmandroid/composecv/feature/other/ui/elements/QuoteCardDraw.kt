@@ -16,7 +16,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
@@ -32,7 +31,7 @@ import com.adrienmandroid.composecv.feature.other.preview.data.QuoteIndexedPrevi
 import com.adrienmandroid.composecv.model.Quote
 
 @Composable
-fun CardDraw(quote: Quote, position: Int) {
+fun QuoteCardDraw(quote: Quote, position: Int) {
     val marginTop = 12.dp
     val marginBottom = 12.dp
     val marginStart = 12.dp
@@ -87,7 +86,7 @@ fun CardDraw(quote: Quote, position: Int) {
                 tint = Color.Gray
             )
             Text(
-                text = stringResource(quote.text),
+                text = quote.text,
                 style = textStyleQuote,
                 modifier = Modifier.constrainAs(text) {
                     if (textLeft) {
@@ -103,7 +102,7 @@ fun CardDraw(quote: Quote, position: Int) {
                 }
             )
             Text(
-                text = stringResource(quote.author),
+                text = quote.author,
                 style = textStyleAuthor,
                 modifier = Modifier.constrainAs(author) {
                     top.linkTo(text.bottom)
@@ -113,7 +112,7 @@ fun CardDraw(quote: Quote, position: Int) {
             )
             Image(
                 painter = painterResource(id = quote.image),
-                contentDescription = stringResource(quote.author),
+                contentDescription = quote.author,
                 modifier = Modifier
                     .constrainAs(image) {
                         if (!textLeft) {
@@ -135,12 +134,13 @@ fun CardDraw(quote: Quote, position: Int) {
 @Preview
 @Composable
 fun PreviewQuoteCard(
-    @PreviewParameter(QuoteIndexedPreviewParameterProvider::class,
+    @PreviewParameter(
+        QuoteIndexedPreviewParameterProvider::class,
         limit = 2)
     quoteIndexed: Pair<Int, Quote>
 ) {
     ComposeCVTheme {
-        CardDraw(
+        QuoteCardDraw(
             quote = quoteIndexed.second,
             position = quoteIndexed.first
         )

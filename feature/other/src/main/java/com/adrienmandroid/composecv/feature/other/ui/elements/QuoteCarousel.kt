@@ -29,7 +29,7 @@ fun QuoteCarousel(quotes: List<Quote>) {
             state = pagerState,
             contentPadding = PaddingValues(horizontal = 12.dp),
         ) { page ->
-            CardDraw(quotes[page], page)
+            QuoteCardDraw(quotes[page], page)
         }
 
         HorizontalPagerIndicator(
