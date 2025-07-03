@@ -30,19 +30,19 @@ fun HobbyCardView(hobby: Hobby) {
     ) {
         Image(
             painter = painterResource(hobby.picture),
-            contentDescription = stringResource(id = hobby.name),
+            contentDescription = hobby.name,
             modifier = Modifier
                 .size(hobby_width, hobby_width)
         )
         Text(
-            text = stringResource(hobby.name),
+            text = hobby.name,
             style = MaterialTheme.typography.body1.copy(
                 fontWeight = FontWeight.Bold
             ),
             modifier = Modifier.padding(start = 5.dp)
         )
         Text(
-            text = stringResource(hobby.category),
+            text = hobby.category,
             style = MaterialTheme.typography.body1,
             modifier = Modifier.padding(start = 5.dp)
         )
@@ -55,9 +55,9 @@ fun PreviewHobbyCardView() {
     ComposeCVTheme {
         HobbyCardView(
             hobby = Hobby(
-                name = TestingR.string.test_1_word,
+                name = stringResource(id = TestingR.string.test_1_word) ,
                 TestingR.drawable.ic_test,
-                TestingR.string.test_short_text_1_line
+                stringResource(id = TestingR.string.test_short_text_1_line)
             )
         )
     }

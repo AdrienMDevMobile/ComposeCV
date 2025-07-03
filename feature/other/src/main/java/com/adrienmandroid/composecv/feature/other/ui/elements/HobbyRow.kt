@@ -6,10 +6,10 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
-import com.adrienmandroid.composecv.feature.other.preview.data.HobbyPreviewParameterProvider
+import com.adrienmandroid.composecv.feature.other.preview.data.HobbyPreviewParameterData
 import com.adrienmandroid.composecv.model.Hobby
 
 @Composable
@@ -26,9 +26,6 @@ fun HobbyRow(hobbies: List<Hobby>) {
 
 @Composable
 @Preview
-fun PreviewHobbyRow(
-    @PreviewParameter(HobbyPreviewParameterProvider::class)
-    hobbies: List<Hobby>,
-){
-    HobbyRow(hobbies)
+fun PreviewHobbyRow() {
+    HobbyRow(HobbyPreviewParameterData(LocalContext.current).hobbies)
 }

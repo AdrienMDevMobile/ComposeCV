@@ -2,7 +2,7 @@ package com.adrienmandroid.composecv.feature.other.preview.data
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 
-
+/*
 class OtherPreviewParameterProvider : PreviewParameterProvider<OtherParams> {
     override val values: Sequence<OtherParams>
         get() = sequenceOf(
@@ -13,4 +13,4 @@ class OtherPreviewParameterProvider : PreviewParameterProvider<OtherParams> {
                 gratitude = "Gratitude Lorem ipsum"
             )
         )
-}
+}*/

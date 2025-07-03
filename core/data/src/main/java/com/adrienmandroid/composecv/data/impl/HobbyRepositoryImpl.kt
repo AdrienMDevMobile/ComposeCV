@@ -1,41 +1,45 @@
 package com.adrienmandroid.composecv.data.impl
 
+import android.content.Context
 import com.adrienmandroid.composecv.data.R
 import com.adrienmandroid.composecv.model.Hobby
 import com.adrienmandroid.composecv.data.HobbyRepository
+import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 
-class HobbyRepositoryImpl @Inject constructor(): HobbyRepository {
+class HobbyRepositoryImpl @Inject constructor(
+    @ApplicationContext private val context: Context,
+): HobbyRepository {
     override fun getHobbies() = listOf(
         Hobby(
-            R.string.hobby_LoL,
+            context.getString(R.string.hobby_LoL),
             R.drawable.hobby_lol,
-            R.string.hobby_category_competition
+            context.getString(R.string.hobby_category_competition)
         ),
         Hobby(
-            R.string.hobby_wcs,
+            context.getString(R.string.hobby_wcs),
             R.drawable.hobby_westcoastswing,
-            R.string.danse
+            context.getString(R.string.danse)
         ),
         Hobby(
-            R.string.hobby_bike,
+            context.getString(R.string.hobby_bike),
             R.drawable.hobby_velo,
-            R.string.hobby_category_health
+            context.getString(R.string.hobby_category_health)
         ),
         Hobby(
-            R.string.hobby_meditation,
+            context.getString(R.string.hobby_meditation),
             R.drawable.hobby_meditation,
-            R.string.hobby_category_health
+            context.getString(R.string.hobby_category_health)
         ),
         Hobby(
-            R.string.hobby_swim,
+            context.getString(R.string.hobby_swim),
             R.drawable.hobby_piscine,
-            R.string.hobby_category_health
+            context.getString(R.string.hobby_category_health)
         ),
         Hobby(
-            R.string.hobby_FDC,
+            context.getString(R.string.hobby_FDC),
             R.drawable.hobby_fdc,
-            R.string.hobby_sensibilitation
+            context.getString(R.string.hobby_sensibilitation)
         )
     )
 }
