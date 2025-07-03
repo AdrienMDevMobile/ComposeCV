@@ -8,4 +8,5 @@ class OtherParams(
     val studies: List<Study>,
     val quotes: List<Quote>,
     val hobbies: List<Hobby>,
+    val gratitude: String
 )

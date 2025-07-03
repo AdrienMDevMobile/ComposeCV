@@ -10,6 +10,7 @@ class OtherPreviewParameterProvider : PreviewParameterProvider<OtherParams> {
                 studies = StudyPreviewParameterData.studies,
                 quotes = QuotePreviewParameterData.quotes,
                 hobbies = HobbyPreviewParameterData.hobbies,
+                gratitude = "Gratitude Lorem ipsum"
             )
         )
 }

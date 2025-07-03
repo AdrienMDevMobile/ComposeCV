@@ -13,6 +13,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.feature.other.R
+import com.adrienmandroid.composecv.core.test.R as TestingR
 
 fun LazyListScope.otherSection(
     composable: @Composable () -> Unit,
@@ -44,6 +45,6 @@ fun LazyListScope.otherSection(
 @Preview
 fun PreviewOtherSection() {
     LazyColumn {
-        otherSection({ Gratitudes() }, title = R.string.title_gratitude)
+        otherSection({ Gratitudes(stringResource(TestingR.string.test_long_text_3_lines)) }, title = R.string.title_gratitude)
     }
 }

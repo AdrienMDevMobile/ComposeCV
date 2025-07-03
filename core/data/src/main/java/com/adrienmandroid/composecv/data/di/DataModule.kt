@@ -1,8 +1,10 @@
 package com.adrienmandroid.composecv.data.di
 
+import com.adrienmandroid.composecv.data.GratitudeRepository
 import com.adrienmandroid.composecv.data.HobbyRepository
 import com.adrienmandroid.composecv.data.QuoteRepository
 import com.adrienmandroid.composecv.data.StudyRepository
+import com.adrienmandroid.composecv.data.impl.GratitudeRepositoryImpl
 import com.adrienmandroid.composecv.data.impl.HobbyRepositoryImpl
 import com.adrienmandroid.composecv.data.impl.QuoteRepositoryImpl
 import com.adrienmandroid.composecv.data.impl.StudyRepositoryImpl
@@ -29,4 +31,9 @@ abstract class DataModule {
     abstract fun bindHobbyRepository(
         hobbyRepositoryImpl: HobbyRepositoryImpl
     ): HobbyRepository
+
+    @Binds
+    abstract fun bindGratitudeRepository(
+        gratitudeRepositoryImpl: GratitudeRepositoryImpl
+    ): GratitudeRepository
 }

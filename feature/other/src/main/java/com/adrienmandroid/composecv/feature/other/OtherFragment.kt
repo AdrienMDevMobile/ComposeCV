@@ -35,8 +35,9 @@ fun OtherFragment(
     val studies: List<Study> by otherViewModel.studies.observeAsState(emptyList())
     val quotes: List<Quote> by otherViewModel.quotes.observeAsState(emptyList())
     val hobbies: List<Hobby> by otherViewModel.hobbies.observeAsState(emptyList())
+    val gratitude: String by otherViewModel.gratitude.observeAsState("")
 
-    OtherScreen(studies, quotes, hobbies, modifier)
+    OtherScreen(studies, quotes, hobbies, gratitude, modifier)
 }
 
 @Composable
@@ -44,6 +45,7 @@ fun OtherScreen(
     studies: List<Study>,
     quotes: List<Quote>,
     hobbies: List<Hobby>,
+    gratitude: String,
     modifier: Modifier = Modifier,
 ) {
     LazyColumn(
@@ -59,7 +61,7 @@ fun OtherScreen(
         )
         otherSection({ QuoteCarousel(quotes) }, title = R.string.title_quotes)
         otherSection({ HobbyRow(hobbies) }, title = R.string.title_hobbies)
-        otherSection({ Gratitudes() }, title = R.string.title_gratitude)
+        otherSection({ Gratitudes(gratitude) }, title = R.string.title_gratitude)
         otherSection({ Signature(MaterialTheme.colors.secondaryVariant) })
         otherSection({ Version() })
     }
@@ -75,7 +77,8 @@ fun PreviewOther(
         OtherScreen(
             studies = otherParams.studies,
             quotes = otherParams.quotes,
-            hobbies = otherParams.hobbies
+            hobbies = otherParams.hobbies,
+            gratitude = otherParams.gratitude,
         )
     }
 }
