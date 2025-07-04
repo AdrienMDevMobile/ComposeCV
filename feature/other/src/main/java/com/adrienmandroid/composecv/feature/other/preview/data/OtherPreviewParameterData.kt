@@ -8,7 +8,7 @@ class OtherPreviewParameterData(
 ) {
     internal val values: OtherParams
         get() = OtherParams(
-            studies = StudyPreviewParameterData.studies,
+            studies = StudyPreviewParameterData(context).studies,
             quotes = QuotePreviewParameterData.quotes,
             hobbies = HobbyPreviewParameterData(context).hobbies,
             gratitude = "Gratitude Lorem ipsum"
