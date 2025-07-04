@@ -9,7 +9,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
+import com.adrienmandroid.composecv.feature.other.preview.data.OtherPreviewParameterData
 import com.adrienmandroid.composecv.feature.other.ui.elements.Gratitudes
 import com.adrienmandroid.composecv.feature.other.ui.elements.HobbyRow
 import com.adrienmandroid.composecv.feature.other.ui.elements.QuoteCarousel
@@ -61,13 +65,11 @@ fun OtherScreen(
         otherSection({ Version() })
     }
 }
-/*
+
 @Composable
 @Preview
-fun PreviewOther(
-    @PreviewParameter(OtherPreviewParameterProvider::class)
-    otherParams: OtherParams,
-) {
+fun PreviewOther() {
+    val otherParams = OtherPreviewParameterData(LocalContext.current).values
     ComposeCVTheme {
         OtherScreen(
             studies = otherParams.studies,
@@ -76,4 +78,4 @@ fun PreviewOther(
             gratitude = otherParams.gratitude,
         )
     }
-}*/
+}

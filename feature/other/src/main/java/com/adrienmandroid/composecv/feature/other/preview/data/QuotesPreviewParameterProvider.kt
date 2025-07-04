@@ -10,11 +10,6 @@ class QuoteIndexedPreviewParameterProvider : PreviewParameterProvider<Pair<Int, 
             .mapIndexed { index, quote -> index to quote }
 }
 
-class QuotesPreviewParameterProvider : PreviewParameterProvider<List<Quote>> {
-    override val values: Sequence<List<Quote>>
-        get() = sequenceOf(QuotePreviewParameterData.quotes)
-}
-
 object QuotePreviewParameterData {
     internal val quotes = listOf(
         Quote(
