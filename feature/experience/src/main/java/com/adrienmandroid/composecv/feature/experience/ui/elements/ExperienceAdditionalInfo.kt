@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.core.ui.getDifferenceToString
+import com.adrienmandroid.composecv.core.ui.toAnnotatedString
 import com.adrienmandroid.composecv.core.ui.toMonthString
 import com.adrienmandroid.composecv.model.Dates
 import com.adrienmandroid.composecv.model.ExperienceInformation
@@ -58,8 +59,7 @@ fun ExperienceInfoListItem(informations: List<ExperienceInformation>) {
                 .padding(expHorizontalSpacing, 0.dp)
         ) {
             Text(
-                //TODO comprendre cela : stringResource(id = information.name).toAnnotatedString
-                information.name,
+                information.name.toAnnotatedString(),
                 style = MaterialTheme.typography.body1
             )
         }
