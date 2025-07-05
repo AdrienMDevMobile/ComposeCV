@@ -5,21 +5,35 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.adrienmandroid.composecv.model.Experience
-import com.adrienmandroid.composecv.data.impl.ExperienceRepositoryImpl
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
+import com.adrienmandroid.composecv.feature.experience.preview.ExperiencesPreviewParameterData
 import com.adrienmandroid.composecv.feature.experience.ui.elements.ExperienceCard
+import com.adrienmandroid.composecv.feature.experience.viewmodel.ExperienceViewmodel
+import com.adrienmandroid.composecv.model.Experience
 
 @Composable
-fun ExperienceFragment(experiences: List<Experience>) {
-    ExperiencesList(experiences = experiences)
+fun ExperienceFragment(
+    modifier: Modifier = Modifier,
+    experienceViewmodel: ExperienceViewmodel = hiltViewModel()
+) {
+    val experiences by experienceViewmodel.experiences.observeAsState(emptyList())
+    ExperiencePage(
+        experiences = experiences,
+        modifier = modifier
+    )
 }
 
 @Composable
-fun ExperiencesList(experiences: List<Experience>) {
-    LazyColumn(modifier = Modifier.background(MaterialTheme.colors.background)) {
+fun ExperiencePage(
+    experiences: List<Experience>,
+    modifier: Modifier = Modifier,
+) {
+    LazyColumn(modifier = modifier.background(MaterialTheme.colors.background)) {
         items(items = experiences) {
             ExperienceCard(experience = it)
         }
@@ -30,6 +44,6 @@ fun ExperiencesList(experiences: List<Experience>) {
 @Preview
 fun PrevExpFragment() {
     ComposeCVTheme {
-        ExperienceFragment(ExperienceRepositoryImpl().getExperiences())
+        ExperiencePage(ExperiencesPreviewParameterData.experiences)
     }
 }

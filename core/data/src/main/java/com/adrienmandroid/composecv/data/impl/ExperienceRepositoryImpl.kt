@@ -6,8 +6,9 @@ import com.adrienmandroid.composecv.model.Experience
 import com.adrienmandroid.composecv.model.ExperienceInformation
 import com.adrienmandroid.composecv.data.ExperienceRepository
 import java.util.*
+import javax.inject.Inject
 
-class ExperienceRepositoryImpl : ExperienceRepository {
+class ExperienceRepositoryImpl @Inject constructor() : ExperienceRepository {
     override fun getExperiences(): List<Experience> = listOf(
         Experience(
             name = R.string.exp_off_name,
