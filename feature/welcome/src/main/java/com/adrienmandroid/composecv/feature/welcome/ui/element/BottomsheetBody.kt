@@ -41,7 +41,6 @@ fun PreviewBottomsheetBody() {
     ComposeCVTheme {
         LazyColumn {
             bottomsheetBody(
-                //TODO utiliser des elements de tests
                 WelcomePreviewParameterData(context).welcomeBodyElements
             ) {}
         }
