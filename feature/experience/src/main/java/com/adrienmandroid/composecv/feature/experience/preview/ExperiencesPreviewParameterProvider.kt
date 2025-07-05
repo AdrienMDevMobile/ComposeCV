@@ -1,7 +1,6 @@
 package com.adrienmandroid.composecv.feature.experience.preview
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
-import com.adrienmandroid.composecv.data.R
 import com.adrienmandroid.composecv.model.Dates
 import com.adrienmandroid.composecv.model.Experience
 import com.adrienmandroid.composecv.model.ExperienceInformation
@@ -15,34 +14,34 @@ class ExperiencesPreviewParameterProvider : PreviewParameterProvider<Experience>
 
 object ExperiencesPreviewParameterData {
     internal val experiences = listOf(
-        Experience(name = R.string.exp_off_name,
-            employer = R.string.exp_astek_employer,
-            logo = R.drawable.ic_exp_astek,
+        Experience(name = "Lorem ipsum",
+            employer = "Lorem ipsum",
+            logo = TestingR.drawable.ic_test,
             expDates = Dates(begin = Date(1730075200000), end = null),
             professional = true,
             informations = listOf(
-                ExperienceInformation(R.string.exp_info_off),
-                ExperienceInformation(R.string.exp_info_off_autonomous),
+                ExperienceInformation("Lorem ipsum"),
+                ExperienceInformation("Lorem ipsum"),
             )
         ),
-        Experience(name = R.string.exp_off_name,
-            employer = R.string.exp_astek_employer,
-            logo = R.drawable.ic_exp_astek,
-            expDates = Dates(begin = Date(1730075200000), end = null),
+        Experience(name = "Lorem ipsum",
+            employer = "Lorem ipsum",
+            logo = TestingR.drawable.ic_test,
+            expDates = Dates(begin = Date(1730075200000), end = Date(1730075200000)),
             professional = true,
             informations = listOf(
-                ExperienceInformation(R.string.exp_info_off),
-                ExperienceInformation(R.string.exp_info_off_autonomous),
+                ExperienceInformation("Lorem ipsum"),
+                ExperienceInformation("Lorem ipsum"),
             )
         ),
-        Experience(name = R.string.exp_off_name,
-            employer = R.string.exp_astek_employer,
-            logo = R.drawable.ic_exp_astek,
-            expDates = Dates(begin = Date(1730075200000), end = null),
+        Experience(name = "Lorem ipsum",
+            employer = "Lorem ipsum",
+            logo = TestingR.drawable.ic_test,
+            expDates = Dates(begin = Date(1730075200000), end = Date(1730075200000)),
             professional = true,
             informations = listOf(
-                ExperienceInformation(R.string.exp_info_off),
-                ExperienceInformation(R.string.exp_info_off_autonomous),
+                ExperienceInformation("Lorem ipsum"),
+                ExperienceInformation("Lorem ipsum"),
             )
         ),
     )
