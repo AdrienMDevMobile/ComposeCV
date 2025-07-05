@@ -48,10 +48,10 @@ fun WelcomeFragment(
 
     val mailEvent by welcomeViewModel.mailAddress.observeAsState()
     if (mailEvent != null) {
-        context.startActivity(
-            Intent(Intent.ACTION_VIEW, Uri.parse("mailto:$mailEvent")),
-            null
-        )
+        val intent = Intent(Intent.ACTION_SENDTO).apply {
+            setData(Uri.parse("mailto:$mailEvent"))
+        }
+        context.startActivity(intent)
         welcomeViewModel.clearMailIntent()
     }
 
