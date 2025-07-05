@@ -14,28 +14,31 @@ class ExperiencesPreviewParameterProvider : PreviewParameterProvider<Experience>
 
 object ExperiencesPreviewParameterData {
     internal val experiences = listOf(
-        Experience(name = "Lorem ipsum",
-            employer = "Lorem ipsum",
+        Experience(
+            name = "Lorem ipsum",
+            employer = "Employeur Lorem ipsum",
             logo = TestingR.drawable.ic_test,
             expDates = Dates(begin = Date(1730075200000), end = null),
             professional = true,
             informations = listOf(
-                ExperienceInformation("Lorem ipsum"),
+                ExperienceInformation("Lorem <b>ipsum</b>"),
                 ExperienceInformation("Lorem ipsum"),
             )
         ),
-        Experience(name = "Lorem ipsum",
-            employer = "Lorem ipsum",
+        Experience(
+            name = "Lorem ipsum",
+            employer = "Employeur Lorem ipsum",
             logo = TestingR.drawable.ic_test,
             expDates = Dates(begin = Date(1730075200000), end = Date(1730075200000)),
             professional = true,
             informations = listOf(
                 ExperienceInformation("Lorem ipsum"),
-                ExperienceInformation("Lorem ipsum"),
+                ExperienceInformation("Lorem <b>ipsum</b>"),
             )
         ),
-        Experience(name = "Lorem ipsum",
-            employer = "Lorem ipsum",
+        Experience(
+            name = "Lorem ipsum",
+            employer = "Employeur Lorem ipsum",
             logo = TestingR.drawable.ic_test,
             expDates = Dates(begin = Date(1730075200000), end = Date(1730075200000)),
             professional = true,
