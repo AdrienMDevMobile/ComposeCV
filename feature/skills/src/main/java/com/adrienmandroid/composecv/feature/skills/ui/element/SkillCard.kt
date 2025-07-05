@@ -20,6 +20,7 @@ import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.core.ui.toAnnotatedString
 import com.adrienmandroid.composecv.model.Skill
 import com.adrienmandroid.composecv.feature.skills.R
@@ -124,5 +125,7 @@ fun SkillText(isVisible: LiveData<Boolean>, text: String) {
 fun SkillCardPreview(
     @PreviewParameter(SkillsPreviewParameterDataProvider::class) skill: Skill
 ){
-    SkillCard(skill)
+    ComposeCVTheme {
+        SkillCard(skill)
+    }
 }
