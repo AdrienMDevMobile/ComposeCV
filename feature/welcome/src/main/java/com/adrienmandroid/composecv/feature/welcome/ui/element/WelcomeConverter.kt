@@ -8,7 +8,7 @@ import com.adrienmandroid.composecv.model.WelcomeBodyElement
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun CheckUiType(value: WelcomeBodyElement, welcomeViewModel: WelcomeViewModel) {
+fun CheckUiType(value: WelcomeBodyElement, onClick: (WelcomeViewModel.ClickAction) -> Unit) {
     when (value) {
         is WelcomeBodyElement.WelcomeImage -> ImageDraw(
             source = value.source,
@@ -21,8 +21,8 @@ fun CheckUiType(value: WelcomeBodyElement, welcomeViewModel: WelcomeViewModel) {
             iconId = value.iconId,
             value = value.value,
             style = value.style.toMaterialTypography(),
-            onClick = value.clickable.toViewClick(),
-            welcomeViewModel = welcomeViewModel
+            clickAction = value.clickable.toViewClick(),
+            onClick = onClick
         )
     }
 }

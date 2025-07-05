@@ -81,7 +81,11 @@ fun WelcomeFragment(
                         .border(4.dp, MaterialTheme.colors.background, CircleShape)
                 )
             }) {
-            bottomsheetBody(page.body, welcomeViewModel)
+            bottomsheetBody(
+                welcomeBodyElements = page.body,
+                onClick = { action ->
+                    welcomeViewModel.onClick(action)
+                })
         }
 
     }

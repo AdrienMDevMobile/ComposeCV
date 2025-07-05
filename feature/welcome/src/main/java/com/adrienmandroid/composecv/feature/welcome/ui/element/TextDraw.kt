@@ -26,8 +26,8 @@ fun TextDraw(
     @DrawableRes iconId: Int?,
     value: String,
     style: TextStyle,
-    onClick: WelcomeViewModel.ClickAction?,
-    welcomeViewModel: WelcomeViewModel,
+    clickAction: WelcomeViewModel.ClickAction?,
+    onClick: (WelcomeViewModel.ClickAction) -> Unit,
     modifier: Modifier = Modifier
 ) {
     Row(modifier = modifier.fillMaxWidth()) {
@@ -39,13 +39,13 @@ fun TextDraw(
             )
             Spacer(modifier = Modifier.width(10.dp))
         }
-        if (onClick != null) {
+        if (clickAction != null) {
             //Ca c'est le reste
             DrawClickableText(
                 text = value,
-                clickable = onClick,
+                clickAction = clickAction,
                 style = style,
-                welcomeViewModel = welcomeViewModel
+                onClick = onClick
             )
         } else {
             //Ici c'est paris
@@ -58,14 +58,14 @@ fun TextDraw(
 @Composable
 private fun DrawClickableText(
     text: String,
-    clickable: WelcomeViewModel.ClickAction,
+    clickAction: WelcomeViewModel.ClickAction,
     style: TextStyle,
-    welcomeViewModel: WelcomeViewModel,
+    onClick: (WelcomeViewModel. ClickAction) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Text(
         modifier = modifier.clickable {
-            welcomeViewModel.onClick(clickable)
+            onClick(clickAction)
         },
         text = with(AnnotatedString.Builder(text)) {
             toAnnotatedString()
