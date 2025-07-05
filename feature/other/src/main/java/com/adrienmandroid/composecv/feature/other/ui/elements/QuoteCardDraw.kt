@@ -136,7 +136,8 @@ fun QuoteCardDraw(quote: Quote, position: Int) {
 fun PreviewQuoteCard(
     @PreviewParameter(
         QuoteIndexedPreviewParameterProvider::class,
-        limit = 2)
+        limit = 2
+    )
     quoteIndexed: Pair<Int, Quote>
 ) {
     ComposeCVTheme {

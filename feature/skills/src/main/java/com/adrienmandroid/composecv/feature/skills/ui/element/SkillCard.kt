@@ -15,12 +15,15 @@ import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.adrienmandroid.composecv.core.ui.toAnnotatedString
 import com.adrienmandroid.composecv.model.Skill
 import com.adrienmandroid.composecv.feature.skills.R
+import com.adrienmandroid.composecv.feature.skills.preview.SkillsPreviewParameterDataProvider
 
 @Composable
 fun SkillCard(skill: Skill) {
@@ -114,4 +117,12 @@ fun SkillText(isVisible: LiveData<Boolean>, text: String) {
         Spacer(modifier = Modifier.height(10.dp))
         Text(text = textAnnotated)
     }
+}
+
+@Composable
+@Preview
+fun SkillCardPreview(
+    @PreviewParameter(SkillsPreviewParameterDataProvider::class) skill: Skill
+){
+    SkillCard(skill)
 }

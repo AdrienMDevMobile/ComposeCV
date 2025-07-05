@@ -12,7 +12,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
+import com.adrienmandroid.composecv.feature.skills.preview.SkillsPreviewParameterData
 import com.adrienmandroid.composecv.feature.skills.ui.element.SkillCard
 import com.adrienmandroid.composecv.feature.skills.viewmodel.SkillViewModel
 import com.adrienmandroid.composecv.model.Skill
@@ -46,12 +49,10 @@ fun SkillPage(
     }
 }
 
-/*
-TODO
 @Composable
 @Preview
 fun PreviewSkill() {
     ComposeCVTheme {
-        SkillPage(SkillRepositoryImpl().getSkills())
+        SkillPage(SkillsPreviewParameterData.skills)
     }
-}*/
+}

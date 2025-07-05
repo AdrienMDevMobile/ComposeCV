@@ -50,9 +50,20 @@ fun getSkillColor(targetValue: Float) = when {
 
 @Composable
 @Preview
-fun PreviewSkillBar() {
+fun PreviewSkillBarHigh() {
     SkillLinearProgressIndicator(1f)
 }
 
+@Composable
+@Preview
+fun PreviewSkillBarMid() {
+    SkillLinearProgressIndicator(0.7f)
+}
+
+@Composable
+@Preview
+fun PreviewSkillBarLow() {
+    SkillLinearProgressIndicator(0.1f)
+}
 //https://blog.stylingandroid.com/compose-ui-snapshot-testing/ testing animations frames
 //https://foso.github.io/Jetpack-Compose-Playground/material/linearprogressindicator/
