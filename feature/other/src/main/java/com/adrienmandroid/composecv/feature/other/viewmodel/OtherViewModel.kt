@@ -1,5 +1,6 @@
 package com.adrienmandroid.composecv.feature.other.viewmodel
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.adrienmandroid.composecv.data.GratitudeRepository
@@ -21,18 +22,21 @@ class OtherViewModel @Inject constructor(
     //versionRepository: VersionRepository,
 ) : ViewModel() {
 
-    //TODO WTF ???
     private val _studies = MutableLiveData<List<Study>>(emptyList())
-    val studies = _studies
+    val studies: LiveData<List<Study>>
+        get() = _studies
 
     private val _quotes = MutableLiveData<List<Quote>>(emptyList())
-    val quotes = _quotes
+    val quotes: LiveData<List<Quote>>
+        get() = _quotes
 
     private val _hobbies = MutableLiveData<List<Hobby>>(emptyList())
-    val hobbies = _hobbies
+    val hobbies: LiveData<List<Hobby>>
+        get() = _hobbies
 
     private val _gratitude = MutableLiveData<String>()
-    val gratitude = _gratitude
+    val gratitude: LiveData<String>
+        get() = _gratitude
 
     init {
         _studies.value = studyRepository.getData()
