@@ -1,6 +1,5 @@
 package com.adrienmandroid.composecv.feature.welcome.ui.element
 
-import androidx.annotation.StringRes
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -10,7 +9,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -22,11 +21,10 @@ import com.adrienmandroid.composecv.model.Keyword as KeywordData
 import com.adrienmandroid.composecv.feature.welcome.R
 
 @Composable
-private fun Keyword(@StringRes keyword: Int) {
+private fun Keyword(keyword: String) {
     val shape = CircleShape
-    val word = stringResource(id = keyword)
     Text(
-        text = "#$word",
+        text = "#$keyword",
         style = MaterialTheme.typography.body1.copy(
             color = MaterialTheme.colors.onSurface,
             fontWeight = FontWeight.Bold,
@@ -45,7 +43,7 @@ private fun Keyword(@StringRes keyword: Int) {
 fun Keywords(vararg keywords: KeywordData) {
     FlowRow {
         for (keyword in keywords) {
-            Keyword(keyword = keyword.id)
+            Keyword(keyword.value)
         }
     }
 }
@@ -54,13 +52,14 @@ fun Keywords(vararg keywords: KeywordData) {
 @Composable
 @Preview
 fun PreviewKeywords() {
+    val context = LocalContext.current
     ComposeCVTheme {
         Keywords(
-            KeywordData(R.string.test_court),
-            KeywordData(R.string.test_court),
-            KeywordData(R.string.test_court),
-            KeywordData(R.string.test_court),
-            KeywordData(R.string.test_court)
+            KeywordData(context.getString(R.string.test_court)),
+            KeywordData(context.getString(R.string.test_court)),
+            KeywordData(context.getString(R.string.test_court)),
+            KeywordData(context.getString(R.string.test_court)),
+            KeywordData(context.getString(R.string.test_court)),
         )
     }
 }
