@@ -4,10 +4,12 @@ import com.adrienmandroid.composecv.data.GratitudeRepository
 import com.adrienmandroid.composecv.data.HobbyRepository
 import com.adrienmandroid.composecv.data.QuoteRepository
 import com.adrienmandroid.composecv.data.StudyRepository
+import com.adrienmandroid.composecv.data.WelcomeElementsRepository
 import com.adrienmandroid.composecv.data.impl.GratitudeRepositoryImpl
 import com.adrienmandroid.composecv.data.impl.HobbyRepositoryImpl
 import com.adrienmandroid.composecv.data.impl.QuoteRepositoryImpl
 import com.adrienmandroid.composecv.data.impl.StudyRepositoryImpl
+import com.adrienmandroid.composecv.data.impl.WelcomeElementsRepositoryImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -16,6 +18,11 @@ import dagger.hilt.components.SingletonComponent
 @Module
 @InstallIn(SingletonComponent::class)
 abstract class DataModule {
+
+    @Binds
+    abstract fun bindWelcomeRepository(
+        welcomeElementsRepository: WelcomeElementsRepositoryImpl
+    ): WelcomeElementsRepository
 
     @Binds
     abstract fun bindStudyRepository(

@@ -22,33 +22,32 @@ class WelcomeElementsRepositoryImpl @Inject constructor(
                 backgroundPicture = R.drawable.background_picture,
             ),
             body = listOf(
-                WelcomeBodyElement.WelcomeText(id = R.string.names, style = TypographyEnum.H4),
-                WelcomeBodyElement.WelcomeText(id = R.string.title, style = TypographyEnum.H5),
+                WelcomeBodyElement.WelcomeText(value = context.getString(R.string.names), style = TypographyEnum.H4),
+                WelcomeBodyElement.WelcomeText(value = context.getString(R.string.title), style = TypographyEnum.H5),
                 WelcomeBodyElement.WelcomeText(
-                    id = R.string.age,
-                    args = arrayOf(27),
+                    value = context.getString(R.string.age, 27),
                     style = TypographyEnum.BODY1
                 ),
                 WelcomeBodyElement.WelcomeText(
                     iconId = R.drawable.email,
-                    id = R.string.emailAdress,
+                    value = context.getString(R.string.emailAdress),
                     clickable = Clickable.MailClick(R.string.emailAdress),
                     style = TypographyEnum.BODY1
                 ),
                 WelcomeBodyElement.WelcomeText(
                     iconId = R.drawable.location,
-                    id = R.string.adress,
+                    value = context.getString(R.string.adress),
                     style = TypographyEnum.BODY1
                 ),
                 WelcomeBodyElement.WelcomeText(
                     iconId = R.drawable.github,
-                    id = R.string.gitHub,
+                    value = context.getString(R.string.gitHub),
                     clickable = Clickable.WebClick(R.string.gitHubLink),
                     style = TypographyEnum.BODY1
                 ),
                 WelcomeBodyElement.WelcomeText(
                     iconId = R.drawable.linkedin,
-                    id = R.string.linkedIn,
+                    value = context.getString(R.string.linkedIn),
                     clickable = Clickable.WebClick(R.string.linkedInLink),
                     style = TypographyEnum.BODY1
                 ),
@@ -59,7 +58,7 @@ class WelcomeElementsRepositoryImpl @Inject constructor(
                     tint = true
                 ),
                 WelcomeBodyElement.WelcomeText(
-                    id = R.string.Welcome_Keywords,
+                    value = context.getString(R.string.Welcome_Keywords),
                     style = TypographyEnum.BODY1BOLD
                 ),
                 WelcomeBodyElement.WelcomeKeyword(

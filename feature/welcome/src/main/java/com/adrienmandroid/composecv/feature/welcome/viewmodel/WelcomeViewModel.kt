@@ -3,16 +3,30 @@ package com.adrienmandroid.composecv.feature.welcome.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.adrienmandroid.composecv.data.WelcomeElementsRepository
+import com.adrienmandroid.composecv.model.WelcomePage
+import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
-class ClickViewModel @Inject constructor() : ViewModel() {
-    private val _webUrl = MutableLiveData<String>()
-    val webUrl: LiveData<String>
+@HiltViewModel
+class WelcomeViewModel @Inject constructor(
+    welcomeElementsRepository: WelcomeElementsRepository
+) : ViewModel() {
+    private val _welcomePage = MutableLiveData<WelcomePage?>(null)
+    val welcomePage: LiveData<WelcomePage?>
+        get() = _welcomePage
+
+    private val _webUrl = MutableLiveData<String?>()
+    val webUrl: LiveData<String?>
         get() = _webUrl
 
-    private val _mailAddress = MutableLiveData<String>()
-    val mailAddress: LiveData<String>
+    private val _mailAddress = MutableLiveData<String?>()
+    val mailAddress: LiveData<String?>
         get() = _mailAddress
+
+    init {
+        _welcomePage.value = welcomeElementsRepository.getWelcomePageElements()
+    }
 
     fun onClick(action: ClickAction) {
         when (action) {
@@ -21,7 +35,7 @@ class ClickViewModel @Inject constructor() : ViewModel() {
         }
     }
 
-    fun onWebClick(address: String) {
+    private fun onWebClick(address: String) {
         _webUrl.postValue(address)
     }
 
@@ -29,7 +43,7 @@ class ClickViewModel @Inject constructor() : ViewModel() {
         _webUrl.postValue(null)
     }
 
-    fun onMailClick(address: String) {
+    private fun onMailClick(address: String) {
         _mailAddress.postValue(address)
     }
 

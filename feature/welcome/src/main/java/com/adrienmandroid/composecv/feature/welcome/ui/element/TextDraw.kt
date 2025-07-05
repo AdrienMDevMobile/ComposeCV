@@ -1,9 +1,12 @@
 package com.adrienmandroid.composecv.feature.welcome.ui.element
 
 import androidx.annotation.DrawableRes
-import androidx.annotation.StringRes
-import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.text.ClickableText
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.Icon
 import androidx.compose.material.LocalContentAlpha
 import androidx.compose.material.LocalContentColor
@@ -12,23 +15,22 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.takeOrElse
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
-import com.adrienmandroid.composecv.feature.welcome.viewmodel.ClickViewModel
+import com.adrienmandroid.composecv.feature.welcome.viewmodel.WelcomeViewModel
 
 @Composable
 fun TextDraw(
     @DrawableRes iconId: Int?,
-    @StringRes id: Int,
+    value: String,
     style: TextStyle,
-    args: Array<Any>,
-    clickable: ClickViewModel.ClickAction?,
-    clickViewModel: ClickViewModel
+    onClick: WelcomeViewModel.ClickAction?,
+    welcomeViewModel: WelcomeViewModel,
+    modifier: Modifier = Modifier
 ) {
-    Row(modifier = Modifier.fillMaxWidth()) {
+    Row(modifier = modifier.fillMaxWidth()) {
         if (iconId != null) {
             Icon(
                 painter = painterResource(id = iconId),
@@ -37,34 +39,35 @@ fun TextDraw(
             )
             Spacer(modifier = Modifier.width(10.dp))
         }
-        if (clickable != null) {
+        if (onClick != null) {
             //Ca c'est le reste
-            DrawClickable(
-                id = id,
-                args = args,
-                clickable = clickable,
+            DrawClickableText(
+                text = value,
+                clickable = onClick,
                 style = style,
-                clickViewModel = clickViewModel
+                welcomeViewModel = welcomeViewModel
             )
         } else {
             //Ici c'est paris
-            Text(text = stringResource(id, *args), style = style)
+            Text(text = value, style = style)
         }
     }
 
 }
 
 @Composable
-private fun DrawClickable(
-    @StringRes id: Int,
-    args: Array<Any>,
-    clickable: ClickViewModel.ClickAction,
+private fun DrawClickableText(
+    text: String,
+    clickable: WelcomeViewModel.ClickAction,
     style: TextStyle,
-    clickViewModel: ClickViewModel
+    welcomeViewModel: WelcomeViewModel,
+    modifier: Modifier = Modifier,
 ) {
-
-    ClickableText(
-        text = with(AnnotatedString.Builder(stringResource(id, *args))) {
+    Text(
+        modifier = modifier.clickable {
+            welcomeViewModel.onClick(clickable)
+        },
+        text = with(AnnotatedString.Builder(text)) {
             toAnnotatedString()
         },
         style = style.copy(textDecoration = TextDecoration.Underline,
@@ -72,6 +75,5 @@ private fun DrawClickable(
                 LocalContentColor.current.copy(alpha = LocalContentAlpha.current)
             }
         ),
-        onClick = { clickViewModel.onClick(clickable) }
     )
 }

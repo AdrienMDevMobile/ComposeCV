@@ -21,67 +21,68 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
-import androidx.core.content.ContextCompat
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.adrienmandroid.composecv.feature.welcome.viewmodel.ClickViewModel
 import com.adrienmandroid.composecv.feature.welcome.ui.element.MyBottomSheet
 import com.adrienmandroid.composecv.feature.welcome.ui.element.bottomsheetBody
+import com.adrienmandroid.composecv.feature.welcome.viewmodel.WelcomeViewModel
 import com.adrienmandroid.composecv.model.WelcomePage
 
 
 @ExperimentalMaterialApi
 @Composable
 fun WelcomeFragment(
-    welcomePage: WelcomePage,
-    clickViewModel: ClickViewModel = hiltViewModel(),
+    welcomeViewModel: WelcomeViewModel = hiltViewModel(),
 ) {
+    val welcomePage: WelcomePage? by welcomeViewModel.welcomePage.observeAsState(null)
 
-    val webEvent by clickViewModel.webUrl.observeAsState()
+    val context = LocalContext.current
+
+    val webEvent by welcomeViewModel.webUrl.observeAsState()
     if (webEvent != null) {
-        ContextCompat.startActivity(
-            LocalContext.current,
+        context.startActivity(
             Intent(Intent.ACTION_VIEW, Uri.parse("https://$webEvent")),
             null
         )
-        clickViewModel.clearWebIntent()
+        welcomeViewModel.clearWebIntent()
     }
 
-    val mailEvent by clickViewModel.mailAddress.observeAsState()
+    val mailEvent by welcomeViewModel.mailAddress.observeAsState()
     if (mailEvent != null) {
-        ContextCompat.startActivity(
-            LocalContext.current,
+        context.startActivity(
             Intent(Intent.ACTION_VIEW, Uri.parse("mailto:$mailEvent")),
             null
         )
-
-        clickViewModel.clearMailIntent()
+        welcomeViewModel.clearMailIntent()
     }
 
-    MyBottomSheet(
-        contentCovered = {
-            Image(
-                painter = painterResource(welcomePage.header.backgroundPicture),
-                contentDescription = "Background",
-                contentScale = ContentScale.Crop,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(250.dp)
-            )
-        },
-        anchoredContent = {
-            Image(
-                painter = painterResource(welcomePage.header.profilePicture),
-                contentDescription = "Picture",
-                contentScale = ContentScale.Crop,
-                modifier = Modifier
-                    .width(150.dp)
-                    .height(150.dp)
-                    .padding(5.dp)
-                    .zIndex(1f)
-                    .clip(CircleShape)
-                    .border(4.dp, MaterialTheme.colors.background, CircleShape)
-            )
-        }) {
-        bottomsheetBody(welcomePage.body, clickViewModel)
+    welcomePage?.let { page ->
+        MyBottomSheet(
+            contentCovered = {
+                Image(
+                    painter = painterResource(page.header.backgroundPicture),
+                    contentDescription = "Background",
+                    contentScale = ContentScale.Crop,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(250.dp)
+                )
+            },
+            anchoredContent = {
+                Image(
+                    painter = painterResource(page.header.profilePicture),
+                    contentDescription = "Picture",
+                    contentScale = ContentScale.Crop,
+                    modifier = Modifier
+                        .width(150.dp)
+                        .height(150.dp)
+                        .padding(5.dp)
+                        .zIndex(1f)
+                        .clip(CircleShape)
+                        .border(4.dp, MaterialTheme.colors.background, CircleShape)
+                )
+            }) {
+            bottomsheetBody(page.body, welcomeViewModel)
+        }
+
     }
 }
