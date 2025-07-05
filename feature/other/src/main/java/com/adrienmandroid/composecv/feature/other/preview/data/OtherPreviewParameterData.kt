@@ -2,7 +2,6 @@ package com.adrienmandroid.composecv.feature.other.preview.data
 
 import android.content.Context
 
-
 class OtherPreviewParameterData(
     private val context: Context,
 ) {
@@ -13,5 +12,4 @@ class OtherPreviewParameterData(
             hobbies = HobbyPreviewParameterData(context).hobbies,
             gratitude = "Gratitude Lorem ipsum"
         )
-
 }
