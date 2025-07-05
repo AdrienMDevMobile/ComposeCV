@@ -21,6 +21,7 @@ class OtherViewModel @Inject constructor(
     //versionRepository: VersionRepository,
 ) : ViewModel() {
 
+    //TODO WTF ???
     private val _studies = MutableLiveData<List<Study>>(emptyList())
     val studies = _studies
 

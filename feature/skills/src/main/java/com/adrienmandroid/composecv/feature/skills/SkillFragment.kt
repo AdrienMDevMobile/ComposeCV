@@ -8,18 +8,32 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.adrienmandroid.composecv.model.Skill
-import com.adrienmandroid.composecv.data.impl.SkillRepositoryImpl
-import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.adrienmandroid.composecv.feature.skills.ui.element.SkillCard
+import com.adrienmandroid.composecv.feature.skills.viewmodel.SkillViewModel
+import com.adrienmandroid.composecv.model.Skill
 
 @Composable
-fun SkillFragment(skills: List<Skill>) {
+fun SkillFragment(
+    modifier: Modifier = Modifier,
+    skillViewModel: SkillViewModel = hiltViewModel(),
+) {
+    val skills: List<Skill> by skillViewModel.skills.observeAsState(emptyList())
+
+    SkillPage(skills, modifier)
+}
+
+@Composable
+fun SkillPage(
+    skills: List<Skill>,
+    modifier: Modifier = Modifier
+) {
     Box(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxSize()
             .background(MaterialTheme.colors.background),
         contentAlignment = Alignment.Center,
@@ -32,10 +46,12 @@ fun SkillFragment(skills: List<Skill>) {
     }
 }
 
+/*
+TODO
 @Composable
 @Preview
 fun PreviewSkill() {
     ComposeCVTheme {
-        SkillFragment(SkillRepositoryImpl().getSkills())
+        SkillPage(SkillRepositoryImpl().getSkills())
     }
-}
+}*/

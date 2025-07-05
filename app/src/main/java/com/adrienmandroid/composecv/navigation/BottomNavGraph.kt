@@ -7,7 +7,6 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.adrienmandroid.composecv.R
 import com.adrienmandroid.composecv.data.impl.ExperienceRepositoryImpl
-import com.adrienmandroid.composecv.data.impl.SkillRepositoryImpl
 import com.adrienmandroid.composecv.feature.experience.ExperienceFragment
 import com.adrienmandroid.composecv.feature.other.OtherFragment
 import com.adrienmandroid.composecv.feature.skills.SkillFragment
@@ -58,7 +57,7 @@ fun BottomNavGraphHost(navController: NavHostController) {
             ExperienceFragment(ExperienceRepositoryImpl().getExperiences())
         }
         composable(route = BottomNavGraph.SkillBottomNav.route) {
-            SkillFragment(SkillRepositoryImpl().getSkills())
+            SkillFragment()
         }
         composable(route = BottomNavGraph.OtherBottomNav.route) {
             OtherFragment()

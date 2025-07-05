@@ -2,8 +2,9 @@ package com.adrienmandroid.composecv.data.impl
 
 import com.adrienmandroid.composecv.model.Skill
 import com.adrienmandroid.composecv.data.SkillRepository
+import javax.inject.Inject
 
-class SkillRepositoryImpl : SkillRepository {
+class SkillRepositoryImpl @Inject constructor() : SkillRepository {
 
     override fun getSkills(): List<Skill> = listOf(
         Skill(
