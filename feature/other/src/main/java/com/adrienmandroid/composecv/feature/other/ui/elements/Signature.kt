@@ -26,7 +26,7 @@ fun Signature(color: Color) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Canvas(
-            modifier = Modifier.size(72.dp, 65.dp)
+            modifier = Modifier.size(72.dp, 90.dp)
         ) {
 
             //save()
