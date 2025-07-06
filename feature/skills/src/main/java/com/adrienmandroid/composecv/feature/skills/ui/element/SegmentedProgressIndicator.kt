@@ -1,19 +1,24 @@
 package com.adrienmandroid.composecv.feature.skills.ui.element
 
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.progressSemantics
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
+import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 
 private const val BackgroundOpacity = 0.25f
 private const val NumberOfSegments = 8
@@ -95,5 +100,20 @@ private fun DrawScope.drawSegments(
                 Size(segmentEnd - segmentStart, segmentHeight)
             )
         }
+    }
+}
+
+@Preview
+@Composable
+fun PreviewSegmentedProgresIndicator(){
+    ComposeCVTheme {
+        SegmentedProgressIndicator(
+            progress = 0.7f,
+            color = Color(0xFF49BF66),
+            modifier = Modifier
+                .fillMaxWidth()
+                .clip(RoundedCornerShape(10.dp)),
+            progressHeight = 20.dp
+        )
     }
 }
