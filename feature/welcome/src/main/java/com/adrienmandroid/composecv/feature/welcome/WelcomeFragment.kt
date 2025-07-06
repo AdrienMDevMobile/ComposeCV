@@ -22,11 +22,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.adrienmandroid.composecv.feature.welcome.ui.element.MyBottomSheet
-import com.adrienmandroid.composecv.feature.welcome.ui.element.bottomsheetBody
+import com.adrienmandroid.composecv.feature.welcome.ui.element.WelcomeBottomSheet
 import com.adrienmandroid.composecv.feature.welcome.viewmodel.WelcomeViewModel
 import com.adrienmandroid.composecv.model.WelcomePage
-
 
 @ExperimentalMaterialApi
 @Composable
@@ -56,7 +54,7 @@ fun WelcomeFragment(
     }
 
     welcomePage?.let { page ->
-        MyBottomSheet(
+        WelcomeBottomSheet(
             contentCovered = {
                 Image(
                     painter = painterResource(page.header.backgroundPicture),
@@ -67,6 +65,7 @@ fun WelcomeFragment(
                         .height(250.dp)
                 )
             },
+            welcomeBodyElements = page.body,
             anchoredContent = {
                 Image(
                     painter = painterResource(page.header.profilePicture),
@@ -80,13 +79,10 @@ fun WelcomeFragment(
                         .clip(CircleShape)
                         .border(4.dp, MaterialTheme.colors.background, CircleShape)
                 )
-            }) {
-            bottomsheetBody(
-                welcomeBodyElements = page.body,
-                onClick = { action ->
-                    welcomeViewModel.onClick(action)
-                })
-        }
-
+            },
+            onClick = { action ->
+                welcomeViewModel.onClick(action)
+            }
+        )
     }
 }
