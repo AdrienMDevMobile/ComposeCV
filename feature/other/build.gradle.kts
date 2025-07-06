@@ -7,12 +7,6 @@ plugins {
 
 android {
     namespace = "com.adrienmandroid.composecv.feature.other"
-
-    /*TODO
-    buildFeatures {
-        //Necessaire pour afficher le numéro de version dans l'app
-        buildConfig(true)
-    }*/
 }
 
 dependencies {

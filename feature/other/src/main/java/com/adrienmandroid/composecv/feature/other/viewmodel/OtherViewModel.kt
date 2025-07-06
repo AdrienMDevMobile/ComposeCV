@@ -7,9 +7,11 @@ import com.adrienmandroid.composecv.data.GratitudeRepository
 import com.adrienmandroid.composecv.data.HobbyRepository
 import com.adrienmandroid.composecv.data.QuoteRepository
 import com.adrienmandroid.composecv.data.StudyRepository
+import com.adrienmandroid.composecv.data.VersionNameRepository
 import com.adrienmandroid.composecv.model.Hobby
 import com.adrienmandroid.composecv.model.Quote
 import com.adrienmandroid.composecv.model.Study
+import com.adrienmandroid.composecv.model.VersionName
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
@@ -19,7 +21,7 @@ class OtherViewModel @Inject constructor(
     quoteRepository: QuoteRepository,
     hobbyRepository: HobbyRepository,
     gratitudeRepository: GratitudeRepository,
-    //versionRepository: VersionRepository,
+    versionNameRepository: VersionNameRepository,
 ) : ViewModel() {
 
     private val _studies = MutableLiveData<List<Study>>(emptyList())
@@ -38,10 +40,15 @@ class OtherViewModel @Inject constructor(
     val gratitude: LiveData<String>
         get() = _gratitude
 
+    private val _versionName = MutableLiveData<VersionName>()
+    val version: LiveData<VersionName>
+        get() = _versionName
+
     init {
         _studies.value = studyRepository.getData()
         _quotes.value = quoteRepository.getQuotes()
         _hobbies.value = hobbyRepository.getHobbies()
         _gratitude.value = gratitudeRepository.getGratitude()
+        _versionName.value = versionNameRepository.getAppVersionName()
     }
 }

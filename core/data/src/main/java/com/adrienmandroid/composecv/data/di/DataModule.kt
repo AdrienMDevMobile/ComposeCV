@@ -6,6 +6,7 @@ import com.adrienmandroid.composecv.data.HobbyRepository
 import com.adrienmandroid.composecv.data.QuoteRepository
 import com.adrienmandroid.composecv.data.SkillRepository
 import com.adrienmandroid.composecv.data.StudyRepository
+import com.adrienmandroid.composecv.data.VersionNameRepository
 import com.adrienmandroid.composecv.data.WelcomeElementsRepository
 import com.adrienmandroid.composecv.data.impl.ExperienceRepositoryImpl
 import com.adrienmandroid.composecv.data.impl.GratitudeRepositoryImpl
@@ -13,6 +14,7 @@ import com.adrienmandroid.composecv.data.impl.HobbyRepositoryImpl
 import com.adrienmandroid.composecv.data.impl.QuoteRepositoryImpl
 import com.adrienmandroid.composecv.data.impl.SkillRepositoryImpl
 import com.adrienmandroid.composecv.data.impl.StudyRepositoryImpl
+import com.adrienmandroid.composecv.data.impl.VersionNameRepositoryImpl
 import com.adrienmandroid.composecv.data.impl.WelcomeElementsRepositoryImpl
 import dagger.Binds
 import dagger.Module
@@ -57,4 +59,9 @@ abstract class DataModule {
     abstract fun bindGratitudeRepository(
         gratitudeRepositoryImpl: GratitudeRepositoryImpl
     ): GratitudeRepository
+
+    @Binds
+    abstract fun bindVersionRepository(
+        versionRepositoryImpl: VersionNameRepositoryImpl
+    ): VersionNameRepository
 }

@@ -25,6 +25,7 @@ import com.adrienmandroid.composecv.feature.other.viewmodel.OtherViewModel
 import com.adrienmandroid.composecv.model.Hobby
 import com.adrienmandroid.composecv.model.Quote
 import com.adrienmandroid.composecv.model.Study
+import com.adrienmandroid.composecv.model.VersionName
 
 @Composable
 fun OtherFragment(
@@ -35,8 +36,9 @@ fun OtherFragment(
     val quotes: List<Quote> by otherViewModel.quotes.observeAsState(emptyList())
     val hobbies: List<Hobby> by otherViewModel.hobbies.observeAsState(emptyList())
     val gratitude: String by otherViewModel.gratitude.observeAsState("")
+    val versionName: VersionName by otherViewModel.version.observeAsState("")
 
-    OtherScreen(studies, quotes, hobbies, gratitude, modifier)
+    OtherScreen(studies, quotes, hobbies, gratitude, versionName, modifier)
 }
 
 @Composable
@@ -45,6 +47,7 @@ fun OtherScreen(
     quotes: List<Quote>,
     hobbies: List<Hobby>,
     gratitude: String,
+    versionName: VersionName,
     modifier: Modifier = Modifier,
 ) {
     LazyColumn(
@@ -62,7 +65,7 @@ fun OtherScreen(
         otherSection({ HobbyRow(hobbies) }, title = R.string.title_hobbies)
         otherSection({ Gratitudes(gratitude) }, title = R.string.title_gratitude)
         otherSection({ Signature(MaterialTheme.colors.secondaryVariant) })
-        otherSection({ Version() })
+        otherSection({ Version(versionName) })
     }
 }
 
@@ -76,6 +79,7 @@ fun PreviewOther() {
             quotes = otherParams.quotes,
             hobbies = otherParams.hobbies,
             gratitude = otherParams.gratitude,
+            versionName = otherParams.versionName
         )
     }
 }

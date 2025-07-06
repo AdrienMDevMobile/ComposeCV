@@ -10,6 +10,7 @@ class OtherPreviewParameterData(
             studies = StudyPreviewParameterData(context).studies,
             quotes = QuotePreviewParameterData.quotes,
             hobbies = HobbyPreviewParameterData(context).hobbies,
-            gratitude = "Gratitude Lorem ipsum"
+            gratitude = "Gratitude Lorem ipsum",
+            versionName = "1.0.0-test"
         )
 }
