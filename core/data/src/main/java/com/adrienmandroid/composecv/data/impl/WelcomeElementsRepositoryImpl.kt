@@ -31,7 +31,7 @@ class WelcomeElementsRepositoryImpl @Inject constructor(
                 WelcomeBodyElement.WelcomeText(
                     iconId = R.drawable.email,
                     value = context.getString(R.string.emailAdress),
-                    clickable = Clickable.MailClick(R.string.emailAdress),
+                    clickable = Clickable.MailClick(context.getString(R.string.emailAdress)),
                     style = TypographyEnum.BODY1
                 ),
                 WelcomeBodyElement.WelcomeText(
@@ -42,13 +42,13 @@ class WelcomeElementsRepositoryImpl @Inject constructor(
                 WelcomeBodyElement.WelcomeText(
                     iconId = R.drawable.github,
                     value = context.getString(R.string.gitHub),
-                    clickable = Clickable.WebClick(R.string.gitHubLink),
+                    clickable = Clickable.WebClick(context.getString(R.string.gitHubLink)),
                     style = TypographyEnum.BODY1
                 ),
                 WelcomeBodyElement.WelcomeText(
                     iconId = R.drawable.linkedin,
                     value = context.getString(R.string.linkedIn),
-                    clickable = Clickable.WebClick(R.string.linkedInLink),
+                    clickable = Clickable.WebClick(context.getString(R.string.linkedInLink)),
                     style = TypographyEnum.BODY1
                 ),
                 WelcomeBodyElement.WelcomeQuote(id = R.string.selfPresentation),

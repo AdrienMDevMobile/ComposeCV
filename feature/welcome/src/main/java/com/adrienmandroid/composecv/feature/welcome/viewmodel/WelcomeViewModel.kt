@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.adrienmandroid.composecv.data.WelcomeElementsRepository
+import com.adrienmandroid.composecv.model.Clickable
 import com.adrienmandroid.composecv.model.WelcomePage
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -30,8 +31,12 @@ class WelcomeViewModel @Inject constructor(
 
     fun onClick(action: ClickAction) {
         when (action) {
-            is ClickAction.MailClick -> onMailClick(action.address)
-            is ClickAction.WebClick -> onWebClick(action.address)
+            is ClickAction.ElementClick -> {
+                when (action.clickable) {
+                    is Clickable.MailClick -> onMailClick(action.clickable.address)
+                    is Clickable.WebClick -> onWebClick(action.clickable.url)
+                }
+            }
         }
     }
 
@@ -52,7 +57,8 @@ class WelcomeViewModel @Inject constructor(
     }
 
     sealed class ClickAction {
-        class MailClick(val address: String) : ClickAction()
-        class WebClick(val address: String) : ClickAction()
+        //Elements found in the page, whose design is driven by server.
+        //This gives us room for other elements (such as hard coded ones)
+        class ElementClick(val clickable: Clickable) : ClickAction()
     }
 }

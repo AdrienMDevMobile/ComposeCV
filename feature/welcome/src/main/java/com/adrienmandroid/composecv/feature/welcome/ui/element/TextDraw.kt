@@ -19,15 +19,13 @@ import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
-import com.adrienmandroid.composecv.feature.welcome.viewmodel.WelcomeViewModel
 
 @Composable
 fun TextDraw(
     @DrawableRes iconId: Int?,
     value: String,
     style: TextStyle,
-    clickAction: WelcomeViewModel.ClickAction?,
-    onClick: (WelcomeViewModel.ClickAction) -> Unit,
+    onClick: (() -> Unit)?,
     modifier: Modifier = Modifier
 ) {
     Row(modifier = modifier.fillMaxWidth()) {
@@ -39,11 +37,10 @@ fun TextDraw(
             )
             Spacer(modifier = Modifier.width(10.dp))
         }
-        if (clickAction != null) {
+        if (onClick != null) {
             //Ca c'est le reste
             DrawClickableText(
                 text = value,
-                clickAction = clickAction,
                 style = style,
                 onClick = onClick
             )
@@ -58,14 +55,13 @@ fun TextDraw(
 @Composable
 private fun DrawClickableText(
     text: String,
-    clickAction: WelcomeViewModel.ClickAction,
     style: TextStyle,
-    onClick: (WelcomeViewModel. ClickAction) -> Unit,
+    onClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Text(
         modifier = modifier.clickable {
-            onClick(clickAction)
+            onClick()
         },
         text = with(AnnotatedString.Builder(text)) {
             toAnnotatedString()

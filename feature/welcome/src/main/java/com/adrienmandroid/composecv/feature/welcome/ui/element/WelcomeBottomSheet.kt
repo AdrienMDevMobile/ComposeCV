@@ -21,7 +21,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.feature.welcome.preview.WelcomePreviewParameterData
-import com.adrienmandroid.composecv.feature.welcome.viewmodel.WelcomeViewModel
+import com.adrienmandroid.composecv.model.Clickable
 import com.adrienmandroid.composecv.model.WelcomeBodyElement
 import com.adrienmandroid.composecv.core.test.R as TestingR
 
@@ -29,7 +29,7 @@ import com.adrienmandroid.composecv.core.test.R as TestingR
 fun WelcomeBottomSheet(
     contentCovered: @Composable () -> Unit,
     welcomeBodyElements: List<WelcomeBodyElement>,
-    onClick: (WelcomeViewModel.ClickAction) -> Unit,
+    onClick: (Clickable) -> Unit,
     modifier: Modifier = Modifier,
     anchoredContent: (@Composable () -> Unit)? = null,
 ) {

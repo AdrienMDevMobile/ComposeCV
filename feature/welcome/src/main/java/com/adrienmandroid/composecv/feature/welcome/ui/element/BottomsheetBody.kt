@@ -16,11 +16,11 @@ import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.feature.welcome.preview.WelcomePreviewParameterData
 import com.adrienmandroid.composecv.model.WelcomeBodyElement
-import com.adrienmandroid.composecv.feature.welcome.viewmodel.WelcomeViewModel
+import com.adrienmandroid.composecv.model.Clickable
 
 fun LazyListScope.bottomsheetBody(
     welcomeBodyElements: List<WelcomeBodyElement>,
-    onClick: (WelcomeViewModel.ClickAction) -> Unit,
+    onClick: (Clickable) -> Unit,
 ) {
     items(items = welcomeBodyElements) {
         Box(

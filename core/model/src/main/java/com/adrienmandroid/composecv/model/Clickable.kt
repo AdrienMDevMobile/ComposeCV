@@ -1,8 +1,6 @@
 package com.adrienmandroid.composecv.model
 
-import androidx.annotation.StringRes
-
 sealed class Clickable {
-    class MailClick(@StringRes val address:Int): Clickable()
-    class WebClick(@StringRes val address:Int): Clickable()
+    class MailClick(val address:String): Clickable()
+    class WebClick(val url:String): Clickable()
 }

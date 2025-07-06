@@ -24,6 +24,7 @@ import androidx.compose.ui.zIndex
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.adrienmandroid.composecv.feature.welcome.ui.element.WelcomeBottomSheet
 import com.adrienmandroid.composecv.feature.welcome.viewmodel.WelcomeViewModel
+import com.adrienmandroid.composecv.feature.welcome.viewmodel.WelcomeViewModel.ClickAction
 import com.adrienmandroid.composecv.model.WelcomePage
 
 @ExperimentalMaterialApi
@@ -81,7 +82,7 @@ fun WelcomeFragment(
                 )
             },
             onClick = { action ->
-                welcomeViewModel.onClick(action)
+                welcomeViewModel.onClick(ClickAction.ElementClick(action))
             }
         )
     }
