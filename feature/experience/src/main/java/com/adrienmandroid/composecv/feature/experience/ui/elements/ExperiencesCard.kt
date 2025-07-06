@@ -39,7 +39,7 @@ fun ExperienceCard(experience: Experience) {
         Column(modifier = Modifier.fillMaxWidth()) {
             ExperienceHeader(experience.logo, experience.name, experience.professional)
             ExpAdditionalInfo(experience.expDates, experience.employer, experience.link)
-            ExperienceInfoListItem(experience.informations)
+            ExperienceDetailsItem(experience.informations)
             Spacer(modifier = Modifier.height(expVerticalSpacing))
         }
     }
