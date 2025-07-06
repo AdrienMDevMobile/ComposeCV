@@ -51,7 +51,7 @@ fun LazyListScope.bottomsheetHeader(
 @Composable
 fun PreviewBottomSheetHeader() {
     ComposeCVTheme {
-        LazyColumn() {
+        LazyColumn {
             bottomsheetHeader {
                 Image(
                     painter = painterResource(TestingR.drawable.img_test),
