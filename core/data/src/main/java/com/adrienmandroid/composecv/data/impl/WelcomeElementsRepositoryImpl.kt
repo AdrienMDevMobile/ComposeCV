@@ -52,7 +52,7 @@ class WelcomeElementsRepositoryImpl @Inject constructor(
                     clickable = Clickable.WebClick(context.getString(R.string.linkedInLink)),
                     style = TypographyEnum.BODY1
                 ),
-                WelcomeBodyElement.WelcomeQuote(id = R.string.selfPresentation),
+                WelcomeBodyElement.WelcomeQuote(context.getString(R.string.selfPresentation)),
                 WelcomeBodyElement.WelcomeImage(
                     R.drawable.auboulotavelo,
                     "Au boulot à velo",

@@ -18,7 +18,7 @@ fun CheckUiType(value: WelcomeBodyElement, onClick: (Clickable) -> Unit) {
         )
 
         is WelcomeBodyElement.WelcomeKeyword -> Keywords(keywords = value.keywords)
-        is WelcomeBodyElement.WelcomeQuote -> QuoteTextDraw(id = value.id)
+        is WelcomeBodyElement.WelcomeQuote -> QuoteTextDraw(quote = value.quote)
         is WelcomeBodyElement.WelcomeText ->
             TextDraw(
                 iconId = value.iconId,

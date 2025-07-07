@@ -9,20 +9,18 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.core.ui.theme.border
 import com.adrienmandroid.composecv.core.ui.toAnnotatedString
-import com.adrienmandroid.composecv.feature.welcome.R
 
 @Composable
-fun QuoteTextDraw(id: Int) {
+fun QuoteTextDraw(quote: String) {
     val shape = RectangleShape
 
-    val text = stringResource(id).toAnnotatedString()
+    val text = quote.toAnnotatedString()
 
     Text(
         text = text,
@@ -46,7 +44,7 @@ fun PreviewQuoteTextDraw() {
             Row {
                 Spacer(modifier = Modifier.width(20.dp))
                 //TODO valeur string
-                QuoteTextDraw(R.string.test_long)
+                QuoteTextDraw("Lorem <b>ipsum</b>")
             }
         }
     }

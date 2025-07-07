@@ -4,11 +4,12 @@ import androidx.annotation.DrawableRes
 import java.util.Date
 
 sealed class WelcomeBodyElement {
+    //TODO : Image source from String : web url
     class WelcomeImage(val source: Int, val description: String, val tint: Boolean = false) :
         WelcomeBodyElement()
 
     class WelcomeKeyword(val keywords: Array<Keyword>) : WelcomeBodyElement()
-    class WelcomeQuote(val id: Int) : WelcomeBodyElement()
+    class WelcomeQuote(val quote: String) : WelcomeBodyElement()
     class WelcomeText(
         @DrawableRes
         val iconId: Int? = null,
