@@ -43,7 +43,6 @@ fun PreviewQuoteTextDraw() {
         Box(modifier = Modifier.background(Color.Blue)) {
             Row {
                 Spacer(modifier = Modifier.width(20.dp))
-                //TODO valeur string
                 QuoteTextDraw("Lorem <b>ipsum</b>")
             }
         }
