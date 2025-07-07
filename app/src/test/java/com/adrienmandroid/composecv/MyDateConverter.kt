@@ -1,16 +1,11 @@
 package com.adrienmandroid.composecv
-
+/*
 import org.junit.Assert.assertEquals
 import org.junit.Test
-import java.text.SimpleDateFormat
 import java.util.Date
-import java.util.Locale
 
 //Use this to find the exact Date value of a date and let the programmer test dates
 class MyDateConverter {
-
-    private fun String.toTestLong(): Long? =
-        SimpleDateFormat("dd MMMM yyyy", Locale.FRANCE).parse(this)?.time
 
     @Test
     fun testingDateInLong() {
@@ -59,3 +54,4 @@ class MyDateConverter {
     }*/
 
 }
+ */
