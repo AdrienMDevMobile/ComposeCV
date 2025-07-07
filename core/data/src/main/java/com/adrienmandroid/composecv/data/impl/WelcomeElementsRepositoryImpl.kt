@@ -9,6 +9,7 @@ import com.adrienmandroid.composecv.model.WelcomeBodyElement
 import com.adrienmandroid.composecv.model.WelcomeHeader
 import com.adrienmandroid.composecv.model.WelcomePage
 import dagger.hilt.android.qualifiers.ApplicationContext
+import java.util.Date
 import javax.inject.Inject
 
 class WelcomeElementsRepositoryImpl @Inject constructor(
@@ -24,8 +25,8 @@ class WelcomeElementsRepositoryImpl @Inject constructor(
             body = listOf(
                 WelcomeBodyElement.WelcomeText(value = context.getString(R.string.names), style = TypographyEnum.H4),
                 WelcomeBodyElement.WelcomeText(value = context.getString(R.string.title), style = TypographyEnum.H5),
-                WelcomeBodyElement.WelcomeText(
-                    value = context.getString(R.string.age, 27),
+                WelcomeBodyElement.BirthdayText(
+                    value = Date(800112600000),
                     style = TypographyEnum.BODY1
                 ),
                 WelcomeBodyElement.WelcomeText(

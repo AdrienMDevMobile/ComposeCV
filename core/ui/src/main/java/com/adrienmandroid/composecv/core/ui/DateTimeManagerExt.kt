@@ -5,7 +5,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import com.adrienmandroid.composecv.model.Dates
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Date
 
 @Composable
 fun Date?.toMonthString(): String =
@@ -20,7 +20,49 @@ fun Date?.toDayString(): String =
 fun String.toMyLong(): Long? = SimpleDateFormat("dd MMMM yyyy").parse(this)?.time
 
 @Composable
-fun Dates.getDifferenceToString(): String {
+fun Dates.getDifferenceToString(): String =
+    getDifferenceInts().run {
+        if (numberYears > 0 && numberMonths > 0) {
+            stringResource(
+                R.string.years_and_months,
+                LocalContext.current.resources.getQuantityString(
+                    R.plurals.years,
+                    numberYears,
+                    numberYears
+                ),
+                LocalContext.current.resources.getQuantityString(
+                    R.plurals.months,
+                    numberMonths,
+                    numberMonths
+                )
+            )
+        } else if (numberYears > 0) {
+            LocalContext.current.resources.getQuantityString(
+                R.plurals.years,
+                numberYears,
+                numberYears
+            )
+        } else if (numberMonths > 0) {
+            LocalContext.current.resources.getQuantityString(
+                R.plurals.months,
+                numberMonths,
+                numberMonths
+            )
+        } else {
+            stringResource(R.string.exp_less_than_month)
+        }
+    }
+
+@Composable
+fun Date.getDifferenceYearsToString(): String =
+    Dates(this, Date()).getDifferenceInts().run {
+        stringResource(
+            R.string.birth_years,
+            numberYears
+        )
+    }
+
+private fun Dates.getDifferenceInts(): Difference {
     val endDate = end ?: Date()
     val diff = kotlin.math.abs(endDate.time - begin.time)
     val diffDays = (diff / (24 * 60 * 60 * 1000)).toInt()
@@ -28,29 +70,7 @@ fun Dates.getDifferenceToString(): String {
     val numberYears = diffDays / 365
     val numberMonths = (diffDays % 365) / 31
 
-    return if (numberYears > 0 && numberMonths > 0) {
-        stringResource(
-            R.string.years_and_months,
-            LocalContext.current.resources.getQuantityString(
-                R.plurals.years,
-                numberYears,
-                numberYears
-            ),
-            LocalContext.current.resources.getQuantityString(
-                R.plurals.months,
-                numberMonths,
-                numberMonths
-            )
-        )
-    } else if (numberYears > 0) {
-        LocalContext.current.resources.getQuantityString(R.plurals.years, numberYears, numberYears)
-    } else if (numberMonths > 0) {
-        LocalContext.current.resources.getQuantityString(
-            R.plurals.months,
-            numberMonths,
-            numberMonths
-        )
-    } else {
-        stringResource(R.string.exp_less_than_month)
-    }
+    return Difference(numberYears = numberYears, numberMonths = numberMonths)
 }
+
+private data class Difference(val numberYears: Int, val numberMonths: Int)

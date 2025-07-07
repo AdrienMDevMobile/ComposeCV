@@ -4,6 +4,7 @@
     <string name="exp_less_than_month">Moins d\'un mois</string>
 
     <string name = "years_and_months">%1$s, %2$s</string>
+    <string name = "birth_years">%1$s ans</string>
     <plurals name="years">
         <item quantity="one">%1$d année</item>
         <item quantity="other">%1$d années</item>

@@ -2,6 +2,7 @@ package com.adrienmandroid.composecv.feature.welcome.ui.element
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.runtime.Composable
+import com.adrienmandroid.composecv.core.ui.getDifferenceYearsToString
 import com.adrienmandroid.composecv.core.ui.toMaterialTypography
 import com.adrienmandroid.composecv.model.Clickable
 import com.adrienmandroid.composecv.model.WelcomeBodyElement
@@ -26,6 +27,12 @@ fun CheckUiType(value: WelcomeBodyElement, onClick: (Clickable) -> Unit) {
                 onClick = value.clickable?.let { clickable: Clickable ->
                     { onClick(clickable) }
                 }
+            )
+        is WelcomeBodyElement.BirthdayText ->
+            TextDraw(
+                iconId = value.iconId,
+                value = value.value.getDifferenceYearsToString(),
+                style = value.style.toMaterialTypography(),
             )
     }
 }

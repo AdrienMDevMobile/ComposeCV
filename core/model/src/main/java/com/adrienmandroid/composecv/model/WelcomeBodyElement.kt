@@ -1,6 +1,7 @@
 package com.adrienmandroid.composecv.model
 
 import androidx.annotation.DrawableRes
+import java.util.Date
 
 sealed class WelcomeBodyElement {
     class WelcomeImage(val source: Int, val description: String, val tint: Boolean = false) :
@@ -15,4 +16,10 @@ sealed class WelcomeBodyElement {
         val style: TypographyEnum = TypographyEnum.BODY1,
         val clickable: Clickable? = null
     ) : WelcomeBodyElement()
+    class BirthdayText(
+        @DrawableRes
+        val iconId: Int? = null,
+        val value: Date,
+        val style: TypographyEnum = TypographyEnum.BODY1,
+    ): WelcomeBodyElement()
 }

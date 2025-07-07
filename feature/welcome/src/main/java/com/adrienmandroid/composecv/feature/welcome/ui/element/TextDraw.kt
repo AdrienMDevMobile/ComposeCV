@@ -25,8 +25,8 @@ fun TextDraw(
     @DrawableRes iconId: Int?,
     value: String,
     style: TextStyle,
-    onClick: (() -> Unit)?,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onClick: (() -> Unit)? = null,
 ) {
     Row(modifier = modifier.fillMaxWidth()) {
         if (iconId != null) {
