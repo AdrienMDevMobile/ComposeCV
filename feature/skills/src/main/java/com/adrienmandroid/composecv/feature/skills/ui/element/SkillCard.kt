@@ -1,7 +1,18 @@
 package com.adrienmandroid.composecv.feature.skills.ui.element
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults.buttonColors
@@ -22,9 +33,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.core.ui.toAnnotatedString
-import com.adrienmandroid.composecv.model.Skill
 import com.adrienmandroid.composecv.feature.skills.R
 import com.adrienmandroid.composecv.feature.skills.preview.SkillsPreviewParameterDataProvider
+import com.adrienmandroid.composecv.model.Skill
 
 @Composable
 fun SkillCard(skill: Skill) {
@@ -54,16 +65,17 @@ fun SkillCard(skill: Skill) {
                 SkillLinearProgressIndicator(targetValue = it)
             }
             if (skill.subSkills.isNotEmpty()) {
-                GridItems(
-                    data = skill.subSkills,
-                    columnCount = 2,
+                LazyVerticalGrid(
+                    columns = GridCells.Fixed(2),
                     horizontalArrangement = Arrangement.spacedBy(8.dp),
                     modifier = Modifier.padding(horizontal = 16.dp)
-                ) { subSkill ->
-                    Text(
-                        text = subSkill,
-                        style = MaterialTheme.typography.body1
-                    )
+                ) {
+                    items(skill.subSkills) { subSkill ->
+                        Text(
+                            text = subSkill,
+                            style = MaterialTheme.typography.body1
+                        )
+                    }
                 }
             }
             SkillText(isTextVisible, skill.explanation)
@@ -124,7 +136,7 @@ fun SkillText(isVisible: LiveData<Boolean>, text: String) {
 @Preview
 fun SkillCardPreview(
     @PreviewParameter(SkillsPreviewParameterDataProvider::class) skill: Skill
-){
+) {
     ComposeCVTheme {
         SkillCard(skill)
     }
