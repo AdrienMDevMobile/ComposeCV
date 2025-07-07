@@ -29,7 +29,7 @@ class SkillRepositoryImpl @Inject constructor() : SkillRepository {
         """.trimIndent()
         ),
         Skill(
-            name = "Mad skills",  subSkills = listOf("Growth mindset", "Capacité d'apprentissage"), explanation = """
+            name = "Mad skills",  subSkills = Pair("Growth mindset", "Capacité d'apprentissage"), explanation = """
                 Growth mindset (état d’esprit de croissance) : Dire tout le monde peut évoluer, changer et progresser avec du travail et des efforts. .
                 En contraste avec le "Fixed mindset" (état d'esprit fixe), qui voit les capacités comme innées et déterminées uniquement par le talent naturel.
                 Connaitre ces deux concepts là est une chose, mais <b>avoir une mentalité de croissance est de réelement croire</b>, au fond de soi, en sa capacité d'évoluer.
@@ -51,7 +51,7 @@ class SkillRepositoryImpl @Inject constructor() : SkillRepository {
         """.trimIndent()
         ),
         Skill(
-            name="Soft skills", subSkills = listOf("Curiosité", "Créativité"), explanation = """
+            name="Soft skills", subSkills = Pair("Curiosité",  "Créativité"), explanation = """
                 De nature curieuse, j'aime, et j'ai besoin, de comprendre les choses. Je n'hesite pas à poser des questions ou chercher les réponses.
             """.trimIndent()
         ),

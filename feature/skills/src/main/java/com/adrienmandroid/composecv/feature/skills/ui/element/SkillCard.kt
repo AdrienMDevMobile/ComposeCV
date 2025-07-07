@@ -4,15 +4,13 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.lazy.grid.GridCells
-import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults.buttonColors
@@ -64,20 +62,22 @@ fun SkillCard(skill: Skill) {
             skill.targetValue?.let {
                 SkillLinearProgressIndicator(targetValue = it)
             }
-            if (skill.subSkills.isNotEmpty()) {
-                LazyVerticalGrid(
-                    columns = GridCells.Fixed(2),
-                    horizontalArrangement = Arrangement.spacedBy(8.dp),
-                    modifier = Modifier.padding(horizontal = 16.dp)
+            skill.subSkills?.let { subskills ->
+                Row(
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp)
                 ) {
-                    items(skill.subSkills) { subSkill ->
-                        Text(
-                            text = subSkill,
-                            style = MaterialTheme.typography.body1
-                        )
-                    }
+                    Text(
+                        text = subskills.first,
+                        style = MaterialTheme.typography.body1
+                    )
+                    Text(
+                        text = subskills.second,
+                        style = MaterialTheme.typography.body1
+                    )
                 }
             }
+
             SkillText(isTextVisible, skill.explanation)
             Spacer(modifier = Modifier.height(10.dp))
 

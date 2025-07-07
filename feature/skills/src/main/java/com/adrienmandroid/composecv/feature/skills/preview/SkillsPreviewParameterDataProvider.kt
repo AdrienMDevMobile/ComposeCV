@@ -28,7 +28,7 @@ object SkillsPreviewParameterData {
         ),
         Skill(
             name = "Lorem ipsum",
-            subSkills = listOf("Lorem ipsum", "Lorem ipsum"),
+            subSkills = Pair("Lorem ipsum", "Lorem ipsum"),
             explanation = LoremIpsum(words = 50).values.toList().joinToString(separator = " "),
         ),
     )
