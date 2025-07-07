@@ -26,7 +26,7 @@ class WelcomeElementsRepositoryImpl @Inject constructor(
                 WelcomeBodyElement.WelcomeText(value = context.getString(R.string.names), style = TypographyEnum.H4),
                 WelcomeBodyElement.WelcomeText(value = context.getString(R.string.title), style = TypographyEnum.H5),
                 WelcomeBodyElement.BirthdayText(
-                    value = Date(800112600000),
+                    value = Date(800056800000),
                     style = TypographyEnum.BODY1
                 ),
                 WelcomeBodyElement.WelcomeText(

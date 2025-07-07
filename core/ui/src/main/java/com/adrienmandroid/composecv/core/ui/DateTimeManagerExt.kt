@@ -4,20 +4,18 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import com.adrienmandroid.composecv.model.Dates
-import java.text.SimpleDateFormat
+import java.text.DateFormat
 import java.util.Date
 
 @Composable
 fun Date?.toMonthString(): String =
-    this?.let { SimpleDateFormat("MMMM yyyy").format(this) }
+    this?.let { DateFormat.getDateInstance().format(this) }
         ?: stringResource(id = R.string.exp_up_to_today)
-
+/*
 @Composable
 fun Date?.toDayString(): String =
     this?.let { SimpleDateFormat("dd MMMM yyyy").format(this) }
-        ?: stringResource(id = R.string.exp_up_to_today)
-
-fun String.toMyLong(): Long? = SimpleDateFormat("dd MMMM yyyy").parse(this)?.time
+        ?: stringResource(id = R.string.exp_up_to_today) */
 
 @Composable
 fun Dates.getDifferenceToString(): String =
