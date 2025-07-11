@@ -20,11 +20,11 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
-import com.adrienmandroid.composecv.core.test.R as TestingR
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.core.ui.theme.onSurfaceTitle
+import com.adrienmandroid.composecv.core.test.R as TestingR
 
 @Composable
 fun ExperienceHeader(logo: Int, name: String, professional: Boolean) {
@@ -63,14 +63,23 @@ fun ExperienceHeader(logo: Int, name: String, professional: Boolean) {
     }
 
 }
-@Preview
+
+@PreviewLightDark
 @Composable
 fun PreviewExperienceHeader() {
     val context = LocalContext.current
     ComposeCVTheme {
         Column {
-            ExperienceHeader(logo = TestingR.drawable.ic_test, name = context.getString(TestingR.string.test_1_word), true)
-            ExperienceHeader(logo = TestingR.drawable.ic_test, name = context.getString(TestingR.string.test_1_word), false)
+            ExperienceHeader(
+                logo = TestingR.drawable.ic_test,
+                name = context.getString(TestingR.string.test_1_word),
+                true
+            )
+            ExperienceHeader(
+                logo = TestingR.drawable.ic_test,
+                name = context.getString(TestingR.string.test_1_word),
+                false
+            )
         }
 
     }

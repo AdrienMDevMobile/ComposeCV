@@ -11,12 +11,12 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.feature.welcome.preview.WelcomePreviewParameterData
-import com.adrienmandroid.composecv.model.WelcomeBodyElement
 import com.adrienmandroid.composecv.model.Clickable
+import com.adrienmandroid.composecv.model.WelcomeBodyElement
 
 fun LazyListScope.bottomsheetBody(
     welcomeBodyElements: List<WelcomeBodyElement>,
@@ -34,8 +34,8 @@ fun LazyListScope.bottomsheetBody(
     }
 }
 
+@PreviewLightDark
 @Composable
-@Preview
 fun PreviewBottomsheetBody() {
     val context = LocalContext.current
     ComposeCVTheme {

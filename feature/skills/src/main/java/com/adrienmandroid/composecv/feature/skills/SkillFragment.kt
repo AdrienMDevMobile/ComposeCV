@@ -10,7 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.feature.skills.preview.SkillsPreviewParameterData
@@ -43,8 +43,8 @@ fun SkillPage(
     }
 }
 
+@PreviewLightDark
 @Composable
-@Preview
 fun PreviewSkill() {
     ComposeCVTheme {
         SkillPage(SkillsPreviewParameterData.skills)

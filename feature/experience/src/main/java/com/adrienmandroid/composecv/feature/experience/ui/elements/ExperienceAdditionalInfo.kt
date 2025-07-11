@@ -9,7 +9,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewLightDark
 import com.adrienmandroid.composecv.core.ui.getDifferenceToString
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.core.ui.toMonthString
@@ -48,8 +48,8 @@ fun ExpAdditionalInfo(dates: Dates, employer: String?, link: Link?) {
     }
 }
 
-
-@Preview
+//TODO : la preview dark affiche un ecran tout noir (alors que l'app marche bien)
+@PreviewLightDark
 @Composable
 fun PreviewExpAdditionalInfo() {
     ComposeCVTheme {
