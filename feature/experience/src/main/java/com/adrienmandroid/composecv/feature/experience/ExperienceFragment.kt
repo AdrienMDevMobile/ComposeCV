@@ -1,6 +1,9 @@
 package com.adrienmandroid.composecv.feature.experience
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.asPaddingValues
+import androidx.compose.foundation.layout.statusBars
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.MaterialTheme
@@ -33,7 +36,10 @@ fun ExperiencePage(
     experiences: List<Experience>,
     modifier: Modifier = Modifier,
 ) {
-    LazyColumn(modifier = modifier.background(MaterialTheme.colors.background)) {
+    LazyColumn(
+        modifier = modifier.background(MaterialTheme.colors.background),
+        contentPadding = WindowInsets.statusBars.asPaddingValues(),
+    ) {
         items(items = experiences) {
             ExperienceCard(experience = it)
         }

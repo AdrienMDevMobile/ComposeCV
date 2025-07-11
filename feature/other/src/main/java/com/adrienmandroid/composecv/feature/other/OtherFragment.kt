@@ -1,7 +1,10 @@
 package com.adrienmandroid.composecv.feature.other
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.statusBars
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.MaterialTheme
@@ -57,6 +60,7 @@ fun OtherScreen(
             .fillMaxWidth()
             .wrapContentHeight()
             .background(MaterialTheme.colors.background),
+        contentPadding = WindowInsets.statusBars.asPaddingValues(),
     ) {
         otherSection(
             { StudyList(studies = studies) },
@@ -75,7 +79,7 @@ fun OtherScreen(
 @Preview
 fun PreviewOther() {
     val context = LocalContext.current
-    
+
     ComposeCVTheme {
         OtherScreen(
             studies = StudyPreviewParameterData(context).studies,
