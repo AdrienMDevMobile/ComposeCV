@@ -36,6 +36,7 @@ fun HobbyCardView(hobby: Hobby) {
         )
         Text(
             text = hobby.name,
+            color = MaterialTheme.colors.onBackground,
             style = MaterialTheme.typography.body1.copy(
                 fontWeight = FontWeight.Bold
             ),
@@ -43,13 +44,13 @@ fun HobbyCardView(hobby: Hobby) {
         )
         Text(
             text = hobby.category,
+            color = MaterialTheme.colors.onBackground,
             style = MaterialTheme.typography.body1,
             modifier = Modifier.padding(start = 5.dp)
         )
     }
 }
 
-//TODO probleme de text
 @Composable
 @PreviewLightDark
 fun PreviewHobbyCardView() {

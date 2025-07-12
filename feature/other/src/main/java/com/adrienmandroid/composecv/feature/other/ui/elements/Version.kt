@@ -18,6 +18,7 @@ import com.adrienmandroid.composecv.model.VersionName
 fun Version(versionName: VersionName) {
     Text(
         text = stringResource(R.string.version, versionName),
+        color = MaterialTheme.colors.onBackground,
         modifier = Modifier
             .fillMaxWidth()
             .padding(horizontal = 5.dp),
@@ -26,7 +27,6 @@ fun Version(versionName: VersionName) {
     )
 }
 
-//TODO Broken text
 @PreviewLightDark
 @Composable
 fun PreviewVersion() {

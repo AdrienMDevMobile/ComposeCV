@@ -16,6 +16,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
+import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.feature.other.R
 import com.adrienmandroid.composecv.core.test.R as TestingR
 
@@ -34,6 +35,7 @@ fun LazyListScope.otherSection(
             if (title != null) {
                 Text(
                     text = stringResource(title),
+                    color = MaterialTheme.colors.onBackground,
                     style = MaterialTheme.typography.body1,
                     fontWeight = FontWeight.Bold,
                     modifier = Modifier.padding(start = 5.dp)
@@ -45,14 +47,15 @@ fun LazyListScope.otherSection(
     }
 }
 
-//TODO le text
 @Composable
 @PreviewLightDark
 fun PreviewOtherSection() {
-    LazyColumn {
-        otherSection(
-            { Gratitudes(stringResource(TestingR.string.test_long_text_3_lines)) },
-            title = R.string.title_gratitude
-        )
+    ComposeCVTheme {
+        LazyColumn {
+            otherSection(
+                { Gratitudes(stringResource(TestingR.string.test_long_text_3_lines)) },
+                title = R.string.title_gratitude
+            )
+        }
     }
 }

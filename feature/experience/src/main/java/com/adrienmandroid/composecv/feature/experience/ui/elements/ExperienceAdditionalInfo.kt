@@ -1,6 +1,5 @@
 package com.adrienmandroid.composecv.feature.experience.ui.elements
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -17,27 +16,31 @@ import com.adrienmandroid.composecv.model.Dates
 import com.adrienmandroid.composecv.model.Link
 import java.util.Date
 
+//Note : Text color of a text is by default onX where X is the container containing it
+// (does not take into account column background)
 @Composable
 fun ExpAdditionalInfo(dates: Dates, employer: String?, link: Link?) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .background(MaterialTheme.colors.background)
             .padding(expHorizontalSpacing, expVerticalSpacing)
     ) {
         Text(
             text = dates.begin.toMonthString().plus(" - ").plus(dates.end.toMonthString()),
+            color = MaterialTheme.colors.onBackground,
             style = MaterialTheme.typography.body1,
             fontWeight = FontWeight.Bold,
         )
         Text(
             text = dates.getDifferenceToString(),
+            color = MaterialTheme.colors.onBackground,
             style = MaterialTheme.typography.body1,
             fontWeight = FontWeight.Bold,
         )
         if (employer != null) {
             Text(
                 text = employer,
+                color = MaterialTheme.colors.onBackground,
                 style = MaterialTheme.typography.body1,
                 fontWeight = FontWeight.Bold,
             )
@@ -48,7 +51,6 @@ fun ExpAdditionalInfo(dates: Dates, employer: String?, link: Link?) {
     }
 }
 
-//TODO : la preview dark affiche un ecran tout noir (alors que l'app marche bien)
 @PreviewLightDark
 @Composable
 fun PreviewExpAdditionalInfo() {

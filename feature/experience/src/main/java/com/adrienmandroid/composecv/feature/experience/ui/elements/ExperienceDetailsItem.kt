@@ -27,6 +27,7 @@ fun ExperienceDetailsItem(informations: List<ExperienceInformation>) {
             ) {
                 Text(
                     information.name.toAnnotatedString(),
+                    color = MaterialTheme.colors.onBackground,
                     style = MaterialTheme.typography.body1
                 )
             }
@@ -34,7 +35,6 @@ fun ExperienceDetailsItem(informations: List<ExperienceInformation>) {
     }
 }
 
-//TODO text noir
 @PreviewLightDark
 @Composable
 fun PreviewExperienceDetailsItem() {

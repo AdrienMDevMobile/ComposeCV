@@ -75,7 +75,6 @@ fun OtherScreen(
     }
 }
 
-//TODO le text dans hobbies
 @Composable
 @PreviewLightDark
 fun PreviewOther() {

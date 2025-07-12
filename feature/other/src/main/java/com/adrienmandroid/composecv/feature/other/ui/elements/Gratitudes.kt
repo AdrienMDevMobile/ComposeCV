@@ -16,6 +16,7 @@ import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 fun Gratitudes(gratitude: String) {
     Text(
         text = gratitude,
+        color = MaterialTheme.colors.onBackground,
         modifier = Modifier
             .fillMaxWidth()
             .padding(horizontal = 5.dp),
