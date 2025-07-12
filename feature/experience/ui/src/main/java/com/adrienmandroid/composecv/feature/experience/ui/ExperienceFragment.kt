@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.feature.experience
+package com.adrienmandroid.composecv.feature.experience.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.WindowInsets
@@ -14,9 +14,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
-import com.adrienmandroid.composecv.feature.experience.preview.ExperiencesPreviewParameterData
-import com.adrienmandroid.composecv.feature.experience.ui.elements.ExperienceCard
-import com.adrienmandroid.composecv.feature.experience.viewmodel.ExperienceViewmodel
+import com.adrienmandroid.composecv.feature.experience.ui.preview.ExperiencesPreviewParameterData
+import com.adrienmandroid.composecv.feature.experience.ui.ui.elements.ExperienceCard
+import com.adrienmandroid.composecv.feature.experience.ui.viewmodel.ExperienceViewmodel
 import com.adrienmandroid.composecv.model.Experience
 
 @Composable

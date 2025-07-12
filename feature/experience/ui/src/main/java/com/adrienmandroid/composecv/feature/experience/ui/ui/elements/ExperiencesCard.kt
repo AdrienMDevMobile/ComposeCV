@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.feature.experience.ui.elements
+package com.adrienmandroid.composecv.feature.experience.ui.ui.elements
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -15,7 +15,7 @@ import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
-import com.adrienmandroid.composecv.feature.experience.preview.ExperiencesPreviewParameterProvider
+import com.adrienmandroid.composecv.feature.experience.ui.preview.ExperiencesPreviewParameterProvider
 import com.adrienmandroid.composecv.model.Experience
 
 val expHorizontalSpacing = 10.dp

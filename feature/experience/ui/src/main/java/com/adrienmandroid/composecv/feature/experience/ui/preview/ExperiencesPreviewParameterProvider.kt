@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.feature.experience.preview
+package com.adrienmandroid.composecv.feature.experience.ui.preview
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import com.adrienmandroid.composecv.model.Dates
