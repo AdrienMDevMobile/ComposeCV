@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.feature.welcome.ui.element
+package com.adrienmandroid.composecv.feature.welcome.ui.ui.element
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -14,7 +14,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
-import com.adrienmandroid.composecv.feature.welcome.preview.WelcomePreviewParameterData
+import com.adrienmandroid.composecv.feature.welcome.ui.preview.WelcomePreviewParameterData
 import com.adrienmandroid.composecv.model.Clickable
 import com.adrienmandroid.composecv.model.WelcomeBodyElement
 

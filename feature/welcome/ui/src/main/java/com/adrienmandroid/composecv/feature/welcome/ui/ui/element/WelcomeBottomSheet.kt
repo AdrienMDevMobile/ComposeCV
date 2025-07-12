@@ -1,53 +1,50 @@
-package com.adrienmandroid.composecv.feature.welcome.ui.element
+package com.adrienmandroid.composecv.feature.welcome.ui.ui.element
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.PreviewLightDark
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
-import com.adrienmandroid.composecv.core.ui.theme.roundedTopEndSquare
+import com.adrienmandroid.composecv.feature.welcome.ui.preview.WelcomePreviewParameterData
+import com.adrienmandroid.composecv.model.Clickable
+import com.adrienmandroid.composecv.model.WelcomeBodyElement
 import com.adrienmandroid.composecv.core.test.R as TestingR
 
-fun LazyListScope.bottomsheetHeader(
-    verticalArrangement: Dp = 32.dp,
-    content: (@Composable () -> Unit)? = null,
+@Composable
+fun WelcomeBottomSheet(
+    contentCovered: @Composable () -> Unit,
+    welcomeBodyElements: List<WelcomeBodyElement>,
+    onClick: (Clickable) -> Unit,
+    modifier: Modifier = Modifier,
+    anchoredContent: (@Composable () -> Unit)? = null,
 ) {
-    item {
-        Column(
-            modifier = Modifier.fillMaxWidth(1f),
-            verticalArrangement = Arrangement.spacedBy(verticalArrangement.unaryMinus())
-        ) {
-            content?.let {
-                content()
+    Box(modifier = modifier) {
+        contentCovered()
+        LazyColumn {
+            item {
+                Spacer(modifier = Modifier.height(20.dp))
             }
-            Spacer(
-                modifier = Modifier
-                    .height(verticalArrangement)
-                    .fillMaxWidth(1f)
-                    .background(
-                        MaterialTheme.colors.background,
-                        roundedTopEndSquare
-                    )
-
+            bottomsheetHeader(
+                content = anchoredContent
+            )
+            bottomsheetBody(
+                welcomeBodyElements = welcomeBodyElements,
+                onClick = onClick
             )
         }
     }
@@ -55,10 +52,20 @@ fun LazyListScope.bottomsheetHeader(
 
 @PreviewLightDark
 @Composable
-fun PreviewBottomSheetHeader() {
+fun PreviewBottomSheet() {
+    val context = LocalContext.current
+
     ComposeCVTheme {
-        LazyColumn {
-            bottomsheetHeader {
+        WelcomeBottomSheet(
+            contentCovered = {
+                Image(
+                    painter = painterResource(TestingR.drawable.img_test),
+                    contentDescription = "Test"
+                )
+            },
+            welcomeBodyElements = WelcomePreviewParameterData(context).welcomeBodyElements,
+            onClick = {},
+            anchoredContent = {
                 Image(
                     painter = painterResource(TestingR.drawable.img_test),
                     contentDescription = "Picture",
@@ -72,16 +79,7 @@ fun PreviewBottomSheetHeader() {
                         .border(4.dp, MaterialTheme.colors.background, CircleShape)
                 )
             }
-        }
+        )
     }
 }
 
-@PreviewLightDark
-@Composable
-fun PreviewBottomSheetHeaderNull() {
-    ComposeCVTheme {
-        LazyColumn {
-            bottomsheetHeader()
-        }
-    }
-}

@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.feature.welcome.ui.element
+package com.adrienmandroid.composecv.feature.welcome.ui.ui.element
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -16,7 +16,7 @@ import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.core.ui.theme.border
-import com.adrienmandroid.composecv.feature.welcome.R
+import com.adrienmandroid.composecv.core.test.R as TestingR
 import com.google.accompanist.flowlayout.FlowRow
 import com.adrienmandroid.composecv.model.Keyword as KeywordData
 
@@ -55,11 +55,11 @@ fun PreviewKeywords() {
     val context = LocalContext.current
     ComposeCVTheme {
         Keywords(
-            KeywordData(context.getString(R.string.test_court)),
-            KeywordData(context.getString(R.string.test_court)),
-            KeywordData(context.getString(R.string.test_court)),
-            KeywordData(context.getString(R.string.test_court)),
-            KeywordData(context.getString(R.string.test_court)),
+            KeywordData(context.getString(TestingR.string.test_1_word)),
+            KeywordData(context.getString(TestingR.string.test_1_word)),
+            KeywordData(context.getString(TestingR.string.test_1_word)),
+            KeywordData(context.getString(TestingR.string.test_1_word)),
+            KeywordData(context.getString(TestingR.string.test_1_word)),
         )
     }
 }

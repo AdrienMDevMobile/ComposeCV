@@ -51,6 +51,7 @@ dependencies {
     implementation(project(":core:ui"))
     implementation(project(":core:data"))
     implementation(project(":feature:welcome"))
+    implementation(project(":feature:welcome:ui"))
     implementation(project(":feature:skills"))
     implementation(project(":feature:experience"))
     implementation(project(":feature:other"))

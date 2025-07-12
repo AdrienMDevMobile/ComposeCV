@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.feature.welcome.preview
+package com.adrienmandroid.composecv.feature.welcome.ui.preview
 
 import android.content.Context
 import com.adrienmandroid.composecv.core.test.R as TestingR

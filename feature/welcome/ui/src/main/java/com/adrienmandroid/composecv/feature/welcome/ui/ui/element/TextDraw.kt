@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.feature.welcome.ui.element
+package com.adrienmandroid.composecv.feature.welcome.ui.ui.element
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.clickable
