@@ -24,7 +24,7 @@ import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.LiveData
@@ -65,7 +65,9 @@ fun SkillCard(skill: Skill) {
             skill.subSkills?.let { subskills ->
                 Row(
                     horizontalArrangement = Arrangement.SpaceBetween,
-                    modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp)
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 16.dp)
                 ) {
                     Text(
                         text = subskills.first,
@@ -132,8 +134,8 @@ fun SkillText(isVisible: LiveData<Boolean>, text: String) {
     }
 }
 
+@PreviewLightDark
 @Composable
-@Preview
 fun SkillCardPreview(
     @PreviewParameter(SkillsPreviewParameterDataProvider::class) skill: Skill
 ) {

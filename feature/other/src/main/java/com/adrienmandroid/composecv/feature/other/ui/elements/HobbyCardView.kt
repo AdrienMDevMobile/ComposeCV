@@ -12,7 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.model.Hobby
@@ -36,6 +36,7 @@ fun HobbyCardView(hobby: Hobby) {
         )
         Text(
             text = hobby.name,
+            color = MaterialTheme.colors.onBackground,
             style = MaterialTheme.typography.body1.copy(
                 fontWeight = FontWeight.Bold
             ),
@@ -43,6 +44,7 @@ fun HobbyCardView(hobby: Hobby) {
         )
         Text(
             text = hobby.category,
+            color = MaterialTheme.colors.onBackground,
             style = MaterialTheme.typography.body1,
             modifier = Modifier.padding(start = 5.dp)
         )
@@ -50,12 +52,12 @@ fun HobbyCardView(hobby: Hobby) {
 }
 
 @Composable
-@Preview
+@PreviewLightDark
 fun PreviewHobbyCardView() {
     ComposeCVTheme {
         HobbyCardView(
             hobby = Hobby(
-                name = stringResource(id = TestingR.string.test_1_word) ,
+                name = stringResource(id = TestingR.string.test_1_word),
                 TestingR.drawable.ic_test,
                 stringResource(id = TestingR.string.test_short_text_1_line)
             )

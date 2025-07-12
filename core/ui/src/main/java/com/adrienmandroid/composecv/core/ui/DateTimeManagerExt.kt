@@ -5,7 +5,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewLightDark
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.model.Dates
 import java.text.DateFormat
@@ -80,7 +80,7 @@ fun Dates.getDifferenceInts(): Difference {
 
 data class Difference(val numberYears: Int, val numberMonths: Int)
 
-@Preview
+@PreviewLightDark
 @Composable
 fun PreviewDateManager(){
     ComposeCVTheme {

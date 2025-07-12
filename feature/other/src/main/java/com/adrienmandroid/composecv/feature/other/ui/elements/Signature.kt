@@ -14,7 +14,7 @@ import androidx.compose.ui.graphics.ClipOp
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.drawscope.clipPath
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 
@@ -59,7 +59,7 @@ fun Signature(color: Color) {
 }
 
 
-@Preview
+@PreviewLightDark
 @Composable
 fun PreviewSignature() {
     ComposeCVTheme {

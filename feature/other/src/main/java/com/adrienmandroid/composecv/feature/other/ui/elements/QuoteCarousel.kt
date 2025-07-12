@@ -7,7 +7,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.core.ui.theme.carouselButton
 import com.adrienmandroid.composecv.feature.other.preview.data.QuotePreviewParameterData
@@ -41,8 +41,8 @@ fun QuoteCarousel(quotes: List<Quote>) {
     }
 }
 
+@PreviewLightDark
 @Composable
-@Preview
 fun PreviewQuoteCarousel() {
     QuoteCarousel(QuotePreviewParameterData.quotes)
 }

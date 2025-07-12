@@ -7,7 +7,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.tooling.preview.datasource.LoremIpsum
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
@@ -16,6 +16,7 @@ import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 fun Gratitudes(gratitude: String) {
     Text(
         text = gratitude,
+        color = MaterialTheme.colors.onBackground,
         modifier = Modifier
             .fillMaxWidth()
             .padding(horizontal = 5.dp),
@@ -24,7 +25,8 @@ fun Gratitudes(gratitude: String) {
     )
 }
 
-@Preview
+//TODO : probleme couleur de text dans les preview
+@PreviewLightDark
 @Composable
 fun PreviewGratitudes() {
     ComposeCVTheme {

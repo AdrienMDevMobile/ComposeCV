@@ -102,6 +102,11 @@ fun StudyCard(study: Study) {
 }
 
 @Preview(
+    uiMode = Configuration.UI_MODE_NIGHT_NO,
+    widthDp = 300,
+    heightDp = 200
+)
+@Preview(
     uiMode = Configuration.UI_MODE_NIGHT_YES,
     widthDp = 300,
     heightDp = 200

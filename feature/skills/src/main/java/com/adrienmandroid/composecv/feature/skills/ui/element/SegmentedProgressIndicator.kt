@@ -14,7 +14,7 @@ import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.platform.LocalDensity
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
@@ -95,17 +95,15 @@ private fun DrawScope.drawSegments(
         }
         if (isLtr && offset <= end || !isLtr && segmentEnd > end) {
             drawRect(
-                color,
-                Offset(segmentStart, 0f),
-                Size(segmentEnd - segmentStart, segmentHeight)
+                color, Offset(segmentStart, 0f), Size(segmentEnd - segmentStart, segmentHeight)
             )
         }
     }
 }
 
-@Preview
+@PreviewLightDark
 @Composable
-fun PreviewSegmentedProgresIndicator(){
+fun PreviewSegmentedProgresIndicator() {
     ComposeCVTheme {
         SegmentedProgressIndicator(
             progress = 0.7f,

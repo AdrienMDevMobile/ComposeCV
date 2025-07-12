@@ -11,7 +11,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
@@ -45,7 +45,7 @@ fun ExperienceCard(experience: Experience) {
     }
 }
 
-@Preview
+@PreviewLightDark
 @Composable
 fun ExperienceCardPreview(
     @PreviewParameter(ExperiencesPreviewParameterProvider::class) experience: Experience

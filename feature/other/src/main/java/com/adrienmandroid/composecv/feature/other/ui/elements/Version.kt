@@ -8,7 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.feature.other.R
@@ -18,6 +18,7 @@ import com.adrienmandroid.composecv.model.VersionName
 fun Version(versionName: VersionName) {
     Text(
         text = stringResource(R.string.version, versionName),
+        color = MaterialTheme.colors.onBackground,
         modifier = Modifier
             .fillMaxWidth()
             .padding(horizontal = 5.dp),
@@ -26,9 +27,9 @@ fun Version(versionName: VersionName) {
     )
 }
 
-@Preview
+@PreviewLightDark
 @Composable
-fun PreviewVersion(){
+fun PreviewVersion() {
     ComposeCVTheme {
         Version("1.0.0-Test")
     }
