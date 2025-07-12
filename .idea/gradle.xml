@@ -35,6 +35,7 @@
             <option value="$PROJECT_DIR$/feature/other" />
             <option value="$PROJECT_DIR$/feature/skills" />
             <option value="$PROJECT_DIR$/feature/welcome" />
+            <option value="$PROJECT_DIR$/feature/welcome/ui" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />
