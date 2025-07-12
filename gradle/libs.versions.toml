@@ -21,6 +21,7 @@ lifecycle-viewmodel-compose = "2.9.0"
 lifecycleRuntime = "2.9.0"
 material = "1.12.0"
 navigation = "2.9.0"
+jetbrainsKotlinJvm = "1.9.24"
 
 [libraries]
 accompanist-flowlayout = { group = "ca.gosyer", name = "accompanist-flowlayout", version.ref = "flowlayout" }
@@ -65,3 +66,4 @@ convention-application = { id = "com.adrienmandroid.composecv.application" }
 convention-library = { id = "com.adrienmandroid.composecv.library" }
 convention-compose-library = { id = "com.adrienmandroid.composecv.compose" }
 convention-hilt-library = { id = "com.adrienmandroid.composecv.hilt" }
+jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
