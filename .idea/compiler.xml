@@ -2,6 +2,8 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="21">
+      <module name="ComposeCV.feature.experience.ui.main" target="11" />
+      <module name="ComposeCV.feature.experience.ui.test" target="11" />
       <module name="ComposeCV.feature.welcome.ui.main" target="11" />
       <module name="ComposeCV.feature.welcome.ui.test" target="11" />
     </bytecodeTargetLevel>
