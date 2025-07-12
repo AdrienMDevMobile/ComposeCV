@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.adrienmandroid.composecv.feature.welcome"
+    namespace = "com.adrienmandroid.composecv.feature.welcome.ui"
 
 }
 
