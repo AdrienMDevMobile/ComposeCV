@@ -7,28 +7,32 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
+import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.core.ui.theme.carouselButton
-import com.adrienmandroid.composecv.feature.other.preview.data.QuotePreviewParameterData
-import com.adrienmandroid.composecv.model.Quote
+import com.adrienmandroid.composecv.feature.other.ui.preview.data.StudyPreviewParameterData
+import com.adrienmandroid.composecv.model.Study
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.HorizontalPagerIndicator
 import com.google.accompanist.pager.rememberPagerState
 
+val studyVerticalSpacing = 10.dp
+
 @OptIn(ExperimentalPagerApi::class)
 @Composable
-fun QuoteCarousel(quotes: List<Quote>) {
+fun StudyList(studies: List<Study>) {
     Column {
         val pagerState = rememberPagerState()
 
         HorizontalPager(
-            count = quotes.size,
+            count = studies.size,
             state = pagerState,
             contentPadding = PaddingValues(horizontal = 12.dp),
         ) { page ->
-            QuoteCardDraw(quotes[page], page)
+            StudyCard(studies[page])
         }
 
         HorizontalPagerIndicator(
@@ -41,8 +45,11 @@ fun QuoteCarousel(quotes: List<Quote>) {
     }
 }
 
-@PreviewLightDark
 @Composable
-fun PreviewQuoteCarousel() {
-    QuoteCarousel(QuotePreviewParameterData.quotes)
+@PreviewLightDark
+fun PreviewStudyList() {
+    val studies = StudyPreviewParameterData(LocalContext.current).studies
+    ComposeCVTheme {
+        StudyList(studies = studies)
+    }
 }

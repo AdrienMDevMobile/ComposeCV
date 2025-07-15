@@ -54,4 +54,5 @@ dependencies {
     implementation(project(":feature:skills"))
     implementation(project(":feature:experience:ui"))
     implementation(project(":feature:other"))
+    implementation(project(":feature:other:ui"))
 }

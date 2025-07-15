@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.feature.other.preview.data
+package com.adrienmandroid.composecv.feature.other.ui.preview.data
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import com.adrienmandroid.composecv.core.test.R

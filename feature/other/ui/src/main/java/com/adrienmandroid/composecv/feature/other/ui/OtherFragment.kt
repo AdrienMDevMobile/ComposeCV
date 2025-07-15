@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.feature.other
+package com.adrienmandroid.composecv.feature.other.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.WindowInsets
@@ -16,9 +16,9 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
-import com.adrienmandroid.composecv.feature.other.preview.data.HobbyPreviewParameterData
-import com.adrienmandroid.composecv.feature.other.preview.data.QuotePreviewParameterData
-import com.adrienmandroid.composecv.feature.other.preview.data.StudyPreviewParameterData
+import com.adrienmandroid.composecv.feature.other.ui.preview.data.HobbyPreviewParameterData
+import com.adrienmandroid.composecv.feature.other.ui.preview.data.QuotePreviewParameterData
+import com.adrienmandroid.composecv.feature.other.ui.preview.data.StudyPreviewParameterData
 import com.adrienmandroid.composecv.feature.other.ui.elements.Gratitudes
 import com.adrienmandroid.composecv.feature.other.ui.elements.HobbyRow
 import com.adrienmandroid.composecv.feature.other.ui.elements.QuoteCarousel
@@ -26,7 +26,7 @@ import com.adrienmandroid.composecv.feature.other.ui.elements.Signature
 import com.adrienmandroid.composecv.feature.other.ui.elements.StudyList
 import com.adrienmandroid.composecv.feature.other.ui.elements.Version
 import com.adrienmandroid.composecv.feature.other.ui.elements.otherSection
-import com.adrienmandroid.composecv.feature.other.viewmodel.OtherViewModel
+import com.adrienmandroid.composecv.feature.other.ui.viewmodel.OtherViewModel
 import com.adrienmandroid.composecv.model.Hobby
 import com.adrienmandroid.composecv.model.Quote
 import com.adrienmandroid.composecv.model.Study
