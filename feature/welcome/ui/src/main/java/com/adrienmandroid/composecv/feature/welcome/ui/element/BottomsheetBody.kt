@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.feature.welcome.ui.ui.element
+package com.adrienmandroid.composecv.feature.welcome.ui.element
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box

@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.feature.experience.ui.ui.elements
+package com.adrienmandroid.composecv.feature.experience.ui.elements
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer

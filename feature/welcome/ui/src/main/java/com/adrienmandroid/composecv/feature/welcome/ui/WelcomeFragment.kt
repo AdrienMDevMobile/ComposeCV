@@ -22,7 +22,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.adrienmandroid.composecv.feature.welcome.ui.ui.element.WelcomeBottomSheet
+import com.adrienmandroid.composecv.feature.welcome.ui.element.WelcomeBottomSheet
 import com.adrienmandroid.composecv.feature.welcome.ui.viewmodel.WelcomeViewModel
 import com.adrienmandroid.composecv.feature.welcome.ui.viewmodel.WelcomeViewModel.ClickAction
 import com.adrienmandroid.composecv.model.WelcomePage

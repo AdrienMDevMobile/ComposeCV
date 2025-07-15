@@ -15,7 +15,7 @@ import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.feature.experience.ui.preview.ExperiencesPreviewParameterData
-import com.adrienmandroid.composecv.feature.experience.ui.ui.elements.ExperienceCard
+import com.adrienmandroid.composecv.feature.experience.ui.elements.ExperienceCard
 import com.adrienmandroid.composecv.feature.experience.ui.viewmodel.ExperienceViewmodel
 import com.adrienmandroid.composecv.model.Experience
 
