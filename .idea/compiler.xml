@@ -6,6 +6,8 @@
       <module name="ComposeCV.feature.experience.ui.test" target="11" />
       <module name="ComposeCV.feature.other.ui.main" target="11" />
       <module name="ComposeCV.feature.other.ui.test" target="11" />
+      <module name="ComposeCV.feature.skills.ui.main" target="11" />
+      <module name="ComposeCV.feature.skills.ui.test" target="11" />
       <module name="ComposeCV.feature.welcome.ui.main" target="11" />
       <module name="ComposeCV.feature.welcome.ui.test" target="11" />
     </bytecodeTargetLevel>
