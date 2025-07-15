@@ -31,8 +31,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.core.ui.toAnnotatedString
-import com.adrienmandroid.composecv.feature.skills.R
-import com.adrienmandroid.composecv.feature.skills.preview.SkillsPreviewParameterDataProvider
+import com.adrienmandroid.composecv.feature.skills.ui.R
+import com.adrienmandroid.composecv.feature.skills.ui.preview.SkillsPreviewParameterDataProvider
 import com.adrienmandroid.composecv.model.Skill
 
 @Composable

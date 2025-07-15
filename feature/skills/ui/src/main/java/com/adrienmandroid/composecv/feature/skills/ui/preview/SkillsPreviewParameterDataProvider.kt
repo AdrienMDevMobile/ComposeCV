@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.feature.skills.preview
+package com.adrienmandroid.composecv.feature.skills.ui.preview
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.tooling.preview.datasource.LoremIpsum

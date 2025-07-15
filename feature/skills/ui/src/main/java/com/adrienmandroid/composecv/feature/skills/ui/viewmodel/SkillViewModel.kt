@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.feature.skills.viewmodel
+package com.adrienmandroid.composecv.feature.skills.ui.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
