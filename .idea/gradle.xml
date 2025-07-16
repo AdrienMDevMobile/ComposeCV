@@ -41,6 +41,7 @@
             <option value="$PROJECT_DIR$/feature/skills/domain" />
             <option value="$PROJECT_DIR$/feature/skills/ui" />
             <option value="$PROJECT_DIR$/feature/welcome" />
+            <option value="$PROJECT_DIR$/feature/welcome/data" />
             <option value="$PROJECT_DIR$/feature/welcome/domain" />
             <option value="$PROJECT_DIR$/feature/welcome/ui" />
           </set>
