@@ -1,10 +1,10 @@
-package com.adrienmandroid.composecv.data.impl
+package com.adrienmandroid.composecv.feature.other
 
 import android.content.Context
 import com.adrienmandroid.composecv.data.R
-import com.adrienmandroid.composecv.data.StudyRepository
+import com.adrienmandroid.composecv.feature.other.domain.repository.StudyRepository
 import com.adrienmandroid.composecv.model.Dates
-import com.adrienmandroid.composecv.model.Study
+import com.adrienmandroid.composecv.feature.other.domain.model.Study
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.util.Date
 import javax.inject.Inject

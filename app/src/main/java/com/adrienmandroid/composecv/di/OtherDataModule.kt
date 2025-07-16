@@ -1,15 +1,15 @@
-package com.adrienmandroid.composecv.data.di
+package com.adrienmandroid.composecv.di
 
-import com.adrienmandroid.composecv.data.GratitudeRepository
-import com.adrienmandroid.composecv.data.HobbyRepository
-import com.adrienmandroid.composecv.data.QuoteRepository
-import com.adrienmandroid.composecv.data.StudyRepository
-import com.adrienmandroid.composecv.data.VersionNameRepository
-import com.adrienmandroid.composecv.data.impl.GratitudeRepositoryImpl
-import com.adrienmandroid.composecv.data.impl.HobbyRepositoryImpl
-import com.adrienmandroid.composecv.data.impl.QuoteRepositoryImpl
-import com.adrienmandroid.composecv.data.impl.StudyRepositoryImpl
-import com.adrienmandroid.composecv.data.impl.VersionNameRepositoryImpl
+import com.adrienmandroid.composecv.feature.other.domain.repository.GratitudeRepository
+import com.adrienmandroid.composecv.feature.other.domain.repository.HobbyRepository
+import com.adrienmandroid.composecv.feature.other.domain.repository.QuoteRepository
+import com.adrienmandroid.composecv.feature.other.domain.repository.StudyRepository
+import com.adrienmandroid.composecv.feature.other.domain.repository.VersionNameRepository
+import com.adrienmandroid.composecv.feature.other.GratitudeRepositoryImpl
+import com.adrienmandroid.composecv.feature.other.HobbyRepositoryImpl
+import com.adrienmandroid.composecv.feature.other.QuoteRepositoryImpl
+import com.adrienmandroid.composecv.feature.other.StudyRepositoryImpl
+import com.adrienmandroid.composecv.feature.other.VersionNameRepositoryImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

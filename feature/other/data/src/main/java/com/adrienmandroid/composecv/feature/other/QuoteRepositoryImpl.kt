@@ -1,9 +1,9 @@
-package com.adrienmandroid.composecv.data.impl
+package com.adrienmandroid.composecv.feature.other
 
 import android.content.Context
-import com.adrienmandroid.composecv.data.QuoteRepository
+import com.adrienmandroid.composecv.feature.other.domain.repository.QuoteRepository
 import com.adrienmandroid.composecv.data.R
-import com.adrienmandroid.composecv.model.Quote
+import com.adrienmandroid.composecv.feature.other.domain.model.Quote
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 

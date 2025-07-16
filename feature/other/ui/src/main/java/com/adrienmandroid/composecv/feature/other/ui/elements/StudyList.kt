@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.core.ui.theme.carouselButton
 import com.adrienmandroid.composecv.feature.other.ui.preview.data.StudyPreviewParameterData
-import com.adrienmandroid.composecv.model.Study
+import com.adrienmandroid.composecv.feature.other.domain.model.Study
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.HorizontalPagerIndicator

@@ -1,9 +1,9 @@
-package com.adrienmandroid.composecv.data.impl
+package com.adrienmandroid.composecv.feature.other
 
 import android.content.Context
 import com.adrienmandroid.composecv.data.R
-import com.adrienmandroid.composecv.model.Hobby
-import com.adrienmandroid.composecv.data.HobbyRepository
+import com.adrienmandroid.composecv.feature.other.domain.model.Hobby
+import com.adrienmandroid.composecv.feature.other.domain.repository.HobbyRepository
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 

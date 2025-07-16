@@ -2,7 +2,7 @@ package com.adrienmandroid.composecv.feature.other.ui.preview.data
 
 import android.content.Context
 import com.adrienmandroid.composecv.core.test.R
-import com.adrienmandroid.composecv.model.Hobby
+import com.adrienmandroid.composecv.feature.other.domain.model.Hobby
 
 class HobbyPreviewParameterData(
     context: Context,

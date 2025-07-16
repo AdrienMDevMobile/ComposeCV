@@ -1,6 +1,7 @@
-package com.adrienmandroid.composecv.model
+package com.adrienmandroid.composecv.feature.other.domain.model
 
 import androidx.annotation.DrawableRes
+import com.adrienmandroid.composecv.model.Dates
 
 data class Study(
     //later : replace with string : url of the picture

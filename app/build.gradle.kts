@@ -59,5 +59,7 @@ dependencies {
     implementation(project(":feature:skills:data"))
     implementation(project(":feature:skills:domain"))
     implementation(project(":feature:skills:ui"))
+    implementation(project(":feature:other:data"))
+    implementation(project(":feature:other:domain"))
     implementation(project(":feature:other:ui"))
 }

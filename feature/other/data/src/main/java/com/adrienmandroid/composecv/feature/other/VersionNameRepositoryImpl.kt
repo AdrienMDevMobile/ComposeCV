@@ -1,7 +1,7 @@
-package com.adrienmandroid.composecv.data.impl
+package com.adrienmandroid.composecv.feature.other
 
 import android.os.Build
-import com.adrienmandroid.composecv.data.VersionNameRepository
+import com.adrienmandroid.composecv.feature.other.domain.repository.VersionNameRepository
 import javax.inject.Inject
 
 class VersionNameRepositoryImpl @Inject constructor()

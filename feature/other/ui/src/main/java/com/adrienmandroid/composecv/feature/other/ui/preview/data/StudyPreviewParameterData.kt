@@ -3,7 +3,7 @@ package com.adrienmandroid.composecv.feature.other.ui.preview.data
 import android.content.Context
 import com.adrienmandroid.composecv.core.test.R
 import com.adrienmandroid.composecv.model.Dates
-import com.adrienmandroid.composecv.model.Study
+import com.adrienmandroid.composecv.feature.other.domain.model.Study
 import java.util.Date
 
 class StudyPreviewParameterData(
