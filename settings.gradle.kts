@@ -31,3 +31,4 @@ include(":feature:other:ui")
 include(":feature:other:domain")
 
 include(":feature:welcome:data")
+include(":feature:experience:data")
