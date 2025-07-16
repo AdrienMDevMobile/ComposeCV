@@ -36,6 +36,7 @@
             <option value="$PROJECT_DIR$/feature/experience/domain" />
             <option value="$PROJECT_DIR$/feature/experience/ui" />
             <option value="$PROJECT_DIR$/feature/other" />
+            <option value="$PROJECT_DIR$/feature/other/data" />
             <option value="$PROJECT_DIR$/feature/other/domain" />
             <option value="$PROJECT_DIR$/feature/other/ui" />
             <option value="$PROJECT_DIR$/feature/skills" />
