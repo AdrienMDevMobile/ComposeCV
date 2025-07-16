@@ -13,10 +13,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
+import com.adrienmandroid.composecv.feature.skills.domain.model.Skill
 import com.adrienmandroid.composecv.feature.skills.ui.preview.SkillsPreviewParameterData
 import com.adrienmandroid.composecv.feature.skills.ui.element.SkillCard
 import com.adrienmandroid.composecv.feature.skills.ui.viewmodel.SkillViewModel
-import com.adrienmandroid.composecv.model.Skill
 
 @Composable
 fun SkillFragment(

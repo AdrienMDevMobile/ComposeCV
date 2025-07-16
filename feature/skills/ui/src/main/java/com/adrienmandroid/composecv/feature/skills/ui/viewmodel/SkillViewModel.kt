@@ -3,8 +3,8 @@ package com.adrienmandroid.composecv.feature.skills.ui.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.adrienmandroid.composecv.data.SkillRepository
-import com.adrienmandroid.composecv.model.Skill
+import com.adrienmandroid.composecv.feature.skills.domain.repository.SkillRepository
+import com.adrienmandroid.composecv.feature.skills.domain.model.Skill
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

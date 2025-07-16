@@ -33,7 +33,7 @@ import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.core.ui.toAnnotatedString
 import com.adrienmandroid.composecv.feature.skills.ui.R
 import com.adrienmandroid.composecv.feature.skills.ui.preview.SkillsPreviewParameterDataProvider
-import com.adrienmandroid.composecv.model.Skill
+import com.adrienmandroid.composecv.feature.skills.domain.model.Skill
 
 @Composable
 fun SkillCard(skill: Skill) {
@@ -137,7 +137,7 @@ fun SkillText(isVisible: LiveData<Boolean>, text: String) {
 @PreviewLightDark
 @Composable
 fun SkillCardPreview(
-    @PreviewParameter(SkillsPreviewParameterDataProvider::class) skill: Skill
+    @PreviewParameter(SkillsPreviewParameterDataProvider::class) skill: com.adrienmandroid.composecv.feature.skills.domain.model.Skill
 ) {
     ComposeCVTheme {
         SkillCard(skill)

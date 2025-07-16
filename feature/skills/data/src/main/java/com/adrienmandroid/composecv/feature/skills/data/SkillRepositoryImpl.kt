@@ -1,10 +1,11 @@
-package com.adrienmandroid.composecv.data.impl
+package com.adrienmandroid.composecv.feature.skills.data
 
-import com.adrienmandroid.composecv.model.Skill
-import com.adrienmandroid.composecv.data.SkillRepository
+import com.adrienmandroid.composecv.feature.skills.domain.model.Skill
+import com.adrienmandroid.composecv.feature.skills.domain.repository.SkillRepository
 import javax.inject.Inject
 
-class SkillRepositoryImpl @Inject constructor() : SkillRepository {
+class SkillRepositoryImpl @Inject constructor() :
+     SkillRepository {
 
     override fun getSkills(): List<Skill> = listOf(
         Skill(
