@@ -3,9 +3,9 @@ package com.adrienmandroid.composecv.feature.welcome.ui.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.adrienmandroid.composecv.data.WelcomeElementsRepository
-import com.adrienmandroid.composecv.model.Clickable
-import com.adrienmandroid.composecv.model.WelcomePage
+import com.adrienmandroid.composecv.feature.welcome.domain.model.Clickable
+import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomePage
+import com.adrienmandroid.composecv.feature.welcome.domain.repository.WelcomeElementsRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
@@ -13,8 +13,8 @@ import javax.inject.Inject
 class WelcomeViewModel @Inject constructor(
     welcomeElementsRepository: WelcomeElementsRepository
 ) : ViewModel() {
-    private val _welcomePage = MutableLiveData<WelcomePage?>(null)
-    val welcomePage: LiveData<WelcomePage?>
+    private val _welcomePage = MutableLiveData <WelcomePage?>(null)
+    val welcomePage: LiveData <WelcomePage?>
         get() = _welcomePage
 
     private val _webUrl = MutableLiveData<String?>()

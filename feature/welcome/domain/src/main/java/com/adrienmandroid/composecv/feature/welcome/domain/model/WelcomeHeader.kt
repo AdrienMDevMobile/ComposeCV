@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.model
+package com.adrienmandroid.composecv.feature.welcome.domain.model
 
 import androidx.annotation.DrawableRes
 

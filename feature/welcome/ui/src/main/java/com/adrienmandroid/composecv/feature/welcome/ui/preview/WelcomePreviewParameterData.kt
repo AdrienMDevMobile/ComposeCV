@@ -2,9 +2,9 @@ package com.adrienmandroid.composecv.feature.welcome.ui.preview
 
 import android.content.Context
 import com.adrienmandroid.composecv.core.test.R as TestingR
-import com.adrienmandroid.composecv.model.Keyword
+import com.adrienmandroid.composecv.feature.welcome.domain.model.Keyword
 import com.adrienmandroid.composecv.model.TypographyEnum
-import com.adrienmandroid.composecv.model.WelcomeBodyElement
+import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeBodyElement
 
 class WelcomePreviewParameterData(
     context: Context,

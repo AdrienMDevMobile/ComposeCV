@@ -18,7 +18,7 @@ import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.core.ui.theme.border
 import com.adrienmandroid.composecv.core.test.R as TestingR
 import com.google.accompanist.flowlayout.FlowRow
-import com.adrienmandroid.composecv.model.Keyword as KeywordData
+import com.adrienmandroid.composecv.feature.welcome.domain.model.Keyword as KeywordData
 
 @Composable
 private fun Keyword(keyword: String) {

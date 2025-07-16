@@ -4,8 +4,8 @@ import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.runtime.Composable
 import com.adrienmandroid.composecv.core.ui.getDifferenceYearsToString
 import com.adrienmandroid.composecv.core.ui.toMaterialTypography
-import com.adrienmandroid.composecv.model.Clickable
-import com.adrienmandroid.composecv.model.WelcomeBodyElement
+import com.adrienmandroid.composecv.feature.welcome.domain.model.Clickable
+import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeBodyElement
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable

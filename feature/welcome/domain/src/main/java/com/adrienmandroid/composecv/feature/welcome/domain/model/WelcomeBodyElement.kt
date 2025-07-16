@@ -1,6 +1,7 @@
-package com.adrienmandroid.composecv.model
+package com.adrienmandroid.composecv.feature.welcome.domain.model
 
 import androidx.annotation.DrawableRes
+import com.adrienmandroid.composecv.model.TypographyEnum
 import java.util.Date
 
 sealed class WelcomeBodyElement {
