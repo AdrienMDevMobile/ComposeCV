@@ -1,13 +1,15 @@
 plugins {
-    id("java-library")
-    alias(libs.plugins.jetbrains.kotlin.jvm)
+    alias(libs.plugins.convention.library)
+    alias(libs.plugins.convention.compose.library)
+    alias(libs.plugins.convention.hilt.library)
+    alias(libs.plugins.kotlin.android)
 }
-java {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
+
+android {
+    namespace = "com.adrienmandroid.composecv.feature.skills.data"
 }
-kotlin {
-    compilerOptions {
-        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11
-    }
+
+dependencies {
+    implementation(project(":core:data"))
+    implementation(project(":core:ui"))
 }
