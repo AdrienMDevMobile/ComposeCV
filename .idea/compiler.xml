@@ -4,6 +4,8 @@
     <bytecodeTargetLevel target="21">
       <module name="ComposeCV.feature.experience.ui.main" target="11" />
       <module name="ComposeCV.feature.experience.ui.test" target="11" />
+      <module name="ComposeCV.feature.other.domain.main" target="11" />
+      <module name="ComposeCV.feature.other.domain.test" target="11" />
       <module name="ComposeCV.feature.other.ui.main" target="11" />
       <module name="ComposeCV.feature.other.ui.test" target="11" />
       <module name="ComposeCV.feature.skills.domain.main" target="11" />
