@@ -16,13 +16,13 @@ import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.feature.experience.ui.preview.ExperiencesPreviewParameterProvider
-import com.adrienmandroid.composecv.model.Experience
+import com.adrienmandroid.composecv.feature.experience.domain.model.Experience
 
 val expHorizontalSpacing = 10.dp
 val expVerticalSpacing = 10.dp
 
 @Composable
-fun ExperienceCard(experience: Experience) {
+fun ExperienceCard(experience: com.adrienmandroid.composecv.feature.experience.domain.model.Experience) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -48,7 +48,7 @@ fun ExperienceCard(experience: Experience) {
 @PreviewLightDark
 @Composable
 fun ExperienceCardPreview(
-    @PreviewParameter(ExperiencesPreviewParameterProvider::class) experience: Experience
+    @PreviewParameter(ExperiencesPreviewParameterProvider::class) experience: com.adrienmandroid.composecv.feature.experience.domain.model.Experience
 ) {
     ComposeCVTheme {
         ExperienceCard(experience)

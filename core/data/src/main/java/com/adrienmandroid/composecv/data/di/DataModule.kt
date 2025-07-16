@@ -1,13 +1,11 @@
 package com.adrienmandroid.composecv.data.di
 
-import com.adrienmandroid.composecv.data.ExperienceRepository
 import com.adrienmandroid.composecv.data.GratitudeRepository
 import com.adrienmandroid.composecv.data.HobbyRepository
 import com.adrienmandroid.composecv.data.QuoteRepository
 import com.adrienmandroid.composecv.data.SkillRepository
 import com.adrienmandroid.composecv.data.StudyRepository
 import com.adrienmandroid.composecv.data.VersionNameRepository
-import com.adrienmandroid.composecv.data.impl.ExperienceRepositoryImpl
 import com.adrienmandroid.composecv.data.impl.GratitudeRepositoryImpl
 import com.adrienmandroid.composecv.data.impl.HobbyRepositoryImpl
 import com.adrienmandroid.composecv.data.impl.QuoteRepositoryImpl
@@ -27,11 +25,6 @@ abstract class DataModule {
     abstract fun bindSkillsRepository(
         skillRepository: SkillRepositoryImpl
     ): SkillRepository
-
-    @Binds
-    abstract fun bindExperienceRepository(
-        experienceRepositoryImpl: ExperienceRepositoryImpl
-    ): ExperienceRepository
 
     @Binds
     abstract fun bindStudyRepository(
