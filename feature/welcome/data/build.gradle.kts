@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.adrienmandroid.composecv.feature.welcome.domain"
+    namespace = "com.adrienmandroid.composecv.feature.welcome.data"
 
 }
 

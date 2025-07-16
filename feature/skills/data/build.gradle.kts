@@ -6,12 +6,10 @@ plugins {
 }
 
 android {
-    namespace = "com.adrienmandroid.composecv.feature.welcome.domain"
-
+    namespace = "com.adrienmandroid.composecv.feature.skills.data"
 }
 
 dependencies {
     implementation(project(":core:data"))
     implementation(project(":core:ui"))
-    debugImplementation(project(":core:test"))
 }
