@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -65,6 +66,7 @@ fun WelcomeFragment(
             },
             welcomeBodyElements = page.body,
             anchoredContent = {
+                Spacer(Modifier.height(150.dp))
                 /*Image(
                     painter = painterResource(page.header.profilePictureUrl),
                     contentDescription = "Picture",

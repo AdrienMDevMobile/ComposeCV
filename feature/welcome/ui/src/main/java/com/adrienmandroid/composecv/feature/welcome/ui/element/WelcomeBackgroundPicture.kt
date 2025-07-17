@@ -60,7 +60,7 @@ fun WelcomeBackgroundPicture(welcomeImageUrl: String) {
                 imageLoader
             } else {
                 //TODO real placeholder
-                painterResource(R.drawable.core_designsystem_ic_placeholder_default)
+                painterResource(R.drawable.core_placeholder)
             },
             // TODO
             contentDescription = "Background",
