@@ -26,6 +26,7 @@ import com.adrienmandroid.composecv.feature.welcome.ui.element.WelcomeBottomShee
 import com.adrienmandroid.composecv.feature.welcome.ui.viewmodel.WelcomeViewModel
 import com.adrienmandroid.composecv.feature.welcome.ui.viewmodel.WelcomeViewModel.ClickAction
 import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomePage
+import com.adrienmandroid.composecv.feature.welcome.ui.element.WelcomeBackgroundPicture
 
 @ExperimentalMaterialApi
 @Composable
@@ -57,19 +58,15 @@ fun WelcomeFragment(
     welcomePage?.let { page ->
         WelcomeBottomSheet(
             contentCovered = {
-                Image(
-                    painter = painterResource(page.header.backgroundPicture),
-                    contentDescription = "Background",
-                    contentScale = ContentScale.Crop,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(250.dp)
+                WelcomeBackgroundPicture(
+                    welcomeImageUrl = page.header.backgroundPictureUrl
+                    //welcomeImageUrl = page.header.backgroundPictureUrl,
                 )
             },
             welcomeBodyElements = page.body,
             anchoredContent = {
-                Image(
-                    painter = painterResource(page.header.profilePicture),
+                /*Image(
+                    painter = painterResource(page.header.profilePictureUrl),
                     contentDescription = "Picture",
                     contentScale = ContentScale.Crop,
                     modifier = Modifier
@@ -79,7 +76,7 @@ fun WelcomeFragment(
                         .zIndex(1f)
                         .clip(CircleShape)
                         .border(4.dp, MaterialTheme.colors.background, CircleShape)
-                )
+                )*/
             },
             onClick = { action ->
                 welcomeViewModel.onClick(ClickAction.ElementClick(action))
