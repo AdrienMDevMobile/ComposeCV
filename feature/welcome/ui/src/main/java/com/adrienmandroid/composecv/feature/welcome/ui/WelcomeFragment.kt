@@ -28,6 +28,7 @@ import com.adrienmandroid.composecv.feature.welcome.ui.viewmodel.WelcomeViewMode
 import com.adrienmandroid.composecv.feature.welcome.ui.viewmodel.WelcomeViewModel.ClickAction
 import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomePage
 import com.adrienmandroid.composecv.feature.welcome.ui.element.WelcomeBackgroundPicture
+import com.adrienmandroid.composecv.feature.welcome.ui.element.WelcomeProfilePicture
 
 @ExperimentalMaterialApi
 @Composable
@@ -61,24 +62,11 @@ fun WelcomeFragment(
             contentCovered = {
                 WelcomeBackgroundPicture(
                     welcomeImageUrl = page.header.backgroundPictureUrl
-                    //welcomeImageUrl = page.header.backgroundPictureUrl,
                 )
             },
             welcomeBodyElements = page.body,
             anchoredContent = {
-                Spacer(Modifier.height(150.dp))
-                /*Image(
-                    painter = painterResource(page.header.profilePictureUrl),
-                    contentDescription = "Picture",
-                    contentScale = ContentScale.Crop,
-                    modifier = Modifier
-                        .width(150.dp)
-                        .height(150.dp)
-                        .padding(5.dp)
-                        .zIndex(1f)
-                        .clip(CircleShape)
-                        .border(4.dp, MaterialTheme.colors.background, CircleShape)
-                )*/
+                WelcomeProfilePicture(page.header.profilePictureUrl)
             },
             onClick = { action ->
                 welcomeViewModel.onClick(ClickAction.ElementClick(action))

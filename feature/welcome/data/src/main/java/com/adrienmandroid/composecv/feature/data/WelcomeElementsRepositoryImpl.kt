@@ -19,7 +19,7 @@ class WelcomeElementsRepositoryImpl @Inject constructor(
     override fun getWelcomePageElements(): WelcomePage {
         return WelcomePage(
             header = WelcomeHeader(
-                profilePictureUrl = "https://drive.google.com/file/d/1SsHO3yi3FnHgM82rJUrYhJxqHieNktVH/view?usp=drive_link",
+                profilePictureUrl = "https://i.imgur.com/Bx3Cl0T.jpeg",
                 backgroundPictureUrl = "https://i.imgur.com/HR6QyAW.jpeg",
             ),
             body = listOf(
