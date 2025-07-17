@@ -2,7 +2,7 @@ package com.adrienmandroid.composecv.feature.skills.ui.preview
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.tooling.preview.datasource.LoremIpsum
-import com.adrienmandroid.composecv.model.Skill
+import com.adrienmandroid.composecv.feature.skills.domain.model.Skill
 
 class SkillsPreviewParameterDataProvider : PreviewParameterProvider<Skill> {
     override val values: Sequence<Skill>

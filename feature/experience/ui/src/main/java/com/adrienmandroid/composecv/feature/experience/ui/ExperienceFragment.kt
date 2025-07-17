@@ -17,7 +17,7 @@ import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.feature.experience.ui.preview.ExperiencesPreviewParameterData
 import com.adrienmandroid.composecv.feature.experience.ui.elements.ExperienceCard
 import com.adrienmandroid.composecv.feature.experience.ui.viewmodel.ExperienceViewmodel
-import com.adrienmandroid.composecv.model.Experience
+import com.adrienmandroid.composecv.feature.experience.domain.model.Experience
 
 @Composable
 fun ExperienceFragment(
@@ -33,7 +33,7 @@ fun ExperienceFragment(
 
 @Composable
 fun ExperiencePage(
-    experiences: List<Experience>,
+    experiences: List<com.adrienmandroid.composecv.feature.experience.domain.model.Experience>,
     modifier: Modifier = Modifier,
 ) {
     LazyColumn(

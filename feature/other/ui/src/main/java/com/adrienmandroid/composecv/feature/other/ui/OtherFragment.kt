@@ -27,10 +27,10 @@ import com.adrienmandroid.composecv.feature.other.ui.elements.StudyList
 import com.adrienmandroid.composecv.feature.other.ui.elements.Version
 import com.adrienmandroid.composecv.feature.other.ui.elements.otherSection
 import com.adrienmandroid.composecv.feature.other.ui.viewmodel.OtherViewModel
-import com.adrienmandroid.composecv.model.Hobby
-import com.adrienmandroid.composecv.model.Quote
-import com.adrienmandroid.composecv.model.Study
-import com.adrienmandroid.composecv.model.VersionName
+import com.adrienmandroid.composecv.feature.other.domain.model.Hobby
+import com.adrienmandroid.composecv.feature.other.domain.model.Quote
+import com.adrienmandroid.composecv.feature.other.domain.model.Study
+import com.adrienmandroid.composecv.feature.other.domain.model.VersionName
 
 @Composable
 fun OtherFragment(

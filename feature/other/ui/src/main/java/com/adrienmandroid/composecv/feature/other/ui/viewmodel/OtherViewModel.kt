@@ -3,15 +3,15 @@ package com.adrienmandroid.composecv.feature.other.ui.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.adrienmandroid.composecv.data.GratitudeRepository
-import com.adrienmandroid.composecv.data.HobbyRepository
-import com.adrienmandroid.composecv.data.QuoteRepository
-import com.adrienmandroid.composecv.data.StudyRepository
-import com.adrienmandroid.composecv.data.VersionNameRepository
-import com.adrienmandroid.composecv.model.Hobby
-import com.adrienmandroid.composecv.model.Quote
-import com.adrienmandroid.composecv.model.Study
-import com.adrienmandroid.composecv.model.VersionName
+import com.adrienmandroid.composecv.feature.other.domain.repository.GratitudeRepository
+import com.adrienmandroid.composecv.feature.other.domain.repository.HobbyRepository
+import com.adrienmandroid.composecv.feature.other.domain.repository.QuoteRepository
+import com.adrienmandroid.composecv.feature.other.domain.repository.StudyRepository
+import com.adrienmandroid.composecv.feature.other.domain.repository.VersionNameRepository
+import com.adrienmandroid.composecv.feature.other.domain.model.Hobby
+import com.adrienmandroid.composecv.feature.other.domain.model.Quote
+import com.adrienmandroid.composecv.feature.other.domain.model.Study
+import com.adrienmandroid.composecv.feature.other.domain.model.VersionName
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

@@ -50,8 +50,16 @@ android {
 dependencies {
     implementation(project(":core:ui"))
     implementation(project(":core:data"))
-    implementation(project(":feature:welcome:ui"))
-    implementation(project(":feature:skills:ui"))
+    implementation(project(":feature:experience:data"))
+    implementation(project(":feature:experience:domain"))
     implementation(project(":feature:experience:ui"))
+    implementation(project(":feature:welcome:data"))
+    implementation(project(":feature:welcome:domain"))
+    implementation(project(":feature:welcome:ui"))
+    implementation(project(":feature:skills:data"))
+    implementation(project(":feature:skills:domain"))
+    implementation(project(":feature:skills:ui"))
+    implementation(project(":feature:other:data"))
+    implementation(project(":feature:other:domain"))
     implementation(project(":feature:other:ui"))
 }

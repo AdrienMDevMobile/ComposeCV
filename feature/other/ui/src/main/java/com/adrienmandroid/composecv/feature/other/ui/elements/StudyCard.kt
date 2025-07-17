@@ -29,7 +29,7 @@ import com.adrienmandroid.composecv.core.test.R
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.core.ui.toMonthString
 import com.adrienmandroid.composecv.model.Dates
-import com.adrienmandroid.composecv.model.Study
+import com.adrienmandroid.composecv.feature.other.domain.model.Study
 import java.util.Date
 import com.adrienmandroid.composecv.core.test.R as TestingR
 

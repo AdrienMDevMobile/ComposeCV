@@ -21,8 +21,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.feature.welcome.ui.preview.WelcomePreviewParameterData
-import com.adrienmandroid.composecv.model.Clickable
-import com.adrienmandroid.composecv.model.WelcomeBodyElement
+import com.adrienmandroid.composecv.feature.welcome.domain.model.Clickable
+import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeBodyElement
 import com.adrienmandroid.composecv.core.test.R as TestingR
 
 @Composable

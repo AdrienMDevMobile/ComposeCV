@@ -3,8 +3,8 @@ package com.adrienmandroid.composecv.feature.experience.ui.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.adrienmandroid.composecv.data.ExperienceRepository
-import com.adrienmandroid.composecv.model.Experience
+import com.adrienmandroid.composecv.feature.experience.domain.model.Experience
+import com.adrienmandroid.composecv.feature.experience.domain.repository.ExperienceRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

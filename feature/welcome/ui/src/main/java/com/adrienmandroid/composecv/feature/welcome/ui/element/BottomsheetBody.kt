@@ -15,8 +15,8 @@ import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.feature.welcome.ui.preview.WelcomePreviewParameterData
-import com.adrienmandroid.composecv.model.Clickable
-import com.adrienmandroid.composecv.model.WelcomeBodyElement
+import com.adrienmandroid.composecv.feature.welcome.domain.model.Clickable
+import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeBodyElement
 
 fun LazyListScope.bottomsheetBody(
     welcomeBodyElements: List<WelcomeBodyElement>,
