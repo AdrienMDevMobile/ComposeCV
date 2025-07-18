@@ -51,7 +51,9 @@ fun WelcomeFragment(
             },
             welcomeBodyElements = page.body,
             anchoredContent = {
-                WelcomeProfilePicture(page.header.profilePictureUrl)
+                WelcomeProfilePicture(
+                    welcomeImageUrl = page.header.profilePictureUrl
+                )
             },
             onClick = { action ->
                 welcomeViewModel.onClick(ClickAction.ElementClick(action))
