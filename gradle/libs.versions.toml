@@ -4,6 +4,7 @@ accompanist-pager-indicators = "0.24.11-rc"
 agp = "8.8.2"
 android-junit = "1.2.1"
 appcompat = "1.7.0"
+coil = "2.7.0"
 compose = "1.8.1"
 compose-activity = "1.10.1"
 composeBom = "2025.05.00"
@@ -41,6 +42,7 @@ android-lifecycle-runtime = { group = "androidx.lifecycle", name = "lifecycle-ru
 android-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigation" }
 android-test-espresso = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso" }
 android-test-junit = { group = "androidx.test.ext", name = "junit", version.ref = "android-junit" }
+coil-compose = {group ="io.coil-kt", name="coil-compose", version.ref = "coil"}
 google-accompanist-pager = { group = "com.google.accompanist", name = "accompanist-pager", version.ref = "accompanist-pager" }
 google-accompanist-pager-indicators = { group = "com.google.accompanist", name = "accompanist-pager-indicators", version.ref = "accompanist-pager-indicators" }
 test-junit = { group = "junit", name = "junit", version.ref = "junit" }
