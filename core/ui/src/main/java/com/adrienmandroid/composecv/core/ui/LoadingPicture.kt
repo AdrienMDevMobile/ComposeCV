@@ -24,10 +24,10 @@ import coil.compose.rememberAsyncImagePainter
 fun LoadingPicture(
     pictureUrl: String,
     modifier: Modifier = Modifier,
+    imageModifier: Modifier = modifier,
     placeholderPainter: Painter = painterResource(R.drawable.core_placeholder),
     contentDescription: String = "@null",
 ) {
-
     var isLoading by remember { mutableStateOf(true) }
     var isError by remember { mutableStateOf(false) }
     val imageLoader = rememberAsyncImagePainter(
@@ -38,22 +38,13 @@ fun LoadingPicture(
         },
     )
     val isLocalInspection = LocalInspectionMode.current
+
     Box(
         modifier = modifier,
         contentAlignment = Alignment.Center,
     ) {
-        if (isLoading) {
-            // Display a progress bar while loading
-            CircularProgressIndicator(
-                modifier = Modifier
-                    .align(Alignment.Center)
-                    .size(80.dp),
-                color = MaterialTheme.colors.secondary,
-            )
-        }
-
         Image(
-            modifier = modifier,
+            modifier = imageModifier,
             contentScale = ContentScale.Crop,
             painter = if (isError.not() && !isLocalInspection) {
                 imageLoader
@@ -62,5 +53,14 @@ fun LoadingPicture(
             },
             contentDescription = contentDescription,
         )
+
+        if (isLoading) {
+            CircularProgressIndicator(
+                modifier = Modifier
+                    .align(Alignment.Center)
+                    .size(80.dp),
+                color = MaterialTheme.colors.secondary,
+            )
+        }
     }
 }
