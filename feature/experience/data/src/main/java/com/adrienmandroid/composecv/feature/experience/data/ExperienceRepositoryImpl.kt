@@ -1,7 +1,6 @@
 package com.adrienmandroid.composecv.feature.experience.data
 
 import android.content.Context
-import com.adrienmandroid.composecv.data.R
 import com.adrienmandroid.composecv.feature.experience.domain.model.Experience
 import com.adrienmandroid.composecv.feature.experience.domain.model.ExperienceInformation
 import com.adrienmandroid.composecv.feature.experience.domain.repository.ExperienceRepository
@@ -17,7 +16,7 @@ class ExperienceRepositoryImpl @Inject constructor(
         Experience(
             name = context.getString(R.string.exp_off_name),
             employer = context.getString(R.string.exp_astek_employer),
-            logo = R.drawable.ic_exp_astek,
+            logo = R.drawable.ic_exp_off,
             expDates = Dates(begin = Date(1730075200000), end = null),
             professional = true,
             informations = listOf(

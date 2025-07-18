@@ -1,7 +1,7 @@
 package com.adrienmandroid.composecv.feature.data
 
 import android.content.Context
-import com.adrienmandroid.composecv.data.R
+import com.adrienmandroid.composecv.feature.welcome.data.R
 import com.adrienmandroid.composecv.feature.welcome.domain.model.Clickable
 import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeBodyElement
 import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeHeader

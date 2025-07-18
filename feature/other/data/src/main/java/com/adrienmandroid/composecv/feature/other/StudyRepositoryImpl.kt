@@ -1,7 +1,7 @@
 package com.adrienmandroid.composecv.feature.other
 
 import android.content.Context
-import com.adrienmandroid.composecv.data.R
+import com.adrienmandroid.composecv.feature.other.data.R
 import com.adrienmandroid.composecv.feature.other.domain.repository.StudyRepository
 import com.adrienmandroid.composecv.model.Dates
 import com.adrienmandroid.composecv.feature.other.domain.model.Study
