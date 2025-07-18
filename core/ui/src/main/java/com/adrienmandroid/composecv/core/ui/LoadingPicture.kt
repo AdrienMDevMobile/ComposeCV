@@ -2,7 +2,6 @@ package com.adrienmandroid.composecv.core.ui
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.size
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
@@ -16,7 +15,6 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImagePainter
 import coil.compose.rememberAsyncImagePainter
 
@@ -26,6 +24,7 @@ fun LoadingPicture(
     modifier: Modifier = Modifier,
     imageModifier: Modifier = modifier,
     placeholderPainter: Painter = painterResource(R.drawable.core_placeholder),
+    loadingModifier: Modifier = Modifier,
     contentDescription: String = "@null",
 ) {
     var isLoading by remember { mutableStateOf(true) }
@@ -56,9 +55,7 @@ fun LoadingPicture(
 
         if (isLoading) {
             CircularProgressIndicator(
-                modifier = Modifier
-                    .align(Alignment.Center)
-                    .size(80.dp),
+                modifier = loadingModifier,
                 color = MaterialTheme.colors.secondary,
             )
         }

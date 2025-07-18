@@ -27,6 +27,7 @@ fun WelcomeProfilePicture(
         imageModifier = Modifier
             .size(128.dp)
             .clip(CircleShape),
+        loadingModifier = Modifier.size(80.dp),
         contentDescription = "Picture"
     )
 }
