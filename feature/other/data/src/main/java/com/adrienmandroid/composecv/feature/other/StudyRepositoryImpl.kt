@@ -14,27 +14,27 @@ class StudyRepositoryImpl @Inject constructor(
 ) : StudyRepository {
     override fun getData(): List<Study> = listOf(
         Study(
-            logo = R.drawable.image_ece,
+            logoUrl = "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/study/image_ece.png",
             name = context.getString(R.string.study_ece),
             diploma = context.getString(R.string.diploma_ece),
-            studyDates = Dates(
+            dates = Dates(
                 begin = Date(1593554400000), end = Date(1641596400000)
             )
         ),
         Study(
-            logo = R.drawable.image_brighton,
+            logoUrl = "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/study/image_brighton.png",
             name = context.getString(R.string.study_brighton),
             diploma = context.getString(R.string.diploma_brighton),
-            studyDates = Dates(
+            dates = Dates(
                 begin = Date(1593554400000), end = Date(1641596400000)
             ),
-            longString = true
+            isLongString = true
         ),
         Study(
-            logo = R.drawable.image_descartes,
+            logoUrl = "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/study/image_descartes.png",
             name = context.getString(R.string.study_descartes),
             diploma = context.getString(R.string.diploma_descartes),
-            studyDates = Dates(
+            dates = Dates(
                 begin = Date(1593554400000), end = Date(1641596400000)
             )
         )

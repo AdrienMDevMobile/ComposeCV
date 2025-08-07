@@ -15,16 +15,17 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.window.isPopupLayout
 import coil.compose.AsyncImagePainter
 import coil.compose.rememberAsyncImagePainter
 
 @Composable
-fun LoadingPicture(
+fun SelfLoadingPicture(
     pictureUrl: String,
     modifier: Modifier = Modifier,
     imageModifier: Modifier = modifier,
-    placeholderPainter: Painter = painterResource(R.drawable.core_placeholder),
     loadingModifier: Modifier = Modifier,
+    placeholderPainter: Painter = painterResource(R.drawable.core_placeholder),
     contentDescription: String = "@null",
 ) {
     var isLoading by remember { mutableStateOf(true) }
@@ -38,26 +39,16 @@ fun LoadingPicture(
     )
     val isLocalInspection = LocalInspectionMode.current
 
-    Box(
+    LoadingBox(
+        isLoading = isLoading,
+        isError = isError,
+        isLocalInspection = isLocalInspection,
+        imageLoader = imageLoader,
         modifier = modifier,
-        contentAlignment = Alignment.Center,
-    ) {
-        Image(
-            modifier = imageModifier,
-            contentScale = ContentScale.Crop,
-            painter = if (isError.not() && !isLocalInspection) {
-                imageLoader
-            } else {
-                placeholderPainter
-            },
-            contentDescription = contentDescription,
-        )
+        imageModifier = imageModifier,
+        loadingModifier = loadingModifier,
+        placeholderPainter = placeholderPainter,
+        contentDescription = contentDescription
+    )
 
-        if (isLoading) {
-            CircularProgressIndicator(
-                modifier = loadingModifier,
-                color = MaterialTheme.colors.secondary,
-            )
-        }
-    }
 }

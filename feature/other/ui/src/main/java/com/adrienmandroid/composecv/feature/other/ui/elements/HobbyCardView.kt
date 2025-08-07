@@ -12,7 +12,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
-import com.adrienmandroid.composecv.core.ui.LoadingPicture
+import com.adrienmandroid.composecv.core.ui.SelfLoadingPicture
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.feature.other.domain.model.Hobby
 import com.adrienmandroid.composecv.core.test.R as TestingR
@@ -27,7 +27,7 @@ fun HobbyCardView(hobby: Hobby) {
             .padding(horizontal = 6.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        LoadingPicture(
+        SelfLoadingPicture(
             pictureUrl = hobby.pictureUrl,
             contentDescription = hobby.name,
             modifier = Modifier

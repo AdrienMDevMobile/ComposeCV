@@ -6,11 +6,11 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.adrienmandroid.composecv.core.ui.LoadingPicture
+import com.adrienmandroid.composecv.core.ui.SelfLoadingPicture
 
 @Composable
 fun WelcomeBackgroundPicture(welcomeImageUrl: String) {
-    LoadingPicture(
+    SelfLoadingPicture(
         pictureUrl = welcomeImageUrl,
         modifier = Modifier
             .fillMaxWidth()

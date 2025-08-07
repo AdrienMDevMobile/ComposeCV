@@ -10,14 +10,14 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
-import com.adrienmandroid.composecv.core.ui.LoadingPicture
+import com.adrienmandroid.composecv.core.ui.SelfLoadingPicture
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 
 @Composable
 fun WelcomeProfilePicture(
     welcomeImageUrl: String
 ) {
-    LoadingPicture(
+    SelfLoadingPicture(
         pictureUrl = welcomeImageUrl,
         modifier = Modifier
             .size(140.dp)

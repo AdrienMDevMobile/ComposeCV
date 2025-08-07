@@ -11,22 +11,22 @@ class StudyPreviewParameterData(
 ) {
     internal val studies = listOf(
         Study(
-            R.drawable.ic_test,
-            context.getString(R.string.test_1_word),
-            context.getString(R.string.test_short_text_1_line),
-            Dates(Date(), null)
+            logoUrl = "",
+            name = context.getString(R.string.test_1_word),
+            diploma = context.getString(R.string.test_short_text_1_line),
+            dates = Dates(Date(), null)
         ),
         Study(
-            R.drawable.ic_test,
-            context.getString(R.string.test_1_word),
-            context.getString(R.string.test_short_text_1_line),
-            Dates(Date(), null)
+            logoUrl = "",
+            name = context.getString(R.string.test_1_word),
+            diploma = context.getString(R.string.test_short_text_1_line),
+            dates = Dates(Date(), null)
         ),
         Study(
-            R.drawable.ic_test,
-            context.getString(R.string.test_1_word),
-            context.getString(R.string.test_short_text_1_line),
-            Dates(Date(), null)
+            logoUrl = "",
+            name = context.getString(R.string.test_1_word),
+            diploma = context.getString(R.string.test_short_text_1_line),
+            dates = Dates(Date(), null)
         )
     )
 }
