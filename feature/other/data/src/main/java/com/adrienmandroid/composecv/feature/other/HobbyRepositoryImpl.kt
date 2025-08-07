@@ -12,34 +12,34 @@ class HobbyRepositoryImpl @Inject constructor(
 ): HobbyRepository {
     override fun getHobbies() = listOf(
         Hobby(
-            context.getString(R.string.hobby_LoL),
-            R.drawable.hobby_lol,
-            context.getString(R.string.hobby_category_competition)
+            name = context.getString(R.string.hobby_LoL),
+            pictureUrl = "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/hobby/hobby_lol.jpg",
+            category = context.getString(R.string.hobby_category_competition)
         ),
         Hobby(
-            context.getString(R.string.hobby_wcs),
-            R.drawable.hobby_westcoastswing,
-            context.getString(R.string.danse)
+            name =context.getString(R.string.hobby_wcs),
+            pictureUrl = "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/hobby/hobby_westcoastswing.jpg",
+            category = context.getString(R.string.danse)
         ),
         Hobby(
-            context.getString(R.string.hobby_bike),
-            R.drawable.hobby_velo,
-            context.getString(R.string.hobby_category_health)
+            name =context.getString(R.string.hobby_bike),
+            pictureUrl = "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/hobby/hobby_velo.jpg",
+            category = context.getString(R.string.hobby_category_health)
         ),
         Hobby(
-            context.getString(R.string.hobby_meditation),
-            R.drawable.hobby_meditation,
-            context.getString(R.string.hobby_category_health)
+            name = context.getString(R.string.hobby_meditation),
+            pictureUrl = "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/hobby/hobby_meditation.jpg",
+            category = context.getString(R.string.hobby_category_health)
         ),
         Hobby(
-            context.getString(R.string.hobby_swim),
-            R.drawable.hobby_piscine,
-            context.getString(R.string.hobby_category_health)
+            name = context.getString(R.string.hobby_swim),
+            pictureUrl = "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/hobby/hobby_piscine.jpg",
+            category = context.getString(R.string.hobby_category_health)
         ),
         Hobby(
-            context.getString(R.string.hobby_FDC),
-            R.drawable.hobby_fdc,
-            context.getString(R.string.hobby_sensibilitation)
+            name = context.getString(R.string.hobby_FDC),
+            pictureUrl = "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/hobby/hobby_fdc.jpg",
+            category = context.getString(R.string.hobby_sensibilitation)
         )
     )
 }
