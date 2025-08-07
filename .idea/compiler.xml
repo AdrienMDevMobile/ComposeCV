@@ -2,21 +2,13 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="21">
-      <module name="ComposeCV.feature.experience.domain.main" target="11" />
       <module name="ComposeCV.feature.experience.domain.test" target="11" />
-      <module name="ComposeCV.feature.experience.ui.main" target="11" />
       <module name="ComposeCV.feature.experience.ui.test" target="11" />
-      <module name="ComposeCV.feature.other.domain.main" target="11" />
       <module name="ComposeCV.feature.other.domain.test" target="11" />
-      <module name="ComposeCV.feature.other.ui.main" target="11" />
       <module name="ComposeCV.feature.other.ui.test" target="11" />
-      <module name="ComposeCV.feature.skills.domain.main" target="11" />
       <module name="ComposeCV.feature.skills.domain.test" target="11" />
-      <module name="ComposeCV.feature.skills.ui.main" target="11" />
       <module name="ComposeCV.feature.skills.ui.test" target="11" />
-      <module name="ComposeCV.feature.welcome.domain.main" target="11" />
       <module name="ComposeCV.feature.welcome.domain.test" target="11" />
-      <module name="ComposeCV.feature.welcome.ui.main" target="11" />
       <module name="ComposeCV.feature.welcome.ui.test" target="11" />
     </bytecodeTargetLevel>
   </component>
