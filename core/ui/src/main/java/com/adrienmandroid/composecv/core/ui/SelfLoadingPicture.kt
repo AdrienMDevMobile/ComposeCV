@@ -6,6 +6,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.res.painterResource
@@ -16,10 +17,11 @@ import coil.compose.rememberAsyncImagePainter
 fun SelfLoadingPicture(
     pictureUrl: String,
     modifier: Modifier = Modifier,
-    imageModifier: Modifier = modifier,
+    imageModifier: Modifier = Modifier,
     loadingModifier: Modifier = Modifier,
     placeholderPainter: Painter = painterResource(R.drawable.core_placeholder),
     contentDescription: String = "@null",
+    colorFilter: ColorFilter? = null,
 ) {
     var isLoading by remember { mutableStateOf(true) }
     var isError by remember { mutableStateOf(false) }
@@ -41,7 +43,8 @@ fun SelfLoadingPicture(
         imageModifier = imageModifier,
         loadingModifier = loadingModifier,
         placeholderPainter = placeholderPainter,
-        contentDescription = contentDescription
+        contentDescription = contentDescription,
+        colorFilter = colorFilter,
     )
 
 }

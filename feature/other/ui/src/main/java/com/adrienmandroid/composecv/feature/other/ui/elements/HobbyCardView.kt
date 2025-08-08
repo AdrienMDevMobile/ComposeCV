@@ -1,6 +1,7 @@
 package com.adrienmandroid.composecv.feature.other.ui.elements
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.MaterialTheme
@@ -31,7 +32,8 @@ fun HobbyCardView(hobby: Hobby) {
             pictureUrl = hobby.pictureUrl,
             contentDescription = hobby.name,
             modifier = Modifier
-                .size(hobby_width, hobby_width)
+                .size(hobby_width, hobby_width),
+            imageModifier= Modifier.fillMaxSize()
         )
         Text(
             text = hobby.name,
