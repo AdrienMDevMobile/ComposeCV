@@ -42,6 +42,22 @@ import com.adrienmandroid.composecv.feature.other.ui.preview.data.QuoteIndexedPr
 
 @Composable
 fun QuoteCardDraw(quote: Quote, position: Int) {
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(200.dp)
+            .clip(
+                RoundedCornerShape(25.dp)
+            )
+            .padding(10.dp, 10.dp), backgroundColor = MaterialTheme.colors.quoteBackground,
+        elevation = 5.dp
+    ) {
+        QuoteContent(quote, position)
+    }
+}
+
+@Composable
+fun QuoteContent(quote: Quote, position: Int){
     val marginTop = 12.dp
     val marginBottom = 12.dp
     val marginStart = 12.dp
@@ -59,113 +75,102 @@ fun QuoteCardDraw(quote: Quote, position: Int) {
         color = MaterialTheme.colors.onQuoteBackground,
         fontSize = 12.sp
     )
-    Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(200.dp)
-            .clip(
-                RoundedCornerShape(25.dp)
-            )
-            .padding(10.dp, 10.dp), backgroundColor = MaterialTheme.colors.quoteBackground,
-        elevation = 5.dp
-    ) {
-        var isLoading by remember { mutableStateOf(true) }
-        var isError by remember { mutableStateOf(false) }
-        val imageLoader = rememberAsyncImagePainter(
-            model = quote.imageUrl,
-            onState = { state ->
-                isLoading = state is AsyncImagePainter.State.Loading
-                isError = state is AsyncImagePainter.State.Error
-            },
-        )
-        val isLocalInspection = LocalInspectionMode.current
+    var isLoading by remember { mutableStateOf(true) }
+    var isError by remember { mutableStateOf(false) }
+    val imageLoader = rememberAsyncImagePainter(
+        model = quote.imageUrl,
+        onState = { state ->
+            isLoading = state is AsyncImagePainter.State.Loading
+            isError = state is AsyncImagePainter.State.Error
+        },
+    )
+    val isLocalInspection = LocalInspectionMode.current
 
-        ConstraintLayout {
-            val (text, image, author, quoteTop, quoteBottom, loader) = createRefs()
+    ConstraintLayout {
+        val (text, image, author, quoteTop, quoteBottom, loader) = createRefs()
 
-            if (!isLoading && !isError) {
-                Icon(
-                    painter = painterResource(id = R.drawable.ic_quote),
-                    contentDescription = "quote",
-                    modifier = Modifier
-                        .rotate(180F)
-                        .size(quotationMarkSize)
-                        .constrainAs(quoteTop) {
-                            start.linkTo(text.start, margin = (-12).dp)
-                            bottom.linkTo(text.top, margin = (-28).dp)
-                        },
-                    tint = Color.Gray
-                )
-                Icon(
-                    painter = painterResource(id = R.drawable.ic_quote),
-                    contentDescription = "quote",
-                    modifier = Modifier
-                        .size(quotationMarkSize)
-                        .constrainAs(quoteBottom) {
-                            end.linkTo(text.end, margin = (-12).dp)
-                            top.linkTo(text.bottom, margin = (-28).dp)
-                        },
-                    tint = Color.Gray
-                )
-                Text(
-                    text = quote.text,
-                    style = textStyleQuote,
-                    modifier = Modifier.constrainAs(text) {
-                        if (textLeft) {
-                            start.linkTo(parent.start, margin = marginStart)
-                            end.linkTo(image.start, margin = marginBetween)
-                        } else {
-                            start.linkTo(image.end, margin = marginBetween)
-                            end.linkTo(parent.end, margin = marginEnd)
-                        }
-                        top.linkTo(parent.top, margin = marginTop)
-                        bottom.linkTo(author.top)
-                        width = Dimension.fillToConstraints
-                    }
-                )
-                Text(
-                    text = quote.author,
-                    style = textStyleAuthor,
-                    modifier = Modifier.constrainAs(author) {
-                        top.linkTo(text.bottom)
-                        bottom.linkTo(parent.bottom, margin = 16.dp)
-                        end.linkTo(text.end)
-                    }
-                )
-            }
-            Image(
+        if (!isLoading && !isError) {
+            Icon(
+                painter = painterResource(id = R.drawable.ic_quote),
+                contentDescription = "quote",
                 modifier = Modifier
-                    .constrainAs(image) {
-                        if (!textLeft) {
-                            start.linkTo(parent.start, margin = marginStart)
-                            end.linkTo(text.start)
-                        } else {
-                            start.linkTo(text.end)
-                            end.linkTo(parent.end, margin = marginEnd)
-                        }
-                        top.linkTo(parent.top, margin = marginTop)
-                        bottom.linkTo(parent.bottom, margin = marginBottom)
-                        height = Dimension.fillToConstraints
+                    .rotate(180F)
+                    .size(quotationMarkSize)
+                    .constrainAs(quoteTop) {
+                        start.linkTo(text.start, margin = (-12).dp)
+                        bottom.linkTo(text.top, margin = (-28).dp)
                     },
-                contentScale = ContentScale.Crop,
-                painter = if (isError.not() && !isLocalInspection) {
-                    imageLoader
-                } else {
-                    painterResource(RCoreUi.drawable.core_placeholder)
-                },
-                contentDescription = quote.author,
+                tint = Color.Gray
             )
-            if (isLoading) {
-                CircularProgressIndicator(
-                    modifier = Modifier.constrainAs(loader){
-                        start.linkTo(parent.start)
-                        end.linkTo(parent.end)
-                        top.linkTo(parent.top, margin = 4.dp)
-                        bottom.linkTo(parent.bottom, margin = 4.dp)
+            Icon(
+                painter = painterResource(id = R.drawable.ic_quote),
+                contentDescription = "quote",
+                modifier = Modifier
+                    .size(quotationMarkSize)
+                    .constrainAs(quoteBottom) {
+                        end.linkTo(text.end, margin = (-12).dp)
+                        top.linkTo(text.bottom, margin = (-28).dp)
                     },
-                    color = MaterialTheme.colors.secondary,
-                )
-            }
+                tint = Color.Gray
+            )
+            Text(
+                text = quote.text,
+                style = textStyleQuote,
+                modifier = Modifier.constrainAs(text) {
+                    if (textLeft) {
+                        start.linkTo(parent.start, margin = marginStart)
+                        end.linkTo(image.start, margin = marginBetween)
+                    } else {
+                        start.linkTo(image.end, margin = marginBetween)
+                        end.linkTo(parent.end, margin = marginEnd)
+                    }
+                    top.linkTo(parent.top, margin = marginTop)
+                    bottom.linkTo(author.top)
+                    width = Dimension.fillToConstraints
+                }
+            )
+            Text(
+                text = quote.author,
+                style = textStyleAuthor,
+                modifier = Modifier.constrainAs(author) {
+                    top.linkTo(text.bottom)
+                    bottom.linkTo(parent.bottom, margin = 16.dp)
+                    end.linkTo(text.end)
+                }
+            )
+        }
+        Image(
+            modifier = Modifier
+                .constrainAs(image) {
+                    if (!textLeft) {
+                        start.linkTo(parent.start, margin = marginStart)
+                        end.linkTo(text.start)
+                    } else {
+                        start.linkTo(text.end)
+                        end.linkTo(parent.end, margin = marginEnd)
+                    }
+                    top.linkTo(parent.top, margin = marginTop)
+                    bottom.linkTo(parent.bottom, margin = marginBottom)
+                    height = Dimension.fillToConstraints
+                },
+            contentScale = ContentScale.Crop,
+            painter = if (isError.not() && !isLocalInspection) {
+                imageLoader
+            } else {
+                painterResource(RCoreUi.drawable.core_placeholder)
+            },
+            contentDescription = quote.author,
+        )
+        if (isLoading) {
+            CircularProgressIndicator(
+                modifier = Modifier.constrainAs(loader){
+                    start.linkTo(parent.start)
+                    end.linkTo(parent.end)
+                    top.linkTo(parent.top, margin = 4.dp)
+                    bottom.linkTo(parent.bottom, margin = 4.dp)
+                },
+                color = MaterialTheme.colors.secondary,
+            )
         }
     }
 }
