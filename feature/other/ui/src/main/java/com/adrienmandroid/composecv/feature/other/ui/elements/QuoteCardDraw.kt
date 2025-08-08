@@ -37,6 +37,7 @@ import com.adrienmandroid.composecv.core.ui.theme.onQuoteBackground
 import com.adrienmandroid.composecv.core.ui.theme.quoteBackground
 import com.adrienmandroid.composecv.feature.other.domain.model.Quote
 import com.adrienmandroid.composecv.feature.other.ui.R
+import com.adrienmandroid.composecv.core.ui.R as RCoreUi
 import com.adrienmandroid.composecv.feature.other.ui.preview.data.QuoteIndexedPreviewParameterProvider
 
 @Composable
@@ -150,7 +151,7 @@ fun QuoteCardDraw(quote: Quote, position: Int) {
                 painter = if (isError.not() && !isLocalInspection) {
                     imageLoader
                 } else {
-                    painterResource(com.adrienmandroid.composecv.core.ui.R.drawable.core_placeholder)
+                    painterResource(RCoreUi.drawable.core_placeholder)
                 },
                 contentDescription = quote.author,
             )

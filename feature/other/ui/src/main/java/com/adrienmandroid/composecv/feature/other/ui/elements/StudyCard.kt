@@ -35,16 +35,37 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImagePainter
 import coil.compose.rememberAsyncImagePainter
-import com.adrienmandroid.composecv.core.test.R
 import com.adrienmandroid.composecv.core.ui.LoadingBox
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.core.ui.toMonthString
-import com.adrienmandroid.composecv.model.Dates
 import com.adrienmandroid.composecv.feature.other.domain.model.Study
+import com.adrienmandroid.composecv.model.Dates
 import java.util.Date
+import com.adrienmandroid.composecv.core.test.R as TestingR
+import com.adrienmandroid.composecv.core.ui.R as RCoreUi
 
 @Composable
-fun StudyCard(study: Study) {
+fun StudyCard(
+    study: Study
+) {
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(150.dp)
+            .clip(RoundedCornerShape(25.dp))
+            .padding(10.dp, 10.dp),
+        elevation = 5.dp,
+        backgroundColor = MaterialTheme.colors.background,
+    )
+    {
+        StudyContent(study)
+    }
+}
+
+@Composable
+fun StudyContent(
+    study: Study
+) {
     var isLoading by remember { mutableStateOf(true) }
     var isError by remember { mutableStateOf(false) }
     val imageLoader = rememberAsyncImagePainter(
@@ -56,59 +77,24 @@ fun StudyCard(study: Study) {
     )
     val isLocalInspection = LocalInspectionMode.current
 
-
-    Card(
+    StudyBackgroundPicture(isError, isLocalInspection, imageLoader)
+    Row(
         modifier = Modifier
-            .fillMaxWidth()
-            .height(150.dp)
-            .clip(RoundedCornerShape(25.dp))
-            .padding(10.dp, 10.dp),
-        elevation = 5.dp,
-        backgroundColor = MaterialTheme.colors.background,
-    )
-    {
-        Box(
-            modifier = Modifier.fillMaxSize(),
-            contentAlignment = Alignment.CenterEnd
-        ){
-            Image(
-                modifier = Modifier
-                    .fillMaxHeight()
-                    .alpha(0.5f),
-                contentScale = ContentScale.Crop,
-                painter = if (isError.not() && !isLocalInspection) {
-                    imageLoader
-                } else {
-                    painterResource(com.adrienmandroid.composecv.core.ui.R.drawable.core_placeholder)
-                },
-                contentDescription = study.name,
-            )
-        }
-        Row(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(horizontal = 10.dp, vertical = 15.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            LoadingBox(
-                isLoading = isLoading,
-                isError = isError,
-                isLocalInspection = isLocalInspection,
-                imageLoader = imageLoader,
-                contentDescription = study.name,
-                modifier = Modifier
-                    .fillMaxHeight()
-                    .fillMaxWidth(0.25f)
-            )
-            Spacer(modifier = Modifier.width(10.dp))
-            StudyText(
-                studyName = study.name,
-                diploma = study.diploma,
-                dates = study.dates,
-                isLongString = study.isLongString
-            )
-        }
-
+            .fillMaxSize()
+            .padding(horizontal = 10.dp, vertical = 15.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        StudyForegroundPicture(
+            isLoading, isError, isLocalInspection, imageLoader,
+            contentDescription = study.name
+        )
+        Spacer(modifier = Modifier.width(10.dp))
+        StudyText(
+            studyName = study.name,
+            diploma = study.diploma,
+            dates = study.dates,
+            isLongString = study.isLongString
+        )
     }
 }
 
@@ -118,7 +104,7 @@ fun StudyText(
     diploma: String,
     dates: Dates,
     isLongString: Boolean
-){
+) {
     val textStyle = when (isLongString) {
         true -> typography.body2
         false -> typography.body1
@@ -149,6 +135,51 @@ fun StudyText(
     }
 }
 
+@Composable
+fun StudyBackgroundPicture(
+    isError: Boolean,
+    isLocalInspection: Boolean,
+    imageLoader: AsyncImagePainter
+) {
+    Box(
+        modifier = Modifier.fillMaxSize(),
+        contentAlignment = Alignment.CenterEnd
+    ) {
+        Image(
+            modifier = Modifier
+                .fillMaxHeight()
+                .alpha(0.5f),
+            contentScale = ContentScale.Crop,
+            painter = if (isError.not() && !isLocalInspection) {
+                imageLoader
+            } else {
+                painterResource(RCoreUi.drawable.core_placeholder)
+            },
+            contentDescription = "@null",
+        )
+    }
+}
+
+@Composable
+fun StudyForegroundPicture(
+    isLoading: Boolean,
+    isError: Boolean,
+    isLocalInspection: Boolean,
+    imageLoader: AsyncImagePainter,
+    contentDescription: String,
+) {
+    LoadingBox(
+        isLoading = isLoading,
+        isError = isError,
+        isLocalInspection = isLocalInspection,
+        imageLoader = imageLoader,
+        contentDescription = contentDescription,
+        modifier = Modifier
+            .fillMaxHeight()
+            .fillMaxWidth(0.25f)
+    )
+}
+
 @Preview(
     uiMode = Configuration.UI_MODE_NIGHT_NO,
     widthDp = 300,
@@ -166,8 +197,8 @@ fun PreviewStudyCard() {
         StudyCard(
             study = Study(
                 logoUrl = "",
-                name = context.getString(R.string.test_1_word),
-                diploma = context.getString(R.string.test_1_word),
+                name = context.getString(TestingR.string.test_1_word),
+                diploma = context.getString(TestingR.string.test_1_word),
                 dates = Dates(
                     begin = Date(1593554400000), end = Date(1641596400000)
                 ),
