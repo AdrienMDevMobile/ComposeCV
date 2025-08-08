@@ -12,19 +12,19 @@ class QuoteRepositoryImpl @Inject constructor(
 ) : QuoteRepository {
     override fun getQuotes() = listOf(
         Quote(
-            context.getString(R.string.quoteMeditation),
-            context.getString(R.string.quoteAuthorMarkTwain),
-            R.drawable.quote_mark_twain
+            text = context.getString(R.string.quoteAdapt),
+            author = context.getString(R.string.quoteAuthorStephenHawking),
+            imageUrl = "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/quote/quote_stephen_hawing.png"
         ),
         Quote(
-            context.getString(R.string.quoteGirls),
-            context.getString(R.string.quoteAuthorGabrielGarciaMarquez),
-            R.drawable.quote_gabriel_garcia
+            text = context.getString(R.string.quoteMeditation),
+            author = context.getString(R.string.quoteAuthorMarkTwain),
+            imageUrl = "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/quote/quote_mark_twain.jpg"
         ),
         Quote(
-            context.getString(R.string.quoteAdapt),
-            context.getString(R.string.quoteAuthorStephenHawking),
-            R.drawable.quote_stephen_hawing
+            text = context.getString(R.string.quoteGirls),
+            author = context.getString(R.string.quoteAuthorGabrielGarciaMarquez),
+            imageUrl = "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/quote/quote_gabriel_garcia.jpg"
         )
     )
 }

@@ -9,19 +9,19 @@ class HobbyPreviewParameterData(
 ) {
     internal val hobbies = listOf(
         Hobby(
-            context.getString(R.string.test_short_text_1_line),
-            R.drawable.img_test,
-            context.getString(R.string.test_1_word),
+            name = context.getString(R.string.test_short_text_1_line),
+            pictureUrl = "",
+            category = context.getString(R.string.test_1_word),
         ),
         Hobby(
-            context.getString(R.string.test_short_text_1_line),
-            R.drawable.img_test,
-            context.getString(R.string.test_1_word),
+            name = context.getString(R.string.test_short_text_1_line),
+            pictureUrl = "",
+            category = context.getString(R.string.test_1_word),
         ),
         Hobby(
-            context.getString(R.string.test_short_text_1_line),
-            R.drawable.img_test,
-            context.getString(R.string.test_1_word),
+            name = context.getString(R.string.test_short_text_1_line),
+            pictureUrl = "",
+            category = context.getString(R.string.test_1_word),
         )
     )
 }

@@ -1,6 +1,5 @@
 package com.adrienmandroid.composecv.feature.other.ui.elements
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -9,11 +8,11 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
+import com.adrienmandroid.composecv.core.ui.SelfLoadingPicture
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.feature.other.domain.model.Hobby
 import com.adrienmandroid.composecv.core.test.R as TestingR
@@ -28,8 +27,8 @@ fun HobbyCardView(hobby: Hobby) {
             .padding(horizontal = 6.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Image(
-            painter = painterResource(hobby.picture),
+        SelfLoadingPicture(
+            pictureUrl = hobby.pictureUrl,
             contentDescription = hobby.name,
             modifier = Modifier
                 .size(hobby_width, hobby_width)
@@ -58,8 +57,8 @@ fun PreviewHobbyCardView() {
         HobbyCardView(
             hobby = Hobby(
                 name = stringResource(id = TestingR.string.test_1_word),
-                TestingR.drawable.ic_test,
-                stringResource(id = TestingR.string.test_short_text_1_line)
+                pictureUrl = "",
+                category = stringResource(id = TestingR.string.test_short_text_1_line)
             )
         )
     }
