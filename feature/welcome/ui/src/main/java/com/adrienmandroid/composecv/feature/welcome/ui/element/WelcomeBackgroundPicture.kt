@@ -1,5 +1,6 @@
 package com.adrienmandroid.composecv.feature.welcome.ui.element
 
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
@@ -15,6 +16,7 @@ fun WelcomeBackgroundPicture(welcomeImageUrl: String) {
         modifier = Modifier
             .fillMaxWidth()
             .height(250.dp),
+        imageModifier = Modifier.fillMaxSize(),
         loadingModifier = Modifier.size(80.dp)
     )
 }

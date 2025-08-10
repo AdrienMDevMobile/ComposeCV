@@ -7,6 +7,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -22,7 +23,8 @@ fun LoadingBox(
     imageModifier: Modifier = Modifier,
     loadingModifier: Modifier = Modifier,
     placeholderPainter: Painter = painterResource(R.drawable.core_placeholder),
-    contentDescription: String = "@null"
+    contentDescription: String = "@null",
+    colorFilter: ColorFilter? = null,
 ){
     Box(
         modifier = modifier,
@@ -37,6 +39,7 @@ fun LoadingBox(
                 placeholderPainter
             },
             contentDescription = contentDescription,
+            colorFilter = colorFilter,
         )
 
         if (isLoading) {

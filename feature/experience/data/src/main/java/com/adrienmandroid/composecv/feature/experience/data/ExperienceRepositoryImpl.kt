@@ -16,7 +16,7 @@ class ExperienceRepositoryImpl @Inject constructor(
         Experience(
             name = context.getString(R.string.exp_off_name),
             employer = context.getString(R.string.exp_astek_employer),
-            logo = R.drawable.ic_exp_off,
+            logoUrl = "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/experience/exp_off.png",
             expDates = Dates(begin = Date(1730075200000), end = null),
             professional = true,
             informations = listOf(
@@ -31,7 +31,7 @@ class ExperienceRepositoryImpl @Inject constructor(
         Experience(
             name = context.getString(R.string.exp_astek_name),
             employer = context.getString(R.string.exp_astek_employer),
-            logo = R.drawable.ic_exp_astek,
+            logoUrl = "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/experience/astek.png",
             expDates = Dates(begin = Date(1631052000000), end = Date(1728075200000)),
             professional = true,
             informations = listOf(
@@ -69,7 +69,7 @@ class ExperienceRepositoryImpl @Inject constructor(
         ),
         Experience(
             name = context.getString(R.string.exp_cv_name),
-            logo = R.drawable.ic_my_logo,
+            logoUrl = "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/experience/my_logo.png",
             expDates = Dates(begin = Date(1645052400000), end = null),
             professional = false,
             informations = listOf(
@@ -98,7 +98,7 @@ class ExperienceRepositoryImpl @Inject constructor(
         ),
         Experience(
             name = context.getString(R.string.exp_spending_flutter_name),
-            logo = R.drawable.ic_spending,
+            logoUrl = "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/experience/spending.png",
             expDates = Dates(begin = Date(1728075200000), end = null),
             professional = false,
             informations = listOf(
@@ -109,7 +109,7 @@ class ExperienceRepositoryImpl @Inject constructor(
         ),
         Experience(
             name = context.getString(R.string.exp_spending_name),
-            logo = R.drawable.ic_spending,
+            logoUrl = "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/experience/spending.png",
             expDates = Dates(begin = Date(1664575200000), end = Date(1699575200000)),
             professional = false,
             informations = listOf(
@@ -132,7 +132,7 @@ class ExperienceRepositoryImpl @Inject constructor(
         ),
         Experience(
             name = context.getString(R.string.exp_fdc_name),
-            logo = R.drawable.ic_exp_fresque,
+            logoUrl = "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/experience/fdc.png",
             expDates = Dates(begin = Date(1593554400000), end = Date(1641596400000)),
             professional = false,
             informations = listOf(
@@ -162,7 +162,7 @@ class ExperienceRepositoryImpl @Inject constructor(
         Experience(
             name = context.getString(R.string.exp_sh_name),
             employer = context.getString(R.string.exp_sh_employer),
-            logo = R.drawable.ic_exp_sh,
+            logoUrl = "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/experience/seh.png",
             expDates = Dates(begin = Date(1572562800000), end = Date(1590962400000)),
             professional = true,
             informations = listOf(
@@ -186,7 +186,7 @@ class ExperienceRepositoryImpl @Inject constructor(
         Experience(
             name = context.getString(R.string.exp_natixis_name),
             employer = context.getString(R.string.exp_natixis_employer),
-            logo = R.drawable.ic_exp_natixis,
+            logoUrl = "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/experience/natixis.png",
             expDates = Dates(begin = Date(1472680800000), end = Date(1559340000000)),
             professional = true,
             informations = listOf(
