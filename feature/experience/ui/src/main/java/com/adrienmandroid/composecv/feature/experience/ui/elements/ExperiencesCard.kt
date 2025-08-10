@@ -17,8 +17,8 @@ import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.feature.experience.ui.preview.ExperiencesPreviewParameterProvider
 
-private val expHorizontalSpacing = 10.dp
-private val expVerticalSpacing = 10.dp
+val expHorizontalSpacing = 10.dp
+val expVerticalSpacing = 10.dp
 
 @Composable
 fun ExperienceCard(experience: com.adrienmandroid.composecv.feature.experience.domain.model.Experience) {
