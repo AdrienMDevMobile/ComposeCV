@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.convention.library)
     alias(libs.plugins.convention.compose.library)
     alias(libs.plugins.convention.hilt.library)
+    alias(libs.plugins.convention.json.library)
     alias(libs.plugins.kotlin.android)
 }
 
