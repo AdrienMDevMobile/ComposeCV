@@ -3,6 +3,7 @@ package com.adrienmandroid.composecv.feature.skills.ui.preview
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.tooling.preview.datasource.LoremIpsum
 import com.adrienmandroid.composecv.feature.skills.domain.model.Skill
+import com.adrienmandroid.composecv.feature.skills.domain.model.SubSkills
 
 class SkillsPreviewParameterDataProvider : PreviewParameterProvider<Skill> {
     override val values: Sequence<Skill>
@@ -28,7 +29,7 @@ object SkillsPreviewParameterData {
         ),
         Skill(
             name = "Lorem ipsum",
-            subSkills = Pair("Lorem ipsum", "Lorem ipsum"),
+            subSkills = SubSkills("Lorem ipsum", "Lorem ipsum"),
             explanation = LoremIpsum(words = 50).values.toList().joinToString(separator = " "),
         ),
     )

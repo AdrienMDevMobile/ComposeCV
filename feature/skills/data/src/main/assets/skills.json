@@ -1,0 +1,75 @@
+{
+  "skills": [
+    {
+      "name": "Android",
+      "targetValue": 0.8,
+      "explanation": "La technologie qui <b>me plait le plus</b>.\nJe suis très content d'avoir quitté le développement Peoplesoft pour passer sur Android.\nPlus je travaille dessus, plus je vois que la route et longue, et continuera à s'étendre avec toutes les évolutions à venir.\n<b>Je suis impatient de voir ce que je vais apprendre sur Android demain</b>."
+    },
+    {
+      "name": "Flutter",
+      "targetValue": 0.6,
+      "explanation": "Poussé par ma curiosité, j'ai démmaré l'apprentissage de Flutter avec les tutoriels de Google.\nCette compétence m'a été utile pour le mécénat chez Open Food Fact !"
+    },
+    {
+      "name": "Kotlin",
+      "targetValue": 0.8,
+      "explanation": "Une des raisons pour laquel Android est si plaisant à travailler est Kotlin.\nCette technologie est <b>moderne</b>, et <b>incroyablement riche</b>. \nAvec ce langage, y a toujours quelque chose à apprendre pour <b>optimiser</b> son code. En efficacité et en lisibilité."
+    },
+    {
+      "name": "Mad skills",
+      "subSkills": {
+        "first": "Growth mindset",
+        "second": "Capacité d'apprentissage"
+      },
+      "explanation": "Growth mindset (état d’esprit de croissance) : Dire tout le monde peut évoluer, changer et progresser avec du travail et des efforts. .\nEn contraste avec le \"Fixed mindset\" (état d'esprit fixe), qui voit les capacités comme innées et déterminées uniquement par le talent naturel.\nConnaitre ces deux concepts là est une chose, mais <b>avoir une mentalité de croissance est de réelement croire</b>, au fond de soi, en sa capacité d'évoluer.\n <b>Cela ne s'apprend pas, cela s'experimente.</b> Par exemple, en réussissant un défi que l'on c'est fixé.\n Personnellement, je l'ai experimenté grace à League of Legends, en atteignant le rang Or, au bout de nombreuses années. Me classant ainsi parmis les 30% meilleurs joueurs du jeu."
+    },
+    {
+      "name": "Jetpack UI",
+      "targetValue": 0.8,
+      "explanation": "Constraint layout, Navigation drawers, Tabs, Recycler views, Layout et Data bindings, Nav graph.\nTout cela permet <b>d'optimser le design</b>, simplifier le maintient du code et rendre une application qui respecte les demandes de la Direction Artistique <b>au pixel près</b>."
+    },
+    {
+      "name": "Structure MVVM",
+      "targetValue": 0.7,
+      "explanation": "Une des difficultés les plus redoutées dans l'entrée du monde du travail est de travailler sur des projets déjà existants et incommensurément complexes.\nLes structures de développements aident à soulager cette difficulté.\nC'est pour cela que <b>je me tiens au courant des dernières évolutions</b> et me questionne toujours pour optimiser et adapter l'exisstant."
+    },
+    {
+      "name": "Soft skills",
+      "subSkills": {
+        "first": "Curiosité",
+        "second": "Créativité"
+      },
+      "explanation": "De nature curieuse, j'aime, et j'ai besoin, de comprendre les choses. Je n'hesite pas à poser des questions ou chercher les réponses."
+    },
+    {
+      "name": "Test Driven Development",
+      "targetValue": 0.5,
+      "explanation": "Cela demande d'apprendre de nombreux outils de tests et de structurer son code pour ces derniers.\nCela en vaut clairement le coup.\nAvoir son code validé tout au long de son développement est non seulement <b>rassurant</b>, mais surtout <b>très satisfaisant</b>."
+    },
+    {
+      "name": "Hilt",
+      "targetValue": 0.7,
+      "explanation": "Une révolution du développement que <b>j'adore</b>.\nL'injection de dépendances rend le code beaucoup <b>plus maintenable</b>, mais il y a toutefois un endroit où cela pique : quand ces dépendances doivent être injectées.\nAvec Hilt pas de soucis, <b>ces injections sont gérées de façon très lisible</b>."
+    },
+    {
+      "name": "Jetpack UI",
+      "targetValue": 0.8,
+      "explanation": "Constraint layout, Navigation drawers, Tabs, Recycler views.\nTout cela permet <b>d'optimser le design</b>, et rendre une application qui respecte les demandes de la Direction Artistique <b>au pixel près</b>."
+    },
+    {
+      "name": "Jetpack compose",
+      "targetValue": 0.7,
+      "explanation": "Le dernier bébé de Google.\nIntrigué et curieux, j'ai évidemment <b>choisi de faire ce projet personnel avec Compose pour apprendre à l'utiliser</b>.\nUne révolution, un pas de plus vers des codes plus maintenables et compréhensibles. Après Compose, le XML n'a plus le même gout"
+    },
+    {
+      "name": "Anglais",
+      "targetValue": 0.9,
+      "explanation": "With my multiple travels in American speaking countries (and the time spent browsing internet), I am fluent in English.\nI have a slight French accent, but that gives it a charm doesn't it ?"
+    },
+    {
+      "name": "Allemand",
+      "targetValue": 0.5,
+      "explanation": "Ich habe Deutch in der Schule gelernt. 2022 möchte ich wieder Deutsch lernen.\nIch spreche ein bissien deutch."
+    }
+  ]
+}

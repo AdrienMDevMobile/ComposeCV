@@ -4,7 +4,11 @@ Une application qui présente de manière élégante mes compétences, mes expé
 Cette application suit les bonnes pratiques du monde d'Android
 -Utilisation de Jetpack compose :
     Utilisation des previews, PreviewDataParameterProvider
+
 -Clean archi
+
+-Data : Moshi pour récupérer les données en Json
+
 -Gradle : utilisation de libs.toml
     Utilisation des multi modules : cela réduit les coûts de build (surtout utile dans un projet de plus grand envergure)
 

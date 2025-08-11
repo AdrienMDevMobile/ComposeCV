@@ -7,19 +7,23 @@ import java.util.Locale.getDefault
 
 abstract class DataProviderJSON (private val context: Context) {
 
-    protected fun loadJSONFromAsset(file_name:String): String? {
-        val low_file_name : String = file_name.lowercase(getDefault())
+    protected abstract val file_name: String
+
+    fun loadJSONFromAsset(): String? {
+        val file_path : String = file_name.lowercase(getDefault())
+        //Log.i("micheldr", "file_path : " + file_path)
 
         val json = try {
             val assetManager = context.applicationContext.assets
-            val `is`: InputStream = assetManager.open("json/" + low_file_name + ".json")
-            val size: Int = `is`.available()
+            val stream: InputStream = assetManager.open(file_path)
+            val size: Int = stream.available()
             val buffer = ByteArray(size)
-            `is`.read(buffer)
-            `is`.close()
+            stream.read(buffer)
+            stream.close()
             //Nous renvoyons le string pour json
             String(buffer, Charsets.UTF_8)
         }catch (ex: IOException) {
+            //Log.d("micheldr", ex.stackTraceToString())
             ex.printStackTrace()
             return null
         }
