@@ -1,7 +1,9 @@
 package com.adrienmandroid.composecv.feature.skills.domain.repository
 
-import com.adrienmandroid.composecv.feature.skills.domain.model.Skill
+import javax.inject.Inject
 
-interface SkillRepository {
-    fun getSkills(): List<Skill>
+class SkillRepository @Inject constructor (
+    val remoteRepository: SkillRemoteRepository,
+) {
+    fun getSkills() = remoteRepository.getSkills()
 }

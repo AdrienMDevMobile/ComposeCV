@@ -1,7 +1,7 @@
 package com.adrienmandroid.composecv.di
 
-import com.adrienmandroid.composecv.feature.skills.data.SkillRepositoryImpl
-import com.adrienmandroid.composecv.feature.skills.domain.repository.SkillRepository
+import com.adrienmandroid.composecv.feature.skills.data.SkillRemoteRepositoryImpl
+import com.adrienmandroid.composecv.feature.skills.domain.repository.SkillRemoteRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -12,6 +12,6 @@ import dagger.hilt.components.SingletonComponent
 abstract class SkillDataModule {
     @Binds
     abstract fun bindSkillsRepository(
-        skillRepository: SkillRepositoryImpl
-    ): SkillRepository
+        skillRepository: SkillRemoteRepositoryImpl
+    ): SkillRemoteRepository
 }
