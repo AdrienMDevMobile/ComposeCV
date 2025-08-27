@@ -51,5 +51,9 @@ gradlePlugin {
             id = libs.plugins.convention.json.library.get().pluginId
             implementationClass = "LibraryJsonPlugin"
         }
+        register("room") {
+            id = libs.plugins.convention.room.library.get().pluginId
+            implementationClass = "LibraryRoomPlugin"
+        }
     }
 }

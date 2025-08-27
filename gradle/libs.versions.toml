@@ -25,6 +25,7 @@ material = "1.12.0"
 moshi = "1.15.2"
 moshiKotlin = "1.15.0"
 navigation = "2.9.0"
+roomVersion = "2.7.2"
 
 [libraries]
 accompanist-flowlayout = { group = "ca.gosyer", name = "accompanist-flowlayout", version.ref = "flowlayout" }
@@ -44,6 +45,9 @@ android-lifecycle-runtime = { group = "androidx.lifecycle", name = "lifecycle-ru
 android-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigation" }
 android-test-espresso = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso" }
 android-test-junit = { group = "androidx.test.ext", name = "junit", version.ref = "android-junit" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomVersion" }
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomVersion" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomVersion" }
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 coil-compose = {group ="io.coil-kt", name="coil-compose", version.ref = "coil"}
 google-accompanist-pager = { group = "com.google.accompanist", name = "accompanist-pager", version.ref = "accompanist-pager" }
@@ -74,3 +78,4 @@ convention-library = { id = "com.adrienmandroid.composecv.library" }
 convention-compose-library = { id = "com.adrienmandroid.composecv.compose" }
 convention-hilt-library = { id = "com.adrienmandroid.composecv.hilt" }
 convention-json-library = { id = "com.adrienmandroid.composecv.json" }
+convention-room-library = { id = "com.adrienmandroid.composecv.room" }

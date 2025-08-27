@@ -11,7 +11,7 @@ import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 
-class SkillRemoteRepositoryImpl @Inject constructor(
+class SkillRemoteRepositoryJsonImpl @Inject constructor(
     @ApplicationContext private val context: Context
 ) : SkillRemoteRepository {
 

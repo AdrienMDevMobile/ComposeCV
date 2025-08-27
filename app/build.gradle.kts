@@ -62,4 +62,6 @@ dependencies {
     implementation(project(":feature:other:data"))
     implementation(project(":feature:other:domain"))
     implementation(project(":feature:other:ui"))
+    ksp(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
 }
