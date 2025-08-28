@@ -12,11 +12,10 @@ data class SkillData(
     val name: String,
     @ColumnInfo(name = "target_value")
     val targetValue: Float? = null,
-    //UTILISER UN TYPE CONVERTER https://github.com/AdrienMDevMobile/SpendingTracker/blob/master/app/src/main/java/com/micheldr/spendingtracker/data/DateConverter.kt
     @ColumnInfo(name = "sub_skill_one")
-    val subSkill_one: String? = "",
+    val subSkillOne: String? = "",
     @ColumnInfo(name = "sub_skill_two")
-    val subSkill_two: String? = "",
+    val subSkillTwo: String? = "",
     @ColumnInfo(name = "explanation")
     val explanation: String
 )

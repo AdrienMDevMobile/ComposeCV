@@ -5,6 +5,7 @@ import convention.configureHiltExtensionsForApplication
 import convention.configureHiltPlugins
 import convention.configureJavaExtension
 import convention.configureJvmCompile
+import convention.configureRoom
 import convention.configureSdk
 import convention.libs
 import org.gradle.api.Plugin
@@ -34,6 +35,8 @@ class ApplicationConventionPlugin : Plugin<Project> {
                 configureComposeExtension(this)
 
                 configureHiltExtensionsForApplication(this)
+
+                configureRoom()
 
                 dependencies {
                     add("implementation", libs.findLibrary("android.core.ktx").get())

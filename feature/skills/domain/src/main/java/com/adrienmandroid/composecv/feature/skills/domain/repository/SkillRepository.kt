@@ -10,12 +10,13 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class SkillRepository @Inject constructor (
+class SkillRepository @Inject constructor(
     val remoteRepository: SkillRemoteRepository,
     val localRepository: SkillLocalRepository,
 ) {
     fun get(coroutineScope: CoroutineScope): LiveData<List<Skill>> = liveData {
-        val source = localRepository.getSkills().distinctUntilChanged() // Pour éviter les re-calculs inutiles
+        val source = localRepository.getSkills()
+            .distinctUntilChanged() // Pour éviter les re-calculs inutiles
         //mediator live data permet d'appliquer la transformation sur notre live data
         emitSource(MediatorLiveData<List<Skill>>().apply {
             //source de notre live data que nous allons modifier.

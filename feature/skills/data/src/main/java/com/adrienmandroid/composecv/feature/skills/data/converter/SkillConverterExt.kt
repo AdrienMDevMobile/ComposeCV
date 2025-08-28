@@ -8,9 +8,9 @@ fun SkillData.toDomain() = Skill(
     uid = uid,
     name = name,
     targetValue = targetValue,
-    subSkills = if(subSkill_one != null && subSkill_two != null) SubSkills(
-        first = subSkill_one,
-        second = subSkill_two
+    subSkills = if(subSkillOne != null && subSkillTwo != null) SubSkills(
+        first = subSkillOne,
+        second = subSkillTwo
     ) else null,
     explanation = explanation
 )
@@ -19,7 +19,7 @@ fun Skill.toData() = SkillData(
     uid = uid,
     name = name,
     targetValue = targetValue,
-    subSkill_one = subSkills?.first,
-    subSkill_two = subSkills?.second,
+    subSkillOne = subSkills?.first,
+    subSkillTwo = subSkills?.second,
     explanation = explanation
 )
