@@ -9,6 +9,8 @@ Cette application suit les bonnes pratiques du monde d'Android
 
 -Data : Moshi pour récupérer les données en Json
 
+Room pour enregistrer les données dans une base de données locale
+
 -Gradle : utilisation de libs.toml
     Utilisation des multi modules : cela réduit les coûts de build (surtout utile dans un projet de plus grand envergure)
 
