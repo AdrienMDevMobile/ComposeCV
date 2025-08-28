@@ -1,0 +1,35 @@
+package com.adrienmandroid.composecv.data.remote
+
+import android.content.Context
+import java.io.IOException
+import java.io.InputStream
+import java.util.Locale.getDefault
+
+abstract class DataProviderJSON (private val context: Context) {
+
+    protected abstract val fileName: String
+
+    fun loadJSONFromAsset(): String? {
+        val filePath : String = fileName.lowercase(getDefault())
+
+        val json = try {
+            val assetManager = context.applicationContext.assets
+            val stream: InputStream = assetManager.open(filePath)
+            readJsonStream(stream)
+        }catch (ex: IOException) {
+            ex.printStackTrace()
+            return null
+        }
+        return json
+
+    }
+
+    fun readJsonStream(stream: InputStream): String {
+        val size: Int = stream.available()
+        val buffer = ByteArray(size)
+        stream.read(buffer)
+        stream.close()
+        //Nous renvoyons le string pour json
+        return String(buffer, Charsets.UTF_8)
+    }
+}

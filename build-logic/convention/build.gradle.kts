@@ -47,5 +47,13 @@ gradlePlugin {
             id = libs.plugins.convention.hilt.library.get().pluginId
             implementationClass = "LibraryHiltConventionPlugin"
         }
+        register("json") {
+            id = libs.plugins.convention.json.library.get().pluginId
+            implementationClass = "LibraryJsonPlugin"
+        }
+        register("room") {
+            id = libs.plugins.convention.room.library.get().pluginId
+            implementationClass = "LibraryRoomPlugin"
+        }
     }
 }

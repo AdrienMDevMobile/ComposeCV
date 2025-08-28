@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -12,6 +13,11 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+
+        ksp {
+            //TODO definir les schemas dans mon module build logic
+            arg("room.schemaLocation", "$projectDir/schemas")
+        }
     }
 
     buildTypes {
