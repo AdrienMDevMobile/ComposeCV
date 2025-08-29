@@ -5,10 +5,10 @@ import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.distinctUntilChanged
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch/*
+import kotlinx.coroutines.launch
 import androidx.lifecycle.liveData
 
-class LocalAndRemoteDataManager<T>(
+abstract class LocalAndRemoteDataManager<T>(
     val localDataSource: LocalDataSource<T>,
     val remoteDataSource: RemoteDataSource<T>
 ) {
@@ -16,7 +16,7 @@ class LocalAndRemoteDataManager<T>(
         val source = localDataSource.getData()
             .distinctUntilChanged() // Pour éviter les re-calculs inutiles
         //mediator live data permet d'appliquer la transformation sur notre live data
-        emitSource(MediatorLiveData<T>().apply {
+        emitSource(MediatorLiveData<List<T>>().apply {
             //source de notre live data que nous allons modifier.
             addSource(source) { data ->
                 if (data.isEmpty()) {
@@ -30,4 +30,4 @@ class LocalAndRemoteDataManager<T>(
             }
         })
     }
-}*/
+}
