@@ -20,6 +20,7 @@ junit = "4.13.2"
 kotlin = "2.1.10"
 ksp = "2.1.10-1.0.31"
 lifecycle-viewmodel-compose = "2.9.0"
+lifecycleLivedataKtx = "2.9.3"
 lifecycleRuntime = "2.9.0"
 material = "1.12.0"
 moshi = "1.15.2"
@@ -45,6 +46,8 @@ android-lifecycle-runtime = { group = "androidx.lifecycle", name = "lifecycle-ru
 android-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigation" }
 android-test-espresso = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso" }
 android-test-junit = { group = "androidx.test.ext", name = "junit", version.ref = "android-junit" }
+# Compose also carries android-lifecycle-runtime with itself
+androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycleLivedataKtx" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomVersion" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomVersion" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomVersion" }

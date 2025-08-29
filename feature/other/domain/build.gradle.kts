@@ -10,7 +10,5 @@ android {
 }
 
 dependencies {
-    implementation(project(":core:data"))
-    implementation(project(":core:ui"))
-    debugImplementation(project(":core:test"))
+    implementation(project(":core:model"))
 }

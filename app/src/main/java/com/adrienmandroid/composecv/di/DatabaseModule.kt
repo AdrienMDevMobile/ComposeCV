@@ -3,7 +3,7 @@ package com.adrienmandroid.composecv.di
 import android.content.Context
 import androidx.room.Room
 import com.adrienmandroid.composecv.database.AppDatabase
-import com.adrienmandroid.composecv.feature.skills.data.SkillDao
+import com.adrienmandroid.composecv.feature.skills.data.local.SkillDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

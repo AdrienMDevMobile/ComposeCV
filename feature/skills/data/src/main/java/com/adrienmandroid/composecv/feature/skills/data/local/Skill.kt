@@ -1,11 +1,11 @@
-package com.adrienmandroid.composecv.feature.skills.data
+package com.adrienmandroid.composecv.feature.skills.data.local
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "skills")
-data class SkillData(
+data class Skill(
     @PrimaryKey(autoGenerate = true)
     var uid: Int = 0,
     @ColumnInfo(name = "name")
