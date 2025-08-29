@@ -7,8 +7,8 @@ import kotlinx.coroutines.CoroutineScope
 import javax.inject.Inject
 
 class SkillRepositoryImpl @Inject constructor(
-    localDataSource: SkillLocalRepository,
-    remoteDataSource: SkillRemoteRepository
+    localDataSource: SkillLocalDataSource,
+    remoteDataSource: SkillRemoteDataSource
 ) : SkillRepository {
     val localAndRemoteDataManager: LocalAndRemoteDataManager<Skill> = LocalAndRemoteDataManager(
         localDataSource = localDataSource,

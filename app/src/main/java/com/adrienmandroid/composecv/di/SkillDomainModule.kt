@@ -12,7 +12,7 @@ import dagger.hilt.components.SingletonComponent
 @InstallIn(SingletonComponent::class)
 abstract class SkillDomainModule {
     @Binds
-    abstract fun bindSkillsRepository(
+    abstract fun bindSkillRepository(
         skillRepository: SkillRepositoryImpl
     ): SkillRepository
 }

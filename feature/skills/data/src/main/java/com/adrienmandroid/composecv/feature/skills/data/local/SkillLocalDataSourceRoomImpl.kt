@@ -5,14 +5,14 @@ import androidx.lifecycle.map
 import com.adrienmandroid.composecv.feature.skills.data.converter.toLocalData
 import com.adrienmandroid.composecv.feature.skills.data.converter.toDomain
 import com.adrienmandroid.composecv.feature.skills.domain.model.Skill
-import com.adrienmandroid.composecv.feature.skills.data.SkillLocalRepository
+import com.adrienmandroid.composecv.feature.skills.data.SkillLocalDataSource
 import javax.inject.Inject
 import kotlin.collections.map
 import kotlin.collections.toTypedArray
 
-class SkillLocalRepositoryRoomImpl @Inject constructor (
+class SkillLocalDataSourceRoomImpl @Inject constructor (
     private val skillDao: SkillDao,
-): SkillLocalRepository {
+): SkillLocalDataSource {
     override fun saveData(data: List<Skill>) {
         skillDao.insertAll(*data.map { it.toLocalData() }.toTypedArray())
     }
