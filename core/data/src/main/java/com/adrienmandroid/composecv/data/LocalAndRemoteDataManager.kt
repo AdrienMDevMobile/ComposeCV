@@ -8,7 +8,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import androidx.lifecycle.liveData
 
-abstract class LocalAndRemoteDataManager<T>(
+class LocalAndRemoteDataManager<T>(
     val localDataSource: LocalDataSource<T>,
     val remoteDataSource: RemoteDataSource<T>
 ) {

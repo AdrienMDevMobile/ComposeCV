@@ -4,7 +4,7 @@ import android.content.Context
 import android.util.Log
 import com.adrienmandroid.composecv.feature.skills.data.converter.toDomain
 import com.adrienmandroid.composecv.feature.skills.domain.model.Skill
-import com.adrienmandroid.composecv.feature.skills.domain.repository.SkillRemoteRepository
+import com.adrienmandroid.composecv.feature.skills.data.SkillRemoteRepository
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.adapter
@@ -15,9 +15,8 @@ import javax.inject.Inject
 class SkillRemoteRepositoryJsonImpl @Inject constructor(
     @ApplicationContext private val context: Context
 ) : SkillRemoteRepository {
-
     @OptIn(ExperimentalStdlibApi::class)
-    override fun getSkills(): List<Skill> {
+    override fun getData(): List<Skill> {
         val json: String? = SkillJsonProvider(context).loadJSONFromAsset()
 
         if(json == null){
