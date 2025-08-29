@@ -1,7 +1,7 @@
 package com.adrienmandroid.composecv.data
 
+import androidx.lifecycle.LiveData
+
 interface RemoteDataSource<T> {
-    suspend fun getDataFromRemote(
-        //Shared web call/local file with all the infos
-    ): T
+    fun getData(): List<T>
 }

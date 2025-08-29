@@ -11,7 +11,6 @@ android {
 }
 
 dependencies {
-
     api(project(":core:model"))
 
     implementation(libs.hilt.android)

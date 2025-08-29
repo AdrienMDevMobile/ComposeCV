@@ -1,6 +1,8 @@
 package com.adrienmandroid.composecv.data
 
+import androidx.lifecycle.LiveData
+
 interface LocalDataSource<T> {
-    suspend fun getLocalData(): T?
-    suspend fun setLocalData(t: T): Boolean
+    fun saveData(data: List<T>)
+    fun getData(): LiveData<List<T>>
 }
