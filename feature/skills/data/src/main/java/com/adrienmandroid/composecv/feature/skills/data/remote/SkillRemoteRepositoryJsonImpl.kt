@@ -1,7 +1,8 @@
-package com.adrienmandroid.composecv.feature.skills.data
+package com.adrienmandroid.composecv.feature.skills.data.remote
 
 import android.content.Context
 import android.util.Log
+import com.adrienmandroid.composecv.feature.skills.data.converter.toDomain
 import com.adrienmandroid.composecv.feature.skills.domain.model.Skill
 import com.adrienmandroid.composecv.feature.skills.domain.repository.SkillRemoteRepository
 import com.squareup.moshi.JsonAdapter
@@ -27,7 +28,7 @@ class SkillRemoteRepositoryJsonImpl @Inject constructor(
             val moshi: Moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
             val jsonAdapter: JsonAdapter<Skills> = moshi.adapter<Skills>()
 
-            return jsonAdapter.fromJson(json)?.skills ?: emptyList()
+            return jsonAdapter.fromJson(json)?.skills?.map { skill -> skill.toDomain() } ?: emptyList()
         }
     }
 }

@@ -1,21 +1,20 @@
 package com.adrienmandroid.composecv.feature.skills.data.converter
 
-import com.adrienmandroid.composecv.feature.skills.data.SkillData
+import com.adrienmandroid.composecv.feature.skills.data.local.Skill as SkillLocal
 import com.adrienmandroid.composecv.feature.skills.domain.model.Skill
-import com.adrienmandroid.composecv.feature.skills.domain.model.SubSkills
 
-fun SkillData.toDomain() = Skill(
+fun SkillLocal.toDomain() = Skill(
     uid = uid,
     name = name,
     targetValue = targetValue,
-    subSkills = if(subSkillOne != null && subSkillTwo != null) SubSkills(
+    subSkills = if(subSkillOne != null && subSkillTwo != null) Pair(
         first = subSkillOne,
         second = subSkillTwo
     ) else null,
     explanation = explanation
 )
 
-fun Skill.toData() = SkillData(
+fun Skill.toLocalData() = SkillLocal(
     uid = uid,
     name = name,
     targetValue = targetValue,

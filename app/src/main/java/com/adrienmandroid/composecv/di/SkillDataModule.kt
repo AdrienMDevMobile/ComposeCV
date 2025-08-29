@@ -1,7 +1,7 @@
 package com.adrienmandroid.composecv.di
 
-import com.adrienmandroid.composecv.feature.skills.data.SkillLocalRepositoryRoomImpl
-import com.adrienmandroid.composecv.feature.skills.data.SkillRemoteRepositoryJsonImpl
+import com.adrienmandroid.composecv.feature.skills.data.local.SkillLocalRepositoryRoomImpl
+import com.adrienmandroid.composecv.feature.skills.data.remote.SkillRemoteRepositoryJsonImpl
 import com.adrienmandroid.composecv.feature.skills.domain.repository.SkillLocalRepository
 import com.adrienmandroid.composecv.feature.skills.domain.repository.SkillRemoteRepository
 import dagger.Binds
