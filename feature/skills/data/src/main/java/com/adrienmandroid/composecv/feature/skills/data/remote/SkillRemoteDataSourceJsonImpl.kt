@@ -2,6 +2,7 @@ package com.adrienmandroid.composecv.feature.skills.data.remote
 
 import android.content.Context
 import android.util.Log
+import com.adrienmandroid.composecv.data.remote.DataProviderJSON
 import com.adrienmandroid.composecv.feature.skills.data.converter.toDomain
 import com.adrienmandroid.composecv.feature.skills.domain.model.Skill
 import com.adrienmandroid.composecv.feature.skills.data.SkillRemoteDataSource
@@ -17,7 +18,7 @@ class SkillRemoteDataSourceJsonImpl @Inject constructor(
 ) : SkillRemoteDataSource {
     @OptIn(ExperimentalStdlibApi::class)
     override fun getData(): List<Skill> {
-        val json: String? = SkillJsonProvider(context).loadJSONFromAsset()
+        val json: String? = DataProviderJSON(FILE_NAME).loadJSONFromAsset(context)
 
         if(json == null){
             Log.e("jsonError", "SkillJsonProvider returned null")
@@ -29,5 +30,9 @@ class SkillRemoteDataSourceJsonImpl @Inject constructor(
 
             return jsonAdapter.fromJson(json)?.skills?.map { skill -> skill.toDomain() } ?: emptyList()
         }
+    }
+
+    companion object {
+        private const val FILE_NAME = "skills.json"
     }
 }

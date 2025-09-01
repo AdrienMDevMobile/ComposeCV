@@ -5,11 +5,9 @@ import java.io.IOException
 import java.io.InputStream
 import java.util.Locale.getDefault
 
-abstract class DataProviderJSON (private val context: Context) {
+class DataProviderJSON (private val fileName: String) {
 
-    protected abstract val fileName: String
-
-    fun loadJSONFromAsset(): String? {
+    fun loadJSONFromAsset(context: Context): String? {
         val filePath : String = fileName.lowercase(getDefault())
 
         val json = try {

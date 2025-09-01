@@ -2,6 +2,8 @@ package com.adrienmandroid.composecv.di
 
 import com.adrienmandroid.composecv.feature.experience.data.ExperienceRepositoryImpl
 import com.adrienmandroid.composecv.feature.experience.domain.repository.ExperienceRepository
+import com.adrienmandroid.composecv.feature.experience.data.ExperienceRemoteDataSource
+import com.adrienmandroid.composecv.feature.experience.data.remote.ExperienceRemoteDataSourceJsonImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -15,5 +17,10 @@ abstract class ExperienceDataModule {
     abstract fun bindExperienceRepository(
         experienceRepositoryImpl: ExperienceRepositoryImpl
     ): ExperienceRepository
+
+    @Binds
+    abstract fun bindExperienceRemoteRepository(
+        experienceRemoteRepository: ExperienceRemoteDataSourceJsonImpl
+    ): ExperienceRemoteDataSource
 
 }

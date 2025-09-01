@@ -1,0 +1,214 @@
+[
+  {
+    "name": "Mécénat pour Open Food Fact",
+    "employer": "Astek",
+    "logoUrl": "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/experience/exp_off.png",
+    "expDates": {
+      "begin": 1730075200000,
+      "end": null
+    },
+    "professional": true,
+    "informations": [
+      {
+        "name": "Travail sur<b> Flutter</b>"
+      },
+      {
+        "name": "Travail en <b>autonomie</b>"
+      }
+    ]
+  },
+  {
+    "name": "Ingénieur développement Mobile",
+    "employer": "Astek",
+    "logoUrl": "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/experience/astek.png",
+    "expDates": {
+      "begin": 1631052000000,
+      "end": 1728075200000
+    },
+    "professional": true,
+    "informations": [
+      {
+        "name": "Développement Android"
+      },
+      {
+        "name": "Utilisation de Git en équipe"
+      },
+      {
+        "name": "<b>Travail en équipe</b> avec les développeurs iOS et back-ends"
+      },
+      {
+        "name": "<b>Spécifications et chiffrages</b> des futurs développements."
+      },
+      {
+        "name": "Respect du design donné par l'équipe DA, <b>au pixel prêt</b>"
+      },
+      {
+        "name": "Application des règles et normes d'écritures. Personnalisée par les développeurs Séniors ou recommandés par Google."
+      },
+      {
+        "name": "Support, monitoring et analyses des logs"
+      },
+      {
+        "name": "Layout binding et data binding"
+      },
+      {
+        "name": "Navigation graph"
+      },
+      {
+        "name": "Développement d'une nouvelle application utilisant <b>Compose</b> (dont <b>Compose navigation</b>) et <b>Hilt</b>"
+      }
+    ]
+  },
+  {
+    "name": "Projet personnel CV compose",
+    "logoUrl": "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/experience/my_logo.png",
+    "expDates": {
+      "begin": 1645052400000,
+      "end": null
+    },
+    "professional": false,
+    "informations": [
+      {
+        "name": "<b>Jetpack compose</b>"
+      },
+      {
+        "name": "Plurals"
+      },
+      {
+        "name": "Recherche sur la structure MVVM et recommandations Google"
+      },
+      {
+        "name": "Construction du design en collaboration avec des designers"
+      },
+      {
+        "name": "Canvas"
+      },
+      {
+        "name": "Data driven ui (inspiré par Server driven ui)"
+      },
+      {
+        "name": "Flavors"
+      }
+    ]
+  },
+  {
+    "name": "Enregistrement des dépenses Flutter",
+    "logoUrl": "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/experience/spending.png",
+    "expDates": {
+      "begin": 1728075200000,
+      "end": null
+    },
+    "professional": false,
+    "informations": [
+      {
+        "name": "Application sauvegarde des dépenses pour prendre en main Flutter"
+      }
+    ]
+  },
+  {
+    "name": "Suivie des dépenses, room & datastore",
+    "logoUrl": "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/experience/spending.png",
+    "expDates": {
+      "begin": 1664575200000,
+      "end": 1699575200000
+    },
+    "professional": false,
+    "informations": [
+      {
+        "name": "<b>Jetpack compose</b>"
+      },
+      {
+        "name": "<b>Room</b>"
+      },
+      {
+        "name": "<b>Data store</b>"
+      },
+      {
+        "name": "Pagination"
+      },
+      {
+        "name": "Modification des composables par défaut"
+      }
+    ]
+  },
+  {
+    "name": "Projet personnel Animateurs FDC",
+    "logoUrl": "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/experience/fdc.png",
+    "expDates": {
+      "begin": 1593554400000,
+      "end": 1641596400000
+    },
+    "professional": false,
+    "informations": [
+      {
+        "name": "Projet Android avec Kotlin."
+      },
+      {
+        "name": "Réflexion avec d'autres Animateurs sur les fonctionnalités à développer."
+      },
+      {
+        "name": "Écriture des <b>tests</b> unitaires et fonctionnels. <b>Junit4, Mockito, Espresso et UI automator</b>."
+      },
+      {
+        "name": "Injection de dépendances (DI) : <b>Hilt</b>"
+      },
+      {
+        "name": "Utilisation de l'architecture <b>MVVM</b>."
+      },
+      {
+        "name": "<b>Recherche des meilleures bibliothèques</b> pour les différentes fonctionnalités."
+      },
+      {
+        "name": "Utilisation de Jetpack (test: Junit, Espresso. Threading. Fragment)"
+      }
+    ]
+  },
+  {
+    "name": "Ingénieur Développeur Peoplesoft",
+    "employer": "S&H group",
+    "logoUrl": "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/experience/seh.png",
+    "expDates": {
+      "begin": 1572562800000,
+      "end": 1590962400000
+    },
+    "professional": true,
+    "informations": [
+      {
+        "name": "Développement et mises à jour de pages du site de mobilité interne du client."
+      },
+      {
+        "name": "<b>Spécifications et chiffrages</b> des futurs développements."
+      },
+      {
+        "name": "Commentaires pour la compréhension et <b>maintenabilité du code</b>."
+      },
+      {
+        "name": "Environnement technique : Peoplesoft, SQL."
+      },
+      {
+        "name": "Mise en place de nouveaux outils et gain de temps sur de nombreux process."
+      }
+    ]
+  },
+  {
+    "name": "Développeur Peoplesoft en alternance",
+    "employer": "Natixis",
+    "logoUrl": "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/experience/natixis.png",
+    "expDates": {
+      "begin": 1472680800000,
+      "end": 1559340000000
+    },
+    "professional": true,
+    "informations": [
+      {
+        "name": "Développement en autonomie et en équipe."
+      },
+      {
+        "name": "<b>Analyse des besoins utilisateurs</b> en prenant en compte <b>obligations</b> et <b>contraintes</b>."
+      },
+      {
+        "name": "Écriture des Tests d'essai."
+      }
+    ]
+  }
+]
