@@ -2,6 +2,7 @@ package com.adrienmandroid.composecv.feature.experience.data.remote
 
 import android.content.Context
 import android.util.Log
+import com.adrienmandroid.composecv.data.remote.DataProviderJSON
 import com.adrienmandroid.composecv.feature.experience.data.ExperienceRemoteDataSource
 import com.adrienmandroid.composecv.feature.experience.data.converter.toDomain
 import com.adrienmandroid.composecv.feature.experience.data.remote.Experience as ExperienceData
@@ -18,7 +19,7 @@ class ExperienceRemoteDataSourceJsonImpl @Inject constructor(
 ) : ExperienceRemoteDataSource {
     @OptIn(ExperimentalStdlibApi::class)
     override fun getData(): List<Experience> {
-        val json: String? = ExperienceJsonProvider(context).loadJSONFromAsset()
+        val json: String? = DataProviderJSON(FILE_NAME).loadJSONFromAsset(context)
 
         if(json == null){
             Log.e("jsonError", "ExperienceJsonProvider returned null")
@@ -30,5 +31,8 @@ class ExperienceRemoteDataSourceJsonImpl @Inject constructor(
 
             return jsonAdapter.fromJson(json)?.toList()?.map { experience -> experience.toDomain() } ?: emptyList()
         }
+    }
+    companion object {
+        private const val FILE_NAME = "experiences.json"
     }
 }

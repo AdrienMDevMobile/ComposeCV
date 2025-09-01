@@ -13,7 +13,6 @@ fun ExperienceRemote.toDomain() = Experience(
     logoUrl = logoUrl,
     expDates = Dates(Date(expDates.begin), expDates.end?.let { Date(it) }),
     professional = professional,
-    //link = link,
     informations = informations.map { it.toDomain() }
 )
 

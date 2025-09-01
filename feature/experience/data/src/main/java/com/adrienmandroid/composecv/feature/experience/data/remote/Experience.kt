@@ -6,7 +6,6 @@ data class Experience(
     val logoUrl: String,
     val expDates: Dates,
     val professional: Boolean,
-    //val link: Link? = null,
     val informations: List<ExperienceInformation>
 )
 

@@ -1,7 +1,6 @@
 package com.adrienmandroid.composecv.feature.experience.domain.model
 
 import com.adrienmandroid.composecv.model.Dates
-import com.adrienmandroid.composecv.model.Link
 
 data class Experience(
     val name: String,
@@ -9,7 +8,7 @@ data class Experience(
     val logoUrl: String,
     val expDates: Dates,
     val professional: Boolean,
-    val link: Link? = null,
+    //val link: Link? = null,
     val informations: List<ExperienceInformation>
 )
 
