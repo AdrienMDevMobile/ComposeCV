@@ -22,7 +22,7 @@ class DataProviderJSON (private val fileName: String) {
 
     }
 
-    fun readJsonStream(stream: InputStream): String {
+    private fun readJsonStream(stream: InputStream): String {
         val size: Int = stream.available()
         val buffer = ByteArray(size)
         stream.read(buffer)
