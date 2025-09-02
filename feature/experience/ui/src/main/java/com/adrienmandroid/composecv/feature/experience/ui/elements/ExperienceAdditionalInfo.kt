@@ -13,13 +13,12 @@ import com.adrienmandroid.composecv.core.ui.getDifferenceToString
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.core.ui.toMonthString
 import com.adrienmandroid.composecv.model.Dates
-import com.adrienmandroid.composecv.model.Link
 import java.util.Date
 
 //Note : Text color of a text is by default onX where X is the container containing it
 // (does not take into account column background)
 @Composable
-fun ExpAdditionalInfo(dates: Dates, employer: String?, link: Link?) {
+fun ExpAdditionalInfo(dates: Dates, employer: String?) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -45,9 +44,6 @@ fun ExpAdditionalInfo(dates: Dates, employer: String?, link: Link?) {
                 fontWeight = FontWeight.Bold,
             )
         }
-        if (link != null) {
-            Text(link.text)
-        }
     }
 }
 
@@ -58,7 +54,6 @@ fun PreviewExpAdditionalInfo() {
         ExpAdditionalInfo(
             dates = Dates(begin = Date(1730075200000), end = Date(1730075200000)),
             employer = "Employeur Lorem ipsum",
-            link = null
         )
     }
 }

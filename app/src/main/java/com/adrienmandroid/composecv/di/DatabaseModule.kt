@@ -3,6 +3,7 @@ package com.adrienmandroid.composecv.di
 import android.content.Context
 import androidx.room.Room
 import com.adrienmandroid.composecv.database.AppDatabase
+import com.adrienmandroid.composecv.feature.experience.data.local.ExperienceDao
 import com.adrienmandroid.composecv.feature.skills.data.local.SkillDao
 import dagger.Module
 import dagger.Provides
@@ -16,8 +17,13 @@ import javax.inject.Singleton
 object DatabaseModule {
 
     @Provides
-    fun provideSkillDao(skillDatabase: AppDatabase): SkillDao {
-        return  skillDatabase.skillDao()
+    fun provideSkillDao(appDatabase: AppDatabase): SkillDao {
+        return  appDatabase.skillDao()
+    }
+
+    @Provides
+    fun provideExperienceDao(appDatabase: AppDatabase): ExperienceDao {
+        return  appDatabase.experienceDao()
     }
 
     @Provides
