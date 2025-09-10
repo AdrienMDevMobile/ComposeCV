@@ -1,11 +1,11 @@
 package com.adrienmandroid.composecv.feature.skills.data.local
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.map
 import com.adrienmandroid.composecv.feature.skills.data.converter.toLocalData
 import com.adrienmandroid.composecv.feature.skills.data.converter.toDomain
 import com.adrienmandroid.composecv.feature.skills.domain.model.Skill
 import com.adrienmandroid.composecv.feature.skills.data.SkillLocalDataSource
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 import kotlin.collections.map
 import kotlin.collections.toTypedArray
@@ -17,7 +17,7 @@ class SkillLocalDataSourceRoomImpl @Inject constructor (
         skillDao.insertAll(*data.map { it.toLocalData() }.toTypedArray())
     }
 
-    override fun getData(): LiveData<List<Skill>> = skillDao.getAll().map { skills ->
+    override fun getData(): Flow<List<Skill>> = skillDao.getAllAsFlow().map { skills ->
         skills.map { skill -> skill.toDomain() }
     }
 }

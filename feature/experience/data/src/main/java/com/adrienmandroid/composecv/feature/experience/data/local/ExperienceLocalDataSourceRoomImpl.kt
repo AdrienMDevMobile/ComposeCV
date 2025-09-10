@@ -1,10 +1,10 @@
 package com.adrienmandroid.composecv.feature.experience.data.local
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.map
 import com.adrienmandroid.composecv.feature.experience.data.ExperienceLocalDataSource
 import com.adrienmandroid.composecv.feature.experience.data.converter.toDomain
 import com.adrienmandroid.composecv.feature.experience.domain.model.Experience
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
 class ExperienceLocalDataSourceRoomImpl @Inject constructor (
@@ -14,7 +14,7 @@ class ExperienceLocalDataSourceRoomImpl @Inject constructor (
         experienceDao.insertAll(*data.toTypedArray())
     }
 
-    override fun getData(): LiveData<List<Experience>> = experienceDao.getExperiencesAndInformations().map { experiences ->
+    override fun getData(): Flow<List<Experience>> = experienceDao.getExperiencesAndInformationsAsFlow().map { experiences ->
         experiences.map { experience -> experience.toDomain() }
     }
 }
