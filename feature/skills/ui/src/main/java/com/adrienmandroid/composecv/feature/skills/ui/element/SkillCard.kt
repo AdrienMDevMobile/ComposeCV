@@ -33,10 +33,10 @@ import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.core.ui.toAnnotatedString
 import com.adrienmandroid.composecv.feature.skills.ui.R
 import com.adrienmandroid.composecv.feature.skills.ui.preview.SkillsPreviewParameterDataProvider
-import com.adrienmandroid.composecv.feature.skills.domain.model.Skill
+import com.adrienmandroid.composecv.feature.skills.ui.state.SkillUiState
 
 @Composable
-fun SkillCard(skill: Skill) {
+fun SkillCard(skill: SkillUiState) {
 
     val isTextVisible = MutableLiveData(false)
     Card(
@@ -60,7 +60,10 @@ fun SkillCard(skill: Skill) {
             Spacer(modifier = Modifier.height(10.dp))
 
             skill.targetValue?.let {
-                SkillLinearProgressIndicator(targetValue = it)
+                SkillLinearProgressIndicator(
+                    targetValue = it,
+                    targetValueColor = skill.targetValueColor
+                )
             }
             skill.subSkills?.let { subskills ->
                 Row(
@@ -137,7 +140,7 @@ fun SkillText(isVisible: LiveData<Boolean>, text: String) {
 @PreviewLightDark
 @Composable
 fun SkillCardPreview(
-    @PreviewParameter(SkillsPreviewParameterDataProvider::class) skill: com.adrienmandroid.composecv.feature.skills.domain.model.Skill
+    @PreviewParameter(SkillsPreviewParameterDataProvider::class) skill: SkillUiState
 ) {
     ComposeCVTheme {
         SkillCard(skill)
