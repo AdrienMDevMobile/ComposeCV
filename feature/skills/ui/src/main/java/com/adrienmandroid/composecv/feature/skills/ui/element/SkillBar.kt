@@ -12,6 +12,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.core.ui.theme.colorSkillHigh
@@ -19,7 +20,10 @@ import com.adrienmandroid.composecv.core.ui.theme.colorSkillLow
 import com.adrienmandroid.composecv.core.ui.theme.colorSkillMedium
 
 @Composable
-fun SkillLinearProgressIndicator(targetValue: Float) {
+fun SkillLinearProgressIndicator(
+    targetValue: Float,
+    targetValueColor: Color
+) {
     var progress by remember { mutableStateOf(0f) }
     val animatedProgress = animateFloatAsState(
         targetValue = progress,
@@ -28,7 +32,7 @@ fun SkillLinearProgressIndicator(targetValue: Float) {
 
     SegmentedProgressIndicator(
         progress = animatedProgress,
-        color = getSkillColor(targetValue),
+        color = targetValueColor,
         modifier = Modifier
             .fillMaxWidth()
             .clip(RoundedCornerShape(10.dp)),
@@ -47,29 +51,23 @@ fun SkillLinearProgressIndicator(targetValue: Float) {
     })
 }
 
-fun getSkillColor(targetValue: Float) = when {
-    targetValue >= 0.8f -> colorSkillHigh
-    targetValue >= 0.6f -> colorSkillMedium
-    else -> colorSkillLow
-}
-
 //TODO : PreviewParameter for only 1 test function
 @Composable
 @PreviewLightDark
 fun PreviewSkillBarHigh() {
-    SkillLinearProgressIndicator(1f)
+    SkillLinearProgressIndicator(1f, colorSkillHigh)
 }
 
 @Composable
 @PreviewLightDark
 fun PreviewSkillBarMid() {
-    SkillLinearProgressIndicator(0.7f)
+    SkillLinearProgressIndicator(0.7f, colorSkillMedium)
 }
 
 @Composable
 @PreviewLightDark
 fun PreviewSkillBarLow() {
-    SkillLinearProgressIndicator(0.1f)
+    SkillLinearProgressIndicator(0.1f, colorSkillLow)
 }
 //https://blog.stylingandroid.com/compose-ui-snapshot-testing/ testing animations frames
 //https://foso.github.io/Jetpack-Compose-Playground/material/linearprogressindicator/

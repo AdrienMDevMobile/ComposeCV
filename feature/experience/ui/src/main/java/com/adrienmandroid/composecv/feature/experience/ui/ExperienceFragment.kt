@@ -13,27 +13,35 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.adrienmandroid.composecv.core.ui.LoadingPage
+import com.adrienmandroid.composecv.core.ui.states.UiStates
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
-import com.adrienmandroid.composecv.feature.experience.ui.preview.ExperiencesPreviewParameterData
 import com.adrienmandroid.composecv.feature.experience.ui.elements.ExperienceCard
+import com.adrienmandroid.composecv.feature.experience.ui.preview.ExperiencesPreviewParameterData
+import com.adrienmandroid.composecv.feature.experience.ui.state.ExperienceUiState
 import com.adrienmandroid.composecv.feature.experience.ui.viewmodel.ExperienceViewmodel
-import com.adrienmandroid.composecv.feature.experience.domain.model.Experience
 
 @Composable
 fun ExperienceFragment(
     modifier: Modifier = Modifier,
     experienceViewmodel: ExperienceViewmodel = hiltViewModel()
 ) {
-    val experiences by experienceViewmodel.experiences.observeAsState(emptyList())
-    ExperiencePage(
-        experiences = experiences,
-        modifier = modifier
+    val experiences: UiStates<List<ExperienceUiState>> by experienceViewmodel.experiences.observeAsState(
+        UiStates.Loading
     )
+
+    when (experiences) {
+        UiStates.Loading -> LoadingPage()
+        is UiStates.Success<List<ExperienceUiState>> -> ExperiencePage(
+            (experiences as UiStates.Success<List<ExperienceUiState>>).value,
+            modifier
+        )
+    }
 }
 
 @Composable
 fun ExperiencePage(
-    experiences: List<com.adrienmandroid.composecv.feature.experience.domain.model.Experience>,
+    experiences: List<ExperienceUiState>,
     modifier: Modifier = Modifier,
 ) {
     LazyColumn(

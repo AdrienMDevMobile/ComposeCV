@@ -1,6 +1,5 @@
 package com.adrienmandroid.composecv.feature.experience.data.local
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -9,6 +8,7 @@ import androidx.room.Transaction
 import com.adrienmandroid.composecv.feature.experience.data.converter.toLocalData
 import com.adrienmandroid.composecv.feature.experience.data.converter.toLocalDataEntity
 import com.adrienmandroid.composecv.feature.experience.domain.model.Experience
+import kotlinx.coroutines.flow.Flow
 import com.adrienmandroid.composecv.feature.experience.domain.model.ExperienceInformation as ExperienceInformationDomain
 
 @Dao
@@ -21,7 +21,7 @@ interface ExperienceDao {
 
     @Transaction
     @Query("SELECT * FROM experiences")
-    fun getExperiencesAndInformations(): LiveData<List<ExperienceWithInformation>>
+    fun getExperiencesAndInformationsAsFlow(): Flow<List<ExperienceWithInformation>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertExperienceEntityAndReturnId(experience: ExperienceEntity): Long

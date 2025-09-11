@@ -9,29 +9,29 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.PreviewLightDark
+import com.adrienmandroid.composecv.core.ui.Difference
 import com.adrienmandroid.composecv.core.ui.getDifferenceToString
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.core.ui.toMonthString
-import com.adrienmandroid.composecv.model.Dates
 import java.util.Date
 
 //Note : Text color of a text is by default onX where X is the container containing it
 // (does not take into account column background)
 @Composable
-fun ExpAdditionalInfo(dates: Dates, employer: String?) {
+fun ExpAdditionalInfo(begin: Date, end: Date?, duration: Difference, employer: String?) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
             .padding(expHorizontalSpacing, expVerticalSpacing)
     ) {
         Text(
-            text = dates.begin.toMonthString().plus(" - ").plus(dates.end.toMonthString()),
+            text = begin.toMonthString().plus(" - ").plus(end.toMonthString()),
             color = MaterialTheme.colors.onBackground,
             style = MaterialTheme.typography.body1,
             fontWeight = FontWeight.Bold,
         )
         Text(
-            text = dates.getDifferenceToString(),
+            text = duration.getDifferenceToString(),
             color = MaterialTheme.colors.onBackground,
             style = MaterialTheme.typography.body1,
             fontWeight = FontWeight.Bold,
@@ -52,7 +52,9 @@ fun ExpAdditionalInfo(dates: Dates, employer: String?) {
 fun PreviewExpAdditionalInfo() {
     ComposeCVTheme {
         ExpAdditionalInfo(
-            dates = Dates(begin = Date(1730075200000), end = Date(1730075200000)),
+            begin = Date(1730075200000),
+            end = Date(1730075200000),
+            duration = Difference(3, 2),
             employer = "Employeur Lorem ipsum",
         )
     }

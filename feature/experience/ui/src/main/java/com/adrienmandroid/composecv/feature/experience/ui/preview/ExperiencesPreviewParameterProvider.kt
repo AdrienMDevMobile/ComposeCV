@@ -3,12 +3,14 @@ package com.adrienmandroid.composecv.feature.experience.ui.preview
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import com.adrienmandroid.composecv.feature.experience.domain.model.Experience
 import com.adrienmandroid.composecv.feature.experience.domain.model.ExperienceInformation
+import com.adrienmandroid.composecv.feature.experience.ui.state.ExperienceUiState
+import com.adrienmandroid.composecv.feature.experience.ui.state.toUiState
 import com.adrienmandroid.composecv.model.Dates
 import java.util.Date
 
 class ExperiencesPreviewParameterProvider :
-    PreviewParameterProvider<Experience> {
-    override val values: Sequence<Experience>
+    PreviewParameterProvider<ExperienceUiState> {
+    override val values: Sequence<ExperienceUiState>
         get() = ExperiencesPreviewParameterData.experiences.asSequence()
 }
 
@@ -47,5 +49,5 @@ object ExperiencesPreviewParameterData {
                 ExperienceInformation("Lorem ipsum"),
             )
         ),
-    )
+    ).map { it.toUiState() }
 }
