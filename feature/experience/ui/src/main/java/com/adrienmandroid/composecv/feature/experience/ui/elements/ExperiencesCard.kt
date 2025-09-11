@@ -15,30 +15,31 @@ import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
-import com.adrienmandroid.composecv.feature.experience.domain.model.Experience
 import com.adrienmandroid.composecv.feature.experience.ui.preview.ExperiencesPreviewParameterProvider
+import com.adrienmandroid.composecv.feature.experience.ui.state.ExperienceUiState
 
 val expHorizontalSpacing = 10.dp
 val expVerticalSpacing = 10.dp
 
 @Composable
-fun ExperienceCard(experience: Experience) {
+fun ExperienceCard(experience: ExperienceUiState) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
             .clip(RoundedCornerShape(25.dp))
             .padding(expHorizontalSpacing, expVerticalSpacing),
-        elevation = if (experience.professional) {
-            6.dp
-        } else {
-            2.dp
-        },
+        elevation = experience.headerElevation,
         backgroundColor = MaterialTheme.colors.background
     )
     {
         Column(modifier = Modifier.fillMaxWidth()) {
-            ExperienceHeader(experience.logoUrl, experience.name, experience.professional)
-            ExpAdditionalInfo(experience.expDates, experience.employer)
+            ExperienceHeader(experience.logoUrl, experience.name, experience.headerColor)
+            ExpAdditionalInfo(
+                begin = experience.dateBegin,
+                end = experience.dateEnd,
+                duration = experience.expDuration,
+                employer = experience.employer
+            )
             ExperienceDetailsItem(experience.informations)
             Spacer(modifier = Modifier.height(expVerticalSpacing))
         }
@@ -48,7 +49,7 @@ fun ExperienceCard(experience: Experience) {
 @PreviewLightDark
 @Composable
 fun ExperienceCardPreview(
-    @PreviewParameter(ExperiencesPreviewParameterProvider::class) experience: Experience
+    @PreviewParameter(ExperiencesPreviewParameterProvider::class) experience: ExperienceUiState
 ) {
     ComposeCVTheme {
         ExperienceCard(experience)

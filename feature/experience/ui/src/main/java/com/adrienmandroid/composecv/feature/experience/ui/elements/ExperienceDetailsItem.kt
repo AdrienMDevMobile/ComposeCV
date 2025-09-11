@@ -13,10 +13,9 @@ import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.core.ui.toAnnotatedString
-import com.adrienmandroid.composecv.feature.experience.domain.model.ExperienceInformation
 
 @Composable
-fun ExperienceDetailsItem(informations: List<com.adrienmandroid.composecv.feature.experience.domain.model.ExperienceInformation>) {
+fun ExperienceDetailsItem(informations: List<String>) {
     Column {
         informations.forEach { information ->
             Box(
@@ -26,7 +25,7 @@ fun ExperienceDetailsItem(informations: List<com.adrienmandroid.composecv.featur
                     .padding(expHorizontalSpacing, 0.dp)
             ) {
                 Text(
-                    information.name.toAnnotatedString(),
+                    information.toAnnotatedString(),
                     color = MaterialTheme.colors.onBackground,
                     style = MaterialTheme.typography.body1
                 )
@@ -42,12 +41,8 @@ fun PreviewExperienceDetailsItem() {
         Column {
             ExperienceDetailsItem(
                 listOf(
-                    com.adrienmandroid.composecv.feature.experience.domain.model.ExperienceInformation(
-                        "Lorem <b>ipsum</b>"
-                    ),
-                    com.adrienmandroid.composecv.feature.experience.domain.model.ExperienceInformation(
-                        "Lorem ipsum"
-                    ),
+                    "Lorem <b>ipsum</b>",
+                    "Lorem ipsum",
                 )
             )
         }
