@@ -14,6 +14,7 @@ import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.core.ui.theme.carouselButton
 import com.adrienmandroid.composecv.feature.other.ui.preview.data.StudyPreviewParameterData
 import com.adrienmandroid.composecv.feature.other.domain.model.Study
+import com.adrienmandroid.composecv.feature.other.ui.state.StudyUiState
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.HorizontalPagerIndicator
@@ -23,7 +24,7 @@ val studyVerticalSpacing = 10.dp
 
 @OptIn(ExperimentalPagerApi::class)
 @Composable
-fun StudyList(studies: List<Study>) {
+fun StudyList(studies: List<StudyUiState>) {
     Column {
         val pagerState = rememberPagerState()
 
@@ -44,7 +45,7 @@ fun StudyList(studies: List<Study>) {
         )
     }
 }
-
+/*
 @Composable
 @PreviewLightDark
 fun PreviewStudyList() {
@@ -52,4 +53,4 @@ fun PreviewStudyList() {
     ComposeCVTheme {
         StudyList(studies = studies)
     }
-}
+}*/

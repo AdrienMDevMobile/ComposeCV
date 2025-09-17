@@ -40,6 +40,8 @@ import com.adrienmandroid.composecv.core.ui.theme.quoteBackground
 import com.adrienmandroid.composecv.feature.other.domain.model.Quote
 import com.adrienmandroid.composecv.feature.other.ui.R
 import com.adrienmandroid.composecv.feature.other.ui.preview.data.QuoteIndexedPreviewParameterProvider
+import com.adrienmandroid.composecv.feature.other.ui.state.QuoteUiState
+import com.adrienmandroid.composecv.feature.other.ui.state.TextPosition
 import com.adrienmandroid.composecv.core.ui.R as RCoreUi
 
 private val marginTop = 12.dp
@@ -48,7 +50,7 @@ private val marginStart = 12.dp
 private val marginEnd = 12.dp
 
 @Composable
-fun QuoteCardDraw(quote: Quote, position: Int) {
+fun QuoteCardDraw(quote: QuoteUiState) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -59,13 +61,13 @@ fun QuoteCardDraw(quote: Quote, position: Int) {
             .padding(10.dp, 10.dp), backgroundColor = MaterialTheme.colors.quoteBackground,
         elevation = 5.dp
     ) {
-        QuoteContent(quote, position)
+        QuoteContent(quote)
     }
 }
 
 @Composable
-fun QuoteContent(quote: Quote, position: Int) {
-    val isTextLeft = (position % 2 == 0)
+fun QuoteContent(quote: QuoteUiState) {
+    val isTextLeft = quote.textPosition == TextPosition.LEFT
 
     var isLoading by remember { mutableStateOf(true) }
     var isError by remember { mutableStateOf(false) }
@@ -222,7 +224,7 @@ fun ConstraintLayoutScope.AuthorPicture(
         contentDescription = contentDescription,
     )
 }
-
+/*TODO
 @PreviewLightDark
 @Composable
 fun PreviewQuoteCard(
@@ -238,4 +240,4 @@ fun PreviewQuoteCard(
             position = quoteIndexed.first
         )
     }
-}
+}*/

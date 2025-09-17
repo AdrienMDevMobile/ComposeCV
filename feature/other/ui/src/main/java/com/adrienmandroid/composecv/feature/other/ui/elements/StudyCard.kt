@@ -39,6 +39,7 @@ import com.adrienmandroid.composecv.core.ui.LoadingBox
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.core.ui.toMonthString
 import com.adrienmandroid.composecv.feature.other.domain.model.Study
+import com.adrienmandroid.composecv.feature.other.ui.state.StudyUiState
 import com.adrienmandroid.composecv.model.Dates
 import java.util.Date
 import com.adrienmandroid.composecv.core.test.R as TestingR
@@ -46,7 +47,7 @@ import com.adrienmandroid.composecv.core.ui.R as RCoreUi
 
 @Composable
 fun StudyCard(
-    study: Study
+    study: StudyUiState
 ) {
     Card(
         modifier = Modifier
@@ -64,7 +65,7 @@ fun StudyCard(
 
 @Composable
 fun StudyContent(
-    study: Study
+    study: StudyUiState
 ) {
     var isLoading by remember { mutableStateOf(true) }
     var isError by remember { mutableStateOf(false) }
@@ -180,6 +181,7 @@ fun StudyForegroundPicture(
     )
 }
 
+/*TODO
 @Preview(
     uiMode = Configuration.UI_MODE_NIGHT_NO,
     widthDp = 300,
@@ -206,4 +208,4 @@ fun PreviewStudyCard() {
             )
         )
     }
-}
+}*/

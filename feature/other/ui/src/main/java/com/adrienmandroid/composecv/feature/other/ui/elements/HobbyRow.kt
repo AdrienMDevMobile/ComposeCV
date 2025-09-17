@@ -11,10 +11,10 @@ import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.feature.other.ui.preview.data.HobbyPreviewParameterData
-import com.adrienmandroid.composecv.feature.other.domain.model.Hobby
+import com.adrienmandroid.composecv.feature.other.ui.state.HobbyUiState
 
 @Composable
-fun HobbyRow(hobbies: List<Hobby>) {
+fun HobbyRow(hobbies: List<HobbyUiState>) {
     LazyRow(
         modifier = Modifier.fillMaxWidth(),
         contentPadding = PaddingValues(horizontal = 12.dp)
@@ -25,10 +25,11 @@ fun HobbyRow(hobbies: List<Hobby>) {
     }
 }
 
+/*TODO
 @Composable
 @PreviewLightDark
 fun PreviewHobbyRow() {
     ComposeCVTheme {
         HobbyRow(HobbyPreviewParameterData(LocalContext.current).hobbies)
     }
-}
+}*/
