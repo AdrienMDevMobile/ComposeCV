@@ -1,6 +1,6 @@
 package com.adrienmandroid.composecv.feature.skills.data
 
-import com.adrienmandroid.composecv.data.LocalAndRemoteDataManager
+import com.adrienmandroid.composecv.data.SimpleListLocalAndRemoteDataManager
 import com.adrienmandroid.composecv.feature.skills.domain.model.Skill
 import com.adrienmandroid.composecv.feature.skills.domain.repository.SkillRepository
 import kotlinx.coroutines.CoroutineScope
@@ -10,10 +10,10 @@ class SkillRepositoryImpl @Inject constructor(
     localDataSource: SkillLocalDataSource,
     remoteDataSource: SkillRemoteDataSource
 ) : SkillRepository {
-    val localAndRemoteDataManager: LocalAndRemoteDataManager<Skill> = LocalAndRemoteDataManager(
-        localDataSource = localDataSource,
-        remoteDataSource = remoteDataSource
+    val simpleListLocalAndRemoteDataManager: SimpleListLocalAndRemoteDataManager<Skill> = SimpleListLocalAndRemoteDataManager(
+        simpleListLocalDataSource = localDataSource,
+        simpleListRemoteDataSource = remoteDataSource
     )
 
-    override fun get(coroutineScope: CoroutineScope) = localAndRemoteDataManager.get(coroutineScope)
+    override fun get(coroutineScope: CoroutineScope) = simpleListLocalAndRemoteDataManager.get(coroutineScope)
 }

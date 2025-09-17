@@ -7,15 +7,15 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.transform
 import kotlinx.coroutines.launch
 
-class LocalAndRemoteDataManager<T>(
-    val localDataSource: LocalDataSource<T>,
-    val remoteDataSource: RemoteDataSource<T>
+class SimpleListLocalAndRemoteDataManager<T>(
+    val simpleListLocalDataSource: SimpleListLocalDataSource<T>,
+    val simpleListRemoteDataSource: SimpleListRemoteDataSource<T>
 ) {
-    fun get(coroutineScope: CoroutineScope): Flow<List<T>> = localDataSource.getData()
+    fun get(coroutineScope: CoroutineScope): Flow<List<T>> = simpleListLocalDataSource.getData()
         .distinctUntilChanged().transform { local ->
             if (local.isEmpty()) {
                 coroutineScope.launch(Dispatchers.IO) {
-                    localDataSource.saveData(remoteDataSource.getData())
+                    simpleListLocalDataSource.saveData(simpleListRemoteDataSource.getData())
                 }
                 //emit(emptyList())
             } else {
