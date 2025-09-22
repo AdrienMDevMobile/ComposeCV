@@ -1,5 +1,6 @@
 package com.adrienmandroid.composecv.feature.other.ui.elements
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -49,7 +50,10 @@ private val marginStart = 12.dp
 private val marginEnd = 12.dp
 
 @Composable
-fun QuoteCardDraw(quote: QuoteUiState) {
+fun QuoteCardDraw(
+    quote: QuoteUiState,
+    testShowTextDespiteError: Boolean = false
+) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -60,12 +64,15 @@ fun QuoteCardDraw(quote: QuoteUiState) {
             .padding(10.dp, 10.dp), backgroundColor = MaterialTheme.colors.quoteBackground,
         elevation = 5.dp
     ) {
-        QuoteContent(quote)
+        QuoteContent(quote, testShowTextDespiteError)
     }
 }
 
 @Composable
-fun QuoteContent(quote: QuoteUiState) {
+fun QuoteContent(
+    quote: QuoteUiState,
+    testShowTextDespiteError: Boolean = false
+) {
     val isTextLeft = quote.textPosition == TextPosition.LEFT
 
     var isLoading by remember { mutableStateOf(true) }
@@ -77,12 +84,15 @@ fun QuoteContent(quote: QuoteUiState) {
             isError = state is AsyncImagePainter.State.Error
         },
     )
+
     val isLocalInspection = LocalInspectionMode.current
+
+    val showImage = !isLoading && !isError || testShowTextDespiteError
 
     ConstraintLayout {
         val (text, image, author, quoteTop, quoteBottom, loader) = createRefs()
 
-        if (!isLoading && !isError) {
+        if (showImage) {
             Quote(
                 text = quote.text,
                 author = quote.author,
@@ -94,15 +104,34 @@ fun QuoteContent(quote: QuoteUiState) {
                 imageConstraint = image,
             )
         }
+
+        val authorConstraintModifier = if (showImage) Modifier
+            .constrainAs(image) {
+                if (!isTextLeft) {
+                    start.linkTo(parent.start, margin = marginStart)
+                    end.linkTo(text.start)
+                } else {
+                    start.linkTo(text.end)
+                    end.linkTo(parent.end, margin = marginEnd)
+                }
+                top.linkTo(parent.top, margin = marginTop)
+                bottom.linkTo(parent.bottom, margin = marginBottom)
+                height = Dimension.fillToConstraints
+            } else Modifier.constrainAs(image) {
+            start.linkTo(parent.start)
+            end.linkTo(parent.end)
+            top.linkTo(parent.top, margin = marginTop)
+            bottom.linkTo(parent.bottom, margin = marginBottom)
+            height = Dimension.fillToConstraints
+        }
         AuthorPicture(
             contentDescription = quote.author,
-            isTextLeft = isTextLeft,
-            textConstraint = text,
-            imageConstraint = image,
             isError = isError,
             isLocalInspection = isLocalInspection,
-            imageLoader = imageLoader
+            imageLoader = imageLoader,
+            constraintModifier = authorConstraintModifier
         )
+
         if (isLoading) {
             CircularProgressIndicator(
                 modifier = Modifier.constrainAs(loader) {
@@ -191,29 +220,15 @@ fun ConstraintLayoutScope.Quote(
 }
 
 @Composable
-fun ConstraintLayoutScope.AuthorPicture(
+fun AuthorPicture(
     contentDescription: String,
-    isTextLeft: Boolean,
-    textConstraint: ConstrainedLayoutReference,
-    imageConstraint: ConstrainedLayoutReference,
     isError: Boolean,
     isLocalInspection: Boolean,
-    imageLoader: AsyncImagePainter
+    imageLoader: AsyncImagePainter,
+    @SuppressLint("ModifierParameter") constraintModifier: Modifier
 ) {
     Image(
-        modifier = Modifier
-            .constrainAs(imageConstraint) {
-                if (!isTextLeft) {
-                    start.linkTo(parent.start, margin = marginStart)
-                    end.linkTo(textConstraint.start)
-                } else {
-                    start.linkTo(textConstraint.end)
-                    end.linkTo(parent.end, margin = marginEnd)
-                }
-                top.linkTo(parent.top, margin = marginTop)
-                bottom.linkTo(parent.bottom, margin = marginBottom)
-                height = Dimension.fillToConstraints
-            },
+        modifier = constraintModifier,
         contentScale = ContentScale.Crop,
         painter = if (isError.not() && !isLocalInspection) {
             imageLoader
@@ -236,6 +251,23 @@ fun PreviewQuoteCard(
     ComposeCVTheme {
         QuoteCardDraw(
             quote = quote
+        )
+    }
+}
+
+@PreviewLightDark
+@Composable
+fun PreviewQuoteCardText(
+    @PreviewParameter(
+        QuoteIndexedPreviewParameterProvider::class,
+        limit = 2
+    )
+    quote: QuoteUiState
+) {
+    ComposeCVTheme {
+        QuoteCardDraw(
+            quote = quote,
+            true
         )
     }
 }
