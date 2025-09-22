@@ -25,11 +25,10 @@ fun HobbyRow(hobbies: List<HobbyUiState>) {
     }
 }
 
-/*TODO
 @Composable
 @PreviewLightDark
 fun PreviewHobbyRow() {
     ComposeCVTheme {
-        HobbyRow(HobbyPreviewParameterData(LocalContext.current).hobbies)
+        HobbyRow(HobbyPreviewParameterData(LocalContext.current).hobbies.hobbies)
     }
-}*/
+}

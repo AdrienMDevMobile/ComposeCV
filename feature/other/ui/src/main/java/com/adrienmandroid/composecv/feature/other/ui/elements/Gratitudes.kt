@@ -28,7 +28,6 @@ fun Gratitudes(gratitudes: List<String>) {
 
 }
 
-//TODO : probleme couleur de text dans les preview
 @PreviewLightDark
 @Composable
 fun PreviewGratitudes() {

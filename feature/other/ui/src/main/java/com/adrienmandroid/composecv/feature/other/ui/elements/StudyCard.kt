@@ -181,7 +181,6 @@ fun StudyForegroundPicture(
     )
 }
 
-/*TODO
 @Preview(
     uiMode = Configuration.UI_MODE_NIGHT_NO,
     widthDp = 300,
@@ -197,7 +196,7 @@ fun PreviewStudyCard() {
     val context = LocalContext.current
     ComposeCVTheme {
         StudyCard(
-            study = Study(
+            study = StudyUiState(
                 logoUrl = "",
                 name = context.getString(TestingR.string.test_1_word),
                 diploma = context.getString(TestingR.string.test_1_word),
@@ -208,4 +207,4 @@ fun PreviewStudyCard() {
             )
         )
     }
-}*/
+}

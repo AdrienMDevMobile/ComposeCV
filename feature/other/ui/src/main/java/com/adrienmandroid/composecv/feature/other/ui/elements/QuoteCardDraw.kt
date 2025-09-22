@@ -37,7 +37,6 @@ import coil.compose.rememberAsyncImagePainter
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.core.ui.theme.onQuoteBackground
 import com.adrienmandroid.composecv.core.ui.theme.quoteBackground
-import com.adrienmandroid.composecv.feature.other.domain.model.Quote
 import com.adrienmandroid.composecv.feature.other.ui.R
 import com.adrienmandroid.composecv.feature.other.ui.preview.data.QuoteIndexedPreviewParameterProvider
 import com.adrienmandroid.composecv.feature.other.ui.state.QuoteUiState
@@ -224,7 +223,7 @@ fun ConstraintLayoutScope.AuthorPicture(
         contentDescription = contentDescription,
     )
 }
-/*TODO
+
 @PreviewLightDark
 @Composable
 fun PreviewQuoteCard(
@@ -232,12 +231,11 @@ fun PreviewQuoteCard(
         QuoteIndexedPreviewParameterProvider::class,
         limit = 2
     )
-    quoteIndexed: Pair<Int, Quote>
+    quote: QuoteUiState
 ) {
     ComposeCVTheme {
         QuoteCardDraw(
-            quote = quoteIndexed.second,
-            position = quoteIndexed.first
+            quote = quote
         )
     }
-}*/
+}

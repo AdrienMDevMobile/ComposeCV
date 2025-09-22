@@ -12,9 +12,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.adrienmandroid.composecv.core.ui.LoadingPage
 import com.adrienmandroid.composecv.core.ui.states.UiStates
+import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.feature.other.ui.elements.Gratitudes
 import com.adrienmandroid.composecv.feature.other.ui.elements.HobbyRow
 import com.adrienmandroid.composecv.feature.other.ui.elements.QuoteCarousel
@@ -22,6 +25,7 @@ import com.adrienmandroid.composecv.feature.other.ui.elements.Signature
 import com.adrienmandroid.composecv.feature.other.ui.elements.StudyList
 import com.adrienmandroid.composecv.feature.other.ui.elements.Version
 import com.adrienmandroid.composecv.feature.other.ui.elements.otherSection
+import com.adrienmandroid.composecv.feature.other.ui.preview.data.OtherPreviewParameterData
 import com.adrienmandroid.composecv.feature.other.ui.state.OtherComponentUiState
 import com.adrienmandroid.composecv.feature.other.ui.viewmodel.OtherViewModel
 
@@ -85,7 +89,6 @@ fun OtherScreen(
     }
 }
 
-/*TODO
 @Composable
 @PreviewLightDark
 fun PreviewOther() {
@@ -93,11 +96,7 @@ fun PreviewOther() {
 
     ComposeCVTheme {
         OtherScreen(
-            studies = StudyPreviewParameterData(context).studies,
-            quotes = QuotePreviewParameterData.quotes,
-            hobbies = HobbyPreviewParameterData(context).hobbies,
-            gratitude = "Gratitude Lorem ipsum",
-            versionName = "1.0.0-test"
+            OtherPreviewParameterData(context).others
         )
     }
-}*/
+}

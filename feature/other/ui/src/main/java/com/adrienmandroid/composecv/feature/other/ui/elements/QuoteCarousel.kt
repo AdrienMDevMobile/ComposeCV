@@ -42,9 +42,8 @@ fun QuoteCarousel(quotes: List<QuoteUiState>) {
     }
 }
 
-/*TODO
 @PreviewLightDark
 @Composable
 fun PreviewQuoteCarousel() {
-    QuoteCarousel(QuotePreviewParameterData.quotes)
-}*/
+    QuoteCarousel(QuotePreviewParameterData.quotes.quotes)
+}
