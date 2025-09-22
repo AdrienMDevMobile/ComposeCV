@@ -4,6 +4,7 @@ import androidx.room.RoomDatabase
 import com.adrienmandroid.composecv.feature.other.data.OtherLocalDataSource
 import com.adrienmandroid.composecv.feature.other.data.converter.toDomain
 import com.adrienmandroid.composecv.feature.other.data.converter.toLocalEntity
+import com.adrienmandroid.composecv.feature.other.data.local.dao.GratitudeDao
 import com.adrienmandroid.composecv.feature.other.data.local.dao.HobbyDao
 import com.adrienmandroid.composecv.feature.other.data.local.dao.QuoteDao
 import com.adrienmandroid.composecv.feature.other.data.local.dao.StudyDao
@@ -19,8 +20,8 @@ class OtherLocalDataSourceRoomImpl @Inject constructor(
     private val hobbyDao: HobbyDao,
     private val quoteDao: QuoteDao,
     private val studyDao: StudyDao,
+    private val gratitudeDao: GratitudeDao,
     private val database: RoomDatabase,
-    //TODO private val gratitudeDao: GratitudeDao,
 ) : OtherLocalDataSource {
     override fun saveData(data: List<OtherComponent>) {
         database.runInTransaction {
@@ -36,7 +37,9 @@ class OtherLocalDataSourceRoomImpl @Inject constructor(
                     is OtherComponent.Studies -> studyDao.insertAll(*component.studies.map { it.toLocalEntity() }
                         .toTypedArray())
 
-                    is OtherComponent.Gratitude -> {} //TODO gratitudeDao.insertAll(component.value.toLocalEntity() )
+                    is OtherComponent.Gratitudes -> gratitudeDao.insertAll(*component.value.map { it.toLocalEntity() }
+                        .toTypedArray())
+
                     is OtherComponent.Version -> { /* Versions aren't saved in database */
                     }
                 }
@@ -61,19 +64,24 @@ class OtherLocalDataSourceRoomImpl @Inject constructor(
                 OtherComponent.Studies(studies.map { it.toDomain() })
             } else null
         }
-        //val flowGratitude = gratitudeDao.getAllAsFlow().map { gratitudes -> OtherComponent.Gratitude(gratitudes.first().toDomain()) }
+        val flowGratitude = gratitudeDao.getAllAsFlow().map { gratitudes ->
+            if (gratitudes.isNotEmpty()) {
+                OtherComponent.Gratitudes(gratitudes.map { it.text })
+            } else null
+        }
 
         return combine(
             flowHobby,
             flowQuote,
-            flowStudy/*, flowGratitude*/
-        ) { hobbies, quotes, studies/*, gratitudes*/ ->
+            flowStudy,
+            flowGratitude
+        ) { hobbies, quotes, studies, gratitudes ->
             mutableListOf<OtherComponent>().apply {
                 if (hobbies != null) add(hobbies)
                 if (quotes != null) add(quotes)
                 if (studies != null) add(studies)
+                if (gratitudes != null) add(gratitudes)
             }
-            //TODO gratitudes
         }.debounce(500)
     }
 

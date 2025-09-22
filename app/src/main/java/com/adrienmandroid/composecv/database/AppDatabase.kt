@@ -5,9 +5,11 @@ import androidx.room.RoomDatabase
 import com.adrienmandroid.composecv.feature.experience.data.local.ExperienceDao
 import com.adrienmandroid.composecv.feature.experience.data.local.ExperienceEntity
 import com.adrienmandroid.composecv.feature.experience.data.local.ExperienceInformation
+import com.adrienmandroid.composecv.feature.other.data.local.GratitudeLocalEntity
 import com.adrienmandroid.composecv.feature.other.data.local.HobbyLocalEntity
 import com.adrienmandroid.composecv.feature.other.data.local.QuoteLocalEntity
 import com.adrienmandroid.composecv.feature.other.data.local.StudyLocalEntity
+import com.adrienmandroid.composecv.feature.other.data.local.dao.GratitudeDao
 import com.adrienmandroid.composecv.feature.other.data.local.dao.HobbyDao
 import com.adrienmandroid.composecv.feature.other.data.local.dao.QuoteDao
 import com.adrienmandroid.composecv.feature.other.data.local.dao.StudyDao
@@ -22,6 +24,7 @@ import com.adrienmandroid.composecv.feature.skills.data.local.SkillDao
         StudyLocalEntity::class,
         QuoteLocalEntity::class,
         HobbyLocalEntity::class,
+        GratitudeLocalEntity::class,
     ], version = 1
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -30,5 +33,5 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun studyDao(): StudyDao
     abstract fun quoteDao(): QuoteDao
     abstract fun hobbyDao(): HobbyDao
-
+    abstract fun gratitudeDao(): GratitudeDao
 }

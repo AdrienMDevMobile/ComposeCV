@@ -79,5 +79,16 @@
       "author": "Gabriel Garcia Marquez",
       "imageUrl": "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/quote/quote_gabriel_garcia.jpg"
     }
+  ],
+  "gratitudes": [
+    {
+      "text": "Merci à Manon F et Jérome L pour leurs conseils dans le design de l'application."
+    },
+    {
+      "text": " Merci à Frédéric U. et tous les développeurs Andoid lors de ma mission chez EI pour leurs enseignements sur Android."
+    },
+    {
+      "text": "Merci aux développeurs Android de StackOverflow et Slack Android FR."
+    }
   ]
 }

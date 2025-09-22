@@ -33,7 +33,7 @@ class OtherRemoteDataSourceJsonImpl @Inject constructor(
                     OtherComponent.Studies(jsonBody.studies.map { it.toDomain() }),
                     OtherComponent.Hobbies(jsonBody.hobbies.map { it.toDomain() }),
                     OtherComponent.Quotes(jsonBody.quotes.map { it.toDomain() }),
-                    //TODO gratitude
+                    OtherComponent.Gratitudes(jsonBody.gratitudes.map { it.text })
                 )
             } ?: emptyList()
         }

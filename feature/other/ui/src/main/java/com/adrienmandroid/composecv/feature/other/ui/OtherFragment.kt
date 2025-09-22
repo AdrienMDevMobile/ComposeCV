@@ -12,19 +12,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.adrienmandroid.composecv.core.ui.LoadingPage
 import com.adrienmandroid.composecv.core.ui.states.UiStates
-import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
+import com.adrienmandroid.composecv.feature.other.ui.elements.Gratitudes
 import com.adrienmandroid.composecv.feature.other.ui.elements.HobbyRow
 import com.adrienmandroid.composecv.feature.other.ui.elements.QuoteCarousel
 import com.adrienmandroid.composecv.feature.other.ui.elements.StudyList
 import com.adrienmandroid.composecv.feature.other.ui.elements.otherSection
-import com.adrienmandroid.composecv.feature.other.ui.preview.data.HobbyPreviewParameterData
-import com.adrienmandroid.composecv.feature.other.ui.preview.data.QuotePreviewParameterData
-import com.adrienmandroid.composecv.feature.other.ui.preview.data.StudyPreviewParameterData
 import com.adrienmandroid.composecv.feature.other.ui.state.OtherComponentUiState
 import com.adrienmandroid.composecv.feature.other.ui.viewmodel.OtherViewModel
 
@@ -60,7 +55,11 @@ fun OtherScreen(
     ) {
         components.forEach { component ->
             when (component) {
-                is OtherComponentUiState.GratitudeUiState -> {}//TODO
+                is OtherComponentUiState.GratitudeUiState -> otherSection(
+                    { Gratitudes(component.values) },
+                    title = R.string.title_gratitude
+                )
+
                 is OtherComponentUiState.HobbyUiStates -> otherSection(
                     { HobbyRow(component.hobbies) },
                     title = R.string.title_hobbies
@@ -81,8 +80,6 @@ fun OtherScreen(
             }
         }
 
-
-        //otherSection({ Gratitudes(gratitude) }, title = R.string.title_gratitude)
         //otherSection({ Signature(MaterialTheme.colors.secondaryVariant) })
         //otherSection({ Version(versionName) })
     }

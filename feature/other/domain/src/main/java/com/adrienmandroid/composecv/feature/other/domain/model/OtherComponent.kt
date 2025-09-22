@@ -5,5 +5,5 @@ sealed interface OtherComponent {
     class Quotes(val quotes: List<Quote>) : OtherComponent
     class Studies(val studies: List<Study>) : OtherComponent
     class Version(val version: VersionName) : OtherComponent
-    class Gratitude(val value: String) : OtherComponent
+    class Gratitudes(val value: List<String>) : OtherComponent
 }

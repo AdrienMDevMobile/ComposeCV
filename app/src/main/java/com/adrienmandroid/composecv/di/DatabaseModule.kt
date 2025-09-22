@@ -5,6 +5,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.adrienmandroid.composecv.database.AppDatabase
 import com.adrienmandroid.composecv.feature.experience.data.local.ExperienceDao
+import com.adrienmandroid.composecv.feature.other.data.local.dao.GratitudeDao
 import com.adrienmandroid.composecv.feature.other.data.local.dao.HobbyDao
 import com.adrienmandroid.composecv.feature.other.data.local.dao.QuoteDao
 import com.adrienmandroid.composecv.feature.other.data.local.dao.StudyDao
@@ -43,6 +44,11 @@ object DatabaseModule {
     @Provides
     fun provideHobbyDao(appDatabase: AppDatabase): HobbyDao {
         return  appDatabase.hobbyDao()
+    }
+
+    @Provides
+    fun provideGratitudeDao(appDatabase: AppDatabase): GratitudeDao {
+        return  appDatabase.gratitudeDao()
     }
 
     @Provides

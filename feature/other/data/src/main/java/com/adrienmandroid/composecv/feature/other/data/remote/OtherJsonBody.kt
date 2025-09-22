@@ -4,5 +4,5 @@ data class OtherJsonBody(
     val hobbies: List<HobbyRemoteBody>,
     val studies: List<StudyRemoteBody>,
     val quotes: List<QuoteRemoteBody>,
-    //val gratitude: String
+    val gratitudes: List<GratitudeRemoteBody>
 )

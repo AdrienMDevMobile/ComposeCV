@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "gratitudes")
 data class GratitudeLocalEntity(
     @PrimaryKey(autoGenerate = true)
-    val gratitudeId: Long = 0, // Primary key for the experience
+    val gratitudeId: Long = 0,
     @ColumnInfo(name = "text")
     val text: String,
 )

@@ -19,7 +19,7 @@ fun OtherComponent.toUiState() =
                 }
             )
 
-        is OtherComponent.Gratitude -> GratitudeUiState(this.value)
+        is OtherComponent.Gratitudes -> GratitudeUiState(this.value)
         is OtherComponent.Quotes -> QuoteUiStates(
             this.quotes.mapIndexed { index, quote -> quote.toUiState(index) }
         )
