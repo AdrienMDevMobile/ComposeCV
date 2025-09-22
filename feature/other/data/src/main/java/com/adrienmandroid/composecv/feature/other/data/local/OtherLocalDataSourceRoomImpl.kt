@@ -40,7 +40,12 @@ class OtherLocalDataSourceRoomImpl @Inject constructor(
                     is OtherComponent.Gratitudes -> gratitudeDao.insertAll(*component.value.map { it.toLocalEntity() }
                         .toTypedArray())
 
-                    is OtherComponent.Version -> { /* Versions aren't saved in database */
+                    is OtherComponent.Version -> {
+                        /* Versions aren't saved in database */
+                    }
+
+                    OtherComponent.Signature -> {
+                        /* Signature aren't saved in database */
                     }
                 }
             }

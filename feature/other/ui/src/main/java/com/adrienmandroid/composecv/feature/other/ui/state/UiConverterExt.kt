@@ -7,6 +7,7 @@ import com.adrienmandroid.composecv.feature.other.domain.model.Study
 import com.adrienmandroid.composecv.feature.other.ui.state.OtherComponentUiState.GratitudeUiState
 import com.adrienmandroid.composecv.feature.other.ui.state.OtherComponentUiState.HobbyUiStates
 import com.adrienmandroid.composecv.feature.other.ui.state.OtherComponentUiState.QuoteUiStates
+import com.adrienmandroid.composecv.feature.other.ui.state.OtherComponentUiState.SignatureUiState
 import com.adrienmandroid.composecv.feature.other.ui.state.OtherComponentUiState.StudyUiStates
 import com.adrienmandroid.composecv.feature.other.ui.state.OtherComponentUiState.VersionUiState
 
@@ -31,6 +32,8 @@ fun OtherComponent.toUiState() =
         is OtherComponent.Version -> VersionUiState(
             this.version
         )
+
+        OtherComponent.Signature -> SignatureUiState()
     }
 
 fun Hobby.toUiState() = HobbyUiState(

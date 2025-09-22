@@ -18,7 +18,9 @@ import com.adrienmandroid.composecv.core.ui.states.UiStates
 import com.adrienmandroid.composecv.feature.other.ui.elements.Gratitudes
 import com.adrienmandroid.composecv.feature.other.ui.elements.HobbyRow
 import com.adrienmandroid.composecv.feature.other.ui.elements.QuoteCarousel
+import com.adrienmandroid.composecv.feature.other.ui.elements.Signature
 import com.adrienmandroid.composecv.feature.other.ui.elements.StudyList
+import com.adrienmandroid.composecv.feature.other.ui.elements.Version
 import com.adrienmandroid.composecv.feature.other.ui.elements.otherSection
 import com.adrienmandroid.composecv.feature.other.ui.state.OtherComponentUiState
 import com.adrienmandroid.composecv.feature.other.ui.viewmodel.OtherViewModel
@@ -76,12 +78,10 @@ fun OtherScreen(
                     firstElement = true
                 )
 
-                is OtherComponentUiState.VersionUiState -> {} //TODO
+                is OtherComponentUiState.VersionUiState -> otherSection({ Version(component.version) })
+                is OtherComponentUiState.SignatureUiState -> otherSection({ Signature(MaterialTheme.colors.secondaryVariant) })
             }
         }
-
-        //otherSection({ Signature(MaterialTheme.colors.secondaryVariant) })
-        //otherSection({ Version(versionName) })
     }
 }
 

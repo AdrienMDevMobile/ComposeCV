@@ -8,4 +8,5 @@ sealed interface OtherComponentUiState {
     class StudyUiStates(val studies: List<StudyUiState>) : OtherComponentUiState
     class VersionUiState(val version: VersionName) : OtherComponentUiState
     class GratitudeUiState(val values: List<String>) : OtherComponentUiState
+    class SignatureUiState() : OtherComponentUiState
 }
