@@ -6,10 +6,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.adrienmandroid.composecv.core.ui.states.UiStates
-import com.adrienmandroid.composecv.feature.other.domain.repository.GratitudeRepository
-import com.adrienmandroid.composecv.feature.other.domain.repository.HobbyRepository
-import com.adrienmandroid.composecv.feature.other.domain.repository.QuoteRepository
-import com.adrienmandroid.composecv.feature.other.domain.repository.StudyRepository
 import com.adrienmandroid.composecv.feature.other.domain.repository.VersionNameRepository
 import com.adrienmandroid.composecv.feature.other.domain.model.Hobby
 import com.adrienmandroid.composecv.feature.other.domain.model.OtherComponent
