@@ -1,7 +1,6 @@
 package com.adrienmandroid.composecv.feature.other.ui.preview.data
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
-import com.adrienmandroid.composecv.feature.other.domain.model.Quote
 import com.adrienmandroid.composecv.feature.other.ui.state.OtherComponentUiState
 import com.adrienmandroid.composecv.feature.other.ui.state.QuoteUiState
 import com.adrienmandroid.composecv.feature.other.ui.state.TextPosition

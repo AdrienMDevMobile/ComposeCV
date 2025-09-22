@@ -38,7 +38,6 @@ import coil.compose.rememberAsyncImagePainter
 import com.adrienmandroid.composecv.core.ui.LoadingBox
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.core.ui.toMonthString
-import com.adrienmandroid.composecv.feature.other.domain.model.Study
 import com.adrienmandroid.composecv.feature.other.ui.state.StudyUiState
 import com.adrienmandroid.composecv.model.Dates
 import java.util.Date
