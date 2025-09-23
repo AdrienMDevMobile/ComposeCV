@@ -1,5 +1,6 @@
 package com.adrienmandroid.composecv.feature.other.ui.elements
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -22,9 +23,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
@@ -104,6 +107,12 @@ fun QuoteContent(
             CircularProgressIndicator(
                 color = MaterialTheme.colors.secondary,
             )
+            //Used to preload the picture, hidden in the loader
+            Image(
+                painter = imageLoader,
+                modifier = Modifier.alpha(0F),
+                contentDescription = "@null"
+            )
         }
 
     } else {
@@ -133,11 +142,17 @@ fun AuthorImage(
         modifier = modifier.fillMaxHeight(),
         contentAlignment = Alignment.Center
     ) {
-        if (!showError) {
-            imageLoader
-        } else {
-            painterResource(RCoreUi.drawable.core_placeholder)
-        }
+        Image(
+            modifier = Modifier
+                .fillMaxHeight(),
+            contentScale = ContentScale.Crop,
+            painter = if (!showError) {
+                imageLoader
+            } else {
+                painterResource(RCoreUi.drawable.core_placeholder)
+            },
+            contentDescription = "@null",
+        )
     }
 }
 
