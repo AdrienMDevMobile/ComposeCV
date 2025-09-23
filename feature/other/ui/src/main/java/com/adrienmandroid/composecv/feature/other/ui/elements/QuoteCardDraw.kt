@@ -1,11 +1,13 @@
 package com.adrienmandroid.composecv.feature.other.ui.elements
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -38,6 +40,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImagePainter
 import coil.compose.rememberAsyncImagePainter
+import com.adrienmandroid.composecv.core.ui.AutoResizeText
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.core.ui.theme.onQuoteBackground
 import com.adrienmandroid.composecv.core.ui.theme.quoteBackground
@@ -122,11 +125,11 @@ fun QuoteContent(
         ) {
 
             if (quote.textPosition == TextPosition.LEFT) {
-                QuoteText(quote, Modifier.weight(1f))
+                QuoteText(quote, Modifier.weight(2f))
                 AuthorImage(imageLoader, showError, Modifier.weight(1f))
             } else {
                 AuthorImage(imageLoader, showError, Modifier.weight(1f))
-                QuoteText(quote, Modifier.weight(1f))
+                QuoteText(quote, Modifier.weight(2f))
             }
         }
     }
@@ -161,29 +164,34 @@ fun QuoteText(
     quote: QuoteUiState,
     modifier: Modifier = Modifier
 ) {
-    Column(
-        modifier = modifier.padding(horizontal = 8.dp),
-    ) {
-        QuotationMarks(Modifier.align(Alignment.Start))
-        Text(
-            text = quote.text,
-            style = TextStyle(
-                color = MaterialTheme.colors.onQuoteBackground,
-                fontSize = 16.sp
-            ),
-            textAlign = TextAlign.Center
-        )
-        Text(
-            text = quote.author,
-            style = TextStyle(
-                color = MaterialTheme.colors.onQuoteBackground,
-                fontSize = 12.sp
-            ),
-            modifier = Modifier
-                .align(Alignment.End)
-                .padding(top = 4.dp)
-        )
-        QuotationMarks(Modifier.align(Alignment.End), isBottom = true)
+    Box(modifier = modifier, contentAlignment = Alignment.Center){
+        Column(modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.SpaceBetween){
+            QuotationMarks(Modifier.align(Alignment.Start))
+            QuotationMarks(Modifier.align(Alignment.End), isBottom = true)
+        }
+        Column(modifier = Modifier.padding(horizontal = 16.dp, vertical = 16.dp)) {
+            Column(modifier = Modifier.weight(1F), verticalArrangement = Arrangement.Center) {
+                AutoResizeText(
+                    text = quote.text,
+                    style = TextStyle(
+                        color = MaterialTheme.colors.onQuoteBackground,
+                        fontSize = 24.sp,
+                        lineHeight = 28.sp,
+                    ),
+                    textAlign = TextAlign.Center,
+                )
+            }
+            Text(
+                text = quote.author,
+                style = TextStyle(
+                    color = MaterialTheme.colors.onQuoteBackground,
+                    fontSize = 12.sp
+                ),
+                modifier = Modifier
+                    .align(Alignment.End)
+                    .padding(top = 4.dp)
+            )
+        }
     }
 }
 
@@ -204,7 +212,11 @@ fun QuotationMarks(modifier: Modifier = Modifier, isBottom: Boolean = false) {
     )
 }
 
-
+/**
+Note : if the text is too long, AdaptableTextSize won't show initially.
+since Preview only refreshes once, it won't try to show a second time.
+In the app it will refresh until it fits
+ */
 @PreviewLightDark
 @Composable
 fun PreviewQuoteCard(
