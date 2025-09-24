@@ -10,7 +10,6 @@ fun QuoteLocalEntity.toDomain() = Quote(
     imageUrl = this.imageUrl
 )
 
-// Converts Quote to QuoteLocalClass
 fun Quote.toLocalEntity() = QuoteLocalEntity(
     text = this.text,
     author = this.author,

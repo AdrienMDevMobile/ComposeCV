@@ -13,12 +13,12 @@ import dagger.hilt.components.SingletonComponent
 @InstallIn(SingletonComponent::class)
 abstract class DataModule {
     @Binds
-    abstract fun bindOtherRemoteRepository(
+    abstract fun bindOtherRemoteDataSource(
         skillRemoteRepository: OtherRemoteDataSourceJsonImpl
     ): OtherRemoteDataSource
 
     @Binds
-    abstract fun bindOtherLocalRepository(
+    abstract fun bindOtherLocalDataSource(
         skillLocalRepository: OtherLocalDataSourceRoomImpl
     ): OtherLocalDataSource
 

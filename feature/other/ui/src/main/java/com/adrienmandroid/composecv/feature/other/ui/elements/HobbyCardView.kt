@@ -52,17 +52,17 @@ fun HobbyCardView(hobby: HobbyUiState) {
         )
     }
 }
-/*
+
 @Composable
 @PreviewLightDark
 fun PreviewHobbyCardView() {
     ComposeCVTheme {
         HobbyCardView(
-            hobby = Hobby(
+            hobby = HobbyUiState(
                 name = stringResource(id = TestingR.string.test_1_word),
                 pictureUrl = "",
                 category = stringResource(id = TestingR.string.test_short_text_1_line)
             )
         )
     }
-}*/
+}

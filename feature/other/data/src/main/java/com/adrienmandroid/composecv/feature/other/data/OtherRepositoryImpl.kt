@@ -14,8 +14,8 @@ class OtherRepositoryImpl @Inject constructor(
 ) : OtherRepository {
     val localAndRemoteDataManager: SimpleListLocalAndRemoteDataManager<OtherComponent> =
         SimpleListLocalAndRemoteDataManager(
-            simpleListLocalDataSource = localDataSource,
-            simpleListRemoteDataSource = remoteDataSource
+            local = localDataSource,
+            remote = remoteDataSource
         )
 
     override fun get(coroutineScope: CoroutineScope) =

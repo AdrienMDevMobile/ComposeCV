@@ -45,12 +45,12 @@ fun StudyList(studies: List<StudyUiState>) {
         )
     }
 }
-/*
+
 @Composable
 @PreviewLightDark
 fun PreviewStudyList() {
     val studies = StudyPreviewParameterData(LocalContext.current).studies
     ComposeCVTheme {
-        StudyList(studies = studies)
+        StudyList(studies = studies.studies)
     }
-}*/
+}

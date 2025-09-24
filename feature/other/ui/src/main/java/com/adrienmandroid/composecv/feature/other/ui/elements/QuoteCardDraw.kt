@@ -4,6 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
@@ -55,6 +56,7 @@ private val margin = 12.dp
 @Composable
 fun QuoteCardDraw(
     quote: QuoteUiState,
+    //TODO have this code only compiled in test build ?
     testStayLoading: Boolean = false,
 ) {
     Card(
@@ -165,38 +167,53 @@ fun QuoteText(
     modifier: Modifier = Modifier
 ) {
     Box(modifier = modifier, contentAlignment = Alignment.Center){
-        Column(modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.SpaceBetween){
-            QuotationMarks(Modifier.align(Alignment.Start))
-            QuotationMarks(Modifier.align(Alignment.End), isBottom = true)
-        }
+        QuotationMarks()
         Column(modifier = Modifier.padding(horizontal = 16.dp, vertical = 16.dp)) {
-            Column(modifier = Modifier.weight(1F), verticalArrangement = Arrangement.Center) {
-                AutoResizeText(
-                    text = quote.text,
-                    style = TextStyle(
-                        color = MaterialTheme.colors.onQuoteBackground,
-                        fontSize = 24.sp,
-                        lineHeight = 28.sp,
-                    ),
-                    textAlign = TextAlign.Center,
-                )
-            }
-            Text(
-                text = quote.author,
-                style = TextStyle(
-                    color = MaterialTheme.colors.onQuoteBackground,
-                    fontSize = 12.sp
-                ),
-                modifier = Modifier
-                    .align(Alignment.End)
-                    .padding(top = 4.dp)
-            )
+            QuoteText(quote.text)
+            QuoteAuthor(quote.author)
         }
     }
 }
 
 @Composable
-fun QuotationMarks(modifier: Modifier = Modifier, isBottom: Boolean = false) {
+fun ColumnScope.QuoteText(quote: String){
+    Column(modifier = Modifier.weight(1F), verticalArrangement = Arrangement.Center) {
+        AutoResizeText(
+            text = quote,
+            style = TextStyle(
+                color = MaterialTheme.colors.onQuoteBackground,
+                fontSize = 24.sp,
+                lineHeight = 28.sp,
+            ),
+            textAlign = TextAlign.Center,
+        )
+    }
+}
+
+@Composable
+fun ColumnScope.QuoteAuthor(author: String){
+    Text(
+        text = author,
+        style = TextStyle(
+            color = MaterialTheme.colors.onQuoteBackground,
+            fontSize = 12.sp
+        ),
+        modifier = Modifier
+            .align(Alignment.End)
+            .padding(top = 4.dp)
+    )
+}
+
+@Composable
+fun QuotationMarks(){
+    Column(modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.SpaceBetween){
+        QuoteCommas(Modifier.align(Alignment.Start))
+        QuoteCommas(Modifier.align(Alignment.End), isBottom = true)
+    }
+}
+
+@Composable
+fun QuoteCommas(modifier: Modifier = Modifier, isBottom: Boolean = false) {
     Icon(
         painter = painterResource(id = R.drawable.ic_quote),
         contentDescription = "quote",

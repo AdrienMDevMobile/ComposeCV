@@ -10,11 +10,11 @@ class ExperienceRepositoryImpl @Inject constructor(
     localDataSource: ExperienceLocalDataSource,
     remoteDataSource: ExperienceRemoteDataSource
 ) : ExperienceRepository {
-    val simpleListLocalAndRemoteDataManager: SimpleListLocalAndRemoteDataManager<Experience> =
+    val localAndRemoteDataManager: SimpleListLocalAndRemoteDataManager<Experience> =
         SimpleListLocalAndRemoteDataManager(
-            simpleListLocalDataSource = localDataSource,
-            simpleListRemoteDataSource = remoteDataSource
+            local = localDataSource,
+            remote = remoteDataSource
         )
 
-    override fun get(coroutineScope: CoroutineScope) = simpleListLocalAndRemoteDataManager.get(coroutineScope)
+    override fun get(coroutineScope: CoroutineScope) = localAndRemoteDataManager.get(coroutineScope)
 }

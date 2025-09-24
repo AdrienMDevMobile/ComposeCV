@@ -25,8 +25,7 @@ object QuotePreviewParameterData {
                 "Lorem ipsum",
                 "",
                 TextPosition.RIGHT,
-
-                ),
+            ),
         )
     )
 }

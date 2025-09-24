@@ -11,8 +11,8 @@ class SkillRepositoryImpl @Inject constructor(
     remoteDataSource: SkillRemoteDataSource
 ) : SkillRepository {
     val simpleListLocalAndRemoteDataManager: SimpleListLocalAndRemoteDataManager<Skill> = SimpleListLocalAndRemoteDataManager(
-        simpleListLocalDataSource = localDataSource,
-        simpleListRemoteDataSource = remoteDataSource
+        local = localDataSource,
+        remote = remoteDataSource
     )
 
     override fun get(coroutineScope: CoroutineScope) = simpleListLocalAndRemoteDataManager.get(coroutineScope)
