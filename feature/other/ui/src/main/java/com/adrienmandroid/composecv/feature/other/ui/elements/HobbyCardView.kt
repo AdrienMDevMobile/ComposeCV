@@ -15,7 +15,6 @@ import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.core.ui.SelfLoadingPicture
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
-import com.adrienmandroid.composecv.feature.other.domain.model.Hobby
 import com.adrienmandroid.composecv.feature.other.ui.state.HobbyUiState
 import com.adrienmandroid.composecv.core.test.R as TestingR
 
@@ -34,7 +33,7 @@ fun HobbyCardView(hobby: HobbyUiState) {
             contentDescription = hobby.name,
             modifier = Modifier
                 .size(hobby_width, hobby_width),
-            imageModifier= Modifier.fillMaxSize()
+            imageModifier = Modifier.fillMaxSize()
         )
         Text(
             text = hobby.name,

@@ -23,32 +23,32 @@ object DatabaseModule {
 
     @Provides
     fun provideSkillDao(appDatabase: AppDatabase): SkillDao {
-        return  appDatabase.skillDao()
+        return appDatabase.skillDao()
     }
 
     @Provides
     fun provideExperienceDao(appDatabase: AppDatabase): ExperienceDao {
-        return  appDatabase.experienceDao()
+        return appDatabase.experienceDao()
     }
 
     @Provides
     fun provideStudyDao(appDatabase: AppDatabase): StudyDao {
-        return  appDatabase.studyDao()
+        return appDatabase.studyDao()
     }
 
     @Provides
     fun provideQuoteDao(appDatabase: AppDatabase): QuoteDao {
-        return  appDatabase.quoteDao()
+        return appDatabase.quoteDao()
     }
 
     @Provides
     fun provideHobbyDao(appDatabase: AppDatabase): HobbyDao {
-        return  appDatabase.hobbyDao()
+        return appDatabase.hobbyDao()
     }
 
     @Provides
     fun provideGratitudeDao(appDatabase: AppDatabase): GratitudeDao {
-        return  appDatabase.gratitudeDao()
+        return appDatabase.gratitudeDao()
     }
 
     @Provides

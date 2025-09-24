@@ -29,6 +29,6 @@ fun StudyRemoteBody.toDomain() = Study(
     logoUrl = this.logoUrl,
     name = this.name,
     diploma = this.diploma,
-    dates = Dates(Date(this.dates.begin), this.dates.end?.let { Date(it) } ?: null),
+    dates = Dates(Date(this.dates.begin), this.dates.end?.let { Date(it) }),
     isLongString = this.isLongString
 )

@@ -166,7 +166,7 @@ fun QuoteText(
     quote: QuoteUiState,
     modifier: Modifier = Modifier
 ) {
-    Box(modifier = modifier, contentAlignment = Alignment.Center){
+    Box(modifier = modifier, contentAlignment = Alignment.Center) {
         QuotationMarks()
         Column(modifier = Modifier.padding(horizontal = 16.dp, vertical = 16.dp)) {
             QuoteText(quote.text)
@@ -176,7 +176,7 @@ fun QuoteText(
 }
 
 @Composable
-fun ColumnScope.QuoteText(quote: String){
+fun ColumnScope.QuoteText(quote: String) {
     Column(modifier = Modifier.weight(1F), verticalArrangement = Arrangement.Center) {
         AutoResizeText(
             text = quote,
@@ -191,7 +191,7 @@ fun ColumnScope.QuoteText(quote: String){
 }
 
 @Composable
-fun ColumnScope.QuoteAuthor(author: String){
+fun ColumnScope.QuoteAuthor(author: String) {
     Text(
         text = author,
         style = TextStyle(
@@ -205,8 +205,8 @@ fun ColumnScope.QuoteAuthor(author: String){
 }
 
 @Composable
-fun QuotationMarks(){
-    Column(modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.SpaceBetween){
+fun QuotationMarks() {
+    Column(modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.SpaceBetween) {
         QuoteCommas(Modifier.align(Alignment.Start))
         QuoteCommas(Modifier.align(Alignment.End), isBottom = true)
     }

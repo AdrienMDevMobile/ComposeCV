@@ -71,7 +71,7 @@ class OtherLocalDataSourceRoomImpl @Inject constructor(
         }
         val flowGratitude = gratitudeDao.getAllAsFlow().map { gratitudes ->
             if (gratitudes.isNotEmpty()) {
-                OtherComponent.Gratitudes(gratitudes.map { it.text })
+                OtherComponent.Gratitudes(gratitudes.map { it.toDomain() })
             } else null
         }
 
