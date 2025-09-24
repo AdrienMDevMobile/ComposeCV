@@ -82,9 +82,9 @@ class OtherLocalDataSourceRoomImpl @Inject constructor(
             flowGratitude
         ) { hobbies, quotes, studies, gratitudes ->
             mutableListOf<OtherComponent>().apply {
-                if (hobbies != null) add(hobbies)
-                if (quotes != null) add(quotes)
                 if (studies != null) add(studies)
+                if (quotes != null) add(quotes)
+                if (hobbies != null) add(hobbies)
                 if (gratitudes != null) add(gratitudes)
             }
         }.debounce(500)
