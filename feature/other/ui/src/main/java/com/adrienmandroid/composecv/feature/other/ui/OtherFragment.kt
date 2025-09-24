@@ -15,10 +15,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.adrienmandroid.composecv.core.ui.LoadingPage
+import com.adrienmandroid.composecv.core.ui.states.UiStates
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
-import com.adrienmandroid.composecv.feature.other.ui.preview.data.HobbyPreviewParameterData
-import com.adrienmandroid.composecv.feature.other.ui.preview.data.QuotePreviewParameterData
-import com.adrienmandroid.composecv.feature.other.ui.preview.data.StudyPreviewParameterData
 import com.adrienmandroid.composecv.feature.other.ui.elements.Gratitudes
 import com.adrienmandroid.composecv.feature.other.ui.elements.HobbyRow
 import com.adrienmandroid.composecv.feature.other.ui.elements.QuoteCarousel
@@ -26,33 +25,31 @@ import com.adrienmandroid.composecv.feature.other.ui.elements.Signature
 import com.adrienmandroid.composecv.feature.other.ui.elements.StudyList
 import com.adrienmandroid.composecv.feature.other.ui.elements.Version
 import com.adrienmandroid.composecv.feature.other.ui.elements.otherSection
+import com.adrienmandroid.composecv.feature.other.ui.preview.data.OtherPreviewParameterData
+import com.adrienmandroid.composecv.feature.other.ui.state.OtherComponentUiState
 import com.adrienmandroid.composecv.feature.other.ui.viewmodel.OtherViewModel
-import com.adrienmandroid.composecv.feature.other.domain.model.Hobby
-import com.adrienmandroid.composecv.feature.other.domain.model.Quote
-import com.adrienmandroid.composecv.feature.other.domain.model.Study
-import com.adrienmandroid.composecv.feature.other.domain.model.VersionName
 
 @Composable
 fun OtherFragment(
     modifier: Modifier = Modifier,
     otherViewModel: OtherViewModel = hiltViewModel(),
 ) {
-    val studies: List<Study> by otherViewModel.studies.observeAsState(emptyList())
-    val quotes: List<Quote> by otherViewModel.quotes.observeAsState(emptyList())
-    val hobbies: List<Hobby> by otherViewModel.hobbies.observeAsState(emptyList())
-    val gratitude: String by otherViewModel.gratitude.observeAsState("")
-    val versionName: VersionName by otherViewModel.version.observeAsState("")
+    val otherComponents: UiStates<List<OtherComponentUiState>> by otherViewModel.otherComponents.observeAsState(
+        UiStates.Loading
+    )
 
-    OtherScreen(studies, quotes, hobbies, gratitude, versionName, modifier)
+    when (otherComponents) {
+        UiStates.Loading -> LoadingPage()
+        is UiStates.Success<List<OtherComponentUiState>> -> OtherScreen(
+            (otherComponents as UiStates.Success<List<OtherComponentUiState>>).value,
+            modifier
+        )
+    }
 }
 
 @Composable
 fun OtherScreen(
-    studies: List<Study>,
-    quotes: List<Quote>,
-    hobbies: List<Hobby>,
-    gratitude: String,
-    versionName: VersionName,
+    components: List<OtherComponentUiState>,
     modifier: Modifier = Modifier,
 ) {
     LazyColumn(
@@ -62,16 +59,33 @@ fun OtherScreen(
             .background(MaterialTheme.colors.background),
         contentPadding = WindowInsets.statusBars.asPaddingValues(),
     ) {
-        otherSection(
-            { StudyList(studies = studies) },
-            title = R.string.title_diplomas,
-            firstElement = true
-        )
-        otherSection({ QuoteCarousel(quotes) }, title = R.string.title_quotes)
-        otherSection({ HobbyRow(hobbies) }, title = R.string.title_hobbies)
-        otherSection({ Gratitudes(gratitude) }, title = R.string.title_gratitude)
-        otherSection({ Signature(MaterialTheme.colors.secondaryVariant) })
-        otherSection({ Version(versionName) })
+        components.forEach { component ->
+            when (component) {
+                is OtherComponentUiState.GratitudeUiState -> otherSection(
+                    { Gratitudes(component.values) },
+                    title = R.string.title_gratitude
+                )
+
+                is OtherComponentUiState.HobbyUiStates -> otherSection(
+                    { HobbyRow(component.hobbies) },
+                    title = R.string.title_hobbies
+                )
+
+                is OtherComponentUiState.QuoteUiStates -> otherSection(
+                    { QuoteCarousel(component.quotes) },
+                    title = R.string.title_quotes
+                )
+
+                is OtherComponentUiState.StudyUiStates -> otherSection(
+                    { StudyList(studies = component.studies) },
+                    title = R.string.title_diplomas,
+                    firstElement = true
+                )
+
+                is OtherComponentUiState.VersionUiState -> otherSection({ Version(component.version) })
+                is OtherComponentUiState.SignatureUiState -> otherSection({ Signature(MaterialTheme.colors.secondaryVariant) })
+            }
+        }
     }
 }
 
@@ -82,11 +96,7 @@ fun PreviewOther() {
 
     ComposeCVTheme {
         OtherScreen(
-            studies = StudyPreviewParameterData(context).studies,
-            quotes = QuotePreviewParameterData.quotes,
-            hobbies = HobbyPreviewParameterData(context).hobbies,
-            gratitude = "Gratitude Lorem ipsum",
-            versionName = "1.0.0-test"
+            OtherPreviewParameterData(context).others
         )
     }
 }

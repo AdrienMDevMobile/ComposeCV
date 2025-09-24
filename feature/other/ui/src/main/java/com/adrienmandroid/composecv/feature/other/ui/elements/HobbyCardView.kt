@@ -15,13 +15,13 @@ import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.core.ui.SelfLoadingPicture
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
-import com.adrienmandroid.composecv.feature.other.domain.model.Hobby
+import com.adrienmandroid.composecv.feature.other.ui.state.HobbyUiState
 import com.adrienmandroid.composecv.core.test.R as TestingR
 
 val hobby_width = 200.dp
 
 @Composable
-fun HobbyCardView(hobby: Hobby) {
+fun HobbyCardView(hobby: HobbyUiState) {
     Column(
         modifier = Modifier
             .size(width = hobby_width, height = 250.dp)
@@ -33,7 +33,7 @@ fun HobbyCardView(hobby: Hobby) {
             contentDescription = hobby.name,
             modifier = Modifier
                 .size(hobby_width, hobby_width),
-            imageModifier= Modifier.fillMaxSize()
+            imageModifier = Modifier.fillMaxSize()
         )
         Text(
             text = hobby.name,
@@ -57,7 +57,7 @@ fun HobbyCardView(hobby: Hobby) {
 fun PreviewHobbyCardView() {
     ComposeCVTheme {
         HobbyCardView(
-            hobby = Hobby(
+            hobby = HobbyUiState(
                 name = stringResource(id = TestingR.string.test_1_word),
                 pictureUrl = "",
                 category = stringResource(id = TestingR.string.test_short_text_1_line)

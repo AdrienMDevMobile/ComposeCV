@@ -1,5 +1,5 @@
 package com.adrienmandroid.composecv.data
 
-interface RemoteDataSource<T> {
+interface SimpleListRemoteDataSource<T> {
     fun getData(): List<T>
 }

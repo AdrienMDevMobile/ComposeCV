@@ -47,13 +47,14 @@ fun LazyListScope.otherSection(
     }
 }
 
+
 @Composable
 @PreviewLightDark
 fun PreviewOtherSection() {
     ComposeCVTheme {
         LazyColumn {
             otherSection(
-                { Gratitudes(stringResource(TestingR.string.test_long_text_3_lines)) },
+                { Gratitudes(listOf(stringResource(TestingR.string.test_long_text_3_lines))) },
                 title = R.string.title_gratitude
             )
         }

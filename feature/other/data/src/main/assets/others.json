@@ -1,0 +1,94 @@
+{
+  "hobbies": [
+    {
+      "name": "League of Legends",
+      "pictureUrl": "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/hobby/hobby_lol.jpg",
+      "category": "Hobby, compétition"
+    },
+    {
+      "name": "West Coast Swing",
+      "pictureUrl": "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/hobby/hobby_westcoastswing.jpg",
+      "category": "Dance"
+    },
+    {
+      "name": "Vélo",
+      "pictureUrl": "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/hobby/hobby_velo.jpg",
+      "category": "Santé"
+    },
+    {
+      "name": "Méditation",
+      "pictureUrl": "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/hobby/hobby_meditation.jpg",
+      "category": "Santé"
+    },
+    {
+      "name": "Natation",
+      "pictureUrl": "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/hobby/hobby_piscine.jpg",
+      "category": "Santé"
+    },
+    {
+      "name": "Fresque du Climat",
+      "pictureUrl": "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/hobby/hobby_fdc.jpg",
+      "category": "Sensibilisation"
+    }
+  ],
+  "studies": [
+    {
+      "logoUrl": "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/study/image_ece.png",
+      "name": "ECE Paris",
+      "diploma": "Diplome d'ingénieur",
+      "dates": {
+        "begin": 1593554400000,
+        "end": 1641596400000
+      },
+      "isLongString": false
+    },
+    {
+      "logoUrl": "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/study/image_brighton.png",
+      "name": "University of Brighton - IUT Descartes",
+      "diploma": "Double diplôme European computing",
+      "dates": {
+        "begin": 1593554400000,
+        "end": 1641596400000
+      },
+      "isLongString": true
+    },
+    {
+      "logoUrl": "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/study/image_descartes.png",
+      "name": "IUT Paris Descartes",
+      "diploma": "DUT informatique",
+      "dates": {
+        "begin": 1593554400000,
+        "end": 1641596400000
+      },
+      "isLongString": false
+    }
+  ],
+  "quotes": [
+    {
+      "text": "Intelligence is the ability to adapt to change.",
+      "author": "Stephen Hawking",
+      "imageUrl": "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/quote/quote_stephen_hawing.png"
+    },
+    {
+      "text": "I've lived through some terrible things in my life, some of which actually happened.",
+      "author": "Mark Twain",
+      "imageUrl": "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/quote/quote_mark_twain.jpg"
+    },
+    {
+      "text": " Become a better person and be sure to know who you are, before meeting someone new and hoping that person knows who you are",
+      "author": "Gabriel Garcia Marquez",
+      "imageUrl": "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/quote/quote_gabriel_garcia.jpg"
+    }
+  ],
+  "gratitudes": [
+    {
+      "text": "Merci à Manon F et Jérome L pour leurs conseils dans le design de l'application."
+    },
+    {
+      "text": " Merci à Frédéric U. et tous les développeurs Andoid lors de ma mission chez EI pour leurs enseignements sur Android."
+    },
+    {
+      "text": "Merci aux développeurs Android de StackOverflow et Slack Android FR."
+    }
+  ]
+}

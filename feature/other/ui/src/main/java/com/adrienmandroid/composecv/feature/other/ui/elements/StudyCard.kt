@@ -38,7 +38,7 @@ import coil.compose.rememberAsyncImagePainter
 import com.adrienmandroid.composecv.core.ui.LoadingBox
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.core.ui.toMonthString
-import com.adrienmandroid.composecv.feature.other.domain.model.Study
+import com.adrienmandroid.composecv.feature.other.ui.state.StudyUiState
 import com.adrienmandroid.composecv.model.Dates
 import java.util.Date
 import com.adrienmandroid.composecv.core.test.R as TestingR
@@ -46,7 +46,7 @@ import com.adrienmandroid.composecv.core.ui.R as RCoreUi
 
 @Composable
 fun StudyCard(
-    study: Study
+    study: StudyUiState
 ) {
     Card(
         modifier = Modifier
@@ -64,7 +64,7 @@ fun StudyCard(
 
 @Composable
 fun StudyContent(
-    study: Study
+    study: StudyUiState
 ) {
     var isLoading by remember { mutableStateOf(true) }
     var isError by remember { mutableStateOf(false) }
@@ -195,7 +195,7 @@ fun PreviewStudyCard() {
     val context = LocalContext.current
     ComposeCVTheme {
         StudyCard(
-            study = Study(
+            study = StudyUiState(
                 logoUrl = "",
                 name = context.getString(TestingR.string.test_1_word),
                 diploma = context.getString(TestingR.string.test_1_word),

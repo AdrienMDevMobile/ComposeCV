@@ -1,6 +1,14 @@
 package com.adrienmandroid.composecv.feature.other.ui.elements
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ColumnScope
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -16,7 +24,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
@@ -24,49 +34,49 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.constraintlayout.compose.ConstrainedLayoutReference
-import androidx.constraintlayout.compose.ConstraintLayout
-import androidx.constraintlayout.compose.ConstraintLayoutScope
-import androidx.constraintlayout.compose.Dimension
 import coil.compose.AsyncImagePainter
 import coil.compose.rememberAsyncImagePainter
+import com.adrienmandroid.composecv.core.ui.AutoResizeText
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.core.ui.theme.onQuoteBackground
 import com.adrienmandroid.composecv.core.ui.theme.quoteBackground
-import com.adrienmandroid.composecv.feature.other.domain.model.Quote
 import com.adrienmandroid.composecv.feature.other.ui.R
 import com.adrienmandroid.composecv.feature.other.ui.preview.data.QuoteIndexedPreviewParameterProvider
+import com.adrienmandroid.composecv.feature.other.ui.state.QuoteUiState
+import com.adrienmandroid.composecv.feature.other.ui.state.TextPosition
 import com.adrienmandroid.composecv.core.ui.R as RCoreUi
 
-private val marginTop = 12.dp
-private val marginBottom = 12.dp
-private val marginStart = 12.dp
-private val marginEnd = 12.dp
+private val margin = 12.dp
 
 @Composable
-fun QuoteCardDraw(quote: Quote, position: Int) {
+fun QuoteCardDraw(
+    quote: QuoteUiState,
+    //TODO have this code only compiled in test build ?
+    testStayLoading: Boolean = false,
+) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
             .height(200.dp)
-            .clip(
-                RoundedCornerShape(25.dp)
-            )
-            .padding(10.dp, 10.dp), backgroundColor = MaterialTheme.colors.quoteBackground,
+            .clip(RoundedCornerShape(25.dp))
+            .padding(10.dp),
+        backgroundColor = MaterialTheme.colors.quoteBackground,
         elevation = 5.dp
     ) {
-        QuoteContent(quote, position)
+        QuoteLoadingContent(quote, testStayLoading)
     }
 }
 
 @Composable
-fun QuoteContent(quote: Quote, position: Int) {
-    val isTextLeft = (position % 2 == 0)
-
+fun QuoteLoadingContent(
+    quote: QuoteUiState,
+    testStayLoading: Boolean = false,
+) {
     var isLoading by remember { mutableStateOf(true) }
     var isError by remember { mutableStateOf(false) }
     val imageLoader = rememberAsyncImagePainter(
@@ -76,153 +86,154 @@ fun QuoteContent(quote: Quote, position: Int) {
             isError = state is AsyncImagePainter.State.Error
         },
     )
+
     val isLocalInspection = LocalInspectionMode.current
 
-    ConstraintLayout {
-        val (text, image, author, quoteTop, quoteBottom, loader) = createRefs()
+    QuoteContent(
+        quote,
+        showLoading = isLoading && !isLocalInspection || testStayLoading,
+        showError = isError && !isLocalInspection,
+        imageLoader
+    )
+}
 
-        if (!isLoading && !isError) {
-            Quote(
-                text = quote.text,
-                author = quote.author,
-                isTextLeft,
-                textConstraint = text,
-                authorConstraint = author,
-                quoteTopConstraint = quoteTop,
-                quoteBottomConstraint = quoteBottom,
-                imageConstraint = image,
-            )
-        }
-        AuthorPicture(
-            contentDescription = quote.author,
-            isTextLeft = isTextLeft,
-            textConstraint = text,
-            imageConstraint = image,
-            isError = isError,
-            isLocalInspection = isLocalInspection,
-            imageLoader = imageLoader
-        )
-        if (isLoading) {
+@Composable
+fun QuoteContent(
+    quote: QuoteUiState,
+    showLoading: Boolean,
+    showError: Boolean,
+    imageLoader: AsyncImagePainter
+) {
+    if (showLoading) {
+        Box(
+            modifier = Modifier.padding(margin),
+            contentAlignment = Alignment.Center,
+        ) {
             CircularProgressIndicator(
-                modifier = Modifier.constrainAs(loader) {
-                    start.linkTo(parent.start)
-                    end.linkTo(parent.end)
-                    top.linkTo(parent.top, margin = 4.dp)
-                    bottom.linkTo(parent.bottom, margin = 4.dp)
-                },
                 color = MaterialTheme.colors.secondary,
             )
+            //Used to preload the picture, hidden in the loader
+            Image(
+                painter = imageLoader,
+                modifier = Modifier.alpha(0F),
+                contentDescription = "@null"
+            )
+        }
+
+    } else {
+        Row(
+            modifier = Modifier.padding(margin),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+
+            if (quote.textPosition == TextPosition.LEFT) {
+                QuoteText(quote, Modifier.weight(2f))
+                AuthorImage(imageLoader, showError, Modifier.weight(1f))
+            } else {
+                AuthorImage(imageLoader, showError, Modifier.weight(1f))
+                QuoteText(quote, Modifier.weight(2f))
+            }
         }
     }
 }
 
 @Composable
-fun ConstraintLayoutScope.Quote(
-    text: String,
-    author: String,
-    isTextLeft: Boolean,
-    textConstraint: ConstrainedLayoutReference,
-    authorConstraint: ConstrainedLayoutReference,
-    quoteTopConstraint: ConstrainedLayoutReference,
-    quoteBottomConstraint: ConstrainedLayoutReference,
-    imageConstraint: ConstrainedLayoutReference,
+fun AuthorImage(
+    imageLoader: AsyncImagePainter,
+    showError: Boolean,
+    modifier: Modifier = Modifier
 ) {
-    val marginBetween = 16.dp
-    val quotationMarkSize = 48.dp
-
-    val textStyleQuote = TextStyle(
-        color = MaterialTheme.colors.onQuoteBackground,
-        fontSize = 16.sp
-    )
-    val textStyleAuthor = TextStyle(
-        color = MaterialTheme.colors.onQuoteBackground,
-        fontSize = 12.sp
-    )
-
-    Icon(
-        painter = painterResource(id = R.drawable.ic_quote),
-        contentDescription = "quote",
-        modifier = Modifier
-            .rotate(180F)
-            .size(quotationMarkSize)
-            .constrainAs(quoteTopConstraint) {
-                start.linkTo(textConstraint.start, margin = (-12).dp)
-                bottom.linkTo(textConstraint.top, margin = (-28).dp)
-            },
-        tint = Color.Gray
-    )
-    Icon(
-        painter = painterResource(id = R.drawable.ic_quote),
-        contentDescription = "quote",
-        modifier = Modifier
-            .size(quotationMarkSize)
-            .constrainAs(quoteBottomConstraint) {
-                end.linkTo(textConstraint.end, margin = (-12).dp)
-                top.linkTo(textConstraint.bottom, margin = (-28).dp)
-            },
-        tint = Color.Gray
-    )
-    Text(
-        text = text,
-        style = textStyleQuote,
-        modifier = Modifier.constrainAs(textConstraint) {
-            if (isTextLeft) {
-                start.linkTo(parent.start, margin = marginStart)
-                end.linkTo(imageConstraint.start, margin = marginBetween)
+    Box(
+        modifier = modifier.fillMaxHeight(),
+        contentAlignment = Alignment.Center
+    ) {
+        Image(
+            modifier = Modifier
+                .fillMaxHeight(),
+            contentScale = ContentScale.Crop,
+            painter = if (!showError) {
+                imageLoader
             } else {
-                start.linkTo(imageConstraint.end, margin = marginBetween)
-                end.linkTo(parent.end, margin = marginEnd)
-            }
-            top.linkTo(parent.top, margin = marginTop)
-            bottom.linkTo(authorConstraint.top)
-            width = Dimension.fillToConstraints
+                painterResource(RCoreUi.drawable.core_placeholder)
+            },
+            contentDescription = "@null",
+        )
+    }
+}
+
+@Composable
+fun QuoteText(
+    quote: QuoteUiState,
+    modifier: Modifier = Modifier
+) {
+    Box(modifier = modifier, contentAlignment = Alignment.Center) {
+        QuotationMarks()
+        Column(modifier = Modifier.padding(horizontal = 16.dp, vertical = 16.dp)) {
+            QuoteText(quote.text)
+            QuoteAuthor(quote.author)
         }
-    )
+    }
+}
+
+@Composable
+fun ColumnScope.QuoteText(quote: String) {
+    Column(modifier = Modifier.weight(1F), verticalArrangement = Arrangement.Center) {
+        AutoResizeText(
+            text = quote,
+            style = TextStyle(
+                color = MaterialTheme.colors.onQuoteBackground,
+                fontSize = 24.sp,
+                lineHeight = 28.sp,
+            ),
+            textAlign = TextAlign.Center,
+        )
+    }
+}
+
+@Composable
+fun ColumnScope.QuoteAuthor(author: String) {
     Text(
         text = author,
-        style = textStyleAuthor,
-        modifier = Modifier.constrainAs(authorConstraint) {
-            top.linkTo(textConstraint.bottom)
-            bottom.linkTo(parent.bottom, margin = 16.dp)
-            end.linkTo(textConstraint.end)
-        }
+        style = TextStyle(
+            color = MaterialTheme.colors.onQuoteBackground,
+            fontSize = 12.sp
+        ),
+        modifier = Modifier
+            .align(Alignment.End)
+            .padding(top = 4.dp)
     )
 }
 
 @Composable
-fun ConstraintLayoutScope.AuthorPicture(
-    contentDescription: String,
-    isTextLeft: Boolean,
-    textConstraint: ConstrainedLayoutReference,
-    imageConstraint: ConstrainedLayoutReference,
-    isError: Boolean,
-    isLocalInspection: Boolean,
-    imageLoader: AsyncImagePainter
-) {
-    Image(
-        modifier = Modifier
-            .constrainAs(imageConstraint) {
-                if (!isTextLeft) {
-                    start.linkTo(parent.start, margin = marginStart)
-                    end.linkTo(textConstraint.start)
-                } else {
-                    start.linkTo(textConstraint.end)
-                    end.linkTo(parent.end, margin = marginEnd)
-                }
-                top.linkTo(parent.top, margin = marginTop)
-                bottom.linkTo(parent.bottom, margin = marginBottom)
-                height = Dimension.fillToConstraints
-            },
-        contentScale = ContentScale.Crop,
-        painter = if (isError.not() && !isLocalInspection) {
-            imageLoader
-        } else {
-            painterResource(RCoreUi.drawable.core_placeholder)
-        },
-        contentDescription = contentDescription,
+fun QuotationMarks() {
+    Column(modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.SpaceBetween) {
+        QuoteCommas(Modifier.align(Alignment.Start))
+        QuoteCommas(Modifier.align(Alignment.End), isBottom = true)
+    }
+}
+
+@Composable
+fun QuoteCommas(modifier: Modifier = Modifier, isBottom: Boolean = false) {
+    Icon(
+        painter = painterResource(id = R.drawable.ic_quote),
+        contentDescription = "quote",
+        modifier = modifier
+            .size(48.dp)
+            .let { if (isBottom) it else it.rotate(180f) } // Rotate top quote mark
+            .padding(
+                if (isBottom) PaddingValues(top = 4.dp) else PaddingValues(
+                    bottom = 4.dp
+                )
+            ), // Add padding to avoid overlap
+        tint = Color.Gray
     )
 }
 
+/**
+Note : if the text is too long, AdaptableTextSize won't show initially.
+since Preview only refreshes once, it won't try to show a second time.
+In the app it will refresh until it fits
+ */
 @PreviewLightDark
 @Composable
 fun PreviewQuoteCard(
@@ -230,12 +241,28 @@ fun PreviewQuoteCard(
         QuoteIndexedPreviewParameterProvider::class,
         limit = 2
     )
-    quoteIndexed: Pair<Int, Quote>
+    quote: QuoteUiState
 ) {
     ComposeCVTheme {
         QuoteCardDraw(
-            quote = quoteIndexed.second,
-            position = quoteIndexed.first
+            quote = quote
+        )
+    }
+}
+
+@PreviewLightDark
+@Composable
+fun PreviewQuoteCardText(
+    @PreviewParameter(
+        QuoteIndexedPreviewParameterProvider::class,
+        limit = 2
+    )
+    quote: QuoteUiState
+) {
+    ComposeCVTheme {
+        QuoteCardDraw(
+            quote = quote,
+            true
         )
     }
 }
