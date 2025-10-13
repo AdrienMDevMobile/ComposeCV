@@ -16,7 +16,7 @@ import javax.inject.Inject
 class ExperienceViewmodel @Inject constructor(
     experienceRepository: ExperienceRepository
 ) : ViewModel() {
-    val _experiences: MutableLiveData<UiStates<List<ExperienceUiState>>> =
+    private val _experiences: MutableLiveData<UiStates<List<ExperienceUiState>>> =
         MutableLiveData(UiStates.Loading)
     val experiences: LiveData<UiStates<List<ExperienceUiState>>>
         get() = _experiences
