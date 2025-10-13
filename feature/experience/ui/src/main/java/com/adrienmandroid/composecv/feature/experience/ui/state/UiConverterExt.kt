@@ -23,5 +23,5 @@ fun Experience.toUiState() = ExperienceUiState(
     } else {
         2.dp
     },
-    informations = informations.map { name }
+    informations = informations.map { it.name }
 )
