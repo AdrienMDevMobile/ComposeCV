@@ -16,16 +16,17 @@ import javax.inject.Inject
 class SkillViewModel @Inject constructor(
     skillRepository: SkillRepository
 ) : ViewModel() {
-    val _skills: MutableLiveData<UiStates<List<SkillUiState>>> = MutableLiveData(UiStates.Loading)
+    private val _skills: MutableLiveData<UiStates<List<SkillUiState>>> = MutableLiveData(UiStates.Loading)
     val skills: LiveData<UiStates<List<SkillUiState>>>
         get() = _skills
 
     init {
         viewModelScope.launch {
             skillRepository.get(viewModelScope).collect { data ->
-                _skills.value = UiStates.Success(value = data.map { skill ->
-                    skill.toUiState()
-                }
+                _skills.value = UiStates.Success(
+                    value = data.map { skill ->
+                        skill.toUiState()
+                    }
                 )
             }
         }
