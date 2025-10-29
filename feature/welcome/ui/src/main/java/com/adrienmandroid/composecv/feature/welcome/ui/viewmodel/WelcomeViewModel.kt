@@ -7,14 +7,15 @@ import androidx.lifecycle.viewModelScope
 import com.adrienmandroid.composecv.feature.welcome.domain.model.Clickable
 import com.adrienmandroid.composecv.feature.welcome.domain.repository.WelcomeElementsRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class WelcomeViewModel @Inject constructor(
     welcomeElementsRepository: WelcomeElementsRepository
 ) : ViewModel() {
-    private val _welcomePageUiState = MutableLiveData <WelcomePageUiState?>(null)
-    val welcomePageUiState: LiveData <WelcomePageUiState?>
+    private val _welcomePageUiState = MutableLiveData<WelcomePageUiState?>(null)
+    val welcomePageUiState: LiveData<WelcomePageUiState?>
         get() = _welcomePageUiState
 
     private val _webUrl = MutableLiveData<String?>()
@@ -26,12 +27,15 @@ class WelcomeViewModel @Inject constructor(
         get() = _mailAddress
 
     init {
-         welcomeElementsRepository.get(viewModelScope).collect { response ->
-            _welcomePageUiState.value = WelcomePageUiState(
-                response.header,
-                response.page
-            )
+        viewModelScope.launch {
+            welcomeElementsRepository.get(viewModelScope).collect { response ->
+                _welcomePageUiState.value = WelcomePageUiState(
+                    response.header,
+                    response.page
+                )
+            }
         }
+
     }
 
     fun onClick(action: ClickAction) {

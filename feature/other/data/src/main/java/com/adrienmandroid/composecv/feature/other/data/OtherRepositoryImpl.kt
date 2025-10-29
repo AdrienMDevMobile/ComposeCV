@@ -13,7 +13,7 @@ class OtherRepositoryImpl @Inject constructor(
     remoteDataSource: OtherRemoteDataSource,
     val versionNameRepository: VersionNameRepository,
 ) : OtherRepository {
-    val localAndRemoteDataManager: ResponseLocalAndRemoteDataManager<Void, OtherComponent> =
+    val localAndRemoteDataManager: ResponseLocalAndRemoteDataManager<Unit, OtherComponent> =
         ResponseLocalAndRemoteDataManager(
             local = localDataSource,
             remote = remoteDataSource

@@ -10,7 +10,7 @@ class SkillRepositoryImpl @Inject constructor(
     localDataSource: SkillLocalDataSource,
     remoteDataSource: SkillRemoteDataSource
 ) : SkillRepository {
-    val responseLocalAndRemoteDataManager: ResponseLocalAndRemoteDataManager<Void, Skill> =
+    val responseLocalAndRemoteDataManager: ResponseLocalAndRemoteDataManager<Unit, Skill> =
         ResponseLocalAndRemoteDataManager(
             local = localDataSource,
             remote = remoteDataSource

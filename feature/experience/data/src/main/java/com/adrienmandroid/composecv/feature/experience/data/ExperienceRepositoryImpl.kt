@@ -10,7 +10,7 @@ class ExperienceRepositoryImpl @Inject constructor(
     localDataSource: ExperienceLocalDataSource,
     remoteDataSource: ExperienceRemoteDataSource
 ) : ExperienceRepository {
-    val localAndRemoteDataManager: ResponseLocalAndRemoteDataManager<Void, Experience> =
+    val localAndRemoteDataManager: ResponseLocalAndRemoteDataManager<Unit, Experience> =
         ResponseLocalAndRemoteDataManager(
             local = localDataSource,
             remote = remoteDataSource
