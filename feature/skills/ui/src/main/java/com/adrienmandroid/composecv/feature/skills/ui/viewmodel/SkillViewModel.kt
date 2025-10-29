@@ -24,7 +24,7 @@ class SkillViewModel @Inject constructor(
         viewModelScope.launch {
             skillRepository.get(viewModelScope).collect { data ->
                 _skills.value = UiStates.Success(
-                    value = data.map { skill ->
+                    value = data.page.map { skill ->
                         skill.toUiState()
                     }
                 )

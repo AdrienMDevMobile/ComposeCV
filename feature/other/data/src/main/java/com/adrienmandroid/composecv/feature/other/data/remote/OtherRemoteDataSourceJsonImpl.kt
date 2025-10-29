@@ -6,6 +6,8 @@ import com.adrienmandroid.composecv.data.remote.DataProviderJSON
 import com.adrienmandroid.composecv.feature.other.data.OtherRemoteDataSource
 import com.adrienmandroid.composecv.feature.other.data.converter.toDomain
 import com.adrienmandroid.composecv.feature.other.domain.model.OtherComponent
+import com.adrienmandroid.composecv.model.response.BasicResponse
+import com.adrienmandroid.composecv.model.response.toResponse
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.adapter
@@ -17,12 +19,12 @@ class OtherRemoteDataSourceJsonImpl @Inject constructor(
     @ApplicationContext private val context: Context
 ) : OtherRemoteDataSource {
     @OptIn(ExperimentalStdlibApi::class)
-    override fun getData(): List<OtherComponent> {
+    override fun getData(): BasicResponse<OtherComponent> {
         val json: String? = DataProviderJSON(FILE_NAME).loadJSONFromAsset(context)
 
         if (json == null) {
             Log.e("jsonError", "SkillJsonProvider returned null")
-            return emptyList()
+            return emptyList<OtherComponent>().toResponse()
         } else {
 
             val moshi: Moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
@@ -34,8 +36,8 @@ class OtherRemoteDataSourceJsonImpl @Inject constructor(
                     OtherComponent.Hobbies(jsonBody.hobbies.map { it.toDomain() }),
                     OtherComponent.Quotes(jsonBody.quotes.map { it.toDomain() }),
                     OtherComponent.Gratitudes(jsonBody.gratitudes.map { it.text })
-                )
-            } ?: emptyList()
+                ).toResponse()
+            } ?: emptyList<OtherComponent>().toResponse()
         }
     }
 

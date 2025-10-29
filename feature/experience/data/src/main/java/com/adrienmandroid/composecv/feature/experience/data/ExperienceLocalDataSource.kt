@@ -1,6 +1,6 @@
 package com.adrienmandroid.composecv.feature.experience.data
 
-import com.adrienmandroid.composecv.data.SimpleListLocalDataSource
+import com.adrienmandroid.composecv.data.ResponseLocalDataSource
 import com.adrienmandroid.composecv.feature.experience.domain.model.Experience
 
-interface ExperienceLocalDataSource : SimpleListLocalDataSource<Experience>
+interface ExperienceLocalDataSource : ResponseLocalDataSource<Void, Experience>

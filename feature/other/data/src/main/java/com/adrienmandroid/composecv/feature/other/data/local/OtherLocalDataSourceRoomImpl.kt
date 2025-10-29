@@ -9,6 +9,8 @@ import com.adrienmandroid.composecv.feature.other.data.local.dao.HobbyDao
 import com.adrienmandroid.composecv.feature.other.data.local.dao.QuoteDao
 import com.adrienmandroid.composecv.feature.other.data.local.dao.StudyDao
 import com.adrienmandroid.composecv.feature.other.domain.model.OtherComponent
+import com.adrienmandroid.composecv.model.response.BasicResponse
+import com.adrienmandroid.composecv.model.response.toResponse
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
@@ -23,10 +25,10 @@ class OtherLocalDataSourceRoomImpl @Inject constructor(
     private val gratitudeDao: GratitudeDao,
     private val database: RoomDatabase,
 ) : OtherLocalDataSource {
-    override fun saveData(data: List<OtherComponent>) {
+    override fun saveData(data: BasicResponse<OtherComponent>) {
         database.runInTransaction {
 
-            data.forEach { component ->
+            data.page.forEach { component ->
                 when (component) {
                     is OtherComponent.Hobbies -> hobbyDao.insertAll(*component.hobbies.map { it.toLocalEntity() }
                         .toTypedArray())
@@ -53,7 +55,7 @@ class OtherLocalDataSourceRoomImpl @Inject constructor(
     }
 
     @OptIn(FlowPreview::class)
-    override fun getData(): Flow<List<OtherComponent>> {
+    override fun getData(): Flow<BasicResponse<OtherComponent>> {
         val flowHobby = hobbyDao.getAllAsFlow().map { hobbies ->
             if (hobbies.isNotEmpty()) {
                 OtherComponent.Hobbies(hobbies.map { it.toDomain() })
@@ -86,8 +88,9 @@ class OtherLocalDataSourceRoomImpl @Inject constructor(
                 if (quotes != null) add(quotes)
                 if (hobbies != null) add(hobbies)
                 if (gratitudes != null) add(gratitudes)
-            }
-        }.debounce(500)
+            }.toResponse()
+        }
+            .debounce(500)
     }
 
 }

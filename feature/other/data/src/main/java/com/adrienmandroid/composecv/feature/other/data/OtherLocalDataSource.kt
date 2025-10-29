@@ -1,6 +1,6 @@
 package com.adrienmandroid.composecv.feature.other.data
 
-import com.adrienmandroid.composecv.data.SimpleListLocalDataSource
+import com.adrienmandroid.composecv.data.ResponseLocalDataSource
 import com.adrienmandroid.composecv.feature.other.domain.model.OtherComponent
 
-interface OtherLocalDataSource : SimpleListLocalDataSource<OtherComponent>
+interface OtherLocalDataSource : ResponseLocalDataSource<Void, OtherComponent>

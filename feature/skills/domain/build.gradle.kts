@@ -8,3 +8,7 @@ plugins {
 android {
     namespace = "com.adrienmandroid.composecv.feature.skills.domain"
 }
+
+dependencies {
+    implementation(project(":core:model"))
+}

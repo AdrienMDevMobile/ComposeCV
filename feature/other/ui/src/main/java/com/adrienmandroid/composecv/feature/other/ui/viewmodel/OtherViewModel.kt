@@ -25,7 +25,7 @@ class OtherViewModel @Inject constructor(
         viewModelScope.launch {
             otherRepository.get(viewModelScope).collect { data ->
                 _otherComponents.value = UiStates.Success(
-                    value = data.map { component ->
+                    value = data.page.map { component ->
                         component.toUiState()
                     }
                 )
