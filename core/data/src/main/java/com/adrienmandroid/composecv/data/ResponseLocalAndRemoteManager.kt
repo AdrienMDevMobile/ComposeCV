@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.transform
 import kotlinx.coroutines.launch
 
-class ResponseLocalAndRemoteDataManager<H, L>(
+class ResponseLocalAndRemoteManager<H, L>(
     val local: ResponseLocalDataSource<H, L>,
     val remote: ResponseRemoteDataSource<H, L>
 ) {
@@ -23,3 +23,5 @@ class ResponseLocalAndRemoteDataManager<H, L>(
             }
         }
 }
+
+typealias BasicResponseLocalAndRemoteManager<T>  = ResponseLocalAndRemoteManager<Unit, T>

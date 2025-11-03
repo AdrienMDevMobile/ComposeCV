@@ -1,6 +1,6 @@
 package com.adrienmandroid.composecv.feature.other.data
 
-import com.adrienmandroid.composecv.data.ResponseLocalAndRemoteDataManager
+import com.adrienmandroid.composecv.data.BasicResponseLocalAndRemoteManager
 import com.adrienmandroid.composecv.feature.other.domain.model.OtherComponent
 import com.adrienmandroid.composecv.feature.other.domain.repository.OtherRepository
 import com.adrienmandroid.composecv.model.response.toResponse
@@ -13,8 +13,8 @@ class OtherRepositoryImpl @Inject constructor(
     remoteDataSource: OtherRemoteDataSource,
     val versionNameRepository: VersionNameRepository,
 ) : OtherRepository {
-    val localAndRemoteDataManager: ResponseLocalAndRemoteDataManager<Unit, OtherComponent> =
-        ResponseLocalAndRemoteDataManager(
+    val localAndRemoteDataManager: BasicResponseLocalAndRemoteManager<OtherComponent> =
+        BasicResponseLocalAndRemoteManager(
             local = localDataSource,
             remote = remoteDataSource
         )

@@ -7,3 +7,5 @@ interface ResponseLocalDataSource<H, L> {
     fun saveData(data: Response<H, L>)
     fun getData(): Flow<Response<H, L>>
 }
+
+typealias BasicResponseLocalDataSource<T> = ResponseLocalDataSource<Unit, T>
