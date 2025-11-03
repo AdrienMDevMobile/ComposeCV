@@ -12,6 +12,9 @@ fun WelcomeRemoteBodyElement.toDomain(): WelcomeBodyElement? = when (type) {
         source = iconId,
         description = value
     ) else null*/
+    "QUOTE" -> if(value != null) WelcomeBodyElement.WelcomeQuote(
+        quote = value
+    ) else null
     "TEXT" -> if(value != null && style != null) WelcomeBodyElement.WelcomeText(
         value = value,
         style = style.toDomain()
