@@ -18,6 +18,17 @@ import java.util.Date
 import javax.inject.Inject
 
 class WelcomeElementsRepositoryImpl @Inject constructor(
+    val remoteDataSource: WelcomeRemoteDataSource
+) : WelcomeElementsRepository {
+
+    override fun get(coroutineScope: CoroutineScope): Flow<Response<WelcomeHeader, WelcomeBodyElement>> {
+        return flow {
+            remoteDataSource.getData()
+        }
+    }
+}
+
+class OldWelcomeElementsRepositoryImpl @Inject constructor(
     @ApplicationContext private val context: Context,
 ) : WelcomeElementsRepository {
 

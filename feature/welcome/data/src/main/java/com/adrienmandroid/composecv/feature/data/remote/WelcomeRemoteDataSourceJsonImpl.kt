@@ -29,13 +29,16 @@ class WelcomeRemoteDataSourceJsonImpl @Inject constructor(
         } else {
 
             val moshi: Moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
-            val jsonAdapter: JsonAdapter<Array<WelcomeRemoteElementBody>> =
-                moshi.adapter<Array<WelcomeRemoteElementBody>>()
+            val jsonAdapter: JsonAdapter<WelcomeRemoteResponse> =
+                moshi.adapter<WelcomeRemoteResponse>()
 
-            return (jsonAdapter.fromJson(json)?.toList()
+            val response = jsonAdapter.fromJson(json)
+
+            return (response?.body?.toList()
                 ?.mapNotNull { element -> element.toDomain() }
                 ?: emptyList()).toResponse(
-                WelcomeHeader("", "")
+                //TODO null safety
+                response?.header?.toDomain() ?: WelcomeHeader("", "")
             )
         }
     }
