@@ -7,7 +7,7 @@ data class WelcomeRemoteBodyElement(
 
     // Fields for WelcomeText, BirthdayText, WelcomeQuote
     val value: String? = null,
-    //val style: TypographyEnum? = null,
+    val style: TypographyRemoteBody? = null,
     val iconId: Int? = null,
 
     // Field for Clickable actions
@@ -21,3 +21,4 @@ data class WelcomeRemoteBodyElement(
     // Field for WelcomeKeyword
     val keywords: List<Keyword>? = null
 )
+
