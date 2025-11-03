@@ -89,8 +89,8 @@ class OldWelcomeElementsRepositoryImpl @Inject constructor(
                         value = context.getString(R.string.Welcome_Keywords),
                         style = TypographyEnum.BODY1BOLD
                     ),
-                    WelcomeBodyElement.WelcomeKeyword(
-                        arrayOf(
+                    WelcomeBodyElement.WelcomeKeywordList(
+                        listOf(
                             Keyword(context.getString(R.string.kw_android)),
                             Keyword(context.getString(R.string.kw_kotlin)),
                             Keyword(context.getString(R.string.kw_compose)),

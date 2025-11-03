@@ -1,7 +1,5 @@
 package com.adrienmandroid.composecv.feature.data.remote
 
-import com.adrienmandroid.composecv.feature.welcome.domain.model.Keyword
-
 data class WelcomeRemoteBodyElement(
     val type: String,
 
@@ -19,6 +17,6 @@ data class WelcomeRemoteBodyElement(
     val tint: Boolean? = false,
 
     // Field for WelcomeKeyword
-    val keywords: List<Keyword>? = null
+    val keywords: List<String>? = null
 )
 

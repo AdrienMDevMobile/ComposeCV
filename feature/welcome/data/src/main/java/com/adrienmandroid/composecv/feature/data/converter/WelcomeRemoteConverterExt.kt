@@ -3,6 +3,7 @@ package com.adrienmandroid.composecv.feature.data.converter
 import com.adrienmandroid.composecv.feature.data.remote.TypographyRemoteBody
 import com.adrienmandroid.composecv.feature.data.remote.WelcomeRemoteBodyElement
 import com.adrienmandroid.composecv.feature.data.remote.WelcomeRemoteResponseHeader
+import com.adrienmandroid.composecv.feature.welcome.domain.model.Keyword
 import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeBodyElement
 import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeHeader
 import com.adrienmandroid.composecv.model.TypographyEnum
@@ -12,18 +13,23 @@ fun WelcomeRemoteBodyElement.toDomain(): WelcomeBodyElement? = when (type) {
         source = iconId,
         description = value
     ) else null*/
-    "QUOTE" -> if(value != null) WelcomeBodyElement.WelcomeQuote(
+    "QUOTE" -> if (value != null) WelcomeBodyElement.WelcomeQuote(
         quote = value
     ) else null
-    "TEXT" -> if(value != null && style != null) WelcomeBodyElement.WelcomeText(
+
+    "TEXT" -> if (value != null && style != null) WelcomeBodyElement.WelcomeText(
         value = value,
         style = style.toDomain()
+    ) else null
+
+    "KEYWORDS" -> if (keywords != null) WelcomeBodyElement.WelcomeKeywordList(
+        keywords = keywords.map { word -> Keyword(value = word) }
     ) else null
 
     else -> null
 }
 
-fun TypographyRemoteBody.toDomain() = when(this){
+fun TypographyRemoteBody.toDomain() = when (this) {
     TypographyRemoteBody.H1 -> TypographyEnum.H1
     TypographyRemoteBody.H2 -> TypographyEnum.H2
     TypographyRemoteBody.H3 -> TypographyEnum.H3

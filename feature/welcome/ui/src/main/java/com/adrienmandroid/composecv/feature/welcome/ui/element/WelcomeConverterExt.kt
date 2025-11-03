@@ -20,7 +20,7 @@ fun CheckUiType(value: WelcomeBodyElement, onClick: (Clickable) -> Unit) {
             tint = value.tint,
         )
 
-        is WelcomeBodyElement.WelcomeKeyword -> Keywords(keywords = value.keywords)
+        is WelcomeBodyElement.WelcomeKeywordList -> Keywords(keywords = value.keywords.toTypedArray())
         is WelcomeBodyElement.WelcomeQuote -> QuoteTextDraw(quote = value.quote)
         is WelcomeBodyElement.WelcomeText ->
             TextDraw(

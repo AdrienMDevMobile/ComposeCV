@@ -20,8 +20,8 @@ class WelcomePreviewParameterData(
             context.getString(TestingR.string.test_1_word),
             tint = true
         ),
-        WelcomeBodyElement.WelcomeKeyword(
-            arrayOf(
+        WelcomeBodyElement.WelcomeKeywordList(
+            listOf(
 
                 Keyword(context.getString(TestingR.string.test_1_word)),
                 Keyword(context.getString(TestingR.string.test_1_word)),

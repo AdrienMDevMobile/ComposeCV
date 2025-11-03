@@ -12,7 +12,7 @@ sealed class WelcomeBodyElement {
         WelcomeBodyElement()
 
     //TODO : no present on data layer
-    class WelcomeKeyword(val keywords: Array<Keyword>) : WelcomeBodyElement()
+    class WelcomeKeywordList(val keywords: List<Keyword>) : WelcomeBodyElement()
     class WelcomeQuote(val quote: String) : WelcomeBodyElement()
     class WelcomeText(
         @DrawableRes

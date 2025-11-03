@@ -1,0 +1,92 @@
+{
+  "header": {
+    "profilePictureUrl": "https://i.imgur.com/Bx3Cl0T.jpeg",
+    "backgroundPictureUrl": "https://i.imgur.com/HR6QyAW.jpeg"
+  },
+  "body": [
+    {
+      "type": "TEXT",
+      "value": "Adrien MICHEL",
+      "style": "H4",
+      "iconId": null,
+      "clickable": null
+    },
+    {
+      "type": "TEXT",
+      "value": "Ingénieur développeur Android",
+      "style": "H5",
+      "iconId": null,
+      "clickable": null
+    },
+    {
+      "type": "BIRTHDAY",
+      "value": "1995-04-20T11:20:00.000Z",
+      "style": "BODY1",
+      "iconId": null,
+      "clickable": null
+    },
+    {
+      "type": "TEXT",
+      "value": "adrienpmichel@gmail.com",
+      "style": "BODY1",
+      "iconId": 2131165293,
+      "clickable": {
+        "type": "MailClick",
+        "value": "myEmail@email.com"
+      }
+    },
+    {
+      "type": "TEXT",
+      "value": "Paris, France",
+      "style": "BODY1",
+      "iconId": 2131165315,
+      "clickable": null
+    },
+    {
+      "type": "TEXT",
+      "value": "github.com/adrien-m",
+      "style": "BODY1",
+      "iconId": 2131165313,
+      "clickable": {
+        "type": "WebClick",
+        "value": "https://github.com/adrien-m"
+      }
+    },
+    {
+      "type": "TEXT",
+      "value": "linkedin.com/in/adrien-m/",
+      "style": "BODY1",
+      "iconId": 2131165314,
+      "clickable": {
+        "type": "WebClick",
+        "value": "https://www.linkedin.com/in/adrien-m/"
+      }
+    },
+    {
+      "type": "QUOTE",
+      "value": "Ingénieur en informatique,<br>j'ai développé une <b>passion</b> et acquis une véritable <b>expérience</b> dans le développement <b>Android:</b> au travers de <b>nombreux projets</b><br>        professionnels et personnels.<br><br>        Très <b>curieux</b>, je ne cesse d'enrichir mes compétences en développement Android.<br>       C'est cette curiosité et envie d'apprendre qui m'ont motivé à développer cette application avec nouvel outil de Google : <b>Jetpack compose</b>.",
+      "style": null,
+      "iconId": null,
+
+      "clickable": null
+    },
+    {
+      "type": "TEXT",
+      "value": "Keywords:",
+      "style": "BODY1BOLD",
+      "iconId": null,
+      "clickable": null
+    },
+    {
+      "type": "KEYWORDS",
+      "keywords": [
+        "Android",
+        "Kotlin",
+        "Compose",
+        "Growth mindset",
+        "Creativity"
+      ]
+    }
+  ]
+}
+
