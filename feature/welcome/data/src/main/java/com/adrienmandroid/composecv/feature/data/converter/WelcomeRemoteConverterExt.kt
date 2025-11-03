@@ -6,9 +6,12 @@ import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeBodyElem
 import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeHeader
 
 fun WelcomeRemoteBodyElement.toDomain(): WelcomeBodyElement? = when (type) {
-    "IMAGE" -> if (iconId != null && value != null) WelcomeBodyElement.WelcomeImage(
+    /*"IMAGE" -> if (iconId != null && value != null) WelcomeBodyElement.WelcomeImage(
         source = iconId,
         description = value
+    ) else null*/
+    "TEXT" -> if(value != null) WelcomeBodyElement.WelcomeText(
+        value = value
     ) else null
 
     else -> null

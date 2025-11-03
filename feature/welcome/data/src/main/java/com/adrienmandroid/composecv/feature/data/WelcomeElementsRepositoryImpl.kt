@@ -23,7 +23,7 @@ class WelcomeElementsRepositoryImpl @Inject constructor(
 
     override fun get(coroutineScope: CoroutineScope): Flow<Response<WelcomeHeader, WelcomeBodyElement>> {
         return flow {
-            remoteDataSource.getData()
+            emit(remoteDataSource.getData())
         }
     }
 }
