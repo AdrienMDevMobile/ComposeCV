@@ -18,12 +18,9 @@ sealed class WelcomeBodyElement {
         @DrawableRes
         val iconId: Int? = null,
         val value: String,
-        //TODO add to data layer
         val style: TypographyEnum = TypographyEnum.BODY1,
-        //TODO add to data layer
         val clickable: Clickable? = null
     ) : WelcomeBodyElement()
-    //TODO add to data layer
     class BirthdayText(
         val value: Date,
     ): WelcomeBodyElement()
