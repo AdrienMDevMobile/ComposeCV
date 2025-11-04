@@ -1,8 +1,10 @@
 package com.adrienmandroid.composecv.feature.data.converter
 
+import com.adrienmandroid.composecv.feature.data.remote.ClickableRemoteBody
 import com.adrienmandroid.composecv.feature.data.remote.TypographyRemoteBody
 import com.adrienmandroid.composecv.feature.data.remote.WelcomeRemoteBodyElement
 import com.adrienmandroid.composecv.feature.data.remote.WelcomeRemoteResponseHeader
+import com.adrienmandroid.composecv.feature.welcome.domain.model.Clickable
 import com.adrienmandroid.composecv.feature.welcome.domain.model.Keyword
 import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeBodyElement
 import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeHeader
@@ -19,7 +21,8 @@ fun WelcomeRemoteBodyElement.toDomain(): WelcomeBodyElement? = when (type) {
 
     "TEXT" -> if (value != null && style != null) WelcomeBodyElement.WelcomeText(
         value = value,
-        style = style.toDomain()
+        style = style.toDomain(),
+        clickable = clickable?.toDomain()
     ) else null
 
     "KEYWORDS" -> if (keywords != null) WelcomeBodyElement.WelcomeKeywordList(
@@ -44,6 +47,18 @@ fun TypographyRemoteBody.toDomain() = when (this) {
     TypographyRemoteBody.BUTTON -> TypographyEnum.BUTTON
     TypographyRemoteBody.CAPTION -> TypographyEnum.CAPTION
     TypographyRemoteBody.OVERLINE -> TypographyEnum.OVERLINE
+}
+
+fun ClickableRemoteBody.toDomain() = when (type) {
+    "Web" -> if (value != null) Clickable.WebClick(
+        url = value
+    ) else null
+
+    "Mail" -> if (value != null) Clickable.MailClick(
+        address = value
+    ) else null
+
+    else -> null
 }
 
 fun WelcomeRemoteResponseHeader.toDomain() = WelcomeHeader(

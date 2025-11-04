@@ -9,7 +9,7 @@ data class WelcomeRemoteBodyElement(
     val iconId: Int? = null,
 
     // Field for Clickable actions
-    //val clickable: Clickable? = null,
+    val clickable: ClickableRemoteBody? = null,
 
     // Fields for WelcomeImage
     val imageResId: Int? = null,
