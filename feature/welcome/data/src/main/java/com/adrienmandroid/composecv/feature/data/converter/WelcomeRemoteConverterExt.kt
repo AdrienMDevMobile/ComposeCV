@@ -9,6 +9,7 @@ import com.adrienmandroid.composecv.feature.welcome.domain.model.Keyword
 import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeBodyElement
 import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeHeader
 import com.adrienmandroid.composecv.model.TypographyEnum
+import java.util.Date
 
 fun WelcomeRemoteBodyElement.toDomain(): WelcomeBodyElement? = when (type) {
     /*"IMAGE" -> if (iconId != null && value != null) WelcomeBodyElement.WelcomeImage(
@@ -28,6 +29,19 @@ fun WelcomeRemoteBodyElement.toDomain(): WelcomeBodyElement? = when (type) {
     "KEYWORDS" -> if (keywords != null) WelcomeBodyElement.WelcomeKeywordList(
         keywords = keywords.map { word -> Keyword(value = word) }
     ) else null
+
+    "BIRTHDAY" -> if (value != null) {
+        try {
+            val date = Date(value.toLong())
+            WelcomeBodyElement.BirthdayText(
+                value = date
+            )
+        } catch (e: NumberFormatException) {
+            null
+        }
+    } else {
+        null
+    }
 
     else -> null
 }

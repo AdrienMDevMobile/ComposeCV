@@ -1,6 +1,7 @@
 package com.adrienmandroid.composecv.feature.welcome.ui.element
 
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import com.adrienmandroid.composecv.core.ui.getDifferenceInts
 import com.adrienmandroid.composecv.core.ui.getDifferenceYearsToString
@@ -33,9 +34,9 @@ fun CheckUiType(value: WelcomeBodyElement, onClick: (Clickable) -> Unit) {
             )
         is WelcomeBodyElement.BirthdayText ->
             TextDraw(
-                iconId = value.iconId,
+                iconId = null,
                 value = Dates(Date(), value.value).getDifferenceInts().getDifferenceYearsToString(),
-                style = value.style.toMaterialTypography(),
+                style = MaterialTheme.typography.body1,
             )
     }
 }

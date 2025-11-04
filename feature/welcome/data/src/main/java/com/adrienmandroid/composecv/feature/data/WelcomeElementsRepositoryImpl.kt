@@ -28,8 +28,8 @@ class WelcomeElementsRepositoryImpl @Inject constructor(
     }
 }
 
-class OldWelcomeElementsRepositoryImpl @Inject constructor(
-    @ApplicationContext private val context: Context,
+class OldWelcomeElementsRepositoryImpl(
+    private val context: Context,
 ) : WelcomeElementsRepository {
 
     override fun get(coroutineScope: CoroutineScope): Flow<Response<WelcomeHeader, WelcomeBodyElement>> {
@@ -46,7 +46,6 @@ class OldWelcomeElementsRepositoryImpl @Inject constructor(
                     ),
                     WelcomeBodyElement.BirthdayText(
                         value = Date(800056800000),
-                        style = TypographyEnum.BODY1
                     ),
                     WelcomeBodyElement.WelcomeText(
                         iconId = R.drawable.email,
