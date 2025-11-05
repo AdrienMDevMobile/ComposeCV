@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.adrienmandroid.composecv.feature.welcome.domain.model.Clickable
+import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeHeader
 import com.adrienmandroid.composecv.feature.welcome.domain.repository.WelcomeElementsRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -30,7 +31,7 @@ class WelcomeViewModel @Inject constructor(
         viewModelScope.launch {
             welcomeElementsRepository.get(viewModelScope).collect { response ->
                 _welcomePageUiState.value = WelcomePageUiState(
-                    response.header,
+                    response.header ?: WelcomeHeader("", ""),
                     response.page
                 )
             }

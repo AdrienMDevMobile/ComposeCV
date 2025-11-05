@@ -26,7 +26,7 @@ class WelcomeLocalDataSourceRoomImpl @Inject constructor(
             elements.mapNotNull { element ->
                 element.toDomain()
             }.toResponse(
-                WelcomeHeader("", "")
+                null
             )
         }
 
