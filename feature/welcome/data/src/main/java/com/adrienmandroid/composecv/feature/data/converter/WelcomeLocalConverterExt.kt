@@ -24,7 +24,7 @@ fun WelcomeBodyElement.toLocalData() = when (this) {
 
     is WelcomeBodyElement.WelcomeKeywordList -> WelcomeElementEntity(
         type = KEYWORDS_TYPE,
-        value = fromListString(keywords)
+        value = toListString(keywords)
     )
 
     is WelcomeBodyElement.WelcomeQuote -> WelcomeElementEntity(
@@ -40,19 +40,33 @@ fun WelcomeBodyElement.toLocalData() = when (this) {
 }
 
 fun WelcomeElementEntity.toDomain() = when (type) {
-    BIRTHDAY_TYPE -> if (value != null) WelcomeBodyElement.BirthdayText(value.toJavaDate()) else null
+    BIRTHDAY_TYPE -> if (value != null)
+        WelcomeBodyElement.BirthdayText(value.toJavaDate())
+    else null
+
     IMAGE_TYPE -> TODO()
-    KEYWORDS_TYPE -> TODO()
-    QUOTE_TYPE -> TODO()
-    TEXT_TYPE -> TODO()
+    KEYWORDS_TYPE -> if (value != null)
+        WelcomeBodyElement.WelcomeKeywordList(
+            keywords = fromListString(value)
+        )
+    else null
+
+    QUOTE_TYPE -> if (value != null)
+        WelcomeBodyElement.WelcomeQuote(quote = value)
+    else null
+
+    TEXT_TYPE -> if (value != null)
+        WelcomeBodyElement.WelcomeText(value = value)
+    else null
+
     else -> null
 }
 
-fun fromListString(list: List<Keyword>): String {
+fun toListString(list: List<Keyword>): String {
     return list.joinToString(",") { it.toString() }
 }
 
-fun toListString(data: String): List<Keyword> {
+fun fromListString(data: String): List<Keyword> {
     return listOf(*data.split(",").map { Keyword(it) }.toTypedArray())
 }
 

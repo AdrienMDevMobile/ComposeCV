@@ -1,6 +1,8 @@
 package com.adrienmandroid.composecv.feature.data
 
 import android.content.Context
+import com.adrienmandroid.composecv.data.BasicResponseLocalAndRemoteManager
+import com.adrienmandroid.composecv.data.ResponseLocalAndRemoteManager
 import com.adrienmandroid.composecv.feature.welcome.data.R
 import com.adrienmandroid.composecv.feature.welcome.domain.model.Clickable
 import com.adrienmandroid.composecv.feature.welcome.domain.model.Keyword
@@ -18,14 +20,24 @@ import java.util.Date
 import javax.inject.Inject
 
 class WelcomeElementsRepositoryImpl @Inject constructor(
-    val remoteDataSource: WelcomeRemoteDataSource
+    localDataSource: WelcomeLocalDataSource,
+    remoteDataSource: WelcomeRemoteDataSource
 ) : WelcomeElementsRepository {
 
-    override fun get(coroutineScope: CoroutineScope): Flow<Response<WelcomeHeader, WelcomeBodyElement>> {
+    val responseLocalAndRemoteManager: ResponseLocalAndRemoteManager<WelcomeHeader, WelcomeBodyElement> =
+        ResponseLocalAndRemoteManager(
+            local = localDataSource,
+            remote = remoteDataSource
+        )
+
+    override fun get(coroutineScope: CoroutineScope)=
+        responseLocalAndRemoteManager.get(coroutineScope)
+
+    /*override fun get(coroutineScope: CoroutineScope): Flow<Response<WelcomeHeader, WelcomeBodyElement>> {
         return flow {
             emit(remoteDataSource.getData())
         }
-    }
+    }*/
 }
 
 class OldWelcomeElementsRepositoryImpl(

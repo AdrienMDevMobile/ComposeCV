@@ -1,7 +1,9 @@
 package com.adrienmandroid.composecv.di
 
 import com.adrienmandroid.composecv.feature.data.WelcomeElementsRepositoryImpl
+import com.adrienmandroid.composecv.feature.data.WelcomeLocalDataSource
 import com.adrienmandroid.composecv.feature.data.WelcomeRemoteDataSource
+import com.adrienmandroid.composecv.feature.data.local.WelcomeLocalDataSourceRoomImpl
 import com.adrienmandroid.composecv.feature.data.remote.WelcomeRemoteDataSourceJsonImpl
 import com.adrienmandroid.composecv.feature.welcome.domain.repository.WelcomeElementsRepository
 import dagger.Binds
@@ -18,9 +20,14 @@ abstract class WelcomeDataModule {
     ): WelcomeElementsRepository
 
     @Binds
-    abstract fun bindWelcomeRemoteRepository(
-        welcomeRemoteRepository: WelcomeRemoteDataSourceJsonImpl
+    abstract fun bindWelcomeRemoteDataSource(
+        welcomeRemoteDataSource: WelcomeRemoteDataSourceJsonImpl
     ): WelcomeRemoteDataSource
+
+    @Binds
+    abstract fun bindWelcomeLocalDataSource(
+        welcomeLocalDataSourceRoomImpl: WelcomeLocalDataSourceRoomImpl
+    ) : WelcomeLocalDataSource
 
     /* TODO remove
     @Binds
