@@ -63,7 +63,7 @@ fun WelcomeElementEntity.toDomain() = when (type) {
 }
 
 fun toListString(list: List<Keyword>): String {
-    return list.joinToString(",") { it.toString() }
+    return list.joinToString(",") { it.value }
 }
 
 fun fromListString(data: String): List<Keyword> {
