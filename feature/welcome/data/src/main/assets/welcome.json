@@ -40,22 +40,22 @@
     },
     {
       "type": "TEXT",
-      "value": "github.com/adrien-m",
+      "value": "github.com/AdrienMDevMobile",
       "style": "BODY1",
       "iconId": 2131165313,
       "clickable": {
         "type": "Web",
-        "value": "https://github.com/adrien-m"
+        "value": "https://github.com/AdrienMDevMobile"
       }
     },
     {
       "type": "TEXT",
-      "value": "linkedin.com/in/adrien-m/",
+      "value": "linkedin.com/adrien-michel-android",
       "style": "BODY1",
       "iconId": 2131165314,
       "clickable": {
         "type": "Web",
-        "value": "https://www.linkedin.com/in/adrien-m/"
+        "value": "https://www.linkedin.com/in/adrien-michel-android/"
       }
     },
     {

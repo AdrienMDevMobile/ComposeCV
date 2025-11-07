@@ -12,7 +12,7 @@ data class WelcomeElementEntity(
 
     // Fields for WelcomeText, BirthdayText, WelcomeQuote
     val value: String? = null,
-    val style: String? = null,
+    val style: TypographyLocalEntity? = null,
     val iconId: Int? = null,
 
     val clickableType: String? = null,
