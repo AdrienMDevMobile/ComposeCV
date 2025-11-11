@@ -44,12 +44,12 @@ fun SelfLoadingPicture(
                 .allowHardware(false) // Better compatibility
                 .build(),
             contentDescription = contentDescription,
-            modifier = imageModifier,
+            modifier = Modifier.fillMaxSize(),
             success = { successState ->
                 Image(
                     painter = successState.painter,
                     contentDescription = contentDescription,
-                    modifier = Modifier.fillMaxSize(),
+                    modifier = imageModifier,
                     contentScale = ContentScale.Crop,
                     colorFilter = colorFilter,
                 )

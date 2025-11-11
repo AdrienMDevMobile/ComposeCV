@@ -89,7 +89,6 @@ fun QuoteContent(
                 modifier = Modifier.padding(margin),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-
                 if (quote.textPosition == TextPosition.LEFT) {
                     QuoteText(quote, Modifier.weight(2f))
                     AuthorImage(successState.painter, Modifier.weight(1f))
