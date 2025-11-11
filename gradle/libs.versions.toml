@@ -4,7 +4,7 @@ accompanist-pager-indicators = "0.24.11-rc"
 agp = "8.8.2"
 android-junit = "1.2.1"
 appcompat = "1.7.0"
-coil = "2.7.0"
+coil = "3.3.0"
 compose = "1.8.1"
 compose-activity = "1.10.1"
 composeBom = "2025.05.00"
@@ -52,7 +52,8 @@ androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref =
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomVersion" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomVersion" }
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
-coil-compose = {group ="io.coil-kt", name="coil-compose", version.ref = "coil"}
+coil-compose = {group ="io.coil-kt.coil3", name="coil-compose", version.ref = "coil"}
+coil-network = {group ="io.coil-kt.coil3", name="coil-network-okhttp", version.ref = "coil"}
 google-accompanist-pager = { group = "com.google.accompanist", name = "accompanist-pager", version.ref = "accompanist-pager" }
 google-accompanist-pager-indicators = { group = "com.google.accompanist", name = "accompanist-pager-indicators", version.ref = "accompanist-pager-indicators" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
