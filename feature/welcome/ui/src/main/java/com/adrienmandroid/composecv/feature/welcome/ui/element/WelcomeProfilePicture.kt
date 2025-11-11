@@ -1,6 +1,7 @@
 package com.adrienmandroid.composecv.feature.welcome.ui.element
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.requiredSize
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.MaterialTheme
@@ -27,7 +28,7 @@ fun WelcomeProfilePicture(
         imageModifier = Modifier
             .size(128.dp)
             .clip(CircleShape),
-        loadingModifier = Modifier.size(80.dp),
+        loadingModifier = Modifier.requiredSize(60.dp),
         contentDescription = "Picture"
     )
 }

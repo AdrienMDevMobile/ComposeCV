@@ -20,18 +20,13 @@ import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
@@ -39,8 +34,12 @@ import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import coil.compose.AsyncImagePainter
-import coil.compose.rememberAsyncImagePainter
+import coil3.compose.LocalPlatformContext
+import coil3.compose.SubcomposeAsyncImage
+import coil3.request.CachePolicy
+import coil3.request.ImageRequest
+import coil3.request.allowHardware
+import coil3.request.crossfade
 import com.adrienmandroid.composecv.core.ui.AutoResizeText
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.core.ui.theme.onQuoteBackground
@@ -49,15 +48,12 @@ import com.adrienmandroid.composecv.feature.other.ui.R
 import com.adrienmandroid.composecv.feature.other.ui.preview.data.QuoteIndexedPreviewParameterProvider
 import com.adrienmandroid.composecv.feature.other.ui.state.QuoteUiState
 import com.adrienmandroid.composecv.feature.other.ui.state.TextPosition
-import com.adrienmandroid.composecv.core.ui.R as RCoreUi
 
 private val margin = 12.dp
 
 @Composable
 fun QuoteCardDraw(
     quote: QuoteUiState,
-    //TODO have this code only compiled in test build ?
-    testStayLoading: Boolean = false,
 ) {
     Card(
         modifier = Modifier
@@ -68,79 +64,59 @@ fun QuoteCardDraw(
         backgroundColor = MaterialTheme.colors.quoteBackground,
         elevation = 5.dp
     ) {
-        QuoteLoadingContent(quote, testStayLoading)
+        QuoteContent(quote)
     }
-}
-
-@Composable
-fun QuoteLoadingContent(
-    quote: QuoteUiState,
-    testStayLoading: Boolean = false,
-) {
-    var isLoading by remember { mutableStateOf(true) }
-    var isError by remember { mutableStateOf(false) }
-    val imageLoader = rememberAsyncImagePainter(
-        model = quote.imageUrl,
-        onState = { state ->
-            isLoading = state is AsyncImagePainter.State.Loading
-            isError = state is AsyncImagePainter.State.Error
-        },
-    )
-
-    val isLocalInspection = LocalInspectionMode.current
-
-    QuoteContent(
-        quote,
-        showLoading = isLoading && !isLocalInspection || testStayLoading,
-        showError = isError && !isLocalInspection,
-        imageLoader
-    )
 }
 
 @Composable
 fun QuoteContent(
     quote: QuoteUiState,
-    showLoading: Boolean,
-    showError: Boolean,
-    imageLoader: AsyncImagePainter
 ) {
-    if (showLoading) {
-        Box(
-            modifier = Modifier.padding(margin),
-            contentAlignment = Alignment.Center,
-        ) {
-            CircularProgressIndicator(
-                color = MaterialTheme.colors.secondary,
-            )
-            //Used to preload the picture, hidden in the loader
-            Image(
-                painter = imageLoader,
-                modifier = Modifier.alpha(0F),
-                contentDescription = "@null"
-            )
-        }
+    val context = LocalPlatformContext.current
 
-    } else {
-        Row(
-            modifier = Modifier.padding(margin),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-
-            if (quote.textPosition == TextPosition.LEFT) {
-                QuoteText(quote, Modifier.weight(2f))
-                AuthorImage(imageLoader, showError, Modifier.weight(1f))
-            } else {
-                AuthorImage(imageLoader, showError, Modifier.weight(1f))
-                QuoteText(quote, Modifier.weight(2f))
+    SubcomposeAsyncImage(
+        model = ImageRequest.Builder(context)
+            .data(quote.imageUrl)
+            .crossfade(true)
+            .memoryCachePolicy(CachePolicy.ENABLED)
+            .diskCachePolicy(CachePolicy.ENABLED)
+            .allowHardware(false) // Better compatibility
+            .build(),
+        contentDescription = quote.author,
+        modifier = Modifier.fillMaxSize(),
+        success = { successState ->
+            Row(
+                modifier = Modifier.padding(margin),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                if (quote.textPosition == TextPosition.LEFT) {
+                    QuoteText(quote, Modifier.weight(2f))
+                    AuthorImage(successState.painter, Modifier.weight(1f))
+                } else {
+                    AuthorImage(successState.painter, Modifier.weight(1f))
+                    QuoteText(quote, Modifier.weight(2f))
+                }
             }
+        },
+        loading = {
+            Box(
+                modifier = Modifier.padding(margin),
+                contentAlignment = Alignment.Center,
+            ) {
+                CircularProgressIndicator(
+                    color = MaterialTheme.colors.secondary,
+                )
+            }
+        },
+        error = {
+            QuoteText(quote)
         }
-    }
+    )
 }
 
 @Composable
 fun AuthorImage(
-    imageLoader: AsyncImagePainter,
-    showError: Boolean,
+    painter: Painter,
     modifier: Modifier = Modifier
 ) {
     Box(
@@ -148,14 +124,10 @@ fun AuthorImage(
         contentAlignment = Alignment.Center
     ) {
         Image(
+            painter = painter,
             modifier = Modifier
                 .fillMaxHeight(),
             contentScale = ContentScale.Crop,
-            painter = if (!showError) {
-                imageLoader
-            } else {
-                painterResource(RCoreUi.drawable.core_placeholder)
-            },
             contentDescription = "@null",
         )
     }
@@ -250,9 +222,11 @@ fun PreviewQuoteCard(
     }
 }
 
+/*
+TODO loading preview
 @PreviewLightDark
 @Composable
-fun PreviewQuoteCardText(
+fun PreviewQuoteCardTextStayLoading(
     @PreviewParameter(
         QuoteIndexedPreviewParameterProvider::class,
         limit = 2
@@ -265,4 +239,4 @@ fun PreviewQuoteCardText(
             true
         )
     }
-}
+}*/

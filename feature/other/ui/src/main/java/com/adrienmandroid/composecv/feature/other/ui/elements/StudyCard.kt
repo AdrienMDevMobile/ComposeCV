@@ -15,34 +15,33 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
+import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.MaterialTheme.typography
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalInspectionMode
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import coil.compose.AsyncImagePainter
-import coil.compose.rememberAsyncImagePainter
-import com.adrienmandroid.composecv.core.ui.LoadingBox
+import coil3.compose.LocalPlatformContext
+import coil3.compose.SubcomposeAsyncImage
+import coil3.request.CachePolicy
+import coil3.request.ImageRequest
+import coil3.request.allowHardware
+import coil3.request.crossfade
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.core.ui.toMonthString
 import com.adrienmandroid.composecv.feature.other.ui.state.StudyUiState
 import com.adrienmandroid.composecv.model.Dates
 import java.util.Date
 import com.adrienmandroid.composecv.core.test.R as TestingR
-import com.adrienmandroid.composecv.core.ui.R as RCoreUi
 
 @Composable
 fun StudyCard(
@@ -56,8 +55,7 @@ fun StudyCard(
             .padding(10.dp, 10.dp),
         elevation = 5.dp,
         backgroundColor = MaterialTheme.colors.background,
-    )
-    {
+    ) {
         StudyContent(study)
     }
 }
@@ -66,70 +64,82 @@ fun StudyCard(
 fun StudyContent(
     study: StudyUiState
 ) {
-    var isLoading by remember { mutableStateOf(true) }
-    var isError by remember { mutableStateOf(false) }
-    val imageLoader = rememberAsyncImagePainter(
-        model = study.logoUrl,
-        onState = { state ->
-            isLoading = state is AsyncImagePainter.State.Loading
-            isError = state is AsyncImagePainter.State.Error
-        },
-    )
-    val isLocalInspection = LocalInspectionMode.current
+    val context = LocalPlatformContext.current
 
-    StudyBackgroundPicture(isError, isLocalInspection, imageLoader)
-    Row(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(horizontal = 10.dp, vertical = 15.dp),
-        verticalAlignment = Alignment.CenterVertically
-    ) {
-        StudyForegroundPicture(
-            isLoading, isError, isLocalInspection, imageLoader,
-            contentDescription = study.name
-        )
-        Spacer(modifier = Modifier.width(10.dp))
-        StudyText(
-            studyName = study.name,
-            diploma = study.diploma,
-            dates = study.dates,
-            isLongString = study.isLongString
-        )
-    }
+    val model = ImageRequest
+        .Builder(context)
+        .data(study.logoUrl)
+        .crossfade(true)
+        .memoryCachePolicy(CachePolicy.ENABLED).diskCachePolicy(CachePolicy.ENABLED)
+        .allowHardware(false) // Better compatibility
+        .build()
+
+    SubcomposeAsyncImage(
+        model = model,
+        contentDescription = study.diploma,
+        modifier = Modifier.fillMaxSize(),
+        success = { successState ->
+            StudyBackgroundPicture(successState.painter)
+            Row(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(horizontal = 10.dp, vertical = 15.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                StudyForegroundPicture(
+                    successState.painter, contentDescription = study.name
+                )
+                Spacer(modifier = Modifier.width(10.dp))
+                StudyText(
+                    studyName = study.name,
+                    diploma = study.diploma,
+                    dates = study.dates,
+                    isLongString = study.isLongString
+                )
+            }
+        },
+        loading = {
+            Box(
+                modifier = Modifier.padding(10.dp),
+                contentAlignment = Alignment.Center,
+            ) {
+                CircularProgressIndicator(
+                    color = MaterialTheme.colors.secondary,
+                )
+            }
+        },
+        error = {
+            StudyText(
+                studyName = study.name,
+                diploma = study.diploma,
+                dates = study.dates,
+                isLongString = study.isLongString
+            )
+        })
 }
 
 @Composable
 fun StudyText(
-    studyName: String,
-    diploma: String,
-    dates: Dates,
-    isLongString: Boolean
+    studyName: String, diploma: String, dates: Dates, isLongString: Boolean
 ) {
     val textStyle = when (isLongString) {
         true -> typography.body2
         false -> typography.body1
     }
     Column(
-        modifier = Modifier
-            .fillMaxWidth(),
-        verticalArrangement = Arrangement.Center
+        modifier = Modifier.fillMaxWidth(), verticalArrangement = Arrangement.Center
     ) {
         Text(
-            modifier = Modifier.fillMaxWidth(),
-            text = studyName,
-            style = textStyle
+            modifier = Modifier.fillMaxWidth(), text = studyName, style = textStyle
+        )
+        Spacer(modifier = Modifier.height(studyVerticalSpacing))
+        Text(
+            modifier = Modifier.fillMaxWidth(), text = diploma, style = textStyle
         )
         Spacer(modifier = Modifier.height(studyVerticalSpacing))
         Text(
             modifier = Modifier.fillMaxWidth(),
-            text = diploma,
-            style = textStyle
-        )
-        Spacer(modifier = Modifier.height(studyVerticalSpacing))
-        Text(
-            modifier = Modifier.fillMaxWidth(),
-            text = dates.begin.toMonthString().plus(" - ")
-                .plus(dates.end.toMonthString()),
+            text = dates.begin.toMonthString().plus(" - ").plus(dates.end.toMonthString()),
             style = textStyle
         )
     }
@@ -137,24 +147,17 @@ fun StudyText(
 
 @Composable
 fun StudyBackgroundPicture(
-    isError: Boolean,
-    isLocalInspection: Boolean,
-    imageLoader: AsyncImagePainter
+    painter: Painter
 ) {
     Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.CenterEnd
+        modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.CenterEnd
     ) {
         Image(
             modifier = Modifier
                 .fillMaxHeight()
                 .alpha(0.5f),
             contentScale = ContentScale.Crop,
-            painter = if (isError.not() && !isLocalInspection) {
-                imageLoader
-            } else {
-                painterResource(RCoreUi.drawable.core_placeholder)
-            },
+            painter = painter,
             contentDescription = "@null",
         )
     }
@@ -162,33 +165,24 @@ fun StudyBackgroundPicture(
 
 @Composable
 fun StudyForegroundPicture(
-    isLoading: Boolean,
-    isError: Boolean,
-    isLocalInspection: Boolean,
-    imageLoader: AsyncImagePainter,
-    contentDescription: String,
+    painter: Painter, contentDescription: String, colorFilter: ColorFilter? = null
 ) {
-    LoadingBox(
-        isLoading = isLoading,
-        isError = isError,
-        isLocalInspection = isLocalInspection,
-        imageLoader = imageLoader,
+    Image(
+        painter = painter,
         contentDescription = contentDescription,
         modifier = Modifier
             .fillMaxHeight()
-            .fillMaxWidth(0.25f)
+            .fillMaxWidth(0.25f),
+        contentScale = ContentScale.Crop,
+        colorFilter = colorFilter,
     )
 }
 
 @Preview(
-    uiMode = Configuration.UI_MODE_NIGHT_NO,
-    widthDp = 300,
-    heightDp = 200
+    uiMode = Configuration.UI_MODE_NIGHT_NO, widthDp = 300, heightDp = 200
 )
 @Preview(
-    uiMode = Configuration.UI_MODE_NIGHT_YES,
-    widthDp = 300,
-    heightDp = 200
+    uiMode = Configuration.UI_MODE_NIGHT_YES, widthDp = 300, heightDp = 200
 )
 @Composable
 fun PreviewStudyCard() {
