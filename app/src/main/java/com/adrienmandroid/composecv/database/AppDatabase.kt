@@ -4,6 +4,8 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import com.adrienmandroid.composecv.feature.data.local.WelcomeElementEntity
 import com.adrienmandroid.composecv.feature.data.local.WelcomeElementsDao
+import com.adrienmandroid.composecv.feature.data.local.WelcomeHeaderDao
+import com.adrienmandroid.composecv.feature.data.local.WelcomeHeaderEntity
 import com.adrienmandroid.composecv.feature.experience.data.local.ExperienceDao
 import com.adrienmandroid.composecv.feature.experience.data.local.ExperienceEntity
 import com.adrienmandroid.composecv.feature.experience.data.local.ExperienceInformation
@@ -21,6 +23,7 @@ import com.adrienmandroid.composecv.feature.skills.data.local.SkillDao
 @Database(
     entities = [
         WelcomeElementEntity::class,
+        WelcomeHeaderEntity::class,
         Skill::class,
         ExperienceEntity::class,
         ExperienceInformation::class,
@@ -31,6 +34,7 @@ import com.adrienmandroid.composecv.feature.skills.data.local.SkillDao
     ], version = 1
 )
 abstract class AppDatabase : RoomDatabase() {
+    abstract fun welcomeHeaderDao(): WelcomeHeaderDao
     abstract fun welcomeElementsDao(): WelcomeElementsDao
     abstract fun skillDao(): SkillDao
     abstract fun experienceDao(): ExperienceDao
