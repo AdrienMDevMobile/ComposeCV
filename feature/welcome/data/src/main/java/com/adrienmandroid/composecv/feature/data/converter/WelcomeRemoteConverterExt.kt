@@ -36,7 +36,7 @@ fun WelcomeRemoteBodyElement.toDomain(): WelcomeBodyElement? = when (type) {
             WelcomeBodyElement.BirthdayText(
                 value = date
             )
-        } catch (e: NumberFormatException) {
+        } catch (_: NumberFormatException) {
             null
         }
     } else {

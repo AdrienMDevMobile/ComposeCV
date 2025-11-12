@@ -4,9 +4,11 @@ import com.adrienmandroid.composecv.feature.welcome.domain.model.Clickable
 
 fun getClickableFromLocalEntity(clickableType: String?, clickableValue: String?): Clickable? =
     if (clickableType != null && clickableValue != null) {
-        if (clickableType == ClickableLocalTypes.WEB) Clickable.WebClick(clickableValue)
-        else if (clickableType == ClickableLocalTypes.MAIL) Clickable.MailClick(clickableValue)
-        else null
+        when (clickableType) {
+            ClickableLocalTypes.WEB -> Clickable.WebClick(clickableValue)
+            ClickableLocalTypes.MAIL -> Clickable.MailClick(clickableValue)
+            else -> null
+        }
     } else null
 
 fun Clickable.getClickableType() =

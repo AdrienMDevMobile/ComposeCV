@@ -36,9 +36,9 @@ class WelcomeRemoteDataSourceJsonImpl @Inject constructor(
 
             return (response?.body?.toList()
                 ?.mapNotNull { element -> element.toDomain() }
-                ?: emptyList()).toResponse(
-                //TODO null safety
-                response?.header?.toDomain() ?: WelcomeHeader("", "")
+                ?: emptyList())
+                .toResponse(
+                response?.header?.toDomain()
             )
         }
     }

@@ -28,11 +28,4 @@ abstract class WelcomeDataModule {
     abstract fun bindWelcomeLocalDataSource(
         welcomeLocalDataSourceRoomImpl: WelcomeLocalDataSourceRoomImpl
     ) : WelcomeLocalDataSource
-
-    /* TODO remove
-    @Binds
-    abstract fun bindWelcomeRepository(
-        welcomeElementsRepository: WelcomeElementsRepositoryImpl
-    ): WelcomeElementsRepository*/
-
 }
