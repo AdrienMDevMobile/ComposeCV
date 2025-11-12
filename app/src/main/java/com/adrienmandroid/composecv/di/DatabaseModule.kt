@@ -4,6 +4,8 @@ import android.content.Context
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.adrienmandroid.composecv.database.AppDatabase
+import com.adrienmandroid.composecv.feature.data.local.WelcomeElementsDao
+import com.adrienmandroid.composecv.feature.data.local.WelcomeHeaderDao
 import com.adrienmandroid.composecv.feature.experience.data.local.ExperienceDao
 import com.adrienmandroid.composecv.feature.other.data.local.dao.GratitudeDao
 import com.adrienmandroid.composecv.feature.other.data.local.dao.HobbyDao
@@ -20,6 +22,16 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 @Module
 object DatabaseModule {
+
+    @Provides
+    fun providesWelcomeHeaderDao(appDatabase: AppDatabase): WelcomeHeaderDao {
+        return appDatabase.welcomeHeaderDao()
+    }
+
+    @Provides
+    fun provideWelcomeElementsDao(appDatabase: AppDatabase): WelcomeElementsDao {
+        return appDatabase.welcomeElementsDao()
+    }
 
     @Provides
     fun provideSkillDao(appDatabase: AppDatabase): SkillDao {

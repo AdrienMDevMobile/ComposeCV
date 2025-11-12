@@ -7,6 +7,8 @@ import com.adrienmandroid.composecv.feature.experience.data.ExperienceRemoteData
 import com.adrienmandroid.composecv.feature.experience.data.converter.toDomain
 import com.adrienmandroid.composecv.feature.experience.data.remote.Experience as ExperienceData
 import com.adrienmandroid.composecv.feature.experience.domain.model.Experience
+import com.adrienmandroid.composecv.model.response.BasicResponse
+import com.adrienmandroid.composecv.model.response.toResponse
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.adapter
@@ -18,18 +20,18 @@ class ExperienceRemoteDataSourceJsonImpl @Inject constructor(
     @ApplicationContext private val context: Context
 ) : ExperienceRemoteDataSource {
     @OptIn(ExperimentalStdlibApi::class)
-    override fun getData(): List<Experience> {
+    override fun getData(): BasicResponse<Experience> {
         val json: String? = DataProviderJSON(FILE_NAME).loadJSONFromAsset(context)
 
         if(json == null){
             Log.e("jsonError", "ExperienceJsonProvider returned null")
-            return emptyList()
+            return emptyList<Experience>().toResponse()
         } else {
 
             val moshi: Moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
             val jsonAdapter: JsonAdapter<Array<ExperienceData>> = moshi.adapter<Array<ExperienceData>>()
 
-            return jsonAdapter.fromJson(json)?.toList()?.map { experience -> experience.toDomain() } ?: emptyList()
+            return (jsonAdapter.fromJson(json)?.toList()?.map { experience -> experience.toDomain() } ?: emptyList()).toResponse()
         }
     }
     companion object {

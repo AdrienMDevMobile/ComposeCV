@@ -1,6 +1,6 @@
 package com.adrienmandroid.composecv.feature.experience.data
 
-import com.adrienmandroid.composecv.data.SimpleListLocalAndRemoteDataManager
+import com.adrienmandroid.composecv.data.BasicResponseLocalAndRemoteManager
 import com.adrienmandroid.composecv.feature.experience.domain.model.Experience
 import com.adrienmandroid.composecv.feature.experience.domain.repository.ExperienceRepository
 import kotlinx.coroutines.CoroutineScope
@@ -10,8 +10,8 @@ class ExperienceRepositoryImpl @Inject constructor(
     localDataSource: ExperienceLocalDataSource,
     remoteDataSource: ExperienceRemoteDataSource
 ) : ExperienceRepository {
-    val localAndRemoteDataManager: SimpleListLocalAndRemoteDataManager<Experience> =
-        SimpleListLocalAndRemoteDataManager(
+    val localAndRemoteDataManager: BasicResponseLocalAndRemoteManager<Experience> =
+        BasicResponseLocalAndRemoteManager(
             local = localDataSource,
             remote = remoteDataSource
         )

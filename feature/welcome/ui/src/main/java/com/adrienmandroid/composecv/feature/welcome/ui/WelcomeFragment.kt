@@ -8,7 +8,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomePage
+import com.adrienmandroid.composecv.feature.welcome.ui.viewmodel.WelcomePageUiState
 import com.adrienmandroid.composecv.feature.welcome.ui.element.WelcomeBackgroundPicture
 import com.adrienmandroid.composecv.feature.welcome.ui.element.WelcomeBottomSheet
 import com.adrienmandroid.composecv.feature.welcome.ui.element.WelcomeProfilePicture
@@ -20,7 +20,7 @@ import com.adrienmandroid.composecv.feature.welcome.ui.viewmodel.WelcomeViewMode
 fun WelcomeFragment(
     welcomeViewModel: WelcomeViewModel = hiltViewModel(),
 ) {
-    val welcomePage: WelcomePage? by welcomeViewModel.welcomePage.observeAsState(null)
+    val welcomePageUiState: WelcomePageUiState? by welcomeViewModel.welcomePageUiState.observeAsState(null)
 
     val context = LocalContext.current
 
@@ -42,7 +42,7 @@ fun WelcomeFragment(
         welcomeViewModel.clearMailIntent()
     }
 
-    welcomePage?.let { page ->
+    welcomePageUiState?.let { page ->
         WelcomeBottomSheet(
             contentCovered = {
                 WelcomeBackgroundPicture(

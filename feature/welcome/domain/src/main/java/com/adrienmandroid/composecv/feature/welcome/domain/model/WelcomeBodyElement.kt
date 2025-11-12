@@ -6,10 +6,13 @@ import java.util.Date
 
 sealed class WelcomeBodyElement {
     //TODO : Image source from String : web url
-    class WelcomeImage(val source: Int, val description: String, val tint: Boolean = false) :
+    class WelcomeImage(val source: Int, val description: String,
+                       //TODO add tint in remotebody
+        val tint: Boolean = false) :
         WelcomeBodyElement()
 
-    class WelcomeKeyword(val keywords: Array<Keyword>) : WelcomeBodyElement()
+    //TODO : no present on data layer
+    class WelcomeKeywordList(val keywords: List<Keyword>) : WelcomeBodyElement()
     class WelcomeQuote(val quote: String) : WelcomeBodyElement()
     class WelcomeText(
         @DrawableRes
@@ -19,9 +22,6 @@ sealed class WelcomeBodyElement {
         val clickable: Clickable? = null
     ) : WelcomeBodyElement()
     class BirthdayText(
-        @DrawableRes
-        val iconId: Int? = null,
         val value: Date,
-        val style: TypographyEnum = TypographyEnum.BODY1,
     ): WelcomeBodyElement()
 }

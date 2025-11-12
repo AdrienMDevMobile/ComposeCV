@@ -7,6 +7,8 @@ import com.adrienmandroid.composecv.feature.skills.data.converter.toDomain
 import com.adrienmandroid.composecv.feature.skills.data.remote.Skill as SkillData
 import com.adrienmandroid.composecv.feature.skills.domain.model.Skill
 import com.adrienmandroid.composecv.feature.skills.data.SkillRemoteDataSource
+import com.adrienmandroid.composecv.model.response.BasicResponse
+import com.adrienmandroid.composecv.model.response.toResponse
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.adapter
@@ -18,18 +20,18 @@ class SkillRemoteDataSourceJsonImpl @Inject constructor(
     @ApplicationContext private val context: Context
 ) : SkillRemoteDataSource {
     @OptIn(ExperimentalStdlibApi::class)
-    override fun getData(): List<Skill> {
+    override fun getData(): BasicResponse<Skill> {
         val json: String? = DataProviderJSON(FILE_NAME).loadJSONFromAsset(context)
 
         if(json == null){
             Log.e("jsonError", "SkillJsonProvider returned null")
-            return emptyList()
+            return emptyList<Skill>().toResponse()
         } else {
 
             val moshi: Moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
             val jsonAdapter: JsonAdapter<Array<SkillData>> = moshi.adapter<Array<SkillData>>()
 
-            return jsonAdapter.fromJson(json)?.toList()?.map { skill -> skill.toDomain() } ?: emptyList()
+            return (jsonAdapter.fromJson(json)?.toList()?.map { skill -> skill.toDomain() } ?: emptyList()).toResponse()
         }
     }
 
