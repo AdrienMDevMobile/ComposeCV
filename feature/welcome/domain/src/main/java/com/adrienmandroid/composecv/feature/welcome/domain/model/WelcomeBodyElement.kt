@@ -1,6 +1,5 @@
 package com.adrienmandroid.composecv.feature.welcome.domain.model
 
-import androidx.annotation.DrawableRes
 import com.adrienmandroid.composecv.model.TypographyEnum
 import java.util.Date
 
@@ -14,7 +13,7 @@ sealed class WelcomeBodyElement {
     class WelcomeKeywordList(val keywords: List<Keyword>) : WelcomeBodyElement()
     class WelcomeQuote(val quote: String) : WelcomeBodyElement()
     class WelcomeText(
-        val icon: Icon? = null,
+        val icon: WelcomeIcon? = null,
         val value: String,
         val style: TypographyEnum = TypographyEnum.BODY1,
         val clickable: Clickable? = null

@@ -1,5 +1,5 @@
 package com.adrienmandroid.composecv.feature.welcome.domain.model
 
-enum class Icon {
+enum class WelcomeIcon {
     MAIL, LOCATION, GITHUB, LINKEDIN
 }

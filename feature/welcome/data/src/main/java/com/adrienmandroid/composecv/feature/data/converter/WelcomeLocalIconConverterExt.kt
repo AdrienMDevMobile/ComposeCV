@@ -1,18 +1,18 @@
 package com.adrienmandroid.composecv.feature.data.converter
 
 import com.adrienmandroid.composecv.feature.data.local.IconLocalEntity
-import com.adrienmandroid.composecv.feature.welcome.domain.model.Icon
+import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeIcon
 
 fun IconLocalEntity.toDomain() = when(this){
-    IconLocalEntity.MAIL -> Icon.MAIL
-    IconLocalEntity.LOCATION -> Icon.LOCATION
-    IconLocalEntity.GITHUB -> Icon.GITHUB
-    IconLocalEntity.LINKEDIN -> Icon.LINKEDIN
+    IconLocalEntity.MAIL -> WelcomeIcon.MAIL
+    IconLocalEntity.LOCATION -> WelcomeIcon.LOCATION
+    IconLocalEntity.GITHUB -> WelcomeIcon.GITHUB
+    IconLocalEntity.LINKEDIN -> WelcomeIcon.LINKEDIN
 }
 
-fun Icon.toLocalEntity() = when(this){
-    Icon.MAIL -> IconLocalEntity.MAIL
-    Icon.LOCATION -> IconLocalEntity.LOCATION
-    Icon.GITHUB -> IconLocalEntity.GITHUB
-    Icon.LINKEDIN -> IconLocalEntity.LINKEDIN
+fun WelcomeIcon.toLocalEntity() = when(this){
+    WelcomeIcon.MAIL -> IconLocalEntity.MAIL
+    WelcomeIcon.LOCATION -> IconLocalEntity.LOCATION
+    WelcomeIcon.GITHUB -> IconLocalEntity.GITHUB
+    WelcomeIcon.LINKEDIN -> IconLocalEntity.LINKEDIN
 }

@@ -6,7 +6,7 @@ import com.adrienmandroid.composecv.feature.data.remote.TypographyRemoteBody
 import com.adrienmandroid.composecv.feature.data.remote.WelcomeRemoteBodyElement
 import com.adrienmandroid.composecv.feature.data.remote.WelcomeRemoteResponseHeader
 import com.adrienmandroid.composecv.feature.welcome.domain.model.Clickable
-import com.adrienmandroid.composecv.feature.welcome.domain.model.Icon
+import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeIcon
 import com.adrienmandroid.composecv.feature.welcome.domain.model.Keyword
 import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeBodyElement
 import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeHeader
@@ -52,10 +52,10 @@ fun WelcomeRemoteBodyElement.toDomain(): WelcomeBodyElement? = when (type) {
 }
 
 fun IconRemoteBody.toDomain() = when(this) {
-    IconRemoteBody.MAIL -> Icon.MAIL
-    IconRemoteBody.LOCATION -> Icon.LOCATION
-    IconRemoteBody.GITHUB -> Icon.GITHUB
-    IconRemoteBody.LINKEDIN -> Icon.LINKEDIN
+    IconRemoteBody.MAIL -> WelcomeIcon.MAIL
+    IconRemoteBody.LOCATION -> WelcomeIcon.LOCATION
+    IconRemoteBody.GITHUB -> WelcomeIcon.GITHUB
+    IconRemoteBody.LINKEDIN -> WelcomeIcon.LINKEDIN
 }
 
 fun TypographyRemoteBody.toDomain() = when (this) {

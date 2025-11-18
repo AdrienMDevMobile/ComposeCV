@@ -1,11 +1,11 @@
 package com.adrienmandroid.composecv.feature.welcome.ui.element
 
-import com.adrienmandroid.composecv.feature.welcome.domain.model.Icon
+import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeIcon
 import com.adrienmandroid.composecv.feature.welcome.ui.R
 
-fun Icon.getId() = when(this){
-    Icon.MAIL -> R.drawable.email
-    Icon.LOCATION -> R.drawable.location
-    Icon.GITHUB -> R.drawable.github
-    Icon.LINKEDIN -> R.drawable.linkedin
+fun WelcomeIcon.getResourceId() = when(this){
+    WelcomeIcon.MAIL -> R.drawable.email
+    WelcomeIcon.LOCATION -> R.drawable.location
+    WelcomeIcon.GITHUB -> R.drawable.github
+    WelcomeIcon.LINKEDIN -> R.drawable.linkedin
 }
