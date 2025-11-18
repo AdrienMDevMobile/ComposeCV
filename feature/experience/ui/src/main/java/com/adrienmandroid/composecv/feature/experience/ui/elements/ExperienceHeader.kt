@@ -16,6 +16,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -43,7 +44,8 @@ fun ExperienceHeader(logoUrl: String, name: String, headerColor: Color) {
                 modifier = Modifier
                     .size(50.dp)
                     .padding(expHorizontalSpacing, 0.dp),
-                colorFilter = ColorFilter.tint(MaterialTheme.colors.onSurfaceTitle)
+                colorFilter = ColorFilter.tint(MaterialTheme.colors.onSurfaceTitle),
+                contentScale = ContentScale.Fit
             )
             Spacer(modifier = Modifier.width(expHorizontalSpacing))
             Text(
