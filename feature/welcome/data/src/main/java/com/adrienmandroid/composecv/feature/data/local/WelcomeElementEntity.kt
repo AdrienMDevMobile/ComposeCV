@@ -21,5 +21,5 @@ data class WelcomeElementEntity(
     // Fields for WelcomeImage
     val imageResId: Int? = null,
     val imageDescription: String? = null,
-    val tint: Boolean? = false,
+    val tint: Boolean = false,
 )

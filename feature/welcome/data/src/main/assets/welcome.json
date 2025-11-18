@@ -79,6 +79,12 @@
         "Growth mindset",
         "Creativity"
       ]
+    },
+    {
+      "type": "IMAGE",
+      "value": "https://pub-fba7df2a6bea4ada805f19cb1dc2292b.r2.dev/fr/welcome/auboulotavelo.png",
+      "imageDescription": "Au boulot à velo",
+      "tint": true
     }
   ]
 }

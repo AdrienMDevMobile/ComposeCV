@@ -18,7 +18,8 @@ fun WelcomeBodyElement.toLocalData() = when (this) {
 
     is WelcomeBodyElement.WelcomeImage -> WelcomeElementEntity(
         type = IMAGE_TYPE,
-        //TODO
+        value = source,
+        tint = tint,
     )
 
     is WelcomeBodyElement.WelcomeKeywordList -> WelcomeElementEntity(
@@ -45,7 +46,13 @@ fun WelcomeElementEntity.toDomain() = when (type) {
         WelcomeBodyElement.BirthdayText(value.toJavaDate())
     else null
 
-    IMAGE_TYPE -> TODO()
+    IMAGE_TYPE -> if (value != null)
+        WelcomeBodyElement.WelcomeImage(
+            source = value,
+            description = imageDescription ?: "@null",
+            tint = tint
+        ) else null
+
     KEYWORDS_TYPE -> if (value != null)
         WelcomeBodyElement.WelcomeKeywordList(
             keywords = fromListString(value)

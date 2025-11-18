@@ -16,7 +16,7 @@ class WelcomePreviewParameterData(
         ),
         WelcomeBodyElement.WelcomeQuote(context.getString(TestingR.string.test_1_word)),
         WelcomeBodyElement.WelcomeImage(
-            TestingR.drawable.img_test,
+            "",
             context.getString(TestingR.string.test_1_word),
             tint = true
         ),
