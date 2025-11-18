@@ -2,9 +2,9 @@
   {
     "name": "Mécénat pour Open Food Fact",
     "employer": "Astek",
-    "logoUrl": "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/experience/exp_off.png",
+    "logoUrl": "https://pub-fba7df2a6bea4ada805f19cb1dc2292b.r2.dev/fr/experience/exp_off.png",
     "expDates": {
-      "begin": 1730075200000,
+      "begin": 1728075200000,
       "end": null
     },
     "professional": true,
@@ -20,7 +20,7 @@
   {
     "name": "Ingénieur développement Mobile",
     "employer": "Astek",
-    "logoUrl": "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/experience/astek.png",
+    "logoUrl": "https://pub-fba7df2a6bea4ada805f19cb1dc2292b.r2.dev/fr/experience/exp_astek.png",
     "expDates": {
       "begin": 1631052000000,
       "end": 1728075200000
@@ -60,8 +60,8 @@
     ]
   },
   {
-    "name": "Projet personnel CV compose",
-    "logoUrl": "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/experience/my_logo.png",
+    "name": "Projet personnel CV Compose",
+    "logoUrl": "https://pub-fba7df2a6bea4ada805f19cb1dc2292b.r2.dev/fr/experience/exp_perso.png",
     "expDates": {
       "begin": 1645052400000,
       "end": null
@@ -93,7 +93,7 @@
   },
   {
     "name": "Enregistrement des dépenses Flutter",
-    "logoUrl": "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/experience/spending.png",
+    "logoUrl": "https://pub-fba7df2a6bea4ada805f19cb1dc2292b.r2.dev/fr/experience/exp_euro.png",
     "expDates": {
       "begin": 1728075200000,
       "end": null
@@ -107,7 +107,7 @@
   },
   {
     "name": "Suivie des dépenses, room & datastore",
-    "logoUrl": "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/experience/spending.png",
+    "logoUrl": "https://pub-fba7df2a6bea4ada805f19cb1dc2292b.r2.dev/fr/experience/exp_euro.png",
     "expDates": {
       "begin": 1664575200000,
       "end": 1699575200000
@@ -125,15 +125,12 @@
       },
       {
         "name": "Pagination"
-      },
-      {
-        "name": "Modification des composables par défaut"
       }
     ]
   },
   {
     "name": "Projet personnel Animateurs FDC",
-    "logoUrl": "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/experience/fdc.png",
+    "logoUrl": "https://pub-fba7df2a6bea4ada805f19cb1dc2292b.r2.dev/fr/experience/exp_fdc.png",
     "expDates": {
       "begin": 1593554400000,
       "end": 1641596400000
@@ -166,7 +163,7 @@
   {
     "name": "Ingénieur Développeur Peoplesoft",
     "employer": "S&H group",
-    "logoUrl": "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/experience/seh.png",
+    "logoUrl": "https://pub-fba7df2a6bea4ada805f19cb1dc2292b.r2.dev/fr/experience/exp_sh.png",
     "expDates": {
       "begin": 1572562800000,
       "end": 1590962400000
@@ -193,7 +190,7 @@
   {
     "name": "Développeur Peoplesoft en alternance",
     "employer": "Natixis",
-    "logoUrl": "https://cvportfolioadrienm.blob.core.windows.net/cvportfolio/experience/natixis.png",
+    "logoUrl": "https://pub-fba7df2a6bea4ada805f19cb1dc2292b.r2.dev/fr/experience/exp_nat.png",
     "expDates": {
       "begin": 1472680800000,
       "end": 1559340000000

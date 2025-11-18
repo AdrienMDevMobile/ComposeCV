@@ -1,7 +1,7 @@
 {
   "header": {
-    "profilePictureUrl": "https://i.imgur.com/Bx3Cl0T.jpeg",
-    "backgroundPictureUrl": "https://i.imgur.com/HR6QyAW.jpeg"
+    "profilePictureUrl": "https://pub-fba7df2a6bea4ada805f19cb1dc2292b.r2.dev/fr/welcome/profile_picture.jpeg",
+    "backgroundPictureUrl": "https://pub-fba7df2a6bea4ada805f19cb1dc2292b.r2.dev/fr/welcome/background_picture.jpeg"
   },
   "body": [
     {
@@ -60,7 +60,7 @@
     },
     {
       "type": "QUOTE",
-      "value": "Ingénieur en informatique,<br>j'ai développé une <b>passion</b> et acquis une véritable <b>expérience</b> dans le développement <b>Android:</b> au travers de <b>nombreux projets</b><br>        professionnels et personnels.<br><br>        Très <b>curieux</b>, je ne cesse d'enrichir mes compétences en développement Android.<br>       C'est cette curiosité et envie d'apprendre qui m'ont motivé à développer cette application avec nouvel outil de Google : <b>Jetpack compose</b>.",
+      "value": "Ingénieur en informatique,<br>j'ai développé une <b>passion</b> et acquis une véritable <b>expérience</b> dans le développement <b>Android:</b> au travers de <b>nombreux projets</b><br> professionnels et personnels.<br><br> Très <b>curieux</b>, je ne cesse d'enrichir mes compétences en développement Android.<br> C'est cette curiosité et envie d'apprendre qui m'ont motivé à développer cette application avec nouvel outil de Google : <b>Jetpack compose</b>.",
       "style": null,
       "iconId": null
     },
