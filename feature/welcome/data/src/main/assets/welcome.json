@@ -8,25 +8,25 @@
       "type": "TEXT",
       "value": "Adrien MICHEL",
       "style": "H4",
-      "iconId": null
+      "icon": null
     },
     {
       "type": "TEXT",
       "value": "Ingénieur développeur Android",
       "style": "H5",
-      "iconId": null
+      "icon": null
     },
     {
       "type": "BIRTHDAY",
       "value": "800056800000",
       "style": "BODY1",
-      "iconId": null
+      "icon": null
     },
     {
       "type": "TEXT",
       "value": "adrienpmichel@gmail.com",
       "style": "BODY1",
-      "iconId": 2131165293,
+      "icon": "MAIL",
       "clickable": {
         "type": "Mail",
         "value": "adrienpmichel@gmail.com"
@@ -36,13 +36,13 @@
       "type": "TEXT",
       "value": "Paris, France",
       "style": "BODY1",
-      "iconId": 2131165315
+      "icon": "LOCATION"
     },
     {
       "type": "TEXT",
       "value": "github.com/AdrienMDevMobile",
       "style": "BODY1",
-      "iconId": 2131165313,
+      "icon": "GITHUB",
       "clickable": {
         "type": "Web",
         "value": "https://github.com/AdrienMDevMobile"
@@ -52,7 +52,7 @@
       "type": "TEXT",
       "value": "linkedin.com/adrien-michel-android",
       "style": "BODY1",
-      "iconId": 2131165314,
+      "icon": "LINKEDIN",
       "clickable": {
         "type": "Web",
         "value": "https://www.linkedin.com/in/adrien-michel-android/"
@@ -62,13 +62,13 @@
       "type": "QUOTE",
       "value": "Ingénieur en informatique,<br>j'ai développé une <b>passion</b> et acquis une véritable <b>expérience</b> dans le développement <b>Android:</b> au travers de <b>nombreux projets</b><br> professionnels et personnels.<br><br> Très <b>curieux</b>, je ne cesse d'enrichir mes compétences en développement Android.<br> C'est cette curiosité et envie d'apprendre qui m'ont motivé à développer cette application avec nouvel outil de Google : <b>Jetpack compose</b>.",
       "style": null,
-      "iconId": null
+      "icon": null
     },
     {
       "type": "TEXT",
       "value": "Keywords:",
       "style": "BODY1BOLD",
-      "iconId": null
+      "icon": null
     },
     {
       "type": "KEYWORDS",

@@ -34,6 +34,7 @@ fun WelcomeBodyElement.toLocalData() = when (this) {
 
     is WelcomeBodyElement.WelcomeText -> WelcomeElementEntity(
         type = TEXT_TYPE,
+        icon = icon?.toLocalEntity(),
         value = value,
         style = style.toLocalEntity(),
         clickableType = clickable?.getClickableType(),
@@ -65,6 +66,7 @@ fun WelcomeElementEntity.toDomain() = when (type) {
 
     TEXT_TYPE -> if (value != null && style != null)
         WelcomeBodyElement.WelcomeText(
+            icon = icon?.toDomain(),
             value = value,
             style = style.toDomain(),
             clickable = getClickableFromLocalEntity(

@@ -14,8 +14,7 @@ sealed class WelcomeBodyElement {
     class WelcomeKeywordList(val keywords: List<Keyword>) : WelcomeBodyElement()
     class WelcomeQuote(val quote: String) : WelcomeBodyElement()
     class WelcomeText(
-        @DrawableRes
-        val iconId: Int? = null,
+        val icon: Icon? = null,
         val value: String,
         val style: TypographyEnum = TypographyEnum.BODY1,
         val clickable: Clickable? = null

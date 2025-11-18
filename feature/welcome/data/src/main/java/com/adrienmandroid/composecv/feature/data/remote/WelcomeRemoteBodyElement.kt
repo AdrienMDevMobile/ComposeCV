@@ -6,7 +6,7 @@ data class WelcomeRemoteBodyElement(
     // Fields for WelcomeText, BirthdayText, WelcomeQuote, WelcomeImage
     val value: String? = null,
     val style: TypographyRemoteBody? = null,
-    val iconId: Int? = null,
+    val icon: IconRemoteBody? = null,
 
     // Field for Clickable actions
     val clickable: ClickableRemoteBody? = null,

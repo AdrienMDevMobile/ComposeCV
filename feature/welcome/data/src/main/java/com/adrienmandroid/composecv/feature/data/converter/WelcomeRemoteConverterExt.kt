@@ -1,10 +1,12 @@
 package com.adrienmandroid.composecv.feature.data.converter
 
 import com.adrienmandroid.composecv.feature.data.remote.ClickableRemoteBody
+import com.adrienmandroid.composecv.feature.data.remote.IconRemoteBody
 import com.adrienmandroid.composecv.feature.data.remote.TypographyRemoteBody
 import com.adrienmandroid.composecv.feature.data.remote.WelcomeRemoteBodyElement
 import com.adrienmandroid.composecv.feature.data.remote.WelcomeRemoteResponseHeader
 import com.adrienmandroid.composecv.feature.welcome.domain.model.Clickable
+import com.adrienmandroid.composecv.feature.welcome.domain.model.Icon
 import com.adrienmandroid.composecv.feature.welcome.domain.model.Keyword
 import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeBodyElement
 import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeHeader
@@ -23,6 +25,7 @@ fun WelcomeRemoteBodyElement.toDomain(): WelcomeBodyElement? = when (type) {
     ) else null
 
     "TEXT" -> if (value != null && style != null) WelcomeBodyElement.WelcomeText(
+        icon = icon?.toDomain(),
         value = value,
         style = style.toDomain(),
         clickable = clickable?.toDomain()
@@ -46,6 +49,13 @@ fun WelcomeRemoteBodyElement.toDomain(): WelcomeBodyElement? = when (type) {
     }
 
     else -> null
+}
+
+fun IconRemoteBody.toDomain() = when(this) {
+    IconRemoteBody.MAIL -> Icon.MAIL
+    IconRemoteBody.LOCATION -> Icon.LOCATION
+    IconRemoteBody.GITHUB -> Icon.GITHUB
+    IconRemoteBody.LINKEDIN -> Icon.LINKEDIN
 }
 
 fun TypographyRemoteBody.toDomain() = when (this) {
