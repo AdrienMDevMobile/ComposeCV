@@ -25,7 +25,7 @@ fun CheckUiType(value: WelcomeBodyElement, onClick: (Clickable) -> Unit) {
         is WelcomeBodyElement.WelcomeQuote -> QuoteTextDraw(quote = value.quote)
         is WelcomeBodyElement.WelcomeText ->
             TextDraw(
-                iconId = value.iconId,
+                iconId = value.icon?.getResourceId(),
                 value = value.value,
                 style = value.style.toMaterialTypography(),
                 onClick = value.clickable?.let { clickable: Clickable ->

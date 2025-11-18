@@ -15,7 +15,8 @@ class WelcomeElementsRepositoryImpl @Inject constructor(
     val responseLocalAndRemoteManager: ResponseLocalAndRemoteManager<WelcomeHeader, WelcomeBodyElement> =
         ResponseLocalAndRemoteManager(
             local = localDataSource,
-            remote = remoteDataSource
+            remote = remoteDataSource,
+            hasOnlyBody = false,
         )
 
     override fun get(coroutineScope: CoroutineScope) =

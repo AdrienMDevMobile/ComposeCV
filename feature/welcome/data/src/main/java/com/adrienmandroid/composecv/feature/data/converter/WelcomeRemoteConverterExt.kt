@@ -1,10 +1,12 @@
 package com.adrienmandroid.composecv.feature.data.converter
 
 import com.adrienmandroid.composecv.feature.data.remote.ClickableRemoteBody
+import com.adrienmandroid.composecv.feature.data.remote.IconRemoteBody
 import com.adrienmandroid.composecv.feature.data.remote.TypographyRemoteBody
 import com.adrienmandroid.composecv.feature.data.remote.WelcomeRemoteBodyElement
 import com.adrienmandroid.composecv.feature.data.remote.WelcomeRemoteResponseHeader
 import com.adrienmandroid.composecv.feature.welcome.domain.model.Clickable
+import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeIcon
 import com.adrienmandroid.composecv.feature.welcome.domain.model.Keyword
 import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeBodyElement
 import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeHeader
@@ -12,15 +14,18 @@ import com.adrienmandroid.composecv.model.TypographyEnum
 import java.util.Date
 
 fun WelcomeRemoteBodyElement.toDomain(): WelcomeBodyElement? = when (type) {
-    /*"IMAGE" -> if (iconId != null && value != null) WelcomeBodyElement.WelcomeImage(
-        source = iconId,
-        description = value
-    ) else null*/
+    "IMAGE" -> if (value != null) WelcomeBodyElement.WelcomeImage(
+        source = value,
+        description = imageDescription ?: "@null",
+        tint = tint
+    ) else null
+
     "QUOTE" -> if (value != null) WelcomeBodyElement.WelcomeQuote(
         quote = value
     ) else null
 
     "TEXT" -> if (value != null && style != null) WelcomeBodyElement.WelcomeText(
+        icon = icon?.toDomain(),
         value = value,
         style = style.toDomain(),
         clickable = clickable?.toDomain()
@@ -44,6 +49,13 @@ fun WelcomeRemoteBodyElement.toDomain(): WelcomeBodyElement? = when (type) {
     }
 
     else -> null
+}
+
+fun IconRemoteBody.toDomain() = when(this) {
+    IconRemoteBody.MAIL -> WelcomeIcon.MAIL
+    IconRemoteBody.LOCATION -> WelcomeIcon.LOCATION
+    IconRemoteBody.GITHUB -> WelcomeIcon.GITHUB
+    IconRemoteBody.LINKEDIN -> WelcomeIcon.LINKEDIN
 }
 
 fun TypographyRemoteBody.toDomain() = when (this) {

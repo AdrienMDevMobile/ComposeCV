@@ -28,6 +28,7 @@ fun SelfLoadingPicture(
     placeholderPainter: Painter = painterResource(R.drawable.core_placeholder),
     contentDescription: String = "@null",
     colorFilter: ColorFilter? = null,
+    contentScale: ContentScale = ContentScale.Crop
 ) {
     val context = LocalPlatformContext.current
 
@@ -50,7 +51,7 @@ fun SelfLoadingPicture(
                     painter = successState.painter,
                     contentDescription = contentDescription,
                     modifier = imageModifier,
-                    contentScale = ContentScale.Crop,
+                    contentScale = contentScale,
                     colorFilter = colorFilter,
                 )
             },

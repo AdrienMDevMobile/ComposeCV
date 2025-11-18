@@ -173,7 +173,7 @@ fun StudyForegroundPicture(
         modifier = Modifier
             .fillMaxHeight()
             .fillMaxWidth(0.25f),
-        contentScale = ContentScale.Crop,
+        contentScale = ContentScale.Fit,
         colorFilter = colorFilter,
     )
 }
