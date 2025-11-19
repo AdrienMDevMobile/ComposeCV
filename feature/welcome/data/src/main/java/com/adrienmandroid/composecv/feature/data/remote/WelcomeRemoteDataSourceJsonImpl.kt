@@ -20,7 +20,7 @@ class WelcomeRemoteDataSourceJsonImpl @Inject constructor(
     @ApplicationContext private val context: Context
 ) : WelcomeRemoteDataSource {
     @OptIn(ExperimentalStdlibApi::class)
-    override fun getData(): Response<WelcomeHeader, WelcomeBodyElement> {
+    override suspend fun getData(): Response<WelcomeHeader, WelcomeBodyElement> {
         val json: String? = DataProviderJSON(FILE_NAME).loadJSONFromAsset(context)
 
         if (json == null) {

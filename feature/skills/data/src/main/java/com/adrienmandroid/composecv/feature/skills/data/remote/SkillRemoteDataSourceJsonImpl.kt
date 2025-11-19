@@ -1,12 +1,11 @@
 package com.adrienmandroid.composecv.feature.skills.data.remote
-
+/* Obsolete
 import android.content.Context
 import android.util.Log
 import com.adrienmandroid.composecv.data.remote.DataProviderJSON
-import com.adrienmandroid.composecv.feature.skills.data.converter.toDomain
-import com.adrienmandroid.composecv.feature.skills.data.remote.Skill as SkillData
-import com.adrienmandroid.composecv.feature.skills.domain.model.Skill
 import com.adrienmandroid.composecv.feature.skills.data.SkillRemoteDataSource
+import com.adrienmandroid.composecv.feature.skills.data.converter.toDomain
+import com.adrienmandroid.composecv.feature.skills.domain.model.Skill
 import com.adrienmandroid.composecv.model.response.BasicResponse
 import com.adrienmandroid.composecv.model.response.toResponse
 import com.squareup.moshi.JsonAdapter
@@ -20,18 +19,20 @@ class SkillRemoteDataSourceJsonImpl @Inject constructor(
     @ApplicationContext private val context: Context
 ) : SkillRemoteDataSource {
     @OptIn(ExperimentalStdlibApi::class)
-    override fun getData(): BasicResponse<Skill> {
+    override suspend fun getData(): BasicResponse<Skill> {
         val json: String? = DataProviderJSON(FILE_NAME).loadJSONFromAsset(context)
 
-        if(json == null){
+        if (json == null) {
             Log.e("jsonError", "SkillJsonProvider returned null")
             return emptyList<Skill>().toResponse()
         } else {
 
             val moshi: Moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
-            val jsonAdapter: JsonAdapter<Array<SkillData>> = moshi.adapter<Array<SkillData>>()
+            val jsonAdapter: JsonAdapter<Array<SkillRemoteBody>> =
+                moshi.adapter<Array<SkillRemoteBody>>()
 
-            return (jsonAdapter.fromJson(json)?.toList()?.map { skill -> skill.toDomain() } ?: emptyList()).toResponse()
+            return (jsonAdapter.fromJson(json)?.toList()?.map { skill -> skill.toDomain() }
+                ?: emptyList()).toResponse()
         }
     }
 
@@ -39,3 +40,4 @@ class SkillRemoteDataSourceJsonImpl @Inject constructor(
         private const val FILE_NAME = "skills.json"
     }
 }
+*/

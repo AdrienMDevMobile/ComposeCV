@@ -20,7 +20,7 @@ class ExperienceRemoteDataSourceJsonImpl @Inject constructor(
     @ApplicationContext private val context: Context
 ) : ExperienceRemoteDataSource {
     @OptIn(ExperimentalStdlibApi::class)
-    override fun getData(): BasicResponse<Experience> {
+    override suspend fun getData(): BasicResponse<Experience> {
         val json: String? = DataProviderJSON(FILE_NAME).loadJSONFromAsset(context)
 
         if(json == null){

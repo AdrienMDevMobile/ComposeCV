@@ -19,7 +19,7 @@ class OtherRemoteDataSourceJsonImpl @Inject constructor(
     @ApplicationContext private val context: Context
 ) : OtherRemoteDataSource {
     @OptIn(ExperimentalStdlibApi::class)
-    override fun getData(): BasicResponse<OtherComponent> {
+    override suspend fun getData(): BasicResponse<OtherComponent> {
         val json: String? = DataProviderJSON(FILE_NAME).loadJSONFromAsset(context)
 
         if (json == null) {

@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.ksp)
     alias(libs.plugins.convention.hilt.library)
+    alias(libs.plugins.convention.json.library)
 }
 
 android {
