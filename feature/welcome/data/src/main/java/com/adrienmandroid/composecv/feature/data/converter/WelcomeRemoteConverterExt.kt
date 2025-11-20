@@ -1,9 +1,9 @@
 package com.adrienmandroid.composecv.feature.data.converter
 
-import com.adrienmandroid.composecv.feature.data.remote.ClickableRemoteBody
-import com.adrienmandroid.composecv.feature.data.remote.IconRemoteBody
+import com.adrienmandroid.composecv.feature.data.remote.elements.ClickableRemoteBody
+import com.adrienmandroid.composecv.feature.data.remote.elements.IconRemoteBody
 import com.adrienmandroid.composecv.feature.data.remote.TypographyRemoteBody
-import com.adrienmandroid.composecv.feature.data.remote.WelcomeRemoteBodyElement
+import com.adrienmandroid.composecv.feature.data.remote.elements.WelcomeRemoteBodyElement
 import com.adrienmandroid.composecv.feature.data.remote.WelcomeRemoteResponseHeader
 import com.adrienmandroid.composecv.feature.welcome.domain.model.Clickable
 import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeIcon
