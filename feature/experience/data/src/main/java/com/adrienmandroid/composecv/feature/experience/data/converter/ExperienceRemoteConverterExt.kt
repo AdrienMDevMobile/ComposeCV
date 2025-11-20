@@ -1,6 +1,6 @@
 package com.adrienmandroid.composecv.feature.experience.data.converter
 
-import com.adrienmandroid.composecv.feature.experience.data.remote.Experience as ExperienceRemote
+import com.adrienmandroid.composecv.feature.experience.data.remote.ExperienceRemoteBody as ExperienceRemote
 import com.adrienmandroid.composecv.feature.experience.data.remote.ExperienceInformation as ExperienceInformationRemote
 import com.adrienmandroid.composecv.feature.experience.domain.model.Experience
 import com.adrienmandroid.composecv.feature.experience.domain.model.ExperienceInformation
