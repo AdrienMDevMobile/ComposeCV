@@ -1,8 +1,6 @@
 package com.adrienmandroid.composecv.di
 
 import com.adrienmandroid.composecv.feature.experience.data.ExperienceLocalDataSource
-import com.adrienmandroid.composecv.feature.experience.data.ExperienceRepositoryImpl
-import com.adrienmandroid.composecv.feature.experience.domain.repository.ExperienceRepository
 import com.adrienmandroid.composecv.feature.experience.data.ExperienceRemoteDataSource
 import com.adrienmandroid.composecv.feature.experience.data.local.ExperienceLocalDataSourceRoomImpl
 import com.adrienmandroid.composecv.feature.experience.data.remote.ExperienceRemoteDataSourceApiImpl
@@ -14,19 +12,13 @@ import dagger.hilt.components.SingletonComponent
 @Module
 @InstallIn(SingletonComponent::class)
 abstract class ExperienceDataModule {
-
     @Binds
-    abstract fun bindExperienceRepository(
-        experienceRepositoryImpl: ExperienceRepositoryImpl
-    ): ExperienceRepository
-
-    @Binds
-    abstract fun bindExperienceRemoteRepository(
+    abstract fun bindExperienceRemoteDataSource(
         experienceRemoteRepository: ExperienceRemoteDataSourceApiImpl
     ): ExperienceRemoteDataSource
 
     @Binds
-    abstract fun bindExperienceLocalRepository(
+    abstract fun bindExperienceLocalDataSource(
         experienceLocalRepository: ExperienceLocalDataSourceRoomImpl
     ): ExperienceLocalDataSource
 

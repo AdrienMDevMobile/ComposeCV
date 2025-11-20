@@ -24,8 +24,6 @@ lifecycle-viewmodel-compose = "2.9.0"
 lifecycleLivedataKtx = "2.9.3"
 lifecycleRuntime = "2.9.0"
 material = "1.12.0"
-moshi = "1.15.2"
-moshiKotlin = "1.15.0"
 navigation = "2.9.0"
 retrofit = "3.0.0"
 roomVersion = "2.7.2"
@@ -63,8 +61,6 @@ google-accompanist-pager-indicators = { group = "com.google.accompanist", name =
 kotlin-serialization-converter = { group = "com.jakewharton.retrofit", name="retrofit2-kotlinx-serialization-converter", version.ref = "serializationConverter" }
 kotlin-serialization-json = { group = "org.jetbrains.kotlinx", name="kotlinx-serialization-json", version.ref= "jsonSerialization"}
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
-moshi = { group = "com.squareup.moshi", name="moshi", version.ref = "moshi" }
-moshi-kotlin = { group = "com.squareup.moshi", name="moshi-kotlin", version.ref = "moshiKotlin" }
 squareup-retrofit = { group = "com.squareup.retrofit2", name="retrofit", version.ref = "retrofit" }
 test-junit = { group = "junit", name = "junit", version.ref = "junit" }
 
@@ -89,5 +85,6 @@ convention-application = { id = "com.adrienmandroid.composecv.application" }
 convention-library = { id = "com.adrienmandroid.composecv.library" }
 convention-compose-library = { id = "com.adrienmandroid.composecv.compose" }
 convention-hilt-library = { id = "com.adrienmandroid.composecv.hilt" }
-convention-json-library = { id = "com.adrienmandroid.composecv.json" }
+convention-retrofit-core-library = { id = "com.adrienmandroid.composecv.retrofit.core" }
+convention-retrofit-api-library = { id = "com.adrienmandroid.composecv.retrofit.api" }
 convention-room-library = { id = "com.adrienmandroid.composecv.room" }

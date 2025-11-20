@@ -9,11 +9,11 @@ data class ExperienceRemoteBody(
     val logoUrl: String,
     val expDates: Dates,
     val professional: Boolean,
-    val informations: List<ExperienceInformation>
+    val informations: List<ExperienceInformationRemoteBody>
 )
 
 @Serializable
 data class Dates(val begin: Long, val end: Long?)
 
 @Serializable
-data class ExperienceInformation(val name: String)
+data class ExperienceInformationRemoteBody(val name: String)

@@ -6,6 +6,4 @@ import retrofit2.http.GET
 interface SkillApi {
     @GET("/fr/skills/skills.json")
     suspend fun getSkills(): List<SkillRemoteBody>
-
-
 }
