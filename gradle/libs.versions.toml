@@ -17,16 +17,18 @@ hilt = "2.54"
 hiltNavigationCompose = "1.2.0"
 jetbrainsKotlinJvm = "1.9.24"
 junit = "4.13.2"
+jsonSerialization = "1.6.0"
 kotlin = "2.1.10"
 ksp = "2.1.10-1.0.31"
 lifecycle-viewmodel-compose = "2.9.0"
 lifecycleLivedataKtx = "2.9.3"
 lifecycleRuntime = "2.9.0"
 material = "1.12.0"
-moshi = "1.15.2"
-moshiKotlin = "1.15.0"
 navigation = "2.9.0"
+retrofit = "3.0.0"
 roomVersion = "2.7.2"
+serializationConverter = "1.0.0"
+serialization= "1.9.10"
 
 [libraries]
 accompanist-flowlayout = { group = "ca.gosyer", name = "accompanist-flowlayout", version.ref = "flowlayout" }
@@ -56,9 +58,10 @@ coil-compose = {group ="io.coil-kt.coil3", name="coil-compose", version.ref = "c
 coil-network = {group ="io.coil-kt.coil3", name="coil-network-okhttp", version.ref = "coil"}
 google-accompanist-pager = { group = "com.google.accompanist", name = "accompanist-pager", version.ref = "accompanist-pager" }
 google-accompanist-pager-indicators = { group = "com.google.accompanist", name = "accompanist-pager-indicators", version.ref = "accompanist-pager-indicators" }
+kotlin-serialization-converter = { group = "com.jakewharton.retrofit", name="retrofit2-kotlinx-serialization-converter", version.ref = "serializationConverter" }
+kotlin-serialization-json = { group = "org.jetbrains.kotlinx", name="kotlinx-serialization-json", version.ref= "jsonSerialization"}
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
-moshi = { group = "com.squareup.moshi", name="moshi", version.ref = "moshi" }
-moshi-kotlin = { group = "com.squareup.moshi", name="moshi-kotlin", version.ref = "moshiKotlin" }
+squareup-retrofit = { group = "com.squareup.retrofit2", name="retrofit", version.ref = "retrofit" }
 test-junit = { group = "junit", name = "junit", version.ref = "junit" }
 
 hilt-android = { group = "com.google.dagger", name = "hilt-android" , version.ref = "hilt"}
@@ -74,6 +77,7 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
+jetbrains-serialization = {id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "serialization"}
 
 hiltAndroid = { id = "com.google.dagger.hilt.android", version.ref ="hilt" }
 
@@ -81,5 +85,6 @@ convention-application = { id = "com.adrienmandroid.composecv.application" }
 convention-library = { id = "com.adrienmandroid.composecv.library" }
 convention-compose-library = { id = "com.adrienmandroid.composecv.compose" }
 convention-hilt-library = { id = "com.adrienmandroid.composecv.hilt" }
-convention-json-library = { id = "com.adrienmandroid.composecv.json" }
+convention-retrofit-core-library = { id = "com.adrienmandroid.composecv.retrofit.core" }
+convention-retrofit-api-library = { id = "com.adrienmandroid.composecv.retrofit.api" }
 convention-room-library = { id = "com.adrienmandroid.composecv.room" }

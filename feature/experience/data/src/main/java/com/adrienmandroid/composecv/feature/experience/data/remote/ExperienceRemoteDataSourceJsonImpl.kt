@@ -1,11 +1,11 @@
 package com.adrienmandroid.composecv.feature.experience.data.remote
-
+/* obsolete
 import android.content.Context
 import android.util.Log
 import com.adrienmandroid.composecv.data.remote.DataProviderJSON
 import com.adrienmandroid.composecv.feature.experience.data.ExperienceRemoteDataSource
 import com.adrienmandroid.composecv.feature.experience.data.converter.toDomain
-import com.adrienmandroid.composecv.feature.experience.data.remote.Experience as ExperienceData
+import com.adrienmandroid.composecv.feature.experience.data.remote.ExperienceRemoteBody as ExperienceData
 import com.adrienmandroid.composecv.feature.experience.domain.model.Experience
 import com.adrienmandroid.composecv.model.response.BasicResponse
 import com.adrienmandroid.composecv.model.response.toResponse
@@ -20,7 +20,7 @@ class ExperienceRemoteDataSourceJsonImpl @Inject constructor(
     @ApplicationContext private val context: Context
 ) : ExperienceRemoteDataSource {
     @OptIn(ExperimentalStdlibApi::class)
-    override fun getData(): BasicResponse<Experience> {
+    override suspend fun getData(): BasicResponse<Experience> {
         val json: String? = DataProviderJSON(FILE_NAME).loadJSONFromAsset(context)
 
         if(json == null){
@@ -37,4 +37,4 @@ class ExperienceRemoteDataSourceJsonImpl @Inject constructor(
     companion object {
         private const val FILE_NAME = "experiences.json"
     }
-}
+}*/

@@ -1,5 +1,9 @@
-package com.adrienmandroid.composecv.feature.data.remote
+package com.adrienmandroid.composecv.feature.data.remote.elements
 
+import com.adrienmandroid.composecv.feature.data.remote.TypographyRemoteBody
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class WelcomeRemoteBodyElement(
     val type: String,
 
@@ -18,4 +22,3 @@ data class WelcomeRemoteBodyElement(
     // Field for WelcomeKeyword
     val keywords: List<String>? = null
 )
-

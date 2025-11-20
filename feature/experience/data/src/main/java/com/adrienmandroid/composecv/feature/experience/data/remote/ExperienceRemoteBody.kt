@@ -1,14 +1,19 @@
 package com.adrienmandroid.composecv.feature.experience.data.remote
 
-data class Experience(
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class ExperienceRemoteBody(
     val name: String,
     val employer: String? = null,
     val logoUrl: String,
     val expDates: Dates,
     val professional: Boolean,
-    val informations: List<ExperienceInformation>
+    val informations: List<ExperienceInformationRemoteBody>
 )
 
+@Serializable
 data class Dates(val begin: Long, val end: Long?)
 
-data class ExperienceInformation(val name: String)
+@Serializable
+data class ExperienceInformationRemoteBody(val name: String)

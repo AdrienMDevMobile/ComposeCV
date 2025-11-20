@@ -1,13 +1,13 @@
 package com.adrienmandroid.composecv.feature.experience.data.converter
 
-import com.adrienmandroid.composecv.feature.experience.data.remote.Experience as ExperienceRemote
-import com.adrienmandroid.composecv.feature.experience.data.remote.ExperienceInformation as ExperienceInformationRemote
+import com.adrienmandroid.composecv.feature.experience.data.remote.ExperienceRemoteBody
+import com.adrienmandroid.composecv.feature.experience.data.remote.ExperienceInformationRemoteBody
 import com.adrienmandroid.composecv.feature.experience.domain.model.Experience
 import com.adrienmandroid.composecv.feature.experience.domain.model.ExperienceInformation
 import com.adrienmandroid.composecv.model.Dates
 import java.util.Date
 
-fun ExperienceRemote.toDomain() = Experience(
+fun ExperienceRemoteBody.toDomain() = Experience(
     name = name,
     employer = employer,
     logoUrl = logoUrl,
@@ -16,6 +16,6 @@ fun ExperienceRemote.toDomain() = Experience(
     informations = informations.map { it.toDomain() }
 )
 
-fun ExperienceInformationRemote.toDomain() = ExperienceInformation(
+fun ExperienceInformationRemoteBody.toDomain() = ExperienceInformation(
     name = name
 )

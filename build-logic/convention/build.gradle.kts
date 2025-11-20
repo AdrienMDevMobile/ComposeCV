@@ -47,9 +47,13 @@ gradlePlugin {
             id = libs.plugins.convention.hilt.library.get().pluginId
             implementationClass = "LibraryHiltConventionPlugin"
         }
-        register("json") {
-            id = libs.plugins.convention.json.library.get().pluginId
-            implementationClass = "LibraryJsonPlugin"
+        register("retrofitCore") {
+            id = libs.plugins.convention.retrofit.core.library.get().pluginId
+            implementationClass = "LibraryRetrofitCorePlugin"
+        }
+        register("retrofitApi") {
+            id = libs.plugins.convention.retrofit.api.library.get().pluginId
+            implementationClass = "LibraryRetrofitCorePlugin"
         }
         register("room") {
             id = libs.plugins.convention.room.library.get().pluginId

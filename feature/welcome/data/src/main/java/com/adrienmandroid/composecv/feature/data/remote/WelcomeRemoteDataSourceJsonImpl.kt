@@ -1,10 +1,12 @@
 package com.adrienmandroid.composecv.feature.data.remote
 
+/* osbolete
 import android.content.Context
 import android.util.Log
 import com.adrienmandroid.composecv.data.remote.DataProviderJSON
 import com.adrienmandroid.composecv.feature.data.WelcomeRemoteDataSource
 import com.adrienmandroid.composecv.feature.data.converter.toDomain
+import com.adrienmandroid.composecv.feature.data.remote.elements.WelcomeRemoteResponse
 import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeBodyElement
 import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeHeader
 import com.adrienmandroid.composecv.model.response.Response
@@ -20,11 +22,11 @@ class WelcomeRemoteDataSourceJsonImpl @Inject constructor(
     @ApplicationContext private val context: Context
 ) : WelcomeRemoteDataSource {
     @OptIn(ExperimentalStdlibApi::class)
-    override fun getData(): Response<WelcomeHeader, WelcomeBodyElement> {
+    override suspend fun getData(): Response<WelcomeHeader, WelcomeBodyElement> {
         val json: String? = DataProviderJSON(FILE_NAME).loadJSONFromAsset(context)
 
         if (json == null) {
-            Log.e("jsonError", "SkillJsonProvider returned null")
+            Log.e("jsonError", "WelcomeJsonProvider returned null")
             return emptyList<WelcomeBodyElement>().toResponse(WelcomeHeader("", ""))
         } else {
 
@@ -46,4 +48,4 @@ class WelcomeRemoteDataSourceJsonImpl @Inject constructor(
     companion object {
         private const val FILE_NAME = "welcome.json"
     }
-}
+}*/

@@ -1,5 +1,6 @@
 package com.adrienmandroid.composecv.feature.other.data.remote
 
+/* obsolete
 import android.content.Context
 import android.util.Log
 import com.adrienmandroid.composecv.data.remote.DataProviderJSON
@@ -19,7 +20,7 @@ class OtherRemoteDataSourceJsonImpl @Inject constructor(
     @ApplicationContext private val context: Context
 ) : OtherRemoteDataSource {
     @OptIn(ExperimentalStdlibApi::class)
-    override fun getData(): BasicResponse<OtherComponent> {
+    override suspend fun getData(): BasicResponse<OtherComponent> {
         val json: String? = DataProviderJSON(FILE_NAME).loadJSONFromAsset(context)
 
         if (json == null) {
@@ -44,4 +45,4 @@ class OtherRemoteDataSourceJsonImpl @Inject constructor(
     companion object {
         private const val FILE_NAME = "others.json"
     }
-}
+}*/
