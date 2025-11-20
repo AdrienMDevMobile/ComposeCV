@@ -1,7 +1,7 @@
 package com.adrienmandroid.composecv.feature.other.data.converter
 
 import com.adrienmandroid.composecv.feature.other.data.local.QuoteLocalEntity
-import com.adrienmandroid.composecv.feature.other.data.remote.QuoteRemoteBody
+import com.adrienmandroid.composecv.feature.other.data.remote.elements.QuoteRemoteBody
 import com.adrienmandroid.composecv.feature.other.domain.model.Quote
 
 fun QuoteLocalEntity.toDomain() = Quote(

@@ -1,7 +1,7 @@
 package com.adrienmandroid.composecv.feature.other.data.converter
 
 import com.adrienmandroid.composecv.feature.other.data.local.HobbyLocalEntity
-import com.adrienmandroid.composecv.feature.other.data.remote.HobbyRemoteBody
+import com.adrienmandroid.composecv.feature.other.data.remote.elements.HobbyRemoteBody
 import com.adrienmandroid.composecv.feature.other.domain.model.Hobby
 
 fun HobbyLocalEntity.toDomain() = Hobby(

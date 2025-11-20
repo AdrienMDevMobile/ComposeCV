@@ -1,5 +1,6 @@
 package com.adrienmandroid.composecv.feature.other.data.remote
 
+/* obsolete
 import android.content.Context
 import android.util.Log
 import com.adrienmandroid.composecv.data.remote.DataProviderJSON
@@ -44,4 +45,4 @@ class OtherRemoteDataSourceJsonImpl @Inject constructor(
     companion object {
         private const val FILE_NAME = "others.json"
     }
-}
+}*/
