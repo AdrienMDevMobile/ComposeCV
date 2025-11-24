@@ -8,10 +8,14 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.adrienmandroid.composecv.feature.welcome.ui.viewmodel.WelcomePageUiState
+import com.adrienmandroid.composecv.core.ui.ErrorPage
+import com.adrienmandroid.composecv.core.ui.LoadingPage
+import com.adrienmandroid.composecv.core.ui.states.UiStates
+import com.adrienmandroid.composecv.feature.welcome.domain.model.Clickable
 import com.adrienmandroid.composecv.feature.welcome.ui.element.WelcomeBackgroundPicture
 import com.adrienmandroid.composecv.feature.welcome.ui.element.WelcomeBottomSheet
 import com.adrienmandroid.composecv.feature.welcome.ui.element.WelcomeProfilePicture
+import com.adrienmandroid.composecv.feature.welcome.ui.viewmodel.WelcomePageUiState
 import com.adrienmandroid.composecv.feature.welcome.ui.viewmodel.WelcomeViewModel
 import com.adrienmandroid.composecv.feature.welcome.ui.viewmodel.WelcomeViewModel.ClickAction
 
@@ -20,7 +24,9 @@ import com.adrienmandroid.composecv.feature.welcome.ui.viewmodel.WelcomeViewMode
 fun WelcomeFragment(
     welcomeViewModel: WelcomeViewModel = hiltViewModel(),
 ) {
-    val welcomePageUiState: WelcomePageUiState? by welcomeViewModel.welcomePageUiState.observeAsState(null)
+    val welcomePageUiState: UiStates<WelcomePageUiState> by welcomeViewModel.welcomePageUiState.observeAsState(
+        UiStates.Loading
+    )
 
     val context = LocalContext.current
 
@@ -42,7 +48,24 @@ fun WelcomeFragment(
         welcomeViewModel.clearMailIntent()
     }
 
-    welcomePageUiState?.let { page ->
+    when (welcomePageUiState) {
+        UiStates.Loading -> LoadingPage()
+        UiStates.Error -> ErrorPage()
+        is UiStates.Success<WelcomePageUiState?> -> WelcomeScreen(
+            (welcomePageUiState as UiStates.Success<WelcomePageUiState>).value,
+            { clickable ->
+                welcomeViewModel.onClick(ClickAction.ElementClick(clickable))
+            }
+        )
+    }
+}
+
+@Composable
+fun WelcomeScreen(
+    components: WelcomePageUiState,
+    onClick: (Clickable) -> Unit,
+) {
+    components.let { page ->
         WelcomeBottomSheet(
             contentCovered = {
                 WelcomeBackgroundPicture(
@@ -55,8 +78,8 @@ fun WelcomeFragment(
                     welcomeImageUrl = page.header.profilePictureUrl
                 )
             },
-            onClick = { action ->
-                welcomeViewModel.onClick(ClickAction.ElementClick(action))
+            onClick = { clickable ->
+                onClick(clickable)
             }
         )
     }

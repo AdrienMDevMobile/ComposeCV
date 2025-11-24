@@ -13,6 +13,7 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.adrienmandroid.composecv.core.ui.ErrorPage
 import com.adrienmandroid.composecv.core.ui.LoadingPage
 import com.adrienmandroid.composecv.core.ui.states.UiStates
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
@@ -32,6 +33,7 @@ fun ExperienceFragment(
 
     when (experiences) {
         UiStates.Loading -> LoadingPage()
+        UiStates.Error -> ErrorPage()
         is UiStates.Success<List<ExperienceUiState>> -> ExperiencePage(
             (experiences as UiStates.Success<List<ExperienceUiState>>).value,
             modifier

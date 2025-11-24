@@ -12,6 +12,7 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.adrienmandroid.composecv.core.ui.ErrorPage
 import com.adrienmandroid.composecv.core.ui.LoadingPage
 import com.adrienmandroid.composecv.core.ui.states.UiStates
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
@@ -29,6 +30,7 @@ fun SkillFragment(
 
     when (skills) {
         UiStates.Loading -> LoadingPage()
+        UiStates.Error -> ErrorPage()
         is UiStates.Success<List<SkillUiState>> -> SkillPage(
             (skills as UiStates.Success<List<SkillUiState>>).value,
             modifier

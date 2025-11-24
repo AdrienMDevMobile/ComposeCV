@@ -17,8 +17,8 @@ import javax.inject.Inject
 class WelcomeViewModel @Inject constructor(
     welcomeElementsRepository: WelcomeElementsRepository
 ) : ViewModel() {
-    private val _welcomePageUiState = MutableLiveData<UiStates<WelcomePageUiState?>>(null)
-    val welcomePageUiState: LiveData<UiStates<WelcomePageUiState?>>
+    private val _welcomePageUiState = MutableLiveData<UiStates<WelcomePageUiState>>(UiStates.Loading)
+    val welcomePageUiState: LiveData<UiStates<WelcomePageUiState>>
         get() = _welcomePageUiState
 
     private val _webUrl = MutableLiveData<String?>()
