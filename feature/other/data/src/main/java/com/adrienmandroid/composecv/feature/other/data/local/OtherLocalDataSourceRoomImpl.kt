@@ -10,6 +10,7 @@ import com.adrienmandroid.composecv.feature.other.data.local.dao.QuoteDao
 import com.adrienmandroid.composecv.feature.other.data.local.dao.StudyDao
 import com.adrienmandroid.composecv.feature.other.domain.model.OtherComponent
 import com.adrienmandroid.composecv.model.response.BasicResponse
+import com.adrienmandroid.composecv.model.response.BasicResponseSuccess
 import com.adrienmandroid.composecv.model.response.toResponse
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.Flow
@@ -25,7 +26,7 @@ class OtherLocalDataSourceRoomImpl @Inject constructor(
     private val gratitudeDao: GratitudeDao,
     private val database: RoomDatabase,
 ) : OtherLocalDataSource {
-    override fun saveData(data: BasicResponse<OtherComponent>) {
+    override fun saveData(data: BasicResponseSuccess<OtherComponent>) {
         database.runInTransaction {
 
             data.page.forEach { component ->

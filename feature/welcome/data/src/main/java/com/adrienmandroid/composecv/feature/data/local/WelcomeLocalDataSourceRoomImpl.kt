@@ -17,7 +17,7 @@ class WelcomeLocalDataSourceRoomImpl @Inject constructor(
     private val welcomeHeaderDao: WelcomeHeaderDao,
     private val welcomeElementsDao: WelcomeElementsDao,
 ) : WelcomeLocalDataSource {
-    override fun saveData(data: Response<WelcomeHeader, WelcomeBodyElement>) {
+    override fun saveData(data: Response.Success<WelcomeHeader, WelcomeBodyElement>) {
         data.header?.let { header ->
             welcomeHeaderDao.insertWelcomeHeader(header.toLocalEntity())
         }
