@@ -35,7 +35,11 @@ class WelcomeLocalDataSourceRoomImpl @Inject constructor(
         }.combine(welcomeHeaderDao.getAllWelcomeHeaderAsFlow().map {
             it?.toDomain()
         }) { body, header ->
-            body.toResponse(header)
+            if(header != null && body.isNotEmpty()){
+                body.toResponse(header)
+            } else {
+                Response.Error()
+            }
         }
 
 }

@@ -6,5 +6,5 @@ sealed interface Response<H, L> {
         val page: List<L>
     ): Response<H, L>
 
-    class Error: Response<Unit, Unit>
+    class Error<H, L>: Response<H, L>
 }

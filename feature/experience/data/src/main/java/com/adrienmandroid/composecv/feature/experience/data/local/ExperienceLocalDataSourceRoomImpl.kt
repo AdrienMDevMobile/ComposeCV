@@ -5,6 +5,7 @@ import com.adrienmandroid.composecv.feature.experience.data.converter.toDomain
 import com.adrienmandroid.composecv.feature.experience.domain.model.Experience
 import com.adrienmandroid.composecv.model.response.BasicResponse
 import com.adrienmandroid.composecv.model.response.BasicResponseSuccess
+import com.adrienmandroid.composecv.model.response.Response
 import com.adrienmandroid.composecv.model.response.toResponse
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
@@ -18,6 +19,10 @@ class ExperienceLocalDataSourceRoomImpl @Inject constructor (
     }
 
     override fun getData(): Flow<BasicResponse<Experience>> = experienceDao.getExperiencesAndInformationsAsFlow().map { experiences ->
-        experiences.map { experience -> experience.toDomain() }.toResponse()
+        if(experiences.isNotEmpty()){
+            experiences.map { experience -> experience.toDomain() }.toResponse()
+        } else {
+            Response.Error()
+        }
     }
 }
