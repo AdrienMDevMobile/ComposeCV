@@ -16,7 +16,10 @@ class ResponseLocalAndRemoteManager<H, L>(
         .distinctUntilChanged().transform { localData ->
             if (localData is Response.Error) {
                 coroutineScope.launch(Dispatchers.IO) {
-                    local.saveData(remote.getData())
+                    val remoteData = remote.getData()
+                    if (remoteData is Response.Success) {
+                        local.saveData(remoteData)
+                    } else emit(remoteData)
                 }
             } else {
                 emit(localData)
@@ -24,4 +27,4 @@ class ResponseLocalAndRemoteManager<H, L>(
         }
 }
 
-typealias BasicResponseLocalAndRemoteManager<T>  = ResponseLocalAndRemoteManager<Unit, T>
+typealias BasicResponseLocalAndRemoteManager<T> = ResponseLocalAndRemoteManager<Unit, T>

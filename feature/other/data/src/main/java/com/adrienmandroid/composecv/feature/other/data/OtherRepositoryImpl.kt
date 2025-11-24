@@ -3,6 +3,7 @@ package com.adrienmandroid.composecv.feature.other.data
 import com.adrienmandroid.composecv.data.BasicResponseLocalAndRemoteManager
 import com.adrienmandroid.composecv.feature.other.domain.model.OtherComponent
 import com.adrienmandroid.composecv.feature.other.domain.repository.OtherRepository
+import com.adrienmandroid.composecv.model.response.Response
 import com.adrienmandroid.composecv.model.response.toResponse
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.transform
@@ -21,9 +22,14 @@ class OtherRepositoryImpl @Inject constructor(
 
     override fun get(coroutineScope: CoroutineScope) =
         localAndRemoteDataManager.get(coroutineScope).transform { value ->
-            emit(value.page.toMutableList().apply {
-                add(OtherComponent.Version(versionNameRepository.getAppVersionName()))
-                add(OtherComponent.Signature)
-            }.toResponse())
+            if(value is Response.Success){
+                emit(value.page.toMutableList().apply {
+                    add(OtherComponent.Version(versionNameRepository.getAppVersionName()))
+                    add(OtherComponent.Signature)
+                }.toResponse())
+            }
+            else {
+                emit(value)
+            }
         }
 }
