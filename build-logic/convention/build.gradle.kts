@@ -53,7 +53,7 @@ gradlePlugin {
         }
         register("retrofitApi") {
             id = libs.plugins.convention.retrofit.api.library.get().pluginId
-            implementationClass = "LibraryRetrofitCorePlugin"
+            implementationClass = "LibraryRetrofitApiPlugin"
         }
         register("room") {
             id = libs.plugins.convention.room.library.get().pluginId
