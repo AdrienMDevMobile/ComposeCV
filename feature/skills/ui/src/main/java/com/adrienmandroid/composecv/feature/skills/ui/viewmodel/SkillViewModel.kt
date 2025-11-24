@@ -8,6 +8,7 @@ import com.adrienmandroid.composecv.core.ui.states.UiStates
 import com.adrienmandroid.composecv.feature.skills.domain.repository.SkillRepository
 import com.adrienmandroid.composecv.feature.skills.ui.state.SkillUiState
 import com.adrienmandroid.composecv.feature.skills.ui.state.toUiState
+import com.adrienmandroid.composecv.model.response.Response
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -22,12 +23,17 @@ class SkillViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
-            skillRepository.get(viewModelScope).collect { data ->
-                _skills.value = UiStates.Success(
-                    value = data.page.map { skill ->
-                        skill.toUiState()
-                    }
-                )
+            skillRepository.get(viewModelScope).collect { response ->
+                if(response is Response.Success){
+                    _skills.value = UiStates.Success(
+                        value = response.page.map { skill ->
+                            skill.toUiState()
+                        }
+                    )
+                } else {
+                    _skills.value = UiStates.Error
+                }
+
             }
         }
     }

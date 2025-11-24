@@ -8,6 +8,7 @@ import com.adrienmandroid.composecv.core.ui.states.UiStates
 import com.adrienmandroid.composecv.feature.other.domain.repository.OtherRepository
 import com.adrienmandroid.composecv.feature.other.ui.state.OtherComponentUiState
 import com.adrienmandroid.composecv.feature.other.ui.state.toUiState
+import com.adrienmandroid.composecv.model.response.Response
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -23,12 +24,16 @@ class OtherViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
-            otherRepository.get(viewModelScope).collect { data ->
-                _otherComponents.value = UiStates.Success(
-                    value = data.page.map { component ->
-                        component.toUiState()
-                    }
-                )
+            otherRepository.get(viewModelScope).collect { response ->
+                if(response is Response.Success){
+                    _otherComponents.value = UiStates.Success(
+                        value = response.page.map { component ->
+                            component.toUiState()
+                        }
+                    )
+                } else {
+                    _otherComponents.value = UiStates.Error
+                }
             }
         }
     }

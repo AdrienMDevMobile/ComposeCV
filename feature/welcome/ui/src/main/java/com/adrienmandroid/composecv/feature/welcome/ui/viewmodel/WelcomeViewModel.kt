@@ -4,9 +4,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.adrienmandroid.composecv.core.ui.states.UiStates
 import com.adrienmandroid.composecv.feature.welcome.domain.model.Clickable
 import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeHeader
 import com.adrienmandroid.composecv.feature.welcome.domain.repository.WelcomeElementsRepository
+import com.adrienmandroid.composecv.model.response.Response
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -15,8 +17,8 @@ import javax.inject.Inject
 class WelcomeViewModel @Inject constructor(
     welcomeElementsRepository: WelcomeElementsRepository
 ) : ViewModel() {
-    private val _welcomePageUiState = MutableLiveData<WelcomePageUiState?>(null)
-    val welcomePageUiState: LiveData<WelcomePageUiState?>
+    private val _welcomePageUiState = MutableLiveData<UiStates<WelcomePageUiState?>>(null)
+    val welcomePageUiState: LiveData<UiStates<WelcomePageUiState?>>
         get() = _welcomePageUiState
 
     private val _webUrl = MutableLiveData<String?>()
@@ -30,10 +32,16 @@ class WelcomeViewModel @Inject constructor(
     init {
         viewModelScope.launch {
             welcomeElementsRepository.get(viewModelScope).collect { response ->
-                _welcomePageUiState.value = WelcomePageUiState(
-                    response.header ?: WelcomeHeader("", ""),
-                    response.page
-                )
+                if (response is Response.Success) {
+                    _welcomePageUiState.value = UiStates.Success(
+                        WelcomePageUiState(
+                            response.header ?: WelcomeHeader("", ""),
+                            response.page
+                        )
+                    )
+                } else {
+                    _welcomePageUiState.value = UiStates.Error
+                }
             }
         }
 

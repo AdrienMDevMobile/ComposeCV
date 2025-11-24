@@ -8,6 +8,7 @@ import com.adrienmandroid.composecv.core.ui.states.UiStates
 import com.adrienmandroid.composecv.feature.experience.domain.repository.ExperienceRepository
 import com.adrienmandroid.composecv.feature.experience.ui.state.ExperienceUiState
 import com.adrienmandroid.composecv.feature.experience.ui.state.toUiState
+import com.adrienmandroid.composecv.model.response.Response
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -23,10 +24,14 @@ class ExperienceViewmodel @Inject constructor(
 
     init {
         viewModelScope.launch {
-            experienceRepository.get(viewModelScope).collect { data ->
-                _experiences.value = UiStates.Success(value = data.page.map { experience ->
-                    experience.toUiState()
-                })
+            experienceRepository.get(viewModelScope).collect { response ->
+                if(response is Response.Success){
+                    _experiences.value = UiStates.Success(value = response.page.map { experience ->
+                        experience.toUiState()
+                    })
+                } else {
+                    _experiences.value = UiStates.Error
+                }
             }
         }
     }
