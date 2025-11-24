@@ -11,11 +11,10 @@ import kotlinx.coroutines.launch
 class ResponseLocalAndRemoteManager<H, L>(
     val local: ResponseLocalDataSource<H, L>,
     val remote: ResponseRemoteDataSource<H, L>,
-    val hasOnlyBody: Boolean = true,
 ) {
     fun get(coroutineScope: CoroutineScope): Flow<Response<H, L>> = local.getData()
         .distinctUntilChanged().transform { localData ->
-            if ((hasOnlyBody || localData.header == null) && localData.page.isEmpty()) {
+            if (localData is Response.Error) {
                 coroutineScope.launch(Dispatchers.IO) {
                     local.saveData(remote.getData())
                 }
