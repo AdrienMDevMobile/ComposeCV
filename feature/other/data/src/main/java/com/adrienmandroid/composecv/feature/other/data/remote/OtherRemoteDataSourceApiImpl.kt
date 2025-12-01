@@ -10,7 +10,7 @@ import com.adrienmandroid.composecv.model.response.toResponse
 import javax.inject.Inject
 
 class OtherRemoteDataSourceApiImpl @Inject constructor() : OtherRemoteDataSource {
-    val otherApi : OtherApi = RetrofitInstance.retrofit.create(OtherApi::class.java)
+    val otherApi : OtherApi = TODO() //RetrofitInstance.retrofit.create(OtherApi::class.java)
     
     override suspend fun getData(): Response<Unit, OtherComponent> {
         val response = otherApi.getOther()

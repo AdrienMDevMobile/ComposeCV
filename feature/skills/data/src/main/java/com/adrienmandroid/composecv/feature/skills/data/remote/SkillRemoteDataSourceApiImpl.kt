@@ -10,7 +10,7 @@ import com.adrienmandroid.composecv.model.response.toResponse
 import javax.inject.Inject
 
 class SkillRemoteDataSourceApiImpl @Inject constructor() : SkillRemoteDataSource {
-    val api: SkillApi = RetrofitInstance.retrofit.create(SkillApi::class.java)
+    val api: SkillApi = TODO() //RetrofitInstance.retrofit.create(SkillApi::class.java)
 
     override suspend fun getData(): Response<Unit, Skill> =
         api.getSkills().map { skill -> skill.toDomain() }.toResponse()
