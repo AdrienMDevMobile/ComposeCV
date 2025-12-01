@@ -9,8 +9,8 @@ import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeHeader
 import com.adrienmandroid.composecv.model.response.Response
 import com.adrienmandroid.composecv.model.response.toResponse
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.zip
 import javax.inject.Inject
 
 class WelcomeLocalDataSourceRoomImpl @Inject constructor(
@@ -32,7 +32,7 @@ class WelcomeLocalDataSourceRoomImpl @Inject constructor(
             elements.mapNotNull { element ->
                 element.toDomain()
             }
-        }.combine(welcomeHeaderDao.getAllWelcomeHeaderAsFlow().map {
+        }.zip(welcomeHeaderDao.getAllWelcomeHeaderAsFlow().map {
             it?.toDomain()
         }) { body, header ->
             if(header != null && body.isNotEmpty()){
