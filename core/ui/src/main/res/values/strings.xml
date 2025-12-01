@@ -13,5 +13,5 @@
         <item quantity="one">%1$d mois</item>
         <item quantity="other">%1$d mois</item>
     </plurals>
-    <string name="error_page">Erreur de chargement. Verifiez votre connection internet ou envoyer moi un message en cas d\'erreur.</string>
+    <string name="error_page">Erreur de chargement. Verifiez votre connection internet ou envoyez moi un message en cas d\'erreur.</string>
 </resources>
