@@ -11,6 +11,7 @@ import com.adrienmandroid.composecv.feature.other.data.local.dao.StudyDao
 import com.adrienmandroid.composecv.feature.other.domain.model.OtherComponent
 import com.adrienmandroid.composecv.model.response.BasicResponse
 import com.adrienmandroid.composecv.model.response.BasicResponseSuccess
+import com.adrienmandroid.composecv.model.response.Response
 import com.adrienmandroid.composecv.model.response.toResponse
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.Flow
@@ -84,14 +85,18 @@ class OtherLocalDataSourceRoomImpl @Inject constructor(
             flowStudy,
             flowGratitude
         ) { hobbies, quotes, studies, gratitudes ->
-            mutableListOf<OtherComponent>().apply {
+            val toReturn = mutableListOf<OtherComponent>().apply {
                 if (studies != null) add(studies)
                 if (quotes != null) add(quotes)
                 if (hobbies != null) add(hobbies)
                 if (gratitudes != null) add(gratitudes)
-            }.toResponse()
-        }
-            .debounce(500)
+            }
+            if (toReturn.isNotEmpty()) {
+                toReturn.toResponse()
+            } else {
+                Response.Error()
+            }
+        }.debounce(500)
     }
 
 }
