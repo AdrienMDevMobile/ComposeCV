@@ -11,22 +11,13 @@ import retrofit2.Retrofit
 object RetrofitInstance {
     private val json = Json { ignoreUnknownKeys = true }
 
-    fun getInstance(mContext: Context) : Retrofit{
-        if (_retrofit == null) {
-            _retrofit = Retrofit.Builder()
-                .addConverterFactory(json.asConverterFactory("application/json".toMediaType()))
-                .baseUrl(BASE_URL)
-                .client(
-                    OkHttpClient.Builder()
-                        .addInterceptor(NetworkConnectionInterceptor(mContext = mContext))
-                        .build()
-                )
+    fun createInstance(context: Context): Retrofit = Retrofit.Builder()
+        .addConverterFactory(json.asConverterFactory("application/json".toMediaType()))
+        .baseUrl(BASE_URL)
+        .client(
+            OkHttpClient.Builder()
+                .addInterceptor(NetworkConnectionInterceptor(mContext = context))
                 .build()
-        }
-        //TODO retirer les !!
-        return _retrofit!!
-    }
-
-
-    private var _retrofit: Retrofit? = null
+        )
+        .build()
 }
