@@ -122,6 +122,7 @@ fun StudyContent(
 fun StudyText(
     studyName: String, diploma: String, dates: Dates, isLongString: Boolean
 ) {
+    //TODO utiliser text adaptable
     val textStyle = when (isLongString) {
         true -> typography.body2
         false -> typography.body1
@@ -196,7 +197,6 @@ fun PreviewStudyCard() {
                 dates = Dates(
                     begin = Date(1593554400000), end = Date(1641596400000)
                 ),
-                isLongString = true
             )
         )
     }

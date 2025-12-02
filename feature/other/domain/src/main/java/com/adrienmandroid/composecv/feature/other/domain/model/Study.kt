@@ -7,5 +7,4 @@ data class Study(
     val name: String,
     val diploma: String,
     val dates: Dates,
-    val isLongString: Boolean = false
 )

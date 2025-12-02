@@ -54,5 +54,5 @@ fun Study.toUiState() = StudyUiState(
     name = name,
     diploma = diploma,
     dates = dates,
-    isLongString = isLongString,
+    isLongString = name.length > 10,
 )
