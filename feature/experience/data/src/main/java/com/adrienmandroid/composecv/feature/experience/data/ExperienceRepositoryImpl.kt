@@ -3,7 +3,6 @@ package com.adrienmandroid.composecv.feature.experience.data
 import com.adrienmandroid.composecv.data.BasicResponseLocalAndRemoteManager
 import com.adrienmandroid.composecv.feature.experience.domain.model.Experience
 import com.adrienmandroid.composecv.feature.experience.domain.repository.ExperienceRepository
-import kotlinx.coroutines.CoroutineScope
 import javax.inject.Inject
 
 class ExperienceRepositoryImpl @Inject constructor(

@@ -2,7 +2,6 @@ package com.adrienmandroid.composecv.data
 
 import com.adrienmandroid.composecv.data.remote.NoConnectivityException
 import com.adrienmandroid.composecv.model.response.Response
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.distinctUntilChanged

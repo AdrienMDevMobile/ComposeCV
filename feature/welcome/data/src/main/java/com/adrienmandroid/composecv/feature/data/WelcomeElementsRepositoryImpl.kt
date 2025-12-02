@@ -4,7 +4,6 @@ import com.adrienmandroid.composecv.data.ResponseLocalAndRemoteManager
 import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeBodyElement
 import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeHeader
 import com.adrienmandroid.composecv.feature.welcome.domain.repository.WelcomeElementsRepository
-import kotlinx.coroutines.CoroutineScope
 import javax.inject.Inject
 
 class WelcomeElementsRepositoryImpl @Inject constructor(

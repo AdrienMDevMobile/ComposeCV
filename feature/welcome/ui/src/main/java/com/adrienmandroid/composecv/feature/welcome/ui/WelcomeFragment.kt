@@ -52,8 +52,8 @@ fun WelcomeFragment(
         UiStates.Loading -> LoadingPage()
         UiStates.Error -> ErrorPage()
         is UiStates.Success<WelcomePageUiState?> -> WelcomeScreen(
-            (welcomePageUiState as UiStates.Success<WelcomePageUiState>).value,
-            { clickable ->
+            components = (welcomePageUiState as UiStates.Success<WelcomePageUiState>).value,
+            onClick = { clickable ->
                 welcomeViewModel.onClick(ClickAction.ElementClick(clickable))
             }
         )

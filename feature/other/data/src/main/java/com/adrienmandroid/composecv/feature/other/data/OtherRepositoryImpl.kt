@@ -5,7 +5,6 @@ import com.adrienmandroid.composecv.feature.other.domain.model.OtherComponent
 import com.adrienmandroid.composecv.feature.other.domain.repository.OtherRepository
 import com.adrienmandroid.composecv.model.response.Response
 import com.adrienmandroid.composecv.model.response.toResponse
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.transform
 import javax.inject.Inject
 
