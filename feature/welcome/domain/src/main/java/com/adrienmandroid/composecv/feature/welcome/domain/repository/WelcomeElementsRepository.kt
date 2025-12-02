@@ -7,5 +7,5 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
 
 interface WelcomeElementsRepository {
-    fun get(coroutineScope: CoroutineScope): Flow<Response<WelcomeHeader, WelcomeBodyElement>>
+    fun get(): Flow<Response<WelcomeHeader, WelcomeBodyElement>>
 }

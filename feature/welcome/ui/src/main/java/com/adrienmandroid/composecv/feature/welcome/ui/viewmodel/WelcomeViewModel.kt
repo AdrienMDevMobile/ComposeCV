@@ -31,7 +31,7 @@ class WelcomeViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
-            welcomeElementsRepository.get(viewModelScope).collect { response ->
+            welcomeElementsRepository.get().collect { response ->
                 if (response is Response.Success) {
                     _welcomePageUiState.value = UiStates.Success(
                         WelcomePageUiState(

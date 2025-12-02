@@ -16,5 +16,5 @@ class ExperienceRepositoryImpl @Inject constructor(
             remote = remoteDataSource
         )
 
-    override fun get(coroutineScope: CoroutineScope) = localAndRemoteDataManager.get(coroutineScope)
+    override fun get() = localAndRemoteDataManager.get()
 }

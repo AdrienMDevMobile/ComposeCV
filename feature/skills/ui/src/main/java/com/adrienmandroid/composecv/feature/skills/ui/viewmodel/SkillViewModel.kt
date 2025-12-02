@@ -23,7 +23,7 @@ class SkillViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
-            skillRepository.get(viewModelScope).collect { response ->
+            skillRepository.get().collect { response ->
                 if(response is Response.Success){
                     _skills.value = UiStates.Success(
                         value = response.page.map { skill ->

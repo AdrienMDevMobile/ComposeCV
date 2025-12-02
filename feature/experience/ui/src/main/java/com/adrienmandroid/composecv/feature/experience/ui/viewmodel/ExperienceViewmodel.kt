@@ -24,7 +24,7 @@ class ExperienceViewmodel @Inject constructor(
 
     init {
         viewModelScope.launch {
-            experienceRepository.get(viewModelScope).collect { response ->
+            experienceRepository.get().collect { response ->
                 if(response is Response.Success){
                     _experiences.value = UiStates.Success(value = response.page.map { experience ->
                         experience.toUiState()

@@ -1,6 +1,5 @@
 package com.adrienmandroid.composecv.feature.skills.data.remote
 
-import com.adrienmandroid.composecv.data.remote.RetrofitInstance
 import com.adrienmandroid.composecv.feature.skills.data.SkillRemoteDataSource
 import com.adrienmandroid.composecv.feature.skills.data.converter.toDomain
 import com.adrienmandroid.composecv.feature.skills.data.remote.api.SkillApi

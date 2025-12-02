@@ -13,8 +13,7 @@ class ResponseLocalAndRemoteManager<H, L>(
     val local: ResponseLocalDataSource<H, L>,
     val remote: ResponseRemoteDataSource<H, L>,
 ) {
-    //TODO remove parameter
-    fun get(coroutineScope: CoroutineScope): Flow<Response<H, L>> = local.getData()
+    fun get(): Flow<Response<H, L>> = local.getData()
         .distinctUntilChanged().transform { localData ->
             if (localData is Response.Error) {
                 try {

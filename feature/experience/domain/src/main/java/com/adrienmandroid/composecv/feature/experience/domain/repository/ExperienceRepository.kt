@@ -6,5 +6,5 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
 
 interface ExperienceRepository {
-    fun get(coroutineScope: CoroutineScope): Flow<BasicResponse<Experience>>
+    fun get(): Flow<BasicResponse<Experience>>
 }

@@ -6,5 +6,5 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
 
 interface SkillRepository {
-    fun get(coroutineScope: CoroutineScope): Flow<BasicResponse<Skill>>
+    fun get(): Flow<BasicResponse<Skill>>
 }

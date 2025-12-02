@@ -18,6 +18,6 @@ class WelcomeElementsRepositoryImpl @Inject constructor(
             remote = remoteDataSource,
         )
 
-    override fun get(coroutineScope: CoroutineScope) =
-        responseLocalAndRemoteManager.get(coroutineScope)
+    override fun get() =
+        responseLocalAndRemoteManager.get()
 }

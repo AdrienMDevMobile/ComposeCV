@@ -20,8 +20,8 @@ class OtherRepositoryImpl @Inject constructor(
             remote = remoteDataSource
         )
 
-    override fun get(coroutineScope: CoroutineScope) =
-        localAndRemoteDataManager.get(coroutineScope).transform { value ->
+    override fun get() =
+        localAndRemoteDataManager.get().transform { value ->
             if(value is Response.Success){
                 emit(value.page.toMutableList().apply {
                     add(OtherComponent.Version(versionNameRepository.getAppVersionName()))
