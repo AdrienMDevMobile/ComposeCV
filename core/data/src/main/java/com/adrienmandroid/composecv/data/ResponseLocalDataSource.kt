@@ -4,7 +4,7 @@ import com.adrienmandroid.composecv.model.response.Response
 import kotlinx.coroutines.flow.Flow
 
 interface ResponseLocalDataSource<H, L> {
-    fun saveData(data: Response<H, L>)
+    fun saveData(data: Response.Success<H, L>)
     fun getData(): Flow<Response<H, L>>
 }
 

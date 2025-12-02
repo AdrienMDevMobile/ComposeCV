@@ -4,7 +4,6 @@ import com.adrienmandroid.composecv.data.ResponseLocalAndRemoteManager
 import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeBodyElement
 import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeHeader
 import com.adrienmandroid.composecv.feature.welcome.domain.repository.WelcomeElementsRepository
-import kotlinx.coroutines.CoroutineScope
 import javax.inject.Inject
 
 class WelcomeElementsRepositoryImpl @Inject constructor(
@@ -16,9 +15,8 @@ class WelcomeElementsRepositoryImpl @Inject constructor(
         ResponseLocalAndRemoteManager(
             local = localDataSource,
             remote = remoteDataSource,
-            hasOnlyBody = false,
         )
 
-    override fun get(coroutineScope: CoroutineScope) =
-        responseLocalAndRemoteManager.get(coroutineScope)
+    override fun get() =
+        responseLocalAndRemoteManager.get()
 }

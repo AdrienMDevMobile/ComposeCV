@@ -13,8 +13,9 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.adrienmandroid.composecv.core.ui.ErrorPage
 import com.adrienmandroid.composecv.core.ui.LoadingPage
-import com.adrienmandroid.composecv.core.ui.states.UiStates
+import com.adrienmandroid.composecv.core.ui.states.PageState
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.feature.experience.ui.elements.ExperienceCard
 import com.adrienmandroid.composecv.feature.experience.ui.preview.ExperiencesPreviewParameterData
@@ -26,14 +27,15 @@ fun ExperienceFragment(
     modifier: Modifier = Modifier,
     experienceViewmodel: ExperienceViewmodel = hiltViewModel()
 ) {
-    val experiences: UiStates<List<ExperienceUiState>> by experienceViewmodel.experiences.observeAsState(
-        UiStates.Loading
+    val experiences: PageState<List<ExperienceUiState>> by experienceViewmodel.experiences.observeAsState(
+        PageState.Loading
     )
 
     when (experiences) {
-        UiStates.Loading -> LoadingPage()
-        is UiStates.Success<List<ExperienceUiState>> -> ExperiencePage(
-            (experiences as UiStates.Success<List<ExperienceUiState>>).value,
+        PageState.Loading -> LoadingPage()
+        PageState.Error -> ErrorPage()
+        is PageState.Content<List<ExperienceUiState>> -> ExperiencePage(
+            (experiences as PageState.Content<List<ExperienceUiState>>).value,
             modifier
         )
     }

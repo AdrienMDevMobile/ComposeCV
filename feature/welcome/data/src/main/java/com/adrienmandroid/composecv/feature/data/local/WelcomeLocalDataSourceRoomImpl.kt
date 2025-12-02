@@ -9,15 +9,15 @@ import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeHeader
 import com.adrienmandroid.composecv.model.response.Response
 import com.adrienmandroid.composecv.model.response.toResponse
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.zip
 import javax.inject.Inject
 
 class WelcomeLocalDataSourceRoomImpl @Inject constructor(
     private val welcomeHeaderDao: WelcomeHeaderDao,
     private val welcomeElementsDao: WelcomeElementsDao,
 ) : WelcomeLocalDataSource {
-    override fun saveData(data: Response<WelcomeHeader, WelcomeBodyElement>) {
+    override fun saveData(data: Response.Success<WelcomeHeader, WelcomeBodyElement>) {
         data.header?.let { header ->
             welcomeHeaderDao.insertWelcomeHeader(header.toLocalEntity())
         }
@@ -32,10 +32,14 @@ class WelcomeLocalDataSourceRoomImpl @Inject constructor(
             elements.mapNotNull { element ->
                 element.toDomain()
             }
-        }.combine(welcomeHeaderDao.getAllWelcomeHeaderAsFlow().map {
+        }.zip(welcomeHeaderDao.getAllWelcomeHeaderAsFlow().map {
             it?.toDomain()
         }) { body, header ->
-            body.toResponse(header)
+            if(header != null && body.isNotEmpty()){
+                body.toResponse(header)
+            } else {
+                Response.Error()
+            }
         }
 
 }

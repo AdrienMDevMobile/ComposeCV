@@ -15,8 +15,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.adrienmandroid.composecv.core.ui.ErrorPage
 import com.adrienmandroid.composecv.core.ui.LoadingPage
-import com.adrienmandroid.composecv.core.ui.states.UiStates
+import com.adrienmandroid.composecv.core.ui.states.PageState
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.feature.other.ui.elements.Gratitudes
 import com.adrienmandroid.composecv.feature.other.ui.elements.HobbyRow
@@ -34,14 +35,15 @@ fun OtherFragment(
     modifier: Modifier = Modifier,
     otherViewModel: OtherViewModel = hiltViewModel(),
 ) {
-    val otherComponents: UiStates<List<OtherComponentUiState>> by otherViewModel.otherComponents.observeAsState(
-        UiStates.Loading
+    val otherComponents: PageState<List<OtherComponentUiState>> by otherViewModel.otherComponents.observeAsState(
+        PageState.Loading
     )
 
     when (otherComponents) {
-        UiStates.Loading -> LoadingPage()
-        is UiStates.Success<List<OtherComponentUiState>> -> OtherScreen(
-            (otherComponents as UiStates.Success<List<OtherComponentUiState>>).value,
+        PageState.Loading -> LoadingPage()
+        PageState.Error -> ErrorPage()
+        is PageState.Content<List<OtherComponentUiState>> -> OtherScreen(
+            (otherComponents as PageState.Content<List<OtherComponentUiState>>).value,
             modifier
         )
     }

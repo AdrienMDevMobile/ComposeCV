@@ -1,28 +1,32 @@
 package com.adrienmandroid.composecv.data
 
+import com.adrienmandroid.composecv.data.remote.NoConnectivityException
 import com.adrienmandroid.composecv.model.response.Response
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.transform
-import kotlinx.coroutines.launch
 
 class ResponseLocalAndRemoteManager<H, L>(
     val local: ResponseLocalDataSource<H, L>,
     val remote: ResponseRemoteDataSource<H, L>,
-    val hasOnlyBody: Boolean = true,
 ) {
-    fun get(coroutineScope: CoroutineScope): Flow<Response<H, L>> = local.getData()
+    fun get(): Flow<Response<H, L>> = local.getData()
         .distinctUntilChanged().transform { localData ->
-            if ((hasOnlyBody || localData.header == null) && localData.page.isEmpty()) {
-                coroutineScope.launch(Dispatchers.IO) {
-                    local.saveData(remote.getData())
+            if (localData is Response.Error) {
+                try {
+                    val remoteData = remote.getData()
+                    if (remoteData is Response.Success) {
+                        local.saveData(remoteData)
+                    } else emit(remoteData)
+                } catch (_: NoConnectivityException) {
+                    emit(Response.Error())
                 }
             } else {
                 emit(localData)
             }
-        }
+        }.flowOn(Dispatchers.IO)
 }
 
-typealias BasicResponseLocalAndRemoteManager<T>  = ResponseLocalAndRemoteManager<Unit, T>
+typealias BasicResponseLocalAndRemoteManager<T> = ResponseLocalAndRemoteManager<Unit, T>

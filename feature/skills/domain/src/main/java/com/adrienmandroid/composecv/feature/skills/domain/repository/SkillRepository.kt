@@ -2,9 +2,8 @@ package com.adrienmandroid.composecv.feature.skills.domain.repository
 
 import com.adrienmandroid.composecv.feature.skills.domain.model.Skill
 import com.adrienmandroid.composecv.model.response.BasicResponse
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
 
 interface SkillRepository {
-    fun get(coroutineScope: CoroutineScope): Flow<BasicResponse<Skill>>
+    fun get(): Flow<BasicResponse<Skill>>
 }

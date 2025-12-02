@@ -3,7 +3,6 @@ package com.adrienmandroid.composecv.feature.skills.data
 import com.adrienmandroid.composecv.data.BasicResponseLocalAndRemoteManager
 import com.adrienmandroid.composecv.feature.skills.domain.model.Skill
 import com.adrienmandroid.composecv.feature.skills.domain.repository.SkillRepository
-import kotlinx.coroutines.CoroutineScope
 import javax.inject.Inject
 
 class SkillRepositoryImpl @Inject constructor(
@@ -16,6 +15,6 @@ class SkillRepositoryImpl @Inject constructor(
             remote = remoteDataSource
         )
 
-    override fun get(coroutineScope: CoroutineScope) =
-        responseLocalAndRemoteManager.get(coroutineScope)
+    override fun get() =
+        responseLocalAndRemoteManager.get()
 }
