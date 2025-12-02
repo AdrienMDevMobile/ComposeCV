@@ -13,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 
 @Composable
 fun LoadingPage(modifier: Modifier = Modifier) {
@@ -34,5 +35,7 @@ fun LoadingPage(modifier: Modifier = Modifier) {
 @Preview
 @Composable
 fun PreviewLoadingPage() {
-    LoadingPage()
+    ComposeCVTheme {
+        LoadingPage()
+    }
 }

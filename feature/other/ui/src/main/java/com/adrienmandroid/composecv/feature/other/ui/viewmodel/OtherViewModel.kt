@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.adrienmandroid.composecv.core.ui.states.UiStates
+import com.adrienmandroid.composecv.core.ui.states.PageState
 import com.adrienmandroid.composecv.feature.other.domain.repository.OtherRepository
 import com.adrienmandroid.composecv.feature.other.ui.state.OtherComponentUiState
 import com.adrienmandroid.composecv.feature.other.ui.state.toUiState
@@ -17,22 +17,22 @@ import javax.inject.Inject
 class OtherViewModel @Inject constructor(
     otherRepository: OtherRepository
 ) : ViewModel() {
-    private val _otherComponents: MutableLiveData<UiStates<List<OtherComponentUiState>>> =
-        MutableLiveData(UiStates.Loading)
-    val otherComponents: LiveData<UiStates<List<OtherComponentUiState>>>
+    private val _otherComponents: MutableLiveData<PageState<List<OtherComponentUiState>>> =
+        MutableLiveData(PageState.Loading)
+    val otherComponents: LiveData<PageState<List<OtherComponentUiState>>>
         get() = _otherComponents
 
     init {
         viewModelScope.launch {
             otherRepository.get().collect { response ->
                 if(response is Response.Success){
-                    _otherComponents.value = UiStates.Success(
+                    _otherComponents.value = PageState.Content(
                         value = response.page.map { component ->
                             component.toUiState()
                         }
                     )
                 } else {
-                    _otherComponents.value = UiStates.Error
+                    _otherComponents.value = PageState.Error
                 }
             }
         }

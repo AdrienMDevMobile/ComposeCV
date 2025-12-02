@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.adrienmandroid.composecv.core.ui.states.UiStates
+import com.adrienmandroid.composecv.core.ui.states.PageState
 import com.adrienmandroid.composecv.feature.experience.domain.repository.ExperienceRepository
 import com.adrienmandroid.composecv.feature.experience.ui.state.ExperienceUiState
 import com.adrienmandroid.composecv.feature.experience.ui.state.toUiState
@@ -17,20 +17,20 @@ import javax.inject.Inject
 class ExperienceViewmodel @Inject constructor(
     experienceRepository: ExperienceRepository
 ) : ViewModel() {
-    private val _experiences: MutableLiveData<UiStates<List<ExperienceUiState>>> =
-        MutableLiveData(UiStates.Loading)
-    val experiences: LiveData<UiStates<List<ExperienceUiState>>>
+    private val _experiences: MutableLiveData<PageState<List<ExperienceUiState>>> =
+        MutableLiveData(PageState.Loading)
+    val experiences: LiveData<PageState<List<ExperienceUiState>>>
         get() = _experiences
 
     init {
         viewModelScope.launch {
             experienceRepository.get().collect { response ->
                 if(response is Response.Success){
-                    _experiences.value = UiStates.Success(value = response.page.map { experience ->
+                    _experiences.value = PageState.Content(value = response.page.map { experience ->
                         experience.toUiState()
                     })
                 } else {
-                    _experiences.value = UiStates.Error
+                    _experiences.value = PageState.Error
                 }
             }
         }

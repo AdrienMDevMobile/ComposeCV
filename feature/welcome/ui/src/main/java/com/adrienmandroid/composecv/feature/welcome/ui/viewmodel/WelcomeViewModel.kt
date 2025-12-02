@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.adrienmandroid.composecv.core.ui.states.UiStates
+import com.adrienmandroid.composecv.core.ui.states.PageState
 import com.adrienmandroid.composecv.feature.welcome.domain.model.Clickable
 import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeHeader
 import com.adrienmandroid.composecv.feature.welcome.domain.repository.WelcomeElementsRepository
@@ -17,8 +17,8 @@ import javax.inject.Inject
 class WelcomeViewModel @Inject constructor(
     welcomeElementsRepository: WelcomeElementsRepository
 ) : ViewModel() {
-    private val _welcomePageUiState = MutableLiveData<UiStates<WelcomePageUiState>>(UiStates.Loading)
-    val welcomePageUiState: LiveData<UiStates<WelcomePageUiState>>
+    private val _welcomePageUiState = MutableLiveData<PageState<WelcomePageUiState>>(PageState.Loading)
+    val welcomePageUiState: LiveData<PageState<WelcomePageUiState>>
         get() = _welcomePageUiState
 
     private val _webUrl = MutableLiveData<String?>()
@@ -33,14 +33,14 @@ class WelcomeViewModel @Inject constructor(
         viewModelScope.launch {
             welcomeElementsRepository.get().collect { response ->
                 if (response is Response.Success) {
-                    _welcomePageUiState.value = UiStates.Success(
+                    _welcomePageUiState.value = PageState.Content(
                         WelcomePageUiState(
                             response.header ?: WelcomeHeader("", ""),
                             response.page
                         )
                     )
                 } else {
-                    _welcomePageUiState.value = UiStates.Error
+                    _welcomePageUiState.value = PageState.Error
                 }
             }
         }

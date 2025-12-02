@@ -10,7 +10,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.adrienmandroid.composecv.core.ui.ErrorPage
 import com.adrienmandroid.composecv.core.ui.LoadingPage
-import com.adrienmandroid.composecv.core.ui.states.UiStates
+import com.adrienmandroid.composecv.core.ui.states.PageState
 import com.adrienmandroid.composecv.feature.welcome.domain.model.Clickable
 import com.adrienmandroid.composecv.feature.welcome.ui.element.WelcomeBackgroundPicture
 import com.adrienmandroid.composecv.feature.welcome.ui.element.WelcomeBottomSheet
@@ -24,8 +24,8 @@ import com.adrienmandroid.composecv.feature.welcome.ui.viewmodel.WelcomeViewMode
 fun WelcomeFragment(
     welcomeViewModel: WelcomeViewModel = hiltViewModel(),
 ) {
-    val welcomePageUiState: UiStates<WelcomePageUiState> by welcomeViewModel.welcomePageUiState.observeAsState(
-        UiStates.Loading
+    val welcomePageUiState: PageState<WelcomePageUiState> by welcomeViewModel.welcomePageUiState.observeAsState(
+        PageState.Loading
     )
 
     val context = LocalContext.current
@@ -49,10 +49,10 @@ fun WelcomeFragment(
     }
 
     when (welcomePageUiState) {
-        UiStates.Loading -> LoadingPage()
-        UiStates.Error -> ErrorPage()
-        is UiStates.Success<WelcomePageUiState?> -> WelcomeScreen(
-            components = (welcomePageUiState as UiStates.Success<WelcomePageUiState>).value,
+        PageState.Loading -> LoadingPage()
+        PageState.Error -> ErrorPage()
+        is PageState.Content<WelcomePageUiState?> -> WelcomeScreen(
+            components = (welcomePageUiState as PageState.Content<WelcomePageUiState>).value,
             onClick = { clickable ->
                 welcomeViewModel.onClick(ClickAction.ElementClick(clickable))
             }
