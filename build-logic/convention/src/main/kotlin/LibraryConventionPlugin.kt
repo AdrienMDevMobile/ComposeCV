@@ -17,7 +17,6 @@ class LibraryConventionPlugin : Plugin<Project> {
 
             extensions.configure<LibraryExtension> {
                 configureSdk(this)
-                defaultConfig.targetSdk = 35
 
                 configureJvmCompile(this)
                 defaultConfig.testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"

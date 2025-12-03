@@ -6,10 +6,10 @@ internal fun configureSdk(
     commonExtension: CommonExtension<*, *, *, *, *, *>,
 ){
     commonExtension.apply {
-        compileSdk = 35
+        compileSdk = 36
 
         defaultConfig {
-            minSdk = 24
+            minSdk = 28
         }
     }
 }

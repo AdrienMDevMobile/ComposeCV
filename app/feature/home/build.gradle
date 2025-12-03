@@ -6,10 +6,10 @@ plugins {
 
 android {
     namespace 'm.adrien.feature.home'
-    compileSdk 35
+    compileSdk = 36
 
     defaultConfig {
-        minSdk 24
+        minSdk = 24
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -29,8 +29,8 @@ android {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
-    kotlinOptions {
-        jvmTarget = '11'
+    compilerOptions {
+        jvmTarget = JvmTarget.JVM_11
     }
 }
 
