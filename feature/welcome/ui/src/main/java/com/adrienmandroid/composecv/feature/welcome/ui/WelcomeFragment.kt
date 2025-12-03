@@ -7,7 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.platform.LocalContext
-import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.adrienmandroid.composecv.core.ui.ErrorPage
 import com.adrienmandroid.composecv.core.ui.LoadingPage
 import com.adrienmandroid.composecv.core.ui.states.PageState
@@ -42,7 +42,7 @@ fun WelcomeFragment(
     val mailEvent by welcomeViewModel.mailAddress.observeAsState()
     if (mailEvent != null) {
         val intent = Intent(Intent.ACTION_SENDTO).apply {
-            setData(Uri.parse("mailto:$mailEvent"))
+            data = Uri.parse("mailto:$mailEvent")
         }
         context.startActivity(intent)
         welcomeViewModel.clearMailIntent()
