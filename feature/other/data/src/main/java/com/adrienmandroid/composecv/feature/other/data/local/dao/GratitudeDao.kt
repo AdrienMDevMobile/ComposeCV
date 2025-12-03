@@ -9,7 +9,6 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface GratitudeDao {
-    //TODO mark my functions as suspend : https://www.reddit.com/r/androiddev/comments/14gr3zo/what_are_the_purpose_of_having_suspend_keyword_on/
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(vararg gratitudes: GratitudeLocalEntity)
 

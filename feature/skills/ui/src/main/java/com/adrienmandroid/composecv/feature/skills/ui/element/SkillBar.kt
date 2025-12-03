@@ -51,7 +51,6 @@ fun SkillLinearProgressIndicator(
     })
 }
 
-//TODO : PreviewParameter for only 1 test function
 @Composable
 @PreviewLightDark
 fun PreviewSkillBarHigh() {

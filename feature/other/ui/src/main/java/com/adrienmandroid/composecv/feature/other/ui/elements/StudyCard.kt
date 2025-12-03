@@ -122,7 +122,6 @@ fun StudyContent(
 fun StudyText(
     studyName: String, diploma: String, dates: Dates, isLongString: Boolean
 ) {
-    //TODO utiliser text adaptable
     val textStyle = when (isLongString) {
         true -> typography.body2
         false -> typography.body1
