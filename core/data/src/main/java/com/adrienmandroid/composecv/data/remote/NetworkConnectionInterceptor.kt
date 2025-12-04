@@ -27,7 +27,8 @@ class NetworkConnectionInterceptor(private val mContext: Context) : Interceptor 
         get() {
             val connectivityManager =
                 mContext.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-            val netCapabilities = connectivityManager.getNetworkCapabilities(connectivityManager.activeNetwork)
+            val netCapabilities =
+                connectivityManager.getNetworkCapabilities(connectivityManager.activeNetwork)
             return (netCapabilities != null
                     // indicates that the network is set up to access the internet
                     && netCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
