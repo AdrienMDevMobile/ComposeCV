@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.Flow
 interface WelcomeHeaderDao {
     @Query("SELECT * FROM welcome_header LIMIT 1")
     fun getAllWelcomeHeaderAsFlow(): Flow<WelcomeHeaderEntity?>
-    //TODO delete all before inserting new
+    //TODO v3 delete all before inserting new
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertWelcomeHeader(element: WelcomeHeaderEntity)
 }

@@ -7,7 +7,7 @@ import androidx.compose.material.ProgressIndicatorDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
@@ -24,7 +24,7 @@ fun SkillLinearProgressIndicator(
     targetValue: Float,
     targetValueColor: Color
 ) {
-    var progress by remember { mutableStateOf(0f) }
+    var progress by remember { mutableFloatStateOf(0f) }
     val animatedProgress = animateFloatAsState(
         targetValue = progress,
         animationSpec = ProgressIndicatorDefaults.ProgressAnimationSpec
@@ -51,7 +51,6 @@ fun SkillLinearProgressIndicator(
     })
 }
 
-//TODO : PreviewParameter for only 1 test function
 @Composable
 @PreviewLightDark
 fun PreviewSkillBarHigh() {

@@ -7,6 +7,5 @@ data class StudyUiState(
     val name: String,
     val diploma: String,
     val dates: Dates,
-    //TODO utiliser ma classe TextAdaptable
     val isLongString: Boolean = false
 )

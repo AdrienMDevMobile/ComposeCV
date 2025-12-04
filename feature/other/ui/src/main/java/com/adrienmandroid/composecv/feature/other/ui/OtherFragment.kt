@@ -21,7 +21,7 @@ import com.adrienmandroid.composecv.core.ui.states.PageState
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.feature.other.ui.elements.Gratitudes
 import com.adrienmandroid.composecv.feature.other.ui.elements.HobbyRow
-import com.adrienmandroid.composecv.feature.other.ui.elements.QuoteCarousel
+import com.adrienmandroid.composecv.feature.other.ui.elements.quote.QuoteCarousel
 import com.adrienmandroid.composecv.feature.other.ui.elements.Signature
 import com.adrienmandroid.composecv.feature.other.ui.elements.StudyList
 import com.adrienmandroid.composecv.feature.other.ui.elements.Version

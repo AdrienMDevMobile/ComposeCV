@@ -13,7 +13,6 @@ fun StudyLocalEntity.toDomain() = Study(
     name = this.name,
     diploma = this.diploma,
     dates = Dates(begin = this.dateStart.toJavaDate(), end = this.dateEnd?.toJavaDate()),
-    isLongString = this.isLongString
 )
 
 fun Study.toLocalEntity() = StudyLocalEntity(
@@ -22,7 +21,6 @@ fun Study.toLocalEntity() = StudyLocalEntity(
     diploma = this.diploma,
     dateStart = this.dates.begin.toRoomString(),
     dateEnd = this.dates.end?.toRoomString(),
-    isLongString = this.isLongString
 )
 
 fun StudyRemoteBody.toDomain() = Study(
@@ -30,5 +28,4 @@ fun StudyRemoteBody.toDomain() = Study(
     name = this.name,
     diploma = this.diploma,
     dates = Dates(Date(this.dates.begin), this.dates.end?.let { Date(it) }),
-    isLongString = this.isLongString
 )

@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.feature.other.ui.elements
+package com.adrienmandroid.composecv.feature.other.ui.elements.quote
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues

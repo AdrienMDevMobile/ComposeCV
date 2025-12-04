@@ -3,6 +3,7 @@ package com.adrienmandroid.composecv.data.remote
 import android.Manifest
 import android.content.Context
 import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import androidx.annotation.RequiresPermission
 import okhttp3.Interceptor
 import okhttp3.Interceptor.Chain
@@ -26,9 +27,13 @@ class NetworkConnectionInterceptor(private val mContext: Context) : Interceptor 
         get() {
             val connectivityManager =
                 mContext.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-            //TODO deprecated
-            val netInfo = connectivityManager.getActiveNetworkInfo()
-            return (netInfo != null && netInfo.isConnected())
+            val netCapabilities =
+                connectivityManager.getNetworkCapabilities(connectivityManager.activeNetwork)
+            return (netCapabilities != null
+                    // indicates that the network is set up to access the internet
+                    && netCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
+                    // indicates that the network provides actual access to the public internet when it is probed
+                    && netCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_VALIDATED))
         }
 }
 

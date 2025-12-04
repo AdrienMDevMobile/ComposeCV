@@ -18,7 +18,4 @@ data class StudyLocalEntity(
     val dateStart: String,
     @ColumnInfo(name = "date_end")
     val dateEnd: String?,
-    //TODO retirer cette valeur. A gerer par mon VM
-    @ColumnInfo(name = "is_long_string")
-    val isLongString: Boolean = false
 )

@@ -196,7 +196,6 @@ fun PreviewStudyCard() {
                 dates = Dates(
                     begin = Date(1593554400000), end = Date(1641596400000)
                 ),
-                isLongString = true
             )
         )
     }
