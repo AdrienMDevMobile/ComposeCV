@@ -1,7 +1,10 @@
 package com.adrienmandroid.composecv.ui
 
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
@@ -20,6 +23,7 @@ fun MainScreen() {
     val navGraphArray = BottomNavGraph.array
 
     Scaffold(
+        modifier = Modifier.windowInsetsPadding(WindowInsets.navigationBars),
         bottomBar = { BottomBar(elementArray = navGraphArray, navController = navController) }
     ) { innerPadding ->
         // Padding Value is the only parameter of the parameter component
