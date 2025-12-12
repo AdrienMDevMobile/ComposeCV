@@ -5,7 +5,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.PreviewLightDark
+import androidx.compose.ui.tooling.preview.Preview
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import java.text.DateFormat
 import java.util.Date
@@ -61,7 +61,9 @@ fun Difference.getDifferenceYearsToString(): String =
         numberYears
     )
 
-@PreviewLightDark
+@Preview(
+    showBackground = true,
+)
 @Composable
 fun PreviewDateManager() {
     ComposeCVTheme {

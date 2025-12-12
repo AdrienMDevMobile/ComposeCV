@@ -11,9 +11,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
-import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.adrienmandroid.composecv.core.ui.ErrorPage
 import com.adrienmandroid.composecv.core.ui.LoadingPage
+import com.adrienmandroid.composecv.core.ui.ShadowBelowStatusBar
 import com.adrienmandroid.composecv.core.ui.states.PageState
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.feature.skills.ui.element.SkillCard
@@ -52,6 +53,7 @@ fun SkillPage(
             SkillCard(it)
         }
     }
+    ShadowBelowStatusBar()
 }
 
 @PreviewLightDark

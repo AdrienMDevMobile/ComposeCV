@@ -1,5 +1,7 @@
 package com.adrienmandroid.composecv.core.ui
 
+import android.content.res.Configuration
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.WindowInsets
@@ -19,6 +21,7 @@ import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 fun LoadingPage(modifier: Modifier = Modifier) {
     Column(
         modifier
+            .background(color = MaterialTheme.colors.background)
             .fillMaxSize()
             .padding(
                 WindowInsets.systemBars.asPaddingValues()
@@ -32,7 +35,13 @@ fun LoadingPage(modifier: Modifier = Modifier) {
     }
 }
 
-@Preview
+@Preview(
+    showBackground = true
+)
+@Preview(
+    showBackground = true,
+    uiMode = Configuration.UI_MODE_NIGHT_YES,
+)
 @Composable
 fun PreviewLoadingPage() {
     ComposeCVTheme {
