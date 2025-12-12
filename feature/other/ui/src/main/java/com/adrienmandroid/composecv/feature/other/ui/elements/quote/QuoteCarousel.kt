@@ -2,42 +2,30 @@ package com.adrienmandroid.composecv.feature.other.ui.elements.quote
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material.MaterialTheme
+import androidx.compose.foundation.pager.HorizontalPager
+import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
-import com.adrienmandroid.composecv.core.ui.theme.carouselButton
+import com.adrienmandroid.composecv.core.ui.CarouselPagerIndicator
 import com.adrienmandroid.composecv.feature.other.ui.preview.data.QuotePreviewParameterData
 import com.adrienmandroid.composecv.feature.other.ui.state.QuoteUiState
-import com.google.accompanist.pager.ExperimentalPagerApi
-import com.google.accompanist.pager.HorizontalPager
-import com.google.accompanist.pager.HorizontalPagerIndicator
-import com.google.accompanist.pager.rememberPagerState
 
-@OptIn(ExperimentalPagerApi::class)
 @Composable
 fun QuoteCarousel(quotes: List<QuoteUiState>) {
     Column {
-        val pagerState = rememberPagerState()
+        val pagerState = rememberPagerState {
+            quotes.size
+        }
 
         HorizontalPager(
-            count = quotes.size,
             state = pagerState,
             contentPadding = PaddingValues(horizontal = 12.dp),
         ) { page ->
             QuoteCardDraw(quotes[page])
         }
+        CarouselPagerIndicator(pagerState)
 
-        HorizontalPagerIndicator(
-            pagerState = pagerState,
-            modifier = Modifier
-                .align(Alignment.CenterHorizontally)
-                .padding(16.dp),
-            activeColor = MaterialTheme.colors.carouselButton
-        )
     }
 }
 
