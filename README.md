@@ -25,16 +25,16 @@ Multi flavors
 
 > Acceuil
 
-![Welcome](https://github.com/AdrienMDevMobile/ComposeCV/blob/main/readmescreenshots/Welcome.png?raw=true)
+![Welcome](https://github.com/AdrienMDevMobile/ComposeCV/blob/3763aab03469de3f14f4e6d1b25f286ae12ff712/readmescreenshots/Welcome.png?raw=true)
 
 > Page expériences
 
-![Experience](https://github.com/AdrienMDevMobile/ComposeCV/blob/main/readmescreenshots/Experience.png?raw=true)
+![Experience](https://github.com/AdrienMDevMobile/ComposeCV/blob/3763aab03469de3f14f4e6d1b25f286ae12ff712/readmescreenshots/Experience.png?raw=true)
 
 >Page compétences
 
-![Skills](https://github.com/AdrienMDevMobile/ComposeCV/blob/main/readmescreenshots/Skills.png?raw=true)
+![Skills](https://github.com/AdrienMDevMobile/ComposeCV/blob/3763aab03469de3f14f4e6d1b25f286ae12ff712/readmescreenshots/Skills.png?raw=true)
 
 > Page autre
 
-![Others](https://github.com/AdrienMDevMobile/ComposeCV/blob/main/readmescreenshots/Others.png?raw=true)
+![Others](https://github.com/AdrienMDevMobile/ComposeCV/blob/3763aab03469de3f14f4e6d1b25f286ae12ff712/readmescreenshots/Others.png?raw=true)
