@@ -25,16 +25,16 @@ Multi flavors
 
 > Acceuil
 
-<img src="https://i.imgur.com/jfDd96l.png" alt="Image page d'acceuil">
+![Welcome](https://github.com/AdrienMDevMobile/ComposeCV/blob/main/readmescreenshots/Welcome.png?raw=true)
 
 > Page expériences
-> 
-<img src="https://i.imgur.com/YTlWjXz.png" alt="Image page expériences">
 
-> Page compétences
+![Experience](https://github.com/AdrienMDevMobile/ComposeCV/blob/main/readmescreenshots/Experience.png?raw=true)
 
-<img src="https://i.imgur.com/4kqOuSA.png" alt="Image page compétences">
+>Page compétences
+
+![Skills](https://github.com/AdrienMDevMobile/ComposeCV/blob/main/readmescreenshots/Skills.png?raw=true)
 
 > Page autre
 
-<img src="https://i.imgur.com/LZK5mRP.png" alt="Image page autre">
+![Others](https://github.com/AdrienMDevMobile/ComposeCV/blob/main/readmescreenshots/Others.png?raw=true)
