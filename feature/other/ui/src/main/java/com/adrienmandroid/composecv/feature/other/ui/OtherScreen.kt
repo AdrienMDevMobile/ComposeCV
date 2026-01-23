@@ -32,7 +32,7 @@ import com.adrienmandroid.composecv.feature.other.ui.state.OtherComponentUiState
 import com.adrienmandroid.composecv.feature.other.ui.viewmodel.OtherViewModel
 
 @Composable
-fun OtherFragment(
+fun OtherScreen(
     modifier: Modifier = Modifier,
     otherViewModel: OtherViewModel = hiltViewModel(),
 ) {

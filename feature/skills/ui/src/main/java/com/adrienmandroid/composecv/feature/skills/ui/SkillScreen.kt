@@ -23,7 +23,7 @@ import com.adrienmandroid.composecv.feature.skills.ui.state.SkillUiState
 import com.adrienmandroid.composecv.feature.skills.ui.viewmodel.SkillViewModel
 
 @Composable
-fun SkillFragment(
+fun SkillScreen(
     modifier: Modifier = Modifier,
     skillViewModel: SkillViewModel = hiltViewModel(),
 ) {

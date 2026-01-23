@@ -24,7 +24,7 @@ import com.adrienmandroid.composecv.feature.experience.ui.state.ExperienceUiStat
 import com.adrienmandroid.composecv.feature.experience.ui.viewmodel.ExperienceViewmodel
 
 @Composable
-fun ExperienceFragment(
+fun ExperienceScreen(
     modifier: Modifier = Modifier,
     experienceViewmodel: ExperienceViewmodel = hiltViewModel()
 ) {
@@ -60,7 +60,7 @@ fun ExperiencePage(
 
 @Composable
 @PreviewLightDark
-fun PrevExpFragment() {
+fun PrevExperiencePage() {
     ComposeCVTheme {
         ExperiencePage(ExperiencesPreviewParameterData.experiences)
     }

@@ -21,7 +21,7 @@ import com.adrienmandroid.composecv.feature.welcome.ui.viewmodel.WelcomeViewMode
 
 @ExperimentalMaterialApi
 @Composable
-fun WelcomeFragment(
+fun WelcomeScreen(
     welcomeViewModel: WelcomeViewModel = hiltViewModel(),
 ) {
     val welcomePageUiState: PageState<WelcomePageUiState> by welcomeViewModel.welcomePageUiState.observeAsState(
