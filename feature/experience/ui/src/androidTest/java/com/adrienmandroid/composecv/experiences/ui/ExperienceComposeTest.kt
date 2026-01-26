@@ -14,14 +14,15 @@ class ExperienceComposeTest {
     val composeTestRule = createComposeRule()
     @Test
     fun myTest() {
+        val viewmodel = ExperienceViewmodel(FakeExperienceRepository())
         // Start the app
         composeTestRule.setContent {
             ComposeCVTheme {
-                ExperienceScreen(experienceViewmodel = ExperienceViewmodel(FakeExperienceRepository()))
+                ExperienceScreen(experienceViewmodel = viewmodel)
             }
-            Thread.sleep(500)
-        }
 
+        }
+        Thread.sleep(500)
         //composeTestRule.onNodeWithText("Continue").performClick()
 
         //composeTestRule.onNodeWithText("Welcome").assertIsDisplayed()
