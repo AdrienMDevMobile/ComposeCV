@@ -8,8 +8,7 @@ import com.adrienmandroid.composecv.feature.experience.ui.viewmodel.ExperienceVi
 import org.junit.Rule
 import org.junit.Test
 
-//https://developer.android.com/develop/ui/compose/testing
-class ExperienceComposeTest {
+class ExperienceComposeTests {
 
     @get:Rule
     val composeTestRule = createComposeRule()
