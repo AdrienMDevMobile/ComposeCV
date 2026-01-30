@@ -28,13 +28,15 @@ navigation = "2.9.6"
 retrofit = "3.0.0"
 roomVersion = "2.8.4"
 serializationConverter = "1.0.0"
-serialization= "2.2.21"
+serialization = "2.2.21"
 
 [libraries]
 accompanist-flowlayout = { group = "ca.gosyer", name = "accompanist-flowlayout", version.ref = "flowlayout" }
 android-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "compose-activity" }
 android-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
 android-compose-junit = { group = "androidx.compose.ui", name = "ui-test-junit4", version.ref = "compose" }
+# Needed for createComposeRule(), but not for createAndroidComposeRule<YourActivity>()
+android-compose-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest", version.ref = "compose" }
 android-compose-material = { group = "androidx.compose.material", name = "material", version.ref = "compose" }
 android-compose-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview", version.ref = "compose" }
 android-compose-runtime = { group = "androidx.compose.runtime", name = "runtime-livedata", version.ref = "compose" }
@@ -54,17 +56,18 @@ androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref =
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomVersion" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomVersion" }
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
-coil-compose = {group ="io.coil-kt.coil3", name="coil-compose", version.ref = "coil"}
-coil-network = {group ="io.coil-kt.coil3", name="coil-network-okhttp", version.ref = "coil"}
+coil-compose = { group = "io.coil-kt.coil3", name = "coil-compose", version.ref = "coil" }
+coil-network = { group = "io.coil-kt.coil3", name = "coil-network-okhttp", version.ref = "coil" }
 google-accompanist-pager = { group = "com.google.accompanist", name = "accompanist-pager", version.ref = "accompanist-pager" }
 google-accompanist-pager-indicators = { group = "com.google.accompanist", name = "accompanist-pager-indicators", version.ref = "accompanist-pager-indicators" }
-kotlin-serialization-converter = { group = "com.jakewharton.retrofit", name="retrofit2-kotlinx-serialization-converter", version.ref = "serializationConverter" }
-kotlin-serialization-json = { group = "org.jetbrains.kotlinx", name="kotlinx-serialization-json", version.ref= "jsonSerialization"}
+hilt-android-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "hilt" }
+kotlin-serialization-converter = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "serializationConverter" }
+kotlin-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "jsonSerialization" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
-squareup-retrofit = { group = "com.squareup.retrofit2", name="retrofit", version.ref = "retrofit" }
+squareup-retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 test-junit = { group = "junit", name = "junit", version.ref = "junit" }
 
-hilt-android = { group = "com.google.dagger", name = "hilt-android" , version.ref = "hilt"}
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
 hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
 kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
@@ -77,9 +80,9 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
-jetbrains-serialization = {id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "serialization"}
+jetbrains-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "serialization" }
 
-hiltAndroid = { id = "com.google.dagger.hilt.android", version.ref ="hilt" }
+hiltAndroid = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 
 convention-application = { id = "com.adrienmandroid.composecv.application" }
 convention-library = { id = "com.adrienmandroid.composecv.library" }

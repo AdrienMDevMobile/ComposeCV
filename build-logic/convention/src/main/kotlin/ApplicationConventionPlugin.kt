@@ -43,6 +43,7 @@ class ApplicationConventionPlugin : Plugin<Project> {
                     add("testImplementation", libs.findLibrary("test.junit").get())
                     add("androidTestImplementation", libs.findLibrary("android.test.junit").get())
                     add("androidTestImplementation", libs.findLibrary("android.test.espresso").get())
+                    add("androidTestImplementation", libs.findLibrary("hilt.android.testing").get())
                 }
             }
         }

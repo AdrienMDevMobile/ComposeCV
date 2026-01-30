@@ -23,7 +23,9 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
@@ -112,18 +114,23 @@ fun ShowMore(isVisible: LiveData<Boolean>) {
     if (!visible) {
         Image(
             painter = painterResource(id = R.drawable.ic_skill_arrow_down),
-            contentDescription = "Show more",
-            modifier = Modifier.size(20.dp)
+            contentDescription = stringResource(R.string.button_show_more_description),
+            modifier = Modifier
+                .size(20.dp)
+                .testTag(showMoreTestTag)
         )
     } else {
         Image(
             painter = painterResource(id = R.drawable.ic_skill_arrow_up),
-            contentDescription = "Show more",
-            modifier = Modifier.size(20.dp)
+            contentDescription = stringResource(R.string.button_show_less_description),
+            modifier = Modifier
+                .size(20.dp)
+                .testTag(showMoreTestTag)
         )
     }
-
 }
+
+const val showMoreTestTag = "showMoreTestTag"
 
 @Composable
 fun SkillText(isVisible: LiveData<Boolean>, text: String) {

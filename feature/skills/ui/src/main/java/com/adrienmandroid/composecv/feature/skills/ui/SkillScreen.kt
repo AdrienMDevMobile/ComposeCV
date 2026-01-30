@@ -1,5 +1,6 @@
 package com.adrienmandroid.composecv.feature.skills.ui
 
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -10,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.adrienmandroid.composecv.core.ui.ErrorPage
@@ -23,22 +25,25 @@ import com.adrienmandroid.composecv.feature.skills.ui.state.SkillUiState
 import com.adrienmandroid.composecv.feature.skills.ui.viewmodel.SkillViewModel
 
 @Composable
-fun SkillFragment(
+fun SkillScreen(
     modifier: Modifier = Modifier,
     skillViewModel: SkillViewModel = hiltViewModel(),
 ) {
     val skills: PageState<List<SkillUiState>> by skillViewModel.skills.observeAsState(PageState.Loading)
 
-    when (skills) {
-        PageState.Loading -> LoadingPage()
-        PageState.Error -> ErrorPage()
-        is PageState.Content<List<SkillUiState>> -> SkillPage(
-            (skills as PageState.Content<List<SkillUiState>>).value,
-            modifier
-        )
+    Box(modifier = Modifier.testTag(SKILL_SCREEN_ID)) {
+        when (skills) {
+            PageState.Loading -> LoadingPage()
+            PageState.Error -> ErrorPage()
+            is PageState.Content<List<SkillUiState>> -> SkillPage(
+                (skills as PageState.Content<List<SkillUiState>>).value,
+                modifier
+            )
+        }
     }
-
 }
+
+const val SKILL_SCREEN_ID = "SKILL_SCREEN_ID"
 
 @Composable
 fun SkillPage(

@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ComposeCV">
+
         <activity
             android:name=".MainActivity"
             android:windowSoftInputMode="adjustResize"
@@ -23,6 +24,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!--
+        TODO Creer deux profils d'app : Debug et Release.
+        TestActivity doit uniquement etre présent en debug et dans le manifest debug
+        -->
+        <activity
+            android:name=".TestActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="true"
+            android:theme="@style/Theme.ComposeCV">
+        </activity>
+
     </application>
 
 </manifest>

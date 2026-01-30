@@ -7,7 +7,7 @@ import org.gradle.kotlin.dsl.dependencies
 
 internal fun configureComposePlugin(
     pluginManager: PluginManager
-){
+) {
     with(pluginManager) {
         apply("org.jetbrains.kotlin.plugin.compose")
     }
@@ -43,6 +43,7 @@ internal fun Project.configureComposeExtension(
             add("androidTestImplementation", libs.findLibrary("android.compose.junit").get())
 
             add("debugImplementation", libs.findLibrary("android.compose.ui.tooling").get())
+            add("debugImplementation", libs.findLibrary("android.compose.test.manifest").get())
         }
     }
 }

@@ -2,11 +2,14 @@ package com.adrienmandroid.composecv.feature.welcome.ui
 
 import android.content.Intent
 import android.net.Uri
+import androidx.compose.foundation.layout.Box
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.testTag
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.adrienmandroid.composecv.core.ui.ErrorPage
 import com.adrienmandroid.composecv.core.ui.LoadingPage
@@ -21,8 +24,9 @@ import com.adrienmandroid.composecv.feature.welcome.ui.viewmodel.WelcomeViewMode
 
 @ExperimentalMaterialApi
 @Composable
-fun WelcomeFragment(
+fun WelcomeScreen(
     welcomeViewModel: WelcomeViewModel = hiltViewModel(),
+    modifier: Modifier = Modifier,
 ) {
     val welcomePageUiState: PageState<WelcomePageUiState> by welcomeViewModel.welcomePageUiState.observeAsState(
         PageState.Loading
@@ -48,22 +52,28 @@ fun WelcomeFragment(
         welcomeViewModel.clearMailIntent()
     }
 
-    when (welcomePageUiState) {
-        PageState.Loading -> LoadingPage()
-        PageState.Error -> ErrorPage()
-        is PageState.Content<WelcomePageUiState?> -> WelcomeScreen(
-            components = (welcomePageUiState as PageState.Content<WelcomePageUiState>).value,
-            onClick = { clickable ->
-                welcomeViewModel.onClick(ClickAction.ElementClick(clickable))
-            }
-        )
+    Box(modifier = Modifier.testTag(WELCOME_SCREEN_ID)) {
+        when (welcomePageUiState) {
+            PageState.Loading -> LoadingPage()
+            PageState.Error -> ErrorPage()
+            is PageState.Content<WelcomePageUiState?> -> WelcomeScreen(
+                components = (welcomePageUiState as PageState.Content<WelcomePageUiState>).value,
+                onClick = { clickable ->
+                    welcomeViewModel.onClick(ClickAction.ElementClick(clickable))
+                },
+                modifier = modifier,
+            )
+        }
     }
 }
+
+const val WELCOME_SCREEN_ID = "WELCOME_SCREEN_ID"
 
 @Composable
 fun WelcomeScreen(
     components: WelcomePageUiState,
     onClick: (Clickable) -> Unit,
+    modifier: Modifier = Modifier,
 ) {
     components.let { page ->
         WelcomeBottomSheet(
@@ -80,7 +90,8 @@ fun WelcomeScreen(
             },
             onClick = { clickable ->
                 onClick(clickable)
-            }
+            },
+            modifier = modifier,
         )
     }
 }
