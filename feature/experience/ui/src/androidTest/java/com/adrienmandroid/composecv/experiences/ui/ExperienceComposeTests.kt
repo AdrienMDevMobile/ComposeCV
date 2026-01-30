@@ -12,6 +12,7 @@ class ExperienceComposeTests {
 
     @get:Rule
     val composeTestRule = createComposeRule()
+
     @Test
     fun test_experience_exists() {
         val viewmodel = ExperienceViewmodel(FakeExperienceRepository())

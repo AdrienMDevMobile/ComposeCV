@@ -7,7 +7,7 @@ import org.gradle.kotlin.dsl.dependencies
 
 internal fun configureComposePlugin(
     pluginManager: PluginManager
-){
+) {
     with(pluginManager) {
         apply("org.jetbrains.kotlin.plugin.compose")
     }

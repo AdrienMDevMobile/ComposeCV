@@ -26,7 +26,6 @@ class SkillComposeTests {
                 SkillScreen(skillViewModel = viewmodel)
             }
         }
-
         // composeTestRule.onRoot(useUnmergedTree = true).printToLog("currentLabelExists")
 
         composeTestRule.onNodeWithText("Skill 1 value").assertExists()

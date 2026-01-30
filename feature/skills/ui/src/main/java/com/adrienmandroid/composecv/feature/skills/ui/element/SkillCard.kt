@@ -115,13 +115,17 @@ fun ShowMore(isVisible: LiveData<Boolean>) {
         Image(
             painter = painterResource(id = R.drawable.ic_skill_arrow_down),
             contentDescription = stringResource(R.string.button_show_more_description),
-            modifier = Modifier.size(20.dp).testTag(showMoreTestTag)
+            modifier = Modifier
+                .size(20.dp)
+                .testTag(showMoreTestTag)
         )
     } else {
         Image(
             painter = painterResource(id = R.drawable.ic_skill_arrow_up),
             contentDescription = stringResource(R.string.button_show_less_description),
-            modifier = Modifier.size(20.dp).testTag(showMoreTestTag)
+            modifier = Modifier
+                .size(20.dp)
+                .testTag(showMoreTestTag)
         )
     }
 }

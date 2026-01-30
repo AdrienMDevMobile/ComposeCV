@@ -1,7 +1,6 @@
 package com.adrienmandroid.composecv
 
 import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.ui.test.assert
 import androidx.compose.ui.test.hasClickAction
 import androidx.compose.ui.test.hasContentDescription
 import androidx.compose.ui.test.hasTestTag
