@@ -1,6 +1,7 @@
 package com.adrienmandroid.composecv.feature.experience.ui
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.statusBars
@@ -11,6 +12,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.layoutId
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.adrienmandroid.composecv.core.ui.ErrorPage
@@ -32,15 +35,19 @@ fun ExperienceScreen(
         PageState.Loading
     )
 
-    when (experiences) {
-        PageState.Loading -> LoadingPage()
-        PageState.Error -> ErrorPage()
-        is PageState.Content<List<ExperienceUiState>> -> ExperiencePage(
-            (experiences as PageState.Content<List<ExperienceUiState>>).value,
-            modifier
-        )
+    Box(modifier = Modifier.testTag(EXPERIENCE_SCREEN_ID)) {
+        when (experiences) {
+            PageState.Loading -> LoadingPage()
+            PageState.Error -> ErrorPage()
+            is PageState.Content<List<ExperienceUiState>> -> ExperiencePage(
+                (experiences as PageState.Content<List<ExperienceUiState>>).value,
+                modifier
+            )
+        }
     }
 }
+
+const val EXPERIENCE_SCREEN_ID = "EXPERIENCE_SCREEN_ID"
 
 @Composable
 fun ExperiencePage(

@@ -1,6 +1,7 @@
 package com.adrienmandroid.composecv.feature.other.ui
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -12,7 +13,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.layoutId
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.adrienmandroid.composecv.core.ui.ErrorPage
@@ -22,11 +25,11 @@ import com.adrienmandroid.composecv.core.ui.states.PageState
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.feature.other.ui.elements.Gratitudes
 import com.adrienmandroid.composecv.feature.other.ui.elements.HobbyRow
-import com.adrienmandroid.composecv.feature.other.ui.elements.quote.QuoteCarousel
 import com.adrienmandroid.composecv.feature.other.ui.elements.Signature
 import com.adrienmandroid.composecv.feature.other.ui.elements.StudyList
 import com.adrienmandroid.composecv.feature.other.ui.elements.Version
 import com.adrienmandroid.composecv.feature.other.ui.elements.otherSection
+import com.adrienmandroid.composecv.feature.other.ui.elements.quote.QuoteCarousel
 import com.adrienmandroid.composecv.feature.other.ui.preview.data.OtherPreviewParameterData
 import com.adrienmandroid.composecv.feature.other.ui.state.OtherComponentUiState
 import com.adrienmandroid.composecv.feature.other.ui.viewmodel.OtherViewModel
@@ -40,15 +43,19 @@ fun OtherScreen(
         PageState.Loading
     )
 
-    when (otherComponents) {
-        PageState.Loading -> LoadingPage()
-        PageState.Error -> ErrorPage()
-        is PageState.Content<List<OtherComponentUiState>> -> OtherScreen(
-            (otherComponents as PageState.Content<List<OtherComponentUiState>>).value,
-            modifier
-        )
+    Box(modifier = Modifier.testTag(OTHER_SCREEN_ID)) {
+        when (otherComponents) {
+            PageState.Loading -> LoadingPage()
+            PageState.Error -> ErrorPage()
+            is PageState.Content<List<OtherComponentUiState>> -> OtherScreen(
+                (otherComponents as PageState.Content<List<OtherComponentUiState>>).value,
+                modifier
+            )
+        }
     }
 }
+
+const val OTHER_SCREEN_ID = "OTHER_SCREEN_ID"
 
 @Composable
 fun OtherScreen(

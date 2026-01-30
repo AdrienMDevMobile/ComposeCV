@@ -27,12 +27,10 @@ class SkillComposeTests {
             }
         }
 
-        composeTestRule.onRoot(useUnmergedTree = true).printToLog("currentLabelExists")
+        // composeTestRule.onRoot(useUnmergedTree = true).printToLog("currentLabelExists")
 
         composeTestRule.onNodeWithText("Skill 1 value").assertExists()
         composeTestRule.onNodeWithText("Skill 2 subskills").assertExists()
-
-
     }
 
     @Test
