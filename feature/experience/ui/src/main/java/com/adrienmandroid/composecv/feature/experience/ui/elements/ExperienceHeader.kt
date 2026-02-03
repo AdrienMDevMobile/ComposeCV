@@ -27,7 +27,7 @@ import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.core.ui.theme.colorDarkerGreen
 import com.adrienmandroid.composecv.core.ui.theme.colorLighterGreen
 import com.adrienmandroid.composecv.core.ui.theme.onSurfaceTitle
-import com.adrienmandroid.composecv.core.test.R as TestingR
+//import com.adrienmandroid.composecv.core.test.R as TestingR
 
 @Composable
 fun ExperienceHeader(logoUrl: String, name: String, headerColor: Color) {
@@ -61,7 +61,7 @@ fun ExperienceHeader(logoUrl: String, name: String, headerColor: Color) {
     }
 
 }
-
+/* TODO
 @PreviewLightDark
 @Composable
 fun PreviewExperienceHeader() {
@@ -81,4 +81,4 @@ fun PreviewExperienceHeader() {
         }
 
     }
-}
+}*/
