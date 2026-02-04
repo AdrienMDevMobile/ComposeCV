@@ -26,6 +26,7 @@ class ApplicationConventionPlugin : Plugin<Project> {
 
             extensions.configure<ApplicationExtension> {
                 configureSdk(this)
+                defaultConfig.targetSdk = 36
 
                 configureJvmCompile(this)
 
