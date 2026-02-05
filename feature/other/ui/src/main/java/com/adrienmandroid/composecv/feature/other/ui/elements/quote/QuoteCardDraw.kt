@@ -21,7 +21,7 @@ import coil3.request.CachePolicy
 import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import coil3.request.crossfade
-import com.adrienmandroid.composecv.core.test.R
+//import com.adrienmandroid.composecv.core.test.R
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.core.ui.theme.quoteBackground
 import com.adrienmandroid.composecv.feature.other.ui.preview.data.QuoteIndexedPreviewParameterProvider
@@ -83,7 +83,7 @@ fun QuoteContent(
     )
 }
 
-
+/*TODO
 /**
 Note : if the text is too long, AdaptableTextSize won't show initially.
 since Preview only refreshes once, it won't try to show a second time.
@@ -110,7 +110,7 @@ fun PreviewQuoteCardSuccess(
             }
         )
     }
-}
+}*/
 
 @PreviewLightDark
 @Composable

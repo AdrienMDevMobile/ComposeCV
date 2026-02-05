@@ -19,7 +19,7 @@ Injection de dépendance : **Hilt**
 - **Gradle** : utilisation de libs.toml
     Utilisation des multi modules : cela réduit les coûts de build (surtout utile dans un projet de plus grand envergure)
 
-- **Tests** : Compose testings
+- **Tests** : Compose testings, Firebase test lab
 
 Anciennes bibliothèques/fonctionnalités :
 Moshi pour récupérer les données en Json

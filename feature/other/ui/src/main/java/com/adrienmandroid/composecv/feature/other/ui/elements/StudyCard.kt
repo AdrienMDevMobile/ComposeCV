@@ -41,7 +41,7 @@ import com.adrienmandroid.composecv.core.ui.toMonthString
 import com.adrienmandroid.composecv.feature.other.ui.state.StudyUiState
 import com.adrienmandroid.composecv.model.Dates
 import java.util.Date
-import com.adrienmandroid.composecv.core.test.R as TestingR
+//import com.adrienmandroid.composecv.core.test.R as TestingR
 
 @Composable
 fun StudyCard(
@@ -177,7 +177,7 @@ fun StudyForegroundPicture(
         colorFilter = colorFilter,
     )
 }
-
+/*TODO
 @Preview(
     uiMode = Configuration.UI_MODE_NIGHT_NO, widthDp = 300, heightDp = 200
 )
@@ -199,4 +199,4 @@ fun PreviewStudyCard() {
             )
         )
     }
-}
+}*/

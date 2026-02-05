@@ -23,7 +23,7 @@ import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.feature.welcome.ui.preview.WelcomePreviewParameterData
 import com.adrienmandroid.composecv.feature.welcome.domain.model.Clickable
 import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeBodyElement
-import com.adrienmandroid.composecv.core.test.R as TestingR
+//import com.adrienmandroid.composecv.core.test.R as TestingR
 
 @Composable
 fun WelcomeBottomSheet(
@@ -49,7 +49,7 @@ fun WelcomeBottomSheet(
         }
     }
 }
-
+/*TODO
 @PreviewLightDark
 @Composable
 fun PreviewBottomSheet() {
@@ -82,4 +82,4 @@ fun PreviewBottomSheet() {
         )
     }
 }
-
+*/

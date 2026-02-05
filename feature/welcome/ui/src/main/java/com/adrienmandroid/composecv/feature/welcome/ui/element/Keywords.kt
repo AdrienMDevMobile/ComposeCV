@@ -16,7 +16,7 @@ import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.core.ui.theme.border
-import com.adrienmandroid.composecv.core.test.R as TestingR
+//import com.adrienmandroid.composecv.core.test.R as TestingR
 import com.google.accompanist.flowlayout.FlowRow
 import com.adrienmandroid.composecv.feature.welcome.domain.model.Keyword as KeywordData
 
@@ -47,7 +47,7 @@ fun Keywords(vararg keywords: KeywordData) {
         }
     }
 }
-
+/*TODO
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 @PreviewLightDark
@@ -62,4 +62,4 @@ fun PreviewKeywords() {
             KeywordData(context.getString(TestingR.string.test_1_word)),
         )
     }
-}
+}*/

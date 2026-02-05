@@ -16,7 +16,7 @@ import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.core.ui.SelfLoadingPicture
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.feature.other.ui.state.HobbyUiState
-import com.adrienmandroid.composecv.core.test.R as TestingR
+//import com.adrienmandroid.composecv.core.test.R as TestingR
 
 val hobby_width = 200.dp
 
@@ -51,7 +51,7 @@ fun HobbyCardView(hobby: HobbyUiState) {
         )
     }
 }
-
+/*TODO
 @Composable
 @PreviewLightDark
 fun PreviewHobbyCardView() {
@@ -64,4 +64,4 @@ fun PreviewHobbyCardView() {
             )
         )
     }
-}
+}*/
