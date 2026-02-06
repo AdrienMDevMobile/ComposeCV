@@ -7,9 +7,9 @@ plugins {
 
 android {
     defaultConfig {
-        applicationId = "com.adrienmandroid.composecv"
-        versionCode = 12
-        versionName = "1.3"
+        applicationId = "com.adrienmandroid.adrrienowner"
+        versionCode = 20
+        versionName = "2.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         //signingConfig = signingConfigs.getByName("debug")
