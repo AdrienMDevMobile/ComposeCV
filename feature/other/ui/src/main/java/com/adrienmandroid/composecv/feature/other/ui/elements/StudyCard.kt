@@ -27,7 +27,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil3.compose.LocalPlatformContext
@@ -41,7 +40,6 @@ import com.adrienmandroid.composecv.core.ui.toMonthString
 import com.adrienmandroid.composecv.feature.other.ui.state.StudyUiState
 import com.adrienmandroid.composecv.model.Dates
 import java.util.Date
-//import com.adrienmandroid.composecv.core.test.R as TestingR
 
 @Composable
 fun StudyCard(
@@ -177,7 +175,7 @@ fun StudyForegroundPicture(
         colorFilter = colorFilter,
     )
 }
-/*TODO
+
 @Preview(
     uiMode = Configuration.UI_MODE_NIGHT_NO, widthDp = 300, heightDp = 200
 )
@@ -186,17 +184,16 @@ fun StudyForegroundPicture(
 )
 @Composable
 fun PreviewStudyCard() {
-    val context = LocalContext.current
     ComposeCVTheme {
         StudyCard(
             study = StudyUiState(
                 logoUrl = "",
-                name = context.getString(TestingR.string.test_1_word),
-                diploma = context.getString(TestingR.string.test_1_word),
+                name = "Name study",
+                diploma = "Name diploma",
                 dates = Dates(
                     begin = Date(1593554400000), end = Date(1641596400000)
                 ),
             )
         )
     }
-}*/
+}

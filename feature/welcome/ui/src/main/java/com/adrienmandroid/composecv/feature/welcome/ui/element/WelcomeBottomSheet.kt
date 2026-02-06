@@ -14,16 +14,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
-import com.adrienmandroid.composecv.feature.welcome.ui.preview.WelcomePreviewParameterData
 import com.adrienmandroid.composecv.feature.welcome.domain.model.Clickable
 import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeBodyElement
-//import com.adrienmandroid.composecv.core.test.R as TestingR
+import com.adrienmandroid.composecv.feature.welcome.ui.preview.WelcomePreviewParameterData
+import com.adrienmandroid.composecv.core.test.R as TestingR
 
 @Composable
 fun WelcomeBottomSheet(
@@ -49,12 +48,10 @@ fun WelcomeBottomSheet(
         }
     }
 }
-/*TODO
+
 @PreviewLightDark
 @Composable
 fun PreviewBottomSheet() {
-    val context = LocalContext.current
-
     ComposeCVTheme {
         WelcomeBottomSheet(
             contentCovered = {
@@ -63,7 +60,7 @@ fun PreviewBottomSheet() {
                     contentDescription = "Test"
                 )
             },
-            welcomeBodyElements = WelcomePreviewParameterData(context).welcomeBodyElements,
+            welcomeBodyElements = WelcomePreviewParameterData().welcomeBodyElements,
             onClick = {},
             anchoredContent = {
                 Image(
@@ -82,4 +79,4 @@ fun PreviewBottomSheet() {
         )
     }
 }
-*/
+

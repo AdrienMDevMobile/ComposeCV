@@ -9,14 +9,12 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.core.ui.SelfLoadingPicture
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.feature.other.ui.state.HobbyUiState
-//import com.adrienmandroid.composecv.core.test.R as TestingR
 
 val hobby_width = 200.dp
 
@@ -51,17 +49,17 @@ fun HobbyCardView(hobby: HobbyUiState) {
         )
     }
 }
-/*TODO
+
 @Composable
 @PreviewLightDark
 fun PreviewHobbyCardView() {
     ComposeCVTheme {
         HobbyCardView(
             hobby = HobbyUiState(
-                name = stringResource(id = TestingR.string.test_1_word),
+                name = "Name hobby",
                 pictureUrl = "",
-                category = stringResource(id = TestingR.string.test_short_text_1_line)
+                category = "Category hobby"
             )
         )
     }
-}*/
+}

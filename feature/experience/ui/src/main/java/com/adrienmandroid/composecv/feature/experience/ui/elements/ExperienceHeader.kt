@@ -17,7 +17,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.PreviewLightDark
@@ -27,7 +26,6 @@ import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.core.ui.theme.colorDarkerGreen
 import com.adrienmandroid.composecv.core.ui.theme.colorLighterGreen
 import com.adrienmandroid.composecv.core.ui.theme.onSurfaceTitle
-//import com.adrienmandroid.composecv.core.test.R as TestingR
 
 @Composable
 fun ExperienceHeader(logoUrl: String, name: String, headerColor: Color) {
@@ -61,24 +59,23 @@ fun ExperienceHeader(logoUrl: String, name: String, headerColor: Color) {
     }
 
 }
-/* TODO
+
 @PreviewLightDark
 @Composable
 fun PreviewExperienceHeader() {
-    val context = LocalContext.current
     ComposeCVTheme {
         Column {
             ExperienceHeader(
                 logoUrl = "",
-                name = context.getString(TestingR.string.test_1_word),
+                name = "Name experience header 1",
                 colorDarkerGreen
             )
             ExperienceHeader(
                 logoUrl = "",
-                name = context.getString(TestingR.string.test_1_word),
+                name = "Name experience header 2",
                 colorLighterGreen
             )
         }
 
     }
-}*/
+}
