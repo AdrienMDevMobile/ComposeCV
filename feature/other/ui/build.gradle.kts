@@ -13,5 +13,5 @@ dependencies {
     implementation(project(":core:data"))
     implementation(project(":core:ui"))
     implementation(project(":feature:other:domain"))
-    debugImplementation(project(":core:test"))
+    implementation(project(":core:test"))
 }

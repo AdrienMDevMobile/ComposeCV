@@ -25,7 +25,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.core.ui.theme.roundedTopEndSquare
-//TODO import com.adrienmandroid.composecv.core.test.R as TestingR
+import com.adrienmandroid.composecv.core.test.R as TestingR
 
 fun LazyListScope.bottomsheetHeader(
     verticalArrangement: Dp = 32.dp,
@@ -52,7 +52,7 @@ fun LazyListScope.bottomsheetHeader(
         }
     }
 }
-/*TODO
+
 @PreviewLightDark
 @Composable
 fun PreviewBottomSheetHeader() {
@@ -74,7 +74,7 @@ fun PreviewBottomSheetHeader() {
             }
         }
     }
-}*/
+}
 
 @PreviewLightDark
 @Composable
