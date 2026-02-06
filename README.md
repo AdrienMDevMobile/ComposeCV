@@ -10,11 +10,10 @@ Une application qui présente de manière élégante mes compétences, mes expé
 
 - Data : **Retrofit** pour récupérer les données en ligne
 
-**Room** pour enregistrer les données dans une base de données locale
+  **Room** pour enregistrer les données dans une base de données locale
 
-**Clean archi**
-
-Injection de dépendance : **Hilt**
+- **Clean archi**
+     Injection de dépendance : **Hilt**
 
 - **Gradle** : utilisation de libs.toml
     Utilisation des multi modules : cela réduit les coûts de build (surtout utile dans un projet de plus grand envergure)
