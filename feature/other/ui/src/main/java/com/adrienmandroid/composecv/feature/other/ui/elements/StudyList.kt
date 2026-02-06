@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.core.ui.CarouselPagerIndicator
@@ -36,7 +35,7 @@ fun StudyList(studies: List<StudyUiState>) {
 @Composable
 @PreviewLightDark
 fun PreviewStudyList() {
-    val studies = StudyPreviewParameterData(LocalContext.current).studies
+    val studies = StudyPreviewParameterData().studies
     ComposeCVTheme {
         StudyList(studies = studies.studies)
     }

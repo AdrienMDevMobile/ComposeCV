@@ -6,12 +6,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.core.ui.SelfLoadingPicture
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
-//import com.adrienmandroid.composecv.core.test.R as TestingR
+
 
 @Composable
 fun ImageDraw(source: String, description: String, tint: Boolean = false) {
@@ -27,15 +26,13 @@ fun ImageDraw(source: String, description: String, tint: Boolean = false) {
         }
     )
 }
-/*TODO
+
 @Composable
 @PreviewLightDark
 fun PreviewImageDraw() {
-    val context = LocalContext.current
     ComposeCVTheme {
         ImageDraw(
-            "", context.getString(TestingR.string.test_1_word)
+            "", "testImage"
         )
     }
 }
-*/

@@ -1,14 +1,11 @@
 package com.adrienmandroid.composecv.feature.other.ui.preview.data
 
-import android.content.Context
 import com.adrienmandroid.composecv.feature.other.ui.state.OtherComponentUiState
 
-class OtherPreviewParameterData(
-    context: Context,
-) {
+class OtherPreviewParameterData {
     internal val others = listOf(
-        StudyPreviewParameterData(context).studies,
-        HobbyPreviewParameterData(context).hobbies,
+        StudyPreviewParameterData().studies,
+        HobbyPreviewParameterData().hobbies,
         QuotePreviewParameterData.quotes,
         OtherComponentUiState.GratitudeUiState(
             listOf(

@@ -1,34 +1,29 @@
 package com.adrienmandroid.composecv.feature.welcome.ui.preview
 
-import android.content.Context
-import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeIcon
-//import com.adrienmandroid.composecv.core.test.R as TestingR
 import com.adrienmandroid.composecv.feature.welcome.domain.model.Keyword
-import com.adrienmandroid.composecv.model.TypographyEnum
 import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeBodyElement
+import com.adrienmandroid.composecv.feature.welcome.domain.model.WelcomeIcon
+import com.adrienmandroid.composecv.model.TypographyEnum
 
-class WelcomePreviewParameterData(
-    context: Context,
-) {
-    internal val welcomeBodyElements = emptyList<WelcomeBodyElement>()/*TODO listOf(
+class WelcomePreviewParameterData {
+    internal val welcomeBodyElements = listOf(
         WelcomeBodyElement.WelcomeText(
             icon = WelcomeIcon.LOCATION,
-            value = context.getString(TestingR.string.test_short_text_1_line),
+            value = "Value element 1 Text",
             style = TypographyEnum.H5
         ),
-        WelcomeBodyElement.WelcomeQuote(context.getString(TestingR.string.test_1_word)),
+        WelcomeBodyElement.WelcomeQuote("Value element 2 Quote"),
         WelcomeBodyElement.WelcomeImage(
             "",
-            context.getString(TestingR.string.test_1_word),
+            "Text element 2 Quote",
             tint = true
         ),
         WelcomeBodyElement.WelcomeKeywordList(
             listOf(
-
-                Keyword(context.getString(TestingR.string.test_1_word)),
-                Keyword(context.getString(TestingR.string.test_1_word)),
-                Keyword(context.getString(TestingR.string.test_1_word)),
+                Keyword("Keyword1"),
+                Keyword("Keyword2"),
+                Keyword("Keyword3"),
             )
         )
-    )*/
+    )
 }

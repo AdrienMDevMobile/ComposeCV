@@ -1,30 +1,26 @@
 package com.adrienmandroid.composecv.feature.other.ui.preview.data
 
-import android.content.Context
-//import com.adrienmandroid.composecv.core.test.R
 import com.adrienmandroid.composecv.feature.other.ui.state.HobbyUiState
 import com.adrienmandroid.composecv.feature.other.ui.state.OtherComponentUiState
 
-class HobbyPreviewParameterData(
-    context: Context,
-) {
+class HobbyPreviewParameterData {
     internal val hobbies = OtherComponentUiState.HobbyUiStates(
-        /*TODO listOf(
+        listOf(
             HobbyUiState(
-                name = context.getString(R.string.test_short_text_1_line),
+                name = "Name hobby 1",
                 pictureUrl = "",
-                category = context.getString(R.string.test_1_word),
+                category = "Category hobby 1",
             ),
             HobbyUiState(
-                name = context.getString(R.string.test_short_text_1_line),
+                name = "Name hobby 2",
                 pictureUrl = "",
-                category = context.getString(R.string.test_1_word),
+                category = "Category hobby 2",
             ),
             HobbyUiState(
-                name = context.getString(R.string.test_short_text_1_line),
+                name = "Name hobby 3",
                 pictureUrl = "",
-                category = context.getString(R.string.test_1_word),
+                category = "Category hobby 3",
             )
-        )*/ emptyList()
+        )
     )
 }
