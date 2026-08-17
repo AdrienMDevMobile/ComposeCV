@@ -3,7 +3,6 @@ import convention.configureComposeExtension
 import convention.configureComposePlugin
 import convention.configureHiltExtensionsForApplication
 import convention.configureHiltPlugins
-import convention.configureJavaExtension
 import convention.configureJvmCompile
 import convention.configureRoom
 import convention.configureSdk
@@ -19,7 +18,6 @@ class ApplicationConventionPlugin : Plugin<Project> {
         with(target) {
             with(pluginManager) {
                 apply("com.android.application")
-                apply("org.jetbrains.kotlin.android")
             }
             configureComposePlugin(pluginManager)
             configureHiltPlugins(pluginManager)
@@ -29,8 +27,6 @@ class ApplicationConventionPlugin : Plugin<Project> {
                 defaultConfig.targetSdk = 36
 
                 configureJvmCompile(this)
-
-                configureJavaExtension(this)
 
                 configureComposeExtension(this)
 

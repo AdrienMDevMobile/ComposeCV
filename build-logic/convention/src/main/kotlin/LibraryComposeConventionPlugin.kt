@@ -1,4 +1,4 @@
-import com.android.build.gradle.LibraryExtension
+import com.android.build.api.dsl.LibraryExtension
 import convention.configureComposeExtension
 import convention.configureComposePlugin
 import org.gradle.api.Plugin

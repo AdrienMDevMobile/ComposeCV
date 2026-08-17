@@ -14,12 +14,10 @@ internal fun configureComposePlugin(
 }
 
 internal fun Project.configureComposeExtension(
-    commonExtension: CommonExtension<*, *, *, *, *, *>,
+    commonExtension: CommonExtension,
 ) {
     commonExtension.apply {
-        buildFeatures {
-            compose = true
-        }
+        buildFeatures.compose = true
         dependencies {
 
             val composeBom = libs.findLibrary("android.compose.bom").get()

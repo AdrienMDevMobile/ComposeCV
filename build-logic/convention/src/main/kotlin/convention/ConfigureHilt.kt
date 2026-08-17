@@ -15,19 +15,19 @@ internal fun configureHiltPlugins(
 }
 
 internal fun Project.configureHiltExtensionsForApplication(
-    commonExtension: CommonExtension<*, *, *, *, *, *>,
+    commonExtension: CommonExtension,
 ){
     configureHiltExtensions(commonExtension, false)
 }
 
 internal fun Project.configureHiltExtensionsForLibrary(
-    commonExtension: CommonExtension<*, *, *, *, *, *>,
+    commonExtension: CommonExtension,
 ){
     configureHiltExtensions(commonExtension, true)
 }
 
 private fun Project.configureHiltExtensions(
-    commonExtension: CommonExtension<*, *, *, *, *, *>,
+    commonExtension: CommonExtension,
     requiresNavigationCompose: Boolean,
 ){
     commonExtension.apply {
