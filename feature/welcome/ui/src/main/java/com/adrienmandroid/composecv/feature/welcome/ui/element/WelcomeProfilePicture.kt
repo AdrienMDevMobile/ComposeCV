@@ -20,6 +20,7 @@ fun WelcomeProfilePicture(
 ) {
     SelfLoadingPicture(
         pictureUrl = welcomeImageUrl,
+        contentDescription = null,
         modifier = Modifier
             .size(140.dp)
             .clip(CircleShape)
@@ -29,7 +30,6 @@ fun WelcomeProfilePicture(
             .size(128.dp)
             .clip(CircleShape),
         loadingModifier = Modifier.requiredSize(60.dp),
-        contentDescription = "Picture"
     )
 }
 

@@ -6,7 +6,7 @@ import java.util.Date
 sealed class WelcomeBodyElement {
     class WelcomeImage(
         val source: String,
-        val description: String,
+        val description: String?,
         val tint: Boolean = false
     ) : WelcomeBodyElement()
 

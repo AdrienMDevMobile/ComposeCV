@@ -74,7 +74,7 @@ fun StudyContent(
 
     SubcomposeAsyncImage(
         model = model,
-        contentDescription = study.diploma,
+        contentDescription = null,
         modifier = Modifier.fillMaxSize(),
         success = { successState ->
             StudyBackgroundPicture(successState.painter)
@@ -85,7 +85,7 @@ fun StudyContent(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 StudyForegroundPicture(
-                    successState.painter, contentDescription = study.name
+                    successState.painter,
                 )
                 Spacer(modifier = Modifier.width(10.dp))
                 StudyText(
@@ -156,18 +156,18 @@ fun StudyBackgroundPicture(
                 .alpha(0.5f),
             contentScale = ContentScale.Crop,
             painter = painter,
-            contentDescription = "@null",
+            contentDescription = null,
         )
     }
 }
 
 @Composable
 fun StudyForegroundPicture(
-    painter: Painter, contentDescription: String, colorFilter: ColorFilter? = null
+    painter: Painter, colorFilter: ColorFilter? = null
 ) {
     Image(
         painter = painter,
-        contentDescription = contentDescription,
+        contentDescription = null,
         modifier = Modifier
             .fillMaxHeight()
             .fillMaxWidth(0.25f),

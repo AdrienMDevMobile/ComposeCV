@@ -13,7 +13,7 @@ import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 
 
 @Composable
-fun ImageDraw(source: String, description: String, tint: Boolean = false) {
+fun ImageDraw(source: String, description: String?, tint: Boolean = false) {
     SelfLoadingPicture(
         pictureUrl = source,
         contentDescription = description,

@@ -28,7 +28,6 @@ fun Signature(color: Color) {
         Canvas(
             modifier = Modifier.size(72.dp, 100.dp)
         ) {
-
             //save()
             clipPath(
                 Path().apply {

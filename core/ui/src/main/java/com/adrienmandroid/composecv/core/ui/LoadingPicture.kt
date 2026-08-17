@@ -22,11 +22,11 @@ import coil3.request.crossfade
 @Composable
 fun SelfLoadingPicture(
     pictureUrl: String,
+    contentDescription: String?,
     modifier: Modifier = Modifier,
     imageModifier: Modifier = Modifier,
     loadingModifier: Modifier = Modifier,
     placeholderPainter: Painter = painterResource(R.drawable.core_placeholder),
-    contentDescription: String = "@null",
     colorFilter: ColorFilter? = null,
     contentScale: ContentScale = ContentScale.Crop
 ) {

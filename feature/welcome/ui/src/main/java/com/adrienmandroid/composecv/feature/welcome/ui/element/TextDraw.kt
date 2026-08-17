@@ -32,7 +32,7 @@ fun TextDraw(
         if (iconId != null) {
             Icon(
                 painter = painterResource(id = iconId),
-                contentDescription = iconId.toString(),
+                contentDescription = null,
                 modifier = Modifier.size(24.dp, 24.dp)
             )
             Spacer(modifier = Modifier.width(10.dp))

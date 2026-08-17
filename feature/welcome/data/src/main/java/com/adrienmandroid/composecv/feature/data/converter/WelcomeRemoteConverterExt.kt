@@ -16,7 +16,7 @@ import java.util.Date
 fun WelcomeRemoteBodyElement.toDomain(): WelcomeBodyElement? = when (type) {
     "IMAGE" -> if (value != null) WelcomeBodyElement.WelcomeImage(
         source = value,
-        description = imageDescription ?: "@null",
+        description = imageDescription,
         tint = tint
     ) else null
 

@@ -13,6 +13,7 @@ import com.adrienmandroid.composecv.core.ui.SelfLoadingPicture
 fun WelcomeBackgroundPicture(welcomeImageUrl: String) {
     SelfLoadingPicture(
         pictureUrl = welcomeImageUrl,
+        contentDescription = null,
         modifier = Modifier
             .fillMaxWidth()
             .height(250.dp),

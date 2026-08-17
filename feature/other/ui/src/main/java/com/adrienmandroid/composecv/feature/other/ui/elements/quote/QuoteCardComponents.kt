@@ -44,7 +44,7 @@ fun AuthorImage(
             modifier = Modifier
                 .fillMaxHeight(),
             contentScale = ContentScale.Crop,
-            contentDescription = "@null",
+            contentDescription = null,
         )
     }
 }
@@ -104,7 +104,7 @@ fun QuotationMarks() {
 fun QuoteCommas(modifier: Modifier = Modifier, isBottom: Boolean = false) {
     Icon(
         painter = painterResource(id = R.drawable.ic_quote),
-        contentDescription = "quote",
+        contentDescription = null,
         modifier = modifier
             .size(48.dp)
             .let { if (isBottom) it else it.rotate(180f) } // Rotate top quote mark

@@ -19,6 +19,7 @@ fun WelcomeBodyElement.toLocalData() = when (this) {
     is WelcomeBodyElement.WelcomeImage -> WelcomeElementEntity(
         type = IMAGE_TYPE,
         value = source,
+        imageDescription = description,
         tint = tint,
     )
 
@@ -50,7 +51,7 @@ fun WelcomeElementEntity.toDomain() = when (type) {
     IMAGE_TYPE -> if (value != null)
         WelcomeBodyElement.WelcomeImage(
             source = value,
-            description = imageDescription ?: "@null",
+            description = imageDescription,
             tint = tint
         ) else null
 

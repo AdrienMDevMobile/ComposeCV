@@ -28,7 +28,7 @@ fun HobbyCardView(hobby: HobbyUiState) {
     ) {
         SelfLoadingPicture(
             pictureUrl = hobby.pictureUrl,
-            contentDescription = hobby.name,
+            contentDescription = null,
             modifier = Modifier
                 .size(hobby_width, hobby_width),
             imageModifier = Modifier.fillMaxSize()

@@ -38,7 +38,7 @@ fun ExperienceHeader(logoUrl: String, name: String, headerColor: Color) {
         Row {
             SelfLoadingPicture(
                 pictureUrl = logoUrl,
-                contentDescription = name,
+                contentDescription = null,
                 modifier = Modifier
                     .size(50.dp)
                     .padding(expHorizontalSpacing, 0.dp),
