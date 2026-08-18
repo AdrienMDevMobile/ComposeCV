@@ -4,6 +4,7 @@
     <string name="title_quotes">Mes citations favorites</string>
     <string name="title_gratitude">Remerciements</string>
     <string name="title_hobbies">Temps libre, passions et santés</string>
+    <string name="quote_accessibility_author">Par %s</string>
 
     <string name="version">Version %1$s</string>
 

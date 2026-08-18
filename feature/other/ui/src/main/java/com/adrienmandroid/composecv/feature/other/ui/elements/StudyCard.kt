@@ -27,6 +27,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil3.compose.LocalPlatformContext
@@ -125,7 +126,12 @@ fun StudyText(
         false -> typography.body1
     }
     Column(
-        modifier = Modifier.fillMaxWidth(), verticalArrangement = Arrangement.Center
+        modifier = Modifier
+            .semantics(
+                mergeDescendants = true
+            ) {}
+            .fillMaxWidth(),
+        verticalArrangement = Arrangement.Center
     ) {
         Text(
             modifier = Modifier.fillMaxWidth(), text = studyName, style = textStyle

@@ -9,6 +9,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
@@ -22,6 +23,7 @@ val hobby_width = 200.dp
 fun HobbyCardView(hobby: HobbyUiState) {
     Column(
         modifier = Modifier
+            .semantics(mergeDescendants = true) {}
             .size(width = hobby_width, height = 250.dp)
             .padding(horizontal = 6.dp),
         horizontalAlignment = Alignment.CenterHorizontally

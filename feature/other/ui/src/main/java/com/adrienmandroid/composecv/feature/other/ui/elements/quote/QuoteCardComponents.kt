@@ -14,6 +14,7 @@ import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
@@ -21,6 +22,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.text
+import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -56,7 +61,11 @@ fun QuoteText(
 ) {
     Box(modifier = modifier, contentAlignment = Alignment.Center) {
         QuotationMarks()
-        Column(modifier = Modifier.padding(horizontal = 16.dp, vertical = 16.dp)) {
+        Column(
+            modifier = Modifier
+                .semantics(mergeDescendants = true) {}
+                .padding(horizontal = 16.dp, vertical = 16.dp)
+        ) {
             QuoteText(quote.text)
             QuoteAuthor(quote.author)
         }
@@ -80,6 +89,8 @@ fun ColumnScope.QuoteText(quote: String) {
 
 @Composable
 fun ColumnScope.QuoteAuthor(author: String) {
+    val accessibilityAuthorName = stringResource(R.string.quote_accessibility_author, author)
+
     Text(
         text = author,
         style = TextStyle(
@@ -87,6 +98,9 @@ fun ColumnScope.QuoteAuthor(author: String) {
             fontSize = 12.sp
         ),
         modifier = Modifier
+            .semantics {
+                text = AnnotatedString(accessibilityAuthorName)
+            }
             .align(Alignment.End)
             .padding(top = 4.dp)
     )
