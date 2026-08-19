@@ -34,8 +34,6 @@ internal fun Project.configureComposeExtension(
             add("implementation", libs.findLibrary("android.navigation.compose").get())
             add("implementation", libs.findLibrary("coil.compose").get())
             add("implementation", libs.findLibrary("coil.network").get())
-            add("implementation", libs.findLibrary("google.accompanist.pager").get())
-            add("implementation", libs.findLibrary("google.accompanist.pager.indicators").get())
 
             add("androidTestImplementation", platform(composeBom))
             add("androidTestImplementation", libs.findLibrary("android.compose.junit").get())
