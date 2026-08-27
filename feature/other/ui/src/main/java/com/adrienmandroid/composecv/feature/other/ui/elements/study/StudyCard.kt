@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.feature.other.ui.elements
+package com.adrienmandroid.composecv.feature.other.ui.elements.study
 
 import android.content.res.Configuration
 import androidx.compose.foundation.Image
