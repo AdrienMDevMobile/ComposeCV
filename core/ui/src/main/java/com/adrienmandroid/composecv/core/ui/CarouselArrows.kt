@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.PagerState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Button
@@ -74,17 +75,20 @@ private fun PlaceHolderForSpacer() {
 @Composable
 @Preview
 fun PreviewCarrouselArrowsStartElement() {
-    val elements = listOf("1", "2","3")
+    val elements = listOf("1", "2", "3")
     val pagerState = PagerState {
         elements.size
     }
     ComposeCVTheme {
-        Box(modifier = Modifier.height(200.dp).fillMaxWidth()) {
+        Box(modifier = Modifier
+            .height(200.dp)
+            .fillMaxWidth()) {
+            HorizontalPager(state = pagerState) { }
             CarouselArrows(pagerState)
         }
     }
 }
-/*
+
 @Composable
 @PreviewLightDark
 fun PreviewCarrousselArrowsMiddleElement() {
@@ -92,6 +96,7 @@ fun PreviewCarrousselArrowsMiddleElement() {
     val pagerState = PagerState(1) { elements.size }
     ComposeCVTheme {
         Box(modifier = Modifier.height(200.dp)) {
+            HorizontalPager(state = pagerState) { }
             CarouselArrows(pagerState)
         }
     }
@@ -104,6 +109,7 @@ fun PreviewCarrousselArrowsLastElement() {
     val pagerState = PagerState(elements.lastIndex) { elements.size }
     ComposeCVTheme {
         Box(modifier = Modifier.height(200.dp)) {
+            HorizontalPager(state = pagerState) { }
             CarouselArrows(pagerState)
         }
     }
@@ -116,9 +122,8 @@ fun PreviewCarrousselArrowsOneElement() {
     val pagerState = PagerState(1) { elements.size }
     ComposeCVTheme {
         Box(modifier = Modifier.height(200.dp)) {
+            HorizontalPager(state = pagerState) { }
             CarouselArrows(pagerState)
         }
     }
 }
-
- */
