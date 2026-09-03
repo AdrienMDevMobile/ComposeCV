@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.core.ui
+package com.adrienmandroid.composecv.core.ui.carousel
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement

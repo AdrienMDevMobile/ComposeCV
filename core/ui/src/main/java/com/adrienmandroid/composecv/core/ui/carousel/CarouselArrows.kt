@@ -1,4 +1,4 @@
-package com.adrienmandroid.composecv.core.ui
+package com.adrienmandroid.composecv.core.ui.carousel
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -20,6 +20,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
+import com.adrienmandroid.composecv.core.ui.R
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 
 @Composable
