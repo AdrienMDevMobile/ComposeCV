@@ -24,10 +24,10 @@ import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.feature.other.ui.elements.Gratitudes
 import com.adrienmandroid.composecv.feature.other.ui.elements.HobbyRow
 import com.adrienmandroid.composecv.feature.other.ui.elements.Signature
-import com.adrienmandroid.composecv.feature.other.ui.elements.study.StudyList
 import com.adrienmandroid.composecv.feature.other.ui.elements.Version
 import com.adrienmandroid.composecv.feature.other.ui.elements.otherSection
-import com.adrienmandroid.composecv.feature.other.ui.elements.quote.QuoteCarousel
+import com.adrienmandroid.composecv.feature.other.ui.elements.quote.QuoteList
+import com.adrienmandroid.composecv.feature.other.ui.elements.study.StudyList
 import com.adrienmandroid.composecv.feature.other.ui.preview.data.OtherPreviewParameterData
 import com.adrienmandroid.composecv.feature.other.ui.state.OtherComponentUiState
 import com.adrienmandroid.composecv.feature.other.ui.viewmodel.OtherViewModel
@@ -80,7 +80,7 @@ fun OtherScreen(
                 )
 
                 is OtherComponentUiState.QuoteUiStates -> otherSection(
-                    { QuoteCarousel(component.quotes) },
+                    { QuoteList(component.quotes) },
                     title = R.string.title_quotes
                 )
 
