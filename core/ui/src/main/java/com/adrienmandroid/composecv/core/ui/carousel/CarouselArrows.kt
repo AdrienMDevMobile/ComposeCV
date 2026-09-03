@@ -13,6 +13,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Button
 import androidx.compose.material.Icon
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -22,10 +23,30 @@ import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import com.adrienmandroid.composecv.core.ui.R
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
+import kotlinx.coroutines.launch
 
 @Composable
-fun BoxScope.CarouselArrows(
-    pagerState: PagerState
+fun BoxScope.CarouselAccessibilityArrows(pagerState: PagerState){
+    val coroutineScope = rememberCoroutineScope()
+
+    CarouselArrows(
+        pagerState,
+        onClick = { forward ->
+            coroutineScope.launch {
+                if (forward) {
+                    pagerState.scrollToPage(pagerState.currentPage + 1)
+                } else {
+                    pagerState.scrollToPage(pagerState.currentPage - 1)
+                }
+            }
+
+        })
+}
+
+@Composable
+private fun BoxScope.CarouselArrows(
+    pagerState: PagerState,
+    onClick: (Boolean) -> Unit,
 ) {
     Row(
         horizontalArrangement = Arrangement.SpaceBetween,
@@ -33,13 +54,13 @@ fun BoxScope.CarouselArrows(
         modifier = Modifier.matchParentSize()
     ) {
         if (pagerState.canScrollBackward) {
-            CarrousselArrows(forward = false)
+            CarrousselArrows(forward = false, onClick)
         } else {
             PlaceHolderForSpacer()
         }
 
         if (pagerState.canScrollForward) {
-            CarrousselArrows(forward = true)
+            CarrousselArrows(forward = true, onClick)
         } else {
             PlaceHolderForSpacer()
         }
@@ -48,10 +69,13 @@ fun BoxScope.CarouselArrows(
 
 @Composable
 fun CarrousselArrows(
-    forward: Boolean
+    forward: Boolean,
+    onClick: (Boolean) -> Unit
 ) {
     Button(
-        onClick = {},
+        onClick = {
+            onClick(forward)
+        },
         modifier = Modifier
             .size(50.dp)
             .clip(CircleShape)
@@ -85,7 +109,7 @@ fun PreviewCarrouselArrowsStartElement() {
             .height(200.dp)
             .fillMaxWidth()) {
             HorizontalPager(state = pagerState) { }
-            CarouselArrows(pagerState)
+            CarouselArrows(pagerState, {})
         }
     }
 }
@@ -98,7 +122,7 @@ fun PreviewCarrousselArrowsMiddleElement() {
     ComposeCVTheme {
         Box(modifier = Modifier.height(200.dp)) {
             HorizontalPager(state = pagerState) { }
-            CarouselArrows(pagerState)
+            CarouselArrows(pagerState, {})
         }
     }
 }
@@ -111,7 +135,7 @@ fun PreviewCarrousselArrowsLastElement() {
     ComposeCVTheme {
         Box(modifier = Modifier.height(200.dp)) {
             HorizontalPager(state = pagerState) { }
-            CarouselArrows(pagerState)
+            CarouselArrows(pagerState, {})
         }
     }
 }
@@ -124,7 +148,7 @@ fun PreviewCarrousselArrowsOneElement() {
     ComposeCVTheme {
         Box(modifier = Modifier.height(200.dp)) {
             HorizontalPager(state = pagerState) { }
-            CarouselArrows(pagerState)
+            CarouselArrows(pagerState, {})
         }
     }
 }

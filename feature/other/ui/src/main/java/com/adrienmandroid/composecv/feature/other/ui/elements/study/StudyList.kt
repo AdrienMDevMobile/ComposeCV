@@ -5,7 +5,7 @@ import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
-import com.adrienmandroid.composecv.core.ui.carousel.CarouselArrows
+import com.adrienmandroid.composecv.core.ui.carousel.CarouselAccessibilityArrows
 import com.adrienmandroid.composecv.core.ui.rememberIsAccessibilityEnabled
 import com.adrienmandroid.composecv.core.ui.theme.ComposeCVTheme
 import com.adrienmandroid.composecv.feature.other.ui.preview.data.StudyPreviewParameterData
@@ -37,7 +37,7 @@ private fun StudyList(
         )
 
         if (accessOn) {
-            CarouselArrows(pagerState)
+            CarouselAccessibilityArrows(pagerState)
         }
     }
 }
