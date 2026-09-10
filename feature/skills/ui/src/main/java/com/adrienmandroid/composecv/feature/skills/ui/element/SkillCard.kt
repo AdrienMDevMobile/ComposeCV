@@ -57,12 +57,11 @@ fun SkillCard(skill: SkillUiState) {
         ) {
 
             Text(text = skill.name, style = MaterialTheme.typography.h6)
-            Spacer(modifier = Modifier.width(10.dp))
-
             Spacer(modifier = Modifier.height(10.dp))
 
             skill.targetValue?.let {
-                SkillLinearProgressIndicator(
+                SkillBar(
+                    percentageString = skill.percentString ?: "0", //TODO
                     targetValue = it,
                     targetValueColor = skill.targetValueColor
                 )
