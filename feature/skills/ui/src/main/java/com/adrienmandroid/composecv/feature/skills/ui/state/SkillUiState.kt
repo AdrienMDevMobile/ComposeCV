@@ -2,11 +2,18 @@ package com.adrienmandroid.composecv.feature.skills.ui.state
 
 import androidx.compose.ui.graphics.Color
 
-data class SkillUiState(
-    val name: String,
-    val percentString: String? = null,
-    val targetValue: Float? = null,
-    val targetValueColor: Color = Color.Unspecified,
-    val subSkills: Pair<String, String>? = null,
-    val explanation: String
-)
+sealed class SkillUiState(val name: String, val explanation: String) {
+    class PercentageSkillUiState(
+        name: String,
+        explanation: String,
+        val percentString: String,
+        val targetValue: Float,
+        val targetValueColor: Color
+    ) : SkillUiState(name, explanation)
+
+    class SubskillsUiState(
+        name: String,
+        explanation: String,
+        val subSkills: Pair<String, String>
+    ) : SkillUiState(name, explanation)
+}

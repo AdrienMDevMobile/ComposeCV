@@ -13,25 +13,28 @@ class SkillsPreviewParameterDataProvider : PreviewParameterProvider<SkillUiState
 
 object SkillsPreviewParameterData {
     internal val skills = listOf(
-        SkillUiState(
+        SkillUiState.PercentageSkillUiState(
             name = "Lorem ipsum",
+            percentString = "80%",
             targetValue = 0.8f,
             targetValueColor = colorSkillHigh,
             explanation = LoremIpsum(words = 50).values.toList().joinToString(separator = " "),
         ),
-        SkillUiState(
+        SkillUiState.PercentageSkillUiState(
             name = "Lorem ipsum",
+            percentString = "70%",
             targetValue = 0.7f,
             targetValueColor = colorSkillHigh,
             explanation = LoremIpsum(words = 50).values.toList().joinToString(separator = " "),
         ),
-        SkillUiState(
+        SkillUiState.PercentageSkillUiState(
             name = "Lorem ipsum",
+            percentString = "70%",
             targetValue = 0.1f,
             targetValueColor = colorSkillLow,
             explanation = LoremIpsum(words = 50).values.toList().joinToString(separator = " "),
         ),
-        SkillUiState(
+        SkillUiState.SubskillsUiState(
             name = "Lorem ipsum",
             subSkills = Pair("Lorem ipsum", "Lorem ipsum"),
             explanation = LoremIpsum(words = 50).values.toList().joinToString(separator = " "),

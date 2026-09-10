@@ -15,5 +15,5 @@ class SkillRemoteDataSourceApiImpl @Inject constructor(
     private val api: SkillApi = retrofit.create(SkillApi::class.java)
 
     override suspend fun getData(): Response<Unit, Skill> =
-        api.getSkills().map { skill -> skill.toDomain() }.toResponse()
+        api.getSkills().mapNotNull { skill -> skill.toDomain() }.toResponse()
 }

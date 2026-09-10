@@ -21,7 +21,7 @@ class SkillLocalDataSourceRoomImpl @Inject constructor(
 
     override fun getData(): Flow<BasicResponse<Skill>> = skillDao.getAllAsFlow().map { skills ->
         if(skills.isNotEmpty()){
-            skills.map { skill ->
+            skills.mapNotNull { skill ->
                 skill.toDomain()
             }.toResponse()
         } else {

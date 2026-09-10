@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults.buttonColors
@@ -59,28 +58,31 @@ fun SkillCard(skill: SkillUiState) {
             Text(text = skill.name, style = MaterialTheme.typography.h6)
             Spacer(modifier = Modifier.height(10.dp))
 
-            skill.targetValue?.let {
-                SkillBar(
-                    percentageString = skill.percentString ?: "0", //TODO
-                    targetValue = it,
-                    targetValueColor = skill.targetValueColor
-                )
-            }
-            skill.subSkills?.let { subskills ->
-                Row(
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(horizontal = 16.dp)
-                ) {
-                    Text(
-                        text = subskills.first,
-                        style = MaterialTheme.typography.body1
+            when (skill) {
+                is SkillUiState.PercentageSkillUiState -> {
+                    SkillBar(
+                        percentageString = skill.percentString,
+                        targetValue = skill.targetValue,
+                        targetValueColor = skill.targetValueColor
                     )
-                    Text(
-                        text = subskills.second,
-                        style = MaterialTheme.typography.body1
-                    )
+                }
+
+                is SkillUiState.SubskillsUiState -> {
+                    Row(
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(horizontal = 16.dp)
+                    ) {
+                        Text(
+                            text = skill.subSkills.first,
+                            style = MaterialTheme.typography.body1
+                        )
+                        Text(
+                            text = skill.subSkills.second,
+                            style = MaterialTheme.typography.body1
+                        )
+                    }
                 }
             }
 
